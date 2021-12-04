@@ -281,7 +281,7 @@ class Grid extends Component {
 	) => {
 	  if (!data || !translation.data) {
 	    return <LoaderRing fullpage />;
-	  }console.error(data);
+	  }
 
 	  return (
 	  // eslint-disable-next-line react/jsx-fragments
