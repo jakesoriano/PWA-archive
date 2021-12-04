@@ -21,7 +21,7 @@ class Topbar extends Component {
 	        >
 	          <ImageLoader
 	            style={{ container: style.burgerImg }}
-	            src="assets/images/icon_invite_default.png"
+	            src="assets/images/burger.png"
 	          />
 	        </button>
 	        <h1 id="topbar_title" className={style.title}>
@@ -34,7 +34,7 @@ class Topbar extends Component {
 	        >
 	          <ImageLoader
 	            style={{ container: style.notifImg }}
-	            src="assets/images/icon_invite_default.png"
+	            src="assets/images/notif.png"
 	          />
 	        </Link>
 	      </div>
