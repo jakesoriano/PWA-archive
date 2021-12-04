@@ -1,0 +1,18 @@
+{
+  "fname": "Alvin",
+  "mname": "Boss",
+  "lname": "Javelosa",
+  "gender": "Male",
+  "dob": "1989/07/07",
+  "number": "09161234567",
+  "email": "alvin@gmail.com",
+  "region": "NCR",
+  "province": "",
+  "municipality": "Taguig City",
+  "brgy": "Sibul",
+  "industry": "IT",
+  "isVoter": true,
+  "refCode": "xjSJ2kd",
+  "members": 10,
+  "points": 1000
+}
