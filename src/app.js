@@ -43,6 +43,14 @@ export default class App extends Component {
 	renderStyle = () => {
 	  return `
 			@font-face {
+				font-family: 'OpenSans-ExtraBold';
+				src: url('assets/fonts/OpenSans-ExtraBold.ttf?${process.env.BUILD_NO}') format('woff');
+				font-weight: normal;
+				font-style: normal;
+				font-stretch: normal;
+				font-display: swap;
+			}
+			@font-face {
 				font-family: 'OpenSans-Bold';
 				src: url('assets/fonts/OpenSans-Bold.ttf?${process.env.BUILD_NO}') format('woff');
 				font-weight: normal;
@@ -51,8 +59,24 @@ export default class App extends Component {
 				font-display: swap;
 			}
 			@font-face {
+				font-family: 'OpenSans-SemiBold';
+				src: url('assets/fonts/OpenSans-SemiBold.ttf?${process.env.BUILD_NO}') format('woff');
+				font-weight: normal;
+				font-style: normal;
+				font-stretch: normal;
+				font-display: swap;
+			}
+			@font-face {
 				font-family: 'OpenSans-Regular';
 				src: url('assets/fonts/OpenSans-Regular.ttf?${process.env.BUILD_NO}') format('woff');
+				font-weight: normal;
+				font-style: normal;
+				font-stretch: normal;
+				font-display: swap;
+			}
+			@font-face {
+				font-family: 'OpenSans-Light';
+				src: url('assets/fonts/OpenSans-Light.ttf?${process.env.BUILD_NO}') format('woff');
 				font-weight: normal;
 				font-style: normal;
 				font-stretch: normal;

@@ -19,7 +19,7 @@
 		"uri": "home",
 		"contents": [
 			{
-				"component": "Account"
+				"component": "AccountProfile"
 			}
 		]
 	},
