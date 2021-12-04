@@ -2,7 +2,7 @@
 	{
 		"styles": [],
 		"pageTitle": "PAGE_LANDING",
-		"uri": "home",
+		"uri": "landing",
 		"contents": [
 			{
 				"component": "PageTitle",
@@ -15,8 +15,8 @@
 	{
 		"styles": [],
 		"auth": true,
-		"pageTitle": "PAGE_DASHBOARD",
-		"uri": "dashboard",
+		"pageTitle": "PAGE_HOME",
+		"uri": "home",
 		"contents": [
 			{
 				"component": "Account"

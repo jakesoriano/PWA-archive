@@ -49,7 +49,7 @@ class Grid extends Component {
 	  if (isPopup) {
 	    return popup;
 	  }
-	  return page || 'home';
+	  return page || 'landing';
 	};
 
 	setPageData = () => {
