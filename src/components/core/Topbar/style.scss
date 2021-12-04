@@ -1,0 +1,48 @@
+.topbar {
+	background-color: #1f2021;
+	padding: 0px;
+	position: fixed;
+	width: 100%;
+	height: 56px;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	.container {
+		width: 100%;
+		position: relative;
+		.logo {
+			min-height: 25px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 15px;
+			img {
+				width: auto;
+				margin: 0 auto;
+				display: block;
+				height: 26px;
+			}
+		}
+		.user {
+			display: block;
+			text-decoration: none;
+			outline: none;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			margin: 0;
+			padding: 0;
+			transform: translateY(-50%);
+			border: none;
+			background-color: inherit;
+			span {
+				display: block;
+			}
+		}
+		[class^='icon-'],
+		[class*=' icon-'] {
+			font-size: 1.813rem;
+			color: #2a8fbd;
+		}
+	}
+}

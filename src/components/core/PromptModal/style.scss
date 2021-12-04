@@ -1,0 +1,13 @@
+.promptModal {
+  .footer {
+    display: flex;
+    button {
+      padding: 5px;
+      flex-grow: 1;
+      background: #ccc;
+      border: none;
+      margin: 5px;
+      box-shadow: 1px 1px 1px #000;
+    }	
+  }
+}

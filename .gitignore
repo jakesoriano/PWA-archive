@@ -1,0 +1,11 @@
+node_modules
+/build
+/*.log
+*.lock
+
+package-lock.json
+
+TODO
+.DS_Store
+.env
+jobs/config/*.json

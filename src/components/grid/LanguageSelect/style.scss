@@ -1,0 +1,33 @@
+.languageselect {
+	.languageselectwrap {
+		padding: 15px;
+		.lang {
+			width: 50%;
+			display: inline-block;
+			vertical-align: middle;
+			position: relative;
+			text-align: center;
+			color: #c2d9e2;
+
+			font-size: 15px;
+			> {
+				div {
+					background-color: transparent;
+					margin: 10px;
+					p {
+						margin-top: 10px;
+					}
+					img {
+						display: block;
+						width: 100%;
+						max-width: 100px;
+						margin: 0 auto;
+					}
+				}
+			}
+			&.active {
+				color: #2a8fbd;
+			}
+		}
+	}
+}

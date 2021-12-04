@@ -1,0 +1,36 @@
+{
+  "theme_color": "#023144",
+  "background_color": "#023144",
+  "display": "standalone",
+  "scope": "/pwa_statics/boilerplate/web/",
+  "start_url": "/pwa_statics/boilerplate/web/",
+	"name": "W88",
+	"short_name": "W88",
+  "description": "W88",
+  "icons": [
+		{
+			"src": "assets/icons/icon-192x192.png?v=1",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "assets/icons/icon-256x256.png?v=1",
+			"sizes": "256x256",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "assets/icons/icon-384x384.png?v=1",
+			"sizes": "384x384",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "assets/icons/icon-512x512.png?v=1",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any maskable"
+		}
+  ]
+}

@@ -1,0 +1,14 @@
+.modalButtons {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+	button {
+		padding: 15px;
+    flex-grow: 1;
+    background: #2a8fbd;
+    border: none;
+    margin: 15px;
+    color: #fff;
+    box-shadow: 3px 3px 11px #000;
+	}	
+}

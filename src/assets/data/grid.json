@@ -1,0 +1,132 @@
+[
+	{
+		"id": 1,
+		"styles": [
+			{
+				"selector": "#page-widgets .widget",
+				"styles": "overflow-x: auto;"
+			}
+		],
+		"pageTitle": "Home",
+		"uri": "home",
+		"contents": [
+			{
+				"component": "Dashboard"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"styles": [],
+		"pageTitle": "Games",
+		"uri": "games",
+		"contents": [
+			{
+				"component": "Games",
+				"props": {
+					"title": "Games",
+					"moreLink": "/products/games"
+				}
+			},
+			{
+				"component": "Games",
+				"props": {
+					"title": "Lottery",
+					"moreLink": "/products/lottery"
+				}
+			},
+			{
+				"component": "Games",
+				"props": {
+					"title": "Lottery",
+					"moreLink": "/products/lottery"
+				}
+			},
+			{
+				"component": "Games",
+				"props": {
+					"title": "Lottery",
+					"moreLink": "/products/lottery"
+				}
+			},
+			{
+				"component": "Games",
+				"props": {
+					"title": "Lottery",
+					"moreLink": "/products/lottery"
+				}
+			},
+			{
+				"component": "Games",
+				"props": {
+					"title": "Lottery",
+					"moreLink": "/products/lottery"
+				}
+			},
+			{
+				"component": "Games",
+				"props": {
+					"title": "Lottery",
+					"moreLink": "/products/lottery"
+				}
+			},
+			{
+				"component": "Games",
+				"props": {
+					"title": "Lottery",
+					"moreLink": "/products/lottery"
+				}
+			},
+			{
+				"component": "Games",
+				"props": {
+					"title": "Lottery",
+					"moreLink": "/products/lottery"
+				}
+			},
+			{
+				"component": "Games",
+				"props": {
+					"title": "Lottery",
+					"moreLink": "/products/lottery"
+				}
+			},
+			{
+				"component": "Games",
+				"props": {
+					"title": "Lottery",
+					"moreLink": "/products/lottery"
+				}
+			},
+			{
+				"component": "Games",
+				"props": {
+					"title": "Lottery",
+					"moreLink": "/products/lottery"
+				}
+			}
+		]
+	},
+	{
+		"id": 2,
+		"styles": [],
+		"pageTitle": "Buttons",
+		"uri": "buttons",
+		"contents": [
+			{
+				"component": "ModalButtons"
+			}
+		]
+	},
+	{
+		"id": 4,
+		"styles": [],
+		"pageTitle": "Label_SelectLanguage",
+		"uri": "language",
+		"contents": [
+			{
+				"component": "LanguageSelect"
+			}
+		]
+	}
+]

@@ -1,0 +1,52 @@
+/** @format */
+
+.imageLoader {
+	width: 88px;
+	padding-bottom: 88px;
+	display: block;
+	margin-bottom: 8px;
+	position: relative;
+	height: 0;
+	border-radius: 4px;
+	overflow: hidden;
+	z-index: 1;
+	img {
+		width: 100%;
+		height: auto;
+		min-height: 1px;
+		top: 0;
+		left: 0;
+		display: block;
+		position: absolute;
+		&.popIn {
+			animation: pop-in 0.18s;
+		}
+	}
+	&.notLoaded {
+		background-color: #03435d;
+		border-radius: 4px;
+		img {
+			-ms-transform: translate(
+				1000%,
+				1000%
+			); /* added vendor specific css (IE) */
+			-webkit-transform: translate(1000%, 1000%);
+			transform: translate(1000%, 1000%);
+		}
+	}
+}
+
+@keyframes pop-in {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0);
+	}
+	90% {
+		opacity: 1;
+		-webkit-transform: scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+	}
+}

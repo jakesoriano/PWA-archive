@@ -1,0 +1,182 @@
+[
+  {
+    "TranslatedTitle": "Thai Hi Lo",
+    "FeatureImageUrl": null,
+    "ProductCategory": "Games",
+    "Screenshots": null,
+    "Provider": "Games",
+    "TrackingId": "LOTTERY_THAIHILO_GPI",
+    "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/override/Thai-Hi-Lo-mobile-en.jpg",
+    "LinksCount": 2,
+    "Title": "LABEL_PRODUCTS_THAI_HILO",
+    "Content": "LABEL_PRODUCTS_THAI_HILO_DESC",
+    "Links": {
+      "download": null,
+      "redirect": null,
+      "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=thaihilo&domainlink={DOMAIN}&domain={DOMAIN}&mode=Try&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+      "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=thaihilo&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+      "page": null
+    },
+    "Id": "thaihilo"
+  },
+  {
+    "TranslatedTitle": "Xoc Dia",
+    "FeatureImageUrl": null,
+    "ProductCategory": "Games",
+    "Screenshots": null,
+    "Provider": "Games",
+    "TrackingId": "LOTTERY_XOC_DIA_GPI",
+    "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/override/Xoc-Dia-mobile-en.jpg",
+    "LinksCount": 2,
+    "Title": "LABEL_PRODUCTS_XOC_DIA",
+    "Content": "LABEL_PRODUCTS_XOC_DIA_DESC",
+    "Links": {
+      "download": null,
+      "redirect": null,
+      "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=xocdia&domainlink={DOMAIN}&domain={DOMAIN}&mode=Try&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+      "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=xocdia&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+      "page": null
+    },
+    "Id": "xoc_dia"
+  },
+  {
+    "TranslatedTitle": "Lucky Derby",
+    "FeatureImageUrl": null,
+    "ProductCategory": "Games",
+    "Screenshots": null,
+    "Provider": "Games",
+    "TrackingId": "LOTTERY_LUCKY_DERBY_GPI",
+    "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/lucky_derby/Lucky-Derby-mobile-en.jpg",
+    "LinksCount": 2,
+    "Title": "LABEL_PRODUCTS_LUCKY_DERBY",
+    "Content": "LABEL_PRODUCTS_LUCKY_DERBY_DESC",
+    "Links": {
+      "download": null,
+      "redirect": null,
+      "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=luckyderby&domainlink={DOMAIN}&domain={DOMAIN}&mode=Try&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+      "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=luckyderby&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+      "page": null
+    },
+    "Id": "lucky_derby"
+  },
+  {
+    "TranslatedTitle": "TAI XIU",
+    "FeatureImageUrl": null,
+    "ProductCategory": "Games",
+    "Screenshots": null,
+    "Provider": "Games",
+    "TrackingId": "LOTTERY_TAIXIU_GPI",
+    "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/taixiu/Tai-Xiu-Mobile.jpg",
+    "LinksCount": 2,
+    "Title": "LABEL_PRODUCTS_TAIXIU",
+    "Content": "LABEL_PRODUCTS_TAIXIU_DESC",
+    "Links": {
+      "download": null,
+      "redirect": null,
+      "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=taixiu&mode=Try&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+      "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=taixiu&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+      "page": null
+    },
+    "Id": "taixiu"
+  },
+  {
+    "TranslatedTitle": "The Ladder",
+    "FeatureImageUrl": null,
+    "ProductCategory": "Games",
+    "Screenshots": null,
+    "Provider": "Games",
+    "TrackingId": "LOTTERY_LADDER_GPI",
+    "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/bnr_lottery_ladder-en.jpg",
+    "LinksCount": 2,
+    "Title": "LABEL_PRODUCTS_KENO_LADDER",
+    "Content": "LABEL_PRODUCTS_KENO_LADDER_DESC",
+    "Links": {
+      "download": null,
+      "redirect": null,
+      "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=ladder&mode=Try&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+      "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=ladder&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+      "page": null
+    },
+    "Id": "ladder"
+  },
+  {
+    "TranslatedTitle": "Rock Paper Scissors",
+    "FeatureImageUrl": null,
+    "ProductCategory": "Games",
+    "Screenshots": null,
+    "Provider": "Games",
+    "TrackingId": "LOTTERY_ROCKPAPERSCISSORS_GPI",
+    "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/rps-mobile-en.jpg",
+    "LinksCount": 2,
+    "Title": "LABEL_PRODUCTS_KENO_ROCKPAPERSCISSORS",
+    "Content": "LABEL_PRODUCTS_KENO_ROCKPAPERSCISSORS_DESC",
+    "Links": {
+      "download": null,
+      "redirect": null,
+      "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=rockpaperscissors&mode=Try&domainlink={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+      "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=rockpaperscissors&domainlink={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+      "page": null
+    },
+    "Id": "rockpaperscissors"
+  },
+  {
+    "TranslatedTitle": "Momo Fishing",
+    "FeatureImageUrl": null,
+    "ProductCategory": "Games",
+    "Screenshots": null,
+    "Provider": "Games",
+    "TrackingId": "APP_MOMOFISHING_VENDOR",
+    "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/Momo-Fishing-mobile.jpg",
+    "LinksCount": 1,
+    "Title": "LABEL_PRODUCTS_MOMOFISHING",
+    "Content": "LABEL_PRODUCTS_MOMOFISHING_DESC",
+    "Links": {
+      "download": null,
+      "redirect": null,
+      "trynow": null,
+      "playnow": "https://fgh5.gp2api.net/login/club8?token={TOKEN}&language=en",
+      "page": null
+    },
+    "Id": "momofishing"
+  },
+  {
+    "TranslatedTitle": "Fishing Master",
+    "FeatureImageUrl": null,
+    "ProductCategory": "Games",
+    "Screenshots": null,
+    "Provider": "Games",
+    "TrackingId": "APP_FISHING_GPI",
+    "ImageUrl": "https://m.w88asia.com/_Static/Images/bnr-fishingmaster-iOs.jpg",
+    "LinksCount": 1,
+    "Title": "LABEL_PRODUCTS_FISHING_MASTER",
+    "Content": "LABEL_PRODUCTS_FISHING_MASTER_DESC",
+    "Links": {
+      "download": "itms-services://?action=download-manifest&url=https://dl.gp2play.org/fishing/manifestVN.plist",
+      "redirect": null,
+      "trynow": null,
+      "playnow": null,
+      "page": null
+    },
+    "Id": "fishing"
+  },
+  {
+    "TranslatedTitle": "Microgaming",
+    "FeatureImageUrl": null,
+    "ProductCategory": "Games",
+    "Screenshots": null,
+    "Provider": "",
+    "TrackingId": "LINK_MGS_MICROGAMING_MENU_GPI",
+    "ImageUrl": "https://m.w88asia.com/_static/images/microgaming/microgaming-HTML5.jpg",
+    "LinksCount": 2,
+    "Title": "LABEL_PROVIDERS_MGS",
+    "Content": "LABEL_PROVIDERS_MGS_MENU_DESC",
+    "Links": {
+      "download": null,
+      "redirect": "/games/microgaming/",
+      "trynow": null,
+      "playnow": null,
+      "page": "/products/microgaming"
+    },
+    "Id": "mgs_microgaming"
+  }
+]

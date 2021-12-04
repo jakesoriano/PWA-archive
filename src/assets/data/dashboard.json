@@ -1,0 +1,1700 @@
+[
+  {
+    "title": "New Games",
+    "games": [
+      {
+        "TranslatedTitle": "Golden Ink Rat",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": {
+          "Landscape": [
+            "/_Static/Images/Games/Screenshots/GPI/goldeninkrat/Mobile-popup-Golden-ink-rat-1-EN.jpg",
+            "/_Static/Images/Games/Screenshots/GPI/goldeninkrat/Mobile-popup-Golden-ink-rat-2-EN.jpg",
+            "/_Static/Images/Games/Screenshots/GPI/goldeninkrat/Mobile-popup-Golden-ink-rat-3-EN.jpg"
+          ]
+        },
+        "Provider": "GPI",
+        "TrackingId": "",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Games/Golden-Ink-Rat-mobile-en.jpg",
+        "LinksCount": 2,
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mrslots.gp2play.com/goldeninkrat/?fun=1&domainlink={DOMAIN}&lang=en&op=w88&s={TOKEN}&config=../config/mobile.json",
+          "playnow": "https://mrslots.gp2play.com/goldeninkrat/?fun=0&domainlink={DOMAIN}&lang=en&op=w88&s={TOKEN}&config=../config/mobile.json",
+          "page": null
+        },
+        "Id": "goldeninkrat"
+      },
+      {
+        "TranslatedTitle": "Thai Hi Lo",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Games",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "LOTTERY_THAIHILO_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/override/Thai-Hi-Lo-mobile-en.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_THAI_HILO",
+        "Content": "LABEL_PRODUCTS_THAI_HILO_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=thaihilo&domainlink={DOMAIN}&domain={DOMAIN}&mode=Try&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=thaihilo&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "thaihilo"
+      },
+      {
+        "TranslatedTitle": "Nation - Double Play",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": {
+          "Landscape": [
+            "/_Static/Images/Games/Screenshots/GPI/nationdoubleplay/W88-Slots-Mobile-Nation-Double-Play-1.jpg",
+            "/_Static/Images/Games/Screenshots/GPI/nationdoubleplay/W88-Slots-Mobile-Nation-Double-Play-2.jpg",
+            "/_Static/Images/Games/Screenshots/GPI/nationdoubleplay/W88-Slots-Mobile-Nation-Double-Play-3.jpg"
+          ]
+        },
+        "Provider": "GPI",
+        "TrackingId": "",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Games/Nation-Double-Play-mobile-en.jpg",
+        "LinksCount": 2,
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mrslots.gp2play.com/nationdoubleplay/?fun=1&domainlink={DOMAIN}&lang=en&op=w88&s={TOKEN}&config=../config/mobile.json",
+          "playnow": "https://mrslots.gp2play.com/nationdoubleplay/?fun=0&domainlink={DOMAIN}&lang=en&op=w88&s={TOKEN}&config=../config/mobile.json",
+          "page": null
+        },
+        "Id": "nationdoubleplay"
+      },
+      {
+        "TranslatedTitle": "Xoc Dia",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Games",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "LOTTERY_XOC_DIA_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/override/Xoc-Dia-mobile-en.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_XOC_DIA",
+        "Content": "LABEL_PRODUCTS_XOC_DIA_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=xocdia&domainlink={DOMAIN}&domain={DOMAIN}&mode=Try&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=xocdia&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "xoc_dia"
+      },
+      {
+        "TranslatedTitle": "Lunar Legends",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": {
+          "Landscape": [
+            "/_Static/Images/Games/Screenshots/GPI/lunarlegends/Mobile-popup-Lunar-Legends-1-EN.jpg",
+            "/_Static/Images/Games/Screenshots/GPI/lunarlegends/Mobile-popup-Lunar-Legends-2-EN.jpg",
+            "/_Static/Images/Games/Screenshots/GPI/lunarlegends/Mobile-popup-Lunar-Legends-3-EN.jpg"
+          ]
+        },
+        "Provider": "GPI",
+        "TrackingId": "",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Games/Lunar-Legends-mobile-en.jpg",
+        "LinksCount": 2,
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mrslots.gp2play.com/lunarlegends/?fun=1&domainlink={DOMAIN}&lang=en&op=w88&s={TOKEN}&config=../config/mobile.json",
+          "playnow": "https://mrslots.gp2play.com/lunarlegends/?fun=0&domainlink={DOMAIN}&lang=en&op=w88&s={TOKEN}&config=../config/mobile.json",
+          "page": null
+        },
+        "Id": "lunarlegends"
+      },
+      {
+        "TranslatedTitle": "Wind Chimes",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": {
+          "Landscape": [
+            "/_Static/Images/Games/Screenshots/GPI/windchimes/Mobile-popup-Wind-Chimes-1-EN.jpg",
+            "/_Static/Images/Games/Screenshots/GPI/windchimes/Mobile-popup-Wind-Chimes-2-EN.jpg",
+            "/_Static/Images/Games/Screenshots/GPI/windchimes/Mobile-popup-Wind-Chimes-3-EN.jpg"
+          ]
+        },
+        "Provider": "GPI",
+        "TrackingId": "",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Games/Wind-Chimes-mobile-en.jpg",
+        "LinksCount": 2,
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mrslots.gp2play.com/windchimes/?fun=1&domainlink={DOMAIN}&lang=en&op=w88&s={TOKEN}&config=../config/mobile.json",
+          "playnow": "https://mrslots.gp2play.com/windchimes/?fun=0&domainlink={DOMAIN}&lang=en&op=w88&s={TOKEN}&config=../config/mobile.json",
+          "page": null
+        },
+        "Id": "windchimes"
+      },
+      {
+        "TranslatedTitle": "Gao Gae",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Games",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "P2P_GAOGAE_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/p2p/gaogae/GaoGae-HTML5-en.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_GAOGAE",
+        "Content": "LABEL_PRODUCTS_GAOGAE_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://tm.gp2play.com/html5GaoGae/?op=1&lang=en-us&fun=1&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&hasGPILobby=1",
+          "playnow": "https://tm.gp2play.com/html5GaoGae/?op=1&lang=en-us&fun=0&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&hasGPILobby=1",
+          "page": null
+        },
+        "Id": "gaogae"
+      },
+      {
+        "TranslatedTitle": "Lucky Derby",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Games",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "LOTTERY_LUCKY_DERBY_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/lucky_derby/Lucky-Derby-mobile-en.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_LUCKY_DERBY",
+        "Content": "LABEL_PRODUCTS_LUCKY_DERBY_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=luckyderby&domainlink={DOMAIN}&domain={DOMAIN}&mode=Try&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=luckyderby&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "lucky_derby"
+      },
+      {
+        "TranslatedTitle": "Cosmic Boost",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": {
+          "Landscape": [
+            "/_Static/Images/Games/Screenshots/GPI/cosmicboost/Mobile-popup-Cosmic-Boost-1-EN.jpg",
+            "/_Static/Images/Games/Screenshots/GPI/cosmicboost/Mobile-popup-Cosmic-Boost-2-EN.jpg",
+            "/_Static/Images/Games/Screenshots/GPI/cosmicboost/Mobile-popup-Cosmic-Boost-3-EN.jpg",
+            "/_Static/Images/Games/Screenshots/GPI/cosmicboost/Mobile-popup-Cosmic-Boost-4-EN.jpg"
+          ]
+        },
+        "Provider": "GPI",
+        "TrackingId": "",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Games/Cosmic-Boost-mobile-en.jpg",
+        "LinksCount": 2,
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mrslots.gp2play.com/cosmicboost/?fun=1&domainlink={DOMAIN}&lang=en&op=w88&s={TOKEN}&config=../config/mobile.json",
+          "playnow": "https://mrslots.gp2play.com/cosmicboost/?fun=0&domainlink={DOMAIN}&lang=en&op=w88&s={TOKEN}&config=../config/mobile.json",
+          "page": null
+        },
+        "Id": "cosmicboost"
+      },
+      {
+        "TranslatedTitle": "Virtual Lucky Baccarat",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "CASINO_CASINO_1018_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Casino/Virtual-Lucky-Baccarat.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_CASINO_VIRTUALLUCKYBACCARAT",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://casino.gp2play.com/html5/mobile/?s={TOKEN}&lang=en-us&homeURL=//{MOBILEDOMAIN}/Products/Casino.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&tb=1018",
+          "page": null
+        },
+        "Id": "casino_1018"
+      }
+    ]
+  },
+  {
+    "title": "Sports",
+    "moreLink": "/products/sports",
+    "games": [
+      {
+        "TranslatedTitle": "a-Sports",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Sports",
+        "Screenshots": null,
+        "Provider": "Sports",
+        "TrackingId": "SPORTS_SB_ASPORTS",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/sports/bnr-asports.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_PRODUCTS_ASPORTS",
+        "Content": "LABEL_PRODUCTS_ASPORTS_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://ismart.w2sports.com/Deposit_ProcessLogin.aspx?lang=en&st={TOKEN}&ischinaview=True",
+          "page": null
+        },
+        "Id": "sb"
+      },
+      {
+        "TranslatedTitle": "e-Sports",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Sports",
+        "Screenshots": null,
+        "Provider": "Sports",
+        "TrackingId": "SPORTS_SB2_ESPORTS",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/sports/bnr-esports.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_PRODUCTS_ESPORTS",
+        "Content": "LABEL_PRODUCTS_ESPORTS_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://relche.w2sports.com/sports?LangID=236&ExternalToken={TOKEN}&oddsstyleid={ODDSTYPE}&oldurl=relche.w2sports.com&cashierUrl=//{MOBILEDOMAIN}{CASHIER}&showCashier=true&random=1",
+          "page": null
+        },
+        "Id": "sb2"
+      },
+      {
+        "TranslatedTitle": "x-Sports",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Sports",
+        "Screenshots": null,
+        "Provider": "Sports",
+        "TrackingId": "SPORTS_SB5_XSPORTS",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/sports/bnr-xsports.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_PRODUCTS_XSPORTS",
+        "Content": "LABEL_PRODUCTS_XSPORTS_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://w88nsmart.fts368.com/auth.aspx?lang=en-US&user={MEMBERID}&token={TOKEN}&currency=VD&templatename=blue&view=v1",
+          "page": null
+        },
+        "Id": "sb5"
+      },
+      {
+        "TranslatedTitle": "Basketball",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Sports",
+        "Screenshots": null,
+        "Provider": "Sports",
+        "TrackingId": "SPORTS_VBL_VIRTUAL-BASKETBALL",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/sports/bnr-vSports-basketball.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_VSPORTS_BASKETBALL",
+        "Content": "LABEL_VSPORTS_BASKETBALL_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://sb.gpiops.com/rgsMobile?op=W88&token={TOKEN}&gameType=VBL&oddType=Dec&language=en",
+          "page": null
+        },
+        "Id": "vbl"
+      },
+      {
+        "TranslatedTitle": "World Cup",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Sports",
+        "Screenshots": null,
+        "Provider": "Sports",
+        "TrackingId": "SPORTS_VFWC_WORLDCUP",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/sports/bnr-vSports-football-world-cup.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_VSPORTS_WORLD_FOOTBALL",
+        "Content": "LABEL_VSPORTS_WORLD_FOOTBALL_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://sb.gpiops.com/rgsMobile?op=W88&token={TOKEN}&gameType=VFWC&oddType=Dec&language=en",
+          "page": null
+        },
+        "Id": "vfwc"
+      }
+    ]
+  },
+  {
+    "title": "Club W Live Casino",
+    "games": [
+      {
+        "TranslatedTitle": "Virtual Dragon Tiger",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "CASINO_CASINO_1004_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Casino/Virtual-Dragon-Tiger.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_CASINO_VIRTUAL_DRAGONTIGER",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://casino.gp2play.com/html5/mobile/?s={TOKEN}&lang=en-us&homeURL=//{MOBILEDOMAIN}/Products/Casino.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&tb=1004",
+          "page": null
+        },
+        "Id": "casino_1004"
+      },
+      {
+        "TranslatedTitle": "Virtual Lucky Baccarat",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "CASINO_CASINO_1018_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Casino/Virtual-Lucky-Baccarat.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_CASINO_VIRTUALLUCKYBACCARAT",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://casino.gp2play.com/html5/mobile/?s={TOKEN}&lang=en-us&homeURL=//{MOBILEDOMAIN}/Products/Casino.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&tb=1018",
+          "page": null
+        },
+        "Id": "casino_1018"
+      },
+      {
+        "TranslatedTitle": "Lucky Baccarat",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "CASINO_CASINO_318_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Casino/Club-W-Grand-LuckyBaccarat.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_CASINO_LUCKYBACCARAT",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://casino.gp2play.com/html5/mobile/?s={TOKEN}&lang=en-us&homeURL=//{MOBILEDOMAIN}/Products/Casino.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&tb=318",
+          "page": null
+        },
+        "Id": "casino_318"
+      },
+      {
+        "TranslatedTitle": "Super Fantan",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "CASINO_CASINO_72_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Casino/Club-W-Grand-Super-Fantan.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_CASINO_FANTAN",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://casino.gp2play.com/html5/mobile/?s={TOKEN}&lang=en-us&homeURL=//{MOBILEDOMAIN}/Products/Casino.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&tb=312",
+          "page": null
+        },
+        "Id": "casino_72"
+      },
+      {
+        "TranslatedTitle": "Fish Prawn Crab",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "CASINO_CASINO_25_FISHPRAWNCRAB_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Casino/Live-Casino-Club-W-Grand-FPC.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_CASINO_25FISHPRAWNCRAB",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://casino.gp2play.com/html5/mobile/?s={TOKEN}&lang=en-us&homeURL=//{MOBILEDOMAIN}/Products/Casino.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&tb=25",
+          "page": null
+        },
+        "Id": "casino_25_FishPrawnCrab"
+      },
+      {
+        "TranslatedTitle": "Live Baccarat - Cinematic",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "CASINO_CASINO_313_BACCARAT_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Casino/Club-W-Grand-Multicamera-Baccarat.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_CASINO_313BACCARAT",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://casino.gp2play.com/html5/mobile/?s={TOKEN}&lang=en-us&homeURL=//{MOBILEDOMAIN}/Products/Casino.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&tb=313",
+          "page": null
+        },
+        "Id": "casino_313_baccarat"
+      },
+      {
+        "TranslatedTitle": "Live Roulette - Cinematic",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "CASINO_CASINO_306_ROULETTE_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Casino/Club-W-Grand-Multicamera-Roulette.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_CASINO_306ROULETTE",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://casino.gp2play.com/html5/mobile/?s={TOKEN}&lang=en-us&homeURL=//{MOBILEDOMAIN}/Products/Casino.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&tb=306",
+          "page": null
+        },
+        "Id": "casino_306_roulette"
+      },
+      {
+        "TranslatedTitle": "Live Baccarat",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "CASINO_CASINO_NC_BACCARAT_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Casino/Club-W-NC-Baccarat.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_CASINO_BACCARAT",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://casino.gp2play.com/html5/mobile/?s={TOKEN}&lang=en-us&homeURL=//{MOBILEDOMAIN}/Products/Casino.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&tb=31",
+          "page": null
+        },
+        "Id": "casino_nc_baccarat"
+      },
+      {
+        "TranslatedTitle": "Live Sic Bo",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "CASINO_CASINO_SICBO_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Casino/Club-W-Premier-Sic-Bo.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_CASINO_SICBO",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://casino.gp2play.com/html5/mobile/?s={TOKEN}&lang=en-us&homeURL=//{MOBILEDOMAIN}/Products/Casino.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&tb=5",
+          "page": null
+        },
+        "Id": "casino_sicbo"
+      },
+      {
+        "TranslatedTitle": "Live Super 98 Baccarat",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "CASINO_CASINO_S98_BACCARAT_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Casino/Club-W-Premier-Super-98-Baccarat.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_CASINO_98BACCARAT",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://casino.gp2play.com/html5/mobile/?s={TOKEN}&lang=en-us&homeURL=//{MOBILEDOMAIN}/Products/Casino.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&tb=503",
+          "page": null
+        },
+        "Id": "casino_s98_baccarat"
+      },
+      {
+        "TranslatedTitle": "Live Squeeze Baccarat",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "CASINO_CASINO_SQUEEZE_BACCARAT_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Casino/Club-W-Premier-NC-Squeeze-Baccarat.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_CASINO_SBACCARAT",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://casino.gp2play.com/html5/mobile/?s={TOKEN}&lang=en-us&homeURL=//{MOBILEDOMAIN}/Products/Casino.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&tb=91",
+          "page": null
+        },
+        "Id": "casino_squeeze_baccarat"
+      },
+      {
+        "TranslatedTitle": "Live Dragon Tiger",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "CASINO_CASINO_DRAGON_TIGER_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/Casino/Club-W-Premier-Dragon-Tiger.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_CASINO_DRAGON_TIGER",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://casino.gp2play.com/html5/mobile/?s={TOKEN}&lang=en-us&homeURL=//{MOBILEDOMAIN}/Products/Casino.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&tb=54",
+          "page": null
+        },
+        "Id": "casino_dragon_tiger"
+      }
+    ]
+  },
+  {
+    "title": "Live Casino",
+    "moreLink": "/products/casino",
+    "games": [
+      {
+        "TranslatedTitle": "Club W Grand",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "CASINO_CLUBW_GRAND_GPI",
+        "ImageUrl": "https://m.w88asia.com/_static/images/casino/bnr-ClubWGrand-html5-ios.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_PRODUCTS_CLUB_W_GRAND",
+        "Content": "LABEL_PRODUCTS_CLUB_W_GRAND_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://casino.gp2play.com/html5/mobile/?s={TOKEN}&lang=en-us&homeURL=//{MOBILEDOMAIN}/Products/Casino.aspx&fundsURL=//{MOBILEDOMAIN}/funds",
+          "page": null
+        },
+        "Id": "clubw_grand"
+      },
+      {
+        "TranslatedTitle": "Club Palazzo",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "CASINO_PLAYTECH_CASINO_PT",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/casino/bnr-clubpalazzo-casino-html5.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_CASINO_PLAYTECH",
+        "Content": "LABEL_PRODUCTS_PALAZZO_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https%3a%2f%2fhub.ld176988.com%2figaming%2f%3fgameId%3dbal%26real%3d1%26username%3d%7bUSER%7d%26lang%3den%26tempToken%3d%7bTOKEN%7d%26lobby%3dhttps%3a%2f%2f%7bMOBILEDOMAIN%7d%2f%26support%3dhttps%3a%2f%2f%7bMOBILEDOMAIN%7d%2f%26logout%3dhttps%3a%2f%2f%7bMOBILEDOMAIN%7d%2f%26deposit%3dhttps%3a%2f%2f%7bMOBILEDOMAIN%7d%2ffunds%2fdeposit",
+          "page": null
+        },
+        "Id": "playtech_casino"
+      },
+      {
+        "TranslatedTitle": "Club Massimo",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "CASINO_VANGUARD_CASINO_MGS",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/casino/bnr-clubmassimo-casino-html5.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_PRODUCTS_MASSIMO",
+        "Content": "LABEL_PRODUCTS_MASSIMO_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://webservice.basestatic.net/ETILandingPage/?QFToken={TOKEN}&UL=en-us&CasinoID=3710&ClientID=7&StartingTab=MPBaccarat&Slot=1&Logoutredirect=/",
+          "page": null
+        },
+        "Id": "vanguard_casino"
+      }
+    ]
+  },
+  {
+    "title": "Slots",
+    "moreLink": "/slots",
+    "games": [
+      {
+        "TranslatedTitle": "Gameplay Interactive",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "LINK_SLOT_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/thumbnail/gpi.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_SLOTS_GPI",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Slots/gpi",
+          "trynow": null,
+          "playnow": null,
+          "page": "/slots/gpi"
+        },
+        "Id": "slot"
+      },
+      {
+        "TranslatedTitle": "Microgaming",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "LINK_VANGUARD_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/thumbnail/mgs.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_SLOTS_MGS",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Slots/mgs",
+          "trynow": null,
+          "playnow": null,
+          "page": "/slots/mgs"
+        },
+        "Id": "vanguard"
+      },
+      {
+        "TranslatedTitle": "Play 'N Go",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "LINK_PNG_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/thumbnail/PNG.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_SLOTS_PNG",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Slots/png",
+          "trynow": null,
+          "playnow": null,
+          "page": "/slots/png"
+        },
+        "Id": "png"
+      },
+      {
+        "TranslatedTitle": "Qtech",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "LINK_QTECH_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/thumbnail/QT.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_SLOTS_QT",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Slots/qt",
+          "trynow": null,
+          "playnow": null,
+          "page": "/slots/qt"
+        },
+        "Id": "qtech"
+      },
+      {
+        "TranslatedTitle": "Playtech",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "LINK_PLAYTECH_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/thumbnail/PT.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_SLOTS_PT",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Slots/pt",
+          "trynow": null,
+          "playnow": null,
+          "page": "/slots/pt"
+        },
+        "Id": "playtech"
+      },
+      {
+        "TranslatedTitle": "Isoftbet",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "LINK_ISOFTBET_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/thumbnail/ISB.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_SLOTS_ISB",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Slots/isb",
+          "trynow": null,
+          "playnow": null,
+          "page": "/slots/isb"
+        },
+        "Id": "isoftbet"
+      },
+      {
+        "TranslatedTitle": "Pragmatic Play",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "LINK_PRAGMATICPLAY_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/thumbnail/PP.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_SLOTS_PP",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Slots/pp",
+          "trynow": null,
+          "playnow": null,
+          "page": "/slots/pp"
+        },
+        "Id": "pragmaticplay"
+      },
+      {
+        "TranslatedTitle": "Netent",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "LINK_NETENT_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/thumbnail/NET.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_SLOTS_NET",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Slots/net",
+          "trynow": null,
+          "playnow": null,
+          "page": "/slots/net"
+        },
+        "Id": "netent"
+      },
+      {
+        "TranslatedTitle": "Skywind",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "LINK_SKYWIND_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/thumbnail/SW.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_SLOTS_SW",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Slots/sw",
+          "trynow": null,
+          "playnow": null,
+          "page": "/slots/sw"
+        },
+        "Id": "skywind"
+      },
+      {
+        "TranslatedTitle": "Toptrend Gaming",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "LINK_AGS_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/thumbnail/TTG.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_SLOTS_TTG",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Slots/ttg",
+          "trynow": null,
+          "playnow": null,
+          "page": "/slots/ttg"
+        },
+        "Id": "ags"
+      },
+      {
+        "TranslatedTitle": "Solid Gaming",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "LINK_SLD_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/thumbnail/SLD.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_SLOTS_SLD",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Slots/sld",
+          "trynow": null,
+          "playnow": null,
+          "page": "/slots/sld"
+        },
+        "Id": "sld"
+      },
+      {
+        "TranslatedTitle": "Booongo",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "LINK_BOOONGO_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/thumbnail/BO.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_SLOTS_BO",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Slots/bo",
+          "trynow": null,
+          "playnow": null,
+          "page": "/slots/bo"
+        },
+        "Id": "booongo"
+      },
+      {
+        "TranslatedTitle": "Genesis",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "LINK_GENESIS_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/thumbnail/GNS.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_SLOTS_GNS",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Slots/gns",
+          "trynow": null,
+          "playnow": null,
+          "page": "/slots/gns"
+        },
+        "Id": "genesis"
+      },
+      {
+        "TranslatedTitle": "Spadegaming",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "LINK_SPADEGAMING_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/thumbnail/SG.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_SLOTS_SG",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Slots/sg",
+          "trynow": null,
+          "playnow": null,
+          "page": "/slots/sg"
+        },
+        "Id": "spadegaming"
+      },
+      {
+        "TranslatedTitle": "Yggdrasil",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Slots",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "LINK_YGGDRASIL_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/thumbnail/YGG.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_SLOTS_YGG",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Slots/ygg",
+          "trynow": null,
+          "playnow": null,
+          "page": "/slots/ygg"
+        },
+        "Id": "yggdrasil"
+      }
+    ]
+  },
+  {
+    "title": "Games",
+    "moreLink": "/products/games",
+    "games": [
+      {
+        "TranslatedTitle": "Thai Hi Lo",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Games",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "LOTTERY_THAIHILO_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/override/Thai-Hi-Lo-mobile-en.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_THAI_HILO",
+        "Content": "LABEL_PRODUCTS_THAI_HILO_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=thaihilo&domainlink={DOMAIN}&domain={DOMAIN}&mode=Try&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=thaihilo&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "thaihilo"
+      },
+      {
+        "TranslatedTitle": "Xoc Dia",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Games",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "LOTTERY_XOC_DIA_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/override/Xoc-Dia-mobile-en.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_XOC_DIA",
+        "Content": "LABEL_PRODUCTS_XOC_DIA_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=xocdia&domainlink={DOMAIN}&domain={DOMAIN}&mode=Try&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=xocdia&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "xoc_dia"
+      },
+      {
+        "TranslatedTitle": "Lucky Derby",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Games",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "LOTTERY_LUCKY_DERBY_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/lucky_derby/Lucky-Derby-mobile-en.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_LUCKY_DERBY",
+        "Content": "LABEL_PRODUCTS_LUCKY_DERBY_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=luckyderby&domainlink={DOMAIN}&domain={DOMAIN}&mode=Try&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=luckyderby&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "lucky_derby"
+      },
+      {
+        "TranslatedTitle": "TAI XIU",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Games",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "LOTTERY_TAIXIU_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/taixiu/Tai-Xiu-Mobile.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_TAIXIU",
+        "Content": "LABEL_PRODUCTS_TAIXIU_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=taixiu&mode=Try&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=taixiu&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "taixiu"
+      },
+      {
+        "TranslatedTitle": "The Ladder",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Games",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "LOTTERY_LADDER_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/bnr_lottery_ladder-en.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_KENO_LADDER",
+        "Content": "LABEL_PRODUCTS_KENO_LADDER_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=ladder&mode=Try&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=ladder&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "ladder"
+      },
+      {
+        "TranslatedTitle": "Rock Paper Scissors",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Games",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "LOTTERY_ROCKPAPERSCISSORS_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/rps-mobile-en.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_KENO_ROCKPAPERSCISSORS",
+        "Content": "LABEL_PRODUCTS_KENO_ROCKPAPERSCISSORS_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=rockpaperscissors&mode=Try&domainlink={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=rockpaperscissors&domainlink={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "rockpaperscissors"
+      },
+      {
+        "TranslatedTitle": "Momo Fishing",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Games",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "APP_MOMOFISHING_VENDOR",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/Momo-Fishing-mobile.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_PRODUCTS_MOMOFISHING",
+        "Content": "LABEL_PRODUCTS_MOMOFISHING_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://fgh5.gp2api.net/login/club8?token={TOKEN}&language=en",
+          "page": null
+        },
+        "Id": "momofishing"
+      },
+      {
+        "TranslatedTitle": "Fishing Master",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Games",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "APP_FISHING_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/bnr-fishingmaster-iOs.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_PRODUCTS_FISHING_MASTER",
+        "Content": "LABEL_PRODUCTS_FISHING_MASTER_DESC",
+        "Links": {
+          "download": "itms-services://?action=download-manifest&url=https://dl.gp2play.org/fishing/manifestVN.plist",
+          "redirect": null,
+          "trynow": null,
+          "playnow": null,
+          "page": null
+        },
+        "Id": "fishing"
+      },
+      {
+        "TranslatedTitle": "Microgaming",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Games",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "LINK_MGS_MICROGAMING_MENU_GPI",
+        "ImageUrl": "https://m.w88asia.com/_static/images/microgaming/microgaming-HTML5.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PROVIDERS_MGS",
+        "Content": "LABEL_PROVIDERS_MGS_MENU_DESC",
+        "Links": {
+          "download": null,
+          "redirect": "/games/microgaming/",
+          "trynow": null,
+          "playnow": null,
+          "page": "/products/microgaming"
+        },
+        "Id": "mgs_microgaming"
+      }
+    ]
+  },
+  {
+    "title": "Lottery",
+    "moreLink": "/products/lottery",
+    "games": [
+      {
+        "TranslatedTitle": "Xoc Dia",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Lottery",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "LOTTERY_XOC_DIA_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/override/Xoc-Dia-mobile-en.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_XOC_DIA",
+        "Content": "LABEL_PRODUCTS_XOC_DIA_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=xocdia&domainlink={DOMAIN}&domain={DOMAIN}&mode=Try&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=xocdia&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "xoc_dia"
+      },
+      {
+        "TranslatedTitle": "TAI XIU",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Lottery",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "LOTTERY_TAIXIU_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/taixiu/Tai-Xiu-Mobile.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_TAIXIU",
+        "Content": "LABEL_PRODUCTS_TAIXIU_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=taixiu&mode=Try&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=taixiu&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "taixiu"
+      },
+      {
+        "TranslatedTitle": "GLI Lottery",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Lottery",
+        "Screenshots": null,
+        "Provider": "Lottery",
+        "TrackingId": "LOTTERY_SYLOTTERY_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/GLILottery-en.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_PRODUCTS_SYLOTTERY",
+        "Content": "LABEL_PRODUCTS_SYLOTTERY_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://api.shicai-client.com/login/thirdparty/205-d69?op=c173d5ec50ea&ticket={TOKEN}&lang=us",
+          "page": null
+        },
+        "Id": "sylottery"
+      },
+      {
+        "TranslatedTitle": "Fast 3",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Lottery",
+        "Screenshots": null,
+        "Provider": "Lottery",
+        "TrackingId": "LOTTERY_FAST3_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/fast3-mobile-en.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_FAST3",
+        "Content": "LABEL_PRODUCTS_FAST3_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=fast3&mode=Try&domainlink={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=fast3&domainlink={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "fast3"
+      },
+      {
+        "TranslatedTitle": "Rock Paper Scissors Lite",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Lottery",
+        "Screenshots": null,
+        "Provider": "Lottery",
+        "TrackingId": "LOTTERY_RPS-LITE_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/RPS-SUPER-mobile-en.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_KENO_ROCKPAPERSCISSORS_LITE",
+        "Content": "LABEL_PRODUCTS_KENO_ROCKPAPERSCISSORS_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=rockpaperscissors&mode=Try&domainlink={DOMAIN}&market=4&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=rockpaperscissors&domainlink={DOMAIN}&market=4&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "rps-lite"
+      },
+      {
+        "TranslatedTitle": "W Keno",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Lottery",
+        "Screenshots": null,
+        "Provider": "Lottery",
+        "TrackingId": "LOTTERY_WKENO_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/bnr_wkeno.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_WKENO",
+        "Content": "LABEL_PRODUCTS_WKENO_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=keno&version=2&mode=try&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=keno&version=2&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "wkeno"
+      },
+      {
+        "TranslatedTitle": "The Ladder",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Lottery",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "LOTTERY_LADDER_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/bnr_lottery_ladder.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_KENO_LADDER",
+        "Content": "LABEL_PRODUCTS_KENO_LADDER_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=ladder&mode=Try&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=ladder&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "ladder"
+      },
+      {
+        "TranslatedTitle": "PK10",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Lottery",
+        "Screenshots": null,
+        "Provider": "Lottery",
+        "TrackingId": "LOTTERY_PK10_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/bnr_lottery_pk10.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_PK10",
+        "Content": "LABEL_PRODUCTS_PK10_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=pk10&mode=Try&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=pk10&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "pk10"
+      },
+      {
+        "TranslatedTitle": "GPI Lottery",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Lottery",
+        "Screenshots": null,
+        "Provider": "Lottery",
+        "TrackingId": "LOTTERY_GPILOTTERY_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/bnr_gpilottery.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_GPI_LOTTO",
+        "Content": "LABEL_PRODUCTS_GPI_LOTTO_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=gpilottery&mode=Try&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=gpilottery&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "gpilottery"
+      },
+      {
+        "TranslatedTitle": "Keno",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Lottery",
+        "Screenshots": null,
+        "Provider": "Lottery",
+        "TrackingId": "LOTTERY_KENO_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/bnr_lottery.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_PRODUCTS_KENO",
+        "Content": "LABEL_PRODUCTS_KENO_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://mlotto.gp2play.com/Login?vendor=W88&s={TOKEN}&lang=en-us&game=keno&version=1&domainlink={DOMAIN}&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "keno"
+      },
+      {
+        "TranslatedTitle": "Lotto",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Lottery",
+        "Screenshots": null,
+        "Provider": "Lottery",
+        "TrackingId": "LOTTERY_NEWLOTTO_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/lottery/thumbnail_NewLotto.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_PRODUCTS_NEWLOTTO",
+        "Content": "LABEL_PRODUCTS_NEWLOTTO_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": null,
+          "playnow": "https://rlottery.gp2play.com/mobile/?op=W88&token={TOKEN}&lang=en-us&domain={DOMAIN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundsURL=//{MOBILEDOMAIN}/funds/&hideexit=1",
+          "page": null
+        },
+        "Id": "newlotto"
+      },
+      {
+        "TranslatedTitle": "Lottery & Games Tournament",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Lottery",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "LINK_LOTTERY_TOURNAMENT_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/bnr_lottery_tournament.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_TOURNAMENT_LOTTERY_HEADER",
+        "Content": "LABEL_TOURNAMENT_LOTTERY_DESC",
+        "Links": {
+          "download": null,
+          "redirect": "/Lottery/Tournament",
+          "trynow": null,
+          "playnow": null,
+          "page": "/tournament/lottery"
+        },
+        "Id": "lottery_tournament"
+      }
+    ]
+  },
+  {
+    "title": "P2P",
+    "moreLink": "/products/p2p",
+    "games": [
+      {
+        "TranslatedTitle": "Gao Gae",
+        "FeatureImageUrl": null,
+        "ProductCategory": "P2P",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "P2P_GAOGAE_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/p2p/gaogae/GaoGae-HTML5-en.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_GAOGAE",
+        "Content": "LABEL_PRODUCTS_GAOGAE_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://tm.gp2play.com/html5GaoGae/?op=1&lang=en-us&fun=1&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&hasGPILobby=1",
+          "playnow": "https://tm.gp2play.com/html5GaoGae/?op=1&lang=en-us&fun=0&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&hasGPILobby=1",
+          "page": null
+        },
+        "Id": "gaogae"
+      },
+      {
+        "TranslatedTitle": "Bài Cào",
+        "FeatureImageUrl": null,
+        "ProductCategory": "P2P",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "P2P_BAICAO_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/p2p/baicao-HTML5.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_BAICAO",
+        "Content": "LABEL_PRODUCTS_BAICAO_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://tm.gp2play.com/html5BaiCao/?op=1&lang=en-us&fun=1&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&hasGPILobby=1",
+          "playnow": "https://tm.gp2play.com/html5BaiCao/?op=1&lang=en-us&fun=0&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&hasGPILobby=1",
+          "page": null
+        },
+        "Id": "BaiCao"
+      },
+      {
+        "TranslatedTitle": "Pok Deng",
+        "FeatureImageUrl": null,
+        "ProductCategory": "P2P",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "P2P_POKDENG_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/P2p/pokdeng-HTML5-en.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_P2P_POKDENG",
+        "Content": "LABEL_PRODUCTS_P2P_POKDENG_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://tm.gp2play.com/html5PokDeng/?op=1&lang=en-us&fun=1&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&hasGPILobby=1",
+          "playnow": "https://tm.gp2play.com/html5PokDeng/?op=1&lang=en-us&fun=0&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&hasGPILobby=1",
+          "page": null
+        },
+        "Id": "pokdeng"
+      },
+      {
+        "TranslatedTitle": "Tien Len",
+        "FeatureImageUrl": null,
+        "ProductCategory": "P2P",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "P2P_TIENLEN_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/P2p/TienLen-HTML5.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_P2P_TIENLEN",
+        "Content": "LABEL_PRODUCTS_P2P_TIENLEN_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://tm.gp2play.com/html5TienLen/?op=1&lang=en-us&fun=1&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&hasGPILobby=1",
+          "playnow": "https://tm.gp2play.com/html5TienLen/?op=1&lang=en-us&fun=0&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&hasGPILobby=1",
+          "page": null
+        },
+        "Id": "TienLen"
+      },
+      {
+        "TranslatedTitle": "Texas Hold'em Poker",
+        "FeatureImageUrl": null,
+        "ProductCategory": "P2P",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "P2P_TXHD_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/P2p/texasholdem-HTML5.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_P2P_TXHD",
+        "Content": "LABEL_PRODUCTS_P2P_TXHD_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://tm.gp2play.com/html5HoldemPoker/?op=1&lang=en-us&fun=1&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&hasGPILobby=1",
+          "playnow": "https://tm.gp2play.com/html5HoldemPoker/?op=1&lang=en-us&fun=0&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&hasGPILobby=1",
+          "page": null
+        },
+        "Id": "TXHD"
+      },
+      {
+        "TranslatedTitle": "Super Bull",
+        "FeatureImageUrl": null,
+        "ProductCategory": "P2P",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "P2P_NIUNIU_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/superbull/mobilesite-thumbnail-SuperBull-HTML5.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_MENU_SUPERBULL",
+        "Content": "LABEL_PRODUCTS_SUPERBULL_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://tm.gp2play.com/html5Niuniu/?op=1&lang=en-us&fun=1&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&autojoinRoom=1&hasGPILobby=1",
+          "playnow": "https://tm.gp2play.com/html5Niuniu/?op=1&lang=en-us&fun=0&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&hasGPILobby=1",
+          "page": null
+        },
+        "Id": "niuniu"
+      },
+      {
+        "TranslatedTitle": "Domino QQ",
+        "FeatureImageUrl": null,
+        "ProductCategory": "P2P",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "P2P_DOMINOQQ_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/p2p/thumbnail-dominoqq-HTML5.jpg",
+        "LinksCount": 2,
+        "Title": "LABEL_PRODUCTS_DOMINOQQ",
+        "Content": "LABEL_PRODUCTS_DOMINOQQ_DESC",
+        "Links": {
+          "download": null,
+          "redirect": null,
+          "trynow": "https://tm.gp2play.com/html5DominoQQ/?op=1&lang=en-us&fun=1&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&hasGPILobby=1",
+          "playnow": "https://tm.gp2play.com/html5DominoQQ/?op=1&lang=en-us&fun=0&token={TOKEN}&loginURL=//{MOBILEDOMAIN}/_Secure/Login.aspx&lobbyURL=//{MOBILEDOMAIN}/&homeURL=//{MOBILEDOMAIN}/&livechatURL=//{MOBILEDOMAIN}/livechat/default.aspx&depositURL=//{MOBILEDOMAIN}/funds/deposit/&fundTransferURL=//{MOBILEDOMAIN}/funds/transfer.aspx&fundHistoryURL=//{MOBILEDOMAIN}/funds/history.aspx&fundURL=//{MOBILEDOMAIN}/funds/&hasGPILobby=1",
+          "page": null
+        },
+        "Id": "dominoqq"
+      },
+      {
+        "TranslatedTitle": "Poker",
+        "FeatureImageUrl": null,
+        "ProductCategory": "P2P",
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "APP_POKER_VENDOR",
+        "ImageUrl": "https://m.w88asia.com/_static/images/poker/bnr-poker-iOS.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_MENU_POKER",
+        "Content": "LABEL_POKER_DESC",
+        "Links": {
+          "download": null,
+          "redirect": "https://leaflet.good-game-network.com/leaflet/mobile/w88/download/en",
+          "trynow": null,
+          "playnow": null,
+          "page": null
+        },
+        "Id": "poker"
+      }
+    ]
+  },
+  {
+    "title": "Download",
+    "moreLink": "/downloads",
+    "games": [
+      {
+        "TranslatedTitle": "Racing Reels",
+        "FeatureImageUrl": null,
+        "ProductCategory": null,
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/casino/rr/downloads/mb-dc-Racing-Reels-Android.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_PRODUCT_RR",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "https://rr-dl.gp2play.info/mob/racing_reel_download.html?op=W88&lang=en-us",
+          "trynow": null,
+          "playnow": null,
+          "page": null
+        },
+        "Id": "racing_reels"
+      },
+      {
+        "TranslatedTitle": "W88 LITE",
+        "FeatureImageUrl": null,
+        "ProductCategory": null,
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "APP_LITEAPP_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/download/w88lite-thumbnail-en.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_PRODUCTS_CLUB_W88_LITE",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/liteapp/download.html?op=W88&lang=en-us",
+          "trynow": null,
+          "playnow": null,
+          "page": null
+        },
+        "Id": "liteapp"
+      },
+      {
+        "TranslatedTitle": "Club W",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Casino",
+        "Screenshots": null,
+        "Provider": "Casino",
+        "TrackingId": "CASINO_CLUBW_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/casino/bnr-clubw-android.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_PRODUCTS_CLUB_W",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/clubw88download.aspx",
+          "trynow": null,
+          "playnow": null,
+          "page": null
+        },
+        "Id": "clubw"
+      },
+      {
+        "TranslatedTitle": "Palazzo",
+        "FeatureImageUrl": null,
+        "ProductCategory": null,
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "CASINO_PLAYTECH_CASINO_DL_PT",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/casino/bnr-clubpalazzo-casino-android.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_PRODUCTS_PALAZZO",
+        "Content": null,
+        "Links": {
+          "download": null,
+          "redirect": "/Downloads/palazzo-casino",
+          "trynow": null,
+          "playnow": null,
+          "page": null
+        },
+        "Id": "playtech_casino_dl"
+      },
+      {
+        "TranslatedTitle": "Fishing Master",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Games",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "APP_FISHING_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/bnr-fishingmaster-android.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_PRODUCTS_FISHING_MASTER",
+        "Content": null,
+        "Links": {
+          "download": "https://fir.im/veud",
+          "redirect": null,
+          "trynow": null,
+          "playnow": null,
+          "page": null
+        },
+        "Id": "fishing"
+      },
+      {
+        "TranslatedTitle": "Poker",
+        "FeatureImageUrl": null,
+        "ProductCategory": null,
+        "Screenshots": null,
+        "Provider": "",
+        "TrackingId": "APP_POKER_VENDOR",
+        "ImageUrl": "https://m.w88asia.com/_static/images/poker/bnr-poker-android.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_MENU_POKER",
+        "Content": null,
+        "Links": {
+          "download": "http://dlportal.good-game-network.com/mobile/installer/android/W88",
+          "redirect": null,
+          "trynow": null,
+          "playnow": null,
+          "page": null
+        },
+        "Id": "poker"
+      },
+      {
+        "TranslatedTitle": "Super Bull",
+        "FeatureImageUrl": null,
+        "ProductCategory": "Games",
+        "Screenshots": null,
+        "Provider": "Games",
+        "TrackingId": "P2P_NIUNIU_GPI",
+        "ImageUrl": "https://m.w88asia.com/_Static/Images/superbull/mobilesite-thumbnail-SuperBull-Android.jpg",
+        "LinksCount": 1,
+        "Title": "LABEL_MENU_SUPERBULL",
+        "Content": null,
+        "Links": {
+          "download": "https://tm.gp2play.com/mobileNiuniu/android/install_en.html",
+          "redirect": null,
+          "trynow": null,
+          "playnow": null,
+          "page": null
+        },
+        "Id": "niuniu"
+      }
+    ]
+  }
+]
