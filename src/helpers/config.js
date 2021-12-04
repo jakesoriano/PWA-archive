@@ -1,7 +1,4 @@
-import {
-  replaceUrlPlaceholders,
-  urlAnalytics
-} from '_helpers';
+import { urlAnalytics } from '_helpers';
 import { store } from '_unistore';
 import { getCurrencyCode } from './language';
 

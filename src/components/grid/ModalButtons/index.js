@@ -1,5 +1,4 @@
-import { h, Component } from 'preact';
-import { route } from 'preact-router';
+import { Component } from 'preact';
 import { connect } from 'unistore/preact';
 import {
   messageModal,
@@ -12,7 +11,7 @@ import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class ModalButtons extends Component {
-	render = ({ page, liveChatLink }) => {
+	render = () => {
 	  return (
 	    <div className={`${style.modalButtons}`}>
 	      {/* Message */}
