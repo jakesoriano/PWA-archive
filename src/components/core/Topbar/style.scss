@@ -10,18 +10,13 @@
 	.container {
 		width: 100%;
 		position: relative;
-		.logo {
-			min-height: 25px;
+		.title {
+			margin: 0;
+			padding: 14.5px 60px;
+			font-size: 1.2rem;
 			display: flex;
-			justify-content: center;
 			align-items: center;
-			padding: 15px;
-			img {
-				width: auto;
-				margin: 0 auto;
-				display: block;
-				height: 26px;
-			}
+			height: 56px;
 		}
 		.burger,
 		.notif {
@@ -47,11 +42,6 @@
 				display: block;
 				margin: 0 15px;
 			}
-		}
-		[class^='icon-'],
-		[class*=' icon-'] {
-			font-size: 1.813rem;
-			color: #2a8fbd;
 		}
 	}
 }

@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
-import { getLogo } from '_helpers';
+import { getTranslation } from '_helpers';
 import { ImageLoader } from '_components/core';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -21,9 +21,9 @@ class Topbar extends Component {
 	        >
 						<ImageLoader style={{container: style.burgerImg}} src={`assets/images/icon_invite_default.png`} />
 	        </button>
-	        <div id="topbar_logo" className={style.logo}>
-	          <img alt="logo" src={getLogo()} />
-	        </div>
+	        <h1 id="topbar_title" className={style.title}>
+	          {props.title ? getTranslation(props.title) : ''}
+	        </h1>
 					<Link class={style.notif} activeClassName={style.active} href="/notification">
 						<ImageLoader style={{container: style.notifImg}} src={`assets/images/icon_invite_default.png`} />
 					</Link>
