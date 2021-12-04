@@ -43,24 +43,21 @@ export default class App extends Component {
 	renderStyle = () => {
 	  return `
 			@font-face {
-				font-family: 'dinpro';
-				src: url('assets/fonts/din-regular-webfont.woff?${process.env.BUILD_NO}') format('woff');
+				font-family: 'OpenSans-Bold';
+				src: url('assets/fonts/OpenSans-Bold.ttf?${process.env.BUILD_NO}') format('woff');
 				font-weight: normal;
 				font-style: normal;
 				font-stretch: normal;
 				font-display: swap;
 			}
-			
 			@font-face {
-				font-family: 'icomoon';
-				src: url('assets/fonts/icomoon.ttf?${process.env.BUILD_NO}') format('truetype'),
-					url('assets/fonts/icomoon.woff?${process.env.BUILD_NO}') format('woff'),
-					url('assets/fonts/icomoon.svg?${process.env.BUILD_NO}#icomoon') format('svg');
+				font-family: 'OpenSans-Regular';
+				src: url('assets/fonts/OpenSans-Regular.ttf?${process.env.BUILD_NO}') format('woff');
 				font-weight: normal;
 				font-style: normal;
-				font-display: block;
+				font-stretch: normal;
+				font-display: swap;
 			}
-		
 		`;
 	};
 

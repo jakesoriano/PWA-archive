@@ -1,5 +1,5 @@
 .topbar {
-	background-color: #1f2021;
+	background-color: #ffb1bb;
 	padding: 0px;
 	position: fixed;
 	width: 100%;
@@ -23,20 +23,29 @@
 				height: 26px;
 			}
 		}
-		.user {
+		.burger,
+		.notif {
 			display: block;
 			text-decoration: none;
 			outline: none;
 			position: absolute;
-			right: 0;
+			left: 0;
 			top: 50%;
 			margin: 0;
 			padding: 0;
 			transform: translateY(-50%);
 			border: none;
 			background-color: inherit;
-			span {
+			&.notif {
+				right: 0;
+				left: auto;
+			}
+			.burgerImg,
+			.notifImg {
+				width: 40px;
+				padding-bottom: 40px;
 				display: block;
+				margin: 0 15px;
 			}
 		}
 		[class^='icon-'],

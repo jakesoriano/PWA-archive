@@ -68,6 +68,19 @@
 	},	
 	{
 		"styles": [],
+		"pageTitle": "PAGE_NOTIFICATION",
+		"uri": "notification",
+		"contents": [
+			{
+				"component": "PageTitle",
+				"props": {
+					"title": "Notification"
+				}
+			}
+		]
+	},	
+	{
+		"styles": [],
 		"pageTitle": "Buttons",
 		"uri": "buttons",
 		"contents": [
