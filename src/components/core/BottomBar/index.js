@@ -8,40 +8,40 @@ export default ({ page }) => (
   <div className={style.bottomBar}>
     <Link class={style.menu} activeClassName={style.active} href="/">
       <ImageLoader
-        src={`assets/images/icon_home_${
-          page === 'home' ? 'active' : 'default'
+        src={`assets/images/home_icon_${
+          page === 'home' ? 'active' : 'inactive'
         }.png`}
         style={{ container: style.imgCont }}
       />
     </Link>
     <Link class={style.menu} activeClassName={style.active} href="/invite">
       <ImageLoader
-        src={`assets/images/icon_invite_${
-          page === 'invite' ? 'active' : 'default'
+        src={`assets/images/invite_icon_${
+          page === 'invite' ? 'active' : 'inactive'
         }.png`}
         style={{ container: style.imgCont }}
       />
     </Link>
     <Link class={style.menu} activeClassName={style.active} href="/leaderboard">
       <ImageLoader
-        src={`assets/images/icon_home_${
-          page === 'leaderboard' ? 'active' : 'default'
+        src={`assets/images/members_icon_${
+          page === 'leaderboard' ? 'active' : 'inactive'
         }.png`}
         style={{ container: style.imgCont }}
       />
     </Link>
     <Link class={style.menu} activeClassName={style.active} href="/community">
       <ImageLoader
-        src={`assets/images/icon_donate_${
-          page === 'community' ? 'active' : 'default'
+        src={`assets/images/donate_icon_${
+          page === 'community' ? 'active' : 'inactive'
         }.png`}
         style={{ container: style.imgCont }}
       />
     </Link>
     <Link class={style.menu} activeClassName={style.active} href="/profile">
       <ImageLoader
-        src={`assets/images/icon_profile_${
-          page === 'profile' ? 'active' : 'default'
+        src={`assets/images/myaccount_icon_${
+          page === 'profile' ? 'active' : 'inactive'
         }.png`}
         style={{ container: style.imgCont }}
       />

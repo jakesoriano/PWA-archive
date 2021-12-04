@@ -25,6 +25,7 @@
 	},
 	{
 		"styles": [],
+		"auth": true,
 		"pageTitle": "PAGE_INVITE",
 		"uri": "invite",
 		"contents": [
