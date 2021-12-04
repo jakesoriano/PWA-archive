@@ -102,5 +102,18 @@
 				"component": "ModalButtons"
 			}
 		]
+	},	
+	{
+		"styles": [],
+		"pageTitle": "Terms",
+		"uri": "terms",
+		"contents": [
+			{
+				"component": "TermsConditions",
+				"props": {
+					"title": "Terms and Conditions"
+				}
+			}
+		]
 	}
 ]

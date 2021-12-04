@@ -1,9 +1,5 @@
 import { updateStore, store } from '_unistore';
-import { xhr,
-  urlUserData,
-  removeCookie,
-  urlUserPoints
-} from '_helpers';
+import { xhr, urlUserData, removeCookie, urlUserPoints } from '_helpers';
 
 export function logOut (callback) {
   removeCookie('token');
@@ -26,7 +22,7 @@ export function fetchUserData (token) {
           authUser: res
         });
         // eslint-disable-next-line
-        console.log(`SPA >> fetchUserData successful`, res);
+				console.log(`SPA >> fetchUserData successful`, res);
         resolve(true);
       })
       .catch((err) => {
@@ -50,7 +46,7 @@ export function fetchUserPoints () {
           }
         });
         // eslint-disable-next-line
-        console.log(`SPA >> fetchUserPoints successful`, res);
+				console.log(`SPA >> fetchUserPoints successful`, res);
         resolve(true);
       })
       .catch((err) => {
@@ -59,5 +55,4 @@ export function fetchUserPoints () {
         resolve(false);
       });
   });
-  
 }

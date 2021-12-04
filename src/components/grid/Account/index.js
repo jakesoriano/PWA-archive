@@ -6,17 +6,13 @@ import { getTranslation } from '_helpers';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Account extends Component {
-	constructor (props) {
-		super(props);
-	}
-
-	componentDidMount = (props) => {
-		const { authUser } = this.props;
-		if (!authUser) {
-			fetchUserData();
-		} else if (authUser) {
-			fetchUserPoints();
-		}
+	componentDidMount = () => {
+	  const { authUser } = this.props;
+	  if (!authUser) {
+	    fetchUserData();
+	  } else if (authUser) {
+	    fetchUserPoints();
+	  }
 	};
 
 	render = ({ authUser }) => {
@@ -25,17 +21,29 @@ class Account extends Component {
 	  }
 
 	  return (
-			<div className="account-wrap">
-				<div className="account">
-					<h1>{authUser.fname} {authUser.lname}</h1>
-					<p>{authUser.members} {getTranslation('MEMBERS')}</p>
-					<p>{authUser.points} {getTranslation('HERO_POINTS')}</p>
-				</div>
-				<div className="invite">
-					<button>Invite a Member</button>
-				</div>
-			</div>
-		);
+	    <div className="account-wrap">
+	      <div className="account">
+	        <h1>
+	          {authUser.fname}
+	          {' '}
+	          {authUser.lname}
+	        </h1>
+	        <p>
+	          {authUser.members}
+	          {' '}
+	          {getTranslation('MEMBERS')}
+	        </p>
+	        <p>
+	          {authUser.points}
+	          {' '}
+	          {getTranslation('HERO_POINTS')}
+	        </p>
+	      </div>
+	      <div className="invite">
+	        <button type="button">Invite a Member</button>
+	      </div>
+	    </div>
+	  );
 	};
 }
 export default connect(['authUser'])(Account);
