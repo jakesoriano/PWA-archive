@@ -65,5 +65,15 @@
 				}
 			}
 		]
+	},	
+	{
+		"styles": [],
+		"pageTitle": "Buttons",
+		"uri": "buttons",
+		"contents": [
+			{
+				"component": "ModalButtons"
+			}
+		]
 	}
 ]

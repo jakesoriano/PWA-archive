@@ -5,7 +5,6 @@ import {
   messageModal,
   promptModal,
   componentModal,
-  livechatEnabled,
   displayPageLoader
 } from '_helpers';
 // eslint-disable-next-line import/extensions
@@ -57,15 +56,6 @@ class ModalButtons extends Component {
 	        type="button"
 	      >
 					Show Component Modal
-	      </button>
-	      {/* Component */}
-	      <button
-	        onClick={() => {
-	          route(`/${page}/language`, true);
-	        }}
-	        type="button"
-	      >
-					Show Language Popup Page
 	      </button>
 	      {/* Page Loader */}
 	      <button
