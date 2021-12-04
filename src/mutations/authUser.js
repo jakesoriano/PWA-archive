@@ -1,8 +1,12 @@
-import { updateStore } from '_unistore';
-import { xhr, urlUserData, removeCookie } from '_helpers';
+import { updateStore, store } from '_unistore';
+import { xhr,
+  urlUserData,
+  removeCookie,
+  urlUserPoints
+} from '_helpers';
 
 export function logOut (callback) {
-  removeCookie('s');
+  removeCookie('token');
   updateStore({
     authUser: null
   });
@@ -18,22 +22,12 @@ export function fetchUserData (token) {
       token
     })
       .then((res) => {
-        if (res.ResponseCode > 0) {
-          updateStore({
-            authUser: res.ResponseData
-          });
-          // eslint-disable-next-line
-					console.log(`SPA >> fetchUserData successful`, res);
-          resolve(true);
-        } else {
-          // eslint-disable-next-line
-					console.log(
-            'SPA >> fetchUserData >> Success but returned with errors',
-            res
-          );
-          logOut();
-          resolve(false);
-        }
+        updateStore({
+          authUser: res
+        });
+        // eslint-disable-next-line
+        console.log(`SPA >> fetchUserData successful`, res);
+        resolve(true);
       })
       .catch((err) => {
         // eslint-disable-next-line
@@ -41,4 +35,29 @@ export function fetchUserData (token) {
         resolve(false);
       });
   });
+}
+
+export function fetchUserPoints () {
+  return new Promise((resolve) => {
+    xhr(urlUserPoints)
+      .then((res) => {
+        // get current data
+        const { authUser } = store.getState();
+        updateStore({
+          authUser: {
+            ...authUser,
+            ...res
+          }
+        });
+        // eslint-disable-next-line
+        console.log(`SPA >> fetchUserPoints successful`, res);
+        resolve(true);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line
+				console.log(`SPA >> fetchUserPoints Error`, err);
+        resolve(false);
+      });
+  });
+  
 }

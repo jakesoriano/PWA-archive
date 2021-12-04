@@ -6,7 +6,6 @@ import {
   promptModal,
   componentModal,
   livechatEnabled,
-  livechatClick,
   displayPageLoader
 } from '_helpers';
 // eslint-disable-next-line import/extensions
@@ -67,22 +66,6 @@ class ModalButtons extends Component {
 	        type="button"
 	      >
 					Show Language Popup Page
-	      </button>
-	      {/* LiveChat */}
-	      <button
-	        onClick={() => {
-	          if (livechatEnabled(liveChatLink)) {
-	            livechatClick(liveChatLink);
-	          } else {
-	            window.location = liveChatLink.replace(
-	              /{page_referrer}/gim,
-	              window.encodeURIComponent(window.location.href)
-	            );
-	          }
-	        }}
-	        type="button"
-	      >
-					Live Chat Link
 	      </button>
 	      {/* Page Loader */}
 	      <button

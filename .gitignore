@@ -8,4 +8,4 @@ package-lock.json
 TODO
 .DS_Store
 .env
-jobs/config/*.json
+jobs/config/*.json-bak

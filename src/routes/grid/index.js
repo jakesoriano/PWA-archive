@@ -11,11 +11,9 @@ import {
   getLanguageAlias,
   getQueryStringValue,
   getCookie,
-  // livechatLog,
   messageModal,
   getTranslation,
-  setCookie,
-  logCustomEvent
+  setCookie
 } from '_helpers';
 import { fetchTranslation, fetchUserData } from '_mutations';
 import {
@@ -26,7 +24,6 @@ import {
   BottomBar,
   Topbar,
   PopupPage,
-  PopupModule,
   SideBar,
   BackToTop
 } from '_components/core';
@@ -142,7 +139,7 @@ class Grid extends Component {
 	  // eslint-disable-next-line consistent-return
 	    .then((shouldReFetch) => {
 	      // FETCH USER DATA
-	      const token = getQueryStringValue('token') || getCookie('s');
+	      const token = getQueryStringValue('token') || getCookie('token');
 	      if (token && (!authUser || (authUser && authUser.Token !== token))) {
 	        return new Promise((resolve) => {
 	          fetchUserData(token).then((res) => {
@@ -178,18 +175,14 @@ class Grid extends Component {
 	    .then(() => {
 	      // dashboard is now ready
 	      nativeDashboardReady();
-	      // init livechat
-	      // livechatLog(langAlias || selectedLanguage, authUser);
 	      // Save Prev and Last/Current Page to Cookie
 	      setCookie(`${process.env.PREFIX}PrevPage`, '');
 	      setCookie(`${process.env.PREFIX}LastPage`, url);
-	      // logCustomEvent
+	      // device id
 	      nativeGetDeviceId((id) => {
 	        updateStore({
 	          deviceId: id
 	        });
-	        // log custom event
-	        logCustomEvent({ eventName: 'onLoad' });
 	      });
 	    });
 	};
@@ -227,10 +220,6 @@ class Grid extends Component {
 	    // Save Prev and Last/Current Page to Cookie
 	    setCookie(`${process.env.PREFIX}PrevPage`, prevProps.url);
 	    setCookie(`${process.env.PREFIX}LastPage`, url);
-	    // logCustomEvent
-	    logCustomEvent({
-	      eventName: 'pageTrack'
-	    });
 	  }
 
 	  this.setPageData();
@@ -335,7 +324,6 @@ class Grid extends Component {
 	        <div className={style.footer}>{process.env.BUILD_NO}</div>
 	      </div>
 	      {/* Modals */}
-	      <PopupModule page={this.getPageName()} />
 	      {messageModal && this.renderMessageModal()}
 	      {promptModal && this.renderPromptModal()}
 	      {componentModal && this.renderComponentModal()}

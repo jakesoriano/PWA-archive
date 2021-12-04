@@ -9,7 +9,5 @@ export * from './grid';
 export * from './cookie';
 export * from './language';
 export * from './device';
-export * from './livechat';
-export * from './analytics';
 export * from './config';
 export * from './loader';

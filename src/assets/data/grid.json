@@ -1,131 +1,68 @@
 [
 	{
-		"id": 1,
 		"styles": [
 			{
 				"selector": "#page-widgets .widget",
 				"styles": "overflow-x: auto;"
 			}
 		],
-		"pageTitle": "Home",
+		"pageTitle": "PAGE_HOME",
 		"uri": "home",
 		"contents": [
 			{
-				"component": "Dashboard"
+				"component": "Account"
 			}
 		]
 	},
 	{
-		"id": 2,
 		"styles": [],
-		"pageTitle": "Games",
-		"uri": "games",
+		"pageTitle": "PAGE_INVITE",
+		"uri": "invite",
 		"contents": [
 			{
-				"component": "Games",
+				"component": "PageTitle",
 				"props": {
-					"title": "Games",
-					"moreLink": "/products/games"
-				}
-			},
-			{
-				"component": "Games",
-				"props": {
-					"title": "Lottery",
-					"moreLink": "/products/lottery"
-				}
-			},
-			{
-				"component": "Games",
-				"props": {
-					"title": "Lottery",
-					"moreLink": "/products/lottery"
-				}
-			},
-			{
-				"component": "Games",
-				"props": {
-					"title": "Lottery",
-					"moreLink": "/products/lottery"
-				}
-			},
-			{
-				"component": "Games",
-				"props": {
-					"title": "Lottery",
-					"moreLink": "/products/lottery"
-				}
-			},
-			{
-				"component": "Games",
-				"props": {
-					"title": "Lottery",
-					"moreLink": "/products/lottery"
-				}
-			},
-			{
-				"component": "Games",
-				"props": {
-					"title": "Lottery",
-					"moreLink": "/products/lottery"
-				}
-			},
-			{
-				"component": "Games",
-				"props": {
-					"title": "Lottery",
-					"moreLink": "/products/lottery"
-				}
-			},
-			{
-				"component": "Games",
-				"props": {
-					"title": "Lottery",
-					"moreLink": "/products/lottery"
-				}
-			},
-			{
-				"component": "Games",
-				"props": {
-					"title": "Lottery",
-					"moreLink": "/products/lottery"
-				}
-			},
-			{
-				"component": "Games",
-				"props": {
-					"title": "Lottery",
-					"moreLink": "/products/lottery"
-				}
-			},
-			{
-				"component": "Games",
-				"props": {
-					"title": "Lottery",
-					"moreLink": "/products/lottery"
+					"title": "Invite"
 				}
 			}
 		]
 	},
 	{
-		"id": 2,
 		"styles": [],
-		"pageTitle": "Buttons",
-		"uri": "buttons",
+		"pageTitle": "PAGE_LEADERBOARD",
+		"uri": "leaderboard",
 		"contents": [
 			{
-				"component": "ModalButtons"
+				"component": "PageTitle",
+				"props": {
+					"title": "LeaderBoard"
+				}
 			}
 		]
 	},
 	{
-		"id": 4,
 		"styles": [],
-		"pageTitle": "Label_SelectLanguage",
-		"uri": "language",
+		"pageTitle": "PAGE_COMMUNITY",
+		"uri": "community",
 		"contents": [
 			{
-				"component": "LanguageSelect"
+				"component": "PageTitle",
+				"props": {
+					"title": "Community"
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"pageTitle": "PAGE_PROFILE",
+		"uri": "profile",
+		"contents": [
+			{
+				"component": "PageTitle",
+				"props": {
+					"title": "Profile"
+				}
 			}
 		]
 	}

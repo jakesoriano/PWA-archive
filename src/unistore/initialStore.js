@@ -12,27 +12,6 @@ export const initialStore = {
     result: false,
     data: []
   },
-  liveChatLink: null,
-  dashboard: {
-    fetching: false,
-    result: false,
-    data: []
-  },
-  games: {
-    fetching: false,
-    result: false,
-    data: []
-  },
-  lottery: {
-    fetching: false,
-    result: false,
-    data: []
-  },
-  popupModule: {
-    fetching: false,
-    result: false,
-    data: []
-  },
   // user
   authUser: null,
   // modals

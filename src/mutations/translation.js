@@ -18,7 +18,7 @@ export function fetchTranslation () {
     .then((res) => {
       updateStore({
         translation: {
-          data: res.ResponseData,
+          data: res,
           fetching: false,
           result: true
         }

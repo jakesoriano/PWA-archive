@@ -7,62 +7,6 @@ export const supportedLanguages = [
     langAlias: 'en',
     currencyCode: 'USD',
     flag: '{API_DOMAIN}_static/images/flags/en.jpg'
-  },
-  {
-    Name: '简体中文',
-    langCode: 'zh-cn',
-    langAlias: 'cn',
-    currencyCode: 'RMB',
-    flag: '{API_DOMAIN}_static/images/flags/cn.jpg'
-  },
-  {
-    Name: 'Bhs Indonesia',
-    langCode: 'id-id',
-    langAlias: 'id',
-    currencyCode: 'IDR',
-    flag: '{API_DOMAIN}_static/images/flags/id.jpg'
-  },
-  {
-    Name: 'India',
-    langCode: 'en-in',
-    langAlias: 'in',
-    currencyCode: 'INR',
-    flag: '{API_DOMAIN}_static/images/flags/in.jpg'
-  },
-  {
-    Name: 'ខ្មែរ',
-    langCode: 'km-kh',
-    langAlias: 'kh',
-    currencyCode: 'MYR',
-    flag: '{API_DOMAIN}_static/images/flags/kh.jpg'
-  },
-  {
-    Name: '한국어',
-    langCode: 'ko-kr',
-    langAlias: 'kr',
-    currencyCode: 'KRW',
-    flag: '{API_DOMAIN}_static/images/flags/kr.jpg'
-  },
-  {
-    Name: 'ไทย',
-    langCode: 'th-th',
-    langAlias: 'th',
-    currencyCode: 'THB',
-    flag: '{API_DOMAIN}_static/images/flags/th.jpg'
-  },
-  {
-    Name: 'Tiếng Việt',
-    langCode: 'vi-vn',
-    langAlias: 'vn',
-    currencyCode: 'VND',
-    flag: '{API_DOMAIN}_static/images/flags/vn.jpg'
-  },
-  {
-    Name: 'English',
-    langCode: 'en-au',
-    langAlias: 'au',
-    currencyCode: 'AUD',
-    flag: '{API_DOMAIN}_static/images/flags/au.png'
   }
 ];
 

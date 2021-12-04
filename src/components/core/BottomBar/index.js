@@ -1,30 +1,31 @@
 import { h } from 'preact';
 import { Link } from 'preact-router/match';
-import { getTranslation } from '_helpers';
+import { ImageLoader } from '_components/core';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
 export default ({ page }) => (
   <div className={style.bottomBar}>
     <Link class={style.menu} activeClassName={style.active} href="/">
-      <span className="icon-rewards-home" />
-      <span className="text">{getTranslation('LABEL_MENU_HOME')}</span>
+      <ImageLoader
+        src={`assets/images/icon_home_${page === 'home' ? 'active' : 'default'}.png`}
+        style={{container: style.imgCont}} />
     </Link>
-    <Link class={style.menu} activeClassName={style.active} href="/games">
-      <span className="icon-shopping-bag" />
-      <span className="text">{getTranslation('Label_Catalogue')}</span>
+    <Link class={style.menu} activeClassName={style.active} href="/invite">
+      <ImageLoader src={`assets/images/icon_invite_${page === 'invite' ? 'active' : 'default'}.png`}
+        style={{container: style.imgCont}} />
     </Link>
-    <Link class={style.menu} activeClassName={style.active} href="/buttons">
-      <span className="icon-live-chat" />
-      <span className="text">{getTranslation('LABEL_MENU_LIVE_CASINO')}</span>
+    <Link class={style.menu} activeClassName={style.active} href="/leaderboard">
+      <ImageLoader src={`assets/images/icon_home_${page === 'leaderboard' ? 'active' : 'default'}.png`}
+        style={{container: style.imgCont}} />
     </Link>
-    <Link
-      class={style.menu}
-      activeClassName={style.active}
-      href={`/${page}/buttons`}
-    >
-      <span className="icon-spin-wheel" />
-      <span className="text">{getTranslation('SpinWheel_WheelLabel')}</span>
+    <Link class={style.menu} activeClassName={style.active} href="/community">
+      <ImageLoader src={`assets/images/icon_donate_${page === 'community' ? 'active' : 'default'}.png`}
+        style={{container: style.imgCont}} />
+    </Link>
+    <Link class={style.menu} activeClassName={style.active} href="/profile">
+      <ImageLoader src={`assets/images/icon_profile_${page === 'profile' ? 'active' : 'default'}.png`}
+        style={{container: style.imgCont}} />
     </Link>
   </div>
 );

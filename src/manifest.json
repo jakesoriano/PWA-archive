@@ -2,11 +2,11 @@
   "theme_color": "#023144",
   "background_color": "#023144",
   "display": "standalone",
-  "scope": "/pwa_statics/boilerplate/web/",
-  "start_url": "/pwa_statics/boilerplate/web/",
-	"name": "W88",
-	"short_name": "W88",
-  "description": "W88",
+  "scope": "/web/",
+  "start_url": "/web/",
+	"name": "Kakampink",
+	"short_name": "Kakampink",
+  "description": "Kakampink",
   "icons": [
 		{
 			"src": "assets/icons/icon-192x192.png?v=1",

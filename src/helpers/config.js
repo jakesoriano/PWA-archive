@@ -1,7 +1,5 @@
 import {
   replaceUrlPlaceholders,
-  assetDomainCDN,
-  assetDomainPWA,
   urlAnalytics
 } from '_helpers';
 import { store } from '_unistore';
@@ -28,28 +26,9 @@ export function getAssetDomainCDN (lang) {
   }
 }
 
-// eslint-disable-next-line import/prefer-default-export
-export function getAssetDomainPWA (lang) {
-  try {
-    const { selectedLanguage } = store.getState();
-    const langAlias = lang || selectedLanguage;
-
-    if (assetDomainPWA) {
-      if (assetDomainPWA[langAlias]) {
-        return assetDomainPWA[langAlias];
-      }
-      return assetDomainPWA.default;
-    }
-    return null;
-  } catch (error) {
-    console.log(`SPA >> getAssetDomainPWA error: ${error.message}`);
-    return null;
-  }
-}
-
 export function getLogo () {
   return replaceUrlPlaceholders(
-    '{ASSET_DOMAIN_CDN}images/logo-{langAlias}.png'
+    'assets/images//static_article.png'
   );
 }
 

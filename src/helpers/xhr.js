@@ -1,5 +1,5 @@
 import { store } from '_unistore';
-import { getLanguageInfo, platform, logCustomEvent } from '_helpers';
+import { getLanguageInfo, platform } from '_helpers';
 import XHRWorker from '_workers/XHRWorker';
 import { getCurrencyCode } from './language';
 
@@ -27,10 +27,6 @@ export function xhr (url, options, externalAPI) {
       if ('result' in ev.data) {
         resolve(ev.data.result);
       } else if ('error' in ev.data) {
-        logCustomEvent({
-          eventName: 'API Error',
-          ...ev.data
-        });
         reject(ev.data);
       }
       // reset worker

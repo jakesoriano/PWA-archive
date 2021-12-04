@@ -1,5 +1,4 @@
 import { store } from '_unistore';
-import { getAssetDomainCDN, getAssetDomainPWA } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
 export function replaceUrlPlaceholders (url) {
@@ -19,9 +18,6 @@ export function replaceUrlPlaceholders (url) {
         .replace(/{API_DOMAIN}/gim, process.env.API_DOMAIN)
         .replace(/{PUBLIC_PATH}/gim, process.env.PUBLIC_PATH)
         .replace(/{TARGET}/gim, process.env.PLATFORM)
-        .replace(/{ASSET_DOMAIN_CDN}/gim, getAssetDomainCDN(selectedLanguage))
-        .replace(/{ASSET_DOMAIN_PWA}/gim, getAssetDomainPWA(selectedLanguage))
-        .replace(/{ASSET_DOMAIN}/gim, getAssetDomainPWA(selectedLanguage))
         .replace(/{DOMAIN}/gim, domain);
       // eslint-disable-next-line
 			console.log(
