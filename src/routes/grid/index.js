@@ -134,7 +134,7 @@ class Grid extends Component {
 	    .then((shouldReFetch) => {
 	      const buildCookie = getCookie(`${process.env.PREFIX}_build`);
 	      setCookie(`${process.env.PREFIX}_build`, process.env.BUILD_NO);
-	      return buildCookie !== process.env.BUILD_NO || shouldReFetch;
+	      return buildCookie !== process.env.BUILD_NO || shouldReFetch || (process.env.ENVIRONMENT === 'LOCAL');
 	    })
 	  // eslint-disable-next-line consistent-return
 	    .then((shouldReFetch) => {
