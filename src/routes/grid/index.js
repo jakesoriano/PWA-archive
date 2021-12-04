@@ -276,7 +276,7 @@ class Grid extends Component {
 	};
 
 	render = (
-	  { translation, messageModal, promptModal, componentModal, pageLoader },
+	  { authUser, translation, messageModal, promptModal, componentModal, pageLoader },
 	  { data, popup, rightSideBar }
 	) => {
 	  if (!data || !translation.data) {
@@ -290,18 +290,18 @@ class Grid extends Component {
 	      <div className={style.mainContent}>
 	        {/* Content Wrap */}
 	        <div className={style.contentWrap}>
-	          <Topbar
+	          {authUser && <Topbar
 	            page={this.getPageName()}
 	            toggleSideBar={this.toggleRightSideBar}
-	          />
+	          />}
 	          <div
-	            className={`${style.grid} ${rightSideBar ? style.pageOpac : ''}`}
+	            className={`${style.grid} ${rightSideBar ? style.pageOpac : ''} ${!authUser ? style.noUser : ''}`}
 	            id={`page-${this.getPageName()}`}
 	            type="grid_content"
 	          >
 	            {renderGrid(this.getPageName(), this.getPageName(), data)}
 	          </div>
-	          <BottomBar page={this.getPageName()} />
+	          {authUser && <BottomBar page={this.getPageName()} />}
 	        </div>
 	        {/* Popup Page */}
 	        {popup && (

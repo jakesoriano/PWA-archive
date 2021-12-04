@@ -6,8 +6,26 @@
 				"styles": "overflow-x: auto;"
 			}
 		],
-		"pageTitle": "PAGE_HOME",
+		"pageTitle": "PAGE_LANDING",
 		"uri": "home",
+		"contents": [
+			{
+				"component": "PageTitle",
+				"props": {
+					"title": "Landing"
+				}
+			}
+		]
+	},
+	{
+		"styles": [
+			{
+				"selector": "#page-widgets .widget",
+				"styles": "overflow-x: auto;"
+			}
+		],
+		"pageTitle": "PAGE_DASHBOARD",
+		"uri": "dashboard",
 		"contents": [
 			{
 				"component": "Account"
