@@ -1,11 +1,6 @@
 [
 	{
-		"styles": [
-			{
-				"selector": "#page-widgets .widget",
-				"styles": "overflow-x: auto;"
-			}
-		],
+		"styles": [],
 		"pageTitle": "PAGE_LANDING",
 		"uri": "home",
 		"contents": [
@@ -18,12 +13,8 @@
 		]
 	},
 	{
-		"styles": [
-			{
-				"selector": "#page-widgets .widget",
-				"styles": "overflow-x: auto;"
-			}
-		],
+		"styles": [],
+		"auth": true,
 		"pageTitle": "PAGE_DASHBOARD",
 		"uri": "dashboard",
 		"contents": [
@@ -47,6 +38,7 @@
 	},
 	{
 		"styles": [],
+		"auth": true,
 		"pageTitle": "PAGE_LEADERBOARD",
 		"uri": "leaderboard",
 		"contents": [
@@ -60,6 +52,7 @@
 	},
 	{
 		"styles": [],
+		"auth": true,
 		"pageTitle": "PAGE_COMMUNITY",
 		"uri": "community",
 		"contents": [
@@ -73,6 +66,7 @@
 	},
 	{
 		"styles": [],
+		"auth": true,
 		"pageTitle": "PAGE_PROFILE",
 		"uri": "profile",
 		"contents": [
@@ -86,6 +80,7 @@
 	},	
 	{
 		"styles": [],
+		"auth": true,
 		"pageTitle": "PAGE_NOTIFICATION",
 		"uri": "notification",
 		"contents": [
@@ -99,6 +94,7 @@
 	},	
 	{
 		"styles": [],
+		"auth": true,
 		"pageTitle": "Buttons",
 		"uri": "buttons",
 		"contents": [

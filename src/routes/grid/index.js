@@ -276,12 +276,12 @@ class Grid extends Component {
 	};
 
 	render = (
-	  { authUser, translation, messageModal, promptModal, componentModal, pageLoader },
+	  { translation, messageModal, promptModal, componentModal, pageLoader },
 	  { data, popup, rightSideBar }
 	) => {
 	  if (!data || !translation.data) {
 	    return <LoaderRing fullpage />;
-	  }
+	  }console.error(data);
 
 	  return (
 	  // eslint-disable-next-line react/jsx-fragments
@@ -290,18 +290,18 @@ class Grid extends Component {
 	      <div className={style.mainContent}>
 	        {/* Content Wrap */}
 	        <div className={style.contentWrap}>
-	          {authUser && <Topbar
+	          {data && data.auth && <Topbar
 	            page={this.getPageName()}
 	            toggleSideBar={this.toggleRightSideBar}
 	          />}
 	          <div
-	            className={`${style.grid} ${rightSideBar ? style.pageOpac : ''} ${!authUser ? style.noUser : ''}`}
+	            className={`${style.grid} ${rightSideBar ? style.pageOpac : ''} ${data && data.auth ? '' : style.noUser}`}
 	            id={`page-${this.getPageName()}`}
 	            type="grid_content"
 	          >
 	            {renderGrid(this.getPageName(), this.getPageName(), data)}
 	          </div>
-	          {authUser && <BottomBar page={this.getPageName()} />}
+	          {data && data.auth && <BottomBar page={this.getPageName()} />}
 	        </div>
 	        {/* Popup Page */}
 	        {popup && (
