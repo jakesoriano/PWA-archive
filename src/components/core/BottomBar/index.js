@@ -32,7 +32,7 @@ export default ({ page }) => (
     </Link>
     <Link class={style.menu} activeClassName={style.active} href="/community">
       <ImageLoader
-        src={`assets/images/donate_icon_${
+        src={`assets/images/community_icon_${
           page === 'community' ? 'active' : 'inactive'
         }.png`}
         style={{ container: style.imgCont }}
