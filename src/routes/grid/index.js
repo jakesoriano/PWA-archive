@@ -290,12 +290,16 @@ class Grid extends Component {
 	      <div className={style.mainContent}>
 	        {/* Content Wrap */}
 	        <div className={style.contentWrap}>
-	          {data && data.auth && <Topbar
-	            page={this.getPageName()}
-	            toggleSideBar={this.toggleRightSideBar}
-	          />}
+	          {data && data.auth && (
+	            <Topbar
+	              page={this.getPageName()}
+	              toggleSideBar={this.toggleRightSideBar}
+	            />
+	          )}
 	          <div
-	            className={`${style.grid} ${rightSideBar ? style.pageOpac : ''} ${data && data.auth ? '' : style.noUser}`}
+	            className={`${style.grid} ${rightSideBar ? style.pageOpac : ''} ${
+	              data && data.auth ? '' : style.noUser
+	            }`}
 	            id={`page-${this.getPageName()}`}
 	            type="grid_content"
 	          >

@@ -19,14 +19,24 @@ class Topbar extends Component {
 	          onClick={props.toggleSideBar}
 	          aria-label="Toggle Sidebar"
 	        >
-						<ImageLoader style={{container: style.burgerImg}} src={`assets/images/icon_invite_default.png`} />
+	          <ImageLoader
+	            style={{ container: style.burgerImg }}
+	            src="assets/images/icon_invite_default.png"
+	          />
 	        </button>
 	        <h1 id="topbar_title" className={style.title}>
 	          {props.title ? getTranslation(props.title) : ''}
 	        </h1>
-					<Link class={style.notif} activeClassName={style.active} href="/notification">
-						<ImageLoader style={{container: style.notifImg}} src={`assets/images/icon_invite_default.png`} />
-					</Link>
+	        <Link
+	          class={style.notif}
+	          activeClassName={style.active}
+	          href="/notification"
+	        >
+	          <ImageLoader
+	            style={{ container: style.notifImg }}
+	            src="assets/images/icon_invite_default.png"
+	          />
+	        </Link>
 	      </div>
 	    </header>
 	  );
