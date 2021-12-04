@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader } from '_components/core';
 import { fetchUserData, fetchUserPoints } from '_mutations';
-import { getTranslation } from '_helpers';
+import { getTranslation, formatNumber } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -39,7 +39,7 @@ class AccountProfile extends Component {
 							style={{container: style.share}} />
 					</div>
 	        <p className={style.heroPoints}>
-	          <span className={`extraBold ${style.points}`}>{authUser.points}</span>
+	          <span className={`extraBold ${style.points}`}>{formatNumber(authUser.points, 2)}</span>
 	          <span className={`bold ${style.textPoints}`}>{getTranslation('HERO_POINTS')}</span>
 	        </p>
 	      </div>

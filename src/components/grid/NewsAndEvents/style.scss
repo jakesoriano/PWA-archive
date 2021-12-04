@@ -1,0 +1,105 @@
+.newsAndEvents {
+  background: #fff;
+  margin: 0 10px 10px;
+  border-radius: 10px;
+  * {
+    color: #737373;
+  }
+  .tabWrap {
+    display: flex;
+    width: 100%;
+    background: #c1bbbb;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    span {
+      flex-grow: 1;
+      text-align: center;
+      color: #737373;
+      border-radius: 10px 10px 0 0;
+      padding: 10px;
+      &.activeTab {
+        color: #ffb5ba;
+        background: #fff;
+      }
+    }
+  }
+  .content {
+    border-radius: 10px;
+    overflow: hidden;
+    .noRecord {
+      text-align: center;
+      padding: 10px;
+    }
+    .contentItem {
+      display: grid;
+      padding: 10px;
+      border-bottom: 1px solid #f1ebeb;
+      .community {
+        display: flex;
+        margin-bottom: 10px;
+        align-items: center;
+        .comImage {
+          width: 30px;
+          padding-bottom: 30px;
+          border-radius: 15px;
+        }
+        span {
+          font-size: 0.6rem;
+          padding: 0 10px 0 5px;
+        }
+      }
+      .details {
+        display: flex;
+        .detailImage {
+          width: 90px;
+          flex-grow: 1;
+          margin-right: 5px;
+        }
+        .detailTitle {
+          font-size: 1rem;
+        }
+        .detailContent {
+          display: grid;
+          width: calc(100% - 95px);
+        }
+        .detailCount {
+          line-height: 0.4rem;
+          span {
+            font-size: 0.4rem;
+            &:nth-child(2) {
+              margin-left: 5px;
+              padding-left: 5px;
+              border-left: 1px solid #f1ebeb;
+            }
+          }
+        }
+      }
+      .buttons {
+        text-align: right;
+        a {
+          font-size: 0.6rem;
+          &:nth-child(2) {
+            margin-left: 10px;
+          }
+          &.buttonLikeActive,
+          &.buttonShareActive {
+          }
+        }
+      }
+    }
+    .eventItem {
+      .details {
+        .detailImage {
+          width: 40%;
+        }
+        .detailContent {
+          display: grid;
+          width: 60%;
+          p {
+            font-size: 0.7rem;
+          }
+        }
+      }
+    }
+  }
+}

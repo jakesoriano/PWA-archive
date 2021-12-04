@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "community": {
+      "image": "assets/images/avatar.jpeg",
+      "name": "Kabataan Community"
+    },
+    "image": "assets/images/tmp/news1.jpeg",
+    "title": "Fact Check: Comelec has not disqualified Reobredo from 2022 polls",
+    "likeCount": 100,
+    "liked": true,
+    "shareCount": 1300,
+    "shared": true
+  },
+  {
+    "id": 2,
+    "community": {
+      "image": "assets/images/avatar.jpeg",
+      "name": "Kabataan Community"
+    },
+    "image": "assets/images/tmp/news1.jpeg",
+    "title": "Fact Check: Comelec has not disqualified Reobredo from 2022 polls",
+    "likeCount": 0,
+    "liked": false,
+    "shareCount": 0,
+    "shared": false
+  }
+]

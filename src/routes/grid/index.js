@@ -160,7 +160,7 @@ class Grid extends Component {
 	        return new Promise((resolve) => {
 	          fetchTranslation().then(() => {
 	            // fetch data
-	            prefetch().then(() => {
+	            prefetch(Boolean(this.props.authUser)).then(() => {
 	              // set page data
 	              this.setPageData();
 	              resolve(true);
@@ -204,7 +204,7 @@ class Grid extends Component {
 	        popupSet: false
 	      });
 	      // fetch data
-	      prefetch();
+	      prefetch(Boolean(this.props.authUser));
 	      // set page data
 	      this.setPageData();
 	      // redirect to home page

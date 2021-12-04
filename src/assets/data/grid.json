@@ -20,6 +20,9 @@
 		"contents": [
 			{
 				"component": "AccountProfile"
+			},
+			{
+				"component": "NewsAndEvents"
 			}
 		]
 	},

@@ -9,5 +9,15 @@
 	"MEMBERS": "Members",
 	"HERO_POINTS": "Hero Points",
 	"EARN_100P": "Earn 100 pts",
-	"INVITE_MEMBER": "Invite Member"
+	"INVITE_MEMBER": "Invite Member",
+	"IWAS_FAKE_NEWS": "Iwas Fake news",
+	"EVENTS": "Events",
+	"NO_DATA": "No Record Found.",
+	"LIKE": "Like",
+	"SHARE": "Share",
+	"LIKES": "Likes",
+	"SHARES": "Shares",
+	"EVENT_BY": "Event By",
+	"ONLINE_EVENT": "Online Event",
+	"ONSITE_EVENT": "Onsite Event"
 }
