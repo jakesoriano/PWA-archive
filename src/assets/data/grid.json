@@ -109,14 +109,11 @@
 	},	
 	{
 		"styles": [],
-		"pageTitle": "Terms",
+		"pageTitle": "Terms and Conditions",
 		"uri": "terms",
 		"contents": [
 			{
-				"component": "TermsConditions",
-				"props": {
-					"title": "Terms and Conditions"
-				}
+				"component": "TermsConditions"
 			}
 		]
 	}
