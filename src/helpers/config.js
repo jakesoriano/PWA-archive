@@ -7,31 +7,6 @@ import { getCurrencyCode } from './language';
 
 const pwaConfig = process.env.CONFIG;
 
-// eslint-disable-next-line import/prefer-default-export
-export function getAssetDomainCDN (lang) {
-  try {
-    const { selectedLanguage } = store.getState();
-    const langAlias = lang || selectedLanguage;
-
-    if (assetDomainCDN) {
-      if (assetDomainCDN[langAlias]) {
-        return assetDomainCDN[langAlias];
-      }
-      return assetDomainCDN.default;
-    }
-    return null;
-  } catch (error) {
-    console.log(`SPA >> getAssetDomainCDN error: ${error.message}`);
-    return null;
-  }
-}
-
-export function getLogo () {
-  return replaceUrlPlaceholders(
-    'assets/images//static_article.png'
-  );
-}
-
 export function getConfigByKey (key, subKey) {
   try {
     return subKey ? pwaConfig[key][subKey] : pwaConfig[key];
