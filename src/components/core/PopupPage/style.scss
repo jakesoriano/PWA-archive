@@ -28,7 +28,7 @@
 		}
 		h3 {
 			display: inline-block;
-			font-size: 1.6rem;
+			font-size: 1.5rem;
 			max-width: 250px;
 			text-overflow: ellipsis;
 			overflow: hidden;
@@ -42,6 +42,8 @@
 	.body {
 		height: calc(100% - 51px);
 		overflow-y: scroll;
-		color: $black;
+    * {
+      color: $black;
+    }
 	}
 }
