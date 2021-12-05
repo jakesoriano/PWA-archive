@@ -5,10 +5,7 @@
 		"uri": "landing",
 		"contents": [
 			{
-				"component": "PageTitle",
-				"props": {
-					"title": "Landing"
-				}
+				"component": "LandingPage"
 			}
 		]
 	},
