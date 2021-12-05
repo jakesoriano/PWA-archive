@@ -322,6 +322,7 @@ class Grid extends Component {
 	        )}
 	        {/* Side Bar */}
 	        {data && data.auth && <SideBar
+						page={data.uri}
 	          isOpen={rightSideBar}
 	          toggleSideBar={this.toggleRightSideBar}
 	        />}

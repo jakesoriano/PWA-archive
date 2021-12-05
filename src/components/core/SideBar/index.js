@@ -14,7 +14,7 @@ class SideBar extends Component {
 		this.props.toggleSideBar();
 	};
 
-	render = ({ toggleSideBar, isOpen, authUser }) => {
+	render = ({ toggleSideBar, isOpen, authUser, page}) => {
 		if (!authUser) {
 			return null;
 		}
@@ -50,6 +50,7 @@ class SideBar extends Component {
 						<Link href="/settings" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('SETTINGS')}</Link>
 						<Link href="/contactus" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('WHERE_HERE_TO_LISTEN')}</Link>
 						{/* <Link href="/home" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PROTECT_LENI')}</Link> */}
+						<Link href={`/${page}/terms`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PAGE_TERMS')}</Link>
 					</div>
 				</div>
 			</div>

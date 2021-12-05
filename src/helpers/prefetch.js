@@ -1,7 +1,8 @@
 import {
   fetchGrids,
   fetchNews,
-  fetchEvents
+  fetchEvents,
+  fetchMembers
 } from '_mutations';
 
 // eslint-disable-next-line import/prefer-default-export
@@ -9,6 +10,7 @@ export function prefetch (hasUser) {
   return Promise.all([
     fetchGrids(),
     hasUser && fetchNews(),
-    hasUser && fetchEvents()
+    hasUser && fetchEvents(),
+    hasUser && fetchMembers()
   ]);
 }

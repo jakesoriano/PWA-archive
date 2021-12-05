@@ -1,0 +1,63 @@
+.membersWrap {
+  background: #fff;
+  border-radius: 10px;
+  margin: 0 15px 15px;
+  display: block;
+  overflow: hidden;
+  * {
+    color: #000;
+    font-size: 0.9rem;
+  }
+  .title {
+    font-size: 1.2rem;
+    padding: 15px 0;
+    text-align: center;
+    color: #ff62ce;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f1ebeb;
+  }
+  .item {
+    display: flex;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f1ebeb;
+    .avatar {
+      width: 50px;
+      padding-bottom: 50px;
+      border-radius: 80px;
+    }
+    .nameMember {
+      padding-left: 15px;
+      display: grid;
+      align-content: center;
+      flex-grow: 1;
+      width: calc(100% - 190px);
+      .members {
+        font-size: 0.5rem;
+      }
+    }
+    .rank,
+    .points {
+      display: grid;
+      align-content: center;
+      flex-grow: 1;
+      width: 70px;
+      p {
+        padding-bottom: 12px;
+        text-align: center;;
+      }
+    }
+  }
+  .itemHeader {
+    border-bottom: 1px solid #f1ebeb;
+    .avatar{
+      width: 60px;
+      padding-bottom: 0;
+    }
+    .rank,
+    .points {
+      p {
+        padding-bottom: 0;
+      }
+    }
+  }
+}

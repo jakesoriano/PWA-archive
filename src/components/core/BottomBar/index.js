@@ -6,7 +6,7 @@ import style from './style';
 
 export default ({ page }) => (
   <div className={style.bottomBar}>
-    <Link class={style.menu} activeClassName={style.active} href="/">
+    <Link class={style.menu} activeClassName={style.active} href="/home">
       <ImageLoader
         src={`assets/images/home_icon_${
           page === 'home' ? 'active' : 'inactive'
