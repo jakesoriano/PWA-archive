@@ -8,7 +8,10 @@
     "image": "assets/images/tmp/event1.jpeg",
     "date": "2021/10/29 08:00",
     "by": "Event Title Online",
-    "isOnline": true
+    "title": "Palugaw ni Nanay Leni",
+    "isOnline": true,
+    "location": "Amparo, Quezon City, Barangay Hall",
+    "desc": "MANILA, Philippines — Several video posts on Facebook and YouTube claimed that the Commission on Elections had confirmed the disqualification of Vice President Leni Robredo, supposedly due to a crowdfunding initiative by her team. These claims are false. <br /> What the posts say <br />At least three videos have been posting claiming that the Comelec has ruled to disqualify Robredo from the 2022 polls, supposedly due to crowdfunding efforts that foreigners may have donated to."
   },
   {
     "id": 2,
@@ -19,6 +22,9 @@
     "image": "assets/images/tmp/event2.jpeg",
     "date": "2021/12/05 08:00",
     "by": "Event Title Online",
-    "isOnline": true
+    "title": "Palugaw ni Nanay Leni",
+    "isOnline": true,
+    "location": "Amparo, Quezon City, Barangay Hall",
+    "desc": "MANILA, Philippines — Several video posts on Facebook and YouTube claimed that the Commission on Elections had confirmed the disqualification of Vice President Leni Robredo, supposedly due to a crowdfunding initiative by her team. These claims are false. <br /> What the posts say <br />At least three videos have been posting claiming that the Comelec has ruled to disqualify Robredo from the 2022 polls, supposedly due to crowdfunding efforts that foreigners may have donated to."
   }
 ]

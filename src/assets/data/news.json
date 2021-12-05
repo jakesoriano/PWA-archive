@@ -10,7 +10,9 @@
     "likeCount": 100,
     "liked": true,
     "shareCount": 1300,
-    "shared": true
+    "shared": true,
+    "link": "https://www.philstar.com/headlines/2021/10/19/2135239/fact-check-comelec-has-not-disqualified-robredo-2022-polls",
+    "desc": "MANILA, Philippines — Several video posts on Facebook and YouTube claimed that the Commission on Elections had confirmed the disqualification of Vice President Leni Robredo, supposedly due to a crowdfunding initiative by her team. These claims are false. <br /> What the posts say <br />At least three videos have been posting claiming that the Comelec has ruled to disqualify Robredo from the 2022 polls, supposedly due to crowdfunding efforts that foreigners may have donated to."
   },
   {
     "id": 2,
@@ -23,6 +25,7 @@
     "likeCount": 0,
     "liked": false,
     "shareCount": 0,
-    "shared": false
+    "shared": false,
+    "desc": "MANILA, Philippines — Several video posts on Facebook and YouTube claimed that the Commission on Elections had confirmed the disqualification of Vice President Leni Robredo, supposedly due to a crowdfunding initiative by her team. These claims are false. <br /> What the posts say <br />At least three videos have been posting claiming that the Comelec has ruled to disqualify Robredo from the 2022 polls, supposedly due to crowdfunding efforts that foreigners may have donated to."
   }
 ]
