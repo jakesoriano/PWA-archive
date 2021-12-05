@@ -35,7 +35,11 @@ export default class PopupPage extends Component {
 	        onClick={() => {
 	          this.handleBack(onBack);
 	        }}
-	      />
+	      >
+	        {' '}
+					❮
+	        {' '}
+	      </span>
 	      <h3>{getTranslation(title)}</h3>
 	    </div>
 	    <div className={style.body}>{children}</div>

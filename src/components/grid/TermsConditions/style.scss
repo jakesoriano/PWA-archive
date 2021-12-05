@@ -1,0 +1,20 @@
+@import '../../../style/variables.scss';
+.termsWrapper {
+  .termsContent {
+    max-height: calc(100vh - 200px);
+    overflow-y: scroll;
+    padding: 15px 15px;
+    p {
+      margin-bottom: 8px;
+      &[class="bold heading"] {
+        &:not(:first-of-type) {
+          margin-top: 20px;
+        }
+        margin-bottom: 3px;
+      }
+    }
+  }
+  .buttonContainer {
+    padding: 0 15px;
+  }
+}
