@@ -13,6 +13,17 @@
         margin-bottom: 3px;
       }
     }
+    ul {
+      padding-left: 20px;
+      margin: 0;
+      li {
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+      }
+      ul li {
+        font-size: 0.8rem;
+      }
+    }
   }
   .buttonContainer {
     padding: 0 15px;

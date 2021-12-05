@@ -30,16 +30,12 @@ export default class PopupPage extends Component {
 	render = ({ title, children, onBack }) => (
 	  <div ref={this.ref} className={style.popupPage}>
 	    <div className={style.header}>
-	      <span
+	      <button
 	        className="icon-back clickable"
 	        onClick={() => {
 	          this.handleBack(onBack);
 	        }}
-	      >
-	        {' '}
-					❮
-	        {' '}
-	      </span>
+	      >❮</button>
 	      <h3>{getTranslation(title)}</h3>
 	    </div>
 	    <div className={style.body}>{children}</div>
