@@ -35,7 +35,7 @@ class NewsAndEvents extends Component {
 	onClickItem = (data) => {
 		this.setState({
 			selectedItem: data
-		})
+		});
 	};
 
 	renderDetails = (data) => {

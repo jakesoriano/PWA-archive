@@ -38,7 +38,7 @@ class Leaderboard extends Component {
 					</div>
 				</div>
 				{/* content */}
-				{members.data.sort((a, b) => b.rank - a.rank).map(item => (
+				{members.data.sort((a, b) => a.rank - b.rank).map(item => (
 					<div className={style.item}>
 						<ImageLoader 
 							src={item.image}
