@@ -325,7 +325,7 @@ class Grid extends Component {
 	          isOpen={rightSideBar}
 	          toggleSideBar={this.toggleRightSideBar}
 	        />}
-	        <div className={style.footer}>{process.env.BUILD_NO}</div>
+	        {/* <div className={style.footer}>{process.env.BUILD_NO}</div> */}
 	      </div>
 	      {/* Modals */}
 	      {messageModal && this.renderMessageModal()}
