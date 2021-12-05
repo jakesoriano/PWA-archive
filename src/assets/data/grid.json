@@ -99,6 +99,34 @@
 	{
 		"styles": [],
 		"auth": true,
+		"pageTitle": "PAGE_SETTINGS",
+		"uri": "settings",
+		"contents": [
+			{
+				"component": "PageTitle",
+				"props": {
+					"title": "Settings"
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_CONTSCTUS",
+		"uri": "contactus",
+		"contents": [
+			{
+				"component": "PageTitle",
+				"props": {
+					"title": "ContactUs"
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
 		"pageTitle": "Buttons",
 		"uri": "buttons",
 		"contents": [

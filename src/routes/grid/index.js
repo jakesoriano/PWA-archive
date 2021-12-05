@@ -321,10 +321,10 @@ class Grid extends Component {
 	          </PopupPage>
 	        )}
 	        {/* Side Bar */}
-	        <SideBar
+	        {data && data.auth && <SideBar
 	          isOpen={rightSideBar}
 	          toggleSideBar={this.toggleRightSideBar}
-	        />
+	        />}
 	        <div className={style.footer}>{process.env.BUILD_NO}</div>
 	      </div>
 	      {/* Modals */}

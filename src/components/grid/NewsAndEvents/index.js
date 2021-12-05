@@ -11,7 +11,8 @@ class NewsAndEvents extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			active: 'news'
+			active: 'news',
+			selectedItem: null,
 		}
 	};
 
@@ -31,6 +32,58 @@ class NewsAndEvents extends Component {
 		})
 	}
 
+	onClickItem = (data) => {
+		this.setState({
+			selectedItem: data
+		})
+	};
+
+	renderDetails = (data) => {
+		if (data) {
+			return (
+				<div className={style.pWrap}>
+					<a className={`extraBold ${style.pClose}`} onClick={() => {
+						this.setState({
+							selectedItem: null
+						});
+					}}>x</a>
+					<div className={`${style.pHeader} ${this.state.active !== 'news' ? style.pHeaderEvents : ''}`}>
+						<ImageLoader
+								src={data.image}
+								style={{container: style.pImage}} />
+						{this.state.active === 'news' ? (
+							<div className={style.pNews}>
+								<p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
+								<a className={style.pLink} href={data.link}>{data.link}</a>
+							</div>
+						) : (
+							<div className={style.pEvents}>
+								<p className={`${style.pTitle}`}>{getTranslation(data.title)}</p>
+								<p className={`${style.pDate}`}>
+									{`${getTranslation('WHEN')}: ${dateEventFormat(data.date)}`} <br />
+									{`${getTranslation('WHERE')}: ${data.location}`}
+								</p>
+							</div>
+						)}
+					</div>
+					<p
+						className={style.pContent}
+						dangerouslySetInnerHTML={{
+							__html: data.desc
+						}}
+					/>
+					<a className={style.pShare}>
+						<ImageLoader
+								src="assets/images/share_icon.png"
+								style={{container: style.pIconShare}} />
+							<span>{getTranslation('SHARE')}</span>
+					</a>
+				</div>
+			)
+		}
+		return null;
+	};
+
 	renderNews = (data) => {
 		if (data.length) {
 			return data.map(i => (
@@ -41,7 +94,9 @@ class NewsAndEvents extends Component {
 							style={{container: style.comImage}} />
 						<span>{getTranslation(i.community.name)}</span>
 					</div>
-					<div className={style.details}>
+					<a className={style.details} onClick={() => {
+						this.onClickItem(i);
+					}}>
 						<ImageLoader
 							src={i.image}
 							style={{container: style.detailImage}} />
@@ -54,7 +109,7 @@ class NewsAndEvents extends Component {
 								</div>
 							): null}
 						</div>
-					</div>
+					</a>
 					<div className={style.buttons}>
 						<a className={`bold ${style.buttonLike} ${i.liked ? style.buttonLikeActive : ''}`}>{getTranslation('LIKE')}</a>
 						<a className={`bold ${style.buttonShare} ${i.liked ? style.buttonShareActive : ''}`}>{getTranslation('SHARE')}</a>
@@ -76,13 +131,15 @@ class NewsAndEvents extends Component {
 							style={{container: style.comImage}} />
 						<span>{getTranslation(i.community.name)}</span>
 					</div>
-					<div className={style.details}>
+					<a className={style.details} onClick={() => {
+						this.onClickItem(i);
+					}}>
 						<ImageLoader
 							src={i.image}
 							style={{container: style.detailImage}} />
 						<div className={style.detailContent}>
 							<p>{dateEventFormat(i.date)} <br />
-							{`${getTranslation('EVENT_BY')} ${i.by}`} <br />
+							{`${getTranslation('EVENT_BY')}: ${i.by}`} <br />
 							{getTranslation(i.isOnline ? 'ONLINE_EVENT' : 'ONSITE_EVENT')}</p>
 							{i.likeCount || i.shareCount ? (
 								<div className={style.detailCount}>
@@ -91,7 +148,7 @@ class NewsAndEvents extends Component {
 								</div>
 							): null}
 						</div>
-					</div>
+					</a>
 					<div className={style.buttons}>
 						<a className={`bold ${style.buttonLike} ${i.liked ? style.buttonLikeActive : ''}`}>{getTranslation('LIKE')}</a>
 						<a className={`bold ${style.buttonShare} ${i.liked ? style.buttonShareActive : ''}`}>{getTranslation('SHARE')}</a>
@@ -103,24 +160,25 @@ class NewsAndEvents extends Component {
 		return <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
 	};
 
-	render = ({ news, events }, { active }) => {
+	render = ({ news, events }, state) => {
 	  return (
 			<div className={style.newsAndEvents}>
 				<div className={style.tabWrap}>
 					<span 
-						className={`bold ${active === 'news' ? style.activeTab : ''}`}
+						className={`bold ${state.active === 'news' ? style.activeTab : ''}`}
 						onClick={() => {
 							this.toggleTab('news');
 						}}>{getTranslation('IWAS_FAKE_NEWS')}</span>
 					<span 
-						className={`bold ${active !== 'news' ? style.activeTab : ''}`}
+						className={`bold ${state.active !== 'news' ? style.activeTab : ''}`}
 						onClick={() => {
 							this.toggleTab('events');
 						}}>{getTranslation('EVENTS')}</span>
 				</div>
 				<div className={style.content}>
-					{active === 'news' ? this.renderNews(news.data) : this.renderEvents(events.data)}
+					{state.active === 'news' ? this.renderNews(news.data) : this.renderEvents(events.data)}
 				</div>
+				{state.selectedItem && this.renderDetails(state.selectedItem)}
 			</div>
 		);
 	};

@@ -3,7 +3,7 @@
 	width: 100%;
 }
 
-.rightSideBarOutside {
+.sideBarOutside {
 	height: 100%;
 	width: 100%;
 	opacity: 0.5;
@@ -11,22 +11,54 @@
 	position: absolute;
 }
 
-.rightSideBar {
+.sideBar {
 	color: white;
 	background-color: #FF67C4;
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 300px;
+	width: 250px;
 	height: 100%;
-	padding: 15px;
+	padding: 35px 15px 15px;
 	z-index: 4;
 	overflow-y: auto;
-	left: -500px;
+	left: -250px;
 	transition: all 0.2s linear;
 }
 
-.rightSideBar.toggled {
+.sideBar.toggled {
 	left: 0;
 	transition: all 0.2s linear;
+}
+
+.sUser {
+	display: flex;
+	.sAvatar {
+		width: 76px;
+    padding-bottom: 72px;
+    border: 2px solid #fff;
+    border-radius: 80px;
+	}
+	> div {
+		width: calc(100% - 76px);
+		padding-left: 10px;
+		display: grid;
+    align-content: center;
+		.sName {
+			font-size: 1rem;
+		}
+		.sLogin {
+			font-size: 0.6rem;
+			color: #e3dfdf;
+		}
+	}
+}
+.sMenu {
+	width: 100%;
+	margin-top: 30px;
+	.sMItem {
+		display: block;
+		padding: 10px 0;
+		border-bottom: 2px solid #fff;
+	}
 }
