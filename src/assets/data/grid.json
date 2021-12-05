@@ -47,10 +47,10 @@
 		"uri": "leaderboard",
 		"contents": [
 			{
-				"component": "PageTitle",
-				"props": {
-					"title": "LeaderBoard"
-				}
+				"component": "AccountProfile"
+			},
+			{
+				"component": "Leaderboard"
 			}
 		]
 	},

@@ -25,5 +25,8 @@
 	"LAST_LOGIN": "Last login in date and time {DATE_TIME}",
 	"SETTINGS": "Settings",
 	"WHERE_HERE_TO_LISTEN": "We're here to listen",
-	"PROTECT_LENI": "Protect Leni"
+	"PROTECT_LENI": "Protect Leni",
+	"RANK": "Rank",
+	"POINTS": "Points",
+	"TOP_PERFORMERS": "Top Performers"
 }

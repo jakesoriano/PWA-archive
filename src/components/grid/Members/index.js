@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader } from '_components/core';
 import { fetchMembers } from '_mutations';
-import { getTranslation, formatNumber } from '_helpers';
+import { getTranslation } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
