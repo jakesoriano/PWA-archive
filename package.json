@@ -10,8 +10,6 @@
     "build": "preact build",
     "serve": "preact build && sirv build --cors --single",
     "dev": "preact watch",
-    "uat": "preact watch -H dev.w88uatv2.com",
-    "pp": "preact watch -H dev.w88xoso.com",
     "lint": "eslint src",
     "test": "jest",
     "build-all": "preact build --dest build/android --preload && preact build --dest build/ios --preload && preact build --dest build/web --preload",
