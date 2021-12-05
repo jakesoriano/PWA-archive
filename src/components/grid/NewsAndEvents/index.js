@@ -176,9 +176,9 @@ class NewsAndEvents extends Component {
 						}}>{getTranslation('EVENTS')}</span>
 				</div>
 				<div className={style.content}>
-					{active === 'news' ? this.renderNews(news.data) : this.renderEvents(events.data)}
+					{state.active === 'news' ? this.renderNews(news.data) : this.renderEvents(events.data)}
 				</div>
-				{selectedItem && this.renderDetails(state.selectedItem)}
+				{state.selectedItem && this.renderDetails(state.selectedItem)}
 			</div>
 		);
 	};
