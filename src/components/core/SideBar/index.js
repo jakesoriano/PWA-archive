@@ -1,29 +1,60 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { h, Component } from 'preact';
+import { Link } from 'preact-router/match';
+import { connect } from 'unistore/preact';
+import { getTranslation, dateLastLoginFormat } from '_helpers';
+import { ImageLoader } from '_components/core';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
-export default class SideBar extends Component {
-	render = (props) => (
-	  <div className={style.sideBarContainer}>
-	    {/* eslint-disable-next-line react/self-closing-comp */}
-	    <div
-	      onClick={props.toggleSideBar}
-	      className={props.isOpen ? style.rightSideBarOutside : null}
-	    >
-	    </div>
-	    <div
-	      className={
-	        props.isOpen
-	          ? `${style.rightSideBar} ${style.toggled}`
-	          : style.rightSideBar
-	      }
-	    >
-	      {/* Side Bar Contents Here */}
-				Hello
-	    </div>
-	  </div>
-	);
+class SideBar extends Component {
+	onClickMenu = () => {
+		this.props.toggleSideBar();
+	};
+
+	render = ({ toggleSideBar, isOpen, authUser }) => {
+		if (!authUser) {
+			return null;
+		}
+
+		return (
+			<div className={style.sideBarContainer}>
+				{/* eslint-disable-next-line react/self-closing-comp */}
+				<div
+					onClick={toggleSideBar}
+					className={isOpen ? style.sideBarOutside : null}
+				>
+				</div>
+				<div
+					className={
+						isOpen
+							? `${style.sideBar} ${style.toggled}`
+							: style.sideBar
+					}
+				>
+					{/* Side Bar Contents Here */}
+					<div className={style.sUser}>
+						<ImageLoader 
+									src={authUser.image}
+							style={{container: style.sAvatar}} />
+						<div>
+							<div>
+									<p className={`${style.sName}`}>{`${getTranslation('HI_NAME').replace('{NAME}', authUser.fname)}`}</p>
+									<p className={style.sLogin}>{`${getTranslation('LAST_LOGIN').replace('{DATE_TIME}', dateLastLoginFormat(authUser.loginDate))}`}</p>
+							</div>
+						</div>
+					</div>
+					<div className={style.sMenu}>
+						<Link href="/settings" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('SETTINGS')}</Link>
+						<Link href="/contactus" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('WHERE_HERE_TO_LISTEN')}</Link>
+						<Link href="/home" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PROTECT_LENI')}</Link>
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
+
+export default connect(['authUser'])(SideBar);

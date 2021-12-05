@@ -160,17 +160,17 @@ class NewsAndEvents extends Component {
 		return <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
 	};
 
-	render = ({ news, events }, { active, selectedItem }) => {
+	render = ({ news, events }, state) => {
 	  return (
 			<div className={style.newsAndEvents}>
 				<div className={style.tabWrap}>
 					<span 
-						className={`bold ${active === 'news' ? style.activeTab : ''}`}
+						className={`bold ${state.active === 'news' ? style.activeTab : ''}`}
 						onClick={() => {
 							this.toggleTab('news');
 						}}>{getTranslation('IWAS_FAKE_NEWS')}</span>
 					<span 
-						className={`bold ${active !== 'news' ? style.activeTab : ''}`}
+						className={`bold ${state.active !== 'news' ? style.activeTab : ''}`}
 						onClick={() => {
 							this.toggleTab('events');
 						}}>{getTranslation('EVENTS')}</span>
@@ -178,7 +178,7 @@ class NewsAndEvents extends Component {
 				<div className={style.content}>
 					{active === 'news' ? this.renderNews(news.data) : this.renderEvents(events.data)}
 				</div>
-				{selectedItem && this.renderDetails(selectedItem)}
+				{selectedItem && this.renderDetails(state.selectedItem)}
 			</div>
 		);
 	};
