@@ -1,0 +1,26 @@
+.membersWrap {
+  background: #fff;
+  border-radius: 10px;
+  margin: 0 15px 15px;
+  display: block;
+  overflow: hidden;
+  * {
+    color: #000;
+  }
+  .item {
+    display: flex;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f1ebeb;
+    .avatar {
+      width: 60px;
+      padding-bottom: 60px;
+      border-radius: 80px;
+    }
+    .nameMember {
+      padding-left: 15px;
+      font-size: 0.9rem;
+      display: grid;
+      align-content: center;
+    }
+  }
+}
