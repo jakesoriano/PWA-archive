@@ -13,7 +13,7 @@ class TermsConditions extends Component {
   }
 
 	checkIfRead = () => {
-	  if (this.el) {
+	  if (this.el && this.state.isReading) {
 	    setTimeout(() => {
 	      this.setState({
 	        isReading: !(
