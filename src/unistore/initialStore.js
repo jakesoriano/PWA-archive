@@ -22,6 +22,11 @@ export const initialStore = {
     result: false,
     data: []
   },
+  members: {
+    fetching: false,
+    result: false,
+    data: []
+  },
   // user
   authUser: null,
   // modals

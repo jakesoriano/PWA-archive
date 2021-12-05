@@ -75,10 +75,10 @@
 		"uri": "profile",
 		"contents": [
 			{
-				"component": "PageTitle",
-				"props": {
-					"title": "Profile"
-				}
+				"component": "AccountProfile"
+			},
+			{
+				"component": "Members"
 			}
 		]
 	},	
