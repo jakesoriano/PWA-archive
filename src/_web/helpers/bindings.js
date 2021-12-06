@@ -1,9 +1,9 @@
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
 // eslint-disable-next-line import/prefer-default-export
-export function nativeDashboardReady () {
+export function nativeWebReady () {
   // eslint-disable-next-line no-console
-  console.log('SPA >> nativeDashboardReady();');
+  console.log('SPA >> nativeWebReady();');
 }
 
 async function getFingerPrint (callback) {
@@ -26,3 +26,5 @@ export function nativeGetDeviceId (callback) {
   // eslint-disable-next-line
 	getFingerPrint(callback);
 }
+
+export function nativeShare (data) {}
