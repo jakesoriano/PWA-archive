@@ -13,3 +13,4 @@ export { default as ImageLoader } from './ImageLoader';
 export { default as ComponentLoader } from './ComponentLoader';
 export { default as FormGroup } from './FormGroup';
 export { default as FormInput } from './FormInput';
+export { default as FormDropdown } from './FormDropdown';

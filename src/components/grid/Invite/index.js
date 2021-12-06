@@ -2,13 +2,22 @@ import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { fetchInvited } from '_mutations';
 import { getTranslation } from '_helpers';
-import { FormGroup, FormInput, ImageLoader } from '_components/core';
+import { FormGroup, FormInput, FormDropdown, ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Invite extends Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			regions:[
+				{v: "v1", t:"t1"},
+				{v: "v2", t:"t2"}
+			]
+		}
+	}
 	componentDidMount = () => {
 	  const { invited } = this.props;
 	  if (!invited.result && !invited.fetching) {
@@ -17,18 +26,18 @@ class Invite extends Component {
 	};
 	
 	onFnameChange = (e) => {
-		console.error(e.target.value);
+		console.log(e.target.value);
 	}
 	
 	onLnameChange = (e) => {
-		console.error(e.target.value);
+		console.log(e.target.value);
 	}
 	
 	onRegionChange = (e) => {
-		console.error(e.target.value);
+		console.log(e.target.value);
 	}
 
-	render = ({ authUser, invited }) => {
+	render = ({ authUser, invited }, state) => {
 
 	  return (
 			<>
@@ -38,20 +47,24 @@ class Invite extends Component {
 							className={style.name}
 							type="text"
 							placeholder={getTranslation('FIRST_NAME')}
-							onInput={this.onFnameChange}
-							hasError={true} />
+							onInput={this.onFnameChange} />
 						<FormInput
 							className={style.name}
 							type="text"
 							placeholder={getTranslation('FIRST_NAME')}
-							onInput={this.onFnameChange} />
+							onInput={this.onLnameChange} />
 					</FormGroup>
 					<FormGroup label="REGION">
-						<FormInput
+						<FormDropdown
+							label=""
 							className={style.region}
-							type="text"
-							onInput={this.onFnameChange} />
+							options={state.regions}
+							getValue={option => option.v}
+							getText={option => option.t}
+							onChange={this.onRegionChange}
+							 />
 					</FormGroup>
+					{/* Invite */}
 					<FormGroup label="INVITE">
 						<div className={style.invite}>
 							<span>{authUser.refCode}</span>
