@@ -12,10 +12,28 @@ class Invite extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			regions:[
+			regionOptions:[
 				{v: "v1", t:"t1"},
 				{v: "v2", t:"t2"}
-			]
+			],
+			fname: {
+				value: '',
+				error: '',
+				message: '',
+				hasError: false
+			},
+			lname: {
+				value: '',
+				error: '',
+				message: '',
+				hasError: false
+			},
+			region: {
+				value: '',
+				error: '',
+				message: '',
+				hasError: false
+			}
 		}
 	}
 	componentDidMount = () => {
@@ -26,18 +44,39 @@ class Invite extends Component {
 	};
 	
 	onFnameChange = (e) => {
-		console.error(e.target.value);
+		this.setState({
+			fname: {
+				...this.state.fname,
+				value: e.target.value,
+				hasError: !Boolean(e.target.value),
+				error: !Boolean(e.target.value) ? 'REQUIRED' : ''
+			}
+		});
 	}
 	
 	onLnameChange = (e) => {
-		console.error(e.target.value);
+		this.setState({
+			lname: {
+				...this.state.lname,
+				value: e.target.value,
+				hasError: !Boolean(e.target.value),
+				error: !Boolean(e.target.value) ? 'REQUIRED' : ''
+			}
+		});
 	}
 	
 	onRegionChange = (e) => {
-		console.error(e.target.value);
+		this.setState({
+			region: {
+				...this.state.region,
+				value: e.target.value,
+				hasError: !Boolean(e.target.value),
+				error: !Boolean(e.target.value) ? 'REQUIRED' : ''
+			}
+		});
 	}
 
-	render = ({ authUser, invited }, state) => {
+	render = ({ authUser, invited }, { fname, lname, region, regionOptions }) => {
 
 	  return (
 			<div className={style.inviteWrap}>
@@ -45,23 +84,40 @@ class Invite extends Component {
 					<FormGroup label="NAME">
 						<FormInput
 							className={style.name}
+							style={{error: style.name}}
+							value={fname.value}
 							type="text"
 							placeholder={getTranslation('FIRST_NAME')}
-							onInput={this.onFnameChange} />
+							onBlur={this.onFnameChange}
+							onInput={this.onFnameChange}
+							hasError={fname.hasError}
+							error={fname.error}
+							message={fname.message} />
 						<FormInput
 							className={style.name}
+							style={{error: style.name}}
+							value={lname.value}
 							type="text"
-							placeholder={getTranslation('FIRST_NAME')}
-							onInput={this.onLnameChange} />
+							placeholder={getTranslation('LAST_NAME')}
+							onBlur={this.onLnameChange}
+							onInput={this.onLnameChange}
+							hasError={lname.hasError}
+							error={lname.error}
+							message={lname.message} />
 					</FormGroup>
 					<FormGroup label="REGION">
 						<FormDropdown
 							label=""
 							className={style.region}
-							options={state.regions}
+							value={region.value}
+							options={regionOptions}
 							getValue={option => option.v}
 							getText={option => option.t}
 							onChange={this.onRegionChange}
+							onBlur={this.onRegionChange}
+							hasError={region.hasError}
+							error={region.error}
+							message={region.message}
 							 />
 					</FormGroup>
 					{/* Invite */}

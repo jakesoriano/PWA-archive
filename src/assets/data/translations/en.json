@@ -41,5 +41,6 @@
 	"FIRST_NAME": "First Name",
 	"LAST_NAME": "Last Name",
 	"REGION": "Region",
-	"INVITE": "INVITE"
+	"INVITE": "INVITE",
+	"REQUIRED": "Required"
 }
