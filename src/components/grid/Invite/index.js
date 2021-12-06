@@ -26,22 +26,22 @@ class Invite extends Component {
 	};
 	
 	onFnameChange = (e) => {
-		console.log(e.target.value);
+		console.error(e.target.value);
 	}
 	
 	onLnameChange = (e) => {
-		console.log(e.target.value);
+		console.error(e.target.value);
 	}
 	
 	onRegionChange = (e) => {
-		console.log(e.target.value);
+		console.error(e.target.value);
 	}
 
 	render = ({ authUser, invited }, state) => {
 
 	  return (
-			<>
-				<form className={style.inviteForm}>
+			<div className={style.inviteWrap}>
+				<form className={style.form}>
 					<FormGroup label="NAME">
 						<FormInput
 							className={style.name}
@@ -67,12 +67,11 @@ class Invite extends Component {
 					{/* Invite */}
 					<FormGroup label="INVITE">
 						<div className={style.invite}>
-							<span>{authUser.refCode}</span>
+							<span className={`bold`}>{authUser.refCode}</span>
 							<div>
 								<a className={style.pShare} onClick={() => {
 									nativeShare({
-										url: '',
-										message: ''
+										message: `You are invited: ${authUser.refCode}`
 									})
 								}}>
 									<ImageLoader
@@ -84,7 +83,7 @@ class Invite extends Component {
 						</div>
 					</FormGroup>
 				</form>
-				<div className={style.invitedWrap}>
+				<div className={style.list}>
 					<div className={`${style.item} ${style.header}`}>
 						<p className={`bold ${style.name}`}>{getTranslation('ADDED_MEMBERS')}</p>
 						<p className={`bold ${style.status}`}>{getTranslation('STATUS')}</p>
@@ -96,7 +95,7 @@ class Invite extends Component {
 						</div>
 					))}
 				</div>
-			</>
+			</div>
 	  );
 	};
 }
