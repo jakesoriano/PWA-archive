@@ -24,6 +24,11 @@ export const initialStore = {
   },
   // user
   authUser: null,
+  otp: {
+    fetching: false,
+    result: false,
+    data: []
+  },
   // modals
   promptModal: null,
   messageModal: null,

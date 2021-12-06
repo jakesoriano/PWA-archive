@@ -3,7 +3,6 @@ import { xhr, urlNews } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
 export function fetchNews () {
-  // curreny state
   const { news } = store.getState();
   // initial state
   updateStore({
