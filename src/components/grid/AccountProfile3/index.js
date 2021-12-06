@@ -19,7 +19,7 @@ class AccountProfile extends Component {
 	  }
 	};
 
-	render = ({ authUser }) => {
+	render = ({ authUser, members }) => {
 	  if (!authUser) {
 	    return <LoaderRing fullpage />;
 	  }
@@ -38,7 +38,9 @@ class AccountProfile extends Component {
 						</div>
 						<a onClick={() => {
 							nativeShare({
-								message: `${getTranslation('RANK')}: ${formatNumber(authUser.rank, 0)}\n${getTranslation('HERO_POINTS')}: ${formatNumber(authUser.points, 2)}`
+								message: `${getTranslation('RANK')}: ${formatNumber(authUser.rank, 0)}\n${getTranslation('HERO_POINTS')}: ${formatNumber(authUser.points, 2)}\n\n${getTranslation('TOP_PERFORMERS')}${members.data.sort((a, b) => a.rank - b.rank).reduce((r, i) => {
+										return r + `\n${formatNumber(i.rank)} - ${i.fname} ${i.lname}`
+									}, '')}`
 							})
 						}}>
 						<ImageLoader 
@@ -53,4 +55,4 @@ class AccountProfile extends Component {
 	  );
 	};
 }
-export default connect(['authUser'])(AccountProfile);
+export default connect(['authUser', 'members'])(AccountProfile);
