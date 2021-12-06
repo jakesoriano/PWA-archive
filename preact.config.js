@@ -35,7 +35,7 @@ export default {
   // eslint-disable-next-line no-unused-vars
   webpack (config, env, helpers, options) {
     /** you can change the config here */
-    const projectPath = 'pwa/';
+    const projectPath = '';
 
     // build platform
     let buildPlatform = '';
