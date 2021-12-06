@@ -1,3 +1,38 @@
+.inviteForm {
+  background: #fff;
+  padding: 15px;
+  .name {
+    margin-left: 20px;
+  }
+  .invite {
+    display: flex;
+    align-items: center;
+    span,
+    .pShare {
+      flex-grow: 1;
+    }
+    .pShare {
+      background: #ffb1bb;
+      display: flex;
+      width: 100px;
+      margin: 0 auto;
+      padding: 5px 10px;
+      width: max-content;
+      .pIconShare {
+        padding-bottom: 18px;
+        width: 18px;
+        margin-right: 5px;
+        background: red;
+      }
+      span {
+        color: #ffb1bb;
+        color: #fff;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
 .invitedWrap {
   background: #ffb1bb;
   border-radius: 10px 10px 0 0;

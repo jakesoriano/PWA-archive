@@ -1,0 +1,15 @@
+.formGroup {
+  display: grid;
+  padding: 10px;
+  * {
+    font-size: 0.8rem;
+    color: #737373;
+  }
+  label {
+    font-family: 'OpenSans-Bold', arial, sans-serif;
+  }
+  small {
+    font-size: 0.7rem;
+    margin: 5px 0;
+  }
+}

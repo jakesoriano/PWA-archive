@@ -36,5 +36,10 @@
 	"ADDED_MEMBERS": "Added Members",
 	"STATUS": "Status",
 	"PENDING": "Pending",
-	"ACCEPTED": "Accepted"
+	"ACCEPTED": "Accepted",
+	"NAME": "Name",
+	"FIRST_NAME": "First Name",
+	"LAST_NAME": "Last Name",
+	"REGION": "Region",
+	"INVITE": "INVITE"
 }
