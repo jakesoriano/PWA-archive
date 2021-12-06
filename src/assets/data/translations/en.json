@@ -32,5 +32,9 @@
 	"POINTS": "Points",
 	"TOP_PERFORMERS": "Top Performers",
 	"INVITE_MORE": "Invite More",
-	"PTS": "pts"
+	"PTS": "pts",
+	"ADDED_MEMBERS": "Added Members",
+	"STATUS": "Status",
+	"PENDING": "Pending",
+	"ACCEPTED": "Accepted"
 }
