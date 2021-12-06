@@ -1,10 +1,16 @@
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
+function callNative(data) {
+  window.ReactNativeWebView.postMessage(JSON.stringify(data));
+}
+
 // eslint-disable-next-line import/prefer-default-export
-export function nativeDashboardReady () {
+export function nativeWebReady () {
   // eslint-disable-next-line no-console
-  console.log('SPA >> nativeDashboardReady();');
-  window.Native.dashboardReady();
+  console.log('SPA >> nativeWebReady();');
+  callNative({
+    action: 'loaded'
+  });
 }
 
 async function getFingerPrint (callback) {
@@ -26,4 +32,13 @@ async function getFingerPrint (callback) {
 export function nativeGetDeviceId (callback) {
   // eslint-disable-next-line
 	getFingerPrint(callback);
+}
+
+export function nativeShare (data) {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeShare();');
+	callNative({
+    action: 'share',
+    data: data
+  });
 }

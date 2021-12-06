@@ -27,7 +27,7 @@ import {
   SideBar,
   BackToTop
 } from '_components/core';
-import { nativeDashboardReady, nativeGetDeviceId } from '_platform/helpers';
+import { nativeWebReady, nativeGetDeviceId } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -174,7 +174,7 @@ class Grid extends Component {
 	    })
 	    .then(() => {
 	      // dashboard is now ready
-	      nativeDashboardReady();
+	      nativeWebReady();
 	      // Save Prev and Last/Current Page to Cookie
 	      setCookie(`${process.env.PREFIX}PrevPage`, '');
 	      setCookie(`${process.env.PREFIX}LastPage`, url);
@@ -322,6 +322,7 @@ class Grid extends Component {
 	        )}
 	        {/* Side Bar */}
 	        {data && data.auth && <SideBar
+						page={data.uri}
 	          isOpen={rightSideBar}
 	          toggleSideBar={this.toggleRightSideBar}
 	        />}

@@ -12,7 +12,8 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	overflow: hidden;
 	background: rgb(255,177,187);
-	background: linear-gradient(180deg, rgba(255,177,187,1) 0%, rgba(255,177,187,1) 56px, rgba(255,98,206,1) 100%);
+	// background: linear-gradient(180deg, rgba(255,177,187,1) 0%, rgba(255,177,187,1) 56px, rgba(255,98,206,1) 100%);
+	background: linear-gradient(160deg, rgb(243,214,217) 0%, rgba(255,177,187,1) 50%, rgb(255,44,215) 100%);
 
 	.clickable {
 		cursor: pointer;
@@ -36,16 +37,16 @@ body {
 
 // font weight
 .extraBold {
-	font-family: 'OpenSans-Bold', arial, sans-serif;
+	font-family: 'OpenSans-ExtraBold', arial, sans-serif;
 }
 .semiBold {
-	font-family: 'OpenSans-Bold', arial, sans-serif;
+	font-family: 'OpenSans-SemiBold', arial, sans-serif;
 }
 .bold {
 	font-family: 'OpenSans-Bold', arial, sans-serif;
 }
 .light {
-	font-family: 'OpenSans-Bold', arial, sans-serif;
+	font-family: 'OpenSans-Light', arial, sans-serif;
 }
 
 #app {
@@ -55,4 +56,12 @@ body {
 p {
 	padding: 0;
 	margin: 0;
+}
+
+a,
+button,
+.clickable {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }

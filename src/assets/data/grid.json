@@ -5,10 +5,7 @@
 		"uri": "landing",
 		"contents": [
 			{
-				"component": "PageTitle",
-				"props": {
-					"title": "Landing"
-				}
+				"component": "LandingPage"
 			}
 		]
 	},
@@ -47,10 +44,10 @@
 		"uri": "leaderboard",
 		"contents": [
 			{
-				"component": "PageTitle",
-				"props": {
-					"title": "LeaderBoard"
-				}
+				"component": "AccountProfile3"
+			},
+			{
+				"component": "Leaderboard"
 			}
 		]
 	},
@@ -75,10 +72,10 @@
 		"uri": "profile",
 		"contents": [
 			{
-				"component": "PageTitle",
-				"props": {
-					"title": "Profile"
-				}
+				"component": "AccountProfile2"
+			},
+			{
+				"component": "Members"
 			}
 		]
 	},	

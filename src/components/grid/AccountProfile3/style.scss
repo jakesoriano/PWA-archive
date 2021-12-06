@@ -1,0 +1,39 @@
+.accountProfile {
+  padding: 15px 15px 0;
+  * {
+    color: #737373;
+  }
+  .profile {
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+    padding: 20px 20px 0 20px;
+    .user {
+      display: flex;
+      width: 100%;
+      .avatar {
+        width: 76px;
+        padding-bottom: 72px;
+        border: 2px solid #ffb1bb;
+        border-radius: 80px;
+      }
+      .nameMember {
+        flex-grow: 1;
+        padding: 10px;
+        .name {
+          font-size: 1.2rem;
+          text-transform: uppercase;
+        }
+      }
+      .share {
+        width: 20px;
+        padding-bottom: 20px;
+      }
+    }
+    .title {
+      font-size: 1.2rem;
+      text-align: center;
+      color: #ff62ce;
+      text-transform: uppercase;
+    }
+  }
+}

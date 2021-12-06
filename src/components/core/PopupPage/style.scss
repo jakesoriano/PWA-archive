@@ -20,15 +20,18 @@
 		background-color: $primary_layout;
     display: flex;
     align-items: center;
-		span {
+		height: 56px;
+		button {
 			display: inline-block;
-			margin-right: 10px;
+			padding: 0 10px 0 10px;
 			color: $white;
 			font-size: 1.7rem;
+			background: transparent;
+			border: none
 		}
 		h3 {
 			display: inline-block;
-			font-size: 1.5rem;
+			font-size: 1.2rem;
 			max-width: 250px;
 			text-overflow: ellipsis;
 			overflow: hidden;
@@ -40,7 +43,7 @@
 		}
 	}
 	.body {
-		height: calc(100% - 51px);
+		height: calc(100% - 56px);
 		overflow-y: scroll;
     * {
       color: $black;

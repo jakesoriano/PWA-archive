@@ -1,7 +1,7 @@
 @import '../../../style/variables.scss';
 .termsWrapper {
   .termsContent {
-    max-height: calc(100vh - 200px);
+    max-height: calc(100vh - 164px);
     overflow-y: scroll;
     padding: 15px 15px;
     p {
@@ -11,6 +11,17 @@
           margin-top: 20px;
         }
         margin-bottom: 3px;
+      }
+    }
+    ul {
+      padding-left: 20px;
+      margin: 0;
+      li {
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+      }
+      ul li {
+        font-size: 0.8rem;
       }
     }
   }

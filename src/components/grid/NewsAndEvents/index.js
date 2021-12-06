@@ -3,6 +3,7 @@ import { connect } from 'unistore/preact';
 import { fetchNews, fetchEvents } from '_mutations';
 import { getTranslation, dateEventFormat } from '_helpers';
 import { ImageLoader } from '_components/core';
+import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -35,7 +36,7 @@ class NewsAndEvents extends Component {
 	onClickItem = (data) => {
 		this.setState({
 			selectedItem: data
-		})
+		});
 	};
 
 	renderDetails = (data) => {
@@ -72,7 +73,16 @@ class NewsAndEvents extends Component {
 							__html: data.desc
 						}}
 					/>
-					<a className={style.pShare}>
+					<a className={style.pShare} onClick={() => {
+						nativeShare({
+							url: this.state.selectedItem.image,
+							...(this.state.active == 'news' ? {
+								message: `${i.title}\n${i.link}`
+							} : {
+								message: `${i.title}\n${getTranslation('EVENT_BY')}:${dateEventFormat(i.date)}\n${getTranslation(i.isOnline ? 'ONLINE_EVENT' : 'ONSITE_EVENT')}`
+							})
+						})
+					}}>
 						<ImageLoader
 								src="assets/images/share_icon.png"
 								style={{container: style.pIconShare}} />
@@ -111,8 +121,16 @@ class NewsAndEvents extends Component {
 						</div>
 					</a>
 					<div className={style.buttons}>
-						<a className={`bold ${style.buttonLike} ${i.liked ? style.buttonLikeActive : ''}`}>{getTranslation('LIKE')}</a>
-						<a className={`bold ${style.buttonShare} ${i.liked ? style.buttonShareActive : ''}`}>{getTranslation('SHARE')}</a>
+						<a
+							className={`bold ${style.buttonLike} ${i.liked ? style.buttonLikeActive : ''}`}>{getTranslation('LIKE')}</a>
+						<a
+							className={`bold ${style.buttonShare} ${i.liked ? style.buttonShareActive : ''}`}
+							onClick={() => {
+								nativeShare({
+									url: i.image,
+									message: `${i.title}\n${i.link}`
+								})
+							}}>{getTranslation('SHARE')}</a>
 					</div>
 				</div>
 			))
@@ -150,8 +168,16 @@ class NewsAndEvents extends Component {
 						</div>
 					</a>
 					<div className={style.buttons}>
-						<a className={`bold ${style.buttonLike} ${i.liked ? style.buttonLikeActive : ''}`}>{getTranslation('LIKE')}</a>
-						<a className={`bold ${style.buttonShare} ${i.liked ? style.buttonShareActive : ''}`}>{getTranslation('SHARE')}</a>
+						<a
+							className={`bold ${style.buttonLike} ${i.liked ? style.buttonLikeActive : ''}`}>{getTranslation('LIKE')}</a>
+						<a
+							className={`bold ${style.buttonShare} ${i.liked ? style.buttonShareActive : ''}`}
+							onClick={() => {
+								nativeShare({
+									url: i.image,
+									message: `${i.title}\n${getTranslation('EVENT_BY')}:${dateEventFormat(i.date)}\n${getTranslation(i.isOnline ? 'ONLINE_EVENT' : 'ONSITE_EVENT')}`
+								})
+							}}>{getTranslation('SHARE')}</a>
 					</div>
 				</div>
 			))

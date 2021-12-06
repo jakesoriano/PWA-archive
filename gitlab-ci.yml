@@ -1,0 +1,40 @@
+stages:
+  - build
+
+cache:
+  paths:
+    - node_modules/
+    - /usr/local/share/.cache/yarn/v2/
+
+.buildPipeLine:
+  before_script:
+    - npm config set registry http://registry.npmjs.org/
+    - npm install --production=false
+    - echo "APP_ENV_PROJECT=Kakampink" >> .env
+    - echo "APP_ENV_API_DOMAIN=$API_DOMAIN" >> .env
+    - echo "APP_ENV_PLATFORM=$PLATFORM" >> .env
+    - echo "APP_ENV_PREFIX=$PREFIX" >> .env
+    - echo "APP_ENV_ENVIRONMENT=$ENVIRONMENT" >> .env
+    - echo "APP_ENV_STAGE=$CI_COMMIT_REF_NAME" >> .env
+    - echo "APP_ENV_BUILD_NO=1.0.$CI_JOB_ID" >> .env
+    - echo "APP_ENV_COOKIE_TIME_LIMIT=14" >> .env
+    - cat .env
+    - npm install
+    # - npm run pwa-config
+  script:
+    - rm -rf build
+    - npm run build
+    - npm run web-redirection
+  # after_script:
+
+build:
+  stage: build
+  only:
+    - develop
+    - master
+  extends: .buildPipeLine
+  variables:
+    API_DOMAIN: /
+    PLATFORM: web
+    PREFIX: kkp
+    ENVIRONMENT: PROD

@@ -1,27 +1,5 @@
 import axios from 'axios';
 
-function addSPFIDQueryString (link, buildNo, spfid) {
-  try {
-    // add domain
-    if (link.substr(0, 4) !== 'http') {
-      // eslint-disable-next-line no-param-reassign
-      link = window.location.origin + link;
-    }
-
-    // add SPFID as query string
-    const url = new URL(link);
-    url.searchParams.append('P-AV', buildNo);
-    url.searchParams.append('P-SRC', process.env.PROJECT);
-    url.searchParams.append('SPFID', spfid);
-    return url.href;
-  } catch (err) {
-    if (link.indexOf('?') > 0) {
-      return `${link}&P-AV=${buildNo}&P-SRC=${process.env.PROJECT}&SPFID=${spfid}`;
-    }
-    return `${link}?P-AV=${buildNo}&P-SRC=${process.env.PROJECT}&SPFID=${spfid}`;
-  }
-}
-
 self.onmessage = (ev) => {
   // url
   const url = ev.data.url
@@ -46,9 +24,7 @@ self.onmessage = (ev) => {
   // config
   const config = {
     ...(ev.data.options || {}),
-    url: ev.data.externalAPI
-      ? url
-      : addSPFIDQueryString(url, process.env.BUILD_NO, ev.data.platform.spfid),
+    url,
     method: (ev.data.options && ev.data.options.method) || 'GET'
   };
 

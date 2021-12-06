@@ -3,13 +3,13 @@
 .backtotop {
 	position: fixed;
 	z-index: 1;
-	background-color: var(--backtotop-bgcolor);
+	background-color: #4d3ad4;
 	width: 45px;
 	height: 45px;
 	bottom: -100px;
 	right: 15px;
 	border-radius: 100px;
-	opacity: var(--backtotop-opacity);
+	// opacity: var(--backtotop-opacity);
 	display: block;
 	margin: 0;
 	padding: 0;

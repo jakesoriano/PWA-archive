@@ -19,7 +19,7 @@ class AccountProfile extends Component {
 	  }
 	};
 
-	render = ({ authUser }) => {
+	render = ({ authUser, members }) => {
 	  if (!authUser) {
 	    return <LoaderRing fullpage />;
 	  }
@@ -33,34 +33,26 @@ class AccountProfile extends Component {
 							style={{container: style.avatar}} />
 						<div className={style.nameMember}>
 							<p className={`bold ${style.name}`}>{`${authUser.fname} ${authUser.lname}`}</p>
-							<p className={style.members}>{`${formatNumber(authUser.members, 2)} ${getTranslation('MEMBERS')}`}</p>
+							<p className={style.members}>{`${getTranslation('RANK')} ${formatNumber(authUser.rank, 0)}`}</p>
+							<p className={style.members}>{`${formatNumber(authUser.points, 2)} ${getTranslation('PTS')} `}</p>
 						</div>
 						<a onClick={() => {
 							nativeShare({
-								message: `${getTranslation('MEMBERS')}: ${formatNumber(authUser.members, 2)}\n${getTranslation('HERO_POINTS')}: ${formatNumber(authUser.points, 2)}`
+								message: `${getTranslation('RANK')}: ${formatNumber(authUser.rank, 0)}\n${getTranslation('HERO_POINTS')}: ${formatNumber(authUser.points, 2)}\n\n${getTranslation('TOP_PERFORMERS')}${members.data.sort((a, b) => a.rank - b.rank).reduce((r, i) => {
+										return r + `\n${formatNumber(i.rank)} - ${i.fname} ${i.lname}`
+									}, '')}`
 							})
 						}}>
-							<ImageLoader 
-								src="assets/images/share_icon.png"
-								style={{container: style.share}} />
+						<ImageLoader 
+							src="assets/images/share_icon.png"
+							style={{container: style.share}} />
 						</a>
 					</div>
-	        <p className={style.heroPoints}>
-	          <span className={`extraBold ${style.points}`}>{formatNumber(authUser.points, 2)}</span>
-	          <span className={`bold ${style.textPoints}`}>{getTranslation('HERO_POINTS')}</span>
-	        </p>
+					{/* Title */}
+					<p className={`bold ${style.title}`}>{getTranslation('TOP_PERFORMERS')}</p>
 	      </div>
-				<Link className={style.invite} href="/invite">
-					<div>
-						<ImageLoader
-							src="assets/images/invite_icon.png"
-							style={{container: style.iconInvite}} />
-						<span>{getTranslation('INVITE_MEMBER')}</span>
-					</div>
-					<span>{getTranslation('EARN_100P')}</span>
-				</Link>
 	    </div>
 	  );
 	};
 }
-export default connect(['authUser'])(AccountProfile);
+export default connect(['authUser', 'members'])(AccountProfile);

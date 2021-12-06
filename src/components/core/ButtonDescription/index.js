@@ -8,13 +8,13 @@ class ButtonDescription extends Component {
 	    <div className={style.buttonDescWrapper}>
 	      <button
 	        type="button"
-	        className={style.button}
+	        className={`bold ${style.button}`}
 	        disabled={isDisabled}
 	        onClick={(e) => onClickCallback(e)}
 	      >
 	        {text}
 	      </button>
-	      <small>{bottomDescription}</small>
+	      {bottomDescription && <p className={style.small}>{bottomDescription}</p>}
 	    </div>
 	  );
 	};
