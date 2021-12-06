@@ -17,10 +17,6 @@ class Leaderboard extends Component {
 	};
 
 	render = ({ members }) => {
-	  if (!members.result) {
-	    return <LoaderRing fullpage />;
-	  }
-
 	  return (
 	    <dv className={style.membersWrap}>
 				{/* header */}
@@ -55,6 +51,8 @@ class Leaderboard extends Component {
 						</div>
 					</div>
 				))}
+				{/* Loader */}
+				{!members.result && <LoaderRing fullpage />}
 			</dv>
 	  );
 	};
