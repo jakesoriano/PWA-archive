@@ -1,0 +1,70 @@
+.accountProfile {
+  padding: 0 15px 10px;
+  * {
+    color: #737373;
+  }
+  .profile {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    .user {
+      display: flex;
+      width: 100%;
+      .avatar {
+        width: 76px;
+        padding-bottom: 72px;
+        border: 2px solid #ffb1bb;
+        border-radius: 80px;
+      }
+      .nameMember {
+        flex-grow: 1;
+        padding: 10px;
+        .name {
+          font-size: 1.2rem;
+          text-transform: uppercase;
+        }
+      }
+      .share {
+        width: 20px;
+        padding-bottom: 20px;
+      }
+    }
+    .heroPoints {
+      text-align: center;
+      display: grid;
+      .points {
+        font-size: 1.8rem;
+      }
+      .textPoints {
+        text-transform: uppercase;
+      }
+    }
+  }
+  .pointsNbuttons {
+    display : flex;
+    .heroPoints {
+      flex-grow: 1;
+      text-align: left;;
+    }
+    .invite {
+      align-self: end;
+      > div {
+        display: flex;
+        align-items: center;
+        .iconInvite {
+          width: 30px;
+          padding-bottom: 30px;
+          margin: 0 10px 0 15px;
+        }
+        span {
+          background: #ffb5ba;
+          padding: 10px 15px;
+          color: #fff;
+          border-radius: 30px;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

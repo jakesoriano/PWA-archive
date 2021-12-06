@@ -1,20 +1,12 @@
 .membersWrap {
   background: #fff;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
   margin: 0 15px 15px;
   display: block;
   overflow: hidden;
   * {
     color: #000;
     font-size: 0.9rem;
-  }
-  .title {
-    font-size: 1.2rem;
-    padding: 15px 0;
-    text-align: center;
-    color: #ff62ce;
-    text-transform: uppercase;
-    border-bottom: 1px solid #f1ebeb;
   }
   .item {
     display: flex;

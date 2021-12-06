@@ -47,7 +47,7 @@
 		"uri": "leaderboard",
 		"contents": [
 			{
-				"component": "AccountProfile"
+				"component": "AccountProfile3"
 			},
 			{
 				"component": "Leaderboard"
@@ -75,7 +75,7 @@
 		"uri": "profile",
 		"contents": [
 			{
-				"component": "AccountProfile"
+				"component": "AccountProfile2"
 			},
 			{
 				"component": "Members"
