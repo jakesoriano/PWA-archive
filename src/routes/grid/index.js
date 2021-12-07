@@ -26,7 +26,8 @@ import {
   PopupPage,
   SideBar,
   BackToTop,
-	NotificationBox
+	NotificationBox,
+	PopupModal
 } from '_components/core';
 import { nativeWebReady, nativeGetDeviceId } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
@@ -280,7 +281,6 @@ class Grid extends Component {
 	  const { notification } = this.props;
 	  try {
 	    const props = { ...notification };
-			console.log(props, 's');
 	    // eslint-disable-next-line react/jsx-props-no-spreading
 	    return <NotificationBox {...props} />;
 	  } catch (err) {
@@ -290,8 +290,21 @@ class Grid extends Component {
 	  }
 	};
 
+	renderPopupModal = () => {
+	  const { popupModal } = this.props;
+	  try {
+	    const props = { ...popupModal };
+	    // eslint-disable-next-line react/jsx-props-no-spreading
+	    return <PopupModal {...props} />;
+	  } catch (err) {
+	    // eslint-disable-next-line no-console
+	    console.error('Widget Component >> renderNotification >> Error:', err);
+	    return null;
+	  }
+	};
+
 	render = (
-	  { translation, messageModal, promptModal, componentModal, pageLoader, notification },
+	  { translation, messageModal, promptModal, componentModal, pageLoader, notification, popupModal },
 	  { data, popup, rightSideBar }
 	) => {
 	  if (!data || !translation.data) {
@@ -348,6 +361,7 @@ class Grid extends Component {
 	      {messageModal && this.renderMessageModal()}
 	      {promptModal && this.renderPromptModal()}
 	      {componentModal && this.renderComponentModal()}
+	      {popupModal && this.renderPopupModal()}
 	      {pageLoader.display && <LoaderRing fullpage />}
 
 	      <BackToTop
@@ -371,7 +385,8 @@ const ConnectComponent = connect([
   'messageModal',
   'componentModal',
   'pageLoader',
-	'notification'
+	'notification',
+	'popupModal'
 ])(Grid);
 export default ConnectComponent;
 

@@ -19,10 +19,8 @@ class OneTimePIN extends Component {
 		};
 	}
 	componentDidMount = () => {
-		const { invited } = this.props;
-		if (invited.data.hasOwnProperty('number')) {
-			sendOTP(invited.data.number);
-		}
+		const { signup } = this.props;
+		sendOTP(signup.number);
 	};
 	handleContinue = (e) => {
 		let { pin, isOTPInvalid } = this.state;
@@ -154,4 +152,4 @@ class OneTimePIN extends Component {
 		);
 	};
 }
-export default connect(['notification', 'invited'])(OneTimePIN);
+export default connect(['notification', 'signup'])(OneTimePIN);
