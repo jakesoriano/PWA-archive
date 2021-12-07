@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { fetchNews, fetchEvents } from '_mutations';
-import { getTranslation, dateEventFormat } from '_helpers';
+import { getTranslation, dateEventFormat, playStore, appStore } from '_helpers';
 import { ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
@@ -36,6 +36,37 @@ class NewsAndEvents extends Component {
 	onClickItem = (data) => {
 		this.setState({
 			selectedItem: data
+		});
+	};
+
+	shareNews = (item) => {
+		nativeShare({
+			url: item.image,
+			title: `Kakampink - ${item.title}`,
+			message: `\n\n
+				We tell it as it is. Only the truth, KakamPink!\n\n
+				Shared via Kakampink App\n
+				Download now!\n
+				Android: ${playStore}\n
+				Apple: ${appStore}\n\n
+				Article Title: ${item.title}\n
+				Ariticle Link: ${item.link || ''}
+			`
+		})
+	};
+
+	shareEvent = (item) => {
+		nativeShare({
+			url: item.image,
+			title: `Kakampink - ${item.title}`,
+			message: `\n\n
+				Unity despite diversity leads to victory. Come join us, KakamPink!\n\n
+				Event Title: ${item.title}\n
+				Event Date: ${dateEventFormat(item.date)}\n
+				Event Link: ${item.link || ''}\n\n
+				${getTranslation(item.isOnline ? 'ONLINE_EVENT' : 'ONSITE_EVENT')}:\n
+				Event Location: ${item.location}
+			`
 		});
 	};
 
@@ -74,14 +105,11 @@ class NewsAndEvents extends Component {
 						}}
 					/>
 					<a className={style.pShare} onClick={() => {
-						nativeShare({
-							url: this.state.selectedItem.image,
-							...(this.state.active == 'news' ? {
-								message: `${i.title}\n${i.link}`
-							} : {
-								message: `${i.title}\n${getTranslation('EVENT_BY')}:${dateEventFormat(i.date)}\n${getTranslation(i.isOnline ? 'ONLINE_EVENT' : 'ONSITE_EVENT')}`
-							})
-						})
+						if(this.state.active == 'news') {
+							this.shareNews(this.state.selectedItem);
+						} else {
+							this.shareEvent(this.state.selectedItem);
+						}
 					}}>
 						<ImageLoader
 								src="assets/images/share_icon_white.png"
@@ -126,10 +154,7 @@ class NewsAndEvents extends Component {
 						<a
 							className={`bold ${style.buttonShare} ${i.liked ? style.buttonShareActive : ''}`}
 							onClick={() => {
-								nativeShare({
-									url: i.image,
-									message: `${i.title}\n${i.link}`
-								})
+								this.shareNews(i);
 							}}>{getTranslation('SHARE')}</a>
 					</div>
 				</div>
@@ -173,10 +198,7 @@ class NewsAndEvents extends Component {
 						<a
 							className={`bold ${style.buttonShare} ${i.liked ? style.buttonShareActive : ''}`}
 							onClick={() => {
-								nativeShare({
-									url: i.image,
-									message: `${i.title}\n${getTranslation('EVENT_BY')}:${dateEventFormat(i.date)}\n${getTranslation(i.isOnline ? 'ONLINE_EVENT' : 'ONSITE_EVENT')}`
-								})
+								this.shareEvent(i);
 							}}>{getTranslation('SHARE')}</a>
 					</div>
 				</div>
