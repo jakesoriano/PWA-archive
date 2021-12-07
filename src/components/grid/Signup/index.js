@@ -2,7 +2,13 @@ import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { route } from 'preact-router';
 import { updateStore } from '_unistore';
-import { getTranslation, getRegions, getProvince, getMunicipality, getBarangay} from '_helpers';
+import {
+	getTranslation,
+	getMaxDOBDate,
+	getRegions,
+	getProvince,
+	getMunicipality,
+	getBarangay} from '_helpers';
 import { FormGroup, FormInput, FormDropdown, ButtonDescription } from '_components/core';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -151,7 +157,7 @@ class Signup extends Component {
 		this.setState({
 			number: {
 				...this.state.number,
-				value: value,
+				value: value.slice(0 ,11),
 				hasError: !Boolean(value),
 				error: !Boolean(value) ? 'REQUIRED' : ''
 			}
@@ -371,6 +377,7 @@ class Signup extends Component {
 						<FormInput
 							value={dob.value}
 							type="date"
+							max={getMaxDOBDate()}
 							onBlur={(e) => {
 								this.onDobChange(e.target.value)
 							}}
@@ -387,6 +394,7 @@ class Signup extends Component {
 							value={number.value}
 							type="number"
 							placeholder={'0919...'}
+							max={11}
 							onBlur={(e) => {
 								this.onNumberChange(e.target.value)
 							}}
