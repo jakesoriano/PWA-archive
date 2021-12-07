@@ -1,0 +1,32 @@
+@import '../../../style/variables.scss';
+  .alertBox {
+    top: -100%;
+    transition: all 1s ease-in-out;
+    position: absolute;
+    padding: 10px;
+    border: 2px solid #d9d9d9;
+    width: 100%;
+    background-color: $white;
+    display: flex;
+    border-radius: 5px;
+    z-index: 5;
+    .alertIcon {
+      &.success {
+        color: $success;
+      }
+      &.error {
+        color: $error;
+      }
+    }
+    .alertText {
+      text-align: center;
+      align-self: center;
+      margin-left: -13px;
+      flex: 1;
+      font-size: .875rem;
+      color: $black;
+    }
+  }
+  .show {
+    top: 56px;
+  }

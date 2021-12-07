@@ -32,12 +32,15 @@ export const initialStore = {
     result: false,
     data: []
   },
+  signup: null,
   // user
   authUser: null,
   // modals
   promptModal: null,
   messageModal: null,
   componentModal: null,
+  popupModal: null,
+  alertShow: null,
   pageLoader: {
     display: false
   }

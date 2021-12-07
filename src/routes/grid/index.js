@@ -25,7 +25,9 @@ import {
   Topbar,
   PopupPage,
   SideBar,
-  BackToTop
+  BackToTop,
+	AlertBox,
+	PopupModal
 } from '_components/core';
 import { nativeWebReady, nativeGetDeviceId } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
@@ -275,8 +277,34 @@ class Grid extends Component {
 	  );
 	};
 
+	renderAlert = () => {
+	  const { alertShow } = this.props;
+	  try {
+	    const props = { ...alertShow };
+	    // eslint-disable-next-line react/jsx-props-no-spreading
+	    return <AlertBox {...props} />;
+	  } catch (err) {
+	    // eslint-disable-next-line no-console
+	    console.error('Widget Component >> renderAlert >> Error:', err);
+	    return null;
+	  }
+	};
+
+	renderPopupModal = () => {
+	  const { popupModal } = this.props;
+	  try {
+	    const props = { ...popupModal };
+	    // eslint-disable-next-line react/jsx-props-no-spreading
+	    return <PopupModal {...props} />;
+	  } catch (err) {
+	    // eslint-disable-next-line no-console
+	    console.error('Widget Component >> renderAlert >> Error:', err);
+	    return null;
+	  }
+	};
+
 	render = (
-	  { translation, messageModal, promptModal, componentModal, pageLoader },
+	  { translation, messageModal, promptModal, componentModal, pageLoader, alertShow, popupModal },
 	  { data, popup, rightSideBar }
 	) => {
 	  if (!data || !translation.data) {
@@ -320,6 +348,7 @@ class Grid extends Component {
 	            </div>
 	          </PopupPage>
 	        )}
+					{alertShow && this.renderAlert()}
 	        {/* Side Bar */}
 	        {data && data.auth && <SideBar
 						page={data.uri}
@@ -332,6 +361,7 @@ class Grid extends Component {
 	      {messageModal && this.renderMessageModal()}
 	      {promptModal && this.renderPromptModal()}
 	      {componentModal && this.renderComponentModal()}
+	      {popupModal && this.renderPopupModal()}
 	      {pageLoader.display && <LoaderRing fullpage />}
 
 	      <BackToTop
@@ -354,7 +384,9 @@ const ConnectComponent = connect([
   'promptModal',
   'messageModal',
   'componentModal',
-  'pageLoader'
+  'pageLoader',
+	'alertShow',
+	'popupModal'
 ])(Grid);
 export default ConnectComponent;
 
