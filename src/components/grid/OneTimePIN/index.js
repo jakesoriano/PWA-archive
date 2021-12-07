@@ -1,4 +1,4 @@
-import { Component, createRef } from 'preact';
+import { Component } from 'preact';
 import { getTranslation } from '_helpers';
 import { verifyOTP, sendOTP } from '_mutations';
 import { connect } from 'unistore/preact';
@@ -8,7 +8,6 @@ import style from './style.scss';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class OneTimePIN extends Component {
-	ref = createRef();
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -20,7 +19,7 @@ class OneTimePIN extends Component {
 	}
 	componentDidMount = () => {
 		const { signup } = this.props;
-		sendOTP(signup.number);
+		if (signup && signup.hasOwnProperty('number')) sendOTP(signup.number);
 	};
 	handleContinue = (e) => {
 		let { pin, isOTPInvalid } = this.state;
@@ -35,7 +34,7 @@ class OneTimePIN extends Component {
 			} else {
 				if (!isOTPInvalid) {
 					updateStore({
-						notification: {
+						alertShow: {
 							success: false,
 							content: getTranslation('OTP_INVALID')
 						}
@@ -45,7 +44,7 @@ class OneTimePIN extends Component {
 					});
 					setTimeout(() => {
 						updateStore({
-							notification: null
+							alertShow: null
 						});
 						this.setState({
 							isOTPInvalid: false,
@@ -80,7 +79,7 @@ class OneTimePIN extends Component {
 
 	render = () => {
 		return (
-			<div ref={this.ref} className={style.otpWrapper}>
+			<div className={style.otpWrapper}>
 				<div className={style.otpContent}>
 					<p className={style.heading}>{getTranslation('OTP_ENTER')}</p>
 					<label for="enteredPIN">
@@ -124,17 +123,14 @@ class OneTimePIN extends Component {
 						id="enteredPIN"
 						className={style.enteredPIN}
 						maxlength="6"
-						ref={(el) => {
-							if (el) {
-								this.el = el;
-							}
-						}}
-						onKeyUp={() => {
+						minLength="0"
+						onKeyUp={(e) => {
+							let _this = e.target;
 							this.setState({
-								pin: this.el.value,
+								pin: _this.value,
 							});
-							if (this.el.value.length === 6) {
-								this.el.blur();
+							if (e.target.value.length === 6) {
+								_this.blur();
 							}
 						}}
 					/>
@@ -152,4 +148,4 @@ class OneTimePIN extends Component {
 		);
 	};
 }
-export default connect(['notification', 'signup'])(OneTimePIN);
+export default connect(['alertShow', 'signup'])(OneTimePIN);

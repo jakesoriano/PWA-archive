@@ -1,5 +1,5 @@
 @import '../../../style/variables.scss';
-  .notificationBox {
+  .alertBox {
     top: -100%;
     transition: all 1s ease-in-out;
     position: absolute;
@@ -10,10 +10,7 @@
     display: flex;
     border-radius: 5px;
     z-index: 5;
-    &.show {
-      top: 0;
-    }
-    .notificationIcon {
+    .alertIcon {
       &.success {
         color: $success;
       }
@@ -21,7 +18,7 @@
         color: $error;
       }
     }
-    .notificationText {
+    .alertText {
       text-align: center;
       align-self: center;
       margin-left: -13px;
@@ -29,4 +26,7 @@
       font-size: .875rem;
       color: $black;
     }
+  }
+  .show {
+    top: 56px;
   }

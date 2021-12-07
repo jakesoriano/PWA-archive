@@ -40,7 +40,7 @@ export const initialStore = {
   messageModal: null,
   componentModal: null,
   popupModal: null,
-  notification: null,
+  alertShow: null,
   pageLoader: {
     display: false
   }
