@@ -56,3 +56,25 @@ export function fetchUserPoints () {
       });
   });
 }
+
+export function login (data) {
+  return new Promise((resolve) => {
+    xhr(urlUserData, {
+      method: 'GET',
+      data
+    })
+      .then((res) => {
+        updateStore({
+          authUser: res
+        });
+        // eslint-disable-next-line
+				console.log(`SPA >> login successful`, res);
+        resolve(true);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line
+				console.log(`SPA >> login Error`, err);
+        resolve(false);
+      });
+  });
+}

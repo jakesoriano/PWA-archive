@@ -301,6 +301,7 @@ class Grid extends Component {
 	              data && data.auth ? '' : style.noUser
 	            }`}
 	            id={`page-${this.getPageName()}`}
+				style={`${this.getPageName() === 'landing' ? 'overflow: hidden' : null}`}
 	            type="grid_content"
 	          >
 	            {renderGrid(this.getPageName(), this.getPageName(), data)}

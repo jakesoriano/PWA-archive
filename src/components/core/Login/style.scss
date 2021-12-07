@@ -1,0 +1,117 @@
+// .loginFormContainer {
+// 	height: 100%;
+// 	width: 100%;
+// }
+
+// .loginOutside {
+// 	height: 100%;
+// 	width: 100%;
+// 	opacity: 0.5;
+// 	z-index: 4;
+// 	position: absolute;
+// }
+
+// .login {
+// 	position: absolute;
+// 	top: 100%;
+// 	width: 100%;
+// 	z-index: 2;
+// 	overflow-x: auto;
+// 	text-align: left;
+// 	transition: all 0.2s linear;
+// 	border-radius: 15px 15px 0 0;
+// 	.formTitle {
+// 		background-color: #FFB5BA;
+// 		color: #fff;
+// 		padding: 10px 15px;
+// 		font-size: 21px;
+// 	}
+// 	.formFieldWrap {
+// 		background-color: #fff;
+// 		height: 300px;
+// 		width: 100%;
+// 		padding: 15px;
+// 	}
+// }
+
+// .login.toggled {
+// 	bottom: 0;
+// 	transition: all 0.2s linear;
+// }
+
+
+.loginFormContainer {
+	height: 100%;
+	width: 100%;
+}
+
+.loginOutside {
+	height: 100%;
+	width: 100%;
+	opacity: 0.5;
+	z-index: 4;
+	position: absolute;
+	top: 0;
+}
+
+.login {
+	border-radius: 15px 15px 0 0;
+	position: absolute;
+	bottom: -550px;
+	max-height: 550px;
+	left: 0;
+	width: 100%;
+	z-index: 4;
+	text-align: left;
+	.formTitle {
+		background-color: #FFB5BA;
+		color: #fff;
+		border-radius: 15px 15px 0 0;
+		padding: 12px 10px 10px;
+		font-size: 21px;
+	}
+	.formFieldWrap {
+		background-color: #fff;
+		width: 100%;
+		padding: 15px;
+		color: #737373;
+		> label {
+			font-family: 'OpenSans-Regular', arial, sans-serif;
+		  }
+		p, a {
+			color: #737373;
+			text-align: center;
+		}
+		.buttonWrap {
+			padding: 10px;
+			text-align: center;
+			.forgotUserPass {
+				display: block;
+				margin: 15px;
+				font-weight: bold;
+			}
+		}
+		.socialMedia {
+			text-align: center;
+			ul {
+				display: inline-flex;
+				padding: 0;
+				li {
+					display: inline;
+					margin: 0 5px;
+					.socMedIcons {
+						width: 60px;
+						padding-bottom: 60px;
+					}
+				}
+			}
+			
+		}
+	}
+	transition: all 0.2s linear;
+}
+
+.login.toggled {
+	bottom: 0;
+	transition: all 0.1s linear;
+}
