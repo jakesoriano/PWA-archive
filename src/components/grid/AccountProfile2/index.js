@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader } from '_components/core';
-import { fetchUserData, fetchUserPoints } from '_mutations';
+import { fetchUserPoints } from '_mutations';
 import { getTranslation, formatNumber } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -11,9 +11,7 @@ import style from './style';
 class AccountProfile extends Component {
 	componentDidMount = () => {
 	  const { authUser } = this.props;
-	  if (!authUser) {
-	    fetchUserData();
-	  } else if (authUser) {
+	  if (authUser) {
 	    fetchUserPoints();
 	  }
 	};

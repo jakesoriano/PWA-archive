@@ -12,9 +12,7 @@ import style from './style';
 class AccountProfile extends Component {
 	componentDidMount = () => {
 	  const { authUser } = this.props;
-	  if (!authUser) {
-	    fetchUserData();
-	  } else if (authUser) {
+	  if (authUser) {
 	    fetchUserPoints();
 	  }
 	};

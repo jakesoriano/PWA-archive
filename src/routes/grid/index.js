@@ -304,12 +304,17 @@ class Grid extends Component {
 	};
 
 	render = (
-	  { translation, messageModal, promptModal, componentModal, pageLoader, alertShow, popupModal },
+	  { authUser, translation, messageModal, promptModal, componentModal, pageLoader, alertShow, popupModal },
 	  { data, popup, rightSideBar }
 	) => {
 	  if (!data || !translation.data) {
 	    return <LoaderRing fullpage />;
 	  }
+
+		// redirect to landing page
+		if (!authUser && data.auth) {
+			route('/', true);
+		}
 
 	  return (
 	  // eslint-disable-next-line react/jsx-fragments
