@@ -96,7 +96,13 @@ class Signup extends Component {
 			}
 		}
 	}
-	componentDidMount = () => {};
+	componentDidMount = () => {
+		updateStore({
+			customBack: () => {
+				route('/landing/terms', true)
+			}
+		})
+	};
 	
 	onFnameChange = (value) => {
 		this.setState({

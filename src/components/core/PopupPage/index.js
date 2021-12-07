@@ -2,11 +2,12 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { h, Component, createRef } from 'preact';
+import { connect } from 'unistore/preact';
 import { getTranslation } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
-export default class PopupPage extends Component {
+class PopupPage extends Component {
 	ref = createRef();
 
 	handleBack = (cb) => {
@@ -27,13 +28,13 @@ export default class PopupPage extends Component {
 	  }
 	};
 
-	render = ({ title, children, onBack }) => (
+	render = ({ title, children, onBack, customBack }) => (
 	  <div ref={this.ref} className={style.popupPage}>
 	    <div className={style.header}>
 	      <button
 	        className="icon-back clickable"
 	        onClick={() => {
-	          this.handleBack(onBack);
+	          this.handleBack(customBack || onBack);
 	        }}
 	      >❮</button>
 	      <h3>{getTranslation(title)}</h3>
@@ -42,3 +43,5 @@ export default class PopupPage extends Component {
 	  </div>
 	);
 }
+
+export default connect(['customBack'])(PopupPage);
