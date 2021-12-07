@@ -1,0 +1,71 @@
+
+.inviteWrap {
+  background: #fff;
+  .form {
+    padding: 0px 5px 10px;
+    .name {
+      margin-left: 20px;
+      width: calc( 100% - 20px);
+    }
+    .invite {
+      display: flex;
+      align-items: center;
+      span,
+      .pShare {
+        flex-grow: 1;
+      }
+      .pShare {
+        border: 1px solid #ffb1bb;
+        display: flex;
+        width: 100px;
+        margin: 0 auto;
+        padding: 5px 10px;
+        width: max-content;
+        .pIconShare {
+          padding-bottom: 18px;
+          width: 18px;
+          margin-right: 5px;
+        }
+        span {
+          color: #fff;
+          color: #ffb1bb;
+          font-size: 0.8rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  .list {
+    background: #ffb1bb;
+    border-radius: 20px 20px 0 0;
+    margin: 0 0;
+    display: block;
+    overflow: hidden;
+    * {
+      color: #000;
+    }
+    .header {
+      p {
+        color: #fff;
+        font-size: 1rem;
+      }
+    }
+    .item {
+      display: flex;
+      padding: 10px 15px;
+      border-bottom: 1px dotted #f1ebeb;
+      width: 100%;
+      p {
+        flex-grow: 1;
+        font-size: 0.9rem;
+      }
+      .name {
+        width: calc(100% - 100px);
+      }
+      .status {
+        width: 100px;
+      }
+    }
+  }
+}

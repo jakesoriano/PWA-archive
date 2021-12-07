@@ -8,6 +8,26 @@
 				"component": "LandingPage"
 			}
 		]
+	},	
+	{
+		"styles": [],
+		"pageTitle": "PAGE_TERMS",
+		"uri": "terms",
+		"contents": [
+			{
+				"component": "TermsConditions"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"pageTitle": "PAGE_SIGNUP",
+		"uri": "signup",
+		"contents": [
+			{
+				"component": "Signup"
+			}
+		]
 	},
 	{
 		"styles": [],
@@ -30,10 +50,7 @@
 		"uri": "invite",
 		"contents": [
 			{
-				"component": "PageTitle",
-				"props": {
-					"title": "Invite"
-				}
+				"component": "Invite"
 			}
 		]
 	},
@@ -131,17 +148,7 @@
 				"component": "ModalButtons"
 			}
 		]
-	},	
-	{
-		"styles": [],
-		"pageTitle": "PAGE_TERMS",
-		"uri": "terms",
-		"contents": [
-			{
-				"component": "TermsConditions"
-			}
-		]
-	},	
+	},
 	{
 		"styles": [],
 		"pageTitle": "PAGE_OTP",

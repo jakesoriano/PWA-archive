@@ -1,11 +1,11 @@
-{
-  "NCR": {
-    "region_name": "NCR",
-    "province_list": {
+export const data = [
+  {
+    "r": "NCR",
+    "p": {
       "NATIONAL CAPITAL REGION - FOURTH DISTRICT": {
-        "municipality_list": {
+        "m": {
           "CITY OF LAS PIÑAS": {
-            "barangay_list": [
+            "b": [
               "ALMANZA DOS",
               "ALMANZA UNO",
               "B. F. INTERNATIONAL VILLAGE",
@@ -29,7 +29,7 @@
             ]
           },
           "CITY OF MAKATI": {
-            "barangay_list": [
+            "b": [
               "BANGKAL",
               "BEL-AIR",
               "CARMONA",
@@ -66,7 +66,7 @@
             ]
           },
           "CITY OF MUNTINLUPA": {
-            "barangay_list": [
+            "b": [
               "ALABANG",
               "BAYANAN",
               "BULI",
@@ -79,7 +79,7 @@
             ]
           },
           "CITY OF PARAÑAQUE": {
-            "barangay_list": [
+            "b": [
               "B. F. HOMES",
               "BACLARAN",
               "DON BOSCO",
@@ -99,7 +99,7 @@
             ]
           },
           "PASAY CITY": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 1",
               "BARANGAY 2",
               "BARANGAY 3",
@@ -306,9 +306,9 @@
         }
       },
       "NATIONAL CAPITAL REGION - MANILA": {
-        "municipality_list": {
+        "m": {
           "BINONDO": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 287",
               "BARANGAY 288",
               "BARANGAY 289",
@@ -322,7 +322,7 @@
             ]
           },
           "ERMITA": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 659",
               "BARANGAY 659-A",
               "BARANGAY 660",
@@ -339,7 +339,7 @@
             ]
           },
           "INTRAMUROS": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 654",
               "BARANGAY 655",
               "BARANGAY 656",
@@ -348,7 +348,7 @@
             ]
           },
           "MALATE": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 688",
               "BARANGAY 689",
               "BARANGAY 690",
@@ -409,7 +409,7 @@
             ]
           },
           "PACO": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 662",
               "BARANGAY 664-A",
               "BARANGAY 671",
@@ -456,7 +456,7 @@
             ]
           },
           "PANDACAN": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 833",
               "BARANGAY 834",
               "BARANGAY 835",
@@ -498,7 +498,7 @@
             ]
           },
           "PORT AREA": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 649",
               "BARANGAY 650",
               "BARANGAY 651",
@@ -507,7 +507,7 @@
             ]
           },
           "QUIAPO": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 306",
               "BARANGAY 307",
               "BARANGAY 308",
@@ -527,7 +527,7 @@
             ]
           },
           "SAMPALOC": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 395",
               "BARANGAY 396",
               "BARANGAY 397",
@@ -774,7 +774,7 @@
             ]
           },
           "SAN MIGUEL": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 637",
               "BARANGAY 638",
               "BARANGAY 639",
@@ -790,7 +790,7 @@
             ]
           },
           "SAN NICOLAS": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 268",
               "BARANGAY 269",
               "BARANGAY 270",
@@ -809,7 +809,7 @@
             ]
           },
           "SANTA ANA": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 745",
               "BARANGAY 746",
               "BARANGAY 747",
@@ -912,7 +912,7 @@
             ]
           },
           "SANTA CRUZ": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 297",
               "BARANGAY 298",
               "BARANGAY 299",
@@ -998,7 +998,7 @@
             ]
           },
           "TONDO": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 1",
               "BARANGAY 2",
               "BARANGAY 3",
@@ -1262,9 +1262,9 @@
         }
       },
       "NATIONAL CAPITAL REGION - SECOND DISTRICT": {
-        "municipality_list": {
+        "m": {
           "CITY OF MANDALUYONG": {
-            "barangay_list": [
+            "b": [
               "ADDITION HILLS",
               "BAGONG SILANG",
               "BARANGKA DRIVE",
@@ -1295,7 +1295,7 @@
             ]
           },
           "CITY OF MARIKINA": {
-            "barangay_list": [
+            "b": [
               "BARANGKA",
               "CALUMPANG",
               "CONCEPCION DOS",
@@ -1315,7 +1315,7 @@
             ]
           },
           "CITY OF PASIG": {
-            "barangay_list": [
+            "b": [
               "BAGONG ILOG",
               "BAGONG KATIPUNAN",
               "BAMBANG",
@@ -1349,7 +1349,7 @@
             ]
           },
           "QUEZON CITY": {
-            "barangay_list": [
+            "b": [
               "ALICIA",
               "AMIHAN",
               "APOLONIO SAMSON",
@@ -1495,7 +1495,7 @@
             ]
           },
           "SAN JUAN CITY": {
-            "barangay_list": [
+            "b": [
               "ADDITION HILLS",
               "BALONG-BATO",
               "BATIS",
@@ -1522,9 +1522,9 @@
         }
       },
       "NATIONAL CAPITAL REGION - THIRD DISTRICT": {
-        "municipality_list": {
+        "m": {
           "CALOOCAN CITY": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 1",
               "BARANGAY 2",
               "BARANGAY 3",
@@ -1716,7 +1716,7 @@
             ]
           },
           "CITY OF VALENZUELA": {
-            "barangay_list": [
+            "b": [
               "ARKONG BATO",
               "BAGBAGUIN",
               "BALANGKAS",
@@ -1753,7 +1753,7 @@
             ]
           },
           "MALABON CITY": {
-            "barangay_list": [
+            "b": [
               "ACACIA",
               "BARITAN",
               "BAYAN-BAYANAN",
@@ -1778,7 +1778,7 @@
             ]
           },
           "NAVOTAS CITY": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN NORTH",
               "BAGUMBAYAN SOUTH",
               "BANGCULASI",
@@ -1802,9 +1802,9 @@
         }
       },
       "TAGUIG - PATEROS": {
-        "municipality_list": {
+        "m": {
           "PATEROS": {
-            "barangay_list": [
+            "b": [
               "AGUHO",
               "MAGTANGGOL",
               "MARTIRES DEL 96",
@@ -1818,7 +1818,7 @@
             ]
           },
           "TAGUIG": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN",
               "BAMBANG",
               "CALZADA",
@@ -1853,18 +1853,18 @@
       }
     }
   },
-  "01": {
-    "region_name": "REGION I",
-    "province_list": {
+  {
+    "r": "REGION I",
+    "p": {
       "ILOCOS NORTE": {
-        "municipality_list": {
+        "m": {
           "ADAMS": {
-            "barangay_list": [
+            "b": [
               "ADAMS (POB.)"
             ]
           },
           "BACARRA": {
-            "barangay_list": [
+            "b": [
               "BANI",
               "BUYON",
               "CABARUAN",
@@ -1911,7 +1911,7 @@
             ]
           },
           "BADOC": {
-            "barangay_list": [
+            "b": [
               "ALAY-NANGBABAAN (ALAY 15-B)",
               "ALOGOOG",
               "AR-ARUSIP",
@@ -1946,7 +1946,7 @@
             ]
           },
           "BANGUI": {
-            "barangay_list": [
+            "b": [
               "ABACA",
               "BACSIL",
               "BANBAN",
@@ -1964,7 +1964,7 @@
             ]
           },
           "BANNA (ESPIRITU)": {
-            "barangay_list": [
+            "b": [
               "BALIOEG",
               "BANGSAR",
               "BARBARANGAY",
@@ -1988,7 +1988,7 @@
             ]
           },
           "BATAC CITY": {
-            "barangay_list": [
+            "b": [
               "ABLAN POB. (LABUCAO)",
               "ACOSTA POB. (ILOILO)",
               "AGLIPAY (POB.)",
@@ -2035,7 +2035,7 @@
             ]
           },
           "BURGOS": {
-            "barangay_list": [
+            "b": [
               "ABLAN SARAT",
               "AGAGA",
               "BAYOG",
@@ -2050,14 +2050,14 @@
             ]
           },
           "CARASI": {
-            "barangay_list": [
+            "b": [
               "ANGSET",
               "BARBAQUESO (POB.)",
               "VIRBIRA"
             ]
           },
           "CURRIMAO": {
-            "barangay_list": [
+            "b": [
               "ANGGAPANG NORTE",
               "ANGGAPANG SUR",
               "BIMMANGA",
@@ -2084,7 +2084,7 @@
             ]
           },
           "DINGRAS": {
-            "barangay_list": [
+            "b": [
               "ALBANO (POB.)",
               "BACSIL",
               "BAGUT",
@@ -2119,7 +2119,7 @@
             ]
           },
           "DUMALNEG": {
-            "barangay_list": [
+            "b": [
               "CABARITAN",
               "KALAW",
               "QUIBEL",
@@ -2127,7 +2127,7 @@
             ]
           },
           "LAOAG CITY": {
-            "barangay_list": [
+            "b": [
               "BGY. NO. 1, SAN LORENZO (POB.)",
               "BGY. NO. 2, SANTA JOAQUINA (POB.)",
               "BGY. NO. 3, NSTRA. SRA. DEL ROSARIO (POB.)",
@@ -2211,7 +2211,7 @@
             ]
           },
           "MARCOS": {
-            "barangay_list": [
+            "b": [
               "CACAFEAN",
               "DAQUIOAG",
               "ELIZABETH (CULAO)",
@@ -2228,7 +2228,7 @@
             ]
           },
           "NUEVA ERA": {
-            "barangay_list": [
+            "b": [
               "ACNAM",
               "BARANGOBONG",
               "BARIKIR",
@@ -2243,7 +2243,7 @@
             ]
           },
           "PAGUDPUD": {
-            "barangay_list": [
+            "b": [
               "AGGASI",
               "BADUANG",
               "BALAOI",
@@ -2263,7 +2263,7 @@
             ]
           },
           "PAOAY": {
-            "barangay_list": [
+            "b": [
               "BACSIL",
               "CABAGOAN",
               "CABANGARAN",
@@ -2298,7 +2298,7 @@
             ]
           },
           "PASUQUIN": {
-            "barangay_list": [
+            "b": [
               "BATULI",
               "BINSANG",
               "CARUAN",
@@ -2335,7 +2335,7 @@
             ]
           },
           "PIDDIG": {
-            "barangay_list": [
+            "b": [
               "AB-ABUT",
               "ABUCAY",
               "ANAO (POB.)",
@@ -2362,7 +2362,7 @@
             ]
           },
           "PINILI": {
-            "barangay_list": [
+            "b": [
               "AGLIPAY",
               "APATUT-LUBONG",
               "BADIO",
@@ -2391,7 +2391,7 @@
             ]
           },
           "SAN NICOLAS": {
-            "barangay_list": [
+            "b": [
               "SAN AGUSTIN",
               "SAN BALTAZAR (POB.)",
               "SAN BARTOLOME (POB.)",
@@ -2419,7 +2419,7 @@
             ]
           },
           "SARRAT": {
-            "barangay_list": [
+            "b": [
               "SAN AGUSTIN (POB.)",
               "SAN ANDRES",
               "SAN ANTONIO",
@@ -2447,7 +2447,7 @@
             ]
           },
           "SOLSONA": {
-            "barangay_list": [
+            "b": [
               "AGUITAP",
               "BAGBAG",
               "BAGBAGO",
@@ -2473,7 +2473,7 @@
             ]
           },
           "VINTAR": {
-            "barangay_list": [
+            "b": [
               "ABKIR",
               "ALEJO MALASIG",
               "ALSEM",
@@ -2512,9 +2512,9 @@
         }
       },
       "ILOCOS SUR": {
-        "municipality_list": {
+        "m": {
           "ALILEM": {
-            "barangay_list": [
+            "b": [
               "ALILEM DAYA (POB.)",
               "AMILONGAN",
               "ANAAO",
@@ -2527,7 +2527,7 @@
             ]
           },
           "BANAYOYO": {
-            "barangay_list": [
+            "b": [
               "BAGBAGOTOT",
               "BANBANAAL",
               "BISANGOL",
@@ -2545,7 +2545,7 @@
             ]
           },
           "BANTAY": {
-            "barangay_list": [
+            "b": [
               "AGGAY",
               "AN-ANNAM",
               "BALALENG",
@@ -2583,7 +2583,7 @@
             ]
           },
           "BURGOS": {
-            "barangay_list": [
+            "b": [
               "AMBUGAT",
               "BALUGANG",
               "BANGBANGAR",
@@ -2613,7 +2613,7 @@
             ]
           },
           "CABUGAO": {
-            "barangay_list": [
+            "b": [
               "ALINAAY",
               "ARAGAN",
               "ARNAP",
@@ -2650,7 +2650,7 @@
             ]
           },
           "CANDON CITY": {
-            "barangay_list": [
+            "b": [
               "ALLANGIGAN PRIMERO",
               "ALLANGIGAN SEGUNDO",
               "AMGUID",
@@ -2696,7 +2696,7 @@
             ]
           },
           "CAOAYAN": {
-            "barangay_list": [
+            "b": [
               "ANONANG MAYOR",
               "ANONANG MENOR",
               "BAGGOC",
@@ -2717,7 +2717,7 @@
             ]
           },
           "CERVANTES": {
-            "barangay_list": [
+            "b": [
               "ALULING",
               "COMILLAS NORTH",
               "COMILLAS SOUTH",
@@ -2734,7 +2734,7 @@
             ]
           },
           "GALIMUYOD": {
-            "barangay_list": [
+            "b": [
               "ABAYA",
               "BARACBAC",
               "BIDBIDAY",
@@ -2762,7 +2762,7 @@
             ]
           },
           "GREGORIO DEL PILAR (CONCEPCION)": {
-            "barangay_list": [
+            "b": [
               "ALFONSO (TANGAOAN)",
               "BUSSOT",
               "CONCEPCION",
@@ -2773,7 +2773,7 @@
             ]
           },
           "LIDLIDDA": {
-            "barangay_list": [
+            "b": [
               "BANUCAL",
               "BEQUI-WALIN",
               "BUGUI",
@@ -2788,7 +2788,7 @@
             ]
           },
           "MAGSINGAL": {
-            "barangay_list": [
+            "b": [
               "ALANGAN",
               "BACAR",
               "BARBARIT",
@@ -2822,7 +2822,7 @@
             ]
           },
           "NAGBUKEL": {
-            "barangay_list": [
+            "b": [
               "BALAWEG",
               "BANDRIL",
               "BANTUGO",
@@ -2838,7 +2838,7 @@
             ]
           },
           "NARVACAN": {
-            "barangay_list": [
+            "b": [
               "ABUOR",
               "AMBULOGAN",
               "AQUIB",
@@ -2876,7 +2876,7 @@
             ]
           },
           "QUIRINO (ANGKAKI)": {
-            "barangay_list": [
+            "b": [
               "BANOEN",
               "CAYUS",
               "LAMAG (TUBTUBA)",
@@ -2889,7 +2889,7 @@
             ]
           },
           "SALCEDO (BAUGEN)": {
-            "barangay_list": [
+            "b": [
               "ATABAY",
               "BALIDBID",
               "BALUARTE",
@@ -2914,7 +2914,7 @@
             ]
           },
           "SAN EMILIO": {
-            "barangay_list": [
+            "b": [
               "CABAROAN (POB.)",
               "KALUMSING",
               "LANCUAS",
@@ -2926,7 +2926,7 @@
             ]
           },
           "SAN ESTEBAN": {
-            "barangay_list": [
+            "b": [
               "ANSAD",
               "APATOT",
               "BATERIA",
@@ -2940,7 +2940,7 @@
             ]
           },
           "SAN ILDEFONSO": {
-            "barangay_list": [
+            "b": [
               "ARNAP",
               "BAHET",
               "BELEN",
@@ -2959,7 +2959,7 @@
             ]
           },
           "SAN JUAN (LAPOG)": {
-            "barangay_list": [
+            "b": [
               "ASILANG",
               "BACSIL",
               "BALIW",
@@ -2995,7 +2995,7 @@
             ]
           },
           "SAN VICENTE": {
-            "barangay_list": [
+            "b": [
               "BANTAOAY",
               "BAYUBAY NORTE",
               "BAYUBAY SUR",
@@ -3006,7 +3006,7 @@
             ]
           },
           "SANTA": {
-            "barangay_list": [
+            "b": [
               "AMPANDULA",
               "BANAOANG",
               "BASUG",
@@ -3036,7 +3036,7 @@
             ]
           },
           "SANTA CATALINA": {
-            "barangay_list": [
+            "b": [
               "CABAROAN",
               "CABITTAOGAN",
               "CABULOAN",
@@ -3049,7 +3049,7 @@
             ]
           },
           "SANTA CRUZ": {
-            "barangay_list": [
+            "b": [
               "AMARAO",
               "BABAYOAN",
               "BACSAYAN",
@@ -3102,7 +3102,7 @@
             ]
           },
           "SANTA LUCIA": {
-            "barangay_list": [
+            "b": [
               "ALINCAOEG",
               "ANGKILENG",
               "ARANGIN",
@@ -3142,7 +3142,7 @@
             ]
           },
           "SANTA MARIA": {
-            "barangay_list": [
+            "b": [
               "AG-AGRAO",
               "AMPUAGAN",
               "BABALLASIOAN",
@@ -3179,7 +3179,7 @@
             ]
           },
           "SANTIAGO": {
-            "barangay_list": [
+            "b": [
               "AL-ALUDIG",
               "AMBUCAO",
               "BAYBAYABAS",
@@ -3207,7 +3207,7 @@
             ]
           },
           "SANTO DOMINGO": {
-            "barangay_list": [
+            "b": [
               "BINALAYANGAN",
               "BINONGAN",
               "BOROBOR",
@@ -3247,7 +3247,7 @@
             ]
           },
           "SIGAY": {
-            "barangay_list": [
+            "b": [
               "ABACCAN",
               "MABILEG",
               "MATALLUCOD",
@@ -3258,7 +3258,7 @@
             ]
           },
           "SINAIT": {
-            "barangay_list": [
+            "b": [
               "AGUING",
               "BALIW",
               "BALLAIGUI (POB.)",
@@ -3306,7 +3306,7 @@
             ]
           },
           "SUGPON": {
-            "barangay_list": [
+            "b": [
               "BALBALAYANG (POB.)",
               "BANGA",
               "CAOAYAN",
@@ -3316,7 +3316,7 @@
             ]
           },
           "SUYO": {
-            "barangay_list": [
+            "b": [
               "BARINGCUCURONG",
               "CABUGAO",
               "MAN-ATONG",
@@ -3328,7 +3328,7 @@
             ]
           },
           "TAGUDIN": {
-            "barangay_list": [
+            "b": [
               "AG-AGUMAN",
               "AMBALAYAT",
               "BARACBAC",
@@ -3375,7 +3375,7 @@
             ]
           },
           "VIGAN CITY": {
-            "barangay_list": [
+            "b": [
               "AYUSAN NORTE",
               "AYUSAN SUR",
               "BARANGAY I (POB.)",
@@ -3420,9 +3420,9 @@
         }
       },
       "LA UNION": {
-        "municipality_list": {
+        "m": {
           "AGOO": {
-            "barangay_list": [
+            "b": [
               "AMBITACAY",
               "BALAWARTE",
               "CAPAS",
@@ -3475,7 +3475,7 @@
             ]
           },
           "ARINGAY": {
-            "barangay_list": [
+            "b": [
               "ALASKA",
               "BASCA",
               "DULAO",
@@ -3503,7 +3503,7 @@
             ]
           },
           "BACNOTAN": {
-            "barangay_list": [
+            "b": [
               "AGTIPAL",
               "AROSIP",
               "BACQUI",
@@ -3554,7 +3554,7 @@
             ]
           },
           "BAGULIN": {
-            "barangay_list": [
+            "b": [
               "ALIBANGSAY",
               "BAAY",
               "CAMBALY",
@@ -3568,7 +3568,7 @@
             ]
           },
           "BALAOAN": {
-            "barangay_list": [
+            "b": [
               "ALMIEDA",
               "ANTONINO",
               "APATUT",
@@ -3608,7 +3608,7 @@
             ]
           },
           "BANGAR": {
-            "barangay_list": [
+            "b": [
               "AGDEPPA",
               "ALZATE",
               "BANGAOILAN EAST",
@@ -3645,7 +3645,7 @@
             ]
           },
           "BAUANG": {
-            "barangay_list": [
+            "b": [
               "ACAO",
               "BACCUIT NORTE",
               "BACCUIT SUR",
@@ -3688,7 +3688,7 @@
             ]
           },
           "BURGOS": {
-            "barangay_list": [
+            "b": [
               "AGPAY",
               "BILIS",
               "CAOAYAN",
@@ -3704,7 +3704,7 @@
             ]
           },
           "CABA": {
-            "barangay_list": [
+            "b": [
               "BAUTISTA",
               "GANA",
               "JUAN CARTAS",
@@ -3725,7 +3725,7 @@
             ]
           },
           "CITY OF SAN FERNANDO": {
-            "barangay_list": [
+            "b": [
               "ABUT",
               "APALENG",
               "BACSIL",
@@ -3788,7 +3788,7 @@
             ]
           },
           "LUNA": {
-            "barangay_list": [
+            "b": [
               "ALCALA (POB.)",
               "AYAOAN",
               "BARANGOBONG",
@@ -3832,7 +3832,7 @@
             ]
           },
           "NAGUILIAN": {
-            "barangay_list": [
+            "b": [
               "AGUIOAS",
               "AL-ALINAO NORTE",
               "AL-ALINAO SUR",
@@ -3873,7 +3873,7 @@
             ]
           },
           "PUGO": {
-            "barangay_list": [
+            "b": [
               "AMBALITE",
               "AMBANGONAN",
               "CARES",
@@ -3891,7 +3891,7 @@
             ]
           },
           "ROSARIO": {
-            "barangay_list": [
+            "b": [
               "ALIPANG",
               "AMBANGONAN",
               "AMLANG",
@@ -3928,7 +3928,7 @@
             ]
           },
           "SAN GABRIEL": {
-            "barangay_list": [
+            "b": [
               "AMONTOC",
               "APAYAO",
               "BALBALAYANG",
@@ -3947,7 +3947,7 @@
             ]
           },
           "SAN JUAN": {
-            "barangay_list": [
+            "b": [
               "ALLANGIGAN",
               "ALUDAID",
               "BACSAYAN",
@@ -3992,7 +3992,7 @@
             ]
           },
           "SANTO TOMAS": {
-            "barangay_list": [
+            "b": [
               "AMBITACAY",
               "BAIL",
               "BALAOC",
@@ -4020,7 +4020,7 @@
             ]
           },
           "SANTOL": {
-            "barangay_list": [
+            "b": [
               "CORROOY",
               "LETTAC NORTE",
               "LETTAC SUR",
@@ -4035,7 +4035,7 @@
             ]
           },
           "SUDIPEN": {
-            "barangay_list": [
+            "b": [
               "BIGBIGA",
               "BULALAAN",
               "CASTRO",
@@ -4056,7 +4056,7 @@
             ]
           },
           "TUBAO": {
-            "barangay_list": [
+            "b": [
               "AMALLAPAY",
               "ANDUYAN",
               "CAOIGUE",
@@ -4080,9 +4080,9 @@
         }
       },
       "PANGASINAN": {
-        "municipality_list": {
+        "m": {
           "AGNO": {
-            "barangay_list": [
+            "b": [
               "ALLABON",
               "ALOLENG",
               "BANGAN-ODA",
@@ -4103,7 +4103,7 @@
             ]
           },
           "AGUILAR": {
-            "barangay_list": [
+            "b": [
               "BAYAOAS",
               "BAYBAY",
               "BOCACLIW",
@@ -4123,7 +4123,7 @@
             ]
           },
           "ALAMINOS CITY": {
-            "barangay_list": [
+            "b": [
               "ALOS",
               "AMANDIEGO",
               "AMANGBANGAN",
@@ -4166,7 +4166,7 @@
             ]
           },
           "ALCALA": {
-            "barangay_list": [
+            "b": [
               "ANULID",
               "ATAINAN",
               "BERSAMIN",
@@ -4191,7 +4191,7 @@
             ]
           },
           "ANDA": {
-            "barangay_list": [
+            "b": [
               "AWAG",
               "AWILE",
               "BATIARAO",
@@ -4213,7 +4213,7 @@
             ]
           },
           "ASINGAN": {
-            "barangay_list": [
+            "b": [
               "ARISTON ESTE",
               "ARISTON WESTE",
               "BANTOG",
@@ -4238,7 +4238,7 @@
             ]
           },
           "BALUNGAO": {
-            "barangay_list": [
+            "b": [
               "ANGAYAN NORTE",
               "ANGAYAN SUR",
               "CAPULAAN",
@@ -4262,7 +4262,7 @@
             ]
           },
           "BANI": {
-            "barangay_list": [
+            "b": [
               "AMBABAAY",
               "APORAO",
               "ARWAS",
@@ -4293,7 +4293,7 @@
             ]
           },
           "BASISTA": {
-            "barangay_list": [
+            "b": [
               "ANAMBONGAN",
               "BAYOYONG",
               "CABELDATAN",
@@ -4310,7 +4310,7 @@
             ]
           },
           "BAUTISTA": {
-            "barangay_list": [
+            "b": [
               "ARTACHO",
               "BALUYOT",
               "CABUAAN",
@@ -4332,7 +4332,7 @@
             ]
           },
           "BAYAMBANG": {
-            "barangay_list": [
+            "b": [
               "ALINGGAN",
               "AMAMPEREZ",
               "AMANCOSILING NORTE",
@@ -4413,7 +4413,7 @@
             ]
           },
           "BINALONAN": {
-            "barangay_list": [
+            "b": [
               "BALANGOBONG",
               "BUED",
               "BUGAYONG",
@@ -4441,7 +4441,7 @@
             ]
           },
           "BINMALEY": {
-            "barangay_list": [
+            "b": [
               "AMANCORO",
               "BALAGAN",
               "BALOGO",
@@ -4478,7 +4478,7 @@
             ]
           },
           "BOLINAO": {
-            "barangay_list": [
+            "b": [
               "ARNEDO",
               "BALINGASAY",
               "BINABALIAN",
@@ -4512,7 +4512,7 @@
             ]
           },
           "BUGALLON": {
-            "barangay_list": [
+            "b": [
               "ANGARIAN",
               "ASINAN",
               "BACABAC",
@@ -4540,7 +4540,7 @@
             ]
           },
           "BURGOS": {
-            "barangay_list": [
+            "b": [
               "ANAPAO (BUR ANAPAC)",
               "CACAYASEN",
               "CONCORDIA",
@@ -4558,7 +4558,7 @@
             ]
           },
           "CALASIAO": {
-            "barangay_list": [
+            "b": [
               "AMBONAO",
               "AMBUETEL",
               "BANAOANG",
@@ -4586,7 +4586,7 @@
             ]
           },
           "DAGUPAN CITY": {
-            "barangay_list": [
+            "b": [
               "BACAYAO NORTE",
               "BACAYAO SUR",
               "BARANGAY I (T. BUGALLON)",
@@ -4621,7 +4621,7 @@
             ]
           },
           "DASOL": {
-            "barangay_list": [
+            "b": [
               "ALILAO",
               "AMALBALAN",
               "BOBONOT",
@@ -4643,7 +4643,7 @@
             ]
           },
           "INFANTA": {
-            "barangay_list": [
+            "b": [
               "BABUYAN",
               "BAMBAN",
               "BATANG",
@@ -4660,7 +4660,7 @@
             ]
           },
           "LABRADOR": {
-            "barangay_list": [
+            "b": [
               "BOLO",
               "BONGALON",
               "DULIG",
@@ -4674,7 +4674,7 @@
             ]
           },
           "LAOAC": {
-            "barangay_list": [
+            "b": [
               "ANIS",
               "BALLIGI",
               "BANUAR",
@@ -4700,7 +4700,7 @@
             ]
           },
           "LINGAYEN": {
-            "barangay_list": [
+            "b": [
               "ALIWEKWEK",
               "BAAY",
               "BALANGOBONG",
@@ -4736,7 +4736,7 @@
             ]
           },
           "MABINI": {
-            "barangay_list": [
+            "b": [
               "BACNIT",
               "BARLO",
               "CAABIANGAAN",
@@ -4756,7 +4756,7 @@
             ]
           },
           "MALASIQUI": {
-            "barangay_list": [
+            "b": [
               "ABONAGAN",
               "AGDAO",
               "ALACAN",
@@ -4833,7 +4833,7 @@
             ]
           },
           "MANAOAG": {
-            "barangay_list": [
+            "b": [
               "BABASIT",
               "BAGUINAY",
               "BARITAO",
@@ -4863,7 +4863,7 @@
             ]
           },
           "MANGALDAN": {
-            "barangay_list": [
+            "b": [
               "ALITAYA",
               "AMANSABINA",
               "ANOLID",
@@ -4897,7 +4897,7 @@
             ]
           },
           "MANGATAREM": {
-            "barangay_list": [
+            "b": [
               "ANDANGIN",
               "ARELLANO STREET (POB.)",
               "BANTAY",
@@ -4983,7 +4983,7 @@
             ]
           },
           "MAPANDAN": {
-            "barangay_list": [
+            "b": [
               "AMANOAOAC",
               "APAYA",
               "ASERDA",
@@ -5002,7 +5002,7 @@
             ]
           },
           "NATIVIDAD": {
-            "barangay_list": [
+            "b": [
               "BARANGOBONG",
               "BATCHELOR EAST",
               "BATCHELOR WEST",
@@ -5024,7 +5024,7 @@
             ]
           },
           "POZORRUBIO": {
-            "barangay_list": [
+            "b": [
               "ALIPANGPANG",
               "AMAGBAGAN",
               "BALACAG",
@@ -5062,7 +5062,7 @@
             ]
           },
           "ROSALES": {
-            "barangay_list": [
+            "b": [
               "ACOP",
               "BAKITBAKIT",
               "BALINGCANAWAY",
@@ -5103,7 +5103,7 @@
             ]
           },
           "SAN CARLOS CITY": {
-            "barangay_list": [
+            "b": [
               "ABANON",
               "AGDAO",
               "ANANDO",
@@ -5193,7 +5193,7 @@
             ]
           },
           "SAN FABIAN": {
-            "barangay_list": [
+            "b": [
               "ALACAN",
               "AMBALANGAN-DALIN",
               "ANGIO",
@@ -5231,7 +5231,7 @@
             ]
           },
           "SAN JACINTO": {
-            "barangay_list": [
+            "b": [
               "AWAI",
               "BAGONG PAG-ASA (POBLACION EAST)",
               "BOLO",
@@ -5254,7 +5254,7 @@
             ]
           },
           "SAN MANUEL": {
-            "barangay_list": [
+            "b": [
               "CABACARAAN",
               "CABARITAN",
               "FLORES",
@@ -5272,7 +5272,7 @@
             ]
           },
           "SAN NICOLAS": {
-            "barangay_list": [
+            "b": [
               "BENSICAN",
               "CABITNONGAN",
               "CABOLOAN",
@@ -5309,7 +5309,7 @@
             ]
           },
           "SAN QUINTIN": {
-            "barangay_list": [
+            "b": [
               "ALAC",
               "BALIGAYAN",
               "BANTOG",
@@ -5334,7 +5334,7 @@
             ]
           },
           "SANTA BARBARA": {
-            "barangay_list": [
+            "b": [
               "ALIBAGO",
               "BALINGUEO",
               "BANAOANG",
@@ -5367,7 +5367,7 @@
             ]
           },
           "SANTA MARIA": {
-            "barangay_list": [
+            "b": [
               "BAL-LOY",
               "BANTOG",
               "CABOLUAN",
@@ -5394,7 +5394,7 @@
             ]
           },
           "SANTO TOMAS": {
-            "barangay_list": [
+            "b": [
               "LA LUNA",
               "POBLACION EAST",
               "POBLACION WEST",
@@ -5408,7 +5408,7 @@
             ]
           },
           "SISON": {
-            "barangay_list": [
+            "b": [
               "AGAT",
               "ALIBENG",
               "AMAGBAGAN",
@@ -5440,7 +5440,7 @@
             ]
           },
           "SUAL": {
-            "barangay_list": [
+            "b": [
               "BAQUIOEN",
               "BAYBAY NORTE",
               "BAYBAY SUR",
@@ -5463,7 +5463,7 @@
             ]
           },
           "TAYUG": {
-            "barangay_list": [
+            "b": [
               "AGNO",
               "AMISTAD",
               "BARANGAY A (POB.)",
@@ -5488,7 +5488,7 @@
             ]
           },
           "UMINGAN": {
-            "barangay_list": [
+            "b": [
               "ABOT MOLINA",
               "ALO-O",
               "AMARONAN",
@@ -5550,7 +5550,7 @@
             ]
           },
           "URBIZTONDO": {
-            "barangay_list": [
+            "b": [
               "ANGATEL",
               "BALANGAY",
               "BATANGCAOA",
@@ -5575,7 +5575,7 @@
             ]
           },
           "URDANETA CITY": {
-            "barangay_list": [
+            "b": [
               "ANONAS",
               "BACTAD EAST",
               "BAYAOAS",
@@ -5613,7 +5613,7 @@
             ]
           },
           "VILLASIS": {
-            "barangay_list": [
+            "b": [
               "AMAMPEREZ",
               "BACAG",
               "BARANGOBONG",
@@ -5641,13 +5641,13 @@
       }
     }
   },
-  "02": {
-    "region_name": "REGION II",
-    "province_list": {
+  {
+    "r": "REGION II",
+    "p": {
       "BATANES": {
-        "municipality_list": {
+        "m": {
           "BASCO": {
-            "barangay_list": [
+            "b": [
               "CHANARIAN",
               "IHUBOK I (KAYCHANARIANAN)",
               "IHUBOK II (KAYVALUGANAN)",
@@ -5657,7 +5657,7 @@
             ]
           },
           "ITBAYAT": {
-            "barangay_list": [
+            "b": [
               "RAELE",
               "SAN RAFAEL (IDIANG)",
               "SANTA LUCIA (KAUHAUHASAN)",
@@ -5666,7 +5666,7 @@
             ]
           },
           "IVANA": {
-            "barangay_list": [
+            "b": [
               "RADIWAN",
               "SALAGAO",
               "SAN VICENTE (IGANG)",
@@ -5674,7 +5674,7 @@
             ]
           },
           "MAHATAO": {
-            "barangay_list": [
+            "b": [
               "HANIB",
               "KAUMBAKAN",
               "PANATAYAN",
@@ -5682,7 +5682,7 @@
             ]
           },
           "SABTANG": {
-            "barangay_list": [
+            "b": [
               "CHAVAYAN",
               "MALAKDANG (POB.)",
               "NAKANMUAN",
@@ -5692,7 +5692,7 @@
             ]
           },
           "UYUGAN": {
-            "barangay_list": [
+            "b": [
               "IMNAJBU",
               "ITBUD",
               "KAYUGANAN (POB.)",
@@ -5702,9 +5702,9 @@
         }
       },
       "CAGAYAN": {
-        "municipality_list": {
+        "m": {
           "ABULUG": {
-            "barangay_list": [
+            "b": [
               "ALINUNU",
               "BAGU",
               "BANGUIAN",
@@ -5728,7 +5728,7 @@
             ]
           },
           "ALCALA": {
-            "barangay_list": [
+            "b": [
               "ABBEG",
               "AFUSING BATO",
               "AFUSING DAGA",
@@ -5757,7 +5757,7 @@
             ]
           },
           "ALLACAPAN": {
-            "barangay_list": [
+            "b": [
               "BESSANG",
               "BINOBONGAN",
               "BULO",
@@ -5788,7 +5788,7 @@
             ]
           },
           "AMULUNG": {
-            "barangay_list": [
+            "b": [
               "ABOLO",
               "AGGUIRIT",
               "ALITUNGTUNG",
@@ -5839,7 +5839,7 @@
             ]
           },
           "APARRI": {
-            "barangay_list": [
+            "b": [
               "BACKILING",
               "BANGAG",
               "BINALAN",
@@ -5885,7 +5885,7 @@
             ]
           },
           "BAGGAO": {
-            "barangay_list": [
+            "b": [
               "ADAOAG",
               "AGAMAN (PROPER)",
               "AGAMAN NORTE",
@@ -5937,7 +5937,7 @@
             ]
           },
           "BALLESTEROS": {
-            "barangay_list": [
+            "b": [
               "AMMUBUAN",
               "BARAN",
               "CABARITAN EAST",
@@ -5960,7 +5960,7 @@
             ]
           },
           "BUGUEY": {
-            "barangay_list": [
+            "b": [
               "ALUCAO WESTE (SAN LORENZO*)",
               "ANTIPORDA",
               "BALLANG",
@@ -5994,7 +5994,7 @@
             ]
           },
           "CALAYAN": {
-            "barangay_list": [
+            "b": [
               "BABUYAN CLARO",
               "BALATUBAT",
               "CABUDADAN",
@@ -6010,7 +6010,7 @@
             ]
           },
           "CAMALANIUGAN": {
-            "barangay_list": [
+            "b": [
               "ABAGAO",
               "AFUNAN CABAYU",
               "AGUSI",
@@ -6042,7 +6042,7 @@
             ]
           },
           "CLAVERIA": {
-            "barangay_list": [
+            "b": [
               "ALIMOAN",
               "BACSAY CATARAOAN NORTE",
               "BACSAY CATARAOAN SUR",
@@ -6087,7 +6087,7 @@
             ]
           },
           "ENRILE": {
-            "barangay_list": [
+            "b": [
               "ALIBAGO (VILLA MARIA)",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -6113,7 +6113,7 @@
             ]
           },
           "GATTARAN": {
-            "barangay_list": [
+            "b": [
               "ABRA",
               "AGUIGUICAN",
               "BANGATAN NGAGAN",
@@ -6167,7 +6167,7 @@
             ]
           },
           "GONZAGA": {
-            "barangay_list": [
+            "b": [
               "AMUNITAN",
               "BATANGAN",
               "BAUA",
@@ -6196,7 +6196,7 @@
             ]
           },
           "IGUIG": {
-            "barangay_list": [
+            "b": [
               "AJAT (POB.)",
               "ATULU",
               "BACULUD",
@@ -6223,7 +6223,7 @@
             ]
           },
           "LAL-LO": {
-            "barangay_list": [
+            "b": [
               "ABAGAO",
               "ALAGUIA",
               "BAGUMBAYAN",
@@ -6262,7 +6262,7 @@
             ]
           },
           "LASAM": {
-            "barangay_list": [
+            "b": [
               "AGGUNETAN",
               "ALANNAY",
               "BATTALAN",
@@ -6296,7 +6296,7 @@
             ]
           },
           "PAMPLONA": {
-            "barangay_list": [
+            "b": [
               "ABANQUERUAN",
               "ALLASITAN",
               "BAGU",
@@ -6318,7 +6318,7 @@
             ]
           },
           "PEÑABLANCA": {
-            "barangay_list": [
+            "b": [
               "AGGUGADDAN",
               "ALIMANAO",
               "BALIUAG",
@@ -6346,7 +6346,7 @@
             ]
           },
           "PIAT": {
-            "barangay_list": [
+            "b": [
               "APAYAO",
               "AQUIB",
               "BAUNG",
@@ -6368,7 +6368,7 @@
             ]
           },
           "RIZAL": {
-            "barangay_list": [
+            "b": [
               "ANAGGUAN",
               "ANUNGU",
               "ANURTURU",
@@ -6401,7 +6401,7 @@
             ]
           },
           "SANCHEZ-MIRA": {
-            "barangay_list": [
+            "b": [
               "BANGAN",
               "CALLUNGAN",
               "CENTRO I (POB.)",
@@ -6423,7 +6423,7 @@
             ]
           },
           "SANTA ANA": {
-            "barangay_list": [
+            "b": [
               "BATU-PARADA",
               "CASAGAN",
               "CASAMBALANGAN (PORT IRENE)",
@@ -6443,7 +6443,7 @@
             ]
           },
           "SANTA PRAXEDES": {
-            "barangay_list": [
+            "b": [
               "CADONGDONGAN",
               "CAPACUAN",
               "CENTRO I (POB.)",
@@ -6457,7 +6457,7 @@
             ]
           },
           "SANTA TERESITA": {
-            "barangay_list": [
+            "b": [
               "ALUCAO",
               "ARIDAWEN",
               "BUYUN",
@@ -6474,7 +6474,7 @@
             ]
           },
           "SANTO NIÑO (FAIRE)": {
-            "barangay_list": [
+            "b": [
               "ABARIONGAN RUAR",
               "ABARIONGAN UNEG",
               "BALAGAN",
@@ -6509,7 +6509,7 @@
             ]
           },
           "SOLANA": {
-            "barangay_list": [
+            "b": [
               "ANDARAYAN NORTH",
               "ANDARAYAN SOUTH",
               "BANGAG",
@@ -6551,7 +6551,7 @@
             ]
           },
           "TUAO": {
-            "barangay_list": [
+            "b": [
               "ACCUSILIAN",
               "ALABIAO",
               "ALABUG",
@@ -6587,7 +6587,7 @@
             ]
           },
           "TUGUEGARAO CITY": {
-            "barangay_list": [
+            "b": [
               "ANNAFUNAN EAST",
               "ANNAFUNAN WEST",
               "ATULAYAN NORTE",
@@ -6642,9 +6642,9 @@
         }
       },
       "ISABELA": {
-        "municipality_list": {
+        "m": {
           "ALICIA": {
-            "barangay_list": [
+            "b": [
               "AMISTAD",
               "ANTONINO (POB.)",
               "APANAY",
@@ -6682,7 +6682,7 @@
             ]
           },
           "ANGADANAN": {
-            "barangay_list": [
+            "b": [
               "ALLANGIGAN",
               "ANIOG",
               "BANIKET",
@@ -6745,7 +6745,7 @@
             ]
           },
           "AURORA": {
-            "barangay_list": [
+            "b": [
               "APIAT",
               "BAGNOS",
               "BAGONG TANZA",
@@ -6782,7 +6782,7 @@
             ]
           },
           "BENITO SOLIVEN": {
-            "barangay_list": [
+            "b": [
               "ANDABUEN",
               "ARA",
               "BALLIAO",
@@ -6815,7 +6815,7 @@
             ]
           },
           "BURGOS": {
-            "barangay_list": [
+            "b": [
               "BACNOR EAST",
               "BACNOR WEST",
               "CALIGUIAN (POB.)",
@@ -6833,7 +6833,7 @@
             ]
           },
           "CABAGAN": {
-            "barangay_list": [
+            "b": [
               "AGGUB",
               "ANAO",
               "ANGANCASILIAN",
@@ -6863,7 +6863,7 @@
             ]
           },
           "CABATUAN": {
-            "barangay_list": [
+            "b": [
               "CALAOCAN",
               "CANAN",
               "CENTRO (POB.)",
@@ -6889,7 +6889,7 @@
             ]
           },
           "CAUAYAN CITY": {
-            "barangay_list": [
+            "b": [
               "ALICAOCAO",
               "ALINAM",
               "AMOBOCAN",
@@ -6958,7 +6958,7 @@
             ]
           },
           "CITY OF SANTIAGO": {
-            "barangay_list": [
+            "b": [
               "ABRA",
               "AMBALATUNGAN",
               "BALINTOCATOC",
@@ -6999,7 +6999,7 @@
             ]
           },
           "CORDON": {
-            "barangay_list": [
+            "b": [
               "AGUINALDO (RIZALUNA ESTE)",
               "ANONANG (BALITOC*)",
               "CALIMATUROD",
@@ -7029,7 +7029,7 @@
             ]
           },
           "DELFIN ALBANO (MAGSAYSAY)": {
-            "barangay_list": [
+            "b": [
               "AGA",
               "ANDARAYAN",
               "ANEG",
@@ -7062,7 +7062,7 @@
             ]
           },
           "DINAPIGUE": {
-            "barangay_list": [
+            "b": [
               "AYOD",
               "BUCAL NORTE",
               "BUCAL SUR",
@@ -7072,7 +7072,7 @@
             ]
           },
           "DIVILACAN": {
-            "barangay_list": [
+            "b": [
               "BICOBIAN",
               "DIBULOS",
               "DICAMBANGAN",
@@ -7088,7 +7088,7 @@
             ]
           },
           "ECHAGUE": {
-            "barangay_list": [
+            "b": [
               "ANGOLUAN",
               "ANNAFUNAN",
               "ARABIAT",
@@ -7156,7 +7156,7 @@
             ]
           },
           "GAMU": {
-            "barangay_list": [
+            "b": [
               "BARCOLAN",
               "BUENAVISTA",
               "DAMMAO",
@@ -7176,7 +7176,7 @@
             ]
           },
           "ILAGAN CITY": {
-            "barangay_list": [
+            "b": [
               "AGGASIAN",
               "ALIBAGU",
               "ALLINGUIGAN 1ST",
@@ -7271,7 +7271,7 @@
             ]
           },
           "JONES": {
-            "barangay_list": [
+            "b": [
               "ABULAN",
               "ADDALAM",
               "ARUBUB",
@@ -7317,7 +7317,7 @@
             ]
           },
           "LUNA": {
-            "barangay_list": [
+            "b": [
               "BUSTAMANTE",
               "CENTRO 1 (POB.)",
               "CENTRO 2 (POB.)",
@@ -7340,7 +7340,7 @@
             ]
           },
           "MACONACON": {
-            "barangay_list": [
+            "b": [
               "APLAYA",
               "CANADAM",
               "DIANA",
@@ -7354,7 +7354,7 @@
             ]
           },
           "MALLIG": {
-            "barangay_list": [
+            "b": [
               "BINMONTON",
               "CASILI",
               "CENTRO I (POB.)",
@@ -7376,7 +7376,7 @@
             ]
           },
           "NAGUILIAN": {
-            "barangay_list": [
+            "b": [
               "AGUINALDO",
               "BAGONG SIKAT",
               "BURGOS",
@@ -7405,7 +7405,7 @@
             ]
           },
           "PALANAN": {
-            "barangay_list": [
+            "b": [
               "ALOMANAY",
               "BISAG",
               "CULASI",
@@ -7426,7 +7426,7 @@
             ]
           },
           "QUEZON": {
-            "barangay_list": [
+            "b": [
               "ABUT",
               "ALUNAN (POB.)",
               "ARELLANO (POB.)",
@@ -7445,7 +7445,7 @@
             ]
           },
           "QUIRINO": {
-            "barangay_list": [
+            "b": [
               "BINARZANG",
               "CABARUAN",
               "CAMAAL",
@@ -7470,7 +7470,7 @@
             ]
           },
           "RAMON": {
-            "barangay_list": [
+            "b": [
               "AMBATALI",
               "BANTUG",
               "BUGALLON NORTE",
@@ -7493,7 +7493,7 @@
             ]
           },
           "REINA MERCEDES": {
-            "barangay_list": [
+            "b": [
               "BANQUERO",
               "BINARSANG",
               "CUTOG GRANDE",
@@ -7517,7 +7517,7 @@
             ]
           },
           "ROXAS": {
-            "barangay_list": [
+            "b": [
               "ANAO",
               "BANTUG (POB.)",
               "DOÑA CONCHA",
@@ -7547,7 +7547,7 @@
             ]
           },
           "SAN AGUSTIN": {
-            "barangay_list": [
+            "b": [
               "BAUTISTA",
               "CALAOCAN",
               "DABUBU GRANDE",
@@ -7574,7 +7574,7 @@
             ]
           },
           "SAN GUILLERMO": {
-            "barangay_list": [
+            "b": [
               "ANONANG",
               "ARINGAY",
               "BURGOS",
@@ -7604,7 +7604,7 @@
             ]
           },
           "SAN ISIDRO": {
-            "barangay_list": [
+            "b": [
               "CAMARAG",
               "CEBU",
               "GOMEZ",
@@ -7621,7 +7621,7 @@
             ]
           },
           "SAN MANUEL": {
-            "barangay_list": [
+            "b": [
               "AGLIAM",
               "BABANUANG",
               "CABARITAN",
@@ -7644,7 +7644,7 @@
             ]
           },
           "SAN MARIANO": {
-            "barangay_list": [
+            "b": [
               "ALIBADABAD",
               "BALAGAN",
               "BINATUG",
@@ -7684,7 +7684,7 @@
             ]
           },
           "SAN MATEO": {
-            "barangay_list": [
+            "b": [
               "BACAREÑA",
               "BAGONG SIKAT",
               "BARANGAY I (POB.)",
@@ -7721,7 +7721,7 @@
             ]
           },
           "SAN PABLO": {
-            "barangay_list": [
+            "b": [
               "ANNANUMAN",
               "AUITAN",
               "BALLACAYU",
@@ -7742,7 +7742,7 @@
             ]
           },
           "SANTA MARIA": {
-            "barangay_list": [
+            "b": [
               "BANGAD",
               "BUENAVISTA",
               "CALAMAGUI EAST",
@@ -7766,7 +7766,7 @@
             ]
           },
           "SANTO TOMAS": {
-            "barangay_list": [
+            "b": [
               "AMMUGAUAN",
               "ANTAGAN",
               "BAGABAG",
@@ -7797,7 +7797,7 @@
             ]
           },
           "TUMAUINI": {
-            "barangay_list": [
+            "b": [
               "ANNAFUNAN",
               "ANTAGAN I",
               "ANTAGAN II",
@@ -7849,9 +7849,9 @@
         }
       },
       "NUEVA VIZCAYA": {
-        "municipality_list": {
+        "m": {
           "ALFONSO CASTANEDA": {
-            "barangay_list": [
+            "b": [
               "ABUYO",
               "CAUAYAN",
               "GALINTUJA",
@@ -7861,7 +7861,7 @@
             ]
           },
           "AMBAGUIO": {
-            "barangay_list": [
+            "b": [
               "AMMUEG",
               "CAMANDAG",
               "DULLI",
@@ -7873,7 +7873,7 @@
             ]
           },
           "ARITAO": {
-            "barangay_list": [
+            "b": [
               "ANAYO",
               "BAAN",
               "BALITE",
@@ -7899,7 +7899,7 @@
             ]
           },
           "BAGABAG": {
-            "barangay_list": [
+            "b": [
               "BAKIR",
               "BARETBET",
               "CAREB",
@@ -7920,7 +7920,7 @@
             ]
           },
           "BAMBANG": {
-            "barangay_list": [
+            "b": [
               "ABIAN",
               "ABINGANAN",
               "ALIAGA",
@@ -7949,7 +7949,7 @@
             ]
           },
           "BAYOMBONG": {
-            "barangay_list": [
+            "b": [
               "BANSING",
               "BONFAL EAST",
               "BONFAL PROPER",
@@ -7978,7 +7978,7 @@
             ]
           },
           "DIADI": {
-            "barangay_list": [
+            "b": [
               "AMPAKLING",
               "ARWAS",
               "BALETE",
@@ -8001,7 +8001,7 @@
             ]
           },
           "DUPAX DEL NORTE": {
-            "barangay_list": [
+            "b": [
               "BELANCE",
               "BINNUANGAN",
               "BITNONG",
@@ -8020,7 +8020,7 @@
             ]
           },
           "DUPAX DEL SUR": {
-            "barangay_list": [
+            "b": [
               "ABACA",
               "BAGUMBAYAN",
               "BALSAIN",
@@ -8043,7 +8043,7 @@
             ]
           },
           "KASIBU": {
-            "barangay_list": [
+            "b": [
               "ALIMIT",
               "ALLOY",
               "ANTUTOT",
@@ -8077,7 +8077,7 @@
             ]
           },
           "KAYAPA": {
-            "barangay_list": [
+            "b": [
               "ACACIA",
               "ALANG-SALACSAC",
               "AMILONG LABENG",
@@ -8111,7 +8111,7 @@
             ]
           },
           "QUEZON": {
-            "barangay_list": [
+            "b": [
               "AURORA",
               "BARESBES",
               "BONIFACIO",
@@ -8127,7 +8127,7 @@
             ]
           },
           "SANTA FE": {
-            "barangay_list": [
+            "b": [
               "ATBU",
               "BACNENG",
               "BALETE",
@@ -8147,7 +8147,7 @@
             ]
           },
           "SOLANO": {
-            "barangay_list": [
+            "b": [
               "AGGUB",
               "BAGAHABAG",
               "BANGAAN",
@@ -8173,7 +8173,7 @@
             ]
           },
           "VILLAVERDE": {
-            "barangay_list": [
+            "b": [
               "BINTAWAN NORTE",
               "BINTAWAN SUR",
               "CABULUAN",
@@ -8188,9 +8188,9 @@
         }
       },
       "QUIRINO": {
-        "municipality_list": {
+        "m": {
           "AGLIPAY": {
-            "barangay_list": [
+            "b": [
               "ALICIA",
               "CABUGAO",
               "DAGUPAN",
@@ -8219,7 +8219,7 @@
             ]
           },
           "CABARROGUIS": {
-            "barangay_list": [
+            "b": [
               "BANUAR",
               "BURGOS",
               "CALAOCAN",
@@ -8240,7 +8240,7 @@
             ]
           },
           "DIFFUN": {
-            "barangay_list": [
+            "b": [
               "AKLAN VILLAGE",
               "ANDRES BONIFACIO (POB.)",
               "AURORA EAST (POB.)",
@@ -8277,7 +8277,7 @@
             ]
           },
           "MADDELA": {
-            "barangay_list": [
+            "b": [
               "ABBAG",
               "BALLIGUI",
               "BUENAVISTA",
@@ -8313,7 +8313,7 @@
             ]
           },
           "NAGTIPUNAN": {
-            "barangay_list": [
+            "b": [
               "ANAK",
               "ASAKLAT",
               "DIPANTAN",
@@ -8333,7 +8333,7 @@
             ]
           },
           "SAGUDAY": {
-            "barangay_list": [
+            "b": [
               "CARDENAS",
               "DIBUL",
               "GAMIS",
@@ -8349,13 +8349,13 @@
       }
     }
   },
-  "03": {
-    "region_name": "REGION III",
-    "province_list": {
+  {
+    "r": "REGION III",
+    "p": {
       "AURORA": {
-        "municipality_list": {
+        "m": {
           "BALER": {
-            "barangay_list": [
+            "b": [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BARANGAY III (POB.)",
@@ -8372,7 +8372,7 @@
             ]
           },
           "CASIGURAN": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BARANGAY 3 (POB.)",
@@ -8400,7 +8400,7 @@
             ]
           },
           "DILASAG": {
-            "barangay_list": [
+            "b": [
               "DIAGYAN",
               "DICABASAN",
               "DILAGUIDI",
@@ -8415,7 +8415,7 @@
             ]
           },
           "DINALUNGAN": {
-            "barangay_list": [
+            "b": [
               "ABULEG",
               "DIBARAYBAY",
               "DITAWINI",
@@ -8428,7 +8428,7 @@
             ]
           },
           "DINGALAN": {
-            "barangay_list": [
+            "b": [
               "APLAYA",
               "BUTAS NA BATO",
               "CABOG (MATAWE)",
@@ -8443,7 +8443,7 @@
             ]
           },
           "DIPACULAO": {
-            "barangay_list": [
+            "b": [
               "BAYABAS",
               "BORLONGAN",
               "BUENAVISTA",
@@ -8472,7 +8472,7 @@
             ]
           },
           "MARIA AURORA": {
-            "barangay_list": [
+            "b": [
               "ALCALA",
               "BAGTU",
               "BANGCO",
@@ -8516,7 +8516,7 @@
             ]
           },
           "SAN LUIS": {
-            "barangay_list": [
+            "b": [
               "BACONG",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -8540,9 +8540,9 @@
         }
       },
       "BATAAN": {
-        "municipality_list": {
+        "m": {
           "ABUCAY": {
-            "barangay_list": [
+            "b": [
               "BANGKAL",
               "CALAYLAYAN (POB.)",
               "CAPITANGAN",
@@ -8555,7 +8555,7 @@
             ]
           },
           "BAGAC": {
-            "barangay_list": [
+            "b": [
               "ATILANO L. RICARDO",
               "BAGUMBAYAN (POB.)",
               "BANAWANG",
@@ -8573,7 +8573,7 @@
             ]
           },
           "BALANGA CITY": {
-            "barangay_list": [
+            "b": [
               "BAGONG SILANG",
               "BAGUMBAYAN",
               "CABOG-CABOG",
@@ -8602,7 +8602,7 @@
             ]
           },
           "DINALUPIHAN": {
-            "barangay_list": [
+            "b": [
               "AQUINO",
               "BANGAL",
               "BAYAN-BAYANAN",
@@ -8652,7 +8652,7 @@
             ]
           },
           "HERMOSA": {
-            "barangay_list": [
+            "b": [
               "A. RIVERA (POB.)",
               "ALMACEN",
               "BACONG",
@@ -8679,7 +8679,7 @@
             ]
           },
           "LIMAY": {
-            "barangay_list": [
+            "b": [
               "ALANGAN",
               "DUALE",
               "KITANG 2 AND LUZ",
@@ -8695,7 +8695,7 @@
             ]
           },
           "MARIVELES": {
-            "barangay_list": [
+            "b": [
               "ALAS-ASIN",
               "ALION",
               "BALON-ANITO",
@@ -8717,7 +8717,7 @@
             ]
           },
           "MORONG": {
-            "barangay_list": [
+            "b": [
               "BINARITAN",
               "MABAYO",
               "NAGBALAYONG",
@@ -8726,7 +8726,7 @@
             ]
           },
           "ORANI": {
-            "barangay_list": [
+            "b": [
               "APOLLO",
               "BAGONG PARAISO (POB.)",
               "BALUT (POB.)",
@@ -8759,7 +8759,7 @@
             ]
           },
           "ORION": {
-            "barangay_list": [
+            "b": [
               "ARELLANO (POB.)",
               "BAGUMBAYAN (POB.)",
               "BALAGTAS (POB.)",
@@ -8786,7 +8786,7 @@
             ]
           },
           "PILAR": {
-            "barangay_list": [
+            "b": [
               "ALA-ULI",
               "BAGUMBAYAN",
               "BALUT I",
@@ -8809,7 +8809,7 @@
             ]
           },
           "SAMAL": {
-            "barangay_list": [
+            "b": [
               "EAST CALAGUIMAN (POB.)",
               "EAST DAANG BAGO (POB.)",
               "GUGO",
@@ -8829,9 +8829,9 @@
         }
       },
       "BULACAN": {
-        "municipality_list": {
+        "m": {
           "ANGAT": {
-            "barangay_list": [
+            "b": [
               "BANABAN",
               "BAYBAY",
               "BINAGBAG",
@@ -8851,7 +8851,7 @@
             ]
           },
           "BALAGTAS (BIGAA)": {
-            "barangay_list": [
+            "b": [
               "BOROL 1ST",
               "BOROL 2ND",
               "DALIG",
@@ -8864,7 +8864,7 @@
             ]
           },
           "BALIUAG": {
-            "barangay_list": [
+            "b": [
               "BAGONG NAYON",
               "BARANGCA",
               "CALANTIPAY",
@@ -8895,7 +8895,7 @@
             ]
           },
           "BOCAUE": {
-            "barangay_list": [
+            "b": [
               "ANTIPONA",
               "BAGUMBAYAN",
               "BAMBANG",
@@ -8918,7 +8918,7 @@
             ]
           },
           "BULACAN": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN",
               "BALUBAD",
               "BAMBANG",
@@ -8936,7 +8936,7 @@
             ]
           },
           "BUSTOS": {
-            "barangay_list": [
+            "b": [
               "BONGA MAYOR",
               "BONGA MENOR",
               "BUISAN",
@@ -8954,7 +8954,7 @@
             ]
           },
           "CALUMPIT": {
-            "barangay_list": [
+            "b": [
               "BALITE",
               "BALUNGAO",
               "BUGUION",
@@ -8987,7 +8987,7 @@
             ]
           },
           "DOÑA REMEDIOS TRINIDAD": {
-            "barangay_list": [
+            "b": [
               "BAYABAS",
               "CAMACHILE",
               "CAMACHIN",
@@ -8999,7 +8999,7 @@
             ]
           },
           "GUIGUINTO": {
-            "barangay_list": [
+            "b": [
               "CUTCUT",
               "DAUNGAN",
               "ILANG-ILANG",
@@ -9017,7 +9017,7 @@
             ]
           },
           "HAGONOY": {
-            "barangay_list": [
+            "b": [
               "ABULALAS",
               "CARILLO",
               "IBA",
@@ -9047,7 +9047,7 @@
             ]
           },
           "MALOLOS CITY": {
-            "barangay_list": [
+            "b": [
               "ANILAO",
               "ATLAG",
               "BABATNIN",
@@ -9102,7 +9102,7 @@
             ]
           },
           "MARILAO": {
-            "barangay_list": [
+            "b": [
               "ABANGAN NORTE",
               "ABANGAN SUR",
               "IBAYO",
@@ -9122,7 +9122,7 @@
             ]
           },
           "MEYCAUAYAN CITY": {
-            "barangay_list": [
+            "b": [
               "BAGBAGUIN",
               "BAHAY PARE",
               "BANCAL",
@@ -9152,7 +9152,7 @@
             ]
           },
           "NORZAGARAY": {
-            "barangay_list": [
+            "b": [
               "BANGKAL",
               "BARAKA",
               "BIGTE",
@@ -9169,7 +9169,7 @@
             ]
           },
           "OBANDO": {
-            "barangay_list": [
+            "b": [
               "BINUANGAN",
               "CATANGHALAN",
               "HULO",
@@ -9184,7 +9184,7 @@
             ]
           },
           "PANDI": {
-            "barangay_list": [
+            "b": [
               "BAGBAGUIN",
               "BAGONG BARRIO",
               "BAKA-BAKAHAN",
@@ -9210,7 +9210,7 @@
             ]
           },
           "PAOMBONG": {
-            "barangay_list": [
+            "b": [
               "BINAKOD",
               "KAPITANGAN",
               "MALUMOT",
@@ -9228,7 +9228,7 @@
             ]
           },
           "PLARIDEL": {
-            "barangay_list": [
+            "b": [
               "AGNAYA",
               "BAGONG SILANG",
               "BANGA I",
@@ -9251,7 +9251,7 @@
             ]
           },
           "PULILAN": {
-            "barangay_list": [
+            "b": [
               "BALATONG A",
               "BALATONG B",
               "CUTCOT",
@@ -9274,7 +9274,7 @@
             ]
           },
           "SAN ILDEFONSO": {
-            "barangay_list": [
+            "b": [
               "AKLE",
               "ALAGAO",
               "ANYATAM",
@@ -9314,7 +9314,7 @@
             ]
           },
           "SAN JOSE DEL MONTE CITY": {
-            "barangay_list": [
+            "b": [
               "ASSUMPTION",
               "BAGONG BUHAY",
               "BAGONG BUHAY II",
@@ -9377,7 +9377,7 @@
             ]
           },
           "SAN MIGUEL": {
-            "barangay_list": [
+            "b": [
               "BAGONG PAG-ASA",
               "BAGONG SILANG",
               "BALAONG",
@@ -9430,7 +9430,7 @@
             ]
           },
           "SAN RAFAEL": {
-            "barangay_list": [
+            "b": [
               "BANCA-BANCA",
               "BMA-BALAGTAS",
               "CAINGIN",
@@ -9468,7 +9468,7 @@
             ]
           },
           "SANTA MARIA": {
-            "barangay_list": [
+            "b": [
               "BAGBAGUIN",
               "BALASING",
               "BUENAVISTA",
@@ -9498,9 +9498,9 @@
         }
       },
       "NUEVA ECIJA": {
-        "municipality_list": {
+        "m": {
           "ALIAGA": {
-            "barangay_list": [
+            "b": [
               "BETES",
               "BIBICLAT",
               "BUCOT",
@@ -9530,7 +9530,7 @@
             ]
           },
           "BONGABON": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO",
               "ARIENDO",
               "BANTUG",
@@ -9562,7 +9562,7 @@
             ]
           },
           "CABANATUAN CITY": {
-            "barangay_list": [
+            "b": [
               "ADUAS CENTRO (ADUAS)",
               "ADUAS NORTE",
               "ADUAS SUR",
@@ -9655,7 +9655,7 @@
             ]
           },
           "CABIAO": {
-            "barangay_list": [
+            "b": [
               "BAGONG BUHAY",
               "BAGONG SIKAT",
               "BAGONG SILANG",
@@ -9682,7 +9682,7 @@
             ]
           },
           "CARRANGLAN": {
-            "barangay_list": [
+            "b": [
               "BANTUG",
               "BUNGA",
               "BURGOS",
@@ -9703,7 +9703,7 @@
             ]
           },
           "CUYAPO": {
-            "barangay_list": [
+            "b": [
               "BALOY",
               "BAMBANABA",
               "BANTUG",
@@ -9758,7 +9758,7 @@
             ]
           },
           "GABALDON (BITULOK AND SABANI)": {
-            "barangay_list": [
+            "b": [
               "BAGONG SIKAT",
               "BAGTING",
               "BANTUG",
@@ -9778,7 +9778,7 @@
             ]
           },
           "GAPAN CITY": {
-            "barangay_list": [
+            "b": [
               "BALANTE",
               "BAYANIHAN",
               "BULAK",
@@ -9805,7 +9805,7 @@
             ]
           },
           "GENERAL MAMERTO NATIVIDAD": {
-            "barangay_list": [
+            "b": [
               "BALANGKARE NORTE",
               "BALANGKARE SUR",
               "BALARING",
@@ -9829,7 +9829,7 @@
             ]
           },
           "GENERAL TINIO (PAPAYA)": {
-            "barangay_list": [
+            "b": [
               "BAGO",
               "CONCEPCION",
               "NAZARETH",
@@ -9846,7 +9846,7 @@
             ]
           },
           "GUIMBA": {
-            "barangay_list": [
+            "b": [
               "AGCANO",
               "AYOS LOMBOY",
               "BACAYAO",
@@ -9914,7 +9914,7 @@
             ]
           },
           "JAEN": {
-            "barangay_list": [
+            "b": [
               "CALABASA",
               "DAMPULAN (POB.)",
               "DON MARIANO MARCOS (POB.)",
@@ -9945,7 +9945,7 @@
             ]
           },
           "LAUR": {
-            "barangay_list": [
+            "b": [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BARANGAY III (POB.)",
@@ -9966,7 +9966,7 @@
             ]
           },
           "LICAB": {
-            "barangay_list": [
+            "b": [
               "AQUINO",
               "LINAO",
               "POBLACION NORTE",
@@ -9981,7 +9981,7 @@
             ]
           },
           "LLANERA": {
-            "barangay_list": [
+            "b": [
               "A. BONIFACIO",
               "BAGUMBAYAN (POB.)",
               "BOSQUE",
@@ -10007,7 +10007,7 @@
             ]
           },
           "LUPAO": {
-            "barangay_list": [
+            "b": [
               "AGUPALO ESTE",
               "AGUPALO WESTE",
               "ALALAY CHICA",
@@ -10035,7 +10035,7 @@
             ]
           },
           "NAMPICUAN": {
-            "barangay_list": [
+            "b": [
               "ALEMANIA",
               "AMBASADOR ALZATE VILLAGE",
               "CABADUCAN EAST (POB.)",
@@ -10060,7 +10060,7 @@
             ]
           },
           "PALAYAN CITY": {
-            "barangay_list": [
+            "b": [
               "ATATE",
               "AULO",
               "BAGONG BUHAY",
@@ -10083,7 +10083,7 @@
             ]
           },
           "PANTABANGAN": {
-            "barangay_list": [
+            "b": [
               "CADACLAN",
               "CAMBITALA",
               "CONVERSION",
@@ -10101,7 +10101,7 @@
             ]
           },
           "PEÑARANDA": {
-            "barangay_list": [
+            "b": [
               "CALLOS",
               "LAS PIÑAS",
               "POBLACION I",
@@ -10115,7 +10115,7 @@
             ]
           },
           "QUEZON": {
-            "barangay_list": [
+            "b": [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BERTESE",
@@ -10135,7 +10135,7 @@
             ]
           },
           "RIZAL": {
-            "barangay_list": [
+            "b": [
               "AGBANNAWAG",
               "AGLIPAY (CURVA)",
               "BICOS",
@@ -10165,7 +10165,7 @@
             ]
           },
           "SAN ANTONIO": {
-            "barangay_list": [
+            "b": [
               "BULIRAN",
               "CAMA JUAN",
               "JULO",
@@ -10185,7 +10185,7 @@
             ]
           },
           "SAN ISIDRO": {
-            "barangay_list": [
+            "b": [
               "ALUA",
               "CALABA",
               "MALAPIT",
@@ -10198,7 +10198,7 @@
             ]
           },
           "SAN JOSE CITY": {
-            "barangay_list": [
+            "b": [
               "A. PASCUAL",
               "ABAR 2ND",
               "ABAR IST",
@@ -10240,7 +10240,7 @@
             ]
           },
           "SAN LEONARDO": {
-            "barangay_list": [
+            "b": [
               "BONIFACIO DISTRICT (POB.)",
               "BURGOS DISTRICT (POB.)",
               "CASTELLANO",
@@ -10259,7 +10259,7 @@
             ]
           },
           "SANTA ROSA": {
-            "barangay_list": [
+            "b": [
               "AGUINALDO",
               "BERANG",
               "BURGOS",
@@ -10296,7 +10296,7 @@
             ]
           },
           "SANTO DOMINGO": {
-            "barangay_list": [
+            "b": [
               "BALOC",
               "BUASAO",
               "BURGOS",
@@ -10324,7 +10324,7 @@
             ]
           },
           "SCIENCE CITY OF MUÑOZ": {
-            "barangay_list": [
+            "b": [
               "BAGONG SIKAT",
               "BALANTE",
               "BANTUG",
@@ -10365,7 +10365,7 @@
             ]
           },
           "TALAVERA": {
-            "barangay_list": [
+            "b": [
               "ANDAL ALINO (POB.)",
               "BAGONG SIKAT",
               "BAGONG SILANG",
@@ -10422,7 +10422,7 @@
             ]
           },
           "TALUGTUG": {
-            "barangay_list": [
+            "b": [
               "ALULA",
               "BAYBAYABAS",
               "BUTED",
@@ -10454,7 +10454,7 @@
             ]
           },
           "ZARAGOZA": {
-            "barangay_list": [
+            "b": [
               "BATITANG",
               "CARMEN",
               "CONCEPCION",
@@ -10479,9 +10479,9 @@
         }
       },
       "PAMPANGA": {
-        "municipality_list": {
+        "m": {
           "ANGELES CITY": {
-            "barangay_list": [
+            "b": [
               "AGAPITO DEL ROSARIO",
               "AMSIC",
               "ANUNAS",
@@ -10518,7 +10518,7 @@
             ]
           },
           "APALIT": {
-            "barangay_list": [
+            "b": [
               "BALUCUC",
               "CALANTIPE",
               "CANSINALA",
@@ -10534,7 +10534,7 @@
             ]
           },
           "ARAYAT": {
-            "barangay_list": [
+            "b": [
               "ARENAS",
               "BALITI",
               "BATASAN",
@@ -10568,7 +10568,7 @@
             ]
           },
           "BACOLOR": {
-            "barangay_list": [
+            "b": [
               "BALAS",
               "CABALANTIAN",
               "CABAMBANGAN (POB.)",
@@ -10593,7 +10593,7 @@
             ]
           },
           "CANDABA": {
-            "barangay_list": [
+            "b": [
               "BAHAY PARE",
               "BAMBANG",
               "BARANGCA",
@@ -10630,7 +10630,7 @@
             ]
           },
           "FLORIDABLANCA": {
-            "barangay_list": [
+            "b": [
               "ANON",
               "APALIT",
               "BASA AIR BASE",
@@ -10667,7 +10667,7 @@
             ]
           },
           "GUAGUA": {
-            "barangay_list": [
+            "b": [
               "ASCOMO",
               "BANCAL",
               "JOSE ABAD SANTOS (SIRAN)",
@@ -10702,7 +10702,7 @@
             ]
           },
           "LUBAO": {
-            "barangay_list": [
+            "b": [
               "BALANTACAN",
               "BANCAL PUGAD",
               "BANCAL SINUBLI",
@@ -10750,7 +10750,7 @@
             ]
           },
           "MABALACAT CITY": {
-            "barangay_list": [
+            "b": [
               "ATLU-BOLA",
               "BICAL",
               "BUNDAGUL",
@@ -10781,7 +10781,7 @@
             ]
           },
           "MACABEBE": {
-            "barangay_list": [
+            "b": [
               "BATASAN",
               "CADUANG TETE",
               "CANDELARIA",
@@ -10810,7 +10810,7 @@
             ]
           },
           "MAGALANG": {
-            "barangay_list": [
+            "b": [
               "AYALA",
               "BUCANAN",
               "CAMIAS",
@@ -10841,7 +10841,7 @@
             ]
           },
           "MASANTOL": {
-            "barangay_list": [
+            "b": [
               "ALAULI",
               "BAGANG",
               "BALIBAGO",
@@ -10871,7 +10871,7 @@
             ]
           },
           "MEXICO": {
-            "barangay_list": [
+            "b": [
               "ACLI",
               "ANAO",
               "BALAS",
@@ -10918,7 +10918,7 @@
             ]
           },
           "MINALIN": {
-            "barangay_list": [
+            "b": [
               "BULAC",
               "DAWE",
               "LOURDES",
@@ -10937,7 +10937,7 @@
             ]
           },
           "PORAC": {
-            "barangay_list": [
+            "b": [
               "BABO PANGULO",
               "BABO SACAN",
               "BALUBAD",
@@ -10970,7 +10970,7 @@
             ]
           },
           "SAN FERNANDO CITY": {
-            "barangay_list": [
+            "b": [
               "ALASAS",
               "BALITI",
               "BULAON",
@@ -11009,7 +11009,7 @@
             ]
           },
           "SAN LUIS": {
-            "barangay_list": [
+            "b": [
               "SAN AGUSTIN",
               "SAN CARLOS",
               "SAN ISIDRO",
@@ -11030,7 +11030,7 @@
             ]
           },
           "SAN SIMON": {
-            "barangay_list": [
+            "b": [
               "CONCEPCION",
               "DE LA PAZ",
               "SAN AGUSTIN",
@@ -11048,7 +11048,7 @@
             ]
           },
           "SANTA ANA": {
-            "barangay_list": [
+            "b": [
               "SAN AGUSTIN",
               "SAN BARTOLOME",
               "SAN ISIDRO",
@@ -11066,7 +11066,7 @@
             ]
           },
           "SANTA RITA": {
-            "barangay_list": [
+            "b": [
               "BECURAN",
               "DILA-DILA",
               "SAN AGUSTIN",
@@ -11080,7 +11080,7 @@
             ]
           },
           "SANTO TOMAS": {
-            "barangay_list": [
+            "b": [
               "MORAS DE LA PAZ",
               "POBLACION",
               "SAN BARTOLOME",
@@ -11091,7 +11091,7 @@
             ]
           },
           "SASMUAN (SEXMOAN)": {
-            "barangay_list": [
+            "b": [
               "BATANG 1ST",
               "BATANG 2ND",
               "MABUANBUAN",
@@ -11109,9 +11109,9 @@
         }
       },
       "TARLAC": {
-        "municipality_list": {
+        "m": {
           "ANAO": {
-            "barangay_list": [
+            "b": [
               "BAGUINDOC (BAGUINLOC)",
               "BANTOG",
               "CAMPOS",
@@ -11133,7 +11133,7 @@
             ]
           },
           "BAMBAN": {
-            "barangay_list": [
+            "b": [
               "ANUPUL",
               "BANABA",
               "BANGCU",
@@ -11152,7 +11152,7 @@
             ]
           },
           "CAMILING": {
-            "barangay_list": [
+            "b": [
               "ANOLING 1ST",
               "ANOLING 2ND",
               "ANOLING 3RD",
@@ -11217,7 +11217,7 @@
             ]
           },
           "CAPAS": {
-            "barangay_list": [
+            "b": [
               "ARANGUREN",
               "BUENO",
               "CRISTO REY",
@@ -11241,7 +11241,7 @@
             ]
           },
           "CITY OF TARLAC": {
-            "barangay_list": [
+            "b": [
               "AGUSO",
               "ALVINDIA SEGUNDO",
               "AMUCAO",
@@ -11321,7 +11321,7 @@
             ]
           },
           "CONCEPCION": {
-            "barangay_list": [
+            "b": [
               "ALFONSO",
               "BALUTU",
               "CAFE",
@@ -11370,7 +11370,7 @@
             ]
           },
           "GERONA": {
-            "barangay_list": [
+            "b": [
               "ABAGON",
               "AMACALAN",
               "APSAYAN",
@@ -11418,7 +11418,7 @@
             ]
           },
           "LA PAZ": {
-            "barangay_list": [
+            "b": [
               "BALANOY",
               "BANTOG-CARICUTAN",
               "CARAMUTAN",
@@ -11443,7 +11443,7 @@
             ]
           },
           "MAYANTOC": {
-            "barangay_list": [
+            "b": [
               "AMBALINGIT",
               "BAYBAYAOAS",
               "BIGBIGA",
@@ -11471,7 +11471,7 @@
             ]
           },
           "MONCADA": {
-            "barangay_list": [
+            "b": [
               "ABLANG-SAPANG",
               "ARINGIN",
               "ATENCIO",
@@ -11512,7 +11512,7 @@
             ]
           },
           "PANIQUI": {
-            "barangay_list": [
+            "b": [
               "ABOGADO",
               "ACOCOLAO",
               "ADUAS",
@@ -11551,7 +11551,7 @@
             ]
           },
           "PURA": {
-            "barangay_list": [
+            "b": [
               "BALITE",
               "BUENAVISTA",
               "CADANGLAAN",
@@ -11571,7 +11571,7 @@
             ]
           },
           "RAMOS": {
-            "barangay_list": [
+            "b": [
               "CORAL-ILOCO",
               "GUITEB",
               "PANCE",
@@ -11584,7 +11584,7 @@
             ]
           },
           "SAN CLEMENTE": {
-            "barangay_list": [
+            "b": [
               "BALLOC",
               "BAMBAN",
               "CASIPO",
@@ -11600,7 +11600,7 @@
             ]
           },
           "SAN JOSE": {
-            "barangay_list": [
+            "b": [
               "BURGOS",
               "DAVID",
               "IBA",
@@ -11617,7 +11617,7 @@
             ]
           },
           "SAN MANUEL": {
-            "barangay_list": [
+            "b": [
               "COLUBOT",
               "LANAT",
               "LEGASPI",
@@ -11636,7 +11636,7 @@
             ]
           },
           "SANTA IGNACIA": {
-            "barangay_list": [
+            "b": [
               "BALDIOS",
               "BOTBOTONES",
               "CAANAMONGAN",
@@ -11664,7 +11664,7 @@
             ]
           },
           "VICTORIA": {
-            "barangay_list": [
+            "b": [
               "BACULONG",
               "BALAYANG",
               "BALBALOTO",
@@ -11696,9 +11696,9 @@
         }
       },
       "ZAMBALES": {
-        "municipality_list": {
+        "m": {
           "BOTOLAN": {
-            "barangay_list": [
+            "b": [
               "BANCAL",
               "BANGAN",
               "BATONLAPOC",
@@ -11733,7 +11733,7 @@
             ]
           },
           "CABANGAN": {
-            "barangay_list": [
+            "b": [
               "ANONANG",
               "APO-APO",
               "AREW",
@@ -11759,7 +11759,7 @@
             ]
           },
           "CANDELARIA": {
-            "barangay_list": [
+            "b": [
               "BABANCAL",
               "BINABALIAN",
               "CATOL",
@@ -11779,7 +11779,7 @@
             ]
           },
           "CASTILLEJOS": {
-            "barangay_list": [
+            "b": [
               "BALAYBAY",
               "BUENAVISTA",
               "DEL PILAR",
@@ -11797,7 +11797,7 @@
             ]
           },
           "IBA": {
-            "barangay_list": [
+            "b": [
               "AMUNGAN",
               "BANGANTALINGA",
               "DIRITA-BALOGUEN",
@@ -11815,7 +11815,7 @@
             ]
           },
           "MASINLOC": {
-            "barangay_list": [
+            "b": [
               "BALOGANON",
               "BAMBAN",
               "BANI",
@@ -11832,7 +11832,7 @@
             ]
           },
           "OLONGAPO CITY": {
-            "barangay_list": [
+            "b": [
               "ASINAN",
               "BANICAIN",
               "BARRETO",
@@ -11853,7 +11853,7 @@
             ]
           },
           "PALAUIG": {
-            "barangay_list": [
+            "b": [
               "ALWA",
               "BATO",
               "BULAWEN",
@@ -11876,7 +11876,7 @@
             ]
           },
           "SAN ANTONIO": {
-            "barangay_list": [
+            "b": [
               "ANGELES",
               "ANTIPOLO (POB.)",
               "BURGOS (POB.)",
@@ -11894,7 +11894,7 @@
             ]
           },
           "SAN FELIPE": {
-            "barangay_list": [
+            "b": [
               "AMAGNA (POB.)",
               "APOSTOL (POB.)",
               "BALINCAGUING",
@@ -11909,7 +11909,7 @@
             ]
           },
           "SAN MARCELINO": {
-            "barangay_list": [
+            "b": [
               "AGLAO",
               "BUHAWEN",
               "BURGOS (POB.)",
@@ -11931,7 +11931,7 @@
             ]
           },
           "SAN NARCISO": {
-            "barangay_list": [
+            "b": [
               "ALUSIIS",
               "BEDDENG",
               "CANDELARIA (POB.)",
@@ -11952,7 +11952,7 @@
             ]
           },
           "SANTA CRUZ": {
-            "barangay_list": [
+            "b": [
               "BABUYAN",
               "BANGCOL",
               "BAYTO",
@@ -11981,7 +11981,7 @@
             ]
           },
           "SUBIC": {
-            "barangay_list": [
+            "b": [
               "ANINGWAY SACATIHAN",
               "ASINAN POBLACION",
               "ASINAN PROPER",
@@ -12004,13 +12004,13 @@
       }
     }
   },
-  "4A": {
-    "region_name": "REGION IV-A",
-    "province_list": {
+  {
+    "r": "REGION IV-A",
+    "p": {
       "BATANGAS": {
-        "municipality_list": {
+        "m": {
           "AGONCILLO": {
-            "barangay_list": [
+            "b": [
               "ADIA",
               "BAGONG SIKAT",
               "BALANGON",
@@ -12035,7 +12035,7 @@
             ]
           },
           "ALITAGTAG": {
-            "barangay_list": [
+            "b": [
               "BALAGBAG",
               "CONCEPCION",
               "CONCORDIA",
@@ -12058,7 +12058,7 @@
             ]
           },
           "BALAYAN": {
-            "barangay_list": [
+            "b": [
               "BACLARAN",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -12110,7 +12110,7 @@
             ]
           },
           "BALETE": {
-            "barangay_list": [
+            "b": [
               "ALANGILAN",
               "CALAWIT",
               "LOOC",
@@ -12127,7 +12127,7 @@
             ]
           },
           "BATANGAS CITY": {
-            "barangay_list": [
+            "b": [
               "ALANGILAN",
               "BALAGTAS",
               "BALETE",
@@ -12236,7 +12236,7 @@
             ]
           },
           "BAUAN": {
-            "barangay_list": [
+            "b": [
               "ALAGAO",
               "APLAYA",
               "AS-IS",
@@ -12280,7 +12280,7 @@
             ]
           },
           "CALACA": {
-            "barangay_list": [
+            "b": [
               "BACLAS",
               "BAGONG TUBIG",
               "BALIMBING",
@@ -12324,7 +12324,7 @@
             ]
           },
           "CALATAGAN": {
-            "barangay_list": [
+            "b": [
               "BAGONG SILANG",
               "BAHA",
               "BALIBAGO",
@@ -12353,7 +12353,7 @@
             ]
           },
           "CUENCA": {
-            "barangay_list": [
+            "b": [
               "BALAGBAG",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -12378,7 +12378,7 @@
             ]
           },
           "IBAAN": {
-            "barangay_list": [
+            "b": [
               "BAGO",
               "BALANGA",
               "BUNGAHAN",
@@ -12408,7 +12408,7 @@
             ]
           },
           "LAUREL": {
-            "barangay_list": [
+            "b": [
               "AS-IS",
               "BALAKILONG",
               "BARANGAY 1 (POB.)",
@@ -12433,7 +12433,7 @@
             ]
           },
           "LEMERY": {
-            "barangay_list": [
+            "b": [
               "ANAK-DAGAT",
               "ARUMAHAN",
               "AYAO-IYAO",
@@ -12483,7 +12483,7 @@
             ]
           },
           "LIAN": {
-            "barangay_list": [
+            "b": [
               "BAGONG POOK",
               "BALIBAGO",
               "BARANGAY 1 (POB.)",
@@ -12506,7 +12506,7 @@
             ]
           },
           "LIPA CITY": {
-            "barangay_list": [
+            "b": [
               "ADYA",
               "ANILAO",
               "ANILAO-LABAC",
@@ -12582,7 +12582,7 @@
             ]
           },
           "LOBO": {
-            "barangay_list": [
+            "b": [
               "APAR",
               "BALATBAT",
               "BALIBAGO",
@@ -12612,7 +12612,7 @@
             ]
           },
           "MABINI": {
-            "barangay_list": [
+            "b": [
               "ANILAO EAST",
               "ANILAO PROPER",
               "BAGALANGIT",
@@ -12650,7 +12650,7 @@
             ]
           },
           "MALVAR": {
-            "barangay_list": [
+            "b": [
               "BAGONG POOK",
               "BILUCAO (SAN ISIDRO WESTERN)",
               "BULIHAN",
@@ -12669,7 +12669,7 @@
             ]
           },
           "MATAAS NA KAHOY": {
-            "barangay_list": [
+            "b": [
               "BARANGAY II-A (POB.)",
               "BAYORBOR",
               "BUBUYAN",
@@ -12689,7 +12689,7 @@
             ]
           },
           "NASUGBU": {
-            "barangay_list": [
+            "b": [
               "AGA",
               "BALAYTIGUI",
               "BANILAD",
@@ -12735,7 +12735,7 @@
             ]
           },
           "PADRE GARCIA": {
-            "barangay_list": [
+            "b": [
               "BANABA",
               "BANAYBANAY",
               "BAWI",
@@ -12757,7 +12757,7 @@
             ]
           },
           "ROSARIO": {
-            "barangay_list": [
+            "b": [
               "ALUPAY",
               "ANTIPOLO",
               "BAGONG POOK",
@@ -12809,7 +12809,7 @@
             ]
           },
           "SAN JOSE": {
-            "barangay_list": [
+            "b": [
               "AGUILA",
               "ANUS",
               "AYA",
@@ -12846,7 +12846,7 @@
             ]
           },
           "SAN JUAN": {
-            "barangay_list": [
+            "b": [
               "ABUNG",
               "BALAGBAG",
               "BARUALTE",
@@ -12892,7 +12892,7 @@
             ]
           },
           "SAN LUIS": {
-            "barangay_list": [
+            "b": [
               "ABIACAO",
               "BAGONG TUBIG",
               "BALAGTASIN",
@@ -12922,7 +12922,7 @@
             ]
           },
           "SAN NICOLAS": {
-            "barangay_list": [
+            "b": [
               "ABELO",
               "ALAS-AS",
               "BALETE",
@@ -12944,7 +12944,7 @@
             ]
           },
           "SAN PASCUAL": {
-            "barangay_list": [
+            "b": [
               "ALALUM",
               "ANTIPOLO",
               "BALIMBING",
@@ -12977,7 +12977,7 @@
             ]
           },
           "SANTA TERESITA": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO",
               "BIHIS",
               "BUROL",
@@ -12998,7 +12998,7 @@
             ]
           },
           "SANTO TOMAS": {
-            "barangay_list": [
+            "b": [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BARANGAY III (POB.)",
@@ -13032,7 +13032,7 @@
             ]
           },
           "TAAL": {
-            "barangay_list": [
+            "b": [
               "APACAY",
               "BALISONG",
               "BIHIS",
@@ -13078,7 +13078,7 @@
             ]
           },
           "TALISAY": {
-            "barangay_list": [
+            "b": [
               "AYA",
               "BALAS",
               "BANGA",
@@ -13103,7 +13103,7 @@
             ]
           },
           "TANAUAN CITY": {
-            "barangay_list": [
+            "b": [
               "ALTURA BATA",
               "ALTURA MATANDA",
               "ALTURA-SOUTH",
@@ -13155,7 +13155,7 @@
             ]
           },
           "TAYSAN": {
-            "barangay_list": [
+            "b": [
               "BACAO",
               "BILOGO",
               "BUKAL",
@@ -13179,7 +13179,7 @@
             ]
           },
           "TINGLOY": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 13 (POBLACION 1)",
               "BARANGAY 14 (POBLACION 2)",
               "BARANGAY 15 (POBLACION 3)",
@@ -13198,7 +13198,7 @@
             ]
           },
           "TUY": {
-            "barangay_list": [
+            "b": [
               "ACLE",
               "BAYUDBUD",
               "BOLBOC",
@@ -13226,9 +13226,9 @@
         }
       },
       "CAVITE": {
-        "municipality_list": {
+        "m": {
           "ALFONSO": {
-            "barangay_list": [
+            "b": [
               "AMUYONG",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -13264,7 +13264,7 @@
             ]
           },
           "AMADEO": {
-            "barangay_list": [
+            "b": [
               "BANAYBANAY",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -13294,7 +13294,7 @@
             ]
           },
           "BACOOR CITY": {
-            "barangay_list": [
+            "b": [
               "ALIMA",
               "ANIBAN I",
               "ANIBAN II",
@@ -13371,7 +13371,7 @@
             ]
           },
           "CARMONA": {
-            "barangay_list": [
+            "b": [
               "BANCAL",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -13389,7 +13389,7 @@
             ]
           },
           "CAVITE CITY": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 1 (HEN. M. ALVAREZ)",
               "BARANGAY 2 (C. TIRONA)",
               "BARANGAY 3 (HEN. E. AGUINALDO)",
@@ -13477,7 +13477,7 @@
             ]
           },
           "DASMARIÑAS CITY": {
-            "barangay_list": [
+            "b": [
               "BUROL",
               "BUROL I",
               "BUROL II",
@@ -13556,7 +13556,7 @@
             ]
           },
           "GEN. MARIANO ALVAREZ": {
-            "barangay_list": [
+            "b": [
               "ALDIANO OLAES",
               "BARANGAY 1 POBLACION (AREA I)",
               "BARANGAY 2 POBLACION",
@@ -13587,7 +13587,7 @@
             ]
           },
           "GENERAL EMILIO AGUINALDO": {
-            "barangay_list": [
+            "b": [
               "A. DALUSAG",
               "BATAS DAO",
               "CASTAÑOS CERCA",
@@ -13605,7 +13605,7 @@
             ]
           },
           "GENERAL TRIAS CITY": {
-            "barangay_list": [
+            "b": [
               "ALINGARO",
               "ARNALDO POB. (BGY. 7)",
               "BACAO I",
@@ -13642,7 +13642,7 @@
             ]
           },
           "IMUS CITY": {
-            "barangay_list": [
+            "b": [
               "ALAPAN I-A",
               "ALAPAN I-B",
               "ALAPAN I-C",
@@ -13743,7 +13743,7 @@
             ]
           },
           "INDANG": {
-            "barangay_list": [
+            "b": [
               "AGUS-US",
               "ALULOD",
               "BANABA CERCA",
@@ -13783,7 +13783,7 @@
             ]
           },
           "KAWIT": {
-            "barangay_list": [
+            "b": [
               "BALSAHAN-BISITA",
               "BATONG DALIG",
               "BINAKAYAN-APLAYA",
@@ -13810,7 +13810,7 @@
             ]
           },
           "MAGALLANES": {
-            "barangay_list": [
+            "b": [
               "BALIWAG",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -13830,7 +13830,7 @@
             ]
           },
           "MARAGONDON": {
-            "barangay_list": [
+            "b": [
               "BUCAL I",
               "BUCAL II",
               "BUCAL III A",
@@ -13861,7 +13861,7 @@
             ]
           },
           "MENDEZ (MENDEZ-NUÑEZ)": {
-            "barangay_list": [
+            "b": [
               "ANULING CERCA I",
               "ANULING CERCA II",
               "ANULING LEJOS I (ANULING)",
@@ -13889,7 +13889,7 @@
             ]
           },
           "NAIC": {
-            "barangay_list": [
+            "b": [
               "BAGONG KARSADA",
               "BALSAHAN",
               "BANCAAN",
@@ -13923,7 +13923,7 @@
             ]
           },
           "NOVELETA": {
-            "barangay_list": [
+            "b": [
               "MAGDIWANG",
               "POBLACION",
               "SALCEDO I",
@@ -13943,7 +13943,7 @@
             ]
           },
           "ROSARIO": {
-            "barangay_list": [
+            "b": [
               "BAGBAG I",
               "BAGBAG II",
               "KANLURAN",
@@ -13967,7 +13967,7 @@
             ]
           },
           "SILANG": {
-            "barangay_list": [
+            "b": [
               "ACACIA",
               "ADLAS",
               "ANAHAW I",
@@ -14035,7 +14035,7 @@
             ]
           },
           "TAGAYTAY CITY": {
-            "barangay_list": [
+            "b": [
               "ASISAN",
               "BAGONG TUBIG",
               "CALABUSO",
@@ -14073,7 +14073,7 @@
             ]
           },
           "TANZA": {
-            "barangay_list": [
+            "b": [
               "AMAYA I",
               "AMAYA II",
               "AMAYA III",
@@ -14118,7 +14118,7 @@
             ]
           },
           "TERNATE": {
-            "barangay_list": [
+            "b": [
               "BUCANA",
               "POBLACION I (BARANGAY I)",
               "POBLACION I A",
@@ -14132,7 +14132,7 @@
             ]
           },
           "TRECE MARTIRES CITY": {
-            "barangay_list": [
+            "b": [
               "AGUADO (PISCAL MUNDO)",
               "CABEZAS",
               "CABUCO",
@@ -14151,9 +14151,9 @@
         }
       },
       "LAGUNA": {
-        "municipality_list": {
+        "m": {
           "ALAMINOS": {
-            "barangay_list": [
+            "b": [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BARANGAY III (POB.)",
@@ -14172,7 +14172,7 @@
             ]
           },
           "BAY": {
-            "barangay_list": [
+            "b": [
               "BITIN",
               "CALO",
               "DILA",
@@ -14191,7 +14191,7 @@
             ]
           },
           "CABUYAO CITY": {
-            "barangay_list": [
+            "b": [
               "BACLARAN",
               "BANAYBANAY",
               "BANLIC",
@@ -14213,7 +14213,7 @@
             ]
           },
           "CALAMBA CITY": {
-            "barangay_list": [
+            "b": [
               "BAGONG KALSADA",
               "BANADERO",
               "BANLIC",
@@ -14271,7 +14271,7 @@
             ]
           },
           "CALAUAN": {
-            "barangay_list": [
+            "b": [
               "BALAYHANGIN",
               "BANGYAS",
               "DAYAP",
@@ -14292,7 +14292,7 @@
             ]
           },
           "CAVINTI": {
-            "barangay_list": [
+            "b": [
               "ANGLAS",
               "BANGCO",
               "BUKAL",
@@ -14315,7 +14315,7 @@
             ]
           },
           "CITY OF BIÑAN": {
-            "barangay_list": [
+            "b": [
               "BIÑAN (POBLACION)",
               "BUNGAHAN",
               "CANLALAY",
@@ -14343,7 +14343,7 @@
             ]
           },
           "FAMY": {
-            "barangay_list": [
+            "b": [
               "ASANA (POB.)",
               "BACONG-SIGSIGAN",
               "BAGONG PAG-ASA (POB.)",
@@ -14367,14 +14367,14 @@
             ]
           },
           "KALAYAAN": {
-            "barangay_list": [
+            "b": [
               "LONGOS",
               "SAN ANTONIO",
               "SAN JUAN (POB.)"
             ]
           },
           "LILIW": {
-            "barangay_list": [
+            "b": [
               "BAGONG ANYO (POB.)",
               "BAYATE",
               "BONGKOL",
@@ -14411,7 +14411,7 @@
             ]
           },
           "LOS BAÑOS": {
-            "barangay_list": [
+            "b": [
               "ANOS",
               "BAGONG SILANG",
               "BAMBANG",
@@ -14429,7 +14429,7 @@
             ]
           },
           "LUISIANA": {
-            "barangay_list": [
+            "b": [
               "BARANGAY ZONE I (POB.)",
               "BARANGAY ZONE II (POB.)",
               "BARANGAY ZONE III (POB.)",
@@ -14456,7 +14456,7 @@
             ]
           },
           "LUMBAN": {
-            "barangay_list": [
+            "b": [
               "BAGONG SILANG",
               "BALIMBINGAN (POB.)",
               "BALUBAD",
@@ -14476,7 +14476,7 @@
             ]
           },
           "MABITAC": {
-            "barangay_list": [
+            "b": [
               "AMUYONG",
               "BAYANIHAN (POB.)",
               "LAMBAC (POB.)",
@@ -14495,7 +14495,7 @@
             ]
           },
           "MAGDALENA": {
-            "barangay_list": [
+            "b": [
               "ALIPIT",
               "BAANAN",
               "BALANAC",
@@ -14523,7 +14523,7 @@
             ]
           },
           "MAJAYJAY": {
-            "barangay_list": [
+            "b": [
               "AMONOY",
               "BAKIA",
               "BALANAC",
@@ -14567,7 +14567,7 @@
             ]
           },
           "NAGCARLAN": {
-            "barangay_list": [
+            "b": [
               "ABO",
               "ALIBUNGBUNGAN",
               "ALUMBRADO",
@@ -14623,7 +14623,7 @@
             ]
           },
           "PAETE": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN (POB.)",
               "BANGKUSAY (POB.)",
               "ERMITA (POB.)",
@@ -14636,7 +14636,7 @@
             ]
           },
           "PAGSANJAN": {
-            "barangay_list": [
+            "b": [
               "ANIBONG",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -14656,7 +14656,7 @@
             ]
           },
           "PAKIL": {
-            "barangay_list": [
+            "b": [
               "BANILAN",
               "BAÑO (POB.)",
               "BURGOS (POB.)",
@@ -14673,7 +14673,7 @@
             ]
           },
           "PANGIL": {
-            "barangay_list": [
+            "b": [
               "BALIAN",
               "DAMBO",
               "GALALAN",
@@ -14685,7 +14685,7 @@
             ]
           },
           "PILA": {
-            "barangay_list": [
+            "b": [
               "APLAYA",
               "BAGONG POOK",
               "BUKAL",
@@ -14706,7 +14706,7 @@
             ]
           },
           "RIZAL": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO",
               "EAST POBLACION",
               "ENTABLADO",
@@ -14721,7 +14721,7 @@
             ]
           },
           "SAN PABLO CITY": {
-            "barangay_list": [
+            "b": [
               "ATISAN",
               "BAGONG BAYAN II-A (POB.)",
               "BAGONG POOK VI-C (POB.)",
@@ -14805,7 +14805,7 @@
             ]
           },
           "SAN PEDRO CITY": {
-            "barangay_list": [
+            "b": [
               "BAGONG SILANG",
               "CALENDOLA",
               "CHRYSANTHEMUM",
@@ -14836,7 +14836,7 @@
             ]
           },
           "SANTA CRUZ": {
-            "barangay_list": [
+            "b": [
               "ALIPIT",
               "BAGUMBAYAN",
               "BARANGAY I (POB.)",
@@ -14866,7 +14866,7 @@
             ]
           },
           "SANTA MARIA": {
-            "barangay_list": [
+            "b": [
               "ADIA",
               "BAGONG POOK",
               "BAGUMBAYAN",
@@ -14895,7 +14895,7 @@
             ]
           },
           "SANTA ROSA CITY": {
-            "barangay_list": [
+            "b": [
               "APLAYA",
               "BALIBAGO",
               "CAINGIN",
@@ -14917,7 +14917,7 @@
             ]
           },
           "SINILOAN": {
-            "barangay_list": [
+            "b": [
               "ACEVIDA",
               "BAGONG PAG-ASA (POB.)",
               "BAGUMBARANGAY (POB.)",
@@ -14941,7 +14941,7 @@
             ]
           },
           "VICTORIA": {
-            "barangay_list": [
+            "b": [
               "BANCA-BANCA",
               "DANIW",
               "MASAPANG",
@@ -14956,9 +14956,9 @@
         }
       },
       "QUEZON": {
-        "municipality_list": {
+        "m": {
           "AGDANGAN": {
-            "barangay_list": [
+            "b": [
               "BINAGBAG",
               "DAYAP",
               "IBABANG KINAGUNAN",
@@ -14974,7 +14974,7 @@
             ]
           },
           "ALABAT": {
-            "barangay_list": [
+            "b": [
               "ANGELES",
               "BACONG",
               "BALUNGAY",
@@ -14997,7 +14997,7 @@
             ]
           },
           "ATIMONAN": {
-            "barangay_list": [
+            "b": [
               "ANGELES",
               "BALUBAD",
               "BALUGOHIN",
@@ -15043,7 +15043,7 @@
             ]
           },
           "BUENAVISTA": {
-            "barangay_list": [
+            "b": [
               "BAGONG SILANG",
               "BATABAT NORTE",
               "BATABAT SUR",
@@ -15084,7 +15084,7 @@
             ]
           },
           "BURDEOS": {
-            "barangay_list": [
+            "b": [
               "ALUYON",
               "AMOT",
               "ANIBAWAN",
@@ -15101,7 +15101,7 @@
             ]
           },
           "CALAUAG": {
-            "barangay_list": [
+            "b": [
               "AGOHO",
               "ANAHAWAN",
               "ANAS",
@@ -15186,7 +15186,7 @@
             ]
           },
           "CANDELARIA": {
-            "barangay_list": [
+            "b": [
               "BUENAVISTA EAST",
               "BUENAVISTA WEST",
               "BUKAL NORTE",
@@ -15215,7 +15215,7 @@
             ]
           },
           "CATANAUAN": {
-            "barangay_list": [
+            "b": [
               "AJOS",
               "ANUSAN",
               "BARANGAY 1 (POB.)",
@@ -15265,7 +15265,7 @@
             ]
           },
           "DOLORES": {
-            "barangay_list": [
+            "b": [
               "ANTONINO (AYUSAN)",
               "BAGONG ANYO (POB.)",
               "BAYANIHAN (POB.)",
@@ -15285,7 +15285,7 @@
             ]
           },
           "GENERAL LUNA": {
-            "barangay_list": [
+            "b": [
               "BACONG IBABA",
               "BACONG ILAYA",
               "BARANGAY 1 (POB.)",
@@ -15316,7 +15316,7 @@
             ]
           },
           "GENERAL NAKAR": {
-            "barangay_list": [
+            "b": [
               "ANOLING",
               "BANGLOS",
               "BATANGAN",
@@ -15339,7 +15339,7 @@
             ]
           },
           "GUINAYANGAN": {
-            "barangay_list": [
+            "b": [
               "A. MABINI",
               "ALONEROS",
               "ARBISMEN",
@@ -15397,7 +15397,7 @@
             ]
           },
           "GUMACA": {
-            "barangay_list": [
+            "b": [
               "ADIA BITAOG",
               "ANONANGIN",
               "BAGONG BUHAY (POB.)",
@@ -15460,7 +15460,7 @@
             ]
           },
           "INFANTA": {
-            "barangay_list": [
+            "b": [
               "ABIAWIN",
               "AGOS-AGOS",
               "ALITAS",
@@ -15500,7 +15500,7 @@
             ]
           },
           "JOMALIG": {
-            "barangay_list": [
+            "b": [
               "APAD",
               "BUKAL",
               "CASUGURAN",
@@ -15509,7 +15509,7 @@
             ]
           },
           "LOPEZ": {
-            "barangay_list": [
+            "b": [
               "BACUNGAN",
               "BAGACAY",
               "BANABAHIN IBABA",
@@ -15608,7 +15608,7 @@
             ]
           },
           "LUCBAN": {
-            "barangay_list": [
+            "b": [
               "ABANG",
               "ALILIW",
               "ATULINAO",
@@ -15644,7 +15644,7 @@
             ]
           },
           "LUCENA CITY": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BARANGAY 3 (POB.)",
@@ -15681,7 +15681,7 @@
             ]
           },
           "MACALELON": {
-            "barangay_list": [
+            "b": [
               "AMONTAY",
               "ANOS",
               "BUYAO",
@@ -15715,7 +15715,7 @@
             ]
           },
           "MAUBAN": {
-            "barangay_list": [
+            "b": [
               "ABO-ABO",
               "ALITAP",
               "BAAO",
@@ -15759,7 +15759,7 @@
             ]
           },
           "MULANAY": {
-            "barangay_list": [
+            "b": [
               "AJOS",
               "AMUGUIS",
               "ANONANG",
@@ -15791,7 +15791,7 @@
             ]
           },
           "PADRE BURGOS": {
-            "barangay_list": [
+            "b": [
               "BASIAO (POB.)",
               "BURGOS (POB.)",
               "CABUYAO NORTE",
@@ -15817,7 +15817,7 @@
             ]
           },
           "PAGBILAO": {
-            "barangay_list": [
+            "b": [
               "ALUPAYE",
               "ANTIPOLO",
               "AÑATO",
@@ -15848,7 +15848,7 @@
             ]
           },
           "PANUKULAN": {
-            "barangay_list": [
+            "b": [
               "BALUNGAY",
               "BATO",
               "BONBON",
@@ -15865,7 +15865,7 @@
             ]
           },
           "PATNANUNGAN": {
-            "barangay_list": [
+            "b": [
               "AMAGA",
               "BUSDAK",
               "KILOGAN",
@@ -15875,7 +15875,7 @@
             ]
           },
           "PEREZ": {
-            "barangay_list": [
+            "b": [
               "BAGONG PAG-ASA POB. (BARANGAY 3)",
               "BAGONG SILANG POB. (BARANGAY 4)",
               "MAABOT",
@@ -15893,7 +15893,7 @@
             ]
           },
           "PITOGO": {
-            "barangay_list": [
+            "b": [
               "AMONTAY",
               "BIGA",
               "BILUCAO",
@@ -15936,7 +15936,7 @@
             ]
           },
           "PLARIDEL": {
-            "barangay_list": [
+            "b": [
               "CENTRAL (POB.)",
               "CONCEPCION",
               "DUHAT",
@@ -15949,7 +15949,7 @@
             ]
           },
           "POLILLO": {
-            "barangay_list": [
+            "b": [
               "ANAWAN",
               "ATULAYAN",
               "BALESIN",
@@ -15973,7 +15973,7 @@
             ]
           },
           "QUEZON": {
-            "barangay_list": [
+            "b": [
               "APAD",
               "ARGOSINO",
               "BARANGAY I (POB.)",
@@ -16001,7 +16001,7 @@
             ]
           },
           "REAL": {
-            "barangay_list": [
+            "b": [
               "BAGONG SILANG",
               "CAPALONG",
               "CAWAYAN",
@@ -16022,7 +16022,7 @@
             ]
           },
           "SAMPALOC": {
-            "barangay_list": [
+            "b": [
               "ALUPAY",
               "APASAN",
               "BANOT",
@@ -16040,7 +16040,7 @@
             ]
           },
           "SAN ANDRES": {
-            "barangay_list": [
+            "b": [
               "ALIBIHABAN",
               "CAMFLORA",
               "MANGERO",
@@ -16051,7 +16051,7 @@
             ]
           },
           "SAN ANTONIO": {
-            "barangay_list": [
+            "b": [
               "ARAWAN",
               "BAGONG NIING",
               "BALAT ATIS",
@@ -16075,7 +16075,7 @@
             ]
           },
           "SAN FRANCISCO (AURORA)": {
-            "barangay_list": [
+            "b": [
               "BUTANGUIAD",
               "CASAY",
               "CAWAYAN I",
@@ -16095,7 +16095,7 @@
             ]
           },
           "SAN NARCISO": {
-            "barangay_list": [
+            "b": [
               "ABUYON",
               "ANDRES BONIFACIO",
               "BANI",
@@ -16123,7 +16123,7 @@
             ]
           },
           "SARIAYA": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO",
               "BALUBAL",
               "BARANGAY 1 (POB.)",
@@ -16170,7 +16170,7 @@
             ]
           },
           "TAGKAWAYAN": {
-            "barangay_list": [
+            "b": [
               "ALDAVOC",
               "ALIJI",
               "BAGONG SILANG",
@@ -16219,7 +16219,7 @@
             ]
           },
           "TAYABAS CITY": {
-            "barangay_list": [
+            "b": [
               "ALITAO",
               "ALSAM IBABA",
               "ALSAM ILAYA",
@@ -16289,7 +16289,7 @@
             ]
           },
           "TIAONG": {
-            "barangay_list": [
+            "b": [
               "ANASTACIA (TAGBAK)",
               "AQUINO",
               "AYUSAN I",
@@ -16324,7 +16324,7 @@
             ]
           },
           "UNISAN": {
-            "barangay_list": [
+            "b": [
               "ALMACEN",
               "BALAGTAS",
               "BALANACAN",
@@ -16366,9 +16366,9 @@
         }
       },
       "RIZAL": {
-        "municipality_list": {
+        "m": {
           "ANGONO": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN",
               "KALAYAAN",
               "MAHABANG PARANG",
@@ -16382,7 +16382,7 @@
             ]
           },
           "BARAS": {
-            "barangay_list": [
+            "b": [
               "CONCEPCION",
               "EVANGELISTA",
               "MABINI",
@@ -16396,7 +16396,7 @@
             ]
           },
           "BINANGONAN": {
-            "barangay_list": [
+            "b": [
               "BANGAD",
               "BATINGAN",
               "BILIBIRAN",
@@ -16440,7 +16440,7 @@
             ]
           },
           "CAINTA": {
-            "barangay_list": [
+            "b": [
               "SAN ANDRES (POB.)",
               "SAN ISIDRO",
               "SAN JUAN",
@@ -16451,7 +16451,7 @@
             ]
           },
           "CARDONA": {
-            "barangay_list": [
+            "b": [
               "BALIBAGO",
               "BOOR",
               "CALAHAN",
@@ -16473,7 +16473,7 @@
             ]
           },
           "CITY OF ANTIPOLO": {
-            "barangay_list": [
+            "b": [
               "BAGONG NAYON",
               "BEVERLY HILLS",
               "CALAWIS",
@@ -16493,7 +16493,7 @@
             ]
           },
           "JALA-JALA": {
-            "barangay_list": [
+            "b": [
               "BAGUMBONG",
               "BAYUGO",
               "LUBO",
@@ -16508,7 +16508,7 @@
             ]
           },
           "MORONG": {
-            "barangay_list": [
+            "b": [
               "BOMBONGAN",
               "CAN-CAL-LAN (CANIOGAN-CALERO-LANANG)",
               "LAGUNDI",
@@ -16520,7 +16520,7 @@
             ]
           },
           "PILILLA": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN (POB.)",
               "HALAYHAYIN",
               "HULO (POB.)",
@@ -16533,7 +16533,7 @@
             ]
           },
           "RODRIGUEZ (MONTALBAN)": {
-            "barangay_list": [
+            "b": [
               "BALITE (POB.)",
               "BURGOS",
               "GERONIMO",
@@ -16548,7 +16548,7 @@
             ]
           },
           "SAN MATEO": {
-            "barangay_list": [
+            "b": [
               "AMPID I",
               "AMPID II",
               "BANABA",
@@ -16567,7 +16567,7 @@
             ]
           },
           "TANAY": {
-            "barangay_list": [
+            "b": [
               "CAYABU",
               "CUYAMBAY",
               "DARAITAN",
@@ -16591,7 +16591,7 @@
             ]
           },
           "TAYTAY": {
-            "barangay_list": [
+            "b": [
               "DOLORES (POB.)",
               "MUZON",
               "SAN ISIDRO",
@@ -16600,7 +16600,7 @@
             ]
           },
           "TERESA": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN",
               "CALUMPANG SANTO CRISTO",
               "DALIG",
@@ -16616,13 +16616,13 @@
       }
     }
   },
-  "4B": {
-    "region_name": "REGION IV-B",
-    "province_list": {
+  {
+    "r": "REGION IV-B",
+    "p": {
       "MARINDUQUE": {
-        "municipality_list": {
+        "m": {
           "BOAC": {
-            "barangay_list": [
+            "b": [
               "AGOT",
               "AGUMAYMAYAN",
               "AMOINGON",
@@ -16687,7 +16687,7 @@
             ]
           },
           "BUENAVISTA": {
-            "barangay_list": [
+            "b": [
               "BAGACAY",
               "BAGTINGON",
               "BARANGAY I (POB.)",
@@ -16706,7 +16706,7 @@
             ]
           },
           "GASAN": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO",
               "BACHAO IBABA",
               "BACHAO ILAYA",
@@ -16735,7 +16735,7 @@
             ]
           },
           "MOGPOG": {
-            "barangay_list": [
+            "b": [
               "ANAPOG-SIBUCAO",
               "ARGAO",
               "BALANACAN",
@@ -16776,7 +16776,7 @@
             ]
           },
           "SANTA CRUZ": {
-            "barangay_list": [
+            "b": [
               "ALOBO",
               "ANGAS",
               "ATURAN",
@@ -16835,7 +16835,7 @@
             ]
           },
           "TORRIJOS": {
-            "barangay_list": [
+            "b": [
               "BANGWAYIN",
               "BAYAKBAKIN",
               "BOLO",
@@ -16866,9 +16866,9 @@
         }
       },
       "OCCIDENTAL MINDORO": {
-        "municipality_list": {
+        "m": {
           "ABRA DE ILOG": {
-            "barangay_list": [
+            "b": [
               "ARMADO",
               "BALAO",
               "CABACAO",
@@ -16882,7 +16882,7 @@
             ]
           },
           "CALINTAAN": {
-            "barangay_list": [
+            "b": [
               "CONCEPCION",
               "IRIRON",
               "MALPALON",
@@ -16893,7 +16893,7 @@
             ]
           },
           "LOOC": {
-            "barangay_list": [
+            "b": [
               "AGKAWAYAN",
               "AMBIL",
               "BALIKYAS",
@@ -16906,7 +16906,7 @@
             ]
           },
           "LUBANG": {
-            "barangay_list": [
+            "b": [
               "ARAW AT BITUIN (POB.)",
               "BAGONG SIKAT (POB.)",
               "BANAAG AT PAG-ASA (POB.)",
@@ -16926,7 +16926,7 @@
             ]
           },
           "MAGSAYSAY": {
-            "barangay_list": [
+            "b": [
               "ALIBOG",
               "CAGURAY",
               "CALAWAG",
@@ -16942,7 +16942,7 @@
             ]
           },
           "MAMBURAO": {
-            "barangay_list": [
+            "b": [
               "BALANSAY",
               "FATIMA (TII)",
               "PAYOMPON",
@@ -16961,7 +16961,7 @@
             ]
           },
           "PALUAN": {
-            "barangay_list": [
+            "b": [
               "ALIPAOY",
               "BAGONG SILANG POB. (BGY 5)",
               "HANDANG TUMULONG POB. (BGY 2)",
@@ -16977,7 +16977,7 @@
             ]
           },
           "RIZAL": {
-            "barangay_list": [
+            "b": [
               "ADELA",
               "AGUAS",
               "MAGSIKAP",
@@ -16992,7 +16992,7 @@
             ]
           },
           "SABLAYAN": {
-            "barangay_list": [
+            "b": [
               "BATONG BUHAY",
               "BUENAVISTA",
               "BURGOS",
@@ -17018,7 +17018,7 @@
             ]
           },
           "SAN JOSE": {
-            "barangay_list": [
+            "b": [
               "AMBULONG",
               "ANSIRAY",
               "BAGONG SIKAT",
@@ -17061,7 +17061,7 @@
             ]
           },
           "SANTA CRUZ": {
-            "barangay_list": [
+            "b": [
               "ALACAAK",
               "BARAHAN",
               "CASAGUE",
@@ -17078,9 +17078,9 @@
         }
       },
       "ORIENTAL MINDORO": {
-        "municipality_list": {
+        "m": {
           "BACO": {
-            "barangay_list": [
+            "b": [
               "ALAG",
               "BANGKATAN",
               "BARAS (MANGYAN MINORITY)",
@@ -17111,7 +17111,7 @@
             ]
           },
           "BANSUD": {
-            "barangay_list": [
+            "b": [
               "ALCADESMA",
               "BATO",
               "CONRAZON",
@@ -17128,7 +17128,7 @@
             ]
           },
           "BONGABONG": {
-            "barangay_list": [
+            "b": [
               "ANILAO",
               "APLAYA",
               "BAGUMBAYAN I",
@@ -17168,7 +17168,7 @@
             ]
           },
           "BULALACAO (SAN PEDRO)": {
-            "barangay_list": [
+            "b": [
               "BAGONG SIKAT",
               "BALATASAN",
               "BENLI (MANGYAN SETTLEMENT)",
@@ -17187,7 +17187,7 @@
             ]
           },
           "CITY OF CALAPAN": {
-            "barangay_list": [
+            "b": [
               "BALINGAYAN",
               "BALITE",
               "BARUYAN",
@@ -17253,7 +17253,7 @@
             ]
           },
           "GLORIA": {
-            "barangay_list": [
+            "b": [
               "AGOS",
               "AGSALIN",
               "ALMA VILLA",
@@ -17284,7 +17284,7 @@
             ]
           },
           "MANSALAY": {
-            "barangay_list": [
+            "b": [
               "B. DEL MUNDO",
               "BALUGO",
               "BONBON",
@@ -17305,7 +17305,7 @@
             ]
           },
           "NAUJAN": {
-            "barangay_list": [
+            "b": [
               "ADRIALUNA",
               "ANDRES ILAGAN (MAG-ASAWANG TUBIG)",
               "ANTIPOLO",
@@ -17379,7 +17379,7 @@
             ]
           },
           "PINAMALAYAN": {
-            "barangay_list": [
+            "b": [
               "ANOLING",
               "BACUNGAN",
               "BANGBANG",
@@ -17420,7 +17420,7 @@
             ]
           },
           "POLA": {
-            "barangay_list": [
+            "b": [
               "BACAWAN",
               "BACUNGAN",
               "BATUHAN",
@@ -17447,7 +17447,7 @@
             ]
           },
           "PUERTO GALERA": {
-            "barangay_list": [
+            "b": [
               "ANINUAN",
               "BACLAYAN",
               "BALATERO",
@@ -17464,7 +17464,7 @@
             ]
           },
           "ROXAS": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN (POB.)",
               "CANTIL",
               "DANGAY",
@@ -17488,7 +17488,7 @@
             ]
           },
           "SAN TEODORO": {
-            "barangay_list": [
+            "b": [
               "BIGAAN",
               "CAAGUTAYAN",
               "CALANGATAN",
@@ -17500,7 +17500,7 @@
             ]
           },
           "SOCORRO": {
-            "barangay_list": [
+            "b": [
               "BAGSOK",
               "BATONG DALIG",
               "BAYUIN",
@@ -17530,7 +17530,7 @@
             ]
           },
           "VICTORIA": {
-            "barangay_list": [
+            "b": [
               "ALCATE",
               "ANTONINO",
               "BABANGONAN",
@@ -17568,9 +17568,9 @@
         }
       },
       "PALAWAN": {
-        "municipality_list": {
+        "m": {
           "ABORLAN": {
-            "barangay_list": [
+            "b": [
               "APO-APORAWAN",
               "APOC-APOC",
               "APORAWAN",
@@ -17593,7 +17593,7 @@
             ]
           },
           "AGUTAYA": {
-            "barangay_list": [
+            "b": [
               "ABAGAT (POB.)",
               "ALGECIRAS",
               "BANGCAL (POB.)",
@@ -17607,7 +17607,7 @@
             ]
           },
           "ARACELI": {
-            "barangay_list": [
+            "b": [
               "BALOGO",
               "DAGMAN",
               "DALAYAWON",
@@ -17624,7 +17624,7 @@
             ]
           },
           "BALABAC": {
-            "barangay_list": [
+            "b": [
               "AGUTAYAN",
               "BANCALAAN",
               "BUGSUK (NEW CAGAYANCILLO)",
@@ -17648,7 +17648,7 @@
             ]
           },
           "BATARAZA": {
-            "barangay_list": [
+            "b": [
               "BONO-BONO",
               "BULALACAO",
               "BULILUYAN",
@@ -17674,7 +17674,7 @@
             ]
           },
           "BROOKE'S POINT": {
-            "barangay_list": [
+            "b": [
               "AMAS",
               "ARIBUNGOS",
               "BARONG-BARONG",
@@ -17696,7 +17696,7 @@
             ]
           },
           "BUSUANGA": {
-            "barangay_list": [
+            "b": [
               "BOGTONG",
               "BULUANG",
               "CHEEY",
@@ -17714,7 +17714,7 @@
             ]
           },
           "CAGAYANCILLO": {
-            "barangay_list": [
+            "b": [
               "BANTAYAN (POB.)",
               "CALSADA (POB.)",
               "CONVENTO (POB.)",
@@ -17730,7 +17730,7 @@
             ]
           },
           "CORON": {
-            "barangay_list": [
+            "b": [
               "BANUANG DAAN",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -17757,7 +17757,7 @@
             ]
           },
           "CULION": {
-            "barangay_list": [
+            "b": [
               "BALALA",
               "BALDAT",
               "BINUDAC",
@@ -17775,7 +17775,7 @@
             ]
           },
           "CUYO": {
-            "barangay_list": [
+            "b": [
               "BALADING",
               "BANGCAL (POB.)",
               "CABIGSING (POB.)",
@@ -17796,7 +17796,7 @@
             ]
           },
           "DUMARAN": {
-            "barangay_list": [
+            "b": [
               "BACAO",
               "BOHOL",
               "CALASAG",
@@ -17816,7 +17816,7 @@
             ]
           },
           "EL NIDO (BACUIT)": {
-            "barangay_list": [
+            "b": [
               "ABERAWAN",
               "BAGONG BAYAN",
               "BAROTUAN",
@@ -17838,12 +17838,12 @@
             ]
           },
           "KALAYAAN": {
-            "barangay_list": [
+            "b": [
               "PAG-ASA (POB.)"
             ]
           },
           "LINAPACAN": {
-            "barangay_list": [
+            "b": [
               "BARANGONAN (ILOC)",
               "CABUNLAWAN",
               "CALIBANGBANGAN",
@@ -17857,7 +17857,7 @@
             ]
           },
           "MAGSAYSAY": {
-            "barangay_list": [
+            "b": [
               "ALCOBA",
               "BALAGUEN",
               "CANIPO",
@@ -17872,7 +17872,7 @@
             ]
           },
           "NARRA": {
-            "barangay_list": [
+            "b": [
               "ANTIPULUAN",
               "ARAMAYWAN",
               "BAGONG SIKAT",
@@ -17899,7 +17899,7 @@
             ]
           },
           "PUERTO PRINCESA CITY": {
-            "barangay_list": [
+            "b": [
               "BABUYAN",
               "BACUNGAN",
               "BAGONG BAYAN",
@@ -17969,7 +17969,7 @@
             ]
           },
           "QUEZON": {
-            "barangay_list": [
+            "b": [
               "ALFONSO XIII (POB.)",
               "ARAMAYWAN",
               "BERONG",
@@ -17987,7 +17987,7 @@
             ]
           },
           "RIZAL (MARCOS)": {
-            "barangay_list": [
+            "b": [
               "BUNOG",
               "CAMPONG ULAY",
               "CANDAWAGA",
@@ -18002,7 +18002,7 @@
             ]
           },
           "ROXAS": {
-            "barangay_list": [
+            "b": [
               "ABAROAN",
               "ANTONINO",
               "BAGONG BAYAN",
@@ -18037,7 +18037,7 @@
             ]
           },
           "SAN VICENTE": {
-            "barangay_list": [
+            "b": [
               "ALIMANGUAN",
               "BINGA",
               "CARURAY",
@@ -18051,7 +18051,7 @@
             ]
           },
           "SOFRONIO ESPAÑOLA": {
-            "barangay_list": [
+            "b": [
               "ABO-ABO",
               "IRARAY",
               "ISUMBO",
@@ -18064,7 +18064,7 @@
             ]
           },
           "TAYTAY": {
-            "barangay_list": [
+            "b": [
               "ABONGAN",
               "ALACALIAN",
               "BANBANAN",
@@ -18101,9 +18101,9 @@
         }
       },
       "ROMBLON": {
-        "municipality_list": {
+        "m": {
           "ALCANTARA": {
-            "barangay_list": [
+            "b": [
               "BAGSIK",
               "BONLAO",
               "CALAGONSAO",
@@ -18119,7 +18119,7 @@
             ]
           },
           "BANTON": {
-            "barangay_list": [
+            "b": [
               "BALOGO",
               "BANICE",
               "HAMBI-AN",
@@ -18140,7 +18140,7 @@
             ]
           },
           "CAJIDIOCAN": {
-            "barangay_list": [
+            "b": [
               "ALIBAGON",
               "CAMBAJAO",
               "CAMBALO",
@@ -18158,7 +18158,7 @@
             ]
           },
           "CALATRAVA": {
-            "barangay_list": [
+            "b": [
               "BALOGO",
               "LINAO",
               "PAGSANGAHAN",
@@ -18169,7 +18169,7 @@
             ]
           },
           "CONCEPCION": {
-            "barangay_list": [
+            "b": [
               "BACHAWAN",
               "CALABASAHAN",
               "DALAJICAN",
@@ -18182,7 +18182,7 @@
             ]
           },
           "CORCUERA": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "AMBULONG",
               "COLONGCOLONG",
@@ -18201,7 +18201,7 @@
             ]
           },
           "FERROL": {
-            "barangay_list": [
+            "b": [
               "AGNONOC",
               "BUNSORAN",
               "CLARO M. RECTO",
@@ -18211,7 +18211,7 @@
             ]
           },
           "LOOC": {
-            "barangay_list": [
+            "b": [
               "AGOJO",
               "BALATUCAN",
               "BUENAVISTA",
@@ -18227,7 +18227,7 @@
             ]
           },
           "MAGDIWANG": {
-            "barangay_list": [
+            "b": [
               "AGSAO",
               "AGUTAY",
               "AMBULONG",
@@ -18240,7 +18240,7 @@
             ]
           },
           "ODIONGAN": {
-            "barangay_list": [
+            "b": [
               "AMATONG",
               "ANAHAO",
               "BANGON",
@@ -18269,7 +18269,7 @@
             ]
           },
           "ROMBLON": {
-            "barangay_list": [
+            "b": [
               "AGBALUTO",
               "AGBUDIA",
               "AGNAGA",
@@ -18304,7 +18304,7 @@
             ]
           },
           "SAN AGUSTIN": {
-            "barangay_list": [
+            "b": [
               "BACHAWAN",
               "BINONGAHAN",
               "BINUGUSAN",
@@ -18323,7 +18323,7 @@
             ]
           },
           "SAN ANDRES": {
-            "barangay_list": [
+            "b": [
               "AGPUDLOS",
               "CALUNACON",
               "DOÑA TRINIDAD",
@@ -18340,7 +18340,7 @@
             ]
           },
           "SAN FERNANDO": {
-            "barangay_list": [
+            "b": [
               "AGTIWA",
               "AZARGA",
               "CAMPALINGO",
@@ -18356,7 +18356,7 @@
             ]
           },
           "SAN JOSE": {
-            "barangay_list": [
+            "b": [
               "BUSAY",
               "COMBOT",
               "LANAS",
@@ -18365,7 +18365,7 @@
             ]
           },
           "SANTA FE": {
-            "barangay_list": [
+            "b": [
               "AGMANIC",
               "CANYAYO",
               "DANAO NORTE",
@@ -18380,7 +18380,7 @@
             ]
           },
           "SANTA MARIA (IMELDA)": {
-            "barangay_list": [
+            "b": [
               "BONGA",
               "CONCEPCION NORTE (POB.)",
               "CONCEPCION SUR",
@@ -18393,13 +18393,13 @@
       }
     }
   },
-  "05": {
-    "region_name": "REGION V",
-    "province_list": {
+  {
+    "r": "REGION V",
+    "p": {
       "ALBAY": {
-        "municipality_list": {
+        "m": {
           "BACACAY": {
-            "barangay_list": [
+            "b": [
               "BACLAYON",
               "BANAO",
               "BARANGAY 1 (POB.)",
@@ -18459,7 +18459,7 @@
             ]
           },
           "CAMALIG": {
-            "barangay_list": [
+            "b": [
               "ANOLING",
               "BALIGANG",
               "BANTONAN",
@@ -18513,7 +18513,7 @@
             ]
           },
           "CITY OF LIGAO": {
-            "barangay_list": [
+            "b": [
               "ABELLA",
               "ALLANG",
               "AMTIC",
@@ -18572,7 +18572,7 @@
             ]
           },
           "DARAGA (LOCSIN)": {
-            "barangay_list": [
+            "b": [
               "ALCALA",
               "ALOBO",
               "ANISLAG",
@@ -18630,7 +18630,7 @@
             ]
           },
           "GUINOBATAN": {
-            "barangay_list": [
+            "b": [
               "AGPAY",
               "BALITE",
               "BANAO",
@@ -18678,7 +18678,7 @@
             ]
           },
           "JOVELLAR": {
-            "barangay_list": [
+            "b": [
               "AURORA POB. (BGY. 6)",
               "BAGACAY",
               "BAUTISTA",
@@ -18705,7 +18705,7 @@
             ]
           },
           "LEGAZPI CITY": {
-            "barangay_list": [
+            "b": [
               "BGY. 1 - EM'S BARRIO (POB.)",
               "BGY. 2 - EM'S BARRIO SOUTH (POB.)",
               "BGY. 3 - EM'S BARRIO EAST (POB.)",
@@ -18779,7 +18779,7 @@
             ]
           },
           "LIBON": {
-            "barangay_list": [
+            "b": [
               "ALONGONG",
               "APUD",
               "BACOLOD",
@@ -18830,7 +18830,7 @@
             ]
           },
           "MALILIPOT": {
-            "barangay_list": [
+            "b": [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BARANGAY III (POB.)",
@@ -18852,7 +18852,7 @@
             ]
           },
           "MALINAO": {
-            "barangay_list": [
+            "b": [
               "AWANG",
               "BAGATANGKI",
               "BAGUMBAYAN",
@@ -18885,7 +18885,7 @@
             ]
           },
           "MANITO": {
-            "barangay_list": [
+            "b": [
               "BALABAGON",
               "BALASBAS",
               "BAMBAN",
@@ -18904,7 +18904,7 @@
             ]
           },
           "OAS": {
-            "barangay_list": [
+            "b": [
               "BADBAD",
               "BADIAN",
               "BAGSA",
@@ -18961,7 +18961,7 @@
             ]
           },
           "PIO DURAN": {
-            "barangay_list": [
+            "b": [
               "AGOL",
               "ALABANGPURO",
               "BANAWAN (BINAWAN)",
@@ -18998,7 +18998,7 @@
             ]
           },
           "POLANGUI": {
-            "barangay_list": [
+            "b": [
               "AGOS",
               "ALNAY",
               "ALOMON",
@@ -19046,7 +19046,7 @@
             ]
           },
           "RAPU-RAPU": {
-            "barangay_list": [
+            "b": [
               "BAGAOBAWAN",
               "BATAN",
               "BILBAO",
@@ -19084,7 +19084,7 @@
             ]
           },
           "SANTO DOMINGO (LIBOG)": {
-            "barangay_list": [
+            "b": [
               "ALIMSOG",
               "BAGONG SAN ROQUE",
               "BUHATAN",
@@ -19111,7 +19111,7 @@
             ]
           },
           "TABACO CITY": {
-            "barangay_list": [
+            "b": [
               "AGNAS (SAN MIGUEL ISLAND)",
               "BACOLOD",
               "BANGKILINGAN",
@@ -19162,7 +19162,7 @@
             ]
           },
           "TIWI": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN",
               "BARIIS",
               "BAYBAY",
@@ -19193,9 +19193,9 @@
         }
       },
       "CAMARINES NORTE": {
-        "municipality_list": {
+        "m": {
           "BASUD": {
-            "barangay_list": [
+            "b": [
               "ANGAS",
               "BACTAS",
               "BINATAGAN",
@@ -19228,7 +19228,7 @@
             ]
           },
           "CAPALONGA": {
-            "barangay_list": [
+            "b": [
               "ALAYAO",
               "BINAWANGAN",
               "CALABACA",
@@ -19254,7 +19254,7 @@
             ]
           },
           "DAET": {
-            "barangay_list": [
+            "b": [
               "ALAWIHAO",
               "AWITAN",
               "BAGASBAS",
@@ -19283,7 +19283,7 @@
             ]
           },
           "JOSE PANGANIBAN": {
-            "barangay_list": [
+            "b": [
               "BAGONG BAYAN",
               "CALERO",
               "DAHICAN",
@@ -19314,7 +19314,7 @@
             ]
           },
           "LABO": {
-            "barangay_list": [
+            "b": [
               "ANAHAW (POB.)",
               "ANAMEAM",
               "AWITAN",
@@ -19370,7 +19370,7 @@
             ]
           },
           "MERCEDES": {
-            "barangay_list": [
+            "b": [
               "APUAO",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -19400,7 +19400,7 @@
             ]
           },
           "PARACALE": {
-            "barangay_list": [
+            "b": [
               "AWITAN",
               "BAGUMBAYAN",
               "BAKAL",
@@ -19431,7 +19431,7 @@
             ]
           },
           "SAN LORENZO RUIZ (IMELDA)": {
-            "barangay_list": [
+            "b": [
               "DACULANG BOLO",
               "DAGOTDOTAN",
               "LANGGA",
@@ -19447,7 +19447,7 @@
             ]
           },
           "SAN VICENTE": {
-            "barangay_list": [
+            "b": [
               "ASDUM",
               "CABANBANAN",
               "CALABAGAS",
@@ -19460,7 +19460,7 @@
             ]
           },
           "SANTA ELENA": {
-            "barangay_list": [
+            "b": [
               "BASIAD",
               "BULALA",
               "DON TOMAS",
@@ -19483,7 +19483,7 @@
             ]
           },
           "TALISAY": {
-            "barangay_list": [
+            "b": [
               "BINANUAAN",
               "CAAWIGAN",
               "CAHABAAN",
@@ -19502,7 +19502,7 @@
             ]
           },
           "VINZONS": {
-            "barangay_list": [
+            "b": [
               "AGUIT-IT",
               "BANOCBOC",
               "BARANGAY I (POB.)",
@@ -19527,9 +19527,9 @@
         }
       },
       "CAMARINES SUR": {
-        "municipality_list": {
+        "m": {
           "BAAO": {
-            "barangay_list": [
+            "b": [
               "AGDANGAN POB. (SAN CAYETANO)",
               "ANTIPOLO",
               "BAGUMBAYAN",
@@ -19563,7 +19563,7 @@
             ]
           },
           "BALATAN": {
-            "barangay_list": [
+            "b": [
               "CABANBANAN",
               "CABUNGAN",
               "CAMANGAHAN (CAORASAN)",
@@ -19584,7 +19584,7 @@
             ]
           },
           "BATO": {
-            "barangay_list": [
+            "b": [
               "AGOS",
               "BACOLOD",
               "BULUANG",
@@ -19621,7 +19621,7 @@
             ]
           },
           "BOMBON": {
-            "barangay_list": [
+            "b": [
               "PAGAO (SAN JUAN)",
               "SAN ANTONIO",
               "SAN FRANCISCO",
@@ -19633,7 +19633,7 @@
             ]
           },
           "BUHI": {
-            "barangay_list": [
+            "b": [
               "AMLONGAN (DEL ROSARIO)",
               "ANTIPOLO",
               "BUROCBUSOC",
@@ -19675,7 +19675,7 @@
             ]
           },
           "BULA": {
-            "barangay_list": [
+            "b": [
               "BAGOLADIO",
               "BAGUMBAYAN",
               "BALAOGAN",
@@ -19712,7 +19712,7 @@
             ]
           },
           "CABUSAO": {
-            "barangay_list": [
+            "b": [
               "BARCELONITA",
               "BIONG",
               "CAMAGONG",
@@ -19725,7 +19725,7 @@
             ]
           },
           "CALABANGA": {
-            "barangay_list": [
+            "b": [
               "BALATASAN",
               "BALOMBON",
               "BALONGAY",
@@ -19777,7 +19777,7 @@
             ]
           },
           "CAMALIGAN": {
-            "barangay_list": [
+            "b": [
               "DUGCAL",
               "MARUPIT",
               "SAN FRANCISCO",
@@ -19794,7 +19794,7 @@
             ]
           },
           "CANAMAN": {
-            "barangay_list": [
+            "b": [
               "BARAS (POB.)",
               "DEL ROSARIO",
               "DINAGA (POB.)",
@@ -19822,7 +19822,7 @@
             ]
           },
           "CARAMOAN": {
-            "barangay_list": [
+            "b": [
               "AGAAS",
               "ANTOLON",
               "BACGONG",
@@ -19875,7 +19875,7 @@
             ]
           },
           "DEL GALLEGO": {
-            "barangay_list": [
+            "b": [
               "BAGONG SILANG",
               "BUCAL",
               "CABASAG",
@@ -19911,7 +19911,7 @@
             ]
           },
           "GAINZA": {
-            "barangay_list": [
+            "b": [
               "CAGBUNGA",
               "DAHILIG",
               "DISTRICT I (POB.)",
@@ -19923,7 +19923,7 @@
             ]
           },
           "GARCHITORENA": {
-            "barangay_list": [
+            "b": [
               "ASON (ANSON)",
               "BAHI",
               "BARANGAY I (POB.)",
@@ -19950,7 +19950,7 @@
             ]
           },
           "GOA": {
-            "barangay_list": [
+            "b": [
               "ABUCAYAN",
               "BAGUMBAYAN GRANDE (POB.)",
               "BAGUMBAYAN PEQUEÑO (POB.)",
@@ -19988,7 +19988,7 @@
             ]
           },
           "IRIGA CITY": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO",
               "CRISTO REY",
               "DEL ROSARIO (BANAO)",
@@ -20028,7 +20028,7 @@
             ]
           },
           "LAGONOY": {
-            "barangay_list": [
+            "b": [
               "AGOSAIS",
               "AGPO-CAMAGONG-TABOG",
               "AMOGUIS",
@@ -20070,7 +20070,7 @@
             ]
           },
           "LIBMANAN": {
-            "barangay_list": [
+            "b": [
               "ASLONG",
               "AWAYAN",
               "BAGACAY",
@@ -20149,7 +20149,7 @@
             ]
           },
           "LUPI": {
-            "barangay_list": [
+            "b": [
               "ALLEOMAR",
               "BAGANGAN SR.",
               "BAGONG SIKAT",
@@ -20191,7 +20191,7 @@
             ]
           },
           "MAGARAO": {
-            "barangay_list": [
+            "b": [
               "BAROBAYBAY",
               "BELL (POB.)",
               "CARANGCANG",
@@ -20210,7 +20210,7 @@
             ]
           },
           "MILAOR": {
-            "barangay_list": [
+            "b": [
               "ALIMBUYOG",
               "AMPARADO (POB.)",
               "BALAGBAG",
@@ -20234,7 +20234,7 @@
             ]
           },
           "MINALABAC": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO",
               "BAGOLATAO",
               "BAGONGBONG",
@@ -20263,7 +20263,7 @@
             ]
           },
           "NABUA": {
-            "barangay_list": [
+            "b": [
               "ANGUSTIA (ANGUSTIA INAPATAN)",
               "ANTIPOLO OLD",
               "ANTIPOLO YOUNG",
@@ -20309,7 +20309,7 @@
             ]
           },
           "NAGA CITY": {
-            "barangay_list": [
+            "b": [
               "ABELLA",
               "BAGUMBAYAN NORTE",
               "BAGUMBAYAN SUR",
@@ -20340,7 +20340,7 @@
             ]
           },
           "OCAMPO": {
-            "barangay_list": [
+            "b": [
               "AYUGAN",
               "CABARIWAN",
               "CAGMANABA",
@@ -20369,7 +20369,7 @@
             ]
           },
           "PAMPLONA": {
-            "barangay_list": [
+            "b": [
               "BATANG",
               "BURABOD",
               "CAGBIBI",
@@ -20390,7 +20390,7 @@
             ]
           },
           "PASACAO": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO",
               "BAGONG SILANG",
               "BAHAY",
@@ -20413,7 +20413,7 @@
             ]
           },
           "PILI": {
-            "barangay_list": [
+            "b": [
               "ANAYAN",
               "BAGONG SIRANG",
               "BINANWAANAN",
@@ -20443,7 +20443,7 @@
             ]
           },
           "PRESENTACION (PARUBCAN)": {
-            "barangay_list": [
+            "b": [
               "AYUGAO",
               "BAGONG SIRANG",
               "BALIGUIAN",
@@ -20465,7 +20465,7 @@
             ]
           },
           "RAGAY": {
-            "barangay_list": [
+            "b": [
               "AGAO-AO",
               "AGRUPACION",
               "AMOMOKPOK",
@@ -20507,7 +20507,7 @@
             ]
           },
           "SAGÑAY": {
-            "barangay_list": [
+            "b": [
               "ANIOG",
               "ATULAYAN",
               "BONGALON",
@@ -20530,7 +20530,7 @@
             ]
           },
           "SAN FERNANDO": {
-            "barangay_list": [
+            "b": [
               "ALIANZA",
               "BEBERON",
               "BICAL",
@@ -20556,7 +20556,7 @@
             ]
           },
           "SAN JOSE": {
-            "barangay_list": [
+            "b": [
               "ADIANGAO",
               "BAGACAY",
               "BAHAY",
@@ -20589,7 +20589,7 @@
             ]
           },
           "SIPOCOT": {
-            "barangay_list": [
+            "b": [
               "ALDEZAR",
               "ALTEZA",
               "ANIB",
@@ -20639,7 +20639,7 @@
             ]
           },
           "SIRUMA": {
-            "barangay_list": [
+            "b": [
               "BAGONG SIRANG",
               "BAHAO",
               "BOBOAN",
@@ -20665,7 +20665,7 @@
             ]
           },
           "TIGAON": {
-            "barangay_list": [
+            "b": [
               "ABO",
               "CABALINADAN",
               "CARAYCAYON",
@@ -20692,7 +20692,7 @@
             ]
           },
           "TINAMBAC": {
-            "barangay_list": [
+            "b": [
               "AGAY-AYAN",
               "ANTIPOLO",
               "BAGACAY",
@@ -20742,9 +20742,9 @@
         }
       },
       "CATANDUANES": {
-        "municipality_list": {
+        "m": {
           "BAGAMANOC": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO",
               "BACAK",
               "BAGATABAO",
@@ -20766,7 +20766,7 @@
             ]
           },
           "BARAS": {
-            "barangay_list": [
+            "b": [
               "ABIHAO",
               "AGBAN",
               "BAGONG SIRANG",
@@ -20799,7 +20799,7 @@
             ]
           },
           "BATO": {
-            "barangay_list": [
+            "b": [
               "AROYAO PEQUEÑO",
               "BAGUMBAYAN",
               "BANAWANG",
@@ -20830,7 +20830,7 @@
             ]
           },
           "CARAMORAN": {
-            "barangay_list": [
+            "b": [
               "BAYBAY (POB.)",
               "BOCON",
               "BOTHOAN (POB.)",
@@ -20861,7 +20861,7 @@
             ]
           },
           "GIGMOTO": {
-            "barangay_list": [
+            "b": [
               "BIONG",
               "DORORIAN",
               "POBLACION DISTRICT I",
@@ -20874,7 +20874,7 @@
             ]
           },
           "PANDAN": {
-            "barangay_list": [
+            "b": [
               "BAGAWANG",
               "BALAGÑONAN",
               "BALDOC",
@@ -20904,7 +20904,7 @@
             ]
           },
           "PANGANIBAN (PAYO)": {
-            "barangay_list": [
+            "b": [
               "ALINAWAN",
               "BABAGUAN",
               "BAGONG BAYAN",
@@ -20931,7 +20931,7 @@
             ]
           },
           "SAN ANDRES (CALOLBON)": {
-            "barangay_list": [
+            "b": [
               "AGOJO",
               "ALIBUAG",
               "ASGAD (JUAN M. ALBERTO)",
@@ -20973,7 +20973,7 @@
             ]
           },
           "SAN MIGUEL": {
-            "barangay_list": [
+            "b": [
               "ATSAN (DISTRICT I)",
               "BALATOHAN",
               "BOTON",
@@ -21001,7 +21001,7 @@
             ]
           },
           "VIGA": {
-            "barangay_list": [
+            "b": [
               "ALMOJUELA",
               "ANANONG",
               "ASUNCION (POB.)",
@@ -21036,7 +21036,7 @@
             ]
           },
           "VIRAC": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO DEL NORTE",
               "ANTIPOLO DEL SUR",
               "BALITE",
@@ -21105,9 +21105,9 @@
         }
       },
       "MASBATE": {
-        "municipality_list": {
+        "m": {
           "AROROY": {
-            "barangay_list": [
+            "b": [
               "AMBOLONG",
               "AMOROY",
               "AMUTAG",
@@ -21152,7 +21152,7 @@
             ]
           },
           "BALENO": {
-            "barangay_list": [
+            "b": [
               "BAAO",
               "BANASE",
               "BATUILA",
@@ -21180,7 +21180,7 @@
             ]
           },
           "BALUD": {
-            "barangay_list": [
+            "b": [
               "BAYBAY (LUMOCAB)",
               "BONGCANAWAY",
               "CALUMPANG",
@@ -21216,7 +21216,7 @@
             ]
           },
           "BATUAN": {
-            "barangay_list": [
+            "b": [
               "BURGOS",
               "CAMBAÑEZ",
               "CANARES",
@@ -21234,7 +21234,7 @@
             ]
           },
           "CATAINGAN": {
-            "barangay_list": [
+            "b": [
               "ABACA",
               "AGUADA",
               "BADIANG",
@@ -21274,7 +21274,7 @@
             ]
           },
           "CAWAYAN": {
-            "barangay_list": [
+            "b": [
               "BEGIA",
               "CABAYUGAN",
               "CABUNGAHAN",
@@ -21315,7 +21315,7 @@
             ]
           },
           "CLAVERIA": {
-            "barangay_list": [
+            "b": [
               "ALBASAN",
               "BOCA ENGAÑO",
               "BUYO",
@@ -21341,7 +21341,7 @@
             ]
           },
           "DIMASALANG": {
-            "barangay_list": [
+            "b": [
               "BALANTAY",
               "BALOCAWE",
               "BANAHAO",
@@ -21365,7 +21365,7 @@
             ]
           },
           "ESPERANZA": {
-            "barangay_list": [
+            "b": [
               "AGOHO",
               "ALMERO",
               "BARAS",
@@ -21389,7 +21389,7 @@
             ]
           },
           "MANDAON": {
-            "barangay_list": [
+            "b": [
               "ALAS",
               "AYAT",
               "BAT-ONGAN",
@@ -21419,7 +21419,7 @@
             ]
           },
           "MASBATE CITY": {
-            "barangay_list": [
+            "b": [
               "ANAS",
               "ASID",
               "B. TITONG",
@@ -21453,7 +21453,7 @@
             ]
           },
           "MILAGROS": {
-            "barangay_list": [
+            "b": [
               "BACOLOD",
               "BANGAD",
               "BARA",
@@ -21484,7 +21484,7 @@
             ]
           },
           "MOBO": {
-            "barangay_list": [
+            "b": [
               "BAANG",
               "BAGACAY",
               "BALATUCAN",
@@ -21517,7 +21517,7 @@
             ]
           },
           "MONREAL": {
-            "barangay_list": [
+            "b": [
               "CANTORNA",
               "FAMOSA",
               "GUINHADAP",
@@ -21532,7 +21532,7 @@
             ]
           },
           "PALANAS": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO",
               "BANCO",
               "BIGA-A",
@@ -21560,7 +21560,7 @@
             ]
           },
           "PIO V. CORPUZ (LIMBUHAN)": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "BUENASUERTE",
               "BUGANG",
@@ -21582,7 +21582,7 @@
             ]
           },
           "PLACER": {
-            "barangay_list": [
+            "b": [
               "AGUADA",
               "BAN-AO",
               "BURABOD",
@@ -21621,7 +21621,7 @@
             ]
           },
           "SAN FERNANDO": {
-            "barangay_list": [
+            "b": [
               "ALTAVISTA",
               "BAYANIHAN POB. (DISTRICT 4)",
               "BAYBAYDAGAT POB. (DISTRICT 1)",
@@ -21651,7 +21651,7 @@
             ]
           },
           "SAN JACINTO": {
-            "barangay_list": [
+            "b": [
               "ALMIÑE",
               "BAGACAY",
               "BAGAHANGLAD",
@@ -21676,7 +21676,7 @@
             ]
           },
           "SAN PASCUAL": {
-            "barangay_list": [
+            "b": [
               "BOCA CHICA",
               "BOLOD (POB.)",
               "BUSING",
@@ -21702,7 +21702,7 @@
             ]
           },
           "USON": {
-            "barangay_list": [
+            "b": [
               "ARADO",
               "ARMENIA",
               "AURORA",
@@ -21743,9 +21743,9 @@
         }
       },
       "SORSOGON": {
-        "municipality_list": {
+        "m": {
           "BARCELONA": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "BAGACAY",
               "BANGATE",
@@ -21774,7 +21774,7 @@
             ]
           },
           "BULAN": {
-            "barangay_list": [
+            "b": [
               "A. BONIFACIO",
               "ABAD SANTOS",
               "AGUINALDO",
@@ -21841,7 +21841,7 @@
             ]
           },
           "BULUSAN": {
-            "barangay_list": [
+            "b": [
               "BAGACAY",
               "CENTRAL (POB.)",
               "COGON",
@@ -21869,7 +21869,7 @@
             ]
           },
           "CASIGURAN": {
-            "barangay_list": [
+            "b": [
               "ADOVIS (POB.)",
               "BOTON",
               "BURGOS",
@@ -21898,7 +21898,7 @@
             ]
           },
           "CASTILLA": {
-            "barangay_list": [
+            "b": [
               "AMOMONTING",
               "BAGALAYAG",
               "BAGONG SIRANG",
@@ -21936,7 +21936,7 @@
             ]
           },
           "DONSOL": {
-            "barangay_list": [
+            "b": [
               "ALIN",
               "AWAI",
               "BANBAN",
@@ -21991,7 +21991,7 @@
             ]
           },
           "GUBAT": {
-            "barangay_list": [
+            "b": [
               "ARIMAN",
               "BAGACAY",
               "BALUD DEL NORTE (POB.)",
@@ -22037,7 +22037,7 @@
             ]
           },
           "IROSIN": {
-            "barangay_list": [
+            "b": [
               "BACOLOD (POB.)",
               "BAGSANGAN",
               "BATANG",
@@ -22069,7 +22069,7 @@
             ]
           },
           "JUBAN": {
-            "barangay_list": [
+            "b": [
               "ANOG",
               "AROROY",
               "BACOLOD",
@@ -22098,7 +22098,7 @@
             ]
           },
           "MAGALLANES": {
-            "barangay_list": [
+            "b": [
               "AGUADA NORTE",
               "AGUADA SUR",
               "ANIBONG",
@@ -22136,7 +22136,7 @@
             ]
           },
           "MATNOG": {
-            "barangay_list": [
+            "b": [
               "BALOCAWE",
               "BANOGAO",
               "BANUANGDAAN",
@@ -22180,7 +22180,7 @@
             ]
           },
           "PILAR": {
-            "barangay_list": [
+            "b": [
               "ABAS",
               "ABUCAY",
               "BANTAYAN",
@@ -22233,7 +22233,7 @@
             ]
           },
           "PRIETO DIAZ": {
-            "barangay_list": [
+            "b": [
               "BRILLANTE (POB.)",
               "BULAWAN",
               "CALAO",
@@ -22260,7 +22260,7 @@
             ]
           },
           "SANTA MAGDALENA": {
-            "barangay_list": [
+            "b": [
               "BARANGAY POBLACION I",
               "BARANGAY POBLACION II",
               "BARANGAY POBLACION III",
@@ -22278,7 +22278,7 @@
             ]
           },
           "SORSOGON CITY": {
-            "barangay_list": [
+            "b": [
               "ABUYOG",
               "ALMENDRAS-COGON (POB.)",
               "BALETE",
@@ -22349,13 +22349,13 @@
       }
     }
   },
-  "06": {
-    "region_name": "REGION VI",
-    "province_list": {
+  {
+    "r": "REGION VI",
+    "p": {
       "AKLAN": {
-        "municipality_list": {
+        "m": {
           "ALTAVAS": {
-            "barangay_list": [
+            "b": [
               "CABANGILA",
               "CABUGAO",
               "CATMON",
@@ -22373,7 +22373,7 @@
             ]
           },
           "BALETE": {
-            "barangay_list": [
+            "b": [
               "ARANAS",
               "ARCANGEL",
               "CALIZO",
@@ -22387,7 +22387,7 @@
             ]
           },
           "BANGA": {
-            "barangay_list": [
+            "b": [
               "AGBANAWAN",
               "BACAN",
               "BADIANGAN",
@@ -22421,7 +22421,7 @@
             ]
           },
           "BATAN": {
-            "barangay_list": [
+            "b": [
               "AMBOLONG",
               "ANGAS",
               "BAY-ANG",
@@ -22445,7 +22445,7 @@
             ]
           },
           "BURUANGA": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "BAGONGBAYAN",
               "BALUSBOS",
@@ -22464,7 +22464,7 @@
             ]
           },
           "IBAJAY": {
-            "barangay_list": [
+            "b": [
               "AGBAGO",
               "AGDUGAYAN",
               "ANTIPOLO",
@@ -22503,7 +22503,7 @@
             ]
           },
           "KALIBO": {
-            "barangay_list": [
+            "b": [
               "ANDAGAW",
               "BACHAW NORTE",
               "BACHAW SUR",
@@ -22523,7 +22523,7 @@
             ]
           },
           "LEZO": {
-            "barangay_list": [
+            "b": [
               "AGCAWILAN",
               "BAGTO",
               "BUGASONGAN",
@@ -22539,7 +22539,7 @@
             ]
           },
           "LIBACAO": {
-            "barangay_list": [
+            "b": [
               "AGMAILIG",
               "ALFONSO XII",
               "BATOBATO",
@@ -22567,7 +22567,7 @@
             ]
           },
           "MADALAG": {
-            "barangay_list": [
+            "b": [
               "ALAMINOS",
               "ALAS-AS",
               "BACYANG",
@@ -22596,7 +22596,7 @@
             ]
           },
           "MAKATO": {
-            "barangay_list": [
+            "b": [
               "AGBALOGO",
               "AGLUCAY",
               "ALIBAGON",
@@ -22618,7 +22618,7 @@
             ]
           },
           "MALAY": {
-            "barangay_list": [
+            "b": [
               "ARGAO",
               "BALABAG",
               "BALUSBUS",
@@ -22639,7 +22639,7 @@
             ]
           },
           "MALINAO": {
-            "barangay_list": [
+            "b": [
               "BANAYBANAY",
               "BIGA-A",
               "BULABUD",
@@ -22666,7 +22666,7 @@
             ]
           },
           "NABAS": {
-            "barangay_list": [
+            "b": [
               "ALIMBO-BAYBAY",
               "BUENAFORTUNA",
               "BUENASUERTE",
@@ -22690,7 +22690,7 @@
             ]
           },
           "NEW WASHINGTON": {
-            "barangay_list": [
+            "b": [
               "CANDELARIA",
               "CAWAYAN",
               "DUMAGUIT",
@@ -22710,7 +22710,7 @@
             ]
           },
           "NUMANCIA": {
-            "barangay_list": [
+            "b": [
               "ALBASAN",
               "ALIPUTOS",
               "BADIO",
@@ -22731,7 +22731,7 @@
             ]
           },
           "TANGALAN": {
-            "barangay_list": [
+            "b": [
               "AFGA",
               "BAYBAY",
               "DAPDAP",
@@ -22752,9 +22752,9 @@
         }
       },
       "ANTIQUE": {
-        "municipality_list": {
+        "m": {
           "ANINI-Y": {
-            "barangay_list": [
+            "b": [
               "BAYO GRANDE",
               "BAYO PEQUEÑO",
               "BUTUAN",
@@ -22781,7 +22781,7 @@
             ]
           },
           "BARBAZA": {
-            "barangay_list": [
+            "b": [
               "BAGHARI",
               "BAHUYAN",
               "BERI",
@@ -22824,7 +22824,7 @@
             ]
           },
           "BELISON": {
-            "barangay_list": [
+            "b": [
               "BOROCBOROC",
               "BUENAVISTA",
               "CONCEPCION",
@@ -22839,7 +22839,7 @@
             ]
           },
           "BUGASONG": {
-            "barangay_list": [
+            "b": [
               "ANILAWAN",
               "ARANGOTE",
               "BAGTASON",
@@ -22870,7 +22870,7 @@
             ]
           },
           "CALUYA": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "BACONG",
               "BANAGO",
@@ -22892,7 +22892,7 @@
             ]
           },
           "CULASI": {
-            "barangay_list": [
+            "b": [
               "ALOJIPAN",
               "BAGACAY",
               "BALAC-BALAC",
@@ -22940,7 +22940,7 @@
             ]
           },
           "HAMTIC": {
-            "barangay_list": [
+            "b": [
               "APDO",
               "ASLUMAN",
               "BANAWON",
@@ -22991,7 +22991,7 @@
             ]
           },
           "LAUA-AN": {
-            "barangay_list": [
+            "b": [
               "BAGONGBAYAN",
               "BANBAN",
               "BONGBONGAN",
@@ -23035,7 +23035,7 @@
             ]
           },
           "LIBERTAD": {
-            "barangay_list": [
+            "b": [
               "BARUSBUS",
               "BULANAO",
               "CENTRO ESTE (POB.)",
@@ -23058,7 +23058,7 @@
             ]
           },
           "PANDAN": {
-            "barangay_list": [
+            "b": [
               "ARACAY",
               "BADIANGAN",
               "BAGUMBAYAN",
@@ -23096,7 +23096,7 @@
             ]
           },
           "PATNONGON": {
-            "barangay_list": [
+            "b": [
               "ALVAÑIZ",
               "AMPARO",
               "APGAHAN",
@@ -23136,7 +23136,7 @@
             ]
           },
           "SAN JOSE": {
-            "barangay_list": [
+            "b": [
               "ATABAY",
               "BADIANG",
               "BARANGAY 1 (POB.)",
@@ -23168,7 +23168,7 @@
             ]
           },
           "SAN REMIGIO": {
-            "barangay_list": [
+            "b": [
               "AGRICULA",
               "ALEGRIA",
               "ANINGALAN",
@@ -23217,7 +23217,7 @@
             ]
           },
           "SEBASTE": {
-            "barangay_list": [
+            "b": [
               "ABIERA",
               "AGUILA",
               "ALEGRE",
@@ -23231,7 +23231,7 @@
             ]
           },
           "SIBALOM": {
-            "barangay_list": [
+            "b": [
               "ALANGAN",
               "BARI",
               "BIGA-A",
@@ -23311,7 +23311,7 @@
             ]
           },
           "TIBIAO": {
-            "barangay_list": [
+            "b": [
               "ALEGRE",
               "AMAR",
               "BANDOJA (LUPA-AN)",
@@ -23336,7 +23336,7 @@
             ]
           },
           "TOBIAS FORNIER (DAO)": {
-            "barangay_list": [
+            "b": [
               "ABACA",
               "ARAS-ASAN",
               "AROBO",
@@ -23390,7 +23390,7 @@
             ]
           },
           "VALDERRAMA": {
-            "barangay_list": [
+            "b": [
               "ALON",
               "BAKIANG",
               "BINANOGAN",
@@ -23418,9 +23418,9 @@
         }
       },
       "CAPIZ": {
-        "municipality_list": {
+        "m": {
           "CUARTERO": {
-            "barangay_list": [
+            "b": [
               "AGCABUGAO",
               "AGDAHON",
               "AGNAGA",
@@ -23446,7 +23446,7 @@
             ]
           },
           "DAO": {
-            "barangay_list": [
+            "b": [
               "AGANAN",
               "AGTAMBI",
               "AGTANGUAY",
@@ -23470,7 +23470,7 @@
             ]
           },
           "DUMALAG": {
-            "barangay_list": [
+            "b": [
               "CONCEPCION",
               "CONSOLACION",
               "DOLORES",
@@ -23493,7 +23493,7 @@
             ]
           },
           "DUMARAO": {
-            "barangay_list": [
+            "b": [
               "AGBATUAN",
               "AGLALANA",
               "AGLANOT",
@@ -23530,7 +23530,7 @@
             ]
           },
           "IVISAN": {
-            "barangay_list": [
+            "b": [
               "AGMALOBO",
               "AGUSTIN NAVARRA",
               "BALARING",
@@ -23549,7 +23549,7 @@
             ]
           },
           "JAMINDAN": {
-            "barangay_list": [
+            "b": [
               "AGAMBULONG",
               "AGBUN-OD",
               "AGCAGAY",
@@ -23583,7 +23583,7 @@
             ]
           },
           "MA-AYON": {
-            "barangay_list": [
+            "b": [
               "AGLIMOCON",
               "ALASAGING",
               "ALAYUNAN",
@@ -23619,7 +23619,7 @@
             ]
           },
           "MAMBUSAO": {
-            "barangay_list": [
+            "b": [
               "ATIPLO",
               "BALAT-AN",
               "BALIT",
@@ -23649,7 +23649,7 @@
             ]
           },
           "PANAY": {
-            "barangay_list": [
+            "b": [
               "AGBALO",
               "AGBANBAN",
               "AGOJO",
@@ -23695,7 +23695,7 @@
             ]
           },
           "PANITAN": {
-            "barangay_list": [
+            "b": [
               "AGBABADIANG",
               "AGKILO",
               "AGLOWAY",
@@ -23725,7 +23725,7 @@
             ]
           },
           "PILAR": {
-            "barangay_list": [
+            "b": [
               "BALOGO",
               "BINAOBAWAN",
               "BLASCO",
@@ -23753,7 +23753,7 @@
             ]
           },
           "PONTEVEDRA": {
-            "barangay_list": [
+            "b": [
               "AGBANOG",
               "AGDALIPE",
               "AMELIGAN",
@@ -23783,7 +23783,7 @@
             ]
           },
           "PRESIDENT ROXAS": {
-            "barangay_list": [
+            "b": [
               "ARANGUEL",
               "BADIANGON",
               "BAYUYAN",
@@ -23809,7 +23809,7 @@
             ]
           },
           "ROXAS CITY": {
-            "barangay_list": [
+            "b": [
               "ADLAWAN",
               "BAGO",
               "BALIJUAGAN",
@@ -23860,7 +23860,7 @@
             ]
           },
           "SAPI-AN": {
-            "barangay_list": [
+            "b": [
               "AGSILAB",
               "AGTATACAY NORTE",
               "AGTATACAY SUR",
@@ -23874,7 +23874,7 @@
             ]
           },
           "SIGMA": {
-            "barangay_list": [
+            "b": [
               "ACBO",
               "AMAGA",
               "BALUCUAN",
@@ -23899,7 +23899,7 @@
             ]
           },
           "TAPAZ": {
-            "barangay_list": [
+            "b": [
               "ABANGAY",
               "ACUÑA",
               "AGCOCOC",
@@ -23963,9 +23963,9 @@
         }
       },
       "GUIMARAS": {
-        "municipality_list": {
+        "m": {
           "BUENAVISTA": {
-            "barangay_list": [
+            "b": [
               "AGSANAYAN",
               "AVILA",
               "BACJAO (CALUMINGAN)",
@@ -24005,7 +24005,7 @@
             ]
           },
           "JORDAN": {
-            "barangay_list": [
+            "b": [
               "ALAGUISOC",
               "BALCON MARAVILLA",
               "BALCON MELLIZA",
@@ -24023,7 +24023,7 @@
             ]
           },
           "NUEVA VALENCIA": {
-            "barangay_list": [
+            "b": [
               "CABALAGNAN",
               "CALAYA",
               "CANHAWAN",
@@ -24049,7 +24049,7 @@
             ]
           },
           "SAN LORENZO": {
-            "barangay_list": [
+            "b": [
               "AGUILAR",
               "CABANO",
               "CABUNGAHAN",
@@ -24065,7 +24065,7 @@
             ]
           },
           "SIBUNAG": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "AYANGAN",
               "BUBOG",
@@ -24085,9 +24085,9 @@
         }
       },
       "ILOILO": {
-        "municipality_list": {
+        "m": {
           "AJUY": {
-            "barangay_list": [
+            "b": [
               "ADCADARAO",
               "AGBOBOLO",
               "BADIANGAN",
@@ -24125,7 +24125,7 @@
             ]
           },
           "ALIMODIAN": {
-            "barangay_list": [
+            "b": [
               "ABANG-ABANG",
               "AGSING",
               "ATABAY",
@@ -24180,7 +24180,7 @@
             ]
           },
           "ANILAO": {
-            "barangay_list": [
+            "b": [
               "AGBATUAN",
               "BADIANG",
               "BALABAG",
@@ -24205,7 +24205,7 @@
             ]
           },
           "BADIANGAN": {
-            "barangay_list": [
+            "b": [
               "AGUSIPAN",
               "ASTORGA",
               "BINGAUAN",
@@ -24240,7 +24240,7 @@
             ]
           },
           "BALASAN": {
-            "barangay_list": [
+            "b": [
               "ARANJUEZ",
               "BACOLOD",
               "BALANTI-AN",
@@ -24267,7 +24267,7 @@
             ]
           },
           "BANATE": {
-            "barangay_list": [
+            "b": [
               "ALACAYGAN",
               "BARIGA",
               "BELEN",
@@ -24289,7 +24289,7 @@
             ]
           },
           "BAROTAC NUEVO": {
-            "barangay_list": [
+            "b": [
               "ACUIT",
               "AGCUYAWAN CALSADA",
               "AGCUYAWAN PULO",
@@ -24322,7 +24322,7 @@
             ]
           },
           "BAROTAC VIEJO": {
-            "barangay_list": [
+            "b": [
               "BUGNAY",
               "CALIFORNIA",
               "DE LA PEÑA",
@@ -24352,7 +24352,7 @@
             ]
           },
           "BATAD": {
-            "barangay_list": [
+            "b": [
               "ALAPASCO",
               "ALINSOLONG",
               "BANBAN",
@@ -24380,7 +24380,7 @@
             ]
           },
           "BINGAWAN": {
-            "barangay_list": [
+            "b": [
               "AGBA-O",
               "ALABIDHAN",
               "BULABOG",
@@ -24398,7 +24398,7 @@
             ]
           },
           "CABATUAN": {
-            "barangay_list": [
+            "b": [
               "ACAO",
               "AMERANG",
               "AMURAO",
@@ -24470,7 +24470,7 @@
             ]
           },
           "CALINOG": {
-            "barangay_list": [
+            "b": [
               "AGCALAGA",
               "AGLIBACAO",
               "AGLONOK",
@@ -24533,7 +24533,7 @@
             ]
           },
           "CARLES": {
-            "barangay_list": [
+            "b": [
               "ABONG",
               "ALIPATA",
               "ASLUMAN",
@@ -24570,7 +24570,7 @@
             ]
           },
           "CITY OF PASSI": {
-            "barangay_list": [
+            "b": [
               "AGDAHON",
               "AGDAYAO",
               "AGLALANA",
@@ -24625,7 +24625,7 @@
             ]
           },
           "CONCEPCION": {
-            "barangay_list": [
+            "b": [
               "AGLOSONG",
               "AGNAGA",
               "BACJAWAN NORTE",
@@ -24654,7 +24654,7 @@
             ]
           },
           "DINGLE": {
-            "barangay_list": [
+            "b": [
               "ABANGAY",
               "AGSALANAN",
               "AGTATACAY",
@@ -24691,7 +24691,7 @@
             ]
           },
           "DUEÑAS": {
-            "barangay_list": [
+            "b": [
               "AGUTAYAN",
               "ANGARE",
               "ANJAWAN",
@@ -24742,7 +24742,7 @@
             ]
           },
           "DUMANGAS": {
-            "barangay_list": [
+            "b": [
               "AURORA-DEL PILAR (POB.)",
               "BACAY",
               "BACONG",
@@ -24791,7 +24791,7 @@
             ]
           },
           "ESTANCIA": {
-            "barangay_list": [
+            "b": [
               "BAYAS (BAYAS ISLAND)",
               "BAYUYAN",
               "BOTONGON",
@@ -24820,7 +24820,7 @@
             ]
           },
           "GUIMBAL": {
-            "barangay_list": [
+            "b": [
               "ANONO-O",
               "BACONG",
               "BAGUMBAYAN POB. (BAGUMBAYAN-GRANADA)",
@@ -24857,7 +24857,7 @@
             ]
           },
           "IGBARAS": {
-            "barangay_list": [
+            "b": [
               "ALAMEDA",
               "AMOROGTONG",
               "ANILAWAN",
@@ -24907,7 +24907,7 @@
             ]
           },
           "ILOILO CITY": {
-            "barangay_list": [
+            "b": [
               "ABETO MIRASOL TAFT SOUTH (QUIRINO ABETO)",
               "AGUINALDO",
               "AIRPORT (TABUCAN AIRPORT)",
@@ -25091,7 +25091,7 @@
             ]
           },
           "JANIUAY": {
-            "barangay_list": [
+            "b": [
               "ABANGAY",
               "AGCAROPE",
               "AGLOBONG",
@@ -25155,7 +25155,7 @@
             ]
           },
           "LAMBUNAO": {
-            "barangay_list": [
+            "b": [
               "AGSIRAB",
               "AGTUMAN",
               "ALUGMAWA",
@@ -25232,7 +25232,7 @@
             ]
           },
           "LEGANES": {
-            "barangay_list": [
+            "b": [
               "BIGKE",
               "BUNTATALA",
               "CAGAMUTAN NORTE",
@@ -25254,7 +25254,7 @@
             ]
           },
           "LEMERY": {
-            "barangay_list": [
+            "b": [
               "AGPIPILI",
               "ALCANTARA",
               "ALMEÑANA",
@@ -25289,7 +25289,7 @@
             ]
           },
           "LEON": {
-            "barangay_list": [
+            "b": [
               "AGBOY NORTE",
               "AGBOY SUR",
               "AGTA",
@@ -25378,7 +25378,7 @@
             ]
           },
           "MAASIN": {
-            "barangay_list": [
+            "b": [
               "ABAY",
               "ABILAY",
               "AGROCEL POB. (AGUINALDO-ROXAS--CELSO MAYOR)",
@@ -25432,7 +25432,7 @@
             ]
           },
           "MIAGAO": {
-            "barangay_list": [
+            "b": [
               "AGDUM",
               "AGUIAUAN",
               "ALIMODIAS",
@@ -25555,7 +25555,7 @@
             ]
           },
           "MINA": {
-            "barangay_list": [
+            "b": [
               "ABAT",
               "AGMANAPHAO",
               "AMIROY",
@@ -25581,7 +25581,7 @@
             ]
           },
           "NEW LUCENA": {
-            "barangay_list": [
+            "b": [
               "BACLAYAN",
               "BADIANG",
               "BALABAG",
@@ -25606,7 +25606,7 @@
             ]
           },
           "OTON": {
-            "barangay_list": [
+            "b": [
               "ABILAY NORTE",
               "ABILAY SUR",
               "ALEGRE",
@@ -25647,7 +25647,7 @@
             ]
           },
           "PAVIA": {
-            "barangay_list": [
+            "b": [
               "AGANAN",
               "AMPARO",
               "ANILAO",
@@ -25669,7 +25669,7 @@
             ]
           },
           "POTOTAN": {
-            "barangay_list": [
+            "b": [
               "ABANGAY",
               "AMAMAROS",
               "BAGACAY",
@@ -25723,7 +25723,7 @@
             ]
           },
           "SAN DIONISIO": {
-            "barangay_list": [
+            "b": [
               "AGDALIRAN",
               "AMAYONG",
               "BAGACAY",
@@ -25756,7 +25756,7 @@
             ]
           },
           "SAN ENRIQUE": {
-            "barangay_list": [
+            "b": [
               "ABACA",
               "ASISIG",
               "BANTAYAN",
@@ -25788,7 +25788,7 @@
             ]
           },
           "SAN JOAQUIN": {
-            "barangay_list": [
+            "b": [
               "AMBOYU-AN",
               "ANDRES BONIFACIO",
               "ANTALON",
@@ -25877,7 +25877,7 @@
             ]
           },
           "SAN MIGUEL": {
-            "barangay_list": [
+            "b": [
               "BGY. 1 POB. (ROXAS ST.)",
               "BGY. 2 POB. (SAVILLA STO. ROSARIO)",
               "BGY. 3 POB. (A.S.SUAREZ ST. ZONE 1)",
@@ -25905,7 +25905,7 @@
             ]
           },
           "SAN RAFAEL": {
-            "barangay_list": [
+            "b": [
               "ARIPDIP",
               "BAGACAY",
               "CALAIGANG",
@@ -25918,7 +25918,7 @@
             ]
           },
           "SANTA BARBARA": {
-            "barangay_list": [
+            "b": [
               "AGUSIPAN",
               "AGUTAYAN",
               "BAGUMBAYAN",
@@ -25982,7 +25982,7 @@
             ]
           },
           "SARA": {
-            "barangay_list": [
+            "b": [
               "AGUIRRE",
               "ALDEGUER",
               "ALIBAYOG",
@@ -26028,7 +26028,7 @@
             ]
           },
           "TIGBAUAN": {
-            "barangay_list": [
+            "b": [
               "ALUPIDIAN",
               "ATABAYAN",
               "BAGACAY",
@@ -26084,7 +26084,7 @@
             ]
           },
           "TUBUNGAN": {
-            "barangay_list": [
+            "b": [
               "ADGAO",
               "AGO",
               "AMBARIHON",
@@ -26136,7 +26136,7 @@
             ]
           },
           "ZARRAGA": {
-            "barangay_list": [
+            "b": [
               "BALUD I",
               "BALUD II",
               "BALUD LILO-AN",
@@ -26166,9 +26166,9 @@
         }
       },
       "NEGROS OCCIDENTAL": {
-        "municipality_list": {
+        "m": {
           "BACOLOD CITY": {
-            "barangay_list": [
+            "b": [
               "ALANGILAN",
               "ALIJIS",
               "BANAGO",
@@ -26233,7 +26233,7 @@
             ]
           },
           "BAGO CITY": {
-            "barangay_list": [
+            "b": [
               "ABUANAN",
               "ALIANZA",
               "ATIPULUAN",
@@ -26261,7 +26261,7 @@
             ]
           },
           "BINALBAGAN": {
-            "barangay_list": [
+            "b": [
               "AMONTAY",
               "BAGROY",
               "BI-AO",
@@ -26281,7 +26281,7 @@
             ]
           },
           "CADIZ CITY": {
-            "barangay_list": [
+            "b": [
               "ANDRES BONIFACIO",
               "BANQUEROHAN",
               "BARANGAY 1 POB. (ZONE 1)",
@@ -26307,7 +26307,7 @@
             ]
           },
           "CALATRAVA": {
-            "barangay_list": [
+            "b": [
               "AGPANGI",
               "ANI-E",
               "BAGACAY",
@@ -26351,7 +26351,7 @@
             ]
           },
           "CANDONI": {
-            "barangay_list": [
+            "b": [
               "AGBOY",
               "BANGA",
               "CABIA-AN",
@@ -26364,7 +26364,7 @@
             ]
           },
           "CAUAYAN": {
-            "barangay_list": [
+            "b": [
               "ABACA",
               "BACLAO",
               "BASAK",
@@ -26393,7 +26393,7 @@
             ]
           },
           "ENRIQUE B. MAGALONA (SARAVIA)": {
-            "barangay_list": [
+            "b": [
               "ALACAYGAN",
               "ALICANTE",
               "BATEA",
@@ -26420,7 +26420,7 @@
             ]
           },
           "ESCALANTE CITY": {
-            "barangay_list": [
+            "b": [
               "ALIMANGO",
               "BALINTAWAK (POB.)",
               "BINAGUIOHAN",
@@ -26445,7 +26445,7 @@
             ]
           },
           "HIMAMAYLAN CITY": {
-            "barangay_list": [
+            "b": [
               "AGUISAN",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -26468,7 +26468,7 @@
             ]
           },
           "HINIGARAN": {
-            "barangay_list": [
+            "b": [
               "ANAHAW",
               "ARANDA",
               "BAGA-AS",
@@ -26496,7 +26496,7 @@
             ]
           },
           "HINOBA-AN (ASIA)": {
-            "barangay_list": [
+            "b": [
               "ALIM",
               "ASIA",
               "BACUYANGAN",
@@ -26513,7 +26513,7 @@
             ]
           },
           "ILOG": {
-            "barangay_list": [
+            "b": [
               "ANDULAUAN",
               "BALICOTOC",
               "BARANGAY I (POB.)",
@@ -26532,7 +26532,7 @@
             ]
           },
           "ISABELA": {
-            "barangay_list": [
+            "b": [
               "AMIN",
               "BANOGBANOG",
               "BARANGAY 1 (POB.)",
@@ -26566,7 +26566,7 @@
             ]
           },
           "KABANKALAN CITY": {
-            "barangay_list": [
+            "b": [
               "BANTAYAN",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -26602,7 +26602,7 @@
             ]
           },
           "LA CARLOTA CITY": {
-            "barangay_list": [
+            "b": [
               "ARA-AL",
               "AYUNGON",
               "BALABAG",
@@ -26620,7 +26620,7 @@
             ]
           },
           "LA CASTELLANA": {
-            "barangay_list": [
+            "b": [
               "BIAKNABATO",
               "CABACUNGAN",
               "CABAGNAAN",
@@ -26637,7 +26637,7 @@
             ]
           },
           "MANAPLA": {
-            "barangay_list": [
+            "b": [
               "BARANGAY I (POB.)",
               "BARANGAY I-A (POB.)",
               "BARANGAY I-B (POB.)",
@@ -26653,7 +26653,7 @@
             ]
           },
           "MOISES PADILLA (MAGALLON)": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BARANGAY 3 (POB.)",
@@ -26672,7 +26672,7 @@
             ]
           },
           "MURCIA": {
-            "barangay_list": [
+            "b": [
               "ABO-ABO",
               "ALEGRIA",
               "AMAYCO",
@@ -26699,7 +26699,7 @@
             ]
           },
           "PONTEVEDRA": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -26723,7 +26723,7 @@
             ]
           },
           "PULUPANDAN": {
-            "barangay_list": [
+            "b": [
               "BARANGAY ZONE 1 (POB.)",
               "BARANGAY ZONE 1-A (POB.)",
               "BARANGAY ZONE 2 (POB.)",
@@ -26747,7 +26747,7 @@
             ]
           },
           "SAGAY CITY": {
-            "barangay_list": [
+            "b": [
               "ANDRES BONIFACIO",
               "BATO",
               "BAVIERA",
@@ -26776,7 +26776,7 @@
             ]
           },
           "SALVADOR BENEDICTO": {
-            "barangay_list": [
+            "b": [
               "BAGO (LALUNG)",
               "BAGONG SILANG (MARCELO)",
               "BUNGA",
@@ -26787,7 +26787,7 @@
             ]
           },
           "SAN CARLOS CITY": {
-            "barangay_list": [
+            "b": [
               "BAGONBON",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -26809,7 +26809,7 @@
             ]
           },
           "SAN ENRIQUE": {
-            "barangay_list": [
+            "b": [
               "BAGONAWA",
               "BALIWAGAN",
               "BATUAN",
@@ -26823,7 +26823,7 @@
             ]
           },
           "SILAY CITY": {
-            "barangay_list": [
+            "b": [
               "BAGTIC",
               "BALARING",
               "BARANGAY I (POB.)",
@@ -26843,7 +26843,7 @@
             ]
           },
           "SIPALAY CITY": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BARANGAY 3 (POB.)",
@@ -26864,7 +26864,7 @@
             ]
           },
           "TALISAY CITY": {
-            "barangay_list": [
+            "b": [
               "BUBOG",
               "CABATANGAN",
               "CONCEPCION",
@@ -26895,7 +26895,7 @@
             ]
           },
           "TOBOSO": {
-            "barangay_list": [
+            "b": [
               "BANDILA",
               "BUG-ANG",
               "GENERAL LUNA",
@@ -26908,7 +26908,7 @@
             ]
           },
           "VALLADOLID": {
-            "barangay_list": [
+            "b": [
               "ALIJIS",
               "AYUNGON",
               "BAGUMBAYAN",
@@ -26928,7 +26928,7 @@
             ]
           },
           "VICTORIAS CITY": {
-            "barangay_list": [
+            "b": [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BARANGAY III (POB.)",
@@ -26961,13 +26961,13 @@
       }
     }
   },
-  "07": {
-    "region_name": "REGION VII",
-    "province_list": {
+  {
+    "r": "REGION VII",
+    "p": {
       "BOHOL": {
-        "municipality_list": {
+        "m": {
           "ALBURQUERQUE": {
-            "barangay_list": [
+            "b": [
               "BAHI",
               "BASACDACU",
               "CANTIGUIB",
@@ -26982,7 +26982,7 @@
             ]
           },
           "ALICIA": {
-            "barangay_list": [
+            "b": [
               "CABATANG",
               "CAGONGCAGONG",
               "CAMBAOL",
@@ -27001,7 +27001,7 @@
             ]
           },
           "ANDA": {
-            "barangay_list": [
+            "b": [
               "ALMARIA",
               "BACONG",
               "BADIANG",
@@ -27021,7 +27021,7 @@
             ]
           },
           "ANTEQUERA": {
-            "barangay_list": [
+            "b": [
               "ANGILAN",
               "BANTOLINAO",
               "BICAHAN",
@@ -27046,7 +27046,7 @@
             ]
           },
           "BACLAYON": {
-            "barangay_list": [
+            "b": [
               "BUENAVENTURA",
               "CAMBANAC",
               "DASITAM",
@@ -27067,7 +27067,7 @@
             ]
           },
           "BALILIHAN": {
-            "barangay_list": [
+            "b": [
               "BAUCAN NORTE",
               "BAUCAN SUR",
               "BOCTOL",
@@ -27102,7 +27102,7 @@
             ]
           },
           "BATUAN": {
-            "barangay_list": [
+            "b": [
               "ALOJA",
               "BEHIND THE CLOUDS (SAN JOSE)",
               "CABACNITAN",
@@ -27121,7 +27121,7 @@
             ]
           },
           "BIEN UNIDO": {
-            "barangay_list": [
+            "b": [
               "BILANGBILANGAN DAKO",
               "BILANGBILANGAN DIOT",
               "HINGOTANAN EAST",
@@ -27140,7 +27140,7 @@
             ]
           },
           "BILAR": {
-            "barangay_list": [
+            "b": [
               "BONIFACIO",
               "BUGANG NORTE",
               "BUGANG SUR",
@@ -27163,7 +27163,7 @@
             ]
           },
           "BUENAVISTA": {
-            "barangay_list": [
+            "b": [
               "ANONANG",
               "ASINAN",
               "BAGO",
@@ -27202,7 +27202,7 @@
             ]
           },
           "CALAPE": {
-            "barangay_list": [
+            "b": [
               "ABUCAYAN NORTE",
               "ABUCAYAN SUR",
               "BANLASAN",
@@ -27239,7 +27239,7 @@
             ]
           },
           "CANDIJAY": {
-            "barangay_list": [
+            "b": [
               "ABIHILAN",
               "ANOLING",
               "BOYO-AN",
@@ -27264,7 +27264,7 @@
             ]
           },
           "CARMEN": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "BICAO",
               "BUENAVISTA",
@@ -27297,7 +27297,7 @@
             ]
           },
           "CATIGBIAN": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "AMBUAN",
               "BAANG",
@@ -27323,7 +27323,7 @@
             ]
           },
           "CLARIN": {
-            "barangay_list": [
+            "b": [
               "BACANI",
               "BOGTONGBOD",
               "BONBON",
@@ -27351,7 +27351,7 @@
             ]
           },
           "CORELLA": {
-            "barangay_list": [
+            "b": [
               "ANISLAG",
               "CANANGCA-AN",
               "CANAPNAPAN",
@@ -27363,7 +27363,7 @@
             ]
           },
           "CORTES": {
-            "barangay_list": [
+            "b": [
               "DE LA PAZ",
               "FATIMA",
               "LORETO",
@@ -27381,7 +27381,7 @@
             ]
           },
           "DAGOHOY": {
-            "barangay_list": [
+            "b": [
               "BABAG",
               "CAGAWASAN",
               "CAGAWITAN",
@@ -27400,7 +27400,7 @@
             ]
           },
           "DANAO": {
-            "barangay_list": [
+            "b": [
               "CABATUAN",
               "CANTUBOD",
               "CARBON",
@@ -27421,7 +27421,7 @@
             ]
           },
           "DAUIS": {
-            "barangay_list": [
+            "b": [
               "BIKING",
               "BINGAG",
               "CATARMAN",
@@ -27437,7 +27437,7 @@
             ]
           },
           "DIMIAO": {
-            "barangay_list": [
+            "b": [
               "ABIHID",
               "ALEMANIA",
               "BAGUHAN",
@@ -27476,7 +27476,7 @@
             ]
           },
           "DUERO": {
-            "barangay_list": [
+            "b": [
               "ALEJAWAN",
               "ANGILAN",
               "ANIBONGAN",
@@ -27501,7 +27501,7 @@
             ]
           },
           "GARCIA HERNANDEZ": {
-            "barangay_list": [
+            "b": [
               "ABIJILAN",
               "ANTIPOLO",
               "BASIAO",
@@ -27535,7 +27535,7 @@
             ]
           },
           "GUINDULMAN": {
-            "barangay_list": [
+            "b": [
               "BASDIO",
               "BATO",
               "BAYONG",
@@ -27558,7 +27558,7 @@
             ]
           },
           "INABANGA": {
-            "barangay_list": [
+            "b": [
               "ANONANG",
               "BADIANG",
               "BAGUHAN",
@@ -27612,7 +27612,7 @@
             ]
           },
           "JAGNA": {
-            "barangay_list": [
+            "b": [
               "ALEJAWAN",
               "BALILI",
               "BOCTOL",
@@ -27649,7 +27649,7 @@
             ]
           },
           "JETAFE": {
-            "barangay_list": [
+            "b": [
               "ALUMAR",
               "BANACON",
               "BUYOG",
@@ -27677,7 +27677,7 @@
             ]
           },
           "LILA": {
-            "barangay_list": [
+            "b": [
               "BANBAN",
               "BONKOKAN ILAYA",
               "BONKOKAN UBOS",
@@ -27699,7 +27699,7 @@
             ]
           },
           "LOAY": {
-            "barangay_list": [
+            "b": [
               "AGAPE",
               "ALEGRIA NORTE",
               "ALEGRIA SUR",
@@ -27727,7 +27727,7 @@
             ]
           },
           "LOBOC": {
-            "barangay_list": [
+            "b": [
               "AGAPE",
               "ALEGRIA",
               "BAGUMBAYAN",
@@ -27759,7 +27759,7 @@
             ]
           },
           "LOON": {
-            "barangay_list": [
+            "b": [
               "AGSOSO",
               "BADBAD OCCIDENTAL",
               "BADBAD ORIENTAL",
@@ -27830,7 +27830,7 @@
             ]
           },
           "MABINI": {
-            "barangay_list": [
+            "b": [
               "ABACA",
               "ABAD SANTOS",
               "AGUIPO",
@@ -27856,7 +27856,7 @@
             ]
           },
           "MARIBOJOC": {
-            "barangay_list": [
+            "b": [
               "AGAHAY",
               "ALIGUAY",
               "ANISLAG",
@@ -27882,7 +27882,7 @@
             ]
           },
           "PANGLAO": {
-            "barangay_list": [
+            "b": [
               "BIL-ISAN",
               "BOLOD",
               "DANAO",
@@ -27896,7 +27896,7 @@
             ]
           },
           "PILAR": {
-            "barangay_list": [
+            "b": [
               "AURORA",
               "BAGACAY",
               "BAGUMBAYAN",
@@ -27921,7 +27921,7 @@
             ]
           },
           "PRES. CARLOS P. GARCIA (PITOGO)": {
-            "barangay_list": [
+            "b": [
               "AGUINING",
               "BASIAO",
               "BAUD",
@@ -27948,7 +27948,7 @@
             ]
           },
           "SAGBAYAN (BORJA)": {
-            "barangay_list": [
+            "b": [
               "CALANGAHAN",
               "CANMANO",
               "CANMAYA CENTRO",
@@ -27976,7 +27976,7 @@
             ]
           },
           "SAN ISIDRO": {
-            "barangay_list": [
+            "b": [
               "ABEHILAN",
               "BARYONG DAAN",
               "BAUNOS",
@@ -27992,7 +27992,7 @@
             ]
           },
           "SAN MIGUEL": {
-            "barangay_list": [
+            "b": [
               "BAYONGAN",
               "BUGANG",
               "CABANGAHAN",
@@ -28014,7 +28014,7 @@
             ]
           },
           "SEVILLA": {
-            "barangay_list": [
+            "b": [
               "BAYAWAHAN",
               "CABANCALAN",
               "CALINGA-AN",
@@ -28031,7 +28031,7 @@
             ]
           },
           "SIERRA BULLONES": {
-            "barangay_list": [
+            "b": [
               "ABACHANAN",
               "ANIBONGAN",
               "BUGSOC",
@@ -28057,7 +28057,7 @@
             ]
           },
           "SIKATUNA": {
-            "barangay_list": [
+            "b": [
               "ABUCAY NORTE",
               "ABUCAY SUR",
               "BADIANG",
@@ -28071,7 +28071,7 @@
             ]
           },
           "TAGBILARAN CITY": {
-            "barangay_list": [
+            "b": [
               "BOOL",
               "BOOY",
               "CABAWAN",
@@ -28090,7 +28090,7 @@
             ]
           },
           "TALIBON": {
-            "barangay_list": [
+            "b": [
               "BAGACAY",
               "BALINTAWAK",
               "BURGOS",
@@ -28119,7 +28119,7 @@
             ]
           },
           "TRINIDAD": {
-            "barangay_list": [
+            "b": [
               "BANLASAN",
               "BONGBONG",
               "CATOOGAN",
@@ -28143,7 +28143,7 @@
             ]
           },
           "TUBIGON": {
-            "barangay_list": [
+            "b": [
               "BAGONGBANWA",
               "BANLASAN",
               "BATASAN (BATASAN ISLAND)",
@@ -28181,7 +28181,7 @@
             ]
           },
           "UBAY": {
-            "barangay_list": [
+            "b": [
               "ACHILA",
               "BAY-ANG",
               "BENLIW",
@@ -28229,7 +28229,7 @@
             ]
           },
           "VALENCIA": {
-            "barangay_list": [
+            "b": [
               "ADLAWAN",
               "ANAS",
               "ANONANG",
@@ -28270,9 +28270,9 @@
         }
       },
       "CEBU": {
-        "municipality_list": {
+        "m": {
           "ALCANTARA": {
-            "barangay_list": [
+            "b": [
               "CABADIANGAN",
               "CABIL-ISAN",
               "CANDABONG",
@@ -28285,7 +28285,7 @@
             ]
           },
           "ALCOY": {
-            "barangay_list": [
+            "b": [
               "ATABAY",
               "DAAN-LUNGSOD",
               "GUIWANG",
@@ -28297,7 +28297,7 @@
             ]
           },
           "ALEGRIA": {
-            "barangay_list": [
+            "b": [
               "COMPOSTELA",
               "GUADALUPE",
               "LEGASPI",
@@ -28310,7 +28310,7 @@
             ]
           },
           "ALOGUINSAN": {
-            "barangay_list": [
+            "b": [
               "ANGILAN",
               "BOJO",
               "BONBON",
@@ -28329,7 +28329,7 @@
             ]
           },
           "ARGAO": {
-            "barangay_list": [
+            "b": [
               "ALAMBIJUD",
               "ANAJAO",
               "APO",
@@ -28378,7 +28378,7 @@
             ]
           },
           "ASTURIAS": {
-            "barangay_list": [
+            "b": [
               "AGBANGA",
               "AGTUGOP",
               "BAGO",
@@ -28409,7 +28409,7 @@
             ]
           },
           "BADIAN": {
-            "barangay_list": [
+            "b": [
               "ALAWIJAO",
               "BALHAAN",
               "BANHIGAN",
@@ -28442,7 +28442,7 @@
             ]
           },
           "BALAMBAN": {
-            "barangay_list": [
+            "b": [
               "ABUCAYAN",
               "ALIWANAY",
               "ARPILI",
@@ -28474,7 +28474,7 @@
             ]
           },
           "BANTAYAN": {
-            "barangay_list": [
+            "b": [
               "ATOP-ATOP",
               "BAIGAD",
               "BANTIGUE (POB.)",
@@ -28503,7 +28503,7 @@
             ]
           },
           "BARILI": {
-            "barangay_list": [
+            "b": [
               "AZUCENA",
               "BAGAKAY",
               "BALAO",
@@ -28549,7 +28549,7 @@
             ]
           },
           "BOGO CITY": {
-            "barangay_list": [
+            "b": [
               "ANONANG NORTE",
               "ANONANG SUR",
               "BANBAN",
@@ -28582,7 +28582,7 @@
             ]
           },
           "BOLJOON": {
-            "barangay_list": [
+            "b": [
               "ARBOR",
               "BACLAYAN",
               "EL PARDO",
@@ -28597,7 +28597,7 @@
             ]
           },
           "BORBON": {
-            "barangay_list": [
+            "b": [
               "BAGACAY",
               "BILI",
               "BINGAY",
@@ -28620,7 +28620,7 @@
             ]
           },
           "CARCAR CITY": {
-            "barangay_list": [
+            "b": [
               "BOLINAWAN",
               "BUENAVISTA",
               "CALIDNGAN",
@@ -28639,7 +28639,7 @@
             ]
           },
           "CARMEN": {
-            "barangay_list": [
+            "b": [
               "BARING",
               "CANTIPAY",
               "CANTUKONG",
@@ -28664,7 +28664,7 @@
             ]
           },
           "CATMON": {
-            "barangay_list": [
+            "b": [
               "AGSUWAO",
               "AMANCION",
               "ANAPOG",
@@ -28688,7 +28688,7 @@
             ]
           },
           "CEBU CITY": {
-            "barangay_list": [
+            "b": [
               "ADLAON",
               "AGSUNGOT",
               "APAS",
@@ -28772,7 +28772,7 @@
             ]
           },
           "COMPOSTELA": {
-            "barangay_list": [
+            "b": [
               "BAGALNGA",
               "BASAK",
               "BULUANG",
@@ -28793,7 +28793,7 @@
             ]
           },
           "CONSOLACION": {
-            "barangay_list": [
+            "b": [
               "CABANGAHAN",
               "CANSAGA",
               "CASILI",
@@ -28818,7 +28818,7 @@
             ]
           },
           "CORDOBA": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "BANGBANG",
               "BUAGSONG",
@@ -28835,7 +28835,7 @@
             ]
           },
           "DAANBANTAYAN": {
-            "barangay_list": [
+            "b": [
               "AGUHO",
               "BAGAY",
               "BAKHAWAN",
@@ -28859,7 +28859,7 @@
             ]
           },
           "DALAGUETE": {
-            "barangay_list": [
+            "b": [
               "ABLAYAN",
               "BABAYONGAN",
               "BALUD",
@@ -28896,7 +28896,7 @@
             ]
           },
           "DANAO CITY": {
-            "barangay_list": [
+            "b": [
               "BALIANG",
               "BAYABAS",
               "BINALIW",
@@ -28942,7 +28942,7 @@
             ]
           },
           "DUMANJUG": {
-            "barangay_list": [
+            "b": [
               "BALAYGTIKI",
               "BITOON",
               "BULAK",
@@ -28983,7 +28983,7 @@
             ]
           },
           "GINATILAN": {
-            "barangay_list": [
+            "b": [
               "ANAO",
               "CAGSING",
               "CALABAWAN",
@@ -29001,7 +29001,7 @@
             ]
           },
           "LAPU-LAPU CITY (OPON)": {
-            "barangay_list": [
+            "b": [
               "AGUS",
               "BABAG",
               "BANKAL",
@@ -29035,7 +29035,7 @@
             ]
           },
           "LILOAN": {
-            "barangay_list": [
+            "b": [
               "CABADIANGAN",
               "CALERO",
               "CATARMAN",
@@ -29053,7 +29053,7 @@
             ]
           },
           "MADRIDEJOS": {
-            "barangay_list": [
+            "b": [
               "BUNAKAN",
               "KANGWAYAN",
               "KAONGKOD",
@@ -29071,7 +29071,7 @@
             ]
           },
           "MALABUYOC": {
-            "barangay_list": [
+            "b": [
               "ARMEÑA (CANSILONGAN)",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -29089,7 +29089,7 @@
             ]
           },
           "MANDAUE CITY": {
-            "barangay_list": [
+            "b": [
               "ALANG-ALANG",
               "BAKILID",
               "BANILAD",
@@ -29120,7 +29120,7 @@
             ]
           },
           "MEDELLIN": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO",
               "CANHABAGAT",
               "CAPUTATAN NORTE",
@@ -29143,7 +29143,7 @@
             ]
           },
           "MINGLANILLA": {
-            "barangay_list": [
+            "b": [
               "CADULAWAN",
               "CALAJO-AN",
               "CAMP 7",
@@ -29166,7 +29166,7 @@
             ]
           },
           "MOALBOAL": {
-            "barangay_list": [
+            "b": [
               "AGBALANGA",
               "BALA",
               "BALABAGON",
@@ -29185,7 +29185,7 @@
             ]
           },
           "NAGA CITY": {
-            "barangay_list": [
+            "b": [
               "ALFACO",
               "BAIRAN",
               "BALIRONG",
@@ -29217,7 +29217,7 @@
             ]
           },
           "OSLOB": {
-            "barangay_list": [
+            "b": [
               "ALO",
               "BANGCOGON",
               "BONBON",
@@ -29242,7 +29242,7 @@
             ]
           },
           "PILAR": {
-            "barangay_list": [
+            "b": [
               "BIASONG",
               "CAWIT",
               "DAPDAP",
@@ -29259,7 +29259,7 @@
             ]
           },
           "PINAMUNGAHAN": {
-            "barangay_list": [
+            "b": [
               "ANISLAG",
               "ANOPOG",
               "BINABAG",
@@ -29289,7 +29289,7 @@
             ]
           },
           "PORO": {
-            "barangay_list": [
+            "b": [
               "ADELA",
               "ALTAVISTA",
               "CAGCAGAN",
@@ -29310,7 +29310,7 @@
             ]
           },
           "RONDA": {
-            "barangay_list": [
+            "b": [
               "BUTONG",
               "CAN-ABUHON",
               "CANDULING",
@@ -29328,7 +29328,7 @@
             ]
           },
           "SAMBOAN": {
-            "barangay_list": [
+            "b": [
               "BASAK",
               "BONBON",
               "BULANGSURAN",
@@ -29347,7 +29347,7 @@
             ]
           },
           "SAN FERNANDO": {
-            "barangay_list": [
+            "b": [
               "BALUD",
               "BALUNGAG",
               "BASAK",
@@ -29372,7 +29372,7 @@
             ]
           },
           "SAN FRANCISCO": {
-            "barangay_list": [
+            "b": [
               "CABUNGA-AN",
               "CAMPO",
               "CONSUELO",
@@ -29391,7 +29391,7 @@
             ]
           },
           "SAN REMIGIO": {
-            "barangay_list": [
+            "b": [
               "ANAPOG",
               "ARGAWANON",
               "BAGTIC",
@@ -29422,7 +29422,7 @@
             ]
           },
           "SANTA FE": {
-            "barangay_list": [
+            "b": [
               "BALIDBID",
               "HAGDAN",
               "HILANTAGAAN",
@@ -29436,7 +29436,7 @@
             ]
           },
           "SANTANDER": {
-            "barangay_list": [
+            "b": [
               "BUNLAN",
               "CABUTONGAN",
               "CANDAMIANG",
@@ -29450,7 +29450,7 @@
             ]
           },
           "SIBONGA": {
-            "barangay_list": [
+            "b": [
               "ABUGON",
               "BAE",
               "BAGACAY",
@@ -29479,7 +29479,7 @@
             ]
           },
           "SOGOD": {
-            "barangay_list": [
+            "b": [
               "AMPONGOL",
               "BAGAKAY",
               "BAGATAYAM",
@@ -29501,7 +29501,7 @@
             ]
           },
           "TABOGON": {
-            "barangay_list": [
+            "b": [
               "ALANG-ALANG",
               "CADUAWAN",
               "CAMOBOAN",
@@ -29530,7 +29530,7 @@
             ]
           },
           "TABUELAN": {
-            "barangay_list": [
+            "b": [
               "BONGON",
               "DALID",
               "KANLIM-AO",
@@ -29546,7 +29546,7 @@
             ]
           },
           "TALISAY CITY": {
-            "barangay_list": [
+            "b": [
               "BIASONG",
               "BULACAO",
               "CADULAWAN",
@@ -29572,7 +29572,7 @@
             ]
           },
           "TOLEDO CITY": {
-            "barangay_list": [
+            "b": [
               "AWIHAO",
               "BAGAKAY",
               "BATO",
@@ -29614,7 +29614,7 @@
             ]
           },
           "TUBURAN": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "AMATUGAN",
               "ANTIPOLO",
@@ -29672,7 +29672,7 @@
             ]
           },
           "TUDELA": {
-            "barangay_list": [
+            "b": [
               "BUENAVISTA",
               "CALMANTE",
               "DAAN SECANTE",
@@ -29689,9 +29689,9 @@
         }
       },
       "NEGROS ORIENTAL": {
-        "municipality_list": {
+        "m": {
           "AMLAN (AYUQUITAN)": {
-            "barangay_list": [
+            "b": [
               "BIO-OS",
               "JANTIANON",
               "JUGNO",
@@ -29703,7 +29703,7 @@
             ]
           },
           "AYUNGON": {
-            "barangay_list": [
+            "b": [
               "AMDUS",
               "ANIBONG",
               "ATABAY",
@@ -29731,7 +29731,7 @@
             ]
           },
           "BACONG": {
-            "barangay_list": [
+            "b": [
               "BALAYAGMANOK",
               "BANILAD",
               "BUNTIS",
@@ -29757,7 +29757,7 @@
             ]
           },
           "BAIS CITY": {
-            "barangay_list": [
+            "b": [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BASAK",
@@ -29796,7 +29796,7 @@
             ]
           },
           "BASAY": {
-            "barangay_list": [
+            "b": [
               "ACTIN",
               "BAL-OS",
               "BONGALONAN",
@@ -29810,7 +29810,7 @@
             ]
           },
           "BAYAWAN CITY (TULONG)": {
-            "barangay_list": [
+            "b": [
               "ALI-IS",
               "BANAYBANAY",
               "BANGA",
@@ -29842,7 +29842,7 @@
             ]
           },
           "BINDOY (PAYABON)": {
-            "barangay_list": [
+            "b": [
               "ATOTES",
               "BATANGAN",
               "BULOD",
@@ -29868,7 +29868,7 @@
             ]
           },
           "CANLAON CITY": {
-            "barangay_list": [
+            "b": [
               "BAYOG",
               "BINALBAGAN",
               "BUCALAN (EAST BUDSALAN)",
@@ -29884,7 +29884,7 @@
             ]
           },
           "DAUIN": {
-            "barangay_list": [
+            "b": [
               "ANAHAWAN",
               "APO ISLAND",
               "BAGACAY",
@@ -29911,7 +29911,7 @@
             ]
           },
           "DUMAGUETE CITY": {
-            "barangay_list": [
+            "b": [
               "BAGACAY",
               "BAJUMPANDAN",
               "BALUGO",
@@ -29945,7 +29945,7 @@
             ]
           },
           "GUIHULNGAN CITY": {
-            "barangay_list": [
+            "b": [
               "BAKID",
               "BALOGO",
               "BANWAQUE",
@@ -29982,7 +29982,7 @@
             ]
           },
           "JIMALALUD": {
-            "barangay_list": [
+            "b": [
               "AGLAHUG",
               "AGUTAYON",
               "APANANGON",
@@ -30014,7 +30014,7 @@
             ]
           },
           "LA LIBERTAD": {
-            "barangay_list": [
+            "b": [
               "ANINIAW",
               "AYA",
               "BAGTIC",
@@ -30047,7 +30047,7 @@
             ]
           },
           "MABINAY": {
-            "barangay_list": [
+            "b": [
               "ABIS",
               "AREBASORE",
               "BAGTIC",
@@ -30083,7 +30083,7 @@
             ]
           },
           "MANJUYOD": {
-            "barangay_list": [
+            "b": [
               "ALANGILANAN",
               "BAGTIC",
               "BALAAS",
@@ -30114,7 +30114,7 @@
             ]
           },
           "PAMPLONA": {
-            "barangay_list": [
+            "b": [
               "ABANTE",
               "BALAYONG",
               "BANAWE",
@@ -30134,7 +30134,7 @@
             ]
           },
           "SAN JOSE": {
-            "barangay_list": [
+            "b": [
               "BASAK",
               "BASIAO",
               "CAMBALOCTOT",
@@ -30152,7 +30152,7 @@
             ]
           },
           "SANTA CATALINA": {
-            "barangay_list": [
+            "b": [
               "ALANGILAN",
               "AMIO",
               "BUENAVISTA",
@@ -30178,7 +30178,7 @@
             ]
           },
           "SIATON": {
-            "barangay_list": [
+            "b": [
               "ALBIGA",
               "APOLOY",
               "BONAWON",
@@ -30208,7 +30208,7 @@
             ]
           },
           "SIBULAN": {
-            "barangay_list": [
+            "b": [
               "AGAN-AN",
               "AJONG",
               "BALUGO",
@@ -30227,7 +30227,7 @@
             ]
           },
           "TANJAY CITY": {
-            "barangay_list": [
+            "b": [
               "AZAGRA",
               "BAHI-AN",
               "LUCA",
@@ -30255,7 +30255,7 @@
             ]
           },
           "TAYASAN": {
-            "barangay_list": [
+            "b": [
               "BACONG",
               "BAGO",
               "BANGA",
@@ -30287,7 +30287,7 @@
             ]
           },
           "VALENCIA (LUZURRIAGA)": {
-            "barangay_list": [
+            "b": [
               "APOLONG",
               "BALABAG EAST",
               "BALABAG WEST",
@@ -30315,7 +30315,7 @@
             ]
           },
           "VALLEHERMOSO": {
-            "barangay_list": [
+            "b": [
               "BAGAWINES",
               "BAIRAN",
               "CABULIHAN",
@@ -30334,7 +30334,7 @@
             ]
           },
           "ZAMBOANGUITA": {
-            "barangay_list": [
+            "b": [
               "BASAC",
               "CALANGO",
               "LOTUBAN",
@@ -30350,9 +30350,9 @@
         }
       },
       "SIQUIJOR": {
-        "municipality_list": {
+        "m": {
           "ENRIQUE VILLANUEVA": {
-            "barangay_list": [
+            "b": [
               "BALOLONG",
               "BINO-ONGAN",
               "BITAUG",
@@ -30370,7 +30370,7 @@
             ]
           },
           "LARENA": {
-            "barangay_list": [
+            "b": [
               "BAGACAY",
               "BALOLANG",
               "BASAC",
@@ -30397,7 +30397,7 @@
             ]
           },
           "LAZI": {
-            "barangay_list": [
+            "b": [
               "CAMPALANAS",
               "CANGCLARAN",
               "CANGOMANTONG",
@@ -30419,7 +30419,7 @@
             ]
           },
           "MARIA": {
-            "barangay_list": [
+            "b": [
               "BOGO",
               "BONGA",
               "CABAL-ASAN",
@@ -30445,7 +30445,7 @@
             ]
           },
           "SAN JUAN": {
-            "barangay_list": [
+            "b": [
               "CANASAGAN",
               "CANDURA",
               "CANGMUNAG",
@@ -30464,7 +30464,7 @@
             ]
           },
           "SIQUIJOR": {
-            "barangay_list": [
+            "b": [
               "BANBAN",
               "BOLOS",
               "CAIPILAN",
@@ -30513,13 +30513,13 @@
       }
     }
   },
-  "08": {
-    "region_name": "REGION VIII",
-    "province_list": {
+  {
+    "r": "REGION VIII",
+    "p": {
       "BILIRAN": {
-        "municipality_list": {
+        "m": {
           "ALMERIA": {
-            "barangay_list": [
+            "b": [
               "CAUCAB",
               "IYOSAN",
               "JAMORAWON",
@@ -30536,7 +30536,7 @@
             ]
           },
           "BILIRAN": {
-            "barangay_list": [
+            "b": [
               "BATO",
               "BURABOD",
               "BUSALI",
@@ -30551,7 +30551,7 @@
             ]
           },
           "CABUCGAYAN": {
-            "barangay_list": [
+            "b": [
               "BALAQUID",
               "BASO",
               "BUNGA",
@@ -30568,7 +30568,7 @@
             ]
           },
           "CAIBIRAN": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "ASUG",
               "BARI-IS",
@@ -30589,7 +30589,7 @@
             ]
           },
           "CULABA": {
-            "barangay_list": [
+            "b": [
               "ACABAN",
               "BACOLOD",
               "BINONGTOAN",
@@ -30610,7 +30610,7 @@
             ]
           },
           "KAWAYAN": {
-            "barangay_list": [
+            "b": [
               "BAGANITO",
               "BALACSON",
               "BALITE",
@@ -30634,7 +30634,7 @@
             ]
           },
           "MARIPIPI": {
-            "barangay_list": [
+            "b": [
               "AGUTAY",
               "BANLAS",
               "BATO",
@@ -30653,7 +30653,7 @@
             ]
           },
           "NAVAL": {
-            "barangay_list": [
+            "b": [
               "AGPANGI",
               "ANISLAGAN",
               "ATIPOLO",
@@ -30685,9 +30685,9 @@
         }
       },
       "EASTERN SAMAR": {
-        "municipality_list": {
+        "m": {
           "ARTECHE": {
-            "barangay_list": [
+            "b": [
               "AGUINALDO",
               "BALUD (POB.)",
               "BATO (SAN LUIS)",
@@ -30711,7 +30711,7 @@
             ]
           },
           "BALANGIGA": {
-            "barangay_list": [
+            "b": [
               "BACJAO",
               "BARANGAY POBLACION I",
               "BARANGAY POBLACION II",
@@ -30728,7 +30728,7 @@
             ]
           },
           "BALANGKAYAN": {
-            "barangay_list": [
+            "b": [
               "BALOGO",
               "BANGON",
               "CABAY",
@@ -30747,7 +30747,7 @@
             ]
           },
           "BORONGAN CITY": {
-            "barangay_list": [
+            "b": [
               "ALANG-ALANG",
               "AMANTACOP",
               "ANDO",
@@ -30812,7 +30812,7 @@
             ]
           },
           "CAN-AVID": {
-            "barangay_list": [
+            "b": [
               "BALAGON",
               "BARANGAY 1 POBLACION",
               "BARANGAY 2 POBLACION",
@@ -30844,7 +30844,7 @@
             ]
           },
           "DOLORES": {
-            "barangay_list": [
+            "b": [
               "AROGANGA",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -30894,7 +30894,7 @@
             ]
           },
           "GENERAL MACARTHUR": {
-            "barangay_list": [
+            "b": [
               "AGUINALDO",
               "ALANG-ALANG",
               "BINALAY",
@@ -30928,7 +30928,7 @@
             ]
           },
           "GIPORLOS": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BARANGAY 3 (POB.)",
@@ -30950,7 +30950,7 @@
             ]
           },
           "GUIUAN": {
-            "barangay_list": [
+            "b": [
               "ALINGAROG",
               "BAGUA",
               "BANAAG",
@@ -31014,7 +31014,7 @@
             ]
           },
           "HERNANI": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BARANGAY 3 (POB.)",
@@ -31031,7 +31031,7 @@
             ]
           },
           "JIPAPAD": {
-            "barangay_list": [
+            "b": [
               "AGSAMAN",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -31048,7 +31048,7 @@
             ]
           },
           "LAWAAN": {
-            "barangay_list": [
+            "b": [
               "BARANGAY POBLACION 1",
               "BARANGAY POBLACION 2",
               "BARANGAY POBLACION 3",
@@ -31068,7 +31068,7 @@
             ]
           },
           "LLORENTE": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO",
               "BABANIKHON",
               "BACAYAWAN",
@@ -31105,7 +31105,7 @@
             ]
           },
           "MASLOG": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BULAWAN",
@@ -31121,7 +31121,7 @@
             ]
           },
           "MAYDOLONG": {
-            "barangay_list": [
+            "b": [
               "BARANGAY POBLACION 1",
               "BARANGAY POBLACION 2",
               "BARANGAY POBLACION 3",
@@ -31145,7 +31145,7 @@
             ]
           },
           "MERCEDES": {
-            "barangay_list": [
+            "b": [
               "ANURON",
               "BANUYO",
               "BARANGAY 1 POBLACION",
@@ -31165,7 +31165,7 @@
             ]
           },
           "ORAS": {
-            "barangay_list": [
+            "b": [
               "AGSAM",
               "ALANG-ALANG",
               "BAGACAY",
@@ -31211,7 +31211,7 @@
             ]
           },
           "QUINAPONDAN": {
-            "barangay_list": [
+            "b": [
               "ALANG-ALANG",
               "ANISLAG",
               "BAGTE",
@@ -31240,7 +31240,7 @@
             ]
           },
           "SALCEDO": {
-            "barangay_list": [
+            "b": [
               "ABEJAO",
               "ALOG",
               "ASGAD",
@@ -31285,7 +31285,7 @@
             ]
           },
           "SAN JULIAN": {
-            "barangay_list": [
+            "b": [
               "BARANGAY NO. 1 POBLACION",
               "BARANGAY NO. 2 POBLACION",
               "BARANGAY NO. 3 POBLACION",
@@ -31305,7 +31305,7 @@
             ]
           },
           "SAN POLICARPO": {
-            "barangay_list": [
+            "b": [
               "ALUGAN",
               "BAHAY",
               "BANGON",
@@ -31326,7 +31326,7 @@
             ]
           },
           "SULAT": {
-            "barangay_list": [
+            "b": [
               "A-ET",
               "ABUCAY (POB.)",
               "BAYBAY (POB.)",
@@ -31348,7 +31348,7 @@
             ]
           },
           "TAFT": {
-            "barangay_list": [
+            "b": [
               "BATIAWAN",
               "BETO",
               "BINALOAN",
@@ -31378,9 +31378,9 @@
         }
       },
       "LEYTE": {
-        "municipality_list": {
+        "m": {
           "ABUYOG": {
-            "barangay_list": [
+            "b": [
               "ALANGILAN",
               "ANIBONGAN",
               "BAGACAY",
@@ -31447,7 +31447,7 @@
             ]
           },
           "ALANGALANG": {
-            "barangay_list": [
+            "b": [
               "ASLUM",
               "ASTORGA (BURABOD)",
               "BATO",
@@ -31505,7 +31505,7 @@
             ]
           },
           "ALBUERA": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO",
               "BALUGO",
               "BENOLHO",
@@ -31525,7 +31525,7 @@
             ]
           },
           "BABATNGON": {
-            "barangay_list": [
+            "b": [
               "BACONG",
               "BAGONG SILANG",
               "BIASONG",
@@ -31554,7 +31554,7 @@
             ]
           },
           "BARUGO": {
-            "barangay_list": [
+            "b": [
               "ABANGO",
               "AMAHIT",
               "BALIRE",
@@ -31595,7 +31595,7 @@
             ]
           },
           "BATO": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "ALEJOS",
               "AMAGOS",
@@ -31631,7 +31631,7 @@
             ]
           },
           "BAYBAY CITY": {
-            "barangay_list": [
+            "b": [
               "ALTAVISTA",
               "AMBACAN",
               "AMGUHAN",
@@ -31727,7 +31727,7 @@
             ]
           },
           "BURAUEN": {
-            "barangay_list": [
+            "b": [
               "ABUYOGON",
               "ANONANG",
               "ARADO",
@@ -31808,7 +31808,7 @@
             ]
           },
           "CALUBIAN": {
-            "barangay_list": [
+            "b": [
               "ABANILLA",
               "AGAS",
               "ANISLAGAN",
@@ -31865,7 +31865,7 @@
             ]
           },
           "CAPOOCAN": {
-            "barangay_list": [
+            "b": [
               "BALUCANAD",
               "BALUD",
               "BALUGO",
@@ -31890,7 +31890,7 @@
             ]
           },
           "CARIGARA": {
-            "barangay_list": [
+            "b": [
               "BAGONG LIPUNAN",
               "BALILIT",
               "BARAYONG",
@@ -31943,7 +31943,7 @@
             ]
           },
           "DAGAMI": {
-            "barangay_list": [
+            "b": [
               "ABACA",
               "ABRE",
               "BALILIT",
@@ -32012,7 +32012,7 @@
             ]
           },
           "DULAG": {
-            "barangay_list": [
+            "b": [
               "ALEGRE",
               "ARADO",
               "BARBO (POB.)",
@@ -32061,7 +32061,7 @@
             ]
           },
           "HILONGOS": {
-            "barangay_list": [
+            "b": [
               "AGUTAYAN",
               "ATABAY",
               "BAAS",
@@ -32116,7 +32116,7 @@
             ]
           },
           "HINDANG": {
-            "barangay_list": [
+            "b": [
               "ANAHAW",
               "ANOLON",
               "BALDOZA",
@@ -32140,7 +32140,7 @@
             ]
           },
           "INOPACAN": {
-            "barangay_list": [
+            "b": [
               "APID",
               "CABULISAN",
               "CAMINTO",
@@ -32164,7 +32164,7 @@
             ]
           },
           "ISABEL": {
-            "barangay_list": [
+            "b": [
               "ANISLAG",
               "ANTIPOLO",
               "APALE",
@@ -32192,7 +32192,7 @@
             ]
           },
           "JARO": {
-            "barangay_list": [
+            "b": [
               "ALAHAG",
               "ANIBONGAN",
               "ATIPOLO",
@@ -32242,7 +32242,7 @@
             ]
           },
           "JAVIER (BUGHO)": {
-            "barangay_list": [
+            "b": [
               "ABUYOGAY",
               "ANDRES BONIFACIO",
               "BATUG",
@@ -32274,7 +32274,7 @@
             ]
           },
           "JULITA": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "ANIBONG",
               "ASLUM",
@@ -32304,7 +32304,7 @@
             ]
           },
           "KANANGA": {
-            "barangay_list": [
+            "b": [
               "AGUITING",
               "CACAO",
               "HILUCTOGAN",
@@ -32331,7 +32331,7 @@
             ]
           },
           "LA PAZ": {
-            "barangay_list": [
+            "b": [
               "BAGACAY EAST",
               "BAGACAY WEST",
               "BOCAWON",
@@ -32370,7 +32370,7 @@
             ]
           },
           "LEYTE": {
-            "barangay_list": [
+            "b": [
               "BACHAO",
               "BACO",
               "BAGABA-O",
@@ -32404,7 +32404,7 @@
             ]
           },
           "MACARTHUR": {
-            "barangay_list": [
+            "b": [
               "BATUG",
               "BURABOD",
               "CAPUDLOSAN",
@@ -32439,7 +32439,7 @@
             ]
           },
           "MAHAPLAG": {
-            "barangay_list": [
+            "b": [
               "CAMPIN",
               "CUATRO DE AGOSTO",
               "HILUCTOGAN",
@@ -32471,7 +32471,7 @@
             ]
           },
           "MATAG-OB": {
-            "barangay_list": [
+            "b": [
               "BALAGTAS",
               "BONOY (POB.)",
               "BULAK",
@@ -32496,7 +32496,7 @@
             ]
           },
           "MATALOM": {
-            "barangay_list": [
+            "b": [
               "AGBANGA",
               "ALTAVISTA",
               "BAGONG LIPUNAN",
@@ -32530,7 +32530,7 @@
             ]
           },
           "MAYORGA": {
-            "barangay_list": [
+            "b": [
               "A. BONIFACIO",
               "BURGOS",
               "CALIPAYAN",
@@ -32550,7 +32550,7 @@
             ]
           },
           "MERIDA": {
-            "barangay_list": [
+            "b": [
               "BINABAYE",
               "CABALIWAN",
               "CALUNANGAN",
@@ -32576,7 +32576,7 @@
             ]
           },
           "ORMOC CITY": {
-            "barangay_list": [
+            "b": [
               "AIRPORT",
               "ALEGRIA",
               "ALTA VISTA",
@@ -32690,7 +32690,7 @@
             ]
           },
           "PALO": {
-            "barangay_list": [
+            "b": [
               "ANAHAWAY",
               "ARADO",
               "BARAS",
@@ -32727,7 +32727,7 @@
             ]
           },
           "PALOMPON": {
-            "barangay_list": [
+            "b": [
               "BAGUINBIN",
               "BELEN",
               "BITAOG POB. (YPIL III)",
@@ -32781,7 +32781,7 @@
             ]
           },
           "PASTRANA": {
-            "barangay_list": [
+            "b": [
               "ARABUNOG",
               "ARINGIT",
               "BAHAY",
@@ -32814,7 +32814,7 @@
             ]
           },
           "SAN ISIDRO": {
-            "barangay_list": [
+            "b": [
               "BANAT-E",
               "BASUD",
               "BAWOD (POB.)",
@@ -32837,7 +32837,7 @@
             ]
           },
           "SAN MIGUEL": {
-            "barangay_list": [
+            "b": [
               "BAGACAY",
               "BAHAY",
               "BAIRAN",
@@ -32862,7 +32862,7 @@
             ]
           },
           "SANTA FE": {
-            "barangay_list": [
+            "b": [
               "BACULANAD",
               "BADIANGAY",
               "BULOD",
@@ -32886,7 +32886,7 @@
             ]
           },
           "TABANGO": {
-            "barangay_list": [
+            "b": [
               "BUTASON I",
               "BUTASON II",
               "CAMPOKPOK",
@@ -32903,7 +32903,7 @@
             ]
           },
           "TABONTABON": {
-            "barangay_list": [
+            "b": [
               "AMANDANGAY",
               "ASLUM",
               "BALINGASAG",
@@ -32923,7 +32923,7 @@
             ]
           },
           "TACLOBAN CITY": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 2",
               "BARANGAY 5",
               "BARANGAY 5-A",
@@ -33065,7 +33065,7 @@
             ]
           },
           "TANAUAN": {
-            "barangay_list": [
+            "b": [
               "ADA",
               "AMANLURAN",
               "ARADO",
@@ -33123,7 +33123,7 @@
             ]
           },
           "TOLOSA": {
-            "barangay_list": [
+            "b": [
               "BURAK",
               "CANMOGSAY",
               "CANTARIWIS",
@@ -33142,7 +33142,7 @@
             ]
           },
           "TUNGA": {
-            "barangay_list": [
+            "b": [
               "ASTORGA (UPART)",
               "BALIRE",
               "BANAWANG",
@@ -33154,7 +33154,7 @@
             ]
           },
           "VILLABA": {
-            "barangay_list": [
+            "b": [
               "ABIJAO",
               "BALITE",
               "BANGCAL",
@@ -33195,9 +33195,9 @@
         }
       },
       "NORTHERN SAMAR": {
-        "municipality_list": {
+        "m": {
           "ALLEN": {
-            "barangay_list": [
+            "b": [
               "ALEJANDRO VILLAGE (SANTIAGO)",
               "BONIFACIO",
               "CABACUNGAN",
@@ -33221,7 +33221,7 @@
             ]
           },
           "BIRI": {
-            "barangay_list": [
+            "b": [
               "KAUSWAGAN (BASUD)",
               "MACARTHUR",
               "PIO DEL PILAR",
@@ -33233,7 +33233,7 @@
             ]
           },
           "BOBON": {
-            "barangay_list": [
+            "b": [
               "ACERIDA",
               "ARELLANO",
               "BALAT-BALUD",
@@ -33255,7 +33255,7 @@
             ]
           },
           "CAPUL": {
-            "barangay_list": [
+            "b": [
               "AGUIN",
               "JUBANG",
               "LANDUSAN",
@@ -33271,7 +33271,7 @@
             ]
           },
           "CATARMAN": {
-            "barangay_list": [
+            "b": [
               "ACACIA (POB.)",
               "AGUINALDO",
               "AIRPORT VILLAGE",
@@ -33330,7 +33330,7 @@
             ]
           },
           "CATUBIG": {
-            "barangay_list": [
+            "b": [
               "ANONGO",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -33381,7 +33381,7 @@
             ]
           },
           "GAMAY": {
-            "barangay_list": [
+            "b": [
               "ANITO",
               "BANGON",
               "BATO",
@@ -33411,7 +33411,7 @@
             ]
           },
           "LAOANG": {
-            "barangay_list": [
+            "b": [
               "ABATON",
               "AGUADAHAN",
               "AROGANGA",
@@ -33471,7 +33471,7 @@
             ]
           },
           "LAPINIG": {
-            "barangay_list": [
+            "b": [
               "ALANG-ALANG",
               "BAGACAY",
               "CAHAGWAYAN",
@@ -33490,7 +33490,7 @@
             ]
           },
           "LAS NAVAS": {
-            "barangay_list": [
+            "b": [
               "BALUGO",
               "BUGAY",
               "BUGTOSAN",
@@ -33547,7 +33547,7 @@
             ]
           },
           "LAVEZARES": {
-            "barangay_list": [
+            "b": [
               "BALICUATRO",
               "BANI",
               "BAROBAYBAY",
@@ -33577,7 +33577,7 @@
             ]
           },
           "LOPE DE VEGA": {
-            "barangay_list": [
+            "b": [
               "BAYHO",
               "BONIFACIO",
               "CAG-AGUINGAY",
@@ -33603,7 +33603,7 @@
             ]
           },
           "MAPANAS": {
-            "barangay_list": [
+            "b": [
               "BURGOS",
               "DEL NORTE (POB.)",
               "DEL SUR (POB.)",
@@ -33620,7 +33620,7 @@
             ]
           },
           "MONDRAGON": {
-            "barangay_list": [
+            "b": [
               "BAGASBAS",
               "BUGKO",
               "CABLANGAN",
@@ -33648,7 +33648,7 @@
             ]
           },
           "PALAPAG": {
-            "barangay_list": [
+            "b": [
               "ASUM (POB.)",
               "BAGACAY",
               "BANGON",
@@ -33684,7 +33684,7 @@
             ]
           },
           "PAMBUJAN": {
-            "barangay_list": [
+            "b": [
               "CABABTO-AN",
               "CABARI-AN",
               "CAGBIGAJO",
@@ -33714,7 +33714,7 @@
             ]
           },
           "ROSARIO": {
-            "barangay_list": [
+            "b": [
               "AGUADA",
               "BANTOLINAO",
               "BUENAVISTA",
@@ -33729,7 +33729,7 @@
             ]
           },
           "SAN ANTONIO": {
-            "barangay_list": [
+            "b": [
               "BURABOD",
               "DALUPIRIT",
               "MANRAYA",
@@ -33743,7 +33743,7 @@
             ]
           },
           "SAN ISIDRO": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "BALITE",
               "BUENAVISTA",
@@ -33761,7 +33761,7 @@
             ]
           },
           "SAN JOSE": {
-            "barangay_list": [
+            "b": [
               "AGUADAHAN",
               "BAGONG SABANG",
               "BALITE",
@@ -33781,7 +33781,7 @@
             ]
           },
           "SAN ROQUE": {
-            "barangay_list": [
+            "b": [
               "BALNASAN",
               "BALUD",
               "BANTAYAN",
@@ -33801,7 +33801,7 @@
             ]
           },
           "SAN VICENTE": {
-            "barangay_list": [
+            "b": [
               "DESTACADO POB. (BGY.2)",
               "MARAGAT",
               "MONGOL BONGOL POB. (BGY.1)",
@@ -33812,7 +33812,7 @@
             ]
           },
           "SILVINO LOBOS": {
-            "barangay_list": [
+            "b": [
               "BALUD",
               "CABABAYOGAN",
               "CABUNGA-AN",
@@ -33842,7 +33842,7 @@
             ]
           },
           "VICTORIA": {
-            "barangay_list": [
+            "b": [
               "ACEDILLO",
               "BUENASUERTE",
               "BUENOS AIRES",
@@ -33864,9 +33864,9 @@
         }
       },
       "SAMAR (WESTERN SAMAR)": {
-        "municipality_list": {
+        "m": {
           "ALMAGRO": {
-            "barangay_list": [
+            "b": [
               "BACJAO",
               "BIASONG I",
               "BIASONG II",
@@ -33893,7 +33893,7 @@
             ]
           },
           "BASEY": {
-            "barangay_list": [
+            "b": [
               "AMANDAYEHAN",
               "ANGLIT",
               "BACUBAC",
@@ -33948,7 +33948,7 @@
             ]
           },
           "CALBAYOG CITY": {
-            "barangay_list": [
+            "b": [
               "ACEDILLO",
               "AGUIT-ITAN (POB.)",
               "ALIBABA",
@@ -34109,7 +34109,7 @@
             ]
           },
           "CALBIGA": {
-            "barangay_list": [
+            "b": [
               "ANTOL",
               "BACYARAN",
               "BARANGAY 1 (POB.)",
@@ -34154,7 +34154,7 @@
             ]
           },
           "CATBALOGAN CITY": {
-            "barangay_list": [
+            "b": [
               "ALBALATE",
               "BAGONGON",
               "BANGON",
@@ -34215,7 +34215,7 @@
             ]
           },
           "DARAM": {
-            "barangay_list": [
+            "b": [
               "ARAWANE",
               "ASTORGA",
               "BACHAO",
@@ -34277,7 +34277,7 @@
             ]
           },
           "GANDARA": {
-            "barangay_list": [
+            "b": [
               "ADELA HEIGHTS (POB.)",
               "ARONG",
               "BALOCAWE",
@@ -34350,7 +34350,7 @@
             ]
           },
           "HINABANGAN": {
-            "barangay_list": [
+            "b": [
               "BAGACAY",
               "BINOBUCALAN",
               "BUCALAN",
@@ -34375,7 +34375,7 @@
             ]
           },
           "JIABONG": {
-            "barangay_list": [
+            "b": [
               "BARANGAY NO. 1 (POB.)",
               "BARANGAY NO. 2 (POB.)",
               "BARANGAY NO. 3 (POB.)",
@@ -34413,7 +34413,7 @@
             ]
           },
           "MARABUT": {
-            "barangay_list": [
+            "b": [
               "AMAMBUCALE",
               "AMANTILLO",
               "BINUKYAHAN",
@@ -34441,7 +34441,7 @@
             ]
           },
           "MATUGUINAO": {
-            "barangay_list": [
+            "b": [
               "ANGYAP",
               "BAG-OTAN",
               "BARRUZ (BARANGAY NO. 1)",
@@ -34465,7 +34465,7 @@
             ]
           },
           "MOTIONG": {
-            "barangay_list": [
+            "b": [
               "ANGYAP",
               "BARAYONG",
               "BAYOG",
@@ -34499,7 +34499,7 @@
             ]
           },
           "PAGSANGHAN": {
-            "barangay_list": [
+            "b": [
               "BANGON",
               "BUENOS AIRES",
               "CALANYUGAN",
@@ -34516,7 +34516,7 @@
             ]
           },
           "PARANAS (WRIGHT)": {
-            "barangay_list": [
+            "b": [
               "ANAGASI",
               "APOLONIA",
               "BAGSA",
@@ -34564,7 +34564,7 @@
             ]
           },
           "PINABACDAO": {
-            "barangay_list": [
+            "b": [
               "BANGON",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -34592,7 +34592,7 @@
             ]
           },
           "SAN JORGE": {
-            "barangay_list": [
+            "b": [
               "ANQUIANA (ANGKIANA)",
               "AURORA",
               "BAY-ANG",
@@ -34637,7 +34637,7 @@
             ]
           },
           "SAN JOSE DE BUAN": {
-            "barangay_list": [
+            "b": [
               "AGUINGAYAN",
               "BABACLAYON",
               "BARANGAY 1 (POB.)",
@@ -34655,7 +34655,7 @@
             ]
           },
           "SAN SEBASTIAN": {
-            "barangay_list": [
+            "b": [
               "BALOGO",
               "BONTOD",
               "CABAYWA",
@@ -34673,7 +34673,7 @@
             ]
           },
           "SANTA MARGARITA": {
-            "barangay_list": [
+            "b": [
               "AGRUPACION",
               "ARAPISON",
               "AVELINO",
@@ -34713,7 +34713,7 @@
             ]
           },
           "SANTA RITA": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "ANIBONGAN",
               "ASLUM",
@@ -34755,7 +34755,7 @@
             ]
           },
           "SANTO NIÑO": {
-            "barangay_list": [
+            "b": [
               "BALATGUTI",
               "BARAS",
               "BASUD (POB.)",
@@ -34772,7 +34772,7 @@
             ]
           },
           "TAGAPUL-AN": {
-            "barangay_list": [
+            "b": [
               "BAGUIW",
               "BALOCAWE",
               "GUINBARUCAN",
@@ -34790,7 +34790,7 @@
             ]
           },
           "TALALORA": {
-            "barangay_list": [
+            "b": [
               "BO. INDEPENDENCIA",
               "MALAGUINING",
               "MALLORGA",
@@ -34805,7 +34805,7 @@
             ]
           },
           "TARANGNAN": {
-            "barangay_list": [
+            "b": [
               "ALCAZAR",
               "AWANG",
               "BAHAY",
@@ -34850,7 +34850,7 @@
             ]
           },
           "VILLAREAL": {
-            "barangay_list": [
+            "b": [
               "BANQUIL",
               "BINO-ONGAN",
               "BURABOD",
@@ -34892,7 +34892,7 @@
             ]
           },
           "ZUMARRAGA": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "ARTECHE",
               "BIOSO",
@@ -34923,9 +34923,9 @@
         }
       },
       "SOUTHERN LEYTE": {
-        "municipality_list": {
+        "m": {
           "ANAHAWAN": {
-            "barangay_list": [
+            "b": [
               "AMAGUSAN",
               "CALINTAAN",
               "CANLABIAN",
@@ -34943,7 +34943,7 @@
             ]
           },
           "BONTOC": {
-            "barangay_list": [
+            "b": [
               "ANAHAO",
               "BANAHAO",
               "BAUGO",
@@ -34987,7 +34987,7 @@
             ]
           },
           "HINUNANGAN": {
-            "barangay_list": [
+            "b": [
               "AMBACON",
               "BADIANGON",
               "BANGCAS A",
@@ -35031,7 +35031,7 @@
             ]
           },
           "HINUNDAYAN": {
-            "barangay_list": [
+            "b": [
               "AMAGA",
               "AMBAO",
               "AN-AN",
@@ -35052,7 +35052,7 @@
             ]
           },
           "LIBAGON": {
-            "barangay_list": [
+            "b": [
               "BIASONG",
               "BOGASONG",
               "CAWAYAN",
@@ -35070,7 +35070,7 @@
             ]
           },
           "LILOAN": {
-            "barangay_list": [
+            "b": [
               "AMAGA",
               "ANILAO",
               "BAHAY",
@@ -35098,7 +35098,7 @@
             ]
           },
           "LIMASAWA": {
-            "barangay_list": [
+            "b": [
               "CABULIHAN",
               "LUGSONGAN",
               "MAGALLANES",
@@ -35108,7 +35108,7 @@
             ]
           },
           "MAASIN CITY": {
-            "barangay_list": [
+            "b": [
               "ABGAO (POB.)",
               "ACASIA",
               "ASUNCION",
@@ -35182,7 +35182,7 @@
             ]
           },
           "MACROHON": {
-            "barangay_list": [
+            "b": [
               "AGUINALDO",
               "AMPARO",
               "ASUNCION",
@@ -35216,7 +35216,7 @@
             ]
           },
           "MALITBOG": {
-            "barangay_list": [
+            "b": [
               "ABGAO",
               "ASUNCION",
               "AURORA",
@@ -35257,7 +35257,7 @@
             ]
           },
           "PADRE BURGOS": {
-            "barangay_list": [
+            "b": [
               "BUENAVISTA",
               "BUNGA",
               "CANTUTANG",
@@ -35272,7 +35272,7 @@
             ]
           },
           "PINTUYAN": {
-            "barangay_list": [
+            "b": [
               "BADIANG",
               "BALONGBALONG",
               "BUENAVISTA",
@@ -35299,7 +35299,7 @@
             ]
           },
           "SAINT BERNARD": {
-            "barangay_list": [
+            "b": [
               "ATUYAN",
               "AYAHAG",
               "BANTAWON",
@@ -35333,7 +35333,7 @@
             ]
           },
           "SAN FRANCISCO": {
-            "barangay_list": [
+            "b": [
               "ANISLAGON",
               "BONGAWISAN",
               "BONGBONG",
@@ -35359,7 +35359,7 @@
             ]
           },
           "SAN JUAN (CABALIAN)": {
-            "barangay_list": [
+            "b": [
               "AGAY-AY",
               "BASAK",
               "BOBON A",
@@ -35381,7 +35381,7 @@
             ]
           },
           "SAN RICARDO": {
-            "barangay_list": [
+            "b": [
               "BENIT",
               "BITOON",
               "CABUTAN",
@@ -35400,7 +35400,7 @@
             ]
           },
           "SILAGO": {
-            "barangay_list": [
+            "b": [
               "BALAGAWAN",
               "CATMON",
               "HINGATUNGAN",
@@ -35419,7 +35419,7 @@
             ]
           },
           "SOGOD": {
-            "barangay_list": [
+            "b": [
               "BENIT",
               "BUAC DAKU",
               "BUAC GAMAY",
@@ -35468,7 +35468,7 @@
             ]
           },
           "TOMAS OPPUS": {
-            "barangay_list": [
+            "b": [
               "ANAHAWAN",
               "BANDAY (POB.)",
               "BIASONG",
@@ -35504,13 +35504,13 @@
       }
     }
   },
-  "09": {
-    "region_name": "REGION IX",
-    "province_list": {
+  {
+    "r": "REGION IX",
+    "p": {
       "ZAMBOANGA DEL NORTE": {
-        "municipality_list": {
+        "m": {
           "BACUNGAN (LEON T. POSTIGO)": {
-            "barangay_list": [
+            "b": [
               "BACUNGAN (POB.)",
               "BOGABONGAN",
               "DELUSOM",
@@ -35532,7 +35532,7 @@
             ]
           },
           "BALIGUIAN": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "DIANGAS",
               "DICULOM",
@@ -35553,7 +35553,7 @@
             ]
           },
           "DAPITAN CITY": {
-            "barangay_list": [
+            "b": [
               "ALIGUAY",
               "ANTIPOLO",
               "ASENIERO",
@@ -35607,7 +35607,7 @@
             ]
           },
           "DIPOLOG CITY": {
-            "barangay_list": [
+            "b": [
               "BARRA (POB.)",
               "BIASONG (POB.)",
               "CENTRAL (POB.)",
@@ -35632,7 +35632,7 @@
             ]
           },
           "GODOD": {
-            "barangay_list": [
+            "b": [
               "BALUNO",
               "BANUANGAN",
               "BUNAWAN",
@@ -35653,7 +35653,7 @@
             ]
           },
           "GUTALAC": {
-            "barangay_list": [
+            "b": [
               "BACONG",
               "BAGONG SILANG",
               "BANGANON",
@@ -35690,7 +35690,7 @@
             ]
           },
           "JOSE DALMAN (PONOT)": {
-            "barangay_list": [
+            "b": [
               "BALATAKAN",
               "BITOON",
               "DINASAN",
@@ -35712,7 +35712,7 @@
             ]
           },
           "KALAWIT": {
-            "barangay_list": [
+            "b": [
               "BATAYAN",
               "BOTONG",
               "CONCEPCION",
@@ -35730,7 +35730,7 @@
             ]
           },
           "KATIPUNAN": {
-            "barangay_list": [
+            "b": [
               "BALOK",
               "BARANGAY DOS (POB.)",
               "BARANGAY UNO (POB.)",
@@ -35764,7 +35764,7 @@
             ]
           },
           "LA LIBERTAD": {
-            "barangay_list": [
+            "b": [
               "EL PARAISO",
               "LA UNION",
               "LA VICTORIA",
@@ -35781,7 +35781,7 @@
             ]
           },
           "LABASON": {
-            "barangay_list": [
+            "b": [
               "ANTONINO (POB.)",
               "BALAS",
               "BOBONGAN",
@@ -35805,7 +35805,7 @@
             ]
           },
           "LILOY": {
-            "barangay_list": [
+            "b": [
               "BANIGAN",
               "BAYBAY (POB.)",
               "CABANGCALAN",
@@ -35846,7 +35846,7 @@
             ]
           },
           "MANUKAN": {
-            "barangay_list": [
+            "b": [
               "DIPANE",
               "DISAKAN",
               "DON JOSE AGUIRRE",
@@ -35872,7 +35872,7 @@
             ]
           },
           "MUTIA": {
-            "barangay_list": [
+            "b": [
               "ALVENDA",
               "BUENASUERTE",
               "DILAND",
@@ -35892,7 +35892,7 @@
             ]
           },
           "PIÑAN (NEW PIÑAN)": {
-            "barangay_list": [
+            "b": [
               "ADANTE",
               "BACUYONG",
               "BAGONG SILANG",
@@ -35918,7 +35918,7 @@
             ]
           },
           "POLANCO": {
-            "barangay_list": [
+            "b": [
               "ANASTACIO",
               "BANDERA",
               "BETHLEHEM",
@@ -35952,7 +35952,7 @@
             ]
           },
           "PRES. MANUEL A. ROXAS": {
-            "barangay_list": [
+            "b": [
               "BALUBO",
               "BANBANAN",
               "CANIBONGAN",
@@ -35987,7 +35987,7 @@
             ]
           },
           "RIZAL": {
-            "barangay_list": [
+            "b": [
               "BALUBOHAN",
               "BIRAYAN",
               "DAMASING",
@@ -36013,7 +36013,7 @@
             ]
           },
           "SALUG": {
-            "barangay_list": [
+            "b": [
               "BACONG",
               "BALAKAN",
               "BINONI",
@@ -36040,7 +36040,7 @@
             ]
           },
           "SERGIO OSMEÑA SR.": {
-            "barangay_list": [
+            "b": [
               "ANTONINO",
               "BAGONG BAGUIO",
               "BAGUMBAYAN",
@@ -36083,7 +36083,7 @@
             ]
           },
           "SIAYAN": {
-            "barangay_list": [
+            "b": [
               "BALOK",
               "BALUNOKAN",
               "DATAGAN",
@@ -36109,7 +36109,7 @@
             ]
           },
           "SIBUCO": {
-            "barangay_list": [
+            "b": [
               "ANONGAN",
               "BASAK",
               "BONGALAO",
@@ -36141,7 +36141,7 @@
             ]
           },
           "SIBUTAD": {
-            "barangay_list": [
+            "b": [
               "BAGACAY",
               "CALILIC",
               "CALUBE",
@@ -36161,7 +36161,7 @@
             ]
           },
           "SINDANGAN": {
-            "barangay_list": [
+            "b": [
               "BAGO",
               "BALOK",
               "BANTAYAN",
@@ -36217,7 +36217,7 @@
             ]
           },
           "SIOCON": {
-            "barangay_list": [
+            "b": [
               "ANDRES MICUBO JR. (BALILI)",
               "BALAGUNAN",
               "BUCANA",
@@ -36247,7 +36247,7 @@
             ]
           },
           "SIRAWAI": {
-            "barangay_list": [
+            "b": [
               "BALATAKAN",
               "BALONKAN",
               "BALUBUAN",
@@ -36285,7 +36285,7 @@
             ]
           },
           "TAMPILISAN": {
-            "barangay_list": [
+            "b": [
               "BALACBAAN",
               "BANBANAN",
               "BARILI",
@@ -36311,9 +36311,9 @@
         }
       },
       "ZAMBOANGA DEL SUR": {
-        "municipality_list": {
+        "m": {
           "AURORA": {
-            "barangay_list": [
+            "b": [
               "ACAD",
               "ALANG-ALANG",
               "ALEGRIA",
@@ -36361,7 +36361,7 @@
             ]
           },
           "BAYOG": {
-            "barangay_list": [
+            "b": [
               "BAKING",
               "BALUKBAHAN",
               "BALUMBUNAN",
@@ -36393,7 +36393,7 @@
             ]
           },
           "DIMATALING": {
-            "barangay_list": [
+            "b": [
               "BACAYAWAN",
               "BAHA",
               "BALANAGAN",
@@ -36421,7 +36421,7 @@
             ]
           },
           "DINAS": {
-            "barangay_list": [
+            "b": [
               "BACAWAN",
               "BENUATAN",
               "BERAY",
@@ -36455,7 +36455,7 @@
             ]
           },
           "DUMALINAO": {
-            "barangay_list": [
+            "b": [
               "ANONANG",
               "BAG-ONG MISAMIS",
               "BAG-ONG SILAO",
@@ -36489,7 +36489,7 @@
             ]
           },
           "DUMINGAG": {
-            "barangay_list": [
+            "b": [
               "BAG-ONG VALENCIA",
               "BAGONG KAUSWAGAN",
               "BAGONG SILANG",
@@ -36537,7 +36537,7 @@
             ]
           },
           "GUIPOS": {
-            "barangay_list": [
+            "b": [
               "BAGONG OROQUIETA",
               "BAGUITAN",
               "BALONGATING",
@@ -36558,7 +36558,7 @@
             ]
           },
           "JOSEFINA": {
-            "barangay_list": [
+            "b": [
               "BOGO CALABAT",
               "DAWA (DIWA)",
               "EBARLE",
@@ -36576,7 +36576,7 @@
             ]
           },
           "KUMALARANG": {
-            "barangay_list": [
+            "b": [
               "BOGAYO",
               "BOLISONG",
               "BOYUGAN EAST",
@@ -36598,7 +36598,7 @@
             ]
           },
           "LABANGAN": {
-            "barangay_list": [
+            "b": [
               "BAGALUPA",
               "BALIMBINGAN (WEST LUYA)",
               "BINAYAN",
@@ -36627,7 +36627,7 @@
             ]
           },
           "LAKEWOOD": {
-            "barangay_list": [
+            "b": [
               "BAGONG KAHAYAG",
               "BAKING",
               "BISWANGAN",
@@ -36645,7 +36645,7 @@
             ]
           },
           "LAPUYAN": {
-            "barangay_list": [
+            "b": [
               "BULAWAN",
               "CARPOC",
               "DANGANAN",
@@ -36675,7 +36675,7 @@
             ]
           },
           "MAHAYAG": {
-            "barangay_list": [
+            "b": [
               "BAG-ONG BALAMBAN",
               "BAG-ONG DALAGUETE",
               "BONIAO",
@@ -36708,7 +36708,7 @@
             ]
           },
           "MARGOSATUBIG": {
-            "barangay_list": [
+            "b": [
               "BALINTAWAK",
               "BULARONG",
               "DIGON",
@@ -36729,7 +36729,7 @@
             ]
           },
           "MIDSALIP": {
-            "barangay_list": [
+            "b": [
               "BACAHAN",
               "BALONAI",
               "BIBILOP",
@@ -36766,7 +36766,7 @@
             ]
           },
           "MOLAVE": {
-            "barangay_list": [
+            "b": [
               "ALICIA",
               "ARIOSA",
               "BAGONG ARGAO",
@@ -36795,7 +36795,7 @@
             ]
           },
           "PAGADIAN CITY": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "BALANGASAN (POB.)",
               "BALINTAWAK",
@@ -36853,7 +36853,7 @@
             ]
           },
           "PITOGO": {
-            "barangay_list": [
+            "b": [
               "BALABAWAN",
               "BALONG-BALONG",
               "COLOJO",
@@ -36872,7 +36872,7 @@
             ]
           },
           "RAMON MAGSAYSAY (LIARGO)": {
-            "barangay_list": [
+            "b": [
               "BAGONG OPON",
               "BAMBONG DAKU",
               "BAMBONG DIUT",
@@ -36903,7 +36903,7 @@
             ]
           },
           "SAN MIGUEL": {
-            "barangay_list": [
+            "b": [
               "BETINAN",
               "BULAWAN",
               "CALUBE",
@@ -36925,7 +36925,7 @@
             ]
           },
           "SAN PABLO": {
-            "barangay_list": [
+            "b": [
               "BAG-ONG MISAMIS",
               "BUBUAL",
               "BUTON",
@@ -36957,7 +36957,7 @@
             ]
           },
           "SOMINOT (DON MARIANO MARCOS)": {
-            "barangay_list": [
+            "b": [
               "BAG-ONG BAROY",
               "BAG-ONG OROQUIETA",
               "BARUBUHAN",
@@ -36979,7 +36979,7 @@
             ]
           },
           "TABINA": {
-            "barangay_list": [
+            "b": [
               "ABONG-ABONG",
               "BAGANIAN",
               "BAYA-BAYA",
@@ -36998,7 +36998,7 @@
             ]
           },
           "TAMBULIG": {
-            "barangay_list": [
+            "b": [
               "ALANG-ALANG",
               "ANGELES",
               "BAG-ONG KAUSWAGAN",
@@ -37033,7 +37033,7 @@
             ]
           },
           "TIGBAO": {
-            "barangay_list": [
+            "b": [
               "BEGONG",
               "BUSOL",
               "CALUMA",
@@ -37055,7 +37055,7 @@
             ]
           },
           "TUKURAN": {
-            "barangay_list": [
+            "b": [
               "ALINDAHAW",
               "BACLAY",
               "BALIMBINGAN",
@@ -37084,7 +37084,7 @@
             ]
           },
           "VINCENZO A. SAGUN": {
-            "barangay_list": [
+            "b": [
               "AMBULON",
               "BUI-OS",
               "COGON",
@@ -37102,7 +37102,7 @@
             ]
           },
           "ZAMBOANGA CITY": {
-            "barangay_list": [
+            "b": [
               "ARENA BLANCO",
               "AYALA",
               "BALIWASAN",
@@ -37206,9 +37206,9 @@
         }
       },
       "ZAMBOANGA SIBUGAY": {
-        "municipality_list": {
+        "m": {
           "ALICIA": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "BAGONG BUHAY",
               "BELLA",
@@ -37239,7 +37239,7 @@
             ]
           },
           "BUUG": {
-            "barangay_list": [
+            "b": [
               "AGUTAYAN",
               "BAGONG BORBON",
               "BASALEM",
@@ -37270,7 +37270,7 @@
             ]
           },
           "DIPLAHAN": {
-            "barangay_list": [
+            "b": [
               "BALANGAO",
               "BUTONG",
               "DITAY",
@@ -37296,7 +37296,7 @@
             ]
           },
           "IMELDA": {
-            "barangay_list": [
+            "b": [
               "BALUGO",
               "BALUNGISAN",
               "BALUYAN",
@@ -37318,7 +37318,7 @@
             ]
           },
           "IPIL": {
-            "barangay_list": [
+            "b": [
               "BACALAN",
               "BANGKEROHAN",
               "BULU-AN",
@@ -37350,7 +37350,7 @@
             ]
           },
           "KABASALAN": {
-            "barangay_list": [
+            "b": [
               "BANKER",
               "BOLO BATALLION",
               "BUAYAN",
@@ -37383,7 +37383,7 @@
             ]
           },
           "MABUHAY": {
-            "barangay_list": [
+            "b": [
               "ABUNDA",
               "BAGONG SILANG",
               "BANGKAW-BANGKAW",
@@ -37405,7 +37405,7 @@
             ]
           },
           "MALANGAS": {
-            "barangay_list": [
+            "b": [
               "BACAO",
               "BASAK-BAWANG",
               "BONTONG",
@@ -37434,7 +37434,7 @@
             ]
           },
           "NAGA": {
-            "barangay_list": [
+            "b": [
               "AGUINALDO",
               "BAGA",
               "BALUNO",
@@ -37461,7 +37461,7 @@
             ]
           },
           "OLUTANGA": {
-            "barangay_list": [
+            "b": [
               "BATERIA",
               "CALAIS (KALINES)",
               "ESPERANZA",
@@ -37484,7 +37484,7 @@
             ]
           },
           "PAYAO": {
-            "barangay_list": [
+            "b": [
               "BALIAN",
               "BALOGO",
               "BALUNGISAN",
@@ -37517,7 +37517,7 @@
             ]
           },
           "ROSELLER LIM": {
-            "barangay_list": [
+            "b": [
               "ALI ALSREE",
               "BALANSAG",
               "CALULA",
@@ -37547,7 +37547,7 @@
             ]
           },
           "SIAY": {
-            "barangay_list": [
+            "b": [
               "BAGONG SILANG",
               "BALAGON",
               "BALINGASAN",
@@ -37580,7 +37580,7 @@
             ]
           },
           "TALUSAN": {
-            "barangay_list": [
+            "b": [
               "AURORA",
               "BAGANIPAY",
               "BOLINGAN",
@@ -37598,7 +37598,7 @@
             ]
           },
           "TITAY": {
-            "barangay_list": [
+            "b": [
               "ACHASOL",
               "AZUSANO",
               "BANGCO",
@@ -37632,7 +37632,7 @@
             ]
           },
           "TUNGAWAN": {
-            "barangay_list": [
+            "b": [
               "BALURAN",
               "BATUNGAN",
               "CAYAMCAM",
@@ -37664,13 +37664,13 @@
       }
     }
   },
-  "10": {
-    "region_name": "REGION X",
-    "province_list": {
+  {
+    "r": "REGION X",
+    "p": {
       "BUKIDNON": {
-        "municipality_list": {
+        "m": {
           "BAUNGON": {
-            "barangay_list": [
+            "b": [
               "BALINTAD",
               "BUENAVISTA",
               "DANATAG",
@@ -37690,7 +37690,7 @@
             ]
           },
           "CABANGLASAN": {
-            "barangay_list": [
+            "b": [
               "ANLOGAN",
               "CABULOHAN",
               "CANANGAAN",
@@ -37709,7 +37709,7 @@
             ]
           },
           "CITY OF MALAYBALAY": {
-            "barangay_list": [
+            "b": [
               "AGLAYAN",
               "APO MACOTE",
               "BANGCUD",
@@ -37759,7 +37759,7 @@
             ]
           },
           "DAMULOG": {
-            "barangay_list": [
+            "b": [
               "ALUDAS",
               "ANGGA-AN",
               "KINAPAT",
@@ -37780,7 +37780,7 @@
             ]
           },
           "DANGCAGAN": {
-            "barangay_list": [
+            "b": [
               "BARONGCOT",
               "BUGWAK",
               "DOLOROSA",
@@ -37798,7 +37798,7 @@
             ]
           },
           "DON CARLOS": {
-            "barangay_list": [
+            "b": [
               "BISMARTZ",
               "BOCBOC",
               "BUYOT",
@@ -37831,7 +37831,7 @@
             ]
           },
           "IMPASUG-ONG": {
-            "barangay_list": [
+            "b": [
               "BONTONGON",
               "BULONAY",
               "CAPITAN BAYONG",
@@ -37848,7 +37848,7 @@
             ]
           },
           "KADINGILAN": {
-            "barangay_list": [
+            "b": [
               "BAGONGBAYAN",
               "BAGOR",
               "BALAORO",
@@ -37869,7 +37869,7 @@
             ]
           },
           "KALILANGAN": {
-            "barangay_list": [
+            "b": [
               "BABORAWON",
               "BANGBANG",
               "CANITUAN",
@@ -37887,7 +37887,7 @@
             ]
           },
           "KIBAWE": {
-            "barangay_list": [
+            "b": [
               "BALINTAWAK",
               "BUKANG LIWAYWAY",
               "CAGAWASAN",
@@ -37914,7 +37914,7 @@
             ]
           },
           "KITAOTAO": {
-            "barangay_list": [
+            "b": [
               "BALANGIGAY",
               "BALUKBUKAN",
               "BERSHIBA",
@@ -37953,7 +37953,7 @@
             ]
           },
           "LANTAPAN": {
-            "barangay_list": [
+            "b": [
               "ALANIB",
               "BACLAYON",
               "BALILA",
@@ -37971,7 +37971,7 @@
             ]
           },
           "LIBONA": {
-            "barangay_list": [
+            "b": [
               "CAPIHAN",
               "CROSSING",
               "GANGO",
@@ -37989,7 +37989,7 @@
             ]
           },
           "MALITBOG": {
-            "barangay_list": [
+            "b": [
               "KALINGKING",
               "KIABO",
               "MINDAGAT",
@@ -38004,7 +38004,7 @@
             ]
           },
           "MANOLO FORTICH": {
-            "barangay_list": [
+            "b": [
               "AGUSAN CANYON",
               "ALAE",
               "DAHILAYAN",
@@ -38030,7 +38030,7 @@
             ]
           },
           "MARAMAG": {
-            "barangay_list": [
+            "b": [
               "ANAHAWON",
               "BAGONGSILANG",
               "BASE CAMP",
@@ -38054,7 +38054,7 @@
             ]
           },
           "PANGANTUCAN": {
-            "barangay_list": [
+            "b": [
               "ADTUYON",
               "BACUSANON",
               "BANGAHAN",
@@ -38077,7 +38077,7 @@
             ]
           },
           "QUEZON": {
-            "barangay_list": [
+            "b": [
               "BUTONG",
               "C-HANDUMANAN",
               "CAWAYAN",
@@ -38112,7 +38112,7 @@
             ]
           },
           "SAN FERNANDO": {
-            "barangay_list": [
+            "b": [
               "BONACAO",
               "BULALANG",
               "CABULING",
@@ -38140,7 +38140,7 @@
             ]
           },
           "SUMILAO": {
-            "barangay_list": [
+            "b": [
               "CULASI",
               "KISOLON",
               "LICOAN",
@@ -38154,7 +38154,7 @@
             ]
           },
           "TALAKAG": {
-            "barangay_list": [
+            "b": [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BARANGAY 3 (POB.)",
@@ -38187,7 +38187,7 @@
             ]
           },
           "VALENCIA CITY": {
-            "barangay_list": [
+            "b": [
               "BAGONTAAS",
               "BANLAG",
               "BAROBO",
@@ -38224,9 +38224,9 @@
         }
       },
       "CAMIGUIN": {
-        "municipality_list": {
+        "m": {
           "CATARMAN": {
-            "barangay_list": [
+            "b": [
               "ALGA",
               "BONBON",
               "BURA",
@@ -38244,7 +38244,7 @@
             ]
           },
           "GUINSILIBAN": {
-            "barangay_list": [
+            "b": [
               "BUTAY",
               "CABUAN",
               "CANTAAN",
@@ -38255,7 +38255,7 @@
             ]
           },
           "MAHINOG": {
-            "barangay_list": [
+            "b": [
               "BENONI",
               "BINATUBO (BINALIWAN)",
               "CATOHUGAN",
@@ -38272,7 +38272,7 @@
             ]
           },
           "MAMBAJAO": {
-            "barangay_list": [
+            "b": [
               "AGOHO",
               "ANITO",
               "BALBAGON",
@@ -38291,7 +38291,7 @@
             ]
           },
           "SAGAY": {
-            "barangay_list": [
+            "b": [
               "ALANGILAN",
               "BACNIT",
               "BALITE",
@@ -38306,9 +38306,9 @@
         }
       },
       "LANAO DEL NORTE": {
-        "municipality_list": {
+        "m": {
           "BACOLOD": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "BABALAYA",
               "BABALAYAN TOWNSITE",
@@ -38328,7 +38328,7 @@
             ]
           },
           "BALOI": {
-            "barangay_list": [
+            "b": [
               "ABAGA",
               "ADAPUN-ALI (DARIAT)",
               "ANGANDOG (BULAO)",
@@ -38353,7 +38353,7 @@
             ]
           },
           "BAROY": {
-            "barangay_list": [
+            "b": [
               "ANDIL",
               "BAGONG DAWIS",
               "BAROY DAKU",
@@ -38380,7 +38380,7 @@
             ]
           },
           "ILIGAN CITY": {
-            "barangay_list": [
+            "b": [
               "ABUNO",
               "ACMAC",
               "BAGONG SILANG",
@@ -38428,7 +38428,7 @@
             ]
           },
           "KAPATAGAN": {
-            "barangay_list": [
+            "b": [
               "BAGONG BADIAN",
               "BAGONG SILANG",
               "BALILI",
@@ -38465,7 +38465,7 @@
             ]
           },
           "KAUSWAGAN": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN (POB.)",
               "BARA-ASON",
               "CAYONTOR",
@@ -38482,7 +38482,7 @@
             ]
           },
           "KOLAMBUGAN": {
-            "barangay_list": [
+            "b": [
               "AUSTIN HEIGHTS",
               "BAYBAY",
               "BUBONG",
@@ -38512,7 +38512,7 @@
             ]
           },
           "LALA": {
-            "barangay_list": [
+            "b": [
               "ABAGA",
               "ANDIL",
               "CABASAGAN",
@@ -38543,7 +38543,7 @@
             ]
           },
           "LINAMON": {
-            "barangay_list": [
+            "b": [
               "BUSQUE",
               "LARAPAN",
               "MAGOONG",
@@ -38555,7 +38555,7 @@
             ]
           },
           "MAGSAYSAY": {
-            "barangay_list": [
+            "b": [
               "BABASALON",
               "BAGUIGUICON",
               "DAAN CAMPO",
@@ -38583,7 +38583,7 @@
             ]
           },
           "MAIGO": {
-            "barangay_list": [
+            "b": [
               "BALAGATASA",
               "CAMP 1",
               "CLARO M. RECTO",
@@ -38600,7 +38600,7 @@
             ]
           },
           "MATUNGAO": {
-            "barangay_list": [
+            "b": [
               "BANGCO",
               "BATAL",
               "BATANGAN",
@@ -38616,7 +38616,7 @@
             ]
           },
           "MUNAI": {
-            "barangay_list": [
+            "b": [
               "BACAYAWAN",
               "BALABACUN",
               "BALINTAD",
@@ -38646,7 +38646,7 @@
             ]
           },
           "NUNUNGAN": {
-            "barangay_list": [
+            "b": [
               "ABAGA",
               "BANGCO",
               "CABASARAN (LAYA)",
@@ -38675,7 +38675,7 @@
             ]
           },
           "PANTAO RAGAT": {
-            "barangay_list": [
+            "b": [
               "ALOON",
               "BANDAY",
               "BOBONGA PANTAO RAGAT",
@@ -38699,7 +38699,7 @@
             ]
           },
           "PANTAR": {
-            "barangay_list": [
+            "b": [
               "BANGCAL",
               "BOWI",
               "BUBONG MADAYA",
@@ -38724,7 +38724,7 @@
             ]
           },
           "POONA PIAGAPO": {
-            "barangay_list": [
+            "b": [
               "ALOWIN",
               "BUBONG-DINAIG",
               "CABASARAN",
@@ -38754,7 +38754,7 @@
             ]
           },
           "SALVADOR": {
-            "barangay_list": [
+            "b": [
               "BARANDIA",
               "BULACON",
               "BUNTONG",
@@ -38783,7 +38783,7 @@
             ]
           },
           "SAPAD": {
-            "barangay_list": [
+            "b": [
               "BANING",
               "BURIASAN (POB.)",
               "DANSALAN",
@@ -38804,7 +38804,7 @@
             ]
           },
           "SULTAN NAGA DIMAPORO (KAROMATAN)": {
-            "barangay_list": [
+            "b": [
               "BANGAAN",
               "BANGCO",
               "BANSARVIL II",
@@ -38845,7 +38845,7 @@
             ]
           },
           "TAGOLOAN": {
-            "barangay_list": [
+            "b": [
               "DALAMAS",
               "DARIMBANG",
               "DIMAYON",
@@ -38856,7 +38856,7 @@
             ]
           },
           "TANGCAL": {
-            "barangay_list": [
+            "b": [
               "BAYABAO",
               "BERWAR",
               "BIG BANISILON",
@@ -38878,7 +38878,7 @@
             ]
           },
           "TUBOD": {
-            "barangay_list": [
+            "b": [
               "BARAKANAS",
               "BARIS (LUMANGCULOB)",
               "BUALAN",
@@ -38908,9 +38908,9 @@
         }
       },
       "MISAMIS OCCIDENTAL": {
-        "municipality_list": {
+        "m": {
           "ALORAN": {
-            "barangay_list": [
+            "b": [
               "BALINTONGA",
               "BANISILON",
               "BURGOS",
@@ -38952,7 +38952,7 @@
             ]
           },
           "BALIANGAO": {
-            "barangay_list": [
+            "b": [
               "DEL PILAR",
               "LANDING",
               "LUMIPAC",
@@ -38971,7 +38971,7 @@
             ]
           },
           "BONIFACIO": {
-            "barangay_list": [
+            "b": [
               "BAG-ONG ANONANG",
               "BAGUMBANG",
               "BAYBAY",
@@ -39003,7 +39003,7 @@
             ]
           },
           "CALAMBA": {
-            "barangay_list": [
+            "b": [
               "BONIFACIO",
               "BUNAWAN",
               "CALARAN",
@@ -39026,7 +39026,7 @@
             ]
           },
           "CLARIN": {
-            "barangay_list": [
+            "b": [
               "BERNAD",
               "BITO-ON",
               "CABUNGA-AN",
@@ -39059,7 +39059,7 @@
             ]
           },
           "CONCEPCION": {
-            "barangay_list": [
+            "b": [
               "BAGONG NAYON",
               "CAPULE",
               "GUIBAN",
@@ -39081,7 +39081,7 @@
             ]
           },
           "DON VICTORIANO CHIONGBIAN (DON MARIANO MARCOS)": {
-            "barangay_list": [
+            "b": [
               "BAGONG CLARIN",
               "GANDAWAN",
               "LAKE DUMINAGAT",
@@ -39096,7 +39096,7 @@
             ]
           },
           "JIMENEZ": {
-            "barangay_list": [
+            "b": [
               "ADORABLE",
               "BUTUAY",
               "CARMEN",
@@ -39124,7 +39124,7 @@
             ]
           },
           "LOPEZ JAENA": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "BAGONG SILANG",
               "BIASONG",
@@ -39156,7 +39156,7 @@
             ]
           },
           "OROQUIETA CITY": {
-            "barangay_list": [
+            "b": [
               "APIL",
               "BINUANGAN",
               "BOLIBOL",
@@ -39207,7 +39207,7 @@
             ]
           },
           "OZAMIS CITY": {
-            "barangay_list": [
+            "b": [
               "50TH DISTRICT (POB.)",
               "AGUADA (POB.)",
               "BACOLOD",
@@ -39262,7 +39262,7 @@
             ]
           },
           "PANAON": {
-            "barangay_list": [
+            "b": [
               "BAGA",
               "BANGKO",
               "CAMANUCAN",
@@ -39282,7 +39282,7 @@
             ]
           },
           "PLARIDEL": {
-            "barangay_list": [
+            "b": [
               "AGUNOD",
               "BATO",
               "BUENA VOLUNTAD",
@@ -39319,7 +39319,7 @@
             ]
           },
           "SAPANG DALAGA": {
-            "barangay_list": [
+            "b": [
               "AGAPITO YAP, SR. (NAPILAN)",
               "BAUTISTA",
               "BITIBUT",
@@ -39351,7 +39351,7 @@
             ]
           },
           "SINACABAN": {
-            "barangay_list": [
+            "b": [
               "CAGAY-ANON",
               "CAMANSE",
               "COLUPAN ALTO",
@@ -39372,7 +39372,7 @@
             ]
           },
           "TANGUB CITY": {
-            "barangay_list": [
+            "b": [
               "AQUINO (MARCOS)",
               "BALATACAN",
               "BALUK",
@@ -39431,7 +39431,7 @@
             ]
           },
           "TUDELA": {
-            "barangay_list": [
+            "b": [
               "BALON",
               "BARRA",
               "BASIRANG",
@@ -39470,9 +39470,9 @@
         }
       },
       "MISAMIS ORIENTAL": {
-        "municipality_list": {
+        "m": {
           "ALUBIJID": {
-            "barangay_list": [
+            "b": [
               "BAYBAY",
               "BENIGWAYAN",
               "CALATCAT",
@@ -39492,7 +39492,7 @@
             ]
           },
           "BALINGASAG": {
-            "barangay_list": [
+            "b": [
               "BALAGNAN",
               "BALIWAGAN",
               "BARANGAY 1 (POB.)",
@@ -39526,7 +39526,7 @@
             ]
           },
           "BALINGOAN": {
-            "barangay_list": [
+            "b": [
               "BAUKBAUK POB. (G.E. ANTONINO)",
               "DAHILIG",
               "KABANGASAN",
@@ -39539,7 +39539,7 @@
             ]
           },
           "BINUANGAN": {
-            "barangay_list": [
+            "b": [
               "DAMPIAS",
               "KITAMBAN",
               "KITAMBIS",
@@ -39551,7 +39551,7 @@
             ]
           },
           "CAGAYAN DE ORO CITY": {
-            "barangay_list": [
+            "b": [
               "AGUSAN",
               "BAIKINGON",
               "BALUBAL",
@@ -39635,7 +39635,7 @@
             ]
           },
           "CLAVERIA": {
-            "barangay_list": [
+            "b": [
               "ANI-E",
               "APOSKAHOY",
               "BULAHAN",
@@ -39663,7 +39663,7 @@
             ]
           },
           "EL SALVADOR CITY": {
-            "barangay_list": [
+            "b": [
               "AMOROS",
               "BOLISONG",
               "BOLOBOLO",
@@ -39682,7 +39682,7 @@
             ]
           },
           "GINGOOG CITY": {
-            "barangay_list": [
+            "b": [
               "AGAY-AYAN",
               "ALAGATAN",
               "ANAKAN",
@@ -39765,7 +39765,7 @@
             ]
           },
           "GITAGUM": {
-            "barangay_list": [
+            "b": [
               "BURNAY",
               "CARLOS P. GARCIA",
               "COGON",
@@ -39780,7 +39780,7 @@
             ]
           },
           "INITAO": {
-            "barangay_list": [
+            "b": [
               "ALUNA",
               "ANDALES",
               "APAS",
@@ -39800,7 +39800,7 @@
             ]
           },
           "JASAAN": {
-            "barangay_list": [
+            "b": [
               "APLAYA",
               "BOBONTUGAN",
               "CORRALES",
@@ -39819,7 +39819,7 @@
             ]
           },
           "KINOGUITAN": {
-            "barangay_list": [
+            "b": [
               "BERAY",
               "BOLISONG",
               "BUKO",
@@ -39838,7 +39838,7 @@
             ]
           },
           "LAGONGLONG": {
-            "barangay_list": [
+            "b": [
               "BANGLAY",
               "DAMPIL",
               "GASTON",
@@ -39852,7 +39852,7 @@
             ]
           },
           "LAGUINDINGAN": {
-            "barangay_list": [
+            "b": [
               "AROMAHON",
               "GASI",
               "KIBAGHOT",
@@ -39867,7 +39867,7 @@
             ]
           },
           "LIBERTAD": {
-            "barangay_list": [
+            "b": [
               "DULONG",
               "GIMAYLAN",
               "KIMALOK",
@@ -39880,7 +39880,7 @@
             ]
           },
           "LUGAIT": {
-            "barangay_list": [
+            "b": [
               "AYA-AYA",
               "BETAHON",
               "BIGA",
@@ -39892,7 +39892,7 @@
             ]
           },
           "MAGSAYSAY (LINUGOS)": {
-            "barangay_list": [
+            "b": [
               "ABUNDA",
               "ARTADI",
               "BONIFACIO AQUINO",
@@ -39921,7 +39921,7 @@
             ]
           },
           "MANTICAO": {
-            "barangay_list": [
+            "b": [
               "ARGAYOSO",
               "BALINTAD",
               "CABALANTIAN",
@@ -39938,7 +39938,7 @@
             ]
           },
           "MEDINA": {
-            "barangay_list": [
+            "b": [
               "BANGBANG",
               "BULWA",
               "CABUG",
@@ -39961,7 +39961,7 @@
             ]
           },
           "NAAWAN": {
-            "barangay_list": [
+            "b": [
               "DON PEDRO",
               "LINANGKAYAN",
               "LUBILAN",
@@ -39975,7 +39975,7 @@
             ]
           },
           "OPOL": {
-            "barangay_list": [
+            "b": [
               "AWANG",
               "BAGOCBOC",
               "BARRA",
@@ -39993,7 +39993,7 @@
             ]
           },
           "SALAY": {
-            "barangay_list": [
+            "b": [
               "ALIPUATON",
               "AMPENICAN",
               "BUNAL",
@@ -40015,7 +40015,7 @@
             ]
           },
           "SUGBONGCOGON": {
-            "barangay_list": [
+            "b": [
               "ALICOMOHAN",
               "AMPIANGA",
               "KAULAYANAN",
@@ -40029,7 +40029,7 @@
             ]
           },
           "TAGOLOAN": {
-            "barangay_list": [
+            "b": [
               "BALUARTE",
               "CASINGLOT",
               "GRACIA",
@@ -40043,7 +40043,7 @@
             ]
           },
           "TALISAYAN": {
-            "barangay_list": [
+            "b": [
               "BUGDANG",
               "CALAMCAM",
               "CASIBOLE",
@@ -40065,7 +40065,7 @@
             ]
           },
           "VILLANUEVA": {
-            "barangay_list": [
+            "b": [
               "BALACANAS",
               "DAYAWAN",
               "IMELDA",
@@ -40083,13 +40083,13 @@
       }
     }
   },
-  "11": {
-    "region_name": "REGION XI",
-    "province_list": {
+  {
+    "r": "REGION XI",
+    "p": {
       "COMPOSTELA VALLEY": {
-        "municipality_list": {
+        "m": {
           "COMPOSTELA": {
-            "barangay_list": [
+            "b": [
               "AURORA",
               "BAGONGON",
               "GABI",
@@ -40109,7 +40109,7 @@
             ]
           },
           "LAAK (SAN VICENTE)": {
-            "barangay_list": [
+            "b": [
               "AGUINALDO",
               "AMOR CRUZ",
               "AMPAWID",
@@ -40153,7 +40153,7 @@
             ]
           },
           "MABINI (DOÑA ALICIA)": {
-            "barangay_list": [
+            "b": [
               "ANITAPAN",
               "CABUYUAN",
               "CADUNAN",
@@ -40168,7 +40168,7 @@
             ]
           },
           "MACO": {
-            "barangay_list": [
+            "b": [
               "ANIBONGAN",
               "ANISLAGAN",
               "BINUANGAN",
@@ -40209,7 +40209,7 @@
             ]
           },
           "MARAGUSAN (SAN MARIANO)": {
-            "barangay_list": [
+            "b": [
               "BAGONG SILANG",
               "BAHI",
               "CAMBAGANG",
@@ -40237,7 +40237,7 @@
             ]
           },
           "MAWAB": {
-            "barangay_list": [
+            "b": [
               "ANDILI",
               "BAWANI",
               "CONCEPCION",
@@ -40252,7 +40252,7 @@
             ]
           },
           "MONKAYO": {
-            "barangay_list": [
+            "b": [
               "AWAO",
               "BABAG",
               "BANLAG",
@@ -40277,7 +40277,7 @@
             ]
           },
           "MONTEVISTA": {
-            "barangay_list": [
+            "b": [
               "BANAGBANAG",
               "BANGLASAN",
               "BANKEROHAN NORTE",
@@ -40301,7 +40301,7 @@
             ]
           },
           "NABUNTURAN": {
-            "barangay_list": [
+            "b": [
               "ANISLAGAN",
               "ANTIQUERA",
               "BASAK",
@@ -40333,7 +40333,7 @@
             ]
           },
           "NEW BATAAN": {
-            "barangay_list": [
+            "b": [
               "ANDAP",
               "BANTACAN",
               "BATINAO",
@@ -40353,7 +40353,7 @@
             ]
           },
           "PANTUKAN": {
-            "barangay_list": [
+            "b": [
               "ARAIBO",
               "BONGABONG",
               "BONGBONG",
@@ -40372,9 +40372,9 @@
         }
       },
       "DAVAO (DAVAO DEL NORTE)": {
-        "municipality_list": {
+        "m": {
           "ASUNCION (SAUG)": {
-            "barangay_list": [
+            "b": [
               "BINANCIAN",
               "BUAN",
               "BUCLAD",
@@ -40398,7 +40398,7 @@
             ]
           },
           "BRAULIO E. DUJALI": {
-            "barangay_list": [
+            "b": [
               "CABAY-ANGAN",
               "DUJALI",
               "MAGUPISING",
@@ -40407,7 +40407,7 @@
             ]
           },
           "CARMEN": {
-            "barangay_list": [
+            "b": [
               "ALEJAL",
               "ANIBONGAN",
               "ASUNCION (CUATRO-CUATRO)",
@@ -40431,7 +40431,7 @@
             ]
           },
           "CITY OF TAGUM": {
-            "barangay_list": [
+            "b": [
               "APOKON",
               "BINCUNGAN",
               "BUSAON",
@@ -40458,7 +40458,7 @@
             ]
           },
           "ISLAND GARDEN CITY OF SAMAL": {
-            "barangay_list": [
+            "b": [
               "ADECOR",
               "ANONANG",
               "AUMBAY",
@@ -40508,7 +40508,7 @@
             ]
           },
           "KAPALONG": {
-            "barangay_list": [
+            "b": [
               "CAPUNGAGAN",
               "FLORIDA",
               "GABUYAN",
@@ -40526,7 +40526,7 @@
             ]
           },
           "NEW CORELLA": {
-            "barangay_list": [
+            "b": [
               "CABIDIANAN",
               "CARCOR",
               "DEL MONTE",
@@ -40550,7 +40550,7 @@
             ]
           },
           "PANABO CITY": {
-            "barangay_list": [
+            "b": [
               "A. O. FLOIRENDO",
               "BUENAVISTA",
               "CACAO",
@@ -40594,7 +40594,7 @@
             ]
           },
           "SAN ISIDRO": {
-            "barangay_list": [
+            "b": [
               "DACUDAO",
               "DATU BALONG",
               "IGANGON",
@@ -40611,7 +40611,7 @@
             ]
           },
           "SANTO TOMAS": {
-            "barangay_list": [
+            "b": [
               "BALAGUNAN",
               "BOBONGON",
               "CASIG-ANG",
@@ -40634,7 +40634,7 @@
             ]
           },
           "TALAINGOD": {
-            "barangay_list": [
+            "b": [
               "DAGOHOY",
               "PALMA GIL",
               "SANTO NIÑO"
@@ -40643,9 +40643,9 @@
         }
       },
       "DAVAO DEL SUR": {
-        "municipality_list": {
+        "m": {
           "BANSALAN": {
-            "barangay_list": [
+            "b": [
               "ALEGRE",
               "ALTA VISTA",
               "ANONANG",
@@ -40674,7 +40674,7 @@
             ]
           },
           "DAVAO CITY": {
-            "barangay_list": [
+            "b": [
               "ACACIA",
               "AGDAO",
               "ALAMBRE",
@@ -40860,7 +40860,7 @@
             ]
           },
           "DIGOS CITY": {
-            "barangay_list": [
+            "b": [
               "APLAYA",
               "BALABAG",
               "BINATON",
@@ -40890,7 +40890,7 @@
             ]
           },
           "HAGONOY": {
-            "barangay_list": [
+            "b": [
               "BALUTAKAY",
               "CLIB",
               "GUIHING",
@@ -40915,7 +40915,7 @@
             ]
           },
           "KIBLAWAN": {
-            "barangay_list": [
+            "b": [
               "ABNATE",
               "BAGONG NEGROS",
               "BAGONG SILANG",
@@ -40949,7 +40949,7 @@
             ]
           },
           "MAGSAYSAY": {
-            "barangay_list": [
+            "b": [
               "BACUNGAN",
               "BALNATE",
               "BARAYONG",
@@ -40975,7 +40975,7 @@
             ]
           },
           "MALALAG": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN",
               "BAYBAY",
               "BOLTON",
@@ -40994,7 +40994,7 @@
             ]
           },
           "MATANAO": {
-            "barangay_list": [
+            "b": [
               "ASBANG",
               "ASINAN",
               "BAGUMBAYAN",
@@ -41031,7 +41031,7 @@
             ]
           },
           "PADADA": {
-            "barangay_list": [
+            "b": [
               "ALMENDRAS (POB.)",
               "DON SERGIO OSMEÑA, SR.",
               "HARADA BUTAI",
@@ -41052,7 +41052,7 @@
             ]
           },
           "SANTA CRUZ": {
-            "barangay_list": [
+            "b": [
               "ASTORGA",
               "BATO",
               "CORONON",
@@ -41074,7 +41074,7 @@
             ]
           },
           "SULOP": {
-            "barangay_list": [
+            "b": [
               "BALASINON",
               "BUGUIS",
               "CARRE",
@@ -41105,9 +41105,9 @@
         }
       },
       "DAVAO OCCIDENTAL": {
-        "municipality_list": {
+        "m": {
           "DON MARCELINO": {
-            "barangay_list": [
+            "b": [
               "BALUNTAYA",
               "CALIAN",
               "DALUPAN",
@@ -41126,7 +41126,7 @@
             ]
           },
           "JOSE ABAD SANTOS (TRINIDAD)": {
-            "barangay_list": [
+            "b": [
               "BALANGONAN",
               "BUGUIS",
               "BUKID",
@@ -41156,7 +41156,7 @@
             ]
           },
           "MALITA": {
-            "barangay_list": [
+            "b": [
               "BITO",
               "BOLILA",
               "BUHANGIN",
@@ -41190,7 +41190,7 @@
             ]
           },
           "SANTA MARIA": {
-            "barangay_list": [
+            "b": [
               "BASIAWAN",
               "BUCA",
               "CADAATAN",
@@ -41216,7 +41216,7 @@
             ]
           },
           "SARANGANI": {
-            "barangay_list": [
+            "b": [
               "BATUGANDING",
               "CAMAHUAL",
               "CAMALIG",
@@ -41234,9 +41234,9 @@
         }
       },
       "DAVAO ORIENTAL": {
-        "municipality_list": {
+        "m": {
           "BAGANGA": {
-            "barangay_list": [
+            "b": [
               "BACULIN",
               "BANAO",
               "BATAWAN",
@@ -41258,7 +41258,7 @@
             ]
           },
           "BANAYBANAY": {
-            "barangay_list": [
+            "b": [
               "CABANGCALAN",
               "CAGANGANAN",
               "CALUBIHAN",
@@ -41276,7 +41276,7 @@
             ]
           },
           "BOSTON": {
-            "barangay_list": [
+            "b": [
               "CAATIHAN",
               "CABASAGAN",
               "CARMEN",
@@ -41288,7 +41288,7 @@
             ]
           },
           "CARAGA": {
-            "barangay_list": [
+            "b": [
               "ALVAR",
               "CANINGAG",
               "DON LEON BALANTE",
@@ -41309,7 +41309,7 @@
             ]
           },
           "CATEEL": {
-            "barangay_list": [
+            "b": [
               "ABIJOD",
               "ALEGRIA",
               "ALIWAGWAG",
@@ -41329,7 +41329,7 @@
             ]
           },
           "GOVERNOR GENEROSO": {
-            "barangay_list": [
+            "b": [
               "ANITAP",
               "CRISPIN DELA CRUZ",
               "DON AURELIO CHICOTE",
@@ -41353,7 +41353,7 @@
             ]
           },
           "LUPON": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN",
               "CABADIANGAN",
               "CALAPAGAN",
@@ -41378,7 +41378,7 @@
             ]
           },
           "MANAY": {
-            "barangay_list": [
+            "b": [
               "CAPASNAN",
               "CAYAWAN",
               "CENTRAL (POB.)",
@@ -41399,7 +41399,7 @@
             ]
           },
           "MATI CITY": {
-            "barangay_list": [
+            "b": [
               "BADAS",
               "BOBON",
               "BUSO",
@@ -41429,7 +41429,7 @@
             ]
           },
           "SAN ISIDRO": {
-            "barangay_list": [
+            "b": [
               "BAON",
               "BATOBATO (POB.)",
               "BITAOGAN",
@@ -41449,7 +41449,7 @@
             ]
           },
           "TARRAGONA": {
-            "barangay_list": [
+            "b": [
               "CABAGAYAN",
               "CENTRAL (POB.)",
               "DADONG",
@@ -41466,13 +41466,13 @@
       }
     }
   },
-  "12": {
-    "region_name": "REGION XII",
-    "province_list": {
+  {
+    "r": "REGION XII",
+    "p": {
       "COTABATO (NORTH COT.)": {
-        "municipality_list": {
+        "m": {
           "ALAMADA": {
-            "barangay_list": [
+            "b": [
               "BAO",
               "BARANGIRAN",
               "CAMANSI",
@@ -41493,7 +41493,7 @@
             ]
           },
           "ALEOSAN": {
-            "barangay_list": [
+            "b": [
               "BAGOLIBAS",
               "CAWILIHAN",
               "DUALING",
@@ -41516,7 +41516,7 @@
             ]
           },
           "ANTIPAS": {
-            "barangay_list": [
+            "b": [
               "B. CADUNGON",
               "CAMUTAN",
               "CANAAN",
@@ -41533,7 +41533,7 @@
             ]
           },
           "ARAKAN": {
-            "barangay_list": [
+            "b": [
               "ALLAB",
               "ANAPOLON",
               "BADIANGON",
@@ -41565,7 +41565,7 @@
             ]
           },
           "BANISILAN": {
-            "barangay_list": [
+            "b": [
               "BANISILAN POBLACION",
               "BUSAON",
               "CAPAYANGAN",
@@ -41589,7 +41589,7 @@
             ]
           },
           "CARMEN": {
-            "barangay_list": [
+            "b": [
               "AROMAN",
               "BENTANGAN",
               "CADIIS",
@@ -41621,7 +41621,7 @@
             ]
           },
           "CITY OF KIDAPAWAN": {
-            "barangay_list": [
+            "b": [
               "AMAS",
               "AMAZION",
               "BALABAG",
@@ -41665,7 +41665,7 @@
             ]
           },
           "KABACAN": {
-            "barangay_list": [
+            "b": [
               "ARINGAY",
               "BANGILAN",
               "BANNAWAG",
@@ -41693,7 +41693,7 @@
             ]
           },
           "LIBUNGAN": {
-            "barangay_list": [
+            "b": [
               "ABAGA",
               "BAGUER",
               "BARONGIS",
@@ -41717,7 +41717,7 @@
             ]
           },
           "M'LANG": {
-            "barangay_list": [
+            "b": [
               "BAGONTAPAY",
               "BIALONG",
               "BUAYAN",
@@ -41758,7 +41758,7 @@
             ]
           },
           "MAGPET": {
-            "barangay_list": [
+            "b": [
               "ALIBAYON",
               "AMABEL",
               "BAGUMBAYAN",
@@ -41794,7 +41794,7 @@
             ]
           },
           "MAKILALA": {
-            "barangay_list": [
+            "b": [
               "BATASAN",
               "BATO",
               "BIANGAN",
@@ -41836,7 +41836,7 @@
             ]
           },
           "MATALAM": {
-            "barangay_list": [
+            "b": [
               "ARAKAN",
               "BANGBANG",
               "BATO",
@@ -41874,7 +41874,7 @@
             ]
           },
           "MIDSAYAP": {
-            "barangay_list": [
+            "b": [
               "AGRICULTURE",
               "ANONANG",
               "ARIZONA",
@@ -41935,7 +41935,7 @@
             ]
           },
           "PIGKAWAYAN": {
-            "barangay_list": [
+            "b": [
               "ANICK (UPPER BALOGO)",
               "BALACAYON",
               "BALOGO",
@@ -41979,7 +41979,7 @@
             ]
           },
           "PIKIT": {
-            "barangay_list": [
+            "b": [
               "BAGOAINGUD (BAGOINGED)",
               "BALABAK",
               "BALATICAN",
@@ -42025,7 +42025,7 @@
             ]
           },
           "PRESIDENT ROXAS": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "BATO-BATO",
               "CABANGBANGAN",
@@ -42054,7 +42054,7 @@
             ]
           },
           "TULUNAN": {
-            "barangay_list": [
+            "b": [
               "BACONG",
               "BAGUMBAYAN",
               "BANAYAL",
@@ -42089,9 +42089,9 @@
         }
       },
       "SARANGANI": {
-        "municipality_list": {
+        "m": {
           "ALABEL": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "BAGACAY",
               "BALUNTAY",
@@ -42108,7 +42108,7 @@
             ]
           },
           "GLAN": {
-            "barangay_list": [
+            "b": [
               "BALITON",
               "BATOTULING",
               "BATULAKI",
@@ -42143,7 +42143,7 @@
             ]
           },
           "KIAMBA": {
-            "barangay_list": [
+            "b": [
               "BADTASAN",
               "DATU DANI",
               "GASI",
@@ -42166,7 +42166,7 @@
             ]
           },
           "MAASIM": {
-            "barangay_list": [
+            "b": [
               "AMSIPIT",
               "BALES",
               "COLON",
@@ -42186,7 +42186,7 @@
             ]
           },
           "MAITUM": {
-            "barangay_list": [
+            "b": [
               "BATI-AN",
               "KALANEG",
               "KALAONG",
@@ -42209,7 +42209,7 @@
             ]
           },
           "MALAPATAN": {
-            "barangay_list": [
+            "b": [
               "DAAN SUYAN",
               "KIHAN",
               "KINAM",
@@ -42225,7 +42225,7 @@
             ]
           },
           "MALUNGON": {
-            "barangay_list": [
+            "b": [
               "ALKIKAN",
               "AMPON",
               "ATLAE",
@@ -42262,9 +42262,9 @@
         }
       },
       "SOUTH COTABATO": {
-        "municipality_list": {
+        "m": {
           "BANGA": {
-            "barangay_list": [
+            "b": [
               "BENITEZ (POB.)",
               "CABUDIAN",
               "CABULING",
@@ -42290,7 +42290,7 @@
             ]
           },
           "GENERAL SANTOS CITY (DADIANGAS)": {
-            "barangay_list": [
+            "b": [
               "APOPONG",
               "BALUAN",
               "BATOMELONG",
@@ -42320,7 +42320,7 @@
             ]
           },
           "KORONADAL CITY": {
-            "barangay_list": [
+            "b": [
               "ASSUMPTION (BULOL)",
               "AVANCEÑA (BO. 3)",
               "CACUB",
@@ -42351,7 +42351,7 @@
             ]
           },
           "LAKE SEBU": {
-            "barangay_list": [
+            "b": [
               "BACDULONG",
               "DENLAG",
               "HALILAN",
@@ -42374,7 +42374,7 @@
             ]
           },
           "NORALA": {
-            "barangay_list": [
+            "b": [
               "BENIGNO AQUINO, JR.",
               "DUMAGUIL",
               "ESPERANZA",
@@ -42392,7 +42392,7 @@
             ]
           },
           "POLOMOLOK": {
-            "barangay_list": [
+            "b": [
               "BENTUNG",
               "CANNERY SITE",
               "CROSSING PALKAN",
@@ -42419,7 +42419,7 @@
             ]
           },
           "SANTO NIÑO": {
-            "barangay_list": [
+            "b": [
               "AMBALGAN",
               "GUINSANG-AN",
               "KATIPUNAN",
@@ -42433,7 +42433,7 @@
             ]
           },
           "SURALLAH": {
-            "barangay_list": [
+            "b": [
               "BUENAVISTA",
               "CANAHAY (GODWINO)",
               "CENTRALA",
@@ -42454,7 +42454,7 @@
             ]
           },
           "T`BOLI": {
-            "barangay_list": [
+            "b": [
               "AFLEK",
               "AFUS",
               "BASAG",
@@ -42483,7 +42483,7 @@
             ]
           },
           "TAMPAKAN": {
-            "barangay_list": [
+            "b": [
               "ALBAGAN",
               "BUTO",
               "DANLAG",
@@ -42501,7 +42501,7 @@
             ]
           },
           "TANTANGAN": {
-            "barangay_list": [
+            "b": [
               "BUKAY PAIT",
               "CABULING",
               "DUMADALIG",
@@ -42518,7 +42518,7 @@
             ]
           },
           "TUPI": {
-            "barangay_list": [
+            "b": [
               "ACMONAN",
               "BOLOLMALA",
               "BUNAO",
@@ -42539,9 +42539,9 @@
         }
       },
       "SULTAN KUDARAT": {
-        "municipality_list": {
+        "m": {
           "BAGUMBAYAN": {
-            "barangay_list": [
+            "b": [
               "BAI SARIFINANG",
               "BIWANG",
               "BUSOK",
@@ -42564,7 +42564,7 @@
             ]
           },
           "COLUMBIO": {
-            "barangay_list": [
+            "b": [
               "BANTANGAN (LASAK)",
               "DATABLAO",
               "EDAY",
@@ -42584,7 +42584,7 @@
             ]
           },
           "ESPERANZA": {
-            "barangay_list": [
+            "b": [
               "ALA",
               "DALADAP",
               "DUKAY",
@@ -42607,7 +42607,7 @@
             ]
           },
           "ISULAN": {
-            "barangay_list": [
+            "b": [
               "BAMBAD",
               "BUAL",
               "D'LOTILLA",
@@ -42628,7 +42628,7 @@
             ]
           },
           "KALAMANSIG": {
-            "barangay_list": [
+            "b": [
               "BANTOGON (SANTA CLARA)",
               "CADIZ",
               "DATU ITO ANDONG",
@@ -42647,7 +42647,7 @@
             ]
           },
           "LAMBAYONG (MARIANO MARCOS)": {
-            "barangay_list": [
+            "b": [
               "CARIDAD (CUYAPON)",
               "DIDTARAS",
               "GANSING (BILUMEN)",
@@ -42677,7 +42677,7 @@
             ]
           },
           "LEBAK": {
-            "barangay_list": [
+            "b": [
               "AURELIO F. FREIRES SR. ( POBLACION II)",
               "BARURAO",
               "BARURAO II",
@@ -42708,7 +42708,7 @@
             ]
           },
           "LUTAYAN": {
-            "barangay_list": [
+            "b": [
               "ANTONG",
               "BAYASONG",
               "BLINGKONG",
@@ -42723,7 +42723,7 @@
             ]
           },
           "PALIMBANG": {
-            "barangay_list": [
+            "b": [
               "AKOL",
               "BADIANGON",
               "BALIANGO",
@@ -42767,7 +42767,7 @@
             ]
           },
           "PRESIDENT QUIRINO": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN",
               "BANNAWAG",
               "BAYAWA",
@@ -42790,7 +42790,7 @@
             ]
           },
           "SEN. NINOY AQUINO": {
-            "barangay_list": [
+            "b": [
               "BANALI",
               "BASAG",
               "BUENAFLORES",
@@ -42814,7 +42814,7 @@
             ]
           },
           "TACURONG CITY": {
-            "barangay_list": [
+            "b": [
               "BARAS",
               "BUENAFLOR",
               "CALEAN",
@@ -42841,13 +42841,13 @@
       }
     }
   },
-  "13": {
-    "region_name": "REGION XIII",
-    "province_list": {
+  {
+    "r": "REGION XIII",
+    "p": {
       "AGUSAN DEL NORTE": {
-        "municipality_list": {
+        "m": {
           "BUENAVISTA": {
-            "barangay_list": [
+            "b": [
               "ABILAN",
               "AGONG-ONG",
               "ALUBIJID",
@@ -42876,7 +42876,7 @@
             ]
           },
           "BUTUAN CITY": {
-            "barangay_list": [
+            "b": [
               "AGAO POB. (BGY. 3)",
               "AGUSAN PEQUEÑO",
               "AMBAGO",
@@ -42966,7 +42966,7 @@
             ]
           },
           "CABADBARAN CITY": {
-            "barangay_list": [
+            "b": [
               "ANTONIO LUNA",
               "BAY-ANG",
               "BAYABAS",
@@ -43001,7 +43001,7 @@
             ]
           },
           "CARMEN": {
-            "barangay_list": [
+            "b": [
               "CAHAYAGAN",
               "GOSOON",
               "MANOLIGAO",
@@ -43013,7 +43013,7 @@
             ]
           },
           "JABONGA": {
-            "barangay_list": [
+            "b": [
               "A. BELTRAN (CAMALIG)",
               "BALEGUIAN",
               "BANGONAY",
@@ -43032,7 +43032,7 @@
             ]
           },
           "KITCHARAO": {
-            "barangay_list": [
+            "b": [
               "BANGAYAN",
               "CANAWAY",
               "CROSSING",
@@ -43047,7 +43047,7 @@
             ]
           },
           "LAS NIEVES": {
-            "barangay_list": [
+            "b": [
               "AMBACON",
               "BALUNGAGAN",
               "BONIFACIO",
@@ -43071,7 +43071,7 @@
             ]
           },
           "MAGALLANES": {
-            "barangay_list": [
+            "b": [
               "BUHANG",
               "CALOC-AN",
               "GUIASAN",
@@ -43083,7 +43083,7 @@
             ]
           },
           "NASIPIT": {
-            "barangay_list": [
+            "b": [
               "ACLAN",
               "AMONTAY",
               "ATA-ATAHON",
@@ -43106,7 +43106,7 @@
             ]
           },
           "REMEDIOS T. ROMUALDEZ": {
-            "barangay_list": [
+            "b": [
               "BALANGBALANG",
               "BASILISA",
               "HUMILOG",
@@ -43118,7 +43118,7 @@
             ]
           },
           "SANTIAGO": {
-            "barangay_list": [
+            "b": [
               "CURVA",
               "ESTANISLAO MORGADO",
               "JAGUPIT",
@@ -43131,7 +43131,7 @@
             ]
           },
           "TUBAY": {
-            "barangay_list": [
+            "b": [
               "BINUANGAN",
               "CABAYAWA",
               "DOÑA ROSARIO",
@@ -43150,9 +43150,9 @@
         }
       },
       "AGUSAN DEL SUR": {
-        "municipality_list": {
+        "p": {
           "BAYUGAN CITY": {
-            "barangay_list": [
+            "b": [
               "BERSEBA",
               "BUCAC",
               "CAGBAS",
@@ -43199,7 +43199,7 @@
             ]
           },
           "BUNAWAN": {
-            "barangay_list": [
+            "b": [
               "BUNAWAN BROOK",
               "CONSUELO",
               "IMELDA",
@@ -43213,7 +43213,7 @@
             ]
           },
           "ESPERANZA": {
-            "barangay_list": [
+            "b": [
               "AGSABU",
               "AGUINALDO",
               "ANOLINGAN",
@@ -43264,7 +43264,7 @@
             ]
           },
           "LA PAZ": {
-            "barangay_list": [
+            "b": [
               "ANGELES",
               "BATAAN",
               "COMOTA",
@@ -43283,7 +43283,7 @@
             ]
           },
           "LORETO": {
-            "barangay_list": [
+            "b": [
               "BINUCAYAN",
               "JOHNSON",
               "KASAPA",
@@ -43304,7 +43304,7 @@
             ]
           },
           "PROSPERIDAD": {
-            "barangay_list": [
+            "b": [
               "AURORA",
               "AWA",
               "AZPETIA",
@@ -43340,7 +43340,7 @@
             ]
           },
           "ROSARIO": {
-            "barangay_list": [
+            "b": [
               "BAYUGAN 3",
               "CABANTAO",
               "CABAWAN",
@@ -43355,7 +43355,7 @@
             ]
           },
           "SAN FRANCISCO": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -43386,7 +43386,7 @@
             ]
           },
           "SAN LUIS": {
-            "barangay_list": [
+            "b": [
               "ANISLAGAN",
               "BALIT",
               "BAYLO",
@@ -43415,7 +43415,7 @@
             ]
           },
           "SANTA JOSEFA": {
-            "barangay_list": [
+            "b": [
               "ANGAS",
               "AURORA",
               "AWAO",
@@ -43430,7 +43430,7 @@
             ]
           },
           "SIBAGAT": {
-            "barangay_list": [
+            "b": [
               "AFGA",
               "ANAHAWAN",
               "BANAGBANAG",
@@ -43458,7 +43458,7 @@
             ]
           },
           "TALACOGON": {
-            "barangay_list": [
+            "b": [
               "BATUCAN",
               "BUENAGRACIA",
               "CAUSWAGAN",
@@ -43478,7 +43478,7 @@
             ]
           },
           "TRENTO": {
-            "barangay_list": [
+            "b": [
               "BASA",
               "CEBOLIN",
               "CUEVAS",
@@ -43498,7 +43498,7 @@
             ]
           },
           "VERUELA": {
-            "barangay_list": [
+            "b": [
               "ANITAP",
               "BACAY II",
               "BINONGAN",
@@ -43524,9 +43524,9 @@
         }
       },
       "DINAGAT ISLANDS": {
-        "municipality_list": {
+        "m": {
           "BASILISA (RIZAL)": {
-            "barangay_list": [
+            "b": [
               "BENGLEN",
               "CATADMAN",
               "COLUMBUS",
@@ -43557,7 +43557,7 @@
             ]
           },
           "CAGDIANAO": {
-            "barangay_list": [
+            "b": [
               "BOA",
               "CABUNGA-AN",
               "DEL PILAR",
@@ -43575,7 +43575,7 @@
             ]
           },
           "DINAGAT": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN",
               "CAB-ILAN",
               "CABAYAWAN",
@@ -43591,7 +43591,7 @@
             ]
           },
           "LIBJO (ALBOR)": {
-            "barangay_list": [
+            "b": [
               "ALBOR (POB.)",
               "ARELLANO",
               "BAYANIHAN",
@@ -43611,7 +43611,7 @@
             ]
           },
           "LORETO": {
-            "barangay_list": [
+            "b": [
               "CARMEN (POB.)",
               "ESPERANZA",
               "FERDINAND",
@@ -43625,7 +43625,7 @@
             ]
           },
           "SAN JOSE": {
-            "barangay_list": [
+            "b": [
               "AURELIO",
               "CUARINTA",
               "DON RUBEN ECLEO (BALTAZAR)",
@@ -43641,7 +43641,7 @@
             ]
           },
           "TUBAJON": {
-            "barangay_list": [
+            "b": [
               "DIAZ (ROMUALDEZ)",
               "IMELDA",
               "MABINI",
@@ -43656,9 +43656,9 @@
         }
       },
       "SURIGAO DEL NORTE": {
-        "municipality_list": {
+        "m": {
           "ALEGRIA": {
-            "barangay_list": [
+            "b": [
               "ALIPAO",
               "ANAHAW",
               "BUDLINGIN",
@@ -43674,7 +43674,7 @@
             ]
           },
           "BACUAG": {
-            "barangay_list": [
+            "b": [
               "CABUGAO",
               "CAMBUAYON",
               "CAMPO",
@@ -43687,7 +43687,7 @@
             ]
           },
           "BURGOS": {
-            "barangay_list": [
+            "b": [
               "BAYBAY",
               "BITAUG",
               "MATIN-AO",
@@ -43697,7 +43697,7 @@
             ]
           },
           "CLAVER": {
-            "barangay_list": [
+            "b": [
               "BAGAKAY (POB. WEST)",
               "CABUGO",
               "CAGDIANAO",
@@ -43715,7 +43715,7 @@
             ]
           },
           "DAPA": {
-            "barangay_list": [
+            "b": [
               "BAGAKAY",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -43748,7 +43748,7 @@
             ]
           },
           "DEL CARMEN": {
-            "barangay_list": [
+            "b": [
               "ANTIPOLO",
               "BAGAKAY (ALBURO)",
               "BITOON",
@@ -43772,7 +43772,7 @@
             ]
           },
           "GENERAL LUNA": {
-            "barangay_list": [
+            "b": [
               "ANAJAWAN",
               "CABITOONAN",
               "CATANGNAN",
@@ -43795,7 +43795,7 @@
             ]
           },
           "GIGAQUIT": {
-            "barangay_list": [
+            "b": [
               "ALAMBIQUE (POB.)",
               "ANIBONGAN",
               "CAM-BOAYON",
@@ -43812,7 +43812,7 @@
             ]
           },
           "MAINIT": {
-            "barangay_list": [
+            "b": [
               "BINGA",
               "BOBONA-ON",
               "CANTUGAS",
@@ -43837,7 +43837,7 @@
             ]
           },
           "MALIMONO": {
-            "barangay_list": [
+            "b": [
               "BUNYASAN",
               "CAGTINAE",
               "CAN-AGA",
@@ -43855,7 +43855,7 @@
             ]
           },
           "PILAR": {
-            "barangay_list": [
+            "b": [
               "ASINAN (POB.)",
               "CARIDAD",
               "CENTRO (POB.)",
@@ -43874,7 +43874,7 @@
             ]
           },
           "PLACER": {
-            "barangay_list": [
+            "b": [
               "AMOSLOG",
               "ANISLAGAN",
               "BAD-AS",
@@ -43898,7 +43898,7 @@
             ]
           },
           "SAN BENITO": {
-            "barangay_list": [
+            "b": [
               "BONGDO",
               "MARIBOJOC",
               "NUEVO CAMPO",
@@ -43908,7 +43908,7 @@
             ]
           },
           "SAN FRANCISCO (ANAO-AON)": {
-            "barangay_list": [
+            "b": [
               "AMONTAY",
               "BALITE",
               "BANBANON",
@@ -43923,7 +43923,7 @@
             ]
           },
           "SAN ISIDRO": {
-            "barangay_list": [
+            "b": [
               "BUHING CALIPAY",
               "DEL CARMEN (POB.)",
               "DEL PILAR",
@@ -43939,7 +43939,7 @@
             ]
           },
           "SANTA MONICA (SAPAO)": {
-            "barangay_list": [
+            "b": [
               "ABAD SANTOS",
               "ALEGRIA",
               "BAILAN",
@@ -43954,7 +43954,7 @@
             ]
           },
           "SISON": {
-            "barangay_list": [
+            "b": [
               "BIYABID",
               "GACEPAN",
               "IMA",
@@ -43970,7 +43970,7 @@
             ]
           },
           "SOCORRO": {
-            "barangay_list": [
+            "b": [
               "ALBINO TARUC",
               "DEL PILAR",
               "HELENE",
@@ -43988,7 +43988,7 @@
             ]
           },
           "SURIGAO CITY": {
-            "barangay_list": [
+            "b": [
               "ALANG-ALANG",
               "ALEGRIA",
               "ANOMAR",
@@ -44046,7 +44046,7 @@
             ]
           },
           "TAGANA-AN": {
-            "barangay_list": [
+            "b": [
               "AURORA (POB.)",
               "AZUCENA (POB.)",
               "BANBAN",
@@ -44064,7 +44064,7 @@
             ]
           },
           "TUBOD": {
-            "barangay_list": [
+            "b": [
               "CAPAYAHAN",
               "CAWILAN",
               "DEL ROSARIO",
@@ -44079,9 +44079,9 @@
         }
       },
       "SURIGAO DEL SUR": {
-        "municipality_list": {
+        "m": {
           "BAROBO": {
-            "barangay_list": [
+            "b": [
               "AMAGA",
               "BAHI",
               "CABACUNGAN",
@@ -44106,7 +44106,7 @@
             ]
           },
           "BAYABAS": {
-            "barangay_list": [
+            "b": [
               "AMAG",
               "BALETE (POB.)",
               "CABUGO",
@@ -44117,7 +44117,7 @@
             ]
           },
           "BISLIG CITY": {
-            "barangay_list": [
+            "b": [
               "BUCTO",
               "BURBOANAN",
               "CAGUYAO",
@@ -44145,7 +44145,7 @@
             ]
           },
           "CAGWAIT": {
-            "barangay_list": [
+            "b": [
               "ARAS-ASAN",
               "BACOLOD",
               "BITAUGAN EAST",
@@ -44160,7 +44160,7 @@
             ]
           },
           "CANTILAN": {
-            "barangay_list": [
+            "b": [
               "BUGSUKAN",
               "BUNTALID",
               "CABANGAHAN",
@@ -44181,7 +44181,7 @@
             ]
           },
           "CARMEN": {
-            "barangay_list": [
+            "b": [
               "ANTAO",
               "CANCAVAN",
               "CARMEN (POB.)",
@@ -44193,7 +44193,7 @@
             ]
           },
           "CARRASCAL": {
-            "barangay_list": [
+            "b": [
               "ADLAY",
               "BABUYAN",
               "BACOLOD",
@@ -44211,7 +44211,7 @@
             ]
           },
           "CORTES": {
-            "barangay_list": [
+            "b": [
               "BALIBADON",
               "BURGOS",
               "CAPANDAN",
@@ -44227,7 +44227,7 @@
             ]
           },
           "HINATUAN": {
-            "barangay_list": [
+            "b": [
               "BACULIN",
               "BENIGNO AQUINO (ZONE I) POB.",
               "BIGAAN",
@@ -44255,7 +44255,7 @@
             ]
           },
           "LANUZA": {
-            "barangay_list": [
+            "b": [
               "AGSAM",
               "BOCAWE",
               "BUNGA",
@@ -44272,7 +44272,7 @@
             ]
           },
           "LIANGA": {
-            "barangay_list": [
+            "b": [
               "ANIBONGAN",
               "BAN-AS",
               "BANAHAO",
@@ -44289,7 +44289,7 @@
             ]
           },
           "LINGIG": {
-            "barangay_list": [
+            "b": [
               "ANIBONGAN",
               "BARCELONA",
               "BOGAK",
@@ -44311,7 +44311,7 @@
             ]
           },
           "MADRID": {
-            "barangay_list": [
+            "b": [
               "BAGSAC",
               "BAYOGO",
               "LINIBONAN",
@@ -44329,7 +44329,7 @@
             ]
           },
           "MARIHATAG": {
-            "barangay_list": [
+            "b": [
               "ALEGRIA",
               "AMONTAY",
               "ANTIPOLO",
@@ -44345,7 +44345,7 @@
             ]
           },
           "SAN AGUSTIN": {
-            "barangay_list": [
+            "b": [
               "BRETANIA",
               "BUATONG",
               "BUHISAN",
@@ -44362,7 +44362,7 @@
             ]
           },
           "SAN MIGUEL": {
-            "barangay_list": [
+            "b": [
               "BAGYANG",
               "BARAS",
               "BITAUGAN",
@@ -44384,7 +44384,7 @@
             ]
           },
           "TAGBINA": {
-            "barangay_list": [
+            "b": [
               "BATUNAN",
               "CARPENITO",
               "DOÑA CARMEN",
@@ -44413,7 +44413,7 @@
             ]
           },
           "TAGO": {
-            "barangay_list": [
+            "b": [
               "ALBA",
               "ANAHAO BAG-O",
               "ANAHAO DAAN",
@@ -44441,7 +44441,7 @@
             ]
           },
           "TANDAG CITY": {
-            "barangay_list": [
+            "b": [
               "AWASIAN",
               "BAGONG LUNGSOD (POB.)",
               "BIOTO",
@@ -44469,13 +44469,13 @@
       }
     }
   },
-  "BARMM": {
-    "region_name": "BARMM",
-    "province_list": {
+  {
+    "r": "BARMM",
+    "p": {
       "BASILAN": {
-        "municipality_list": {
+        "m": {
           "AKBAR": {
-            "barangay_list": [
+            "b": [
               "CADDAYAN",
               "LINONGAN",
               "LOWER BATO-BATO",
@@ -44488,7 +44488,7 @@
             ]
           },
           "AL-BARKA": {
-            "barangay_list": [
+            "b": [
               "APIL-APIL",
               "BATO-BATO",
               "BOHE-PIANG",
@@ -44508,7 +44508,7 @@
             ]
           },
           "HADJI MOHAMMAD AJUL": {
-            "barangay_list": [
+            "b": [
               "BASAKAN",
               "BUTON",
               "CANDIIS",
@@ -44523,7 +44523,7 @@
             ]
           },
           "HADJI MUHTAMAD": {
-            "barangay_list": [
+            "b": [
               "BALUK-BALUK",
               "DASALAN",
               "LUBUKAN",
@@ -44537,7 +44537,7 @@
             ]
           },
           "ISABELA CITY": {
-            "barangay_list": [
+            "b": [
               "AGUADA",
               "BALATANAY",
               "BALUNO",
@@ -44586,7 +44586,7 @@
             ]
           },
           "LAMITAN CITY": {
-            "barangay_list": [
+            "b": [
               "ARCO",
               "BA-AS",
               "BAIMBING",
@@ -44635,7 +44635,7 @@
             ]
           },
           "LANTAWAN": {
-            "barangay_list": [
+            "b": [
               "ATONG-ATONG",
               "BAGBAGON",
               "BAUNGIS",
@@ -44664,7 +44664,7 @@
             ]
           },
           "MALUSO": {
-            "barangay_list": [
+            "b": [
               "ABONG-ABONG",
               "BATUNGAL",
               "CALANG CANAS",
@@ -44688,7 +44688,7 @@
             ]
           },
           "SUMISIP": {
-            "barangay_list": [
+            "b": [
               "BACUNG",
               "BAIWAS",
               "BASAK",
@@ -44721,7 +44721,7 @@
             ]
           },
           "TABUAN-LASA": {
-            "barangay_list": [
+            "b": [
               "BABAG (BABUAN ISLAND)",
               "BALANTING",
               "BOLOH-BOLOH",
@@ -44737,7 +44737,7 @@
             ]
           },
           "TIPO-TIPO": {
-            "barangay_list": [
+            "b": [
               "BADJA",
               "BAGUINDAN",
               "BANAH",
@@ -44752,7 +44752,7 @@
             ]
           },
           "TUBURAN": {
-            "barangay_list": [
+            "b": [
               "BOHETAMBIS",
               "CALUT",
               "DUGA-A",
@@ -44766,7 +44766,7 @@
             ]
           },
           "UNGKAYA PUKAN": {
-            "barangay_list": [
+            "b": [
               "AMALOY",
               "BOHE-PAHUH",
               "BOHE-SUYAK",
@@ -44784,9 +44784,9 @@
         }
       },
       "LANAO DEL SUR": {
-        "municipality_list": {
+        "m": {
           "AMAI MANABILANG (BUMBARAN)": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN",
               "BANDARA-INGUD",
               "COMARA",
@@ -44807,7 +44807,7 @@
             ]
           },
           "BACOLOD-KALAWI (BACOLOD GRANDE)": {
-            "barangay_list": [
+            "b": [
               "AMPAO",
               "BAGOAINGUD",
               "BALUT",
@@ -44837,7 +44837,7 @@
             ]
           },
           "BALABAGAN": {
-            "barangay_list": [
+            "b": [
               "BAGOAINGUD",
               "BANAGO",
               "BARORAO",
@@ -44868,7 +44868,7 @@
             ]
           },
           "BALINDONG (WATU)": {
-            "barangay_list": [
+            "b": [
               "ABAGA",
               "BANTOGA WATO",
               "BARIT",
@@ -44910,7 +44910,7 @@
             ]
           },
           "BAYANG": {
-            "barangay_list": [
+            "b": [
               "BAGOAINGUD",
               "BAIRAN (POB.)",
               "BANDINGUN",
@@ -44963,7 +44963,7 @@
             ]
           },
           "BINIDAYAN": {
-            "barangay_list": [
+            "b": [
               "BADAK",
               "BAGUIANGUN",
               "BALUT MAITO",
@@ -44993,7 +44993,7 @@
             ]
           },
           "BUADIPOSO-BUNTONG": {
-            "barangay_list": [
+            "b": [
               "BACOLOD",
               "BANGON",
               "BANGON PROPER",
@@ -45030,7 +45030,7 @@
             ]
           },
           "BUBONG": {
-            "barangay_list": [
+            "b": [
               "BACOLOD",
               "BAGOAINGUD",
               "BANSAYAN",
@@ -45070,7 +45070,7 @@
             ]
           },
           "BUTIG": {
-            "barangay_list": [
+            "b": [
               "BAYABAO POBLACION",
               "BUTIG PROPER",
               "CABASARAN",
@@ -45090,7 +45090,7 @@
             ]
           },
           "CALANOGAS": {
-            "barangay_list": [
+            "b": [
               "BUBONGA RANAO",
               "CALALAOAN (POB.)",
               "GAS",
@@ -45111,7 +45111,7 @@
             ]
           },
           "DITSAAN-RAMAIN": {
-            "barangay_list": [
+            "b": [
               "BACLAYAN LILOD",
               "BACLAYAN RAYA",
               "BAGOAINGUD",
@@ -45150,7 +45150,7 @@
             ]
           },
           "GANASSI": {
-            "barangay_list": [
+            "b": [
               "BAGOAINGUD",
               "BALINTAD",
               "BALINTAD A",
@@ -45186,7 +45186,7 @@
             ]
           },
           "KAPAI": {
-            "barangay_list": [
+            "b": [
               "BABAYOG",
               "CORMATAN",
               "DILABAYAN",
@@ -45210,7 +45210,7 @@
             ]
           },
           "KAPATAGAN": {
-            "barangay_list": [
+            "b": [
               "BAKIKIS",
               "BARAO",
               "BONGABONG",
@@ -45229,7 +45229,7 @@
             ]
           },
           "LUMBA-BAYABAO (MAGUING)": {
-            "barangay_list": [
+            "b": [
               "BACOLOD I",
               "BACOLOD II",
               "BANTAYAO",
@@ -45271,7 +45271,7 @@
             ]
           },
           "LUMBACA-UNAYAN": {
-            "barangay_list": [
+            "b": [
               "BANGON (DILAUSAN)",
               "BETA",
               "CALALON",
@@ -45284,7 +45284,7 @@
             ]
           },
           "LUMBATAN": {
-            "barangay_list": [
+            "b": [
               "ALOG",
               "BASAYUNGUN",
               "BUAD",
@@ -45309,7 +45309,7 @@
             ]
           },
           "LUMBAYANAGUE": {
-            "barangay_list": [
+            "b": [
               "BAGOAINGUD",
               "BALAIGAY",
               "BUALAN",
@@ -45335,7 +45335,7 @@
             ]
           },
           "MADALUM": {
-            "barangay_list": [
+            "b": [
               "ABAGA",
               "BACAYAWAN",
               "BAGOAINGUD",
@@ -45376,7 +45376,7 @@
             ]
           },
           "MADAMBA": {
-            "barangay_list": [
+            "b": [
               "BALAGUNUN",
               "BALINTAD",
               "BAWANG",
@@ -45404,7 +45404,7 @@
             ]
           },
           "MAGUING": {
-            "barangay_list": [
+            "b": [
               "AGAGAN",
               "BALAGUNUN",
               "BALAWAG",
@@ -45442,7 +45442,7 @@
             ]
           },
           "MALABANG": {
-            "barangay_list": [
+            "b": [
               "BACAYAWAN",
               "BADAK LUMAO",
               "BAGOAINGUD",
@@ -45483,7 +45483,7 @@
             ]
           },
           "MARANTAO": {
-            "barangay_list": [
+            "b": [
               "BACAYAWAN",
               "BACONG",
               "BANGA-PANTAR",
@@ -45521,7 +45521,7 @@
             ]
           },
           "MARAWI CITY": {
-            "barangay_list": [
+            "b": [
               "AMBOLONG",
               "AMITO MARANTAO",
               "BACOLOD CHICO PROPER",
@@ -45621,7 +45621,7 @@
             ]
           },
           "MAROGONG": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN",
               "BALUT",
               "BITAYAN",
@@ -45649,7 +45649,7 @@
             ]
           },
           "MASIU": {
-            "barangay_list": [
+            "b": [
               "ABDULLAH BUISAN",
               "ALIP LALABUAN",
               "ALUMPANG PAINO MIMBALAY",
@@ -45688,7 +45688,7 @@
             ]
           },
           "MULONDO": {
-            "barangay_list": [
+            "b": [
               "BAGOAINGUD",
               "BANGON",
               "BUADI-ABALA",
@@ -45718,7 +45718,7 @@
             ]
           },
           "PAGAYAWAN (TATARIKAN)": {
-            "barangay_list": [
+            "b": [
               "AYONG",
               "BANDARA INGUD",
               "BANGON (POB.)",
@@ -45740,7 +45740,7 @@
             ]
           },
           "PIAGAPO": {
-            "barangay_list": [
+            "b": [
               "APOSONG",
               "BAGOAINGUD",
               "BANGCO (POB.)",
@@ -45781,7 +45781,7 @@
             ]
           },
           "PICONG (SULTAN GUMANDER)": {
-            "barangay_list": [
+            "b": [
               "ANAS",
               "BARA-AS",
               "BIASONG",
@@ -45804,7 +45804,7 @@
             ]
           },
           "POONA BAYABAO (GATA)": {
-            "barangay_list": [
+            "b": [
               "ATARAGADONG",
               "BANGON",
               "BANSAYAN",
@@ -45833,7 +45833,7 @@
             ]
           },
           "PUALAS": {
-            "barangay_list": [
+            "b": [
               "BADAK",
               "BANTAYAN",
               "BASAGAD",
@@ -45860,7 +45860,7 @@
             ]
           },
           "SAGUIARAN": {
-            "barangay_list": [
+            "b": [
               "ALINUN",
               "BAGOAINGUD",
               "BASAK MAITO",
@@ -45894,7 +45894,7 @@
             ]
           },
           "SULTAN DUMALONDONG": {
-            "barangay_list": [
+            "b": [
               "BACAYAWAN",
               "BUTA (SUMALINDAO)",
               "DINGANUN GUILOPA (DINGUNUN)",
@@ -45905,7 +45905,7 @@
             ]
           },
           "TAGOLOAN": {
-            "barangay_list": [
+            "b": [
               "BAGOAINGUD",
               "BANTALAN",
               "BAYOG",
@@ -45928,7 +45928,7 @@
             ]
           },
           "TAMPARAN": {
-            "barangay_list": [
+            "b": [
               "BALUTMADIAR",
               "BANGON",
               "BERUAR",
@@ -45976,7 +45976,7 @@
             ]
           },
           "TARAKA": {
-            "barangay_list": [
+            "b": [
               "BANDERA BUISAN",
               "BORIONGAN",
               "BOROWA",
@@ -46023,7 +46023,7 @@
             ]
           },
           "TUBARAN": {
-            "barangay_list": [
+            "b": [
               "ALOG",
               "BAGIANGUN",
               "BETA",
@@ -46048,7 +46048,7 @@
             ]
           },
           "TUGAYA": {
-            "barangay_list": [
+            "b": [
               "BAGOAINGUD",
               "BUADI ALAWANG",
               "BUADI DICO",
@@ -46075,7 +46075,7 @@
             ]
           },
           "WAO": {
-            "barangay_list": [
+            "b": [
               "AMOYONG",
               "BALATIN",
               "BANGA",
@@ -46107,9 +46107,9 @@
         }
       },
       "MAGUINDANAO": {
-        "municipality_list": {
+        "m": {
           "AMPATUAN": {
-            "barangay_list": [
+            "b": [
               "DICALONGAN (POB.)",
               "KAKAL",
               "KAMASI",
@@ -46124,7 +46124,7 @@
             ]
           },
           "BARIRA": {
-            "barangay_list": [
+            "b": [
               "BARIRA (POB.)",
               "BUALAN",
               "GADUNG",
@@ -46142,7 +46142,7 @@
             ]
           },
           "BULDON": {
-            "barangay_list": [
+            "b": [
               "AMPUAN",
               "ARATUC",
               "CABAYUAN",
@@ -46161,7 +46161,7 @@
             ]
           },
           "BULUAN": {
-            "barangay_list": [
+            "b": [
               "DIGAL",
               "LOWER SILING",
               "MASLABENG",
@@ -46172,7 +46172,7 @@
             ]
           },
           "COTABATO CITY": {
-            "barangay_list": [
+            "b": [
               "BAGUA",
               "BAGUA I",
               "BAGUA II",
@@ -46213,7 +46213,7 @@
             ]
           },
           "DATU ABDULLAH SANGKI": {
-            "barangay_list": [
+            "b": [
               "BANABA",
               "DIMAAMPAO",
               "GUINIBON",
@@ -46227,7 +46227,7 @@
             ]
           },
           "DATU ANGGAL MIDTIMBANG": {
-            "barangay_list": [
+            "b": [
               "ADAON",
               "BRAR",
               "MAPAYAG",
@@ -46238,7 +46238,7 @@
             ]
           },
           "DATU BLAH T. SINSUAT": {
-            "barangay_list": [
+            "b": [
               "KINIMI",
               "LAGUITAN",
               "LAPAKEN",
@@ -46255,7 +46255,7 @@
             ]
           },
           "DATU HOFFER AMPATUAN": {
-            "barangay_list": [
+            "b": [
               "KUBENTONG",
               "LABU-LABU I",
               "LABU-LABU II",
@@ -46270,7 +46270,7 @@
             ]
           },
           "DATU ODIN SINSUAT (DINAIG)": {
-            "barangay_list": [
+            "b": [
               "AMBOLODTO",
               "AWANG",
               "BADAK",
@@ -46308,7 +46308,7 @@
             ]
           },
           "DATU PAGLAS": {
-            "barangay_list": [
+            "b": [
               "ALIP (POB.)",
               "BONAWAN",
               "BULOD",
@@ -46335,7 +46335,7 @@
             ]
           },
           "DATU PIANG": {
-            "barangay_list": [
+            "b": [
               "ALONGANAN",
               "AMBADAO",
               "BALANAKAN",
@@ -46355,7 +46355,7 @@
             ]
           },
           "DATU SALIBO": {
-            "barangay_list": [
+            "b": [
               "ALONGANAN",
               "ANDAVIT",
               "BALANAKAN",
@@ -46376,7 +46376,7 @@
             ]
           },
           "DATU SAUDI AMPATUAN": {
-            "barangay_list": [
+            "b": [
               "DAPIAWAN",
               "ELIAN",
               "GAWANG",
@@ -46388,7 +46388,7 @@
             ]
           },
           "DATU UNSAY": {
-            "barangay_list": [
+            "b": [
               "BULAYAN",
               "IGANAGAMPONG",
               "MACALAG",
@@ -46400,7 +46400,7 @@
             ]
           },
           "GEN. S. K. PENDATUN": {
-            "barangay_list": [
+            "b": [
               "BADAK",
               "BULOD",
               "KALADTURAN",
@@ -46423,7 +46423,7 @@
             ]
           },
           "GUINDULUNGAN": {
-            "barangay_list": [
+            "b": [
               "AHAN",
               "BAGAN",
               "DATALPANDAN",
@@ -46438,7 +46438,7 @@
             ]
           },
           "KABUNTALAN (TUMBAO)": {
-            "barangay_list": [
+            "b": [
               "BAGUMBAYAN",
               "BUTERIN",
               "DADTUMOG (DADTUMEG)",
@@ -46459,7 +46459,7 @@
             ]
           },
           "MAMASAPANO": {
-            "barangay_list": [
+            "b": [
               "BAGUMBONG",
               "DABENAYAN",
               "DALADAP",
@@ -46477,7 +46477,7 @@
             ]
           },
           "MANGUDADATU": {
-            "barangay_list": [
+            "b": [
               "DALADAGAN",
               "KALIAN",
               "LUAYAN",
@@ -46489,7 +46489,7 @@
             ]
           },
           "MATANOG": {
-            "barangay_list": [
+            "b": [
               "BAYANGA NORTE",
               "BAYANGA SUR",
               "BUGASAN NORTE",
@@ -46501,7 +46501,7 @@
             ]
           },
           "NORTHERN KABUNTALAN": {
-            "barangay_list": [
+            "b": [
               "BALONG",
               "DAMATOG",
               "GAYONGA",
@@ -46516,7 +46516,7 @@
             ]
           },
           "PAGAGAWAN": {
-            "barangay_list": [
+            "b": [
               "BALATUNGKAYO (BATUNGKAYO)",
               "BULIT",
               "BULOD",
@@ -46531,7 +46531,7 @@
             ]
           },
           "PAGALUNGAN": {
-            "barangay_list": [
+            "b": [
               "BAGOENGED",
               "BULIOK",
               "DALGAN",
@@ -46547,7 +46547,7 @@
             ]
           },
           "PAGLAT": {
-            "barangay_list": [
+            "b": [
               "CAMPO",
               "DAMAKLING",
               "DAMALUSAY",
@@ -46559,7 +46559,7 @@
             ]
           },
           "PANDAG": {
-            "barangay_list": [
+            "b": [
               "KABULING",
               "KAYAGA",
               "KAYUPO (CUYAPO)",
@@ -46571,7 +46571,7 @@
             ]
           },
           "PARANG": {
-            "barangay_list": [
+            "b": [
               "BONGO ISLAND (LITAYEN)",
               "CAMPO ISLAM",
               "COTONGAN",
@@ -46600,7 +46600,7 @@
             ]
           },
           "RAJAH BUAYAN": {
-            "barangay_list": [
+            "b": [
               "BAITAL",
               "BAKAT",
               "DAPANTIS",
@@ -46615,7 +46615,7 @@
             ]
           },
           "SHARIFF AGUAK (MAGANOY)": {
-            "barangay_list": [
+            "b": [
               "BAGONG",
               "BIALONG",
               "KULOY",
@@ -46632,7 +46632,7 @@
             ]
           },
           "SHARIFF SAYDONA MUSTAPHA": {
-            "barangay_list": [
+            "b": [
               "BAKAT",
               "DALE-BONG",
               "DASAWAO",
@@ -46652,7 +46652,7 @@
             ]
           },
           "SOUTH UPI": {
-            "barangay_list": [
+            "b": [
               "BIARONG",
               "BONGO",
               "ITAW",
@@ -46667,7 +46667,7 @@
             ]
           },
           "SULTAN KUDARAT (NULING)": {
-            "barangay_list": [
+            "b": [
               "ALAMADA",
               "BANATIN",
               "BANUBO",
@@ -46710,7 +46710,7 @@
             ]
           },
           "SULTAN MASTURA": {
-            "barangay_list": [
+            "b": [
               "BALUT",
               "BOLIOK",
               "BUNGABONG",
@@ -46727,7 +46727,7 @@
             ]
           },
           "SULTAN SA BARONGIS (LAMBAYONG)": {
-            "barangay_list": [
+            "b": [
               "ANGKAYAMAT",
               "BARURAO",
               "BULOD",
@@ -46743,7 +46743,7 @@
             ]
           },
           "TALAYAN": {
-            "barangay_list": [
+            "b": [
               "BINANGGA NORTH",
               "BINANGGA SOUTH",
               "BOBOGUIRON",
@@ -46762,7 +46762,7 @@
             ]
           },
           "TALITAY": {
-            "barangay_list": [
+            "b": [
               "BINTAN (BENTAN)",
               "GADUNGAN",
               "KILADAP",
@@ -46775,7 +46775,7 @@
             ]
           },
           "UPI": {
-            "barangay_list": [
+            "b": [
               "BANTEK",
               "BAYABAS",
               "BLENSONG",
@@ -46804,9 +46804,9 @@
         }
       },
       "SULU": {
-        "municipality_list": {
+        "m": {
           "HADJI PANGLIMA TAHIL (MARUNGGAS)": {
-            "barangay_list": [
+            "b": [
               "BANGAS (POB.)",
               "BUBUAN",
               "KABUUKAN",
@@ -46815,7 +46815,7 @@
             ]
           },
           "INDANAN": {
-            "barangay_list": [
+            "b": [
               "ADJID",
               "BANGALAN",
               "BATO-BATO",
@@ -46853,7 +46853,7 @@
             ]
           },
           "JOLO": {
-            "barangay_list": [
+            "b": [
               "ALAT",
               "ASTURIAS",
               "BUS-BUS",
@@ -46865,7 +46865,7 @@
             ]
           },
           "KALINGALAN CALUANG": {
-            "barangay_list": [
+            "b": [
               "KAMBING",
               "KANLAGAY",
               "KARUNGDONG (POB.)",
@@ -46878,7 +46878,7 @@
             ]
           },
           "LUGUS": {
-            "barangay_list": [
+            "b": [
               "ALU BUS-BUS",
               "ALU-DUYONG",
               "BAS LUGUS",
@@ -46899,7 +46899,7 @@
             ]
           },
           "LUUK": {
-            "barangay_list": [
+            "b": [
               "BUAL",
               "GUIMBAUN",
               "KAN-BULAK",
@@ -46915,7 +46915,7 @@
             ]
           },
           "MAIMBUNG": {
-            "barangay_list": [
+            "b": [
               "ANAK JATI",
               "BATO UGIS",
               "BUALO LAHI",
@@ -46946,7 +46946,7 @@
             ]
           },
           "OLD PANAMAO": {
-            "barangay_list": [
+            "b": [
               "ASIN",
               "BAKUD",
               "BANGDAY",
@@ -46981,7 +46981,7 @@
             ]
           },
           "OMAR": {
-            "barangay_list": [
+            "b": [
               "ANDALAN",
               "ANGILAN",
               "CAPUAL ISLAND",
@@ -46993,7 +46993,7 @@
             ]
           },
           "PANDAMI": {
-            "barangay_list": [
+            "b": [
               "BALIGTANG",
               "BUD SIBAUD",
               "HAMBILAN",
@@ -47013,7 +47013,7 @@
             ]
           },
           "PANGLIMA ESTINO (NEW PANAMAO)": {
-            "barangay_list": [
+            "b": [
               "GAGGUIL",
               "GATA-GATA",
               "JINGGAN",
@@ -47029,7 +47029,7 @@
             ]
           },
           "PANGUTARAN": {
-            "barangay_list": [
+            "b": [
               "ALU BUNAH",
               "BANGKILAY",
               "KAWITAN",
@@ -47049,7 +47049,7 @@
             ]
           },
           "PARANG": {
-            "barangay_list": [
+            "b": [
               "ALU LAYAG-LAYAG",
               "ALU PANGKOH",
               "BAGSAK",
@@ -47093,7 +47093,7 @@
             ]
           },
           "PATA": {
-            "barangay_list": [
+            "b": [
               "ANDALAN",
               "DAUNGDONG",
               "KAMAWI",
@@ -47111,7 +47111,7 @@
             ]
           },
           "PATIKUL": {
-            "barangay_list": [
+            "b": [
               "ANULING",
               "BAKONG",
               "BANGKAL",
@@ -47145,7 +47145,7 @@
             ]
           },
           "SIASI": {
-            "barangay_list": [
+            "b": [
               "BAKUD",
               "BUAN",
               "BULANSING TARA",
@@ -47199,7 +47199,7 @@
             ]
           },
           "TALIPAO": {
-            "barangay_list": [
+            "b": [
               "ANDALAN",
               "BAGSAK",
               "BANDANG",
@@ -47255,7 +47255,7 @@
             ]
           },
           "TAPUL": {
-            "barangay_list": [
+            "b": [
               "ALU-KABINGAAN",
               "BANTING",
               "HAWAN",
@@ -47274,7 +47274,7 @@
             ]
           },
           "TONGKIL": {
-            "barangay_list": [
+            "b": [
               "BAKKAAN",
               "BANGALAW",
               "DANAO",
@@ -47294,9 +47294,9 @@
         }
       },
       "TAWI-TAWI": {
-        "municipality_list": {
+        "m": {
           "BONGAO": {
-            "barangay_list": [
+            "b": [
               "BONGAO POBLACION",
               "IPIL",
               "KAMAGONG",
@@ -47335,7 +47335,7 @@
             ]
           },
           "LANGUYAN": {
-            "barangay_list": [
+            "b": [
               "ADNIN",
               "BAKAW-BAKAW",
               "BAKONG",
@@ -47359,7 +47359,7 @@
             ]
           },
           "MAPUN (CAGAYAN DE TAWI-TAWI)": {
-            "barangay_list": [
+            "b": [
               "BOKI",
               "DUHUL BATU",
               "EROK-EROK",
@@ -47378,7 +47378,7 @@
             ]
           },
           "PANGLIMA SUGALA (BALIMBING)": {
-            "barangay_list": [
+            "b": [
               "BALIMBING PROPER",
               "BATU-BATU (POB.)",
               "BAUNO GARING",
@@ -47399,7 +47399,7 @@
             ]
           },
           "SAPA-SAPA": {
-            "barangay_list": [
+            "b": [
               "BALDATAL ISLAM",
               "BUTUN",
               "DALO-DALO",
@@ -47425,7 +47425,7 @@
             ]
           },
           "SIBUTU": {
-            "barangay_list": [
+            "b": [
               "AMBULONG SAPAL",
               "DATU AMILHAMJA JAAFAR",
               "HADJI IMAM BIDIN",
@@ -47445,7 +47445,7 @@
             ]
           },
           "SIMUNUL": {
-            "barangay_list": [
+            "b": [
               "BAGID*",
               "BAKONG",
               "DOH-TONG",
@@ -47464,7 +47464,7 @@
             ]
           },
           "SITANGKAI": {
-            "barangay_list": [
+            "b": [
               "DATU BAGUINDA PUTIH",
               "IMAM SAPIE",
               "NORTH LARAP",
@@ -47477,7 +47477,7 @@
             ]
           },
           "SOUTH UBIAN": {
-            "barangay_list": [
+            "b": [
               "BABAGAN",
               "BENGKOL",
               "BINTAWLAN",
@@ -47512,7 +47512,7 @@
             ]
           },
           "TANDUBAS": {
-            "barangay_list": [
+            "b": [
               "BALIUNGAN",
               "BALLAK",
               "BUTUN",
@@ -47536,7 +47536,7 @@
             ]
           },
           "TURTLE ISLANDS": {
-            "barangay_list": [
+            "b": [
               "LIKUD BAKKAO",
               "TAGANAK POBLACION"
             ]
@@ -47545,13 +47545,13 @@
       }
     }
   },
-  "CAR": {
-    "region_name": "CAR",
-    "province_list": {
+  {
+    "r": "CAR",
+    "p": {
       "ABRA": {
-        "municipality_list": {
+        "m": {
           "BANGUED": {
-            "barangay_list": [
+            "b": [
               "AGTANGAO",
               "ANGAD",
               "BANGBANGAR",
@@ -47586,7 +47586,7 @@
             ]
           },
           "BOLINEY": {
-            "barangay_list": [
+            "b": [
               "AMTI",
               "BAO-YAN",
               "DANAC EAST",
@@ -47598,7 +47598,7 @@
             ]
           },
           "BUCAY": {
-            "barangay_list": [
+            "b": [
               "ABANG",
               "BANGBANGCAG",
               "BANGCAGAN",
@@ -47623,7 +47623,7 @@
             ]
           },
           "BUCLOC": {
-            "barangay_list": [
+            "b": [
               "DUCLIGAN",
               "LABAAN",
               "LAMAO (POB.)",
@@ -47631,7 +47631,7 @@
             ]
           },
           "DAGUIOMAN": {
-            "barangay_list": [
+            "b": [
               "ABLEG",
               "CABARUYAN",
               "PIKEK",
@@ -47639,7 +47639,7 @@
             ]
           },
           "DANGLAS": {
-            "barangay_list": [
+            "b": [
               "ABAQUID",
               "CABARUAN",
               "CAUPASAN (POB.)",
@@ -47650,7 +47650,7 @@
             ]
           },
           "DOLORES": {
-            "barangay_list": [
+            "b": [
               "BAYAAN",
               "CABAROAN",
               "CALUMBAYA",
@@ -47669,7 +47669,7 @@
             ]
           },
           "LA PAZ": {
-            "barangay_list": [
+            "b": [
               "BENBEN (BONBON)",
               "BULBULALA",
               "BULI",
@@ -47685,7 +47685,7 @@
             ]
           },
           "LACUB": {
-            "barangay_list": [
+            "b": [
               "BACAG",
               "BUNEG",
               "GUINGUINABANG",
@@ -47695,7 +47695,7 @@
             ]
           },
           "LAGANGILANG": {
-            "barangay_list": [
+            "b": [
               "AGUET",
               "BACOOC",
               "BALAIS",
@@ -47716,7 +47716,7 @@
             ]
           },
           "LAGAYAN": {
-            "barangay_list": [
+            "b": [
               "BA-I",
               "COLLAGO",
               "PANG-OT",
@@ -47725,7 +47725,7 @@
             ]
           },
           "LANGIDEN": {
-            "barangay_list": [
+            "b": [
               "BAAC",
               "DALAYAP (NALAAS)",
               "MABUNGTOT",
@@ -47735,7 +47735,7 @@
             ]
           },
           "LICUAN-BAAY (LICUAN)": {
-            "barangay_list": [
+            "b": [
               "BONGLO (PATAGUI)",
               "BULBULALA",
               "CAWAYAN",
@@ -47750,7 +47750,7 @@
             ]
           },
           "LUBA": {
-            "barangay_list": [
+            "b": [
               "AMPALIOC",
               "BARIT",
               "GAYAMAN",
@@ -47762,7 +47762,7 @@
             ]
           },
           "MALIBCONG": {
-            "barangay_list": [
+            "b": [
               "BAYABAS",
               "BINASARAN",
               "BUANAO",
@@ -47778,7 +47778,7 @@
             ]
           },
           "MANABO": {
-            "barangay_list": [
+            "b": [
               "AYYENG (POB.)",
               "CATACDEGAN NUEVO",
               "CATACDEGAN VIEJO",
@@ -47793,7 +47793,7 @@
             ]
           },
           "PEÑARRUBIA": {
-            "barangay_list": [
+            "b": [
               "DUMAYCO",
               "LUSUAC",
               "MALAMSIT (PAU-MALAMSIT)",
@@ -47806,7 +47806,7 @@
             ]
           },
           "PIDIGAN": {
-            "barangay_list": [
+            "b": [
               "ALINAYA",
               "ARAB",
               "GARRETA",
@@ -47825,7 +47825,7 @@
             ]
           },
           "PILAR": {
-            "barangay_list": [
+            "b": [
               "BOLBOLO",
               "BROOKSIDE",
               "DALIT",
@@ -47848,7 +47848,7 @@
             ]
           },
           "SALLAPADAN": {
-            "barangay_list": [
+            "b": [
               "BAZAR",
               "BILABILA",
               "GANGAL (POB.)",
@@ -47861,7 +47861,7 @@
             ]
           },
           "SAN ISIDRO": {
-            "barangay_list": [
+            "b": [
               "CABAYOGAN",
               "DALIMAG",
               "LANGBABAN",
@@ -47874,7 +47874,7 @@
             ]
           },
           "SAN JUAN": {
-            "barangay_list": [
+            "b": [
               "ABUALAN",
               "BA-UG",
               "BADAS",
@@ -47897,7 +47897,7 @@
             ]
           },
           "SAN QUINTIN": {
-            "barangay_list": [
+            "b": [
               "LABAAN",
               "PALANG",
               "PANTOC",
@@ -47907,7 +47907,7 @@
             ]
           },
           "TAYUM": {
-            "barangay_list": [
+            "b": [
               "BAGALAY",
               "BASBASA",
               "BUDAC",
@@ -47922,7 +47922,7 @@
             ]
           },
           "TINEG": {
-            "barangay_list": [
+            "b": [
               "ALAOA",
               "ANAYAN",
               "APAO",
@@ -47936,7 +47936,7 @@
             ]
           },
           "TUBO": {
-            "barangay_list": [
+            "b": [
               "ALANGTIN",
               "AMTUAGAN",
               "DILONG",
@@ -47950,7 +47950,7 @@
             ]
           },
           "VILLAVICIOSA": {
-            "barangay_list": [
+            "b": [
               "AP-APAYA",
               "BOL-LILISING",
               "CAL-LAO",
@@ -47964,9 +47964,9 @@
         }
       },
       "APAYAO": {
-        "municipality_list": {
+        "m": {
           "CALANASAN (BAYAG)": {
-            "barangay_list": [
+            "b": [
               "BUTAO",
               "CADACLAN",
               "DON ROQUE ABLAN SR.",
@@ -47988,7 +47988,7 @@
             ]
           },
           "CONNER": {
-            "barangay_list": [
+            "b": [
               "ALLANGIGAN",
               "BANBAN",
               "BULUAN",
@@ -48013,7 +48013,7 @@
             ]
           },
           "FLORA": {
-            "barangay_list": [
+            "b": [
               "ALLIG",
               "ANNINIPAN",
               "ATOK",
@@ -48033,7 +48033,7 @@
             ]
           },
           "KABUGAO": {
-            "barangay_list": [
+            "b": [
               "BADDUAT",
               "BALIWANAN",
               "BULU",
@@ -48058,7 +48058,7 @@
             ]
           },
           "LUNA": {
-            "barangay_list": [
+            "b": [
               "BACSAY",
               "CAGANDUNGAN",
               "CALABIGAN",
@@ -48084,7 +48084,7 @@
             ]
           },
           "PUDTOL": {
-            "barangay_list": [
+            "b": [
               "AGA",
               "ALEM",
               "AMADO",
@@ -48110,7 +48110,7 @@
             ]
           },
           "SANTA MARCELA": {
-            "barangay_list": [
+            "b": [
               "BAROCBOC",
               "CONSUELO",
               "EMILIANA",
@@ -48129,9 +48129,9 @@
         }
       },
       "BENGUET": {
-        "municipality_list": {
+        "m": {
           "ATOK": {
-            "barangay_list": [
+            "b": [
               "ABIANG",
               "CALIKING",
               "CATTUBO",
@@ -48143,7 +48143,7 @@
             ]
           },
           "BAGUIO CITY": {
-            "barangay_list": [
+            "b": [
               "A. BONIFACIO-CAGUIOA-RIMANDO (ABCR)",
               "ABANAO-ZANDUETA-KAYANG-CHUGUM-OTEK (AZKCO)",
               "ALFONSO TABORA",
@@ -48275,7 +48275,7 @@
             ]
           },
           "BAKUN": {
-            "barangay_list": [
+            "b": [
               "AMPUSONGAN",
               "BAGU",
               "DALIPEY",
@@ -48286,7 +48286,7 @@
             ]
           },
           "BOKOD": {
-            "barangay_list": [
+            "b": [
               "AMBUCLAO",
               "BILA",
               "BOBOK-BISAL",
@@ -48300,7 +48300,7 @@
             ]
           },
           "BUGUIAS": {
-            "barangay_list": [
+            "b": [
               "ABATAN",
               "AMGALEYGUEY",
               "AMLIMAY",
@@ -48318,7 +48318,7 @@
             ]
           },
           "ITOGON": {
-            "barangay_list": [
+            "b": [
               "AMPUCAO",
               "DALUPIRIP",
               "GUMATDANG",
@@ -48331,7 +48331,7 @@
             ]
           },
           "KABAYAN": {
-            "barangay_list": [
+            "b": [
               "ADAOAY",
               "ANCHUKEY",
               "BALLAY",
@@ -48348,7 +48348,7 @@
             ]
           },
           "KAPANGAN": {
-            "barangay_list": [
+            "b": [
               "BALAKBAK",
               "BELENG-BELIS",
               "BOKLAOAN",
@@ -48367,7 +48367,7 @@
             ]
           },
           "KIBUNGAN": {
-            "barangay_list": [
+            "b": [
               "BADEO",
               "LUBO",
               "MADAYMEN",
@@ -48378,7 +48378,7 @@
             ]
           },
           "LA TRINIDAD": {
-            "barangay_list": [
+            "b": [
               "ALAPANG",
               "ALNO",
               "AMBIONG",
@@ -48398,7 +48398,7 @@
             ]
           },
           "MANKAYAN": {
-            "barangay_list": [
+            "b": [
               "BALILI",
               "BEDBED",
               "BULALACAO",
@@ -48414,7 +48414,7 @@
             ]
           },
           "SABLAN": {
-            "barangay_list": [
+            "b": [
               "BAGONG",
               "BALLUAY",
               "BANANGAN",
@@ -48426,7 +48426,7 @@
             ]
           },
           "TUBA": {
-            "barangay_list": [
+            "b": [
               "ANSAGAN",
               "CAMP 3",
               "CAMP 4",
@@ -48443,7 +48443,7 @@
             ]
           },
           "TUBLAY": {
-            "barangay_list": [
+            "b": [
               "AMBASSADOR",
               "AMBONGDOLAN",
               "BA-AYAN",
@@ -48457,9 +48457,9 @@
         }
       },
       "IFUGAO": {
-        "municipality_list": {
+        "m": {
           "AGUINALDO": {
-            "barangay_list": [
+            "b": [
               "AWAYAN",
               "BUNHIAN",
               "BUTAC",
@@ -48479,7 +48479,7 @@
             ]
           },
           "ALFONSO LISTA (POTIA)": {
-            "barangay_list": [
+            "b": [
               "BANGAR",
               "BUSILAC",
               "CALIMAG",
@@ -48503,7 +48503,7 @@
             ]
           },
           "ASIPULO": {
-            "barangay_list": [
+            "b": [
               "AMDUNTOG",
               "ANTIPOLO",
               "CAMANDAG",
@@ -48517,7 +48517,7 @@
             ]
           },
           "BANAUE": {
-            "barangay_list": [
+            "b": [
               "AMGANAD",
               "ANABA",
               "BALAWIS",
@@ -48539,7 +48539,7 @@
             ]
           },
           "HINGYON": {
-            "barangay_list": [
+            "b": [
               "ANAO",
               "BANGTINON",
               "BITU",
@@ -48555,7 +48555,7 @@
             ]
           },
           "HUNGDUAN": {
-            "barangay_list": [
+            "b": [
               "ABATAN",
               "BA-ANG",
               "BANGBANG",
@@ -48568,7 +48568,7 @@
             ]
           },
           "KIANGAN": {
-            "barangay_list": [
+            "b": [
               "AMBABAG",
               "BAGUINGE",
               "BOKIAWAN",
@@ -48586,7 +48586,7 @@
             ]
           },
           "LAGAWE": {
-            "barangay_list": [
+            "b": [
               "ABINUAN",
               "BANGA",
               "BOLIWONG",
@@ -48610,7 +48610,7 @@
             ]
           },
           "LAMUT": {
-            "barangay_list": [
+            "b": [
               "AMBASA",
               "BIMPAL",
               "HAPID",
@@ -48632,7 +48632,7 @@
             ]
           },
           "MAYOYAO": {
-            "barangay_list": [
+            "b": [
               "ADUYONGAN",
               "ALIMIT",
               "AYANGAN",
@@ -48663,7 +48663,7 @@
             ]
           },
           "TINOC": {
-            "barangay_list": [
+            "b": [
               "AHIN",
               "AP-APID",
               "BINABLAYAN",
@@ -48681,9 +48681,9 @@
         }
       },
       "KALINGA": {
-        "municipality_list": {
+        "m": {
           "BALBALAN": {
-            "barangay_list": [
+            "b": [
               "ABABA-AN",
               "BALANTOY",
               "BALBALAN PROPER",
@@ -48701,7 +48701,7 @@
             ]
           },
           "LUBUAGAN": {
-            "barangay_list": [
+            "b": [
               "ANTONIO CANAO",
               "DANGOY",
               "LOWER UMA",
@@ -48714,7 +48714,7 @@
             ]
           },
           "PASIL": {
-            "barangay_list": [
+            "b": [
               "ABLEG",
               "BAGTAYAN",
               "BALATOC",
@@ -48732,7 +48732,7 @@
             ]
           },
           "PINUKPUK": {
-            "barangay_list": [
+            "b": [
               "ACIGA",
               "ALLAGUIA",
               "AMMACIAN",
@@ -48759,7 +48759,7 @@
             ]
           },
           "RIZAL (LIWAN)": {
-            "barangay_list": [
+            "b": [
               "BABALAG EAST (POB.)",
               "BABALAG WEST (POB.)",
               "BULBOL",
@@ -48777,7 +48777,7 @@
             ]
           },
           "TABUK CITY": {
-            "barangay_list": [
+            "b": [
               "AGBANNAWAG",
               "AMLAO",
               "APPAS",
@@ -48823,7 +48823,7 @@
             ]
           },
           "TANUDAN": {
-            "barangay_list": [
+            "b": [
               "ANGGACAN",
               "ANGGACAN SUR",
               "BABBANOY",
@@ -48843,7 +48843,7 @@
             ]
           },
           "TINGLAYAN": {
-            "barangay_list": [
+            "b": [
               "AMBATO LEGLEG",
               "BANGAD CENTRO",
               "BASAO",
@@ -48869,9 +48869,9 @@
         }
       },
       "MOUNTAIN PROVINCE": {
-        "municipality_list": {
+        "m": {
           "BARLIG": {
-            "barangay_list": [
+            "b": [
               "CHUPAC",
               "FIANGTIN",
               "GAWANA (POB.)",
@@ -48886,7 +48886,7 @@
             ]
           },
           "BAUKO": {
-            "barangay_list": [
+            "b": [
               "ABATAN",
               "BAGNEN ORIENTE",
               "BAGNEN PROPER",
@@ -48912,7 +48912,7 @@
             ]
           },
           "BESAO": {
-            "barangay_list": [
+            "b": [
               "AGAWA",
               "AMBAGUIO",
               "BANGUITAN",
@@ -48930,7 +48930,7 @@
             ]
           },
           "BONTOC": {
-            "barangay_list": [
+            "b": [
               "ALAB ORIENTE",
               "ALAB PROPER",
               "BALILI",
@@ -48950,7 +48950,7 @@
             ]
           },
           "NATONIN": {
-            "barangay_list": [
+            "b": [
               "ALUNOGAN",
               "BALANGAO",
               "BANAO",
@@ -48965,7 +48965,7 @@
             ]
           },
           "PARACELIS": {
-            "barangay_list": [
+            "b": [
               "ANONAT",
               "BACARNI",
               "BANANAO",
@@ -48978,7 +48978,7 @@
             ]
           },
           "SABANGAN": {
-            "barangay_list": [
+            "b": [
               "BAO-ANGAN",
               "BUN-AYAN",
               "BUSA",
@@ -48997,7 +48997,7 @@
             ]
           },
           "SADANGA": {
-            "barangay_list": [
+            "b": [
               "ANABEL",
               "BEKIGAN",
               "BELWANG",
@@ -49009,7 +49009,7 @@
             ]
           },
           "SAGADA": {
-            "barangay_list": [
+            "b": [
               "AGUID",
               "AMBASING",
               "ANGKELING",
@@ -49032,7 +49032,7 @@
             ]
           },
           "TADIAN": {
-            "barangay_list": [
+            "b": [
               "BALAOA",
               "BANAAO",
               "BANTEY",
@@ -49058,4 +49058,4 @@
       }
     }
   }
-}
+]

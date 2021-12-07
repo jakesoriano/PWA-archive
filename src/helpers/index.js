@@ -13,3 +13,4 @@ export * from './config';
 export * from './loader';
 export * from './number';
 export * from './date';
+export * from './locations';

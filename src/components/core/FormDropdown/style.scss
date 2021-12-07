@@ -1,0 +1,21 @@
+.formDropdown {
+	border: none;
+	border-bottom: 1px solid #737373;
+	padding: 10px 0;
+	background: none;
+	display: block;
+	width: 100%;
+	&::placeholder {
+		font-size: 0.6rem;
+	}
+	&.error {
+		border-color: red;
+	}
+}
+.text {
+	font-size: 0.6rem;
+	margin: 5px 0;
+	&.errorText {
+		color: red;
+	}
+}

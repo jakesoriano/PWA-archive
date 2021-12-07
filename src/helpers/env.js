@@ -8,3 +8,4 @@ export const urlEvents = '/{PUBLIC_PATH}assets/data/events.json?_{_}';
 export const urlMembers = '/{PUBLIC_PATH}assets/data/members.json?_{_}';
 export const urlSendOTP = `${process.env.API_DOMAIN}assets/data/otp.json?_={_}`;
 export const urlValidateOTP = `${process.env.API_DOMAIN}assets/data/otp.json?_={_}`;
+export const urlInvited = '/{PUBLIC_PATH}assets/data/invited.json?_{_}';

@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { getTranslation } from '_helpers';
-import ButtonDescription from '_components/core/ButtonDescription';
+import { ButtonDescription }  from '_components/core';
 import style from './style.scss';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -266,8 +266,8 @@ class TermsConditions extends Component {
 	      <div className={style.buttonContainer}>
 	        <ButtonDescription
 	          onClickCallback={this.handleContinue}
-	          text="Continue"
-	          bottomDescription="By clicking continue, I accept the terms and conditions indicated herewith."
+	          text="CONTINUE"
+	          bottomDescription="TERMS_BOTTON_DESC"
 	          isDisabled={this.state.isReading}
 	        />
 	      </div>

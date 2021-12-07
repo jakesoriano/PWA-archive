@@ -1,0 +1,33 @@
+.inputWrap {
+	.formInput {
+		border: none;
+		border-bottom: 1px solid #737373;
+		padding: 10px 0;
+		display: block;
+		width: 100%;
+		background: #fff;
+		&::placeholder {
+			font-size: 0.6rem;
+		}
+		&.error {
+			border-color: red;
+		}
+	}
+	.text {
+		font-size: 0.6rem;
+		margin: 5px 0;
+		&.errorText {
+			color: red;
+		}
+	}
+	&.isCheckRadio {
+		margin: 10px 0px;
+		display: flex;
+		input[type='checkbox'],
+		input[type='radio'] {
+			display: inline-block;
+			width: max-content !important;
+			margin-right: 5px;
+		}
+	}
+}
