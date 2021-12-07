@@ -5,7 +5,7 @@ import style from './style';
 
 export default (props) => (
   <div className={`${style.formGroup} ${props.className || ''}`}>
-    {props.label && <label>{getTranslation(props.label)}</label>}
+    {props.label && <label className={`${props.hasError ? style.error : ''}`}>{getTranslation(props.label)}</label>}
     {props.children}
   </div>
 );

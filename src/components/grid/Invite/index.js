@@ -90,7 +90,7 @@ class Invite extends Component {
 	  return (
 			<div className={style.inviteWrap}>
 				<form className={style.form}>
-					<FormGroup label="NAME">
+					<FormGroup label="NAME" hasError={fname.hasError || lname.hasError}>
 						<FormInput
 							className={style.name}
 							style={{error: style.name}}
@@ -122,7 +122,7 @@ class Invite extends Component {
 							error={lname.error}
 							message={lname.message} />
 					</FormGroup>
-					<FormGroup label="REGION">
+					<FormGroup label="REGION" hasError={region.hasError}>
 						<FormDropdown
 							label=""
 							className={style.region}

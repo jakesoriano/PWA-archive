@@ -5,6 +5,7 @@
     padding: 0px 5px 10px;
     .name {
       margin-left: 20px;
+      width: calc( 100% - 20px);
     }
     .invite {
       display: flex;
