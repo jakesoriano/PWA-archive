@@ -19,6 +19,17 @@ class AccountProfile extends Component {
 	  }
 	};
 
+	onShare = () => {
+		nativeShare({
+			title: `Be a Hero`,
+			message: `\n
+				I've earned ${this.props.authUser.point} Hero Points. \n\n
+				Download the kakampink App, enter the referral code "${this.props.authUser.refCode}" and let's show our support!\n\n
+				#LetLeniLead
+			`
+		});
+	}
+
 	render = ({ authUser, members }) => {
 	  if (!authUser) {
 	    return <LoaderRing fullpage />;
@@ -37,11 +48,7 @@ class AccountProfile extends Component {
 							<p className={style.members}>{`${formatNumber(authUser.points, 2)} ${getTranslation('PTS')} `}</p>
 						</div>
 						<a onClick={() => {
-							nativeShare({
-								message: `${getTranslation('RANK')}: ${formatNumber(authUser.rank, 0)}\n${getTranslation('HERO_POINTS')}: ${formatNumber(authUser.points, 2)}\n\n${getTranslation('TOP_PERFORMERS')}${members.data.sort((a, b) => a.rank - b.rank).reduce((r, i) => {
-										return r + `\n${formatNumber(i.rank)} - ${i.fname} ${i.lname}`
-									}, '')}`
-							})
+							this.onShare();
 						}}>
 						<ImageLoader 
 							src="assets/images/share_icon.png"

@@ -39,10 +39,10 @@ class NewsAndEvents extends Component {
 		});
 	};
 
-	shareNews = (item) => {
+	onShareNews = (item) => {
 		nativeShare({
 			url: item.image,
-			title: `Kakampink - ${item.title}`,
+			title: item.title,
 			message: `\n\n
 				We tell it as it is. Only the truth, KakamPink!\n\n
 				Shared via Kakampink App\n
@@ -50,20 +50,21 @@ class NewsAndEvents extends Component {
 				Android: ${playStore}\n
 				Apple: ${appStore}\n\n
 				Article Title: ${item.title}\n
-				Ariticle Link: ${item.link || ''}
+				Ariticle Link: ${item.link || ''}\n
+				Use my invite code: ${this.props.authUser.refCode}
 			`
-		})
+		});
 	};
 
-	shareEvent = (item) => {
+	onShareEvent = (item) => {
 		nativeShare({
 			url: item.image,
-			title: `Kakampink - ${item.title}`,
+			title: item.title,
 			message: `\n\n
 				Unity despite diversity leads to victory. Come join us, KakamPink!\n\n
 				Event Title: ${item.title}\n
 				Event Date: ${dateEventFormat(item.date)}\n
-				Event Link: ${item.link || ''}\n\n
+				${item.link ? 'Event Link: ' + item.link : ''}\n\n
 				${getTranslation(item.isOnline ? 'ONLINE_EVENT' : 'ONSITE_EVENT')}:\n
 				Event Location: ${item.location}
 			`
@@ -106,9 +107,9 @@ class NewsAndEvents extends Component {
 					/>
 					<a className={style.pShare} onClick={() => {
 						if(this.state.active == 'news') {
-							this.shareNews(this.state.selectedItem);
+							this.onShareNews(this.state.selectedItem);
 						} else {
-							this.shareEvent(this.state.selectedItem);
+							this.onShareEvent(this.state.selectedItem);
 						}
 					}}>
 						<ImageLoader
@@ -154,7 +155,7 @@ class NewsAndEvents extends Component {
 						<a
 							className={`bold ${style.buttonShare} ${i.liked ? style.buttonShareActive : ''}`}
 							onClick={() => {
-								this.shareNews(i);
+								this.onShareNews(i);
 							}}>{getTranslation('SHARE')}</a>
 					</div>
 				</div>
@@ -198,7 +199,7 @@ class NewsAndEvents extends Component {
 						<a
 							className={`bold ${style.buttonShare} ${i.liked ? style.buttonShareActive : ''}`}
 							onClick={() => {
-								this.shareEvent(i);
+								this.onShareEvent(i);
 							}}>{getTranslation('SHARE')}</a>
 					</div>
 				</div>
@@ -231,4 +232,4 @@ class NewsAndEvents extends Component {
 		);
 	};
 }
-export default connect(['news', 'events'])(NewsAndEvents);
+export default connect(['news', 'events', 'authUser'])(NewsAndEvents);

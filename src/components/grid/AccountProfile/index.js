@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader } from '_components/core';
 import { fetchUserData, fetchUserPoints } from '_mutations';
-import { getTranslation, formatNumber } from '_helpers';
+import { getTranslation, formatNumber, playStore, appStore } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -18,6 +18,20 @@ class AccountProfile extends Component {
 	    fetchUserPoints();
 	  }
 	};
+
+	onShare = () => {
+		nativeShare({
+			title: `Be a Hero`,
+			message: `\n
+				I've earned ${this.props.authUser.points} Hero Points!\n
+				Download the KakamPink App!\n\n
+				Android: ${playStore}\n
+				Apple: ${appStore}\n
+				Use my invite code: ${this.props.authUser.refCode}\n\n
+				#LetLeniLead
+			`
+		});
+	}
 
 	render = ({ authUser }) => {
 	  if (!authUser) {
@@ -36,9 +50,7 @@ class AccountProfile extends Component {
 							<p className={style.members}>{`${formatNumber(authUser.members, 2)} ${getTranslation('MEMBERS')}`}</p>
 						</div>
 						<a onClick={() => {
-							nativeShare({
-								message: `${getTranslation('MEMBERS')}: ${formatNumber(authUser.members, 2)}\n${getTranslation('HERO_POINTS')}: ${formatNumber(authUser.points, 2)}`
-							})
+							this.onShare();
 						}}>
 							<ImageLoader 
 								src="assets/images/share_icon.png"

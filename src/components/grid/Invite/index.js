@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { fetchInvited } from '_mutations';
-import { getTranslation, getRegions} from '_helpers';
+import { getTranslation, getRegions, playStore, appStore} from '_helpers';
 import { FormGroup, FormInput, FormDropdown, ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
@@ -80,7 +80,14 @@ class Invite extends Component {
 			this.onRegionChange(this.state.region.value);
 		} else {
 			nativeShare({
-				message: `Hi ${this.state.fname.value}, You are invited: ${this.props.authUser.refCode}`
+				title: `Be a KakamPink`,
+				message: `\n
+					Come join us, be a KakamPink!\n\n
+					Download now!\n
+					Android: ${playStore}\n
+					Apple: ${appStore}\n\n
+					Use my invite code: ${this.props.authUser.refCode}
+				`
 			});
 		}
 	}
