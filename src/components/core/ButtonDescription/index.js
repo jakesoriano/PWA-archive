@@ -1,4 +1,5 @@
 import { Component } from 'preact';
+import { getTranslation } from '_helpers';
 import style from './style.scss';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -12,9 +13,9 @@ class ButtonDescription extends Component {
 	        disabled={isDisabled}
 	        onClick={(e) => onClickCallback(e)}
 	      >
-	        {text}
+	        {getTranslation(text)}
 	      </button>
-	      {bottomDescription && <p className={style.small}>{bottomDescription}</p>}
+	      {bottomDescription && <p className={style.small}>{getTranslation(bottomDescription)}</p>}
 	    </div>
 	  );
 	};

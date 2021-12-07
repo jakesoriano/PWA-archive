@@ -8,6 +8,26 @@
 				"component": "LandingPage"
 			}
 		]
+	},	
+	{
+		"styles": [],
+		"pageTitle": "PAGE_TERMS",
+		"uri": "terms",
+		"contents": [
+			{
+				"component": "TermsConditions"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"pageTitle": "PAGE_SIGNUP",
+		"uri": "signup",
+		"contents": [
+			{
+				"component": "Signup"
+			}
+		]
 	},
 	{
 		"styles": [],
@@ -126,16 +146,6 @@
 		"contents": [
 			{
 				"component": "ModalButtons"
-			}
-		]
-	},	
-	{
-		"styles": [],
-		"pageTitle": "PAGE_TERMS",
-		"uri": "terms",
-		"contents": [
-			{
-				"component": "TermsConditions"
 			}
 		]
 	}
