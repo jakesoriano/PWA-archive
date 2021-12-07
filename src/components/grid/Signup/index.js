@@ -101,7 +101,7 @@ class Signup extends Component {
 			customBack: () => {
 				route('/landing/terms', true)
 			}
-		})
+		});
 	};
 	
 	onFnameChange = (value) => {

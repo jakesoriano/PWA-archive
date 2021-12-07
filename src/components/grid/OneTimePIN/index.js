@@ -1,4 +1,5 @@
 import { Component } from 'preact';
+import { route } from 'preact-router';
 import { getTranslation } from '_helpers';
 import { verifyOTP, sendOTP } from '_mutations';
 import { connect } from 'unistore/preact';
@@ -19,7 +20,14 @@ class OneTimePIN extends Component {
 	}
 	componentDidMount = () => {
 		const { signup } = this.props;
-		if (signup && signup.hasOwnProperty('number')) sendOTP(signup.number);
+		if (signup && signup.hasOwnProperty('number')) {
+			sendOTP(signup.number);
+		}
+		updateStore({
+			customBack: () => {
+				route('/landing/signup', true)
+			}
+		});
 	};
 	handleContinue = (e) => {
 		let { pin, isOTPInvalid } = this.state;
@@ -77,22 +85,19 @@ class OneTimePIN extends Component {
 		}
 	};
 
-	render = () => {
+	render = ({}, { pin }) => {
 		return (
 			<div className={style.otpWrapper}>
 				<div className={style.otpContent}>
 					<p className={style.heading}>{getTranslation('OTP_ENTER')}</p>
 					<label for="enteredPIN">
 						<div className={style.otpBoxContainer}>
-							{[...Array(6)].map((x, i) => {
-								let { pin } = this.state;
-								let digits = pin ? pin.toString() : pin;
-								return (
-									<div className={style.otpBox}>
-										{pin ? digits.charAt(i) : ''}
-									</div>
-								);
-							})}
+							<div className={style.otpBox}>{pin ? pin.toString().charAt(0) : ''}</div>
+							<div className={style.otpBox}>{pin ? pin.toString().charAt(1) : ''}</div>
+							<div className={style.otpBox}>{pin ? pin.toString().charAt(2) : ''}</div>
+							<div className={style.otpBox}>{pin ? pin.toString().charAt(3) : ''}</div>
+							<div className={style.otpBox}>{pin ? pin.toString().charAt(4) : ''}</div>
+							<div className={style.otpBox}>{pin ? pin.toString().charAt(5) : ''}</div>
 						</div>
 					</label>
 					<p>{getTranslation('OTP_SENT').replace('{4_DIGITS}', '1234')}</p>
