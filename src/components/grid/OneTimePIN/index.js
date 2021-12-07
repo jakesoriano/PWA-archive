@@ -1,6 +1,6 @@
 import { Component, createRef } from 'preact';
 import { getTranslation } from '_helpers';
-import { fetchOTP } from '_mutations';
+import { verifyOTP, sendOTP } from '_mutations';
 import { connect } from 'unistore/preact';
 import ButtonDescription from '_components/core/ButtonDescription';
 import NotificationBox from '_components/core/NotificationBox';
@@ -14,46 +14,46 @@ class OneTimePIN extends Component {
     this.state = {
       pin: null,
 			isOTPInvalid: false,
-			isResendCd: false
+			isResendCd: false,
+			seconds: 60
     };
   }
+	componentDidMount = () => {
+		sendOTP();
+	}
 	handleContinue = (e) => {
-		let { pin, isOTPInvalid} = this.state;
-	  if (this.verifyPIN(pin)) {
-			alert('Success!');
-		} else {
-			if (!isOTPInvalid){
-				console.log(isOTPInvalid);
-				this.setState({
-					isOTPInvalid: true,
-				});
-				setTimeout(() => {
-					this.setState({
-						isOTPInvalid: false
-					})
-				}, 5300);
+		let { pin, isOTPInvalid }  = this.state;
+		let config = {
+			body: {
+				enteredPin: pin
 			}
 		}
+		verifyOTP(config).then((res) => {
+			if (res) {
+				alert('Success!');
+			} else {
+				if (!isOTPInvalid){
+					this.setState({
+						isOTPInvalid: true,
+					});
+					setTimeout(() => {
+						this.setState({
+							isOTPInvalid: false
+						})
+					}, 5300);
+				}
+			}
+		})
 	};
 
-	verifyPIN = (pin) => {
-	  const { otp } = this.props;
-		return pin === otp.data.code.toString();
-	}
-
 	setCountdown = () => {
-		let el = document.getElementById('timer');
-		let seconds = 3;
+		let { seconds } = this.state;
 		let timer;
-		el.innerHTML = 'Resend';
 		if (!timer) {
 			this.setState({
 				isResendCd: true
 			});
 			timer = window.setInterval(() => {
-				if(seconds < 3) {
-					el.innerHTML = seconds + ' s';
-				}
 				if (seconds > 0) {
 					this.setState({
 						seconds: seconds--
@@ -63,7 +63,6 @@ class OneTimePIN extends Component {
 					this.setState({
 						isResendCd: false
 					});
-					el.innerHTML = 'Resend';
 				}
 			}, 1000)
 		}
@@ -92,16 +91,19 @@ class OneTimePIN extends Component {
 					<br />
 					<p>
 						{getTranslation('OTP_FAIL')}&nbsp;
-						<span
-							onClick={() => {
-								console.log(this.state.isResendCd)
-								if (!this.state.isResendCd) {
+						{
+							!this.state.isResendCd &&
+							<span
+								onClick={() => {
 									this.setCountdown();
-								}
-							}}
-							id="timer"
-							class="bold"
-						>Resend</span>
+								}}
+								id="timer"
+								class="bold"
+							>Resend</span>
+						}
+						{
+							this.state.isResendCd && <span className={`${style.timer} ${'bold'}`}>{this.state.seconds}s</span>
+						}
 					</p>
 					<input
 						type="number"

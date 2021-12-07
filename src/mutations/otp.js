@@ -1,36 +1,24 @@
-import { store, updateStore } from '_unistore';
-import { xhr, urlOTP } from '_helpers';
+import { xhr, urlValidateOTP } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
-export function fetchOTP () {
-  const { otp } = store.getState();
-  // initial state
-  updateStore({
-    otp: {
-      ...otp,
-      fetching: true,
-      result: false
-    }
-  });
-  return xhr(urlOTP)
+export function verifyOTP (config) {
+  return xhr(urlValidateOTP, config)
     .then((res) => {
-      updateStore({
-        otp: {
-          data: res,
-          fetching: false,
-          result: true
-        }
-      });
-      return res;
-  })
-  .catch((err) => {
-    updateStore({
-      otp: {
-        ...otp,
-        fetching: false,
-        result: false
-      }
+      console.log(res.success);
+      return res.success;
+    })
+    .catch((err) => {
+      console.log(err)
+      return false;
     });
+}
+
+export function sendOTP (config) {
+  return xhr(urlSendOTP, config)
+    .then((res) => {
+      return res;
+  }).catch((err) => {
+    console.log(err);
     return false;
-  });
+  })
 }
