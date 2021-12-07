@@ -1,5 +1,5 @@
-
-export const urlTranslation = '/{PUBLIC_PATH}assets/data/translations/{langAlias}.json?_{_}';
+export const urlTranslation =
+	'/{PUBLIC_PATH}assets/data/translations/{langAlias}.json?_{_}';
 export const urlGrid = '/{PUBLIC_PATH}assets/data/grid.json?_{_}';
 export const urlUserData = `${process.env.API_DOMAIN}assets/data/user.json?_={_}`;
 export const urlUserPoints = `${process.env.API_DOMAIN}assets/data/user-points.json?_={_}`;

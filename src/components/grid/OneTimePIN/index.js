@@ -9,41 +9,41 @@ import style from './style.scss';
 // eslint-disable-next-line react/prefer-stateless-function
 class OneTimePIN extends Component {
 	ref = createRef();
-  constructor (props) {
-    super(props);
-    this.state = {
-      pin: null,
+	constructor(props) {
+		super(props);
+		this.state = {
+			pin: null,
 			isOTPInvalid: false,
 			isResendCd: false,
-			seconds: 60
-    };
-  }
+			seconds: 60,
+		};
+	}
 	componentDidMount = () => {
 		sendOTP();
-	}
+	};
 	handleContinue = (e) => {
-		let { pin, isOTPInvalid }  = this.state;
+		let { pin, isOTPInvalid } = this.state;
 		let config = {
 			body: {
-				enteredPin: pin
-			}
-		}
+				enteredPin: pin,
+			},
+		};
 		verifyOTP(config).then((res) => {
 			if (res) {
 				alert('Success!');
 			} else {
-				if (!isOTPInvalid){
+				if (!isOTPInvalid) {
 					this.setState({
 						isOTPInvalid: true,
 					});
 					setTimeout(() => {
 						this.setState({
-							isOTPInvalid: false
-						})
+							isOTPInvalid: false,
+						});
 					}, 5300);
 				}
 			}
-		})
+		});
 	};
 
 	setCountdown = () => {
@@ -51,59 +51,67 @@ class OneTimePIN extends Component {
 		let timer;
 		if (!timer) {
 			this.setState({
-				isResendCd: true
+				isResendCd: true,
 			});
 			timer = window.setInterval(() => {
 				if (seconds > 0) {
 					this.setState({
-						seconds: seconds--
+						seconds: seconds--,
 					});
 				} else {
 					clearInterval(timer);
 					this.setState({
-						isResendCd: false
+						isResendCd: false,
 					});
 				}
-			}, 1000)
+			}, 1000);
 		}
-	}
+	};
 
 	render = () => {
-	  return (
-	    <div ref={this.ref} className={style.otpWrapper}>
-				{this.state.isOTPInvalid && <NotificationBox success={false} content={getTranslation('OTP_INVALID')}/>}
-	      <div
-	        className={style.otpContent}
-	      >
+		return (
+			<div ref={this.ref} className={style.otpWrapper}>
+				{this.state.isOTPInvalid && (
+					<NotificationBox
+						success={false}
+						content={getTranslation('OTP_INVALID')}
+					/>
+				)}
+				<div className={style.otpContent}>
 					<p className={style.heading}>{getTranslation('OTP_ENTER')}</p>
 					<label for="enteredPIN">
 						<div className={style.otpBoxContainer}>
-							{
-								[...Array(6)].map((x, i) => {
-									let { pin } = this.state;
-									let digits = pin ? pin.toString() : pin;
-									return <div className={style.otpBox}>{pin ? digits.charAt(i) : ''}</div>
-								})
-							}
+							{[...Array(6)].map((x, i) => {
+								let { pin } = this.state;
+								let digits = pin ? pin.toString() : pin;
+								return (
+									<div className={style.otpBox}>
+										{pin ? digits.charAt(i) : ''}
+									</div>
+								);
+							})}
 						</div>
 					</label>
 					<p>{getTranslation('OTP_SENT').replace('{4_DIGITS}', '1234')}</p>
 					<br />
 					<p>
 						{getTranslation('OTP_FAIL')}&nbsp;
-						{
-							!this.state.isResendCd &&
+						{!this.state.isResendCd && (
 							<span
 								onClick={() => {
 									this.setCountdown();
 								}}
 								id="timer"
 								class="bold"
-							>Resend</span>
-						}
-						{
-							this.state.isResendCd && <span className={`${style.timer} ${'bold'}`}>{this.state.seconds}s</span>
-						}
+							>
+								Resend
+							</span>
+						)}
+						{this.state.isResendCd && (
+							<span className={`${style.timer} ${'bold'}`}>
+								{this.state.seconds}s
+							</span>
+						)}
 					</p>
 					<input
 						type="number"
@@ -119,23 +127,25 @@ class OneTimePIN extends Component {
 						}}
 						onKeyUp={() => {
 							this.setState({
-								pin: this.el.value
-							})
+								pin: this.el.value,
+							});
 							if (this.el.value.length === 6) {
 								this.el.blur();
 							}
 						}}
 					/>
 				</div>
-	      <div className={style.buttonContainer}>
-	        <ButtonDescription
-	          onClickCallback={this.handleContinue}
-	          text="Continue"
-						isDisabled={this.state.pin ? this.state.pin.length < 6 : !this.state.pin}
-	        />
-	      </div>
-	    </div>
-	  );
+				<div className={style.buttonContainer}>
+					<ButtonDescription
+						onClickCallback={this.handleContinue}
+						text="Continue"
+						isDisabled={
+							this.state.pin ? this.state.pin.length < 6 : !this.state.pin
+						}
+					/>
+				</div>
+			</div>
+		);
 	};
 }
-export default connect(['otp'])(OneTimePIN);;
+export default connect(['otp'])(OneTimePIN);
