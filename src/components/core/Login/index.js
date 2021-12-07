@@ -90,95 +90,91 @@ class Login extends Component {
 	        className={isOpen ? `${style.login} ${style.toggled}` : style.login}
 	      >
 	        {/* Login Contents Here */}
-	        <div className={style.loginFormWrap}>
-	          <div>
-	            <div className={style.formTitle}>
-	              <p className={`${style.formTitle}`}>
-	                {getTranslation('JOIN_US')}
-	              </p>
-	            </div>
-	            <div className={style.formFieldWrap}>
-	              <form className={style.form}>
-	                <FormGroup label="Username" hasError={username.hasError}>
-	                  <FormInput
-	                    className={style.fields}
-	                    style={{ error: style.fields }}
-	                    value={username.value}
-	                    type="text"
-	                    onBlur={(e) => {
-	                      this.onUsernameChange(e.target.value);
-	                    }}
-	                    onInput={(e) => {
-	                      this.onUsernameChange(e.target.value);
-	                    }}
-	                    hasError={username.hasError}
-	                    error={username.error}
-	                    message={username.message}
-	                  />
-	                </FormGroup>
-	                <FormGroup label="Password" hasError={password.hasError}>
-	                  <FormInput
-	                    className={style.fields}
-	                    style={{ error: style.fields }}
-	                    value={password.value}
-	                    type="password"
-	                    onBlur={(e) => {
-	                      this.onPasswordChange(e.target.value);
-	                    }}
-	                    onInput={(e) => {
-	                      this.onPasswordChange(e.target.value);
-	                    }}
-	                    hasError={password.hasError}
-	                    error={password.error}
-	                    message={password.message}
-	                  />
-	                </FormGroup>
-	                <div className={style.buttonWrap}>
-	                  <ButtonDescription
-	                    onClickCallback={this.onClickSubmit}
-	                    text={getTranslation('LOGIN_SUBMIT')}
-	                    bottomDescription=""
-	                  />
-	                  <a
-	                    className={style.forgotUserPass}
-	                    onClick={this.onClickForgotUserPass}
-	                  >
-	                    {getTranslation('FORGOT_USER_PASS')}
-	                  </a>
-	                </div>
-	                <div className={style.socialMedia}>
-	                  <p>{getTranslation('SOCIAL_MEDIA')}</p>
-	                  <ul>
-	                    <li>
-	                      <a onClick={this.onClickSocMedSignin}>
-	                        <ImageLoader
-	                          src="assets/images/fb_icon.png"
-	                          style={{ container: style.socMedIcons }}
-	                        />
-	                      </a>
-	                    </li>
-	                    <li>
-	                      <a onClick={this.onClickSocMedSignin}>
-	                        <ImageLoader
-	                          src="assets/images/twitter_icon.png"
-	                          style={{ container: style.socMedIcons }}
-	                        />
-	                      </a>
-	                    </li>
-	                    <li>
-	                      <a onClick={this.onClickSocMedSignin}>
-	                        <ImageLoader
-	                          src="assets/images/google_icon.png"
-	                          style={{ container: style.socMedIcons }}
-	                        />
-	                      </a>
-	                    </li>
-	                  </ul>
-	                </div>
-	              </form>
-	            </div>
-	          </div>
-	        </div>
+          <div className={style.formTitle}>
+            <p className={`${style.formTitle}`}>
+              {getTranslation('JOIN_US')}
+            </p>
+          </div>
+          <div className={style.formFieldWrap}>
+            <form className={style.form}>
+              <FormGroup label="Username" hasError={username.hasError}>
+                <FormInput
+                  className={style.fields}
+                  style={{ error: style.fields }}
+                  value={username.value}
+                  type="text"
+                  onBlur={(e) => {
+                    this.onUsernameChange(e.target.value);
+                  }}
+                  onInput={(e) => {
+                    this.onUsernameChange(e.target.value);
+                  }}
+                  hasError={username.hasError}
+                  error={username.error}
+                  message={username.message}
+                />
+              </FormGroup>
+              <FormGroup label="Password" hasError={password.hasError}>
+                <FormInput
+                  className={style.fields}
+                  style={{ error: style.fields }}
+                  value={password.value}
+                  type="password"
+                  onBlur={(e) => {
+                    this.onPasswordChange(e.target.value);
+                  }}
+                  onInput={(e) => {
+                    this.onPasswordChange(e.target.value);
+                  }}
+                  hasError={password.hasError}
+                  error={password.error}
+                  message={password.message}
+                />
+              </FormGroup>
+              <div className={style.buttonWrap}>
+                <ButtonDescription
+                  onClickCallback={this.onClickSubmit}
+                  text={getTranslation('LOGIN_SUBMIT')}
+                  bottomDescription=""
+                />
+                <a
+                  className={style.forgotUserPass}
+                  onClick={this.onClickForgotUserPass}
+                >
+                  {getTranslation('FORGOT_USER_PASS')}
+                </a>
+              </div>
+              <div className={style.socialMedia}>
+                <p>{getTranslation('SOCIAL_MEDIA')}</p>
+                <ul>
+                  <li>
+                    <a onClick={this.onClickSocMedSignin}>
+                      <ImageLoader
+                        src="assets/images/fb_icon.png"
+                        style={{ container: style.socMedIcons }}
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a onClick={this.onClickSocMedSignin}>
+                      <ImageLoader
+                        src="assets/images/twitter_icon.png"
+                        style={{ container: style.socMedIcons }}
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a onClick={this.onClickSocMedSignin}>
+                      <ImageLoader
+                        src="assets/images/google_icon.png"
+                        style={{ container: style.socMedIcons }}
+                      />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </form>
+          </div>
 	      </div>
 	    </div>
 	  );

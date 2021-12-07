@@ -1,45 +1,3 @@
-// .loginFormContainer {
-// 	height: 100%;
-// 	width: 100%;
-// }
-
-// .loginOutside {
-// 	height: 100%;
-// 	width: 100%;
-// 	opacity: 0.5;
-// 	z-index: 4;
-// 	position: absolute;
-// }
-
-// .login {
-// 	position: absolute;
-// 	top: 100%;
-// 	width: 100%;
-// 	z-index: 2;
-// 	overflow-x: auto;
-// 	text-align: left;
-// 	transition: all 0.2s linear;
-// 	border-radius: 15px 15px 0 0;
-// 	.formTitle {
-// 		background-color: #FFB5BA;
-// 		color: #fff;
-// 		padding: 10px 15px;
-// 		font-size: 21px;
-// 	}
-// 	.formFieldWrap {
-// 		background-color: #fff;
-// 		height: 300px;
-// 		width: 100%;
-// 		padding: 15px;
-// 	}
-// }
-
-// .login.toggled {
-// 	bottom: 0;
-// 	transition: all 0.2s linear;
-// }
-
-
 .loginFormContainer {
 	height: 100%;
 	width: 100%;
@@ -110,7 +68,6 @@
 	}
 	transition: all 0.2s linear;
 }
-
 .login.toggled {
 	bottom: 0;
 	transition: all 0.1s linear;
