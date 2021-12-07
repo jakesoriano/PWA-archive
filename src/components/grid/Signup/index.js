@@ -13,77 +13,77 @@ class Signup extends Component {
 		super(props);
 		this.state = {
 			regionOptions: getRegions(),
-			provinceOptions: [],
-			municipalityOptions: [],
-			barangayOptions: [],
+			provinceOptions: props.signup ? getProvince(props.signup.region) :[],
+			municipalityOptions: props.signup ? getMunicipality(props.signup.region, props.signup.province) :[],
+			barangayOptions: props.signup ? getBarangay(props.signup.region, props.signup.province, props.signup.municipality) :[],
 			fname: {
-				value: '',
+				value: props.signup ? props.signup.fname : '',
 				error: '',
 				message: '',
 				hasError: false
 			},
 			mname: {
-				value: '',
+				value: props.signup ? props.signup.mname : '',
 				error: '',
 				message: '',
 				hasError: false
 			},
 			lname: {
-				value: '',
+				value: props.signup ? props.signup.lname : '',
 				error: '',
 				message: '',
 				hasError: false
 			},
 			gender: {
-				value: '',
+				value: props.signup ? props.signup.gender : '',
 				error: '',
 				message: '',
 				hasError: false
 			},
 			dob: {
-				value: '',
+				value: props.signup ? props.signup.dob : '',
 				error: '',
 				message: '',
 				hasError: false
 			},
 			number: {
-				value: '',
+				value: props.signup ? props.signup.number : '',
 				error: '',
 				message: '',
 				hasError: false
 			},
 			region: {
-				value: '',
+				value: props.signup ? props.signup.region : '',
 				error: '',
 				message: '',
 				hasError: false
 			},
 			province: {
-				value: '',
+				value: props.signup ? props.signup.province : '',
 				error: '',
 				message: '',
 				hasError: false
 			},
 			municipality: {
-				value: '',
+				value: props.signup ? props.signup.municipality : '',
 				error: '',
 				message: '',
 				hasError: false
 			},
 			barangay: {
-				value: '',
+				value: props.signup ? props.signup.barangay : '',
 				error: '',
 				message: '',
 				hasError: false
 			},
 			voter: {
-				value: 'yes',
+				value: props.signup ? props.signup.voter : 'yes',
 				error: '',
 				message: '',
 				hasError: false
 			},
 			rCode: {
-				value: '',
+				value: props.signup ? props.signup.rCode : '',
 				error: '',
 				message: '',
 				hasError: false
@@ -293,7 +293,7 @@ class Signup extends Component {
 					rCode: this.state.rCode.value,
 				}
 			});
-			route(`/${this.props.parent}/otp`, true);
+			route(`/${this.props.parent}/terms`, true);
 		}
 	}
 
@@ -386,6 +386,7 @@ class Signup extends Component {
 						<FormInput
 							value={number.value}
 							type="number"
+							placeholder={'0919...'}
 							onBlur={(e) => {
 								this.onNumberChange(e.target.value)
 							}}
