@@ -252,7 +252,7 @@ class Signup extends Component {
 		});
 	};
 
-	handleContinue = () => {console.error(this.props);
+	handleContinue = () => {
 		if (!this.state.fname.value ||
 			!this.state.mname.value ||
 			!this.state.lname.value ||
