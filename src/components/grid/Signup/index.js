@@ -299,7 +299,7 @@ class Signup extends Component {
 					rCode: this.state.rCode.value,
 				}
 			});
-			route(`/${this.props.parent}/terms`, true);
+			route(`/${this.props.parent}/terms`);
 		}
 	}
 

@@ -15,7 +15,7 @@
         flex-grow: 1;
       }
       .pShare {
-        border: 1px solid #ffb1bb;
+        background: #ffb1bb;
         display: flex;
         width: 100px;
         margin: 0 auto;
@@ -28,7 +28,6 @@
         }
         span {
           color: #fff;
-          color: #ffb1bb;
           font-size: 0.8rem;
           text-transform: uppercase;
         }

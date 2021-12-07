@@ -148,7 +148,7 @@ class Invite extends Component {
 							<div>
 								<a className={style.pShare} onClick={this.onShare}>
 									<ImageLoader
-											src="assets/images/share_icon.png"
+											src="assets/images/share_icon_white.png"
 											style={{container: style.pIconShare}} />
 										<span>{getTranslation('SHARE')}</span>
 								</a>
