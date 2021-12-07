@@ -1,7 +1,7 @@
 @import '../../../style/variables.scss';
   .notificationBox {
     top: -100%;
-    transition: top 0.2s ease-in-out;
+    transition: all 1s ease-in-out;
     position: absolute;
     padding: 10px;
     border: 2px solid #d9d9d9;
@@ -9,6 +9,7 @@
     background-color: $white;
     display: flex;
     border-radius: 5px;
+    z-index: 5;
     &.show {
       top: 0;
     }
@@ -26,5 +27,6 @@
       margin-left: -13px;
       flex: 1;
       font-size: .875rem;
+      color: $black;
     }
   }

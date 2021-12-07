@@ -38,6 +38,7 @@ export const initialStore = {
   promptModal: null,
   messageModal: null,
   componentModal: null,
+  notification: null,
   pageLoader: {
     display: false
   }

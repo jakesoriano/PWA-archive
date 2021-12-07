@@ -1,4 +1,4 @@
-import { xhr, urlValidateOTP } from '_helpers';
+import { xhr, urlValidateOTP, urlSendOTP } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
 export function verifyOTP(config) {

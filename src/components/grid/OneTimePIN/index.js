@@ -2,8 +2,8 @@ import { Component, createRef } from 'preact';
 import { getTranslation } from '_helpers';
 import { verifyOTP, sendOTP } from '_mutations';
 import { connect } from 'unistore/preact';
+import { updateStore } from '_unistore';
 import ButtonDescription from '_components/core/ButtonDescription';
-import NotificationBox from '_components/core/NotificationBox';
 import style from './style.scss';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -19,7 +19,10 @@ class OneTimePIN extends Component {
 		};
 	}
 	componentDidMount = () => {
-		sendOTP();
+		const { invited } = this.props;
+		if (invited.data.hasOwnProperty('number')) {
+			sendOTP(invited.data.number);
+		}
 	};
 	handleContinue = (e) => {
 		let { pin, isOTPInvalid } = this.state;
@@ -33,10 +36,19 @@ class OneTimePIN extends Component {
 				alert('Success!');
 			} else {
 				if (!isOTPInvalid) {
+					updateStore({
+						notification: {
+							success: false,
+							content: getTranslation('OTP_INVALID')
+						}
+					});
 					this.setState({
 						isOTPInvalid: true,
 					});
 					setTimeout(() => {
+						updateStore({
+							notification: null
+						});
 						this.setState({
 							isOTPInvalid: false,
 						});
@@ -71,12 +83,6 @@ class OneTimePIN extends Component {
 	render = () => {
 		return (
 			<div ref={this.ref} className={style.otpWrapper}>
-				{this.state.isOTPInvalid && (
-					<NotificationBox
-						success={false}
-						content={getTranslation('OTP_INVALID')}
-					/>
-				)}
 				<div className={style.otpContent}>
 					<p className={style.heading}>{getTranslation('OTP_ENTER')}</p>
 					<label for="enteredPIN">
@@ -148,4 +154,4 @@ class OneTimePIN extends Component {
 		);
 	};
 }
-export default connect(['otp'])(OneTimePIN);
+export default connect(['notification', 'invited'])(OneTimePIN);
