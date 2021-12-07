@@ -17,3 +17,5 @@ export { default as FormDropdown } from './FormDropdown';
 export { default as ButtonDescription } from './ButtonDescription';
 export { default as AlertBox } from './AlertBox';
 export { default as PopupModal } from './PopupModal';
+export { default as Login } from './Login';
+export { default as InitialSignup } from './InitialSignup';
