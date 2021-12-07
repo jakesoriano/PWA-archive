@@ -15,7 +15,7 @@
         flex-grow: 1;
       }
       .pShare {
-        background: #ffb1bb;
+        border: 1px solid #ffb1bb;
         display: flex;
         width: 100px;
         margin: 0 auto;
@@ -25,12 +25,12 @@
           padding-bottom: 18px;
           width: 18px;
           margin-right: 5px;
-          background: red;
         }
         span {
-          color: #ffb1bb;
           color: #fff;
+          color: #ffb1bb;
           font-size: 0.8rem;
+          text-transform: uppercase;
         }
       }
     }
