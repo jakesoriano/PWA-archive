@@ -89,6 +89,7 @@ export default {
       _mutations: path.resolve(__dirname, 'src/mutations'),
       _helpers: path.resolve(__dirname, 'src/helpers'),
       _workers: path.resolve(__dirname, 'src/workers'),
+      _constant: path.resolve(__dirname, 'src/constant'),
       _platform: path.resolve(__dirname, `src/_${envVariables.PLATFORM}`),
       react: 'preact-compat',
       'react-dom': 'preact-compat'

@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { fetchInvited } from '_mutations';
-import { getTranslation } from '_helpers';
+import { getTranslation, getRegions} from '_helpers';
 import { FormGroup, FormInput, FormDropdown, ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
@@ -12,10 +12,7 @@ class Invite extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			regionOptions:[
-				{v: "v1", t:"t1"},
-				{v: "v2", t:"t2"}
-			],
+			regionOptions: getRegions(),
 			fname: {
 				value: '',
 				error: '',
@@ -43,37 +40,49 @@ class Invite extends Component {
 	  }
 	};
 	
-	onFnameChange = (e) => {
+	onFnameChange = (value) => {
 		this.setState({
 			fname: {
 				...this.state.fname,
-				value: e.target.value,
-				hasError: !Boolean(e.target.value),
-				error: !Boolean(e.target.value) ? 'REQUIRED' : ''
+				value: value,
+				hasError: !Boolean(value),
+				error: !Boolean(value) ? 'REQUIRED' : ''
 			}
 		});
-	}
+	};
 	
-	onLnameChange = (e) => {
+	onLnameChange = (value) => {
 		this.setState({
 			lname: {
 				...this.state.lname,
-				value: e.target.value,
-				hasError: !Boolean(e.target.value),
-				error: !Boolean(e.target.value) ? 'REQUIRED' : ''
+				value: value,
+				hasError: !Boolean(value),
+				error: !Boolean(value) ? 'REQUIRED' : ''
 			}
 		});
-	}
+	};
 	
-	onRegionChange = (e) => {
+	onRegionChange = (value) => {
 		this.setState({
 			region: {
 				...this.state.region,
-				value: e.target.value,
-				hasError: !Boolean(e.target.value),
-				error: !Boolean(e.target.value) ? 'REQUIRED' : ''
+				value: value,
+				hasError: !Boolean(value),
+				error: !Boolean(value) ? 'REQUIRED' : ''
 			}
 		});
+	};
+
+	onShare = () => {
+		if (!this.state.fname.value || !this.state.lname.value || !this.state.region.value) {
+			this.onFnameChange(this.state.fname.value);
+			this.onLnameChange(this.state.lname.value);
+			this.onRegionChange(this.state.region.value);
+		} else {
+			nativeShare({
+				message: `Hi ${this.state.fname.value}, You are invited: ${this.props.authUser.refCode}`
+			});
+		}
 	}
 
 	render = ({ authUser, invited }, { fname, lname, region, regionOptions }) => {
@@ -88,8 +97,12 @@ class Invite extends Component {
 							value={fname.value}
 							type="text"
 							placeholder={getTranslation('FIRST_NAME')}
-							onBlur={this.onFnameChange}
-							onInput={this.onFnameChange}
+							onBlur={(e) => {
+								this.onFnameChange(e.target.value)
+							}}
+							onInput={(e) => {
+								this.onFnameChange(e.target.value)
+							}}
 							hasError={fname.hasError}
 							error={fname.error}
 							message={fname.message} />
@@ -99,8 +112,12 @@ class Invite extends Component {
 							value={lname.value}
 							type="text"
 							placeholder={getTranslation('LAST_NAME')}
-							onBlur={this.onLnameChange}
-							onInput={this.onLnameChange}
+							onBlur={(e) => {
+								this.onLnameChange(e.target.value)
+							}}
+							onInput={(e) => {
+								this.onLnameChange(e.target.value)
+							}}
 							hasError={lname.hasError}
 							error={lname.error}
 							message={lname.message} />
@@ -111,10 +128,14 @@ class Invite extends Component {
 							className={style.region}
 							value={region.value}
 							options={regionOptions}
-							getValue={option => option.v}
-							getText={option => option.t}
-							onChange={this.onRegionChange}
-							onBlur={this.onRegionChange}
+							getValue={option => option.value}
+							getText={option => option.text}
+							onBlur={(e) => {
+								this.onRegionChange(e.target.value)
+							}}
+							onIonChangenput={(e) => {
+								this.onRegionChange(e.target.value)
+							}}
 							hasError={region.hasError}
 							error={region.error}
 							message={region.message}
@@ -125,11 +146,7 @@ class Invite extends Component {
 						<div className={style.invite}>
 							<span className={`bold`}>{authUser.refCode}</span>
 							<div>
-								<a className={style.pShare} onClick={() => {
-									nativeShare({
-										message: `You are invited: ${authUser.refCode}`
-									})
-								}}>
+								<a className={style.pShare} onClick={this.onShare}>
 									<ImageLoader
 											src="assets/images/share_icon.png"
 											style={{container: style.pIconShare}} />
