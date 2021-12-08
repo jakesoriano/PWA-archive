@@ -2,7 +2,7 @@
 import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { route } from 'preact-router';
-import { updateStore } from '_unistore';
+import { updateStore, store } from '_unistore';
 import {
   prefetch,
   renderGrid,
@@ -29,7 +29,11 @@ import {
 	AlertBox,
 	PopupModal
 } from '_components/core';
-import { nativeWebReady, nativeGetDeviceId } from '_platform/helpers';
+import {
+	nativeWebReady,
+	nativeGetDeviceId,
+	nativeExitApp
+} from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -399,17 +403,15 @@ export default ConnectComponent;
 
 // Push Forward
 if (typeof window !== 'undefined') {
-  window.pushForward = (payload) => {
-    if (!payload) {
-      return false;
-    }
-
-    // eslint-disable-next-line
-		console.log('SPA >> window.pushForward', payload);
-
-    // redirect
-    route(payload, false);
-
-    return true;
+  window.onNativeBack = () => {
+		const { authUser } = store.getState();
+		const path = location.hash.replace('#', '');
+		if (authUser && path !== '/home') {
+			route('/home', true);
+		} else if (!authUser && path !== '/landing') {
+			route('/landing', true);
+		} else {
+			nativeExitApp();
+		}
   };
 }

@@ -42,3 +42,11 @@ export function nativeShare (data) {
     data: data
   });
 }
+
+export function nativeExitApp () {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeExitApp();');
+	callNative({
+    action: 'exitApp'
+  });
+}
