@@ -179,4 +179,4 @@ class OneTimePIN extends Component {
 		);
 	};
 }
-export default connect(['alertShow', 'signup'])(OneTimePIN);
+export default connect(['signup'])(OneTimePIN);
