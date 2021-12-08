@@ -61,7 +61,7 @@ class InitialSignup extends Component {
             password: this.state.password.value
           }
         });
-        route('/terms', true);
+        route('/terms');
       }
     }
 	};
