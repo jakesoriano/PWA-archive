@@ -16,6 +16,7 @@ class OneTimePIN extends Component {
 			isOTPInvalid: false,
 			isResendCd: false,
 			seconds: 60,
+			inputFocus: false
 		};
 	}
 	componentDidMount = () => {
@@ -85,6 +86,17 @@ class OneTimePIN extends Component {
 		}
 	};
 
+	renderBox = (i, isLast) => {
+		const pin = this.state.pin || '';
+		const isFocus = this.state.inputFocus && (pin.length === i || (isLast && pin.length === (i + 1)));
+		return (
+			<div
+				className={`${style.otpBox} ${isFocus ? style.otpBoxActive : ''}`}>
+				{pin.charAt(i)}
+			</div>
+		);
+	}
+
 	render = ({}, { pin }) => {
 		return (
 			<div className={style.otpWrapper}>
@@ -92,12 +104,12 @@ class OneTimePIN extends Component {
 					<p className={style.heading}>{getTranslation('OTP_ENTER')}</p>
 					<label for="enteredPIN">
 						<div className={style.otpBoxContainer}>
-							<div className={style.otpBox}>{pin ? pin.toString().charAt(0) : ''}</div>
-							<div className={style.otpBox}>{pin ? pin.toString().charAt(1) : ''}</div>
-							<div className={style.otpBox}>{pin ? pin.toString().charAt(2) : ''}</div>
-							<div className={style.otpBox}>{pin ? pin.toString().charAt(3) : ''}</div>
-							<div className={style.otpBox}>{pin ? pin.toString().charAt(4) : ''}</div>
-							<div className={style.otpBox}>{pin ? pin.toString().charAt(5) : ''}</div>
+							{this.renderBox(0)}
+							{this.renderBox(1)}
+							{this.renderBox(2)}
+							{this.renderBox(3)}
+							{this.renderBox(4)}
+							{this.renderBox(5, true)}
 						</div>
 					</label>
 					<p>{getTranslation('OTP_SENT').replace('{4_DIGITS}', '1234')}</p>
@@ -129,6 +141,16 @@ class OneTimePIN extends Component {
 						className={style.enteredPIN}
 						maxlength="6"
 						minLength="0"
+						onBlur={() => {
+							this.setState({
+								inputFocus: false
+							});
+						}}
+						onFocus={() => {
+							this.setState({
+								inputFocus: true
+							});
+						}}
 						onKeyUp={(e) => {
 							let _this = e.target;
 							this.setState({
