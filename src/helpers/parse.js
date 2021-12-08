@@ -19,10 +19,6 @@ export function replaceUrlPlaceholders (url) {
         .replace(/{PUBLIC_PATH}/gim, process.env.PUBLIC_PATH)
         .replace(/{TARGET}/gim, process.env.PLATFORM)
         .replace(/{DOMAIN}/gim, domain);
-      // eslint-disable-next-line
-			console.log(
-        'SPA >> (helpers/parse.js) >> replaceUrlPlaceholders() >> Sucessfully replaced URL.'
-      );
       return parsedUrl;
     }
     return null;

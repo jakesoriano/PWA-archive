@@ -1,5 +1,6 @@
 import { Component } from 'preact';
-import { getTranslation } from '_helpers';
+import { route } from 'preact-router';
+import { updateStore } from '_unistore';
 import { ButtonDescription }  from '_components/core';
 import style from './style.scss';
 
@@ -11,6 +12,13 @@ class TermsConditions extends Component {
       isReading: true
     };
   }
+	componentDidMount = () => {
+		updateStore({
+			customBack: () => {
+				route('/', true)
+			}
+		});
+	};
 
 	checkIfRead = () => {
 	  if (this.el && this.state.isReading) {
@@ -26,7 +34,7 @@ class TermsConditions extends Component {
 	};
 
 	handleContinue = (e) => {
-	  console.log(e);
+		route(`/${this.props.parent}/signup`);
 	};
 
 	renderContent = () => {

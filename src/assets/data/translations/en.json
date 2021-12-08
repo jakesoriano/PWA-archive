@@ -71,5 +71,6 @@
 	"MINIMUM_CHARACTERS": "Minimum of 8 Characters.",
 	"SPECIAL_CHARACTERS": "Do not use special characters",
 	"PASSWORD_UNMATCH": "Passwords do not match",
-	"LOGOUT": "Logout"
+	"LOGOUT": "Logout",
+	"SIGNIN": "Sign in"
 }

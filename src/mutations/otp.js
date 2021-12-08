@@ -1,15 +1,32 @@
-import { xhr, urlValidateOTP, urlSendOTP } from '_helpers';
+import { updateStore } from '_unistore';
+import { xhr, urlUserData, urlSendOTP } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
 export function verifyOTP(config) {
-	return xhr(urlValidateOTP, config)
+	// return xhr(urlValidateOTP, config)
+	// 	.then((res) => {
+	// 		console.log(res.success);
+	// 		return res.success;
+	// 	})
+	// 	.catch((err) => {
+	// 		console.log(err);
+	// 		return false;
+	// 	});
+  return  xhr(urlUserData)
 		.then((res) => {
-			console.log(res.success);
-			return res.success;
+			updateStore({
+				authUser: res,
+				signup: null,
+				newlyRegistered: true
+			});
+			// eslint-disable-next-line
+			console.log(`SPA >> verifyOTP successful`, res);
+			return true
 		})
 		.catch((err) => {
-			console.log(err);
-			return false;
+			// eslint-disable-next-line
+			console.log(`SPA >> verifyOTP Error`, err);
+			return false
 		});
 }
 

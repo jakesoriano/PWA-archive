@@ -99,7 +99,7 @@ class Signup extends Component {
 	componentDidMount = () => {
 		updateStore({
 			customBack: () => {
-				route('/landing/terms', true)
+				route(`/${this.props.parent}/terms`, true)
 			}
 		});
 	};
@@ -305,7 +305,7 @@ class Signup extends Component {
 					rCode: this.state.rCode.value,
 				}
 			});
-			route(`/${this.props.parent}/terms`);
+			route(`/${this.props.parent}/otp`);
 		}
 	}
 

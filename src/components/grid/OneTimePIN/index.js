@@ -27,7 +27,7 @@ class OneTimePIN extends Component {
 		}
 		updateStore({
 			customBack: () => {
-				route('/landing/signup', true)
+				route(`/${this.props.parent}/signup`, true)
 			}
 		});
 	};
@@ -40,7 +40,7 @@ class OneTimePIN extends Component {
 		};
 		verifyOTP(config).then((res) => {
 			if (res) {
-				alert('Success!');
+				route('/home', true);
 			} else {
 				if (!isOTPInvalid) {
 					updateStore({

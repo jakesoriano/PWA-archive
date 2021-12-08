@@ -17,19 +17,19 @@ class InitialSignup extends Component {
     super(props);
     this.state = {
       username: {
-        value: props.initialSignup ? props.initialSignup.username : '',
+        value: props.signup ? props.signup.username : '',
         error: '',
         message: '',
         hasError: false
       },
       password: {
-        value: props.initialSignup ? props.initialSignup.password : '',
+        value: '',
         error: '',
         message: '',
         hasError: false
       },
       confirm_password: {
-        value: props.initialSignup ? props.initialSignup.confirm_password : '',
+        value: '',
         error: '',
         message: '',
         hasError: false
@@ -55,13 +55,15 @@ class InitialSignup extends Component {
           }
         });
       } else {
+        this.props.toggleSignupForm();
         updateStore({
           signup: {
             username: this.state.username.value,
-            password: this.state.password.value
+            password: this.state.password.value,
+            confirm_password: this.state.confirm_password.value
           }
         });
-        route('/terms');
+        route(`/${this.props.parent}/terms`);
       }
     }
 	};
@@ -257,4 +259,4 @@ class InitialSignup extends Component {
 	  );
 	};
 }
-export default connect(['authUser'])(InitialSignup);
+export default connect(['signup'])(InitialSignup);
