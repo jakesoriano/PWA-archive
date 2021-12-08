@@ -19,7 +19,6 @@ function getApiPlatform () {
 export const platform = {
   consumer: 'mobile',
   device: /ipad|iphone|ipod/.test(getUserAgent()) ? 'ios' : 'other',
-  spfid: getCookie(`${process.env.PREFIX}_spfid`) || process.env.SPFID || 0,
   apiPlatform: getApiPlatform()
 };
 

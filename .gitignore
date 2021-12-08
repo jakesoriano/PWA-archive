@@ -8,4 +8,5 @@ package-lock.json
 TODO
 .DS_Store
 .env
+size-plugin.json
 jobs/config/*.json-bak

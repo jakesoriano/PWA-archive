@@ -1,7 +1,7 @@
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
 function callNative(data) {
-  window.ReactNativeWebView.postMessage(data)
+  window.ReactNativeWebView && window.ReactNativeWebView.postMessage(data)
 }
 
 // eslint-disable-next-line import/prefer-default-export
@@ -40,5 +40,13 @@ export function nativeShare (data) {
 	callNative({
     action: 'share',
     data: data
+  });
+}
+
+export function nativeExitApp () {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeExitApp();');
+	callNative({
+    action: 'exitApp'
   });
 }

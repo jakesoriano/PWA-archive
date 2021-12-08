@@ -4,8 +4,6 @@ self.onmessage = (ev) => {
   // url
   const url = ev.data.url
     .replace(/{_}/gim, Date.now())
-    .replace(/{consumer}/gim, ev.data.platform.consumer)
-    .replace(/{device}/gim, ev.data.platform.device)
     .replace(/{PUBLIC_PATH}/gim, ev.data.publicPath)
     .replace(
       /{langAlias}/gim,
@@ -14,12 +12,6 @@ self.onmessage = (ev) => {
     .replace(
       /{langCode}/gim,
       ev.data.language ? ev.data.language.langCode : 'en-us'
-    )
-    .replace(
-      /{currencyCode}/gim,
-      ev.data.currencyCode || ev.data.language
-        ? ev.data.language.currencyCode
-        : 'USD'
     );
   // config
   const config = {
@@ -29,19 +21,15 @@ self.onmessage = (ev) => {
   };
 
   // Default Headers
+  const jwtToken = (ev.data.options && ev.data.options.token ? ev.data.options.token : (ev.data.authUser ? ev.data.authUser.Token : ''));
   config.headers = {};
   if (!ev.data.externalAPI) {
     config.headers = {
-      SubPlatformId: ev.data.platform.spfid,
-      LanguageCode: ev.data.language ? ev.data.language.langCode : 'en-us',
-      currencyCode:
-				ev.data.currencyCode ||
-				(ev.data.language ? ev.data.language.currencyCode : 'en-us'),
       // eslint-disable-next-line no-nested-ternary
-      token: ev.data.options && ev.data.options.token
-        ? ev.data.options.token
-        : (ev.data.authUser ? ev.data.authUser.Token : ''),
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      ...(jwtToken && url.indexOf('.json') <= -1 ? {
+        'Authorization': 'Bearer ' + jwtToken,
+      } : {})
     };
   }
   // Custom Headers

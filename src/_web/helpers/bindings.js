@@ -28,3 +28,5 @@ export function nativeGetDeviceId (callback) {
 }
 
 export function nativeShare (data) {}
+
+export function nativeExitApp () {}
