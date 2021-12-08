@@ -69,7 +69,7 @@ class Login extends Component {
 	onPasswordChange = (value) => {
 	  this.setState({
 	    password: {
-	      ...this.state.username,
+	      ...this.state.password,
 	      value,
 	      hasError: !value,
 	      error: !value ? 'REQUIRED' : ''
