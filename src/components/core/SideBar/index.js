@@ -5,6 +5,7 @@ import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { getTranslation, dateLastLoginFormat } from '_helpers';
 import { ImageLoader } from '_components/core';
+import { logOut } from '_mutations';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -51,6 +52,12 @@ class SideBar extends Component {
 						<Link href="/contactus" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('WHERE_HERE_TO_LISTEN')}</Link>
 						{/* <Link href="/home" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PROTECT_LENI')}</Link> */}
 						<Link href={`/${page}/terms`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PAGE_TERMS')}</Link>
+						<Link href={`/${page}/signup`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PAGE_SIGNUP')}</Link>
+						<Link href={`/${page}/otp`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PAGE_OTP')}</Link>
+						<Link href={`/`} className={style.sMItem} onClick={(e) => {
+							logOut();
+							this.onClickMenu(e);
+						}}>{getTranslation('LOGOUT')}</Link>
 					</div>
 				</div>
 			</div>

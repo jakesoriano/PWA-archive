@@ -67,5 +67,6 @@
 	"SIGNUP_CONTINUE": "Continue",
 	"JOIN_US": "Join us. Be a KakamPink!",
 	"FORGOT_USER_PASS": "Forgot Username or Password",
-	"SOCIAL_MEDIA": "Sign in using your social media accounts"
+	"SOCIAL_MEDIA": "Sign in using your social media accounts",
+	"LOGOUT": "Logout"
 }

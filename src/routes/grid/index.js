@@ -305,15 +305,17 @@ class Grid extends Component {
 
 	render = (
 	  { authUser, translation, messageModal, promptModal, componentModal, pageLoader, alertShow, popupModal },
-	  { data, popup, rightSideBar }
+	  { data, popup, rightSideBar, url }
 	) => {
 	  if (!data || !translation.data) {
 	    return <LoaderRing fullpage />;
 	  }
 
 		// redirect to landing page
-		if (!authUser && data.auth) {
+		if (!authUser && data.auth && url !== '/') {
 			route('/', true);
+		} else if (authUser && !data.auth && url !== '/home') {
+			route('/home', true);
 		}
 
 	  return (
