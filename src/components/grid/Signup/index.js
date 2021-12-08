@@ -83,13 +83,13 @@ class Signup extends Component {
 				hasError: false
 			},
 			voter: {
-				value: props.signup ? props.signup.voter : 'yes',
+				value: props.signup && props.signup.voter ? props.signup.voter : 'yes',
 				error: '',
 				message: '',
 				hasError: false
 			},
 			rCode: {
-				value: props.signup ? props.signup.rCode : '',
+				value: props.signup && props.signup.voter? props.signup.rCode : '',
 				error: '',
 				message: '',
 				hasError: false
