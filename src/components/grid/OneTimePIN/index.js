@@ -18,7 +18,8 @@ class OneTimePIN extends Component {
 			seconds: 60,
 			inputFocus: false
 		};
-	}
+	};
+
 	componentDidMount = () => {
 		const { signup } = this.props;
 		if (signup && signup.hasOwnProperty('number')) {
@@ -96,6 +97,22 @@ class OneTimePIN extends Component {
 				{pin.charAt(i)}
 			</div>
 		);
+	};
+
+	toggleInputFocus = (value) => {
+		this.setState({
+			inputFocus: value
+		});
+	}
+
+	onKeyup = (e) => {
+		let _this = e.target;
+		this.setState({
+			pin: _this.value,
+		});
+		if (e.target.value.length === 6) {
+			_this.blur();
+		}
 	}
 
 	render = ({}, { pin }) => {
@@ -141,24 +158,12 @@ class OneTimePIN extends Component {
 						maxlength="6"
 						minLength="0"
 						onBlur={() => {
-							this.setState({
-								inputFocus: false
-							});
+							this.toggleInputFocus(false);
 						}}
 						onFocus={() => {
-							this.setState({
-								inputFocus: true
-							});
+							this.toggleInputFocus(true);
 						}}
-						onKeyUp={(e) => {
-							let _this = e.target;
-							this.setState({
-								pin: _this.value,
-							});
-							if (e.target.value.length === 6) {
-								_this.blur();
-							}
-						}}
+						onKeyUp={this.onKeyup}
 					/>
 				</div>
 				<div className={style.buttonContainer}>
