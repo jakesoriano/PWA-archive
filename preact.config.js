@@ -69,7 +69,7 @@ export default {
     const envVariables = mapEnvVariable(process.env);
     envVariables.PLATFORM = buildPlatform || envVariables.PLATFORM;
     envVariables.PUBLIC_PATH = buildPlatform
-      ? `${projectPath}${buildPlatform}/`
+      ? `/${projectPath}${buildPlatform}/`
       : '';
     // Add PWA Config
     /* eslint-disable global-require */

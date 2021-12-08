@@ -7,7 +7,6 @@
     "start": "per-env",
     "start:production": "npm run -s serve",
     "start:development": "npm run -s dev",
-    "build": "preact build",
     "build:android": "preact build --dest build/android --preload",
     "build:web": "preact build --dest build/web --preload",
     "build:ios": "preact build --dest build/ios --preload",

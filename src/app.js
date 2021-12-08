@@ -17,12 +17,7 @@ export default class App extends Component {
     };
   }
 
-	componentWillMount = () => {
-	  const spfid = getQueryStringValue('spfid');
-	  if (spfid) {
-	    setCookie(`${process.env.PREFIX}_spfid`, spfid);
-	  }
-	};
+	componentWillMount = () => {};
 
 	componentDidMount = () => {
 	  restoreData().then((res) => {
