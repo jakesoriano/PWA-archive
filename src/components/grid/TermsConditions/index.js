@@ -23,12 +23,15 @@ class TermsConditions extends Component {
 	checkIfRead = () => {
 	  if (this.el && this.state.isReading) {
 	    setTimeout(() => {
-	      this.setState({
-	        isReading: !(
-	          this.el.scrollHeight - this.el.scrollTop ===
-						this.el.clientHeight
-	        )
-	      });
+				try {
+					this.setState({
+						isReading: !(this.el.scrollTop > (this.el.scrollHeight / 4))
+					});
+				} catch (er) {
+					this.setState({
+						isReading: false
+					});
+				}
 	    }, 250);
 	  }
 	};
