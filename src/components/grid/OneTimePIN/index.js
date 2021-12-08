@@ -70,6 +70,7 @@ class OneTimePIN extends Component {
 		if (!timer) {
 			this.setState({
 				isResendCd: true,
+				pin: ''
 			});
 			timer = window.setInterval(() => {
 				if (seconds > 0) {
@@ -123,9 +124,7 @@ class OneTimePIN extends Component {
 								}}
 								id="timer"
 								class="bold"
-							>
-								Resend
-							</span>
+							>{getTranslation('RESEND')}</span>
 						)}
 						{this.state.isResendCd && (
 							<span className={`${style.timer} ${'bold'}`}>
