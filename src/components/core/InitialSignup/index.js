@@ -1,12 +1,15 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import { h, Component } from 'preact';
-import { Link } from 'preact-router/match';
+import { Component } from 'preact';
+import { route } from 'preact-router';
 import { connect } from 'unistore/preact';
-import { getTranslation, dateLastLoginFormat } from '_helpers';
+import { updateStore } from '_unistore';
+import { getTranslation } from '_helpers';
 import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
 // eslint-disable-next-line import/extensions
 import style from './style';
+
+let special_char = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
 
 // eslint-disable-next-line react/prefer-stateless-function
 class InitialSignup extends Component {
@@ -33,13 +36,105 @@ class InitialSignup extends Component {
       }
     };
   }
-
 	onClickSubmit = () => {
-	  console.log('click submit');
+    if (!this.state.username.value || 
+      !this.state.password.value ||
+      !this.state.confirm_password.value ||
+      this.state.password.value.length < 8 ||
+      special_char.test(this.state.password.value)) {
+	    this.onUsernameChange(this.state.username.value);
+	    this.onPasswordChange(this.state.password.value);
+      this.onConfirmPasswordChange(this.state.confirm_password.value);
+	  } else {
+      if ( this.state.confirm_password.value !== this.state.password.value ) {
+        this.setState({
+          confirm_password: {
+            ...this.state.confirm_password,
+            hasError: true,
+            error: getTranslation('PASSWORD_UNMATCH')
+          }
+        });
+      } else {
+        updateStore({
+          signup: {
+            username: this.state.username.value,
+            password: this.state.password.value
+          }
+        });
+        route('/terms');
+      }
+    }
 	};
 
 	onClickSocMedSignin = () => {
 	  console.log('click social media');
+	};
+
+  onUsernameChange = (value) => {
+    // check for special characters
+    if( value && special_char.test(value) ) {
+      this.setState({
+        username: {
+          ...this.state.username,
+          value,
+          hasError: true,
+          error: getTranslation('SPECIAL_CHARACTERS')
+
+        }
+      });
+    } else {
+      this.setState({
+        username: {
+          ...this.state.username,
+          value,
+          hasError: !value,
+          error: !value ? 'REQUIRED' : ''
+        }
+      });
+    }
+	};
+  onPasswordChange = (value) => {
+    if( value && special_char.test(value) ) {
+      this.setState({
+        password: {
+          ...this.state.username,
+          value,
+          hasError: true,
+          error: getTranslation('SPECIAL_CHARACTERS')
+        }
+      });
+    } 
+    else 
+      if (value && value.length < 8) {
+        this.setState({
+          password: {
+            ...this.state.password,
+            value,
+            hasError: true,
+            error: getTranslation('MINIMUM_CHARACTERS')
+          }
+        });
+      } else {
+        this.setState({
+          password: {
+            ...this.state.password,
+            value,
+            hasError: !value,
+            error: !value ? 'REQUIRED' : ''
+          }
+        });
+      }
+   
+	};
+  onConfirmPasswordChange = (value) => {
+	  this.setState({
+	    confirm_password: {
+	      ...this.state.confirm_password,
+	      value,
+	      hasError: !value,
+	      error: !value ? 'REQUIRED' : ''
+	    }
+	  });
 	};
 
 	render = (
@@ -72,10 +167,10 @@ class InitialSignup extends Component {
               value={username.value}
               type="text"
               onBlur={(e) => {
-                // this.onFnameChange(e.target.value)
+                this.onUsernameChange(e.target.value)
               }}
               onInput={(e) => {
-                // this.onFnameChange(e.target.value)
+                this.onUsernameChange(e.target.value)
               }}
               hasError={username.hasError}
               error={username.error}
@@ -87,12 +182,12 @@ class InitialSignup extends Component {
               className={style.fields}
               style={{ error: style.fields }}
               value={password.value}
-              type="text"
+              type="password"
               onBlur={(e) => {
-                // this.onFnameChange(e.target.value)
+                this.onPasswordChange(e.target.value)
               }}
               onInput={(e) => {
-                // this.onFnameChange(e.target.value)
+                this.onPasswordChange(e.target.value)
               }}
               hasError={password.hasError}
               error={password.error}
@@ -107,12 +202,12 @@ class InitialSignup extends Component {
               className={style.fields}
               style={{ error: style.fields }}
               value={confirm_password.value}
-              type="text"
+              type="password"
               onBlur={(e) => {
-                // this.onFnameChange(e.target.value)
+                this.onConfirmPasswordChange(e.target.value)
               }}
               onInput={(e) => {
-                // this.onFnameChange(e.target.value)
+                this.onConfirmPasswordChange(e.target.value)
               }}
               hasError={confirm_password.hasError}
               error={confirm_password.error}
@@ -162,5 +257,4 @@ class InitialSignup extends Component {
 	  );
 	};
 }
-
 export default connect(['authUser'])(InitialSignup);
