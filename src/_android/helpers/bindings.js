@@ -1,7 +1,7 @@
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
 function callNative(data) {
-  window.ReactNativeWebView.postMessage(JSON.stringify(data));
+  window.ReactNativeWebView && window.ReactNativeWebView.postMessage(JSON.stringify(data));
 }
 
 // eslint-disable-next-line import/prefer-default-export
