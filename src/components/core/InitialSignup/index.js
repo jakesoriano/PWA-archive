@@ -111,7 +111,7 @@ class InitialSignup extends Component {
             ...this.state.password,
             value,
             hasError: true,
-            error: 'Minimum of 8 characters.'
+            error: getTranslation('MINIMUM_CHARACTERS')
           }
         });
       } else {
