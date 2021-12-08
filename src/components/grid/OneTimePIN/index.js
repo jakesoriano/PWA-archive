@@ -38,7 +38,7 @@ class OneTimePIN extends Component {
 				enteredPin: pin,
 			},
 		};
-		verifyOTP(config).then((res) => {
+		verifyOTP(this.props.signup).then((res) => {
 			if (res) {
 				route('/home', true);
 			} else {

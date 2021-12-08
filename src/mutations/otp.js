@@ -2,7 +2,7 @@ import { updateStore } from '_unistore';
 import { xhr, urlUserData, urlSendOTP } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
-export function verifyOTP(config) {
+export function verifyOTP(regData	) {
 	// return xhr(urlValidateOTP, config)
 	// 	.then((res) => {
 	// 		console.log(res.success);
@@ -15,7 +15,10 @@ export function verifyOTP(config) {
   return  xhr(urlUserData)
 		.then((res) => {
 			updateStore({
-				authUser: res,
+				authUser: {
+					...res,
+					...regData
+				},
 				signup: null,
 				newlyRegistered: true
 			});
