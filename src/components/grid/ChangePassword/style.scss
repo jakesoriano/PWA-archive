@@ -1,0 +1,17 @@
+@import '../../../style/variables.scss';
+.changePassWrapper {
+  position: relative;
+  .changePassContent {
+    height: calc(100vh - 200px);
+    padding: 35px;
+    .fields {
+      display: block;
+    }
+    .heading {
+      font-size: 1.5rem;
+    }
+  }
+  .buttonContainer {
+    padding: 0 25px;
+  }
+}

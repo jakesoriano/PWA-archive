@@ -17,7 +17,7 @@ class InitialSignup extends Component {
     super(props);
     this.state = {
       username: {
-        value: props.signup ? props.signup.username : '',
+        value: '',
         error: '',
         message: '',
         hasError: false
@@ -99,7 +99,7 @@ class InitialSignup extends Component {
     if( value && special_char.test(value) ) {
       this.setState({
         password: {
-          ...this.state.username,
+          ...this.state.password,
           value,
           hasError: true,
           error: getTranslation('SPECIAL_CHARACTERS')
@@ -164,8 +164,6 @@ class InitialSignup extends Component {
             <form className={style.form}>
             <FormGroup label="Username" hasError={username.hasError}>
               <FormInput
-              className={style.fields}
-              style={{ error: style.fields }}
               value={username.value}
               type="text"
               onBlur={(e) => {
@@ -181,8 +179,6 @@ class InitialSignup extends Component {
             </FormGroup>
             <FormGroup label="Password" hasError={password.hasError}>
               <FormInput
-              className={style.fields}
-              style={{ error: style.fields }}
               value={password.value}
               type="password"
               onBlur={(e) => {
@@ -201,8 +197,6 @@ class InitialSignup extends Component {
               hasError={confirm_password.hasError}
             >
               <FormInput
-              className={style.fields}
-              style={{ error: style.fields }}
               value={confirm_password.value}
               type="password"
               onBlur={(e) => {

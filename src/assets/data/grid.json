@@ -158,5 +158,16 @@
 				"component": "OneTimePIN"
 			}
 		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "SETTINGS",
+		"uri": "change-password",
+		"contents": [
+			{
+				"component": "ChangePassword"
+			}
+		]
 	}
 ]
