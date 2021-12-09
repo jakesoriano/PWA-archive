@@ -8,8 +8,18 @@ import {
 	getRegions,
 	getProvince,
 	getMunicipality,
-	getBarangay} from '_helpers';
-import { FormGroup, FormInput, FormDropdown, ButtonDescription } from '_components/core';
+	getBarangay,
+	displayPageLoader
+} from '_helpers';
+import {
+	FormGroup,
+	FormInput,
+	FormDropdown,
+	ButtonDescription
+} from '_components/core';
+import {
+	nativeSelfie
+} from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -288,24 +298,29 @@ class Signup extends Component {
 			this.onVoterChange(this.state.voter.value);
 			this.onRCodeChange(this.state.rCode.value);
 		} else {
-			updateStore({
-				signup: {
-					...(this.props.signup || {}),
-					fname: this.state.fname.value,
-					mname: this.state.mname.value,
-					lname: this.state.lname.value,
-					gender: this.state.gender.value,
-					dob: this.state.dob.value,
-					number: this.state.number.value,
-					region: this.state.region.value,
-					province: this.state.province.value,
-					municipality: this.state.municipality.value,
-					barangay: this.state.barangay.value,
-					voter: this.state.voter.value,
-					rCode: this.state.rCode.value,
-				}
+			displayPageLoader(true);
+			nativeSelfie().then(image => {
+				displayPageLoader(false);
+				updateStore({
+					signup: {
+						...(this.props.signup || {}),
+						image,
+						fname: this.state.fname.value,
+						mname: this.state.mname.value,
+						lname: this.state.lname.value,
+						gender: this.state.gender.value,
+						dob: this.state.dob.value,
+						number: this.state.number.value,
+						region: this.state.region.value,
+						province: this.state.province.value,
+						municipality: this.state.municipality.value,
+						barangay: this.state.barangay.value,
+						voter: this.state.voter.value,
+						rCode: this.state.rCode.value,
+					}
+				});
+				route(`/${this.props.parent}/otp`);
 			});
-			route(`/${this.props.parent}/otp`);
 		}
 	}
 

@@ -30,3 +30,5 @@ export function nativeGetDeviceId (callback) {
 export function nativeShare (data) {}
 
 export function nativeExitApp () {}
+
+export function nativeSelfie () {}

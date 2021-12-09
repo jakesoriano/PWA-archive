@@ -403,6 +403,8 @@ export default ConnectComponent;
 
 // Push Forward
 if (typeof window !== 'undefined') {
+
+	// native back
   window.onNativeBack = () => {
 		const { authUser } = store.getState();
 		const path = location.hash.replace('#', '');
