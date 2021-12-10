@@ -8,6 +8,9 @@ export const urlMembers = `{PUBLIC_PATH}assets/data/members.json?_{_}`;
 export const urlSendOTP = `{PUBLIC_PATH}assets/data/otp.json?_={_}`;
 export const urlValidateOTP = `{PUBLIC_PATH}assets/data/otp.json?_={_}`;
 export const urlInvited = `{PUBLIC_PATH}assets/data/invited.json?_{_}`;
+export const urlCommunity = `{APP_ENV_API_DOMAIN}community/`;
+export const urlCommunitySearch = urlCommunity + `filter/{name}`;
+export const urlCommunityGetById = urlCommunity + `{id}`;
 
 
 export const playStore = 'https://play.google.com/store/apps/details?id=com.facebook.katana&hl=en&gl=US';

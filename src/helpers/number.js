@@ -20,3 +20,18 @@ export const formatNumber = (value, decimals) => {
     return value;
   }
 };
+
+export const formatN = (value) => {
+  if (value && !isNaN(value)) {
+    if (value >= 1000000) {
+      return (value / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+    }
+    if (value >= 10000) {
+      return (value / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+    }
+    if (value >= 1000) {
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    } 
+    return value;
+  }
+}

@@ -11,3 +11,4 @@ export { default as Members } from './Members';
 export { default as Leaderboard } from './Leaderboard';
 export { default as Invite } from './Invite';
 export { default as Signup } from './Signup';
+export { default as Community } from './Community';
