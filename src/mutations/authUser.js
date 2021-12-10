@@ -1,5 +1,5 @@
 import { updateStore, store } from '_unistore';
-import { xhr, urlUserData, removeCookie, urlUserPoints } from '_helpers';
+import { xhr, urlUserLogin, removeCookie, urlUserPoints } from '_helpers';
 
 export function logOut (callback) {
   removeCookie('token');
@@ -59,17 +59,32 @@ export function fetchUserPoints () {
 
 export function login (data) {
   return new Promise((resolve) => {
-    xhr(urlUserData, {
-      method: 'GET',
+    xhr(urlUserLogin, {
+      method: 'POST',
       data
     })
       .then((res) => {
-        updateStore({
-          authUser: res
-        });
-        // eslint-disable-next-line
-				console.log(`SPA >> login successful`, res);
-        resolve(true);
+        if (res && res.success) {
+          updateStore({
+            authUser: res,
+            alertShow: null
+          });
+          // eslint-disable-next-line
+          console.log(`SPA >> login successful`, res);
+          resolve(true);
+        } else {
+          updateStore({
+            alertShow: {
+              success: false,
+              content: 'Invalid Username or password!'
+            }
+          });
+          setTimeout(() => {
+            updateStore({
+              alertShow: null
+            });
+          }, 5300)
+        }
       })
       .catch((err) => {
         // eslint-disable-next-line

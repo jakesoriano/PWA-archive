@@ -1,11 +1,12 @@
 import { store } from '_unistore';
-import { getLanguageInfo, platform } from '_helpers';
+import { getLanguageInfo, platform, replaceUrlPlaceholders } from '_helpers';
 import XHRWorker from '_workers/XHRWorker';
 import { getCurrencyCode } from './language';
 
 const xhrInstances = {};
 // eslint-disable-next-line import/prefer-default-export
 export function xhr (url, options, externalAPI) {
+  url = replaceUrlPlaceholders(url);
   if (
     xhrInstances[url] &&
 		(!options ||
