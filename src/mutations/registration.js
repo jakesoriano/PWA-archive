@@ -21,7 +21,6 @@ export function validateUsername (username) {
 }
 
 export function completeSignup (data) {
-  console.log(data, 'data');
   return new Promise((resolve) => {
     xhr(urlSignup, {
       method: 'POST',
@@ -75,9 +74,12 @@ export function verifyOTP (data) {
           resolve(res);
         } else {
           console.log(`SPA >> completeRegistration successful`, res);
-          updateStore({
-            authUser: res,
+          res = {
+            ...res,
             isNewUser: true
+          }
+          updateStore({
+            authUser: res
           })
           resolve(res);
         }
