@@ -99,7 +99,7 @@ class Signup extends Component {
 				message: '',
 				hasError: false
 			},
-			rCode: {
+			parentRefCode: {
 				value: props.signup && props.signup.parentRefCode? props.signup.parentRefCode : '',
 				error: '',
 				message: '',
@@ -264,10 +264,10 @@ class Signup extends Component {
 		});
 	};
 	
-	onRCodeChange = (value) => {
+	onParentRefCodeChange = (value) => {
 		this.setState({
-			rCode: {
-				...this.state.rCode,
+			parentRefCode: {
+				...this.state.parentRefCode,
 				value: value,
 				// hasError: !Boolean(value),
 				// error: !Boolean(value) ? 'REQUIRED' : ''
@@ -285,8 +285,9 @@ class Signup extends Component {
 			!this.state.province.value ||
 			!this.state.municipality.value ||
 			!this.state.barangay.value ||
-			!this.state.voter.value ||
-			!this.state.rCode.value) {
+			!this.state.voter.value 
+			// || !this.state.parentRefCode.value
+			) {
 			this.onFnameChange(this.state.fname.value);
 			this.onMnameChange(this.state.lname.value);
 			this.onLnameChange(this.state.lname.value);
@@ -297,7 +298,7 @@ class Signup extends Component {
 			this.onMunicipalityChange(this.state.municipality.value);
 			this.onBarangayChange(this.state.barangay.value);
 			this.onVoterChange(this.state.voter.value);
-			// this.onRCodeChange(this.state.rCode.value);
+			// this.onParentRefCodeChange(this.state.parentRefCode.value);
 		} else {
 			
 			// displayPageLoader(false);
@@ -318,7 +319,7 @@ class Signup extends Component {
 						municipality: this.state.municipality.value,
 						barangay: this.state.barangay.value,
 						isRegisteredVoter: this.state.voter.value,
-						parentRefCode: this.state.rCode.value
+						parentRefCode: this.state.parentRefCode.value
 					};
 					completeSignup(userData).then((res) => {
 						console.log(res, 'data');
@@ -356,7 +357,7 @@ class Signup extends Component {
 		municipality,
 		barangay,
 		voter,
-		rCode,
+		parentRefCode,
 		regionOptions,
 		provinceOptions,
 		municipalityOptions,
@@ -555,19 +556,19 @@ class Signup extends Component {
 							</div>
 					</FormGroup>
 
-					<FormGroup label="REFERRAL_CODE" hasError={rCode.hasError}>
+					<FormGroup label="REFERRAL_CODE" hasError={parentRefCode.hasError}>
 						<FormInput
-							value={rCode.value}
+							value={parentRefCode.value}
 							type="text"
 							onBlur={(e) => {
-								this.onRCodeChange(e.target.value)
+								this.onParentRefCodeChange(e.target.value)
 							}}
 							onInput={(e) => {
-								this.onRCodeChange(e.target.value)
+								this.onParentRefCodeChange(e.target.value)
 							}}
-							hasError={rCode.hasError}
-							error={rCode.error}
-							message={rCode.message} />
+							hasError={parentRefCode.hasError}
+							error={parentRefCode.error}
+							message={parentRefCode.message} />
 					</FormGroup>
 
 					<ButtonDescription

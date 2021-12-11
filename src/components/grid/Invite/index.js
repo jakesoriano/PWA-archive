@@ -83,7 +83,7 @@ class Invite extends Component {
 					Download now!\n
 					Android: ${playStore}\n
 					Apple: ${appStore}\n\n
-					Use my invite code: ${this.props.authUser.refCode}
+					Use my invite code: ${this.props.authUser.profile.refCode}
 				`
 			});
 			newInvite({
@@ -100,6 +100,10 @@ class Invite extends Component {
 	}
 
 	render = ({ authUser, invited }, { fname, lname, region, regionOptions }) => {
+
+		if (!authUser) {
+			return null;
+		}
 
 	  return (
 			<div className={style.inviteWrap}>
