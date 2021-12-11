@@ -18,7 +18,7 @@ export function fetchMembers () {
     .then((res) => {
       updateStore({
         members: {
-          data: res,
+          data: res.data,
           fetching: false,
           result: true
         }
