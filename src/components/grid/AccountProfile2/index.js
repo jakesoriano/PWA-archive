@@ -10,10 +10,10 @@ import style from './style';
 // eslint-disable-next-line react/prefer-stateless-function
 class AccountProfile extends Component {
 	componentDidMount = () => {
-	  const { authUser } = this.props;
-	  if (authUser) {
-	    fetchUserPoints();
-	  }
+	  // const { authUser } = this.props;
+	  // if (authUser) {
+	  //   fetchUserPoints();
+	  // }
 	};
 
 	render = ({ authUser }) => {
@@ -30,12 +30,12 @@ class AccountProfile extends Component {
 							style={{container: style.avatar}} />
 						<div className={style.nameMember}>
 							<p className={`bold ${style.name}`}>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
-							<p className={style.members}>{`${authUser.members} ${getTranslation('MEMBERS')}`}</p>
+							<p className={style.members}>{`${formatNumber(authUser.members, 2) || 0} ${getTranslation('MEMBERS')}`}</p>
 						</div>
 					</div>
 					<div className={style.pointsNbuttons}>
 						<p className={style.heroPoints}>
-							<span className={`extraBold ${style.points}`}>{formatNumber(authUser.points, 2)}</span>
+							<span className={`extraBold ${style.points}`}>{formatNumber(authUser.points, 2) || 0}</span>
 							<span className={`bold ${style.textPoints}`}>{getTranslation('HERO_POINTS')}</span>
 						</p>
 						<Link className={style.invite} href="/invite">

@@ -20,7 +20,7 @@ class AccountProfile extends Component {
 	componentDidMount = () => {
 		const { authUser } = this.props;
 		if (authUser) {
-			fetchUserPoints();
+			// fetchUserPoints();
 			if (authUser.hasOwnProperty('isNewUser') && authUser.isNewUser) {
 				updateStore({
 					popupModal: {
