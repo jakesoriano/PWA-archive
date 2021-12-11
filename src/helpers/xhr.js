@@ -6,7 +6,6 @@ import { getCurrencyCode } from './language';
 const xhrInstances = {};
 // eslint-disable-next-line import/prefer-default-export
 export function xhr (url, options, externalAPI) {
-  url = replaceUrlPlaceholders(url);
   if (
     xhrInstances[url] &&
 		(!options ||
