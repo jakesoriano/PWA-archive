@@ -187,7 +187,12 @@ class NewsAndEvents extends Component {
 		if (data.length) {
 			return data.map(i => (
 				<div className={`${style.contentItem} ${style.eventItem}`}>
-					
+					<div className={style.community}>
+						<ImageLoader
+							src={i.community.image}
+							style={{container: style.comImage}} />
+						<span>{getTranslation(i.community.name)}</span>
+					</div>
 					<a className={style.details} onClick={() => {
 						this.onClickItem(i);
 					}}>
@@ -223,7 +228,6 @@ class NewsAndEvents extends Component {
 	};
 
 	render = ({ news, events }, state) => {
-		console.log('news', news);
 	  return (
 			<div className={style.newsAndEvents}>
 				<div className={style.tabWrap}>
