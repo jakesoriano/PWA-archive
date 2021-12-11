@@ -1,7 +1,7 @@
 /** @format */
 
 import { h, Component } from 'preact';
-import { replaceUrlPlaceholders } from '_helpers';
+import { resolveImageUrl } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -101,7 +101,7 @@ export default class ImageLoader extends Component {
 	};
 
 	render = () => {
-	  const src = replaceUrlPlaceholders(this.props.src);
+	  const src = resolveImageUrl(this.props.src);
 	  const loadImmediately =
 			!isObserverSupported ||
 			!this.props.lazy ||
