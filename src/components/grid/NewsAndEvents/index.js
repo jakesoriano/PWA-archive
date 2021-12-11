@@ -144,7 +144,7 @@ class NewsAndEvents extends Component {
 				<div className={style.contentItem}>
 					<div className={style.community}>
 						<ImageLoader
-							src={i.community.image}
+							src={`{CDN_DOMAIN}${i.community.image}`}
 							style={{container: style.comImage}} />
 						<span>{getTranslation(i.community.name)}</span>
 					</div>
@@ -152,7 +152,7 @@ class NewsAndEvents extends Component {
 						this.onClickItem(i);
 					}}>
 						<ImageLoader
-							src={i.image}
+							src={`{CDN_DOMAIN}${i.image}`}
 							style={{container: style.detailImage}} />
 						<div className={style.detailContent}>
 							<span className={`bold ${style.detailTitle}`}>{getTranslation(i.title)}</span>
