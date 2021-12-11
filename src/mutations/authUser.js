@@ -2,9 +2,23 @@ import { updateStore, store } from '_unistore';
 import { xhr, urlUserLogin, removeCookie, urlUserPoints } from '_helpers';
 
 export function logOut (callback) {
+
+  const {
+    news,
+    events,
+    members,
+    invited,
+    communities,
+  } = store.getState();
+
   removeCookie('token');
   updateStore({
-    authUser: null
+    authUser: null,
+    news,
+    events,
+    members,
+    invited,
+    communities,
   });
   if (callback) {
     callback();
@@ -38,12 +52,24 @@ export function fetchUserPoints () {
     xhr(urlUserPoints)
       .then((res) => {
         // get current data
-        const { authUser } = store.getState();
+        const {
+          authUser,
+          news,
+          events,
+          members,
+          invited,
+          communities
+        } = store.getState();
         updateStore({
           authUser: {
             ...authUser,
             ...res
-          }
+          },
+          news,
+          events,
+          members,
+          invited,
+          communities,
         });
         // eslint-disable-next-line
 				console.log(`SPA >> fetchUserPoints successful`, res);

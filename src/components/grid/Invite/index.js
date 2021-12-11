@@ -101,6 +101,10 @@ class Invite extends Component {
 
 	render = ({ authUser, invited }, { fname, lname, region, regionOptions }) => {
 
+		if (!authUser) {
+			return null;
+		}
+
 	  return (
 			<div className={style.inviteWrap}>
 				<form className={style.form}>

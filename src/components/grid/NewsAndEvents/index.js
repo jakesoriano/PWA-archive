@@ -161,12 +161,12 @@ class NewsAndEvents extends Component {
 					</a>
 					<div className={style.buttons}>
 						<a
-							className={i.liked ? style.buttonLikeActive : ''}
+							className={i.liked ? `extraBold ${style.buttonLikeActive}` : ''}
 							onClick={() => {
 								this.onLikeNews(i);
 							}}>{getTranslation('LIKE')}</a>
 						<a
-							className={i.shared ? style.buttonShareActive : ''}
+							className={i.shared ? `extraBold ${style.buttonShareActive}` : ''}
 							onClick={() => {
 								this.onShareNews(i);
 							}}>{getTranslation('SHARE')}</a>
