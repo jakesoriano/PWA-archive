@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader } from '_components/core';
 import { fetchMembers } from '_mutations';
-import { getTranslation } from '_helpers';
+import { getTranslation, getDefaultAvatar } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -26,11 +26,11 @@ class Members extends Component {
 				{members.data.map(item => (
 					<div className={style.item}>
 						<ImageLoader 
-							src={item.image}
+							src={item.image || getDefaultAvatar()}
 							style={{container: style.avatar}} />
 						<div className={style.nameMember}>
 							<div>
-								<p className={`light ${style.name}`}>{`${item.fname} ${item.lname}, ${item.region}. ${item.municipality}`}</p>
+								<p className={`light ${style.name}`}>{`${item.profile.fname} ${item.profile.lname}, ${item.profile.region}. ${item.profile.municipality}`}</p>
 								<p className={`light ${style.members}`}>{`${item.members} ${getTranslation('MEMBERS')}`}</p>
 							</div>
 						</div>

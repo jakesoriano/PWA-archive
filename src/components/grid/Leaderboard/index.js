@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader } from '_components/core';
 import { fetchMembers } from '_mutations';
-import { getTranslation, formatNumber } from '_helpers';
+import { getTranslation, formatNumber, getDefaultAvatar } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -35,11 +35,11 @@ class Leaderboard extends Component {
 				{members.data.sort((a, b) => a.rank - b.rank).map(item => (
 					<div className={style.item}>
 						<ImageLoader 
-							src={item.image}
+							src={item.image || getDefaultAvatar()}
 							style={{container: style.avatar}} />
 						<div className={style.nameMember}>
 							<div>
-								<p className={`light ${style.name}`}>{`${item.fname} ${item.lname}`}</p>
+								<p className={`light ${style.name}`}>{`${item.profile.fname} ${item.profile.lname}`}</p>
 								<p className={`light ${style.members}`}>{`${item.members} ${getTranslation('MEMBERS')}`}</p>
 							</div>
 						</div>

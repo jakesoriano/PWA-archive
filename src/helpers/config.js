@@ -20,3 +20,7 @@ export function overrideCurrencyCode () {
   }
   return (getCurrencyCode(selectedLanguage) || '').toUpperCase();
 }
+
+export function getDefaultAvatar() {
+  return 'assets/images/myaccount_icon_inactive.png';
+}
