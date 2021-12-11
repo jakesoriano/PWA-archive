@@ -16,6 +16,7 @@ export function replaceUrlPlaceholders (url) {
       parsedUrl = url
         .replace(/{langAlias}/gim, selectedLanguage)
         .replace(/{API_DOMAIN}/gim, process.env.API_DOMAIN)
+        .replace(/{CDN_DOMAIN}/gim, process.env.CDN_DOMAIN)
         .replace(/{PUBLIC_PATH}/gim, process.env.PUBLIC_PATH)
         .replace(/{TARGET}/gim, process.env.PLATFORM)
         .replace(/{DOMAIN}/gim, domain);

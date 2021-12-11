@@ -9,7 +9,7 @@ import {
 	getProvince,
 	getMunicipality,
 	getBarangay,
-	displayPageLoader
+	// displayPageLoader
 } from '_helpers';
 import {
 	FormGroup,
@@ -298,9 +298,9 @@ class Signup extends Component {
 			this.onVoterChange(this.state.voter.value);
 			this.onRCodeChange(this.state.rCode.value);
 		} else {
-			displayPageLoader(true);
+			// displayPageLoader(true);
 			nativeSelfie().then(image => {
-				displayPageLoader(false);
+				// displayPageLoader(false);
 				updateStore({
 					signup: {
 						...(this.props.signup || {}),
