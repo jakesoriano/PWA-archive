@@ -58,7 +58,7 @@ class NewsAndEvents extends Component {
 				Apple: ${appStore}\n\n
 				Article Title: ${item.title}\n
 				Ariticle Link: ${item.link || ''}\n
-				Use my invite code: ${this.props.authUser.refCode}
+				Use my invite code: ${this.props.authUser.profile.refCode}
 			`
 		});
 		if (!item.shared) {

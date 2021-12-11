@@ -83,7 +83,7 @@ class Invite extends Component {
 					Download now!\n
 					Android: ${playStore}\n
 					Apple: ${appStore}\n\n
-					Use my invite code: ${this.props.authUser.refCode}
+					Use my invite code: ${this.props.authUser.profile.refCode}
 				`
 			});
 			newInvite({

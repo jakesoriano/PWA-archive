@@ -22,7 +22,7 @@ class AccountProfile extends Component {
 			title: `Be a Hero`,
 			message: `\n
 				I've earned ${this.props.authUser.point} Hero Points. \n\n
-				Download the kakampink App, enter the referral code "${this.props.authUser.refCode}" and let's show our support!\n\n
+				Download the kakampink App, enter the referral code "${this.props.authUser.profile.refCode}" and let's show our support!\n\n
 				#LetLeniLead
 			`
 		});
