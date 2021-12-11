@@ -3,8 +3,8 @@ import { connect } from 'unistore/preact';
 import { 
 	fetchNews, 
 	fetchEvents,
-	likeNews,
-	removeLikeNiews } from '_mutations';
+	likeShareNews,
+	removeLikeNews } from '_mutations';
 import { getTranslation, dateEventFormat, playStore, appStore } from '_helpers';
 import { ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
@@ -44,11 +44,10 @@ class NewsAndEvents extends Component {
 	};
 
 	onLikeNews = (item) => {
-		console.log('item', item);
-		if (item.ilike) {
-			likeNews(data);
+		if (!item.liked) {
+			likeShareNews(item, 'N', 'liked');
 		} else {
-			removeLikeNiews(data);
+			removeLikeNews(item, 'N');
 		}
 	}
 
@@ -67,6 +66,9 @@ class NewsAndEvents extends Component {
 				Use my invite code: ${this.props.authUser.refCode}
 			`
 		});
+		if (!item.shared) {
+			likeShareNews(item, 'N', 'shared');
+		}
 	};
 
 	onShareEvent = (item) => {
@@ -169,7 +171,7 @@ class NewsAndEvents extends Component {
 								this.onLikeNews(i);
 							}}>{getTranslation('LIKE')}</a>
 						<a
-							className={i.liked ? style.buttonShareActive : ''}
+							className={i.shared ? style.buttonShareActive : ''}
 							onClick={() => {
 								this.onShareNews(i);
 							}}>{getTranslation('SHARE')}</a>
