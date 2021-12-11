@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader } from '_components/core';
 import { fetchUserData, fetchUserPoints } from '_mutations';
-import { getTranslation, formatNumber } from '_helpers';
+import { getTranslation, formatNumber, getDefaultAvatar } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -38,7 +38,7 @@ class AccountProfile extends Component {
 	      <div className={style.profile}>
 					<div className={style.user}>
 						<ImageLoader 
-							src={authUser.profile.image || 'assets/images/myaccount_icon_inactive.png'}
+							src={authUser.profile.image || getDefaultAvatar()}
 							style={{container: style.avatar}} />
 						<div className={style.nameMember}>
 							<p className={`bold ${style.name}`}>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
