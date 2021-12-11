@@ -13,7 +13,7 @@ export const urlEvents = `{PUBLIC_PATH}assets/data/events.json?_{_}`;
 export const urlMembers = `{PUBLIC_PATH}assets/data/members.json?_{_}`;
 export const urlSendOTP = `{PUBLIC_PATH}assets/data/otp.json?_={_}`;
 export const urlValidateOTP = `{PUBLIC_PATH}assets/data/otp.json?_={_}`;
-export const urlInvited = `{PUBLIC_PATH}assets/data/invited.json?_{_}`;
+export const urlInvited = `{API_DOMAIN}invitation`;
 
 
 export const playStore = 'https://play.google.com/store/apps/details?id=com.facebook.katana&hl=en&gl=US';
