@@ -21,7 +21,7 @@ self.onmessage = (ev) => {
   };
 
   // Default Headers
-  const jwtToken = (ev.data.options && ev.data.options.token ? ev.data.options.token : (ev.data.authUser ? ev.data.authUser.Token : ''));
+  const jwtToken = (ev.data.options && ev.data.options.token ? ev.data.options.token : (ev.data.authUser ? ev.data.authUser.token : ''));
   config.headers = {};
   if (!ev.data.externalAPI) {
     config.headers = {
