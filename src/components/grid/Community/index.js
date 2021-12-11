@@ -11,7 +11,6 @@ class Community extends Component {
   constructor() {
     super();
     this.state = {
-      search: '',
       data: [
         {
           id: 1,
@@ -21,6 +20,7 @@ class Community extends Component {
         }
       ]
     }
+    this.timer = null;
   }
 	componentDidMount = () => {
     fetchAllCommunities();
@@ -30,11 +30,12 @@ class Community extends Component {
     e.target.classList.add(style.followed);
   }
 
-  handleSearchByName = () => {
-    const { search } = this.state
-    if (search) {
-      filterCommunityByName(search)
-    }
+  handleSearchByName = (e) => {
+    // filter
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      filterCommunityByName(e.target.value)
+    }, 500);
   }
 
   visitCommunity = (id) => {
@@ -73,14 +74,9 @@ class Community extends Component {
           <input
             name="communitySearch"
             placeholder="Search a Community"
-            onKeyDown={(e) => {
-              this.setState({
-                search: e.target.value
-              });
-            }}
+            onInput={this.handleSearchByName}
           />
           <ImageLoader
-            onClick={this.handleSearchByName()}
             src={'assets/images/magnifying_icon.png'}
             style={{container: style.searchIcon}}
           />
