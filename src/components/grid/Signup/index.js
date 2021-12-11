@@ -319,6 +319,13 @@ class Signup extends Component {
 			});
 			setTimeout(() => {
 				completeSignup(this.props.signup).then((res) => {
+					updateStore({
+						signup: {
+							...(this.props.signup || {}),
+							registrationId: res.id
+						}
+					})
+					route(`/${this.props.parent}/otp`);
 				})
 			}, 100)
 			// displayPageLoader(false);
@@ -343,7 +350,6 @@ class Signup extends Component {
 			// 		}
 			// 	});
 			// });
-			// route(`/${this.props.parent}/otp`);
 		}
 	}
 
