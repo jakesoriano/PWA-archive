@@ -3,8 +3,11 @@ import { xhr, urlInvited } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
 export function fetchInvited () {
-  // curreny state
+  // current state
   const { invited } = store.getState();
+  const { authUser } = store.getState();
+  const urlInvitation = `${urlInvited}/${authUser.profile._id}`;
+  console.log('authUser', authUser);
   // initial state
   updateStore({
     invited: {
@@ -14,16 +17,19 @@ export function fetchInvited () {
     }
   });
 
-  return xhr(urlInvited)
+  return new Promise((resolve) => {
+    xhr(urlInvitation, {
+      method: 'GET',
+    })
     .then((res) => {
       updateStore({
         invited: {
-          data: res,
+          data: res.data,
           fetching: false,
           result: true
         }
       });
-      return true;
+      resolve(true);
     })
     .catch(() => {
       updateStore({
@@ -33,6 +39,43 @@ export function fetchInvited () {
           result: false
         }
       });
-      return false;
+      resolve(false);
     });
+  });
+}
+
+export function newInvite (data) {
+  // current state
+  const { authUser } = store.getState();
+  const urlInvitation = `${urlInvited}/${authUser.profile._id}`;
+  
+  return new Promise((resolve) => {
+    xhr(urlInvitation, {
+      method: 'POST',
+      data
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> newInvite Error`, res);
+          updateStore({
+            alertShow: {
+              success: false,
+              content: 'Something went wrong!'
+            }
+          });
+          setTimeout(() => {
+            updateStore({
+              alertShow: null
+            });
+          }, 5300)
+        } else {
+          console.log(`SPA >> newInvite successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(false);
+        console.log(`SPA >> newInvite failed`, err);
+      });
+  });
 }

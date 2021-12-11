@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { fetchInvited } from '_mutations';
+import { fetchInvited, newInvite } from '_mutations';
 import { getTranslation, getRegions, playStore, appStore} from '_helpers';
 import { FormGroup, FormInput, FormDropdown, ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
@@ -89,6 +89,16 @@ class Invite extends Component {
 					Use my invite code: ${this.props.authUser.refCode}
 				`
 			});
+			newInvite({
+				fname: this.state.fname.value,
+				lname: this.state.lname.value
+	    })
+	      .then((res) => {
+	        fetchInvited();
+	      })
+	      .catch((err) => {
+          console.log('err', err);
+	      });
 		}
 	}
 
@@ -151,7 +161,7 @@ class Invite extends Component {
 					{/* Invite */}
 					<FormGroup label="INVITE">
 						<div className={style.invite}>
-							<span className={`bold`}>{authUser.refCode}</span>
+							<span className={`bold`}>{authUser.profile.refCode}</span>
 							<div>
 								<a className={style.pShare} onClick={this.onShare}>
 									<ImageLoader
