@@ -303,10 +303,10 @@ class Signup extends Component {
 			// displayPageLoader(false);
 			nativeSelfie().then(image => {
 				// displayPageLoader(false);
-				updateStore({
-					signup: {
+				setTimeout(() => {
+					const userData = {
 						...(this.props.signup || {}),
-						image,
+						image: image,
 						fname: this.state.fname.value,
 						mname: this.state.mname.value,
 						lname: this.state.lname.value,
@@ -318,14 +318,12 @@ class Signup extends Component {
 						municipality: this.state.municipality.value,
 						barangay: this.state.barangay.value,
 						isRegisteredVoter: this.state.voter.value,
-						parentRefCode: this.state.rCode.value,
-					}
-				});
-				setTimeout(() => {
-					completeSignup(this.props.signup).then((res) => {
+						parentRefCode: this.state.rCode.value
+					};
+					completeSignup(userData).then((res) => {
 						updateStore({
 							signup: {
-								...(this.props.signup || {}),
+								...userData,
 								registrationId: res.id
 							}
 						})

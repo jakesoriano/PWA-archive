@@ -21,10 +21,6 @@ class OneTimePIN extends Component {
 	};
 
 	componentDidMount = () => {
-		const { signup } = this.props;
-		if (signup && signup.hasOwnProperty('number')) {
-			sendOTP(signup.number);
-		}
 		updateStore({
 			customBack: () => {
 				route(`/${this.props.parent}/signup`, true)
