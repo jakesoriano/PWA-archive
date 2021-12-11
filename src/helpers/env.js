@@ -13,7 +13,7 @@ export const urlEvents = `{PUBLIC_PATH}assets/data/events.json?_{_}`;
 export const urlMembers = `${process.env.API_DOMAIN}user/members`;
 export const urlSendOTP = `{PUBLIC_PATH}assets/data/otp.json?_={_}`;
 export const urlValidateOTP = `{PUBLIC_PATH}assets/data/otp.json?_={_}`;
-export const urlInvited = `{PUBLIC_PATH}assets/data/invited.json?_{_}`;
+export const urlInvited = `${process.env.API_DOMAIN}invitation`;
 export const urlCommunity = `${process.env.API_DOMAIN}community/`;
 export const urlCommunitySearch = urlCommunity + `filter/{name}`;
 export const urlCommunityGetById = urlCommunity + `{id}`;
