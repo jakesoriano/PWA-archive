@@ -13,7 +13,7 @@ class AccountProfile extends Component {
 	componentDidMount = () => {
 	  const { authUser } = this.props;
 	  if (authUser) {
-	    fetchUserPoints();
+	    // fetchUserPoints();
 	  }
 	};
 
@@ -43,7 +43,7 @@ class AccountProfile extends Component {
 						<div className={style.nameMember}>
 							<p className={`bold ${style.name}`}>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
 							<p className={style.members}>{`${getTranslation('RANK')} ${formatNumber(authUser.rank, 0) || 0}`}</p>
-							<p className={style.members}>{`${formatNumber(authUser.points, 2)} ${getTranslation('PTS')} `}</p>
+							<p className={style.members}>{`${formatNumber(authUser.points, 2) || 0} ${getTranslation('PTS')} `}</p>
 						</div>
 						<a onClick={() => {
 							this.onShare();

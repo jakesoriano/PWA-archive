@@ -44,7 +44,7 @@ class Leaderboard extends Component {
 							<p className={`light`}>{formatNumber(item.rank)}</p>
 						</div>
 						<div className={style.points}>
-							<p className={`light`}>{formatNumber(item.points)}</p>
+							<p className={`light`}>{formatNumber(item.points) || 0}</p>
 						</div>
 					</div>
 				))}
