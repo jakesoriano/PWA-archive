@@ -1,6 +1,10 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { fetchNews, fetchEvents } from '_mutations';
+import { 
+	fetchNews, 
+	fetchEvents,
+	likeShareNews,
+	removeLikeNews } from '_mutations';
 import { getTranslation, dateEventFormat, playStore, appStore } from '_helpers';
 import { ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
@@ -34,6 +38,14 @@ class NewsAndEvents extends Component {
 		});
 	};
 
+	onLikeNews = (item) => {
+		if (!item.liked) {
+			likeShareNews(item, 'N', 'liked');
+		} else {
+			removeLikeNews(item, 'N');
+		}
+	}
+
 	onShareNews = (item) => {
 		nativeShare({
 			url: item.image,
@@ -49,6 +61,9 @@ class NewsAndEvents extends Component {
 				Use my invite code: ${this.props.authUser.refCode}
 			`
 		});
+		if (!item.shared) {
+			likeShareNews(item, 'N', 'shared');
+		}
 	};
 
 	onShareEvent = (item) => {
@@ -146,9 +161,12 @@ class NewsAndEvents extends Component {
 					</a>
 					<div className={style.buttons}>
 						<a
-							className={`bold ${style.buttonLike} ${i.liked ? style.buttonLikeActive : ''}`}>{getTranslation('LIKE')}</a>
+							className={i.liked ? style.buttonLikeActive : ''}
+							onClick={() => {
+								this.onLikeNews(i);
+							}}>{getTranslation('LIKE')}</a>
 						<a
-							className={`bold ${style.buttonShare} ${i.liked ? style.buttonShareActive : ''}`}
+							className={i.shared ? style.buttonShareActive : ''}
 							onClick={() => {
 								this.onShareNews(i);
 							}}>{getTranslation('SHARE')}</a>

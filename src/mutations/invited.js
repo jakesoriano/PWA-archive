@@ -7,7 +7,7 @@ export function fetchInvited () {
   const { invited } = store.getState();
   const { authUser } = store.getState();
   const urlInvitation = `${urlInvited}/${authUser.profile._id}`;
-  
+
   // fetching
   if(invited.fetching) {
     return;
@@ -34,9 +34,10 @@ export function fetchInvited () {
           result: true
         }
       });
+      console.log(`SPA >> fetchInvitations Success`, res.success);
       resolve(true);
     })
-    .catch(() => {
+    .catch((err) => {
       updateStore({
         invited: {
           ...invited,
@@ -44,6 +45,7 @@ export function fetchInvited () {
           result: false
         }
       });
+      console.log(`SPA >> fetchInvitations Error`, err);
       resolve(false);
     });
   });
