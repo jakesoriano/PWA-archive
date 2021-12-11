@@ -3,6 +3,14 @@ import { xhr, urlCommunity, urlCommunitySearch, urlCommunityGetById } from '_hel
 
 // eslint-disable-next-line import/prefer-default-export
 export function filterCommunityByName(name) {
+  // curreny state
+  const { communities } = store.getState();
+
+  // fetching
+  if(communities.fetching) {
+    return;
+  }
+
 	if (name) {
 		const url = urlCommunitySearch.replace(/{name}/gim, name);
 		return new Promise((resolve) => {
@@ -28,6 +36,14 @@ export function filterCommunityByName(name) {
 }
 
 export function fetchCommunityById(id) {
+  // curreny state
+  const { communities } = store.getState();
+
+  // fetching
+  if(communities.fetching) {
+    return;
+  }
+
   const url = urlCommunityGetById.replace(/{id}/gim, id);
 	return new Promise((resolve) => {
 		xhr(url)
@@ -49,6 +65,14 @@ export function fetchCommunityById(id) {
 }
 
 export function fetchAllCommunities() {
+  // curreny state
+  const { communities } = store.getState();
+
+  // fetching
+  if(communities.fetching) {
+    return;
+  }
+
 	return new Promise((resolve) => {
 		xhr(urlCommunity)
 		.then((res) => {
