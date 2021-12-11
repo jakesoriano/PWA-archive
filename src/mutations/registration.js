@@ -27,32 +27,26 @@ export function completeSignup (data) {
       data
     })
       .then((res) => {
-        if (!res.success) {
-          console.log(`SPA >> validateUsername Error`, res.success);
+        console.log(res);
+        if (res.success) {
+          console.log(`SPA >> completeSignup successful`, res);
           updateStore({
-            alertShow: {
-              success: false,
-              content: 'Something went wrong!'
+            signup: {
+              registrationId: res.id,
             }
           });
-          setTimeout(() => {
-            updateStore({
-              alertShow: null
-            });
-          }, 5300)
-        } else {
-          console.log(`SPA >> validateUsername successful`, res);
-          resolve(res);
         }
+        resolve(res);
       })
       .catch((err) => {
         resolve(false);
-        console.log(`SPA >> validateUsername failed`, err);
+        console.log(`SPA >> completeSignup failed`, err);
       });
   });
 }
 
-export function verifyOTP (data) {
+export function completeRegister (data) {
+  console.log(data, 'data')
   return new Promise((resolve) => {
     xhr(urlRegister, {
       method: 'POST',
@@ -60,7 +54,7 @@ export function verifyOTP (data) {
     })
       .then((res) => {
         if (res.success) {
-          console.log(`SPA >> completeRegistration successful`, res);
+          console.log(`SPA >> completeRegister successful`, res);
           res = {
             ...res,
             isNewUser: true
@@ -73,7 +67,7 @@ export function verifyOTP (data) {
       })
       .catch((err) => {
         // eslint-disable-next-line
-				console.log(`SPA >> completeRegistration Error`, err);
+				console.log(`SPA >> completeRegister Error`, err);
         resolve(false);
       });
   });
