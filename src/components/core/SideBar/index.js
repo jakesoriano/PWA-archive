@@ -38,11 +38,11 @@ class SideBar extends Component {
 					{/* Side Bar Contents Here */}
 					<div className={style.sUser}>
 						<ImageLoader 
-									src={authUser.image}
+							src={authUser.profile.image || 'assets/images/myaccount_icon_inactive.png'}
 							style={{container: style.sAvatar}} />
 						<div>
 							<div>
-									<p className={`${style.sName}`}>{`${getTranslation('HI_NAME').replace('{NAME}', authUser.fname)}`}</p>
+									<p className={`${style.sName}`}>{`${getTranslation('HI_NAME').replace('{NAME}', authUser.profile.fname)}`}</p>
 									<p className={style.sLogin}>{`${getTranslation('LAST_LOGIN').replace('{DATE_TIME}', dateLastLoginFormat(authUser.loginDate))}`}</p>
 							</div>
 						</div>
