@@ -1,8 +1,9 @@
 import { Component } from 'preact';
-import { getTranslation, formatN } from '_helpers';
-import { filterCommunityByName } from '_mutations';
+import { getTranslation, formatN, replaceUrlPlaceholders } from '_helpers';
+import { filterCommunityByName, fetchAllCommunities } from '_mutations';
 import { ImageLoader, ButtonDescription } from '_components/core';
 import { route } from 'preact-router';
+import { connect } from 'unistore/preact';
 import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -22,6 +23,7 @@ class Community extends Component {
     }
   }
 	componentDidMount = () => {
+    fetchAllCommunities();
 	};
 
   handleFollow = (e) => {
@@ -31,12 +33,7 @@ class Community extends Component {
   handleSearchByName = () => {
     const { search } = this.state
     if (search) {
-      new Promise(() => {
-        filterCommunityByName(search)
-        .then((res) => {
-          console.log(res);
-        })
-      });
+      filterCommunityByName(search)
     }
   }
 
@@ -44,15 +41,16 @@ class Community extends Component {
   }
 
   renderCommunities = () => {
-    console.log(this.state.data);
-    return this.state.data.map((item, i) => (
+    return this.props.communities.data.map((item, i) => (
       <div className={style.communityCard}>
         <div className={style.img}>
+          {item.image &&
           <ImageLoader
             onClick={this.visitCommunity(item.id)}
-            src={item.image}
+            src={item.image ? (item.image.includes('http') ? item.image : `${process.env.CDN_DOMAIN}${item.image}`) : 'https://placeholder.com/80'}
             style={{container: style.img}}
           />
+          }
         </div>
         <div className={style.cardBody}>
           <ButtonDescription
@@ -81,7 +79,11 @@ class Community extends Component {
               });
             }}
           />
-          <button onClick={this.handleSearchByName}>Search</button>
+          <ImageLoader
+            onClick={this.handleSearchByName()}
+            src={'assets/images/magnifying_icon.png'}
+            style={{container: style.searchIcon}}
+          />
         </div>
         <div className={style.communityBody}>
           <p className={`${style.title} bold`}>{getTranslation('FOLLOW_COMMUNITIES')}</p>
@@ -93,4 +95,4 @@ class Community extends Component {
 	  );
 	};
 }
-export default (Community);
+export default connect(['communities'])(Community);
