@@ -50,3 +50,10 @@ export function getQueryStringValue (key) {
     return null;
   }
 }
+
+export function resolveImageUrl (imageUrl) {
+  if (imageUrl && imageUrl.substr(0, 4) !== 'http' && imageUrl.split('/').length === 1) {
+    return replaceUrlPlaceholders(`{CDN_DOMAIN}${imageUrl}`);
+  }
+  return replaceUrlPlaceholders(imageUrl);
+}

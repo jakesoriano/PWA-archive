@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
 import { getTranslation } from '_helpers';
-import { verifyOTP, sendOTP, completeRegistration } from '_mutations';
+import { verifyOTP } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
 import ButtonDescription from '_components/core/ButtonDescription';
