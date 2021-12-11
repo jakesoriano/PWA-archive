@@ -174,7 +174,7 @@ class Signup extends Component {
 		this.setState({
 			number: {
 				...this.state.number,
-				value: value.slice(0 ,11),
+				value: (value || '').slice(0 ,11),
 				hasError: !Boolean(value),
 				error: !Boolean(value) ? 'REQUIRED' : ''
 			}
@@ -269,8 +269,8 @@ class Signup extends Component {
 			rCode: {
 				...this.state.rCode,
 				value: value,
-				hasError: !Boolean(value),
-				error: !Boolean(value) ? 'REQUIRED' : ''
+				// hasError: !Boolean(value),
+				// error: !Boolean(value) ? 'REQUIRED' : ''
 			}
 		});
 	};
@@ -297,7 +297,7 @@ class Signup extends Component {
 			this.onMunicipalityChange(this.state.municipality.value);
 			this.onBarangayChange(this.state.barangay.value);
 			this.onVoterChange(this.state.voter.value);
-			this.onRCodeChange(this.state.rCode.value);
+			// this.onRCodeChange(this.state.rCode.value);
 		} else {
 			
 			// displayPageLoader(false);

@@ -56,7 +56,7 @@
 	"MUNICIPALITY": "Municipality*",
 	"BARANGAY": "Barangay*",
 	"REGISTERED_VOTER": "Registered Voter*",
-	"REFERRAL_CODE": "Referral Code*",
+	"REFERRAL_CODE": "Referral Code",
 	"INVITE": "INVITE",
 	"REQUIRED": "Required",
 	"CONTINUE": "Continue",
