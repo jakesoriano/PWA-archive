@@ -41,11 +41,11 @@ class AccountProfile extends Component {
 	      <div className={style.profile}>
 					<div className={style.user}>
 						<ImageLoader 
-							src={authUser.image}
+							src={authUser.profile.image || 'assets/images/myaccount_icon_inactive.png'}
 							style={{container: style.avatar}} />
 						<div className={style.nameMember}>
-							<p className={`bold ${style.name}`}>{`${authUser.fname} ${authUser.lname}`}</p>
-							<p className={style.members}>{`${formatNumber(authUser.members, 2)} ${getTranslation('MEMBERS')}`}</p>
+							<p className={`bold ${style.name}`}>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
+							<p className={style.members}>{`${formatNumber(authUser.members, 2) || 0} ${getTranslation('MEMBERS')}`}</p>
 						</div>
 						<a onClick={() => {
 							this.onShare();
@@ -56,7 +56,7 @@ class AccountProfile extends Component {
 						</a>
 					</div>
 	        <p className={style.heroPoints}>
-	          <span className={`extraBold ${style.points}`}>{formatNumber(authUser.points, 2)}</span>
+	          <span className={`extraBold ${style.points}`}>{formatNumber(authUser.points, 2) || 0}</span>
 	          <span className={`bold ${style.textPoints}`}>{getTranslation('HERO_POINTS')}</span>
 	        </p>
 	      </div>

@@ -31,4 +31,8 @@ export function nativeShare (data) {}
 
 export function nativeExitApp () {}
 
-export function nativeSelfie () {}
+export function nativeSelfie () {
+  return new Promise((resolve) => {
+    resolve('01FPKR8R3ECPFJ36G9FY8ERHD7.jpeg');
+  });
+}

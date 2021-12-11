@@ -29,14 +29,15 @@ class Login extends Component {
     };
   }
 
-	onClickSubmit = () => {
+	onClickSubmit
+   = () => {
 	  if (!this.state.username.value || !this.state.password.value) {
 	    this.onUsernameChange(this.state.username.value);
 	    this.onPasswordChange(this.state.password.value);
 	  } else {
 	    login({
-	      username: this.state.username.value,
-	      password: this.state.password.value
+        username: this.state.username.value,
+        password: this.state.password.value
 	    })
 	      .then((res) => {
 	        route('/home', true);

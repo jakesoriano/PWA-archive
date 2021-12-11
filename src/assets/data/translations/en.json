@@ -72,5 +72,6 @@
 	"SPECIAL_CHARACTERS": "Do not use special characters",
 	"PASSWORD_UNMATCH": "Passwords do not match",
 	"LOGOUT": "Logout",
-	"SIGNIN": "Sign in"
+	"SIGNIN": "Sign in",
+	"USERNAME_UNAVAILABLE": "Username is already taken!"
 }
