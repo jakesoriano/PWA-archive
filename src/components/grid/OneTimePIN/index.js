@@ -38,7 +38,8 @@ class OneTimePIN extends Component {
 			otp: pin,
 		};
 		verifyOTP(data).then((res) => {
-			if (res) {
+			console.log(res);
+			if (res.success) {
 				route('/home', true);
 			} else {
 				if (!isOTPInvalid) {
