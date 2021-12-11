@@ -81,6 +81,16 @@
           &:nth-child(2) {
             margin-left: 10px;
           }
+          .likeButton {
+            width: 14px;
+            position: relative;
+            padding: 0;
+            height: 16px;
+            margin: 0;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 4px;
+          }
           &.buttonLikeActive,
           &.buttonShareActive {
             font-weight: bold;
@@ -204,14 +214,18 @@
     bottom: 0;
     width: auto;
     min-width: 180px;
+    max-width: 200px;
+    left: 0;
+    right: 0;
     height: 100px;
     z-index: 1;
     border-radius: 10px;
+    margin: 0 auto;
     display: none;
     &.active {
       display: grid;
     }
-    button {
+    a {
       text-align: left;
       border: none;
       border-bottom: 2px solid #d9d9d9;

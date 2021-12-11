@@ -16,6 +16,7 @@ export const urlValidateOTP = `{PUBLIC_PATH}assets/data/otp.json?_={_}`;
 export const urlInvited = `${process.env.API_DOMAIN}invitation`;
 export const urlLike = urlUser + `/like`;
 export const urlFollow = urlUser + `/follow`;
+export const urlTag = urlUser + `/tag`;
 export const urlShare = urlUser + `/share`;
 export const urlCommunity = `${process.env.API_DOMAIN}community/`;
 export const urlCommunitySearch = urlCommunity + `filter/{name}`;

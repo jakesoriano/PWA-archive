@@ -5,7 +5,8 @@ import {
 	fetchEvents,
 	likeShareNews,
 	shareEvent,
-	removeLikeNews } from '_mutations';
+	removeLikeNews,
+	selectTag } from '_mutations';
 import { getTranslation, dateEventFormat, playStore, appStore } from '_helpers';
 import { ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
@@ -20,6 +21,8 @@ class NewsAndEvents extends Component {
 			active: 'news',
 			selectedItem: null,
 			showDropdown: false,
+			selectedEvent: null,
+			dropdownTopPosition: 0,
 		}
 	};
 
@@ -69,7 +72,12 @@ class NewsAndEvents extends Component {
 	};
 
 	onClickInterested = (item) => {
-		this.setState({showDropdown: true})
+		const container = document.getElementById(item.id).getBoundingClientRect();
+		this.setState({
+			showDropdown: true,
+			selectedEvent: item,
+			dropdownTopPosition: `${container.top}px`,
+		})
 	}
 
 	onShareEvent = (item) => {
@@ -90,8 +98,11 @@ class NewsAndEvents extends Component {
 		}
 	};
 
-	onSelectEventTag = (tag) => {
-		console.log('tag', tag);
+	onSelectEventTag = (tag, item) => {
+		selectTag(tag, item);
+		this.setState({
+			showDropdown: false,
+		})
 	}
 
 	renderDetails = (data) => {
@@ -177,12 +188,21 @@ class NewsAndEvents extends Component {
 							className={i.liked ? `extraBold ${style.buttonLikeActive}` : ''}
 							onClick={() => {
 								this.onLikeNews(i);
-							}}>{getTranslation('LIKE')}</a>
+							}}>
+								<ImageLoader
+								src={!i.liked ? 'assets/images/fb-like-transparent.png' : 'assets/images/fb-like-transparent-dark.png'}
+								style={{container: style.likeButton}}/>
+								{getTranslation('LIKE')}
+							</a>
 						<a
 							className={i.shared ? `extraBold ${style.buttonShareActive}` : ''}
 							onClick={() => {
 								this.onShareNews(i);
-							}}>{getTranslation('SHARE')}</a>
+							}}>
+								<ImageLoader
+								src={!i.shared ? 'assets/images/share_icon_lite.png' : 'assets/images/share_icon_dark.png'}
+								style={{container: style.likeButton}}/>
+								{getTranslation('SHARE')}</a>
 					</div>
 				</div>
 			))
@@ -221,16 +241,26 @@ class NewsAndEvents extends Component {
 					</a>
 					<div className={style.buttons}>
 						<a
-							className={i.liked ? style.buttonLikeActive : ''}
+							className={i.tagged && i.tagged.length ? style.buttonLikeActive : ''}
+							id={i.id}
 							onClick={() => {
 								this.onClickInterested(i);
 							}}
-							>{getTranslation('INTERESTED')}</a>
+							>
+								{i.tagged.length ? (i.tagged !== 'interested' ? (i.tagged === 'going' ? 
+								getTranslation('GOING') : 
+								getTranslation('NOT_INTERESTED')) :
+								getTranslation('INTERESTED')) : 
+								getTranslation('INTERESTED')}</a>
 						<a
 							className={i.shared ? style.buttonShareActive : ''}
 							onClick={() => {
 								this.onShareEvent(i);
-							}}>{getTranslation('SHARE')}</a>
+							}}>
+								<ImageLoader
+								src={!i.shared ? 'assets/images/share_icon_lite.png' : 'assets/images/share_icon_dark.png'}
+								style={{container: style.likeButton}}/>{getTranslation('SHARE')}
+							</a>
 					</div>
 				</div>
 			))
@@ -258,11 +288,19 @@ class NewsAndEvents extends Component {
 					{state.active === 'news' ? this.renderNews(news.data) : this.renderEvents(events.data)}
 				</div>
 				{state.selectedItem && this.renderDetails(state.selectedItem)}
-				<div className={`${style.selectEventDropdown} ${state.showDropdown ? style.active : 'false'}`}>
-					<button onClick={this.onSelectEventTag('i')}>{getTranslation('INTERESTED')}</button>
-					<button onClick={this.onSelectEventTag('g')}>{getTranslation('GOING')}</button>
-					<button onClick={this.onSelectEventTag('n')}>{getTranslation('NOT_INTERESTED')}</button>
-				</div>
+					<div 
+						className={`${style.selectEventDropdown} ${state.showDropdown ? style.active : 'false'}`}
+						style={{bottom: this.state.dropdownBottomPosition, top: this.state.dropdownTopPosition}}>
+						<a onClick={() => {
+								this.onSelectEventTag('interested', state.selectedEvent)
+							}}>{getTranslation('INTERESTED')}</a>
+						<a onClick={() => {
+								this.onSelectEventTag('going', state.selectedEvent)
+							}}>{getTranslation('GOING')}</a>
+							<a onClick={() => {
+								this.onSelectEventTag('not interested', state.selectedEvent)
+							}}>{getTranslation('NOT_INTERESTED')}</a>
+					</div>
 			</div>
 		);
 	};
