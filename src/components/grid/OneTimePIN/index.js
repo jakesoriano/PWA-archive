@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
 import { getTranslation } from '_helpers';
-import { verifyOTP, sendOTP } from '_mutations';
+import { verifyOTP, sendOTP, completeRegistration } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
 import ButtonDescription from '_components/core/ButtonDescription';
@@ -33,12 +33,11 @@ class OneTimePIN extends Component {
 	};
 	handleContinue = (e) => {
 		let { pin, isOTPInvalid } = this.state;
-		let config = {
-			body: {
-				enteredPin: pin,
-			},
+		let data = {
+			registrationId: this.props.signup.registrationId,
+			otp: pin,
 		};
-		verifyOTP(this.props.signup).then((res) => {
+		verifyOTP(data).then((res) => {
 			if (res) {
 				route('/home', true);
 			} else {

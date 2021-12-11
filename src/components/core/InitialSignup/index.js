@@ -5,6 +5,7 @@ import { route } from 'preact-router';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
 import { getTranslation } from '_helpers';
+import { validateUsername } from '_mutations';
 import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -55,15 +56,28 @@ class InitialSignup extends Component {
           }
         });
       } else {
-        this.props.toggleSignupForm();
-        updateStore({
-          signup: {
-            username: this.state.username.value,
-            password: this.state.password.value,
-            confirm_password: this.state.confirm_password.value
-          }
-        });
-        route(`/${this.props.parent}/terms`);
+        validateUsername(this.state.username.value)
+          .then((res) => {
+            console.log(res, 'res');
+            if (res.available) {
+              this.props.toggleSignupForm();
+              updateStore({
+                signup: {
+                  username: this.state.username.value,
+                  password: this.state.password.value,
+                }
+              });
+              route(`/${this.props.parent}/terms`);
+            } else {
+              this.setState({
+                username: {
+                  ...this.state.username,
+                  hasError: true,
+                  error: getTranslation('USERNAME_UNAVAILABLE')
+                }
+              });
+            }
+          })
       }
     }
 	};
