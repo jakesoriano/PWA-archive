@@ -60,7 +60,7 @@ class NewsAndEvents extends Component {
 				Apple: ${appStore}\n\n
 				Article Title: ${item.title}\n
 				Ariticle Link: ${item.link || ''}\n
-				Use my invite code: ${this.props.authUser.refCode}
+				Use my invite code: ${this.props.authUser.profile.refCode}
 			`
 		});
 		if (!item.shared) {
@@ -174,12 +174,12 @@ class NewsAndEvents extends Component {
 					</a>
 					<div className={style.buttons}>
 						<a
-							className={i.liked ? style.buttonLikeActive : ''}
+							className={i.liked ? `extraBold ${style.buttonLikeActive}` : ''}
 							onClick={() => {
 								this.onLikeNews(i);
 							}}>{getTranslation('LIKE')}</a>
 						<a
-							className={i.shared ? style.buttonShareActive : ''}
+							className={i.shared ? `extraBold ${style.buttonShareActive}` : ''}
 							onClick={() => {
 								this.onShareNews(i);
 							}}>{getTranslation('SHARE')}</a>

@@ -20,7 +20,7 @@ class AccountProfile extends Component {
 	componentDidMount = () => {
 		const { authUser } = this.props;
 		if (authUser) {
-			fetchUserPoints();
+			// fetchUserPoints();
 			if (authUser.hasOwnProperty('isNewUser') && authUser.isNewUser) {
 				updateStore({
 					popupModal: {
@@ -45,7 +45,7 @@ class AccountProfile extends Component {
 				Download the KakamPink App!\n\n
 				Android: ${playStore}\n
 				Apple: ${appStore}\n
-				Use my invite code: ${this.props.authUser.refCode}\n\n
+				Use my invite code: ${this.props.authUser.profile.refCode}\n\n
 				#LetLeniLead
 			`,
 		});
