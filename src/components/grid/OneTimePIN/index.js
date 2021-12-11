@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
 import { getTranslation } from '_helpers';
-import { verifyOTP, sendOTP, completeRegistration } from '_mutations';
+import { verifyOTP } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
 import ButtonDescription from '_components/core/ButtonDescription';
@@ -21,10 +21,6 @@ class OneTimePIN extends Component {
 	};
 
 	componentDidMount = () => {
-		const { signup } = this.props;
-		if (signup && signup.hasOwnProperty('number')) {
-			sendOTP(signup.number);
-		}
 		updateStore({
 			customBack: () => {
 				route(`/${this.props.parent}/signup`, true)
@@ -38,7 +34,8 @@ class OneTimePIN extends Component {
 			otp: pin,
 		};
 		verifyOTP(data).then((res) => {
-			if (res) {
+			console.log(res);
+			if (res.success) {
 				route('/home', true);
 			} else {
 				if (!isOTPInvalid) {

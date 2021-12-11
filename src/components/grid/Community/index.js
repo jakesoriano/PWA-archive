@@ -48,7 +48,7 @@ class Community extends Component {
           {item.image &&
           <ImageLoader
             onClick={this.visitCommunity(item.id)}
-            src={item.image ? (item.image.includes('http') ? item.image : `${process.env.CDN_DOMAIN}${item.image}`) : 'https://placeholder.com/80'}
+            src={item.image}
             style={{container: style.img}}
           />
           }
