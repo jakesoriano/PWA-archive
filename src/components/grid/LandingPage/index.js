@@ -48,13 +48,11 @@ class LandingPage extends Component {
 								<a
 									className={`extraBold ${style.pClose}`}
 									onClick={this.toggleLoginForm}
-								>
-									Sign in
-								</a>
+								>{getTranslation('SIGNIN')}</a>
 							</p>
 							<ButtonDescription
-								onClickCallback={this.toggleSignupForm}				
-                				text={getTranslation('SIGNUP_BUTTON')}
+								onClickCallback={this.toggleSignupForm}		
+								text={getTranslation('SIGNUP_BUTTON')}
 								bottomDescription=""
 							/>
 						</div>
@@ -68,6 +66,7 @@ class LandingPage extends Component {
 				<InitialSignup
 					isOpen={this.state.showInitialSignupForm}
 					toggleSignupForm={this.toggleSignupForm}
+					parent={this.props.parent}
 				/>
       </div>
     );

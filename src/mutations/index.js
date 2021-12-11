@@ -7,3 +7,4 @@ export * from './otp';
 export * from './members';
 export * from './invited';
 export * from './community';
+export * from './registration';

@@ -403,14 +403,16 @@ export default ConnectComponent;
 
 // Push Forward
 if (typeof window !== 'undefined') {
+
+	// native back
   window.onNativeBack = () => {
 		const { authUser } = store.getState();
 		const path = location.hash.replace('#', '');
 		if (authUser && path !== '/home') {
-			route('/home', true);
-		} else if (!authUser && path !== '/landing') {
-			route('/landing', true);
-		} else {
+			history.back();
+		} else if (!authUser && path !== '/landing' && path !== '/') {
+			history.back();
+		} else {console.error('done')
 			nativeExitApp();
 		}
   };

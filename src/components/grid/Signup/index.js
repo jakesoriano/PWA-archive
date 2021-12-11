@@ -2,14 +2,25 @@ import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { route } from 'preact-router';
 import { updateStore } from '_unistore';
+import { completeSignup } from '_mutations';
 import {
 	getTranslation,
 	getMaxDOBDate,
 	getRegions,
 	getProvince,
 	getMunicipality,
-	getBarangay} from '_helpers';
-import { FormGroup, FormInput, FormDropdown, ButtonDescription } from '_components/core';
+	getBarangay,
+	// displayPageLoader
+} from '_helpers';
+import {
+	FormGroup,
+	FormInput,
+	FormDropdown,
+	ButtonDescription
+} from '_components/core';
+import {
+	nativeSelfie
+} from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -47,13 +58,13 @@ class Signup extends Component {
 				hasError: false
 			},
 			dob: {
-				value: props.signup ? props.signup.dob : '',
+				value: props.signup ? props.signup.birthday : '',
 				error: '',
 				message: '',
 				hasError: false
 			},
 			number: {
-				value: props.signup ? props.signup.number : '',
+				value: props.signup ? props.signup.mobile : '',
 				error: '',
 				message: '',
 				hasError: false
@@ -83,13 +94,13 @@ class Signup extends Component {
 				hasError: false
 			},
 			voter: {
-				value: props.signup ? props.signup.voter : 'yes',
+				value: props.signup && props.signup.isRegisteredVoter ? props.signup.isRegisteredVoter : 'yes',
 				error: '',
 				message: '',
 				hasError: false
 			},
 			rCode: {
-				value: props.signup ? props.signup.rCode : '',
+				value: props.signup && props.signup.parentRefCode? props.signup.parentRefCode : '',
 				error: '',
 				message: '',
 				hasError: false
@@ -99,7 +110,7 @@ class Signup extends Component {
 	componentDidMount = () => {
 		updateStore({
 			customBack: () => {
-				route('/landing/terms', true)
+				route(`/${this.props.parent}/terms`, true)
 			}
 		});
 	};
@@ -288,24 +299,40 @@ class Signup extends Component {
 			this.onVoterChange(this.state.voter.value);
 			this.onRCodeChange(this.state.rCode.value);
 		} else {
-			updateStore({
-				signup: {
-					...(this.props.signup || {}),
-					fname: this.state.fname.value,
-					mname: this.state.mname.value,
-					lname: this.state.lname.value,
-					gender: this.state.gender.value,
-					dob: this.state.dob.value,
-					number: this.state.number.value,
-					region: this.state.region.value,
-					province: this.state.province.value,
-					municipality: this.state.municipality.value,
-					barangay: this.state.barangay.value,
-					voter: this.state.voter.value,
-					rCode: this.state.rCode.value,
-				}
+			
+			// displayPageLoader(false);
+			nativeSelfie().then(image => {
+				// displayPageLoader(false);
+				updateStore({
+					signup: {
+						...(this.props.signup || {}),
+						image,
+						fname: this.state.fname.value,
+						mname: this.state.mname.value,
+						lname: this.state.lname.value,
+						gender: this.state.gender.value,
+						birthday: this.state.dob.value,
+						mobile: this.state.number.value,
+						region: this.state.region.value,
+						province: this.state.province.value,
+						municipality: this.state.municipality.value,
+						barangay: this.state.barangay.value,
+						isRegisteredVoter: this.state.voter.value,
+						parentRefCode: this.state.rCode.value,
+					}
+				});
+				setTimeout(() => {
+					completeSignup(this.props.signup).then((res) => {
+						updateStore({
+							signup: {
+								...(this.props.signup || {}),
+								registrationId: res.id
+							}
+						})
+						route(`/${this.props.parent}/otp`);
+					})
+				}, 100)
 			});
-			route(`/${this.props.parent}/terms`);
 		}
 	}
 

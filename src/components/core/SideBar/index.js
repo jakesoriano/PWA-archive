@@ -38,11 +38,11 @@ class SideBar extends Component {
 					{/* Side Bar Contents Here */}
 					<div className={style.sUser}>
 						<ImageLoader 
-									src={authUser.image}
+							src={authUser.profile.image || 'assets/images/myaccount_icon_inactive.png'}
 							style={{container: style.sAvatar}} />
 						<div>
 							<div>
-									<p className={`${style.sName}`}>{`${getTranslation('HI_NAME').replace('{NAME}', authUser.fname)}`}</p>
+									<p className={`${style.sName}`}>{`${getTranslation('HI_NAME').replace('{NAME}', authUser.profile.fname)}`}</p>
 									<p className={style.sLogin}>{`${getTranslation('LAST_LOGIN').replace('{DATE_TIME}', dateLastLoginFormat(authUser.loginDate))}`}</p>
 							</div>
 						</div>
@@ -51,9 +51,6 @@ class SideBar extends Component {
 						<Link href="/settings" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('SETTINGS')}</Link>
 						<Link href="/contactus" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('WHERE_HERE_TO_LISTEN')}</Link>
 						{/* <Link href="/home" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PROTECT_LENI')}</Link> */}
-						<Link href={`/${page}/terms`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PAGE_TERMS')}</Link>
-						<Link href={`/${page}/signup`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PAGE_SIGNUP')}</Link>
-						<Link href={`/${page}/otp`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PAGE_OTP')}</Link>
 						<Link href={`/`} className={style.sMItem} onClick={(e) => {
 							logOut();
 							this.onClickMenu(e);

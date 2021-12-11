@@ -1,12 +1,16 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import { h, Component } from 'preact';
-import { Link } from 'preact-router/match';
+import { Component } from 'preact';
+import { route } from 'preact-router';
 import { connect } from 'unistore/preact';
-import { getTranslation, dateLastLoginFormat } from '_helpers';
+import { updateStore } from '_unistore';
+import { getTranslation } from '_helpers';
+import { validateUsername } from '_mutations';
 import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
 // eslint-disable-next-line import/extensions
 import style from './style';
+
+let special_char = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
 
 // eslint-disable-next-line react/prefer-stateless-function
 class InitialSignup extends Component {
@@ -14,32 +18,139 @@ class InitialSignup extends Component {
     super(props);
     this.state = {
       username: {
-        value: props.initialSignup ? props.initialSignup.username : '',
+        value: '',
         error: '',
         message: '',
         hasError: false
       },
       password: {
-        value: props.initialSignup ? props.initialSignup.password : '',
+        value: '',
         error: '',
         message: '',
         hasError: false
       },
       confirm_password: {
-        value: props.initialSignup ? props.initialSignup.confirm_password : '',
+        value: '',
         error: '',
         message: '',
         hasError: false
       }
     };
   }
-
 	onClickSubmit = () => {
-	  console.log('click submit');
+    if (!this.state.username.value || 
+      !this.state.password.value ||
+      !this.state.confirm_password.value ||
+      this.state.password.value.length < 8 ||
+      special_char.test(this.state.password.value)) {
+	    this.onUsernameChange(this.state.username.value);
+	    this.onPasswordChange(this.state.password.value);
+      this.onConfirmPasswordChange(this.state.confirm_password.value);
+	  } else {
+      if ( this.state.confirm_password.value !== this.state.password.value ) {
+        this.setState({
+          confirm_password: {
+            ...this.state.confirm_password,
+            hasError: true,
+            error: getTranslation('PASSWORD_UNMATCH')
+          }
+        });
+      } else {
+        validateUsername(this.state.username.value)
+          .then((res) => {
+            console.log(res, 'res');
+            if (res.available) {
+              this.props.toggleSignupForm();
+              updateStore({
+                signup: {
+                  username: this.state.username.value,
+                  password: this.state.password.value,
+                }
+              });
+              route(`/${this.props.parent}/terms`);
+            } else {
+              this.setState({
+                username: {
+                  ...this.state.username,
+                  hasError: true,
+                  error: getTranslation('USERNAME_UNAVAILABLE')
+                }
+              });
+            }
+          })
+      }
+    }
 	};
 
 	onClickSocMedSignin = () => {
 	  console.log('click social media');
+	};
+
+  onUsernameChange = (value) => {
+    // check for special characters
+    if( value && special_char.test(value) ) {
+      this.setState({
+        username: {
+          ...this.state.username,
+          value,
+          hasError: true,
+          error: getTranslation('SPECIAL_CHARACTERS')
+
+        }
+      });
+    } else {
+      this.setState({
+        username: {
+          ...this.state.username,
+          value,
+          hasError: !value,
+          error: !value ? 'REQUIRED' : ''
+        }
+      });
+    }
+	};
+  onPasswordChange = (value) => {
+    if( value && special_char.test(value) ) {
+      this.setState({
+        password: {
+          ...this.state.password,
+          value,
+          hasError: true,
+          error: getTranslation('SPECIAL_CHARACTERS')
+        }
+      });
+    } 
+    else 
+      if (value && value.length < 8) {
+        this.setState({
+          password: {
+            ...this.state.password,
+            value,
+            hasError: true,
+            error: getTranslation('MINIMUM_CHARACTERS')
+          }
+        });
+      } else {
+        this.setState({
+          password: {
+            ...this.state.password,
+            value,
+            hasError: !value,
+            error: !value ? 'REQUIRED' : ''
+          }
+        });
+      }
+   
+	};
+  onConfirmPasswordChange = (value) => {
+	  this.setState({
+	    confirm_password: {
+	      ...this.state.confirm_password,
+	      value,
+	      hasError: !value,
+	      error: !value ? 'REQUIRED' : ''
+	    }
+	  });
 	};
 
 	render = (
@@ -67,15 +178,13 @@ class InitialSignup extends Component {
             <form className={style.form}>
             <FormGroup label="Username" hasError={username.hasError}>
               <FormInput
-              className={style.fields}
-              style={{ error: style.fields }}
               value={username.value}
               type="text"
               onBlur={(e) => {
-                // this.onFnameChange(e.target.value)
+                this.onUsernameChange(e.target.value)
               }}
               onInput={(e) => {
-                // this.onFnameChange(e.target.value)
+                this.onUsernameChange(e.target.value)
               }}
               hasError={username.hasError}
               error={username.error}
@@ -84,15 +193,13 @@ class InitialSignup extends Component {
             </FormGroup>
             <FormGroup label="Password" hasError={password.hasError}>
               <FormInput
-              className={style.fields}
-              style={{ error: style.fields }}
               value={password.value}
-              type="text"
+              type="password"
               onBlur={(e) => {
-                // this.onFnameChange(e.target.value)
+                this.onPasswordChange(e.target.value)
               }}
               onInput={(e) => {
-                // this.onFnameChange(e.target.value)
+                this.onPasswordChange(e.target.value)
               }}
               hasError={password.hasError}
               error={password.error}
@@ -104,15 +211,13 @@ class InitialSignup extends Component {
               hasError={confirm_password.hasError}
             >
               <FormInput
-              className={style.fields}
-              style={{ error: style.fields }}
               value={confirm_password.value}
-              type="text"
+              type="password"
               onBlur={(e) => {
-                // this.onFnameChange(e.target.value)
+                this.onConfirmPasswordChange(e.target.value)
               }}
               onInput={(e) => {
-                // this.onFnameChange(e.target.value)
+                this.onConfirmPasswordChange(e.target.value)
               }}
               hasError={confirm_password.hasError}
               error={confirm_password.error}
@@ -162,5 +267,4 @@ class InitialSignup extends Component {
 	  );
 	};
 }
-
-export default connect(['authUser'])(InitialSignup);
+export default connect(['signup'])(InitialSignup);

@@ -26,10 +26,10 @@ class AccountProfile extends Component {
 	      <div className={style.profile}>
 					<div className={style.user}>
 						<ImageLoader 
-							src={authUser.image}
+							src={authUser.profile.image || 'assets/images/myaccount_icon_inactive.png'}
 							style={{container: style.avatar}} />
 						<div className={style.nameMember}>
-							<p className={`bold ${style.name}`}>{`${authUser.fname} ${authUser.lname}`}</p>
+							<p className={`bold ${style.name}`}>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
 							<p className={style.members}>{`${authUser.members} ${getTranslation('MEMBERS')}`}</p>
 						</div>
 					</div>

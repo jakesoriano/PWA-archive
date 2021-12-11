@@ -50,3 +50,18 @@ export function nativeExitApp () {
     action: 'exitApp'
   });
 }
+
+export function nativeSelfie () {
+  return new Promise((resolve) => {
+    window.cbSelfie = (image) => {
+      resolve(image)
+      window.cbSelfie = null;
+    }
+    // eslint-disable-next-line no-console
+    console.log('SPA >> nativeSelfie();');
+    callNative({
+      action: 'selfie',
+      callback: 'window.cbSelfie'
+    });
+  });
+}

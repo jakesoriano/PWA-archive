@@ -1,5 +1,6 @@
 import { Component } from 'preact';
-import { getTranslation } from '_helpers';
+import { route } from 'preact-router';
+import { updateStore } from '_unistore';
 import { ButtonDescription }  from '_components/core';
 import style from './style.scss';
 
@@ -11,22 +12,32 @@ class TermsConditions extends Component {
       isReading: true
     };
   }
+	componentDidMount = () => {
+		updateStore({
+			customBack: () => {
+				route('/', true)
+			}
+		});
+	};
 
 	checkIfRead = () => {
 	  if (this.el && this.state.isReading) {
 	    setTimeout(() => {
-	      this.setState({
-	        isReading: !(
-	          this.el.scrollHeight - this.el.scrollTop ===
-						this.el.clientHeight
-	        )
-	      });
+				try {
+					this.setState({
+						isReading: !(this.el.scrollTop > (this.el.scrollHeight / 4))
+					});
+				} catch (er) {
+					this.setState({
+						isReading: false
+					});
+				}
 	    }, 250);
 	  }
 	};
 
 	handleContinue = (e) => {
-	  console.log(e);
+		route(`/${this.props.parent}/signup`);
 	};
 
 	renderContent = () => {

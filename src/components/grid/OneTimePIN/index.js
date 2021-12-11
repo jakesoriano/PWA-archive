@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
 import { getTranslation } from '_helpers';
-import { verifyOTP, sendOTP } from '_mutations';
+import { verifyOTP, sendOTP, completeRegistration } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
 import ButtonDescription from '_components/core/ButtonDescription';
@@ -16,8 +16,10 @@ class OneTimePIN extends Component {
 			isOTPInvalid: false,
 			isResendCd: false,
 			seconds: 60,
+			inputFocus: false
 		};
-	}
+	};
+
 	componentDidMount = () => {
 		const { signup } = this.props;
 		if (signup && signup.hasOwnProperty('number')) {
@@ -25,20 +27,19 @@ class OneTimePIN extends Component {
 		}
 		updateStore({
 			customBack: () => {
-				route('/landing/signup', true)
+				route(`/${this.props.parent}/signup`, true)
 			}
 		});
 	};
 	handleContinue = (e) => {
 		let { pin, isOTPInvalid } = this.state;
-		let config = {
-			body: {
-				enteredPin: pin,
-			},
+		let data = {
+			registrationId: this.props.signup.registrationId,
+			otp: pin,
 		};
-		verifyOTP(config).then((res) => {
+		verifyOTP(data).then((res) => {
 			if (res) {
-				alert('Success!');
+				route('/home', true);
 			} else {
 				if (!isOTPInvalid) {
 					updateStore({
@@ -69,6 +70,7 @@ class OneTimePIN extends Component {
 		if (!timer) {
 			this.setState({
 				isResendCd: true,
+				pin: ''
 			});
 			timer = window.setInterval(() => {
 				if (seconds > 0) {
@@ -85,6 +87,33 @@ class OneTimePIN extends Component {
 		}
 	};
 
+	renderBox = (i, isLast) => {
+		const pin = this.state.pin || '';
+		const isFocus = this.state.inputFocus && (pin.length === i || (isLast && pin.length === (i + 1)));
+		return (
+			<div
+				className={`${style.otpBox} ${isFocus ? style.otpBoxActive : ''}`}>
+				{pin.charAt(i)}
+			</div>
+		);
+	};
+
+	toggleInputFocus = (value) => {
+		this.setState({
+			inputFocus: value
+		});
+	}
+
+	onKeyup = (e) => {
+		let _this = e.target;
+		this.setState({
+			pin: _this.value,
+		});
+		if (e.target.value.length === 6) {
+			_this.blur();
+		}
+	}
+
 	render = ({}, { pin }) => {
 		return (
 			<div className={style.otpWrapper}>
@@ -92,12 +121,12 @@ class OneTimePIN extends Component {
 					<p className={style.heading}>{getTranslation('OTP_ENTER')}</p>
 					<label for="enteredPIN">
 						<div className={style.otpBoxContainer}>
-							<div className={style.otpBox}>{pin ? pin.toString().charAt(0) : ''}</div>
-							<div className={style.otpBox}>{pin ? pin.toString().charAt(1) : ''}</div>
-							<div className={style.otpBox}>{pin ? pin.toString().charAt(2) : ''}</div>
-							<div className={style.otpBox}>{pin ? pin.toString().charAt(3) : ''}</div>
-							<div className={style.otpBox}>{pin ? pin.toString().charAt(4) : ''}</div>
-							<div className={style.otpBox}>{pin ? pin.toString().charAt(5) : ''}</div>
+							{this.renderBox(0)}
+							{this.renderBox(1)}
+							{this.renderBox(2)}
+							{this.renderBox(3)}
+							{this.renderBox(4)}
+							{this.renderBox(5, true)}
 						</div>
 					</label>
 					<p>{getTranslation('OTP_SENT').replace('{4_DIGITS}', '1234')}</p>
@@ -111,9 +140,7 @@ class OneTimePIN extends Component {
 								}}
 								id="timer"
 								class="bold"
-							>
-								Resend
-							</span>
+							>{getTranslation('RESEND')}</span>
 						)}
 						{this.state.isResendCd && (
 							<span className={`${style.timer} ${'bold'}`}>
@@ -129,15 +156,13 @@ class OneTimePIN extends Component {
 						className={style.enteredPIN}
 						maxlength="6"
 						minLength="0"
-						onKeyUp={(e) => {
-							let _this = e.target;
-							this.setState({
-								pin: _this.value,
-							});
-							if (e.target.value.length === 6) {
-								_this.blur();
-							}
+						onBlur={() => {
+							this.toggleInputFocus(false);
 						}}
+						onFocus={() => {
+							this.toggleInputFocus(true);
+						}}
+						onKeyUp={this.onKeyup}
 					/>
 				</div>
 				<div className={style.buttonContainer}>
@@ -153,4 +178,4 @@ class OneTimePIN extends Component {
 		);
 	};
 }
-export default connect(['alertShow', 'signup'])(OneTimePIN);
+export default connect(['signup'])(OneTimePIN);

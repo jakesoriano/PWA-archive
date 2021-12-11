@@ -2,7 +2,7 @@
 .otpWrapper {
   position: relative;
   .otpContent {
-    height: calc(100vh - 200px);
+    height: calc(100vh - 140px);
     padding: 35px;
     .heading {
       font-size: 1.5rem;
@@ -21,6 +21,10 @@
         justify-content: center;;
         font-size: 1.5rem;
         background-color: #d9d9d9;
+        border: 2px solid #d9d9d9;
+        &.otpBoxActive {
+          border-color:$primary_layout;
+        }
       }
     }
     .enteredPIN {
