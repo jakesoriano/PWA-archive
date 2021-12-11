@@ -321,13 +321,24 @@ class Signup extends Component {
 						parentRefCode: this.state.rCode.value
 					};
 					completeSignup(userData).then((res) => {
-						updateStore({
-							signup: {
-								...userData,
-								registrationId: res.id
-							}
-						})
-						route(`/${this.props.parent}/otp`);
+						console.log(res, 'data');
+						if (res.success) {
+							route(`/${this.props.parent}/otp`);
+						} else {
+							updateStore({
+								alertShow: {
+									success: false,
+									content: 'Something went wrong!'
+								}
+							});
+							setTimeout(() => {
+								updateStore({
+									alertShow: null
+								});
+							}, 5300)
+						}
+					}).catch((err) => {
+						console.error('error', err);
 					})
 				}, 100)
 			});
