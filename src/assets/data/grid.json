@@ -75,10 +75,18 @@
 		"uri": "community",
 		"contents": [
 			{
-				"component": "PageTitle",
-				"props": {
-					"title": "Community"
-				}
+				"component": "Community"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY",
+		"uri": "community-details",
+		"contents": [
+			{
+				"component": "CommunityDetails"
 			}
 		]
 	},

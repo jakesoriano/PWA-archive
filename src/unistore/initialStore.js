@@ -32,6 +32,11 @@ export const initialStore = {
     result: false,
     data: []
   },
+  communities: {
+    fetching: false,
+    result: false,
+    data: []
+  },
   signup: null,
   // user
   authUser: null,

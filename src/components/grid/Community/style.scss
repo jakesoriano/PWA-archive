@@ -1,0 +1,63 @@
+@import '../../../style/variables.scss';
+.communityWrapper {
+  padding: 15px;
+  .search {
+    width: 100%;
+    background-color: #f2f2f2;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    input {
+      background-color: transparent;
+      border: none;
+      color: $black;
+      font-size: 0.875rem;
+      flex: 1;
+    }
+    .searchIcon {
+      max-width: 35px;
+      padding-bottom: 35px;
+    }
+  }
+  .communityBody {
+    padding: 15px;
+    background: $white;
+    border-radius: 15px;
+    .title {
+      color: $black;
+      font-size: 0.75rem;
+    }
+    .communities {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0 -5px;
+      .communityCard {
+        width: 30%;
+        margin: 20px 5px;
+        .img {
+          width: 100%;
+        }
+        .buttonStyle {
+          padding: 3px 0;
+          font-size: 0.75rem;
+          border-radius: 2px;
+          &.followed {
+            background-color: $kakampink;
+          }
+        }
+        .bottomDescStyle {
+          text-transform: uppercase;
+          font-size: 0.7rem;
+          margin-left: 0;
+          margin-right: 0;
+        }
+        .followers {
+          font-size: 0.6rem;
+          color: #737373;
+        }
+      }
+    }
+  }
+}
