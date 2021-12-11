@@ -1,6 +1,10 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { fetchNews, fetchEvents } from '_mutations';
+import { 
+	fetchNews, 
+	fetchEvents,
+	likeNews,
+	removeLikeNiews } from '_mutations';
 import { getTranslation, dateEventFormat, playStore, appStore } from '_helpers';
 import { ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
@@ -38,6 +42,15 @@ class NewsAndEvents extends Component {
 			selectedItem: data
 		});
 	};
+
+	onLikeNews = (item) => {
+		console.log('item', item);
+		if (item.ilike) {
+			likeNews(data);
+		} else {
+			removeLikeNiews(data);
+		}
+	}
 
 	onShareNews = (item) => {
 		nativeShare({
@@ -151,9 +164,12 @@ class NewsAndEvents extends Component {
 					</a>
 					<div className={style.buttons}>
 						<a
-							className={`bold ${style.buttonLike} ${i.liked ? style.buttonLikeActive : ''}`}>{getTranslation('LIKE')}</a>
+							className={i.liked ? style.buttonLikeActive : ''}
+							onClick={() => {
+								this.onLikeNews(i);
+							}}>{getTranslation('LIKE')}</a>
 						<a
-							className={`bold ${style.buttonShare} ${i.liked ? style.buttonShareActive : ''}`}
+							className={i.liked ? style.buttonShareActive : ''}
 							onClick={() => {
 								this.onShareNews(i);
 							}}>{getTranslation('SHARE')}</a>
@@ -169,12 +185,7 @@ class NewsAndEvents extends Component {
 		if (data.length) {
 			return data.map(i => (
 				<div className={`${style.contentItem} ${style.eventItem}`}>
-					<div className={style.community}>
-						<ImageLoader
-							src={i.community.image}
-							style={{container: style.comImage}} />
-						<span>{getTranslation(i.community.name)}</span>
-					</div>
+					
 					<a className={style.details} onClick={() => {
 						this.onClickItem(i);
 					}}>
@@ -210,6 +221,7 @@ class NewsAndEvents extends Component {
 	};
 
 	render = ({ news, events }, state) => {
+		console.log('news', news);
 	  return (
 			<div className={style.newsAndEvents}>
 				<div className={style.tabWrap}>

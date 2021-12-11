@@ -4,6 +4,8 @@ import { xhr, urlNews } from '_helpers';
 // eslint-disable-next-line import/prefer-default-export
 export function fetchNews () {
   const { news } = store.getState();
+  const { authUser } = store.getState();
+  const _urlNews = `${urlNews}/${authUser.profile._id}`;
   // initial state
   updateStore({
     news: {
@@ -13,16 +15,19 @@ export function fetchNews () {
     }
   });
 
-  return xhr(urlNews)
+  return new Promise((resolve) => {
+    xhr(urlNews, {
+      method: 'GET',
+    })
     .then((res) => {
       updateStore({
         news: {
-          data: res,
+          data: res.data,
           fetching: false,
           result: true
         }
       });
-      return true;
+      resolve(true);
     })
     .catch(() => {
       updateStore({
@@ -32,6 +37,7 @@ export function fetchNews () {
           result: false
         }
       });
-      return false;
+      resolve(false);
     });
+  });
 }
