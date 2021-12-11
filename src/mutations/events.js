@@ -3,9 +3,8 @@ import { xhr, urlEvents } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
 export function fetchEvents () {
-  // curreny state
   const { events } = store.getState();
-
+  
   // fetching
   if(events.fetching) {
     return;
@@ -20,18 +19,22 @@ export function fetchEvents () {
     }
   });
 
-  return xhr(urlEvents)
+  return new Promise((resolve) => {
+    xhr(urlEvents, {
+      method: 'GET',
+    })
     .then((res) => {
       updateStore({
         events: {
-          data: res,
+          data: res.data,
           fetching: false,
           result: true
         }
       });
-      return true;
+      console.log(`SPA >> fetchEvents Success`, res.success);
+      resolve(true);
     })
-    .catch(() => {
+    .catch((err) => {
       updateStore({
         events: {
           ...events,
@@ -39,6 +42,8 @@ export function fetchEvents () {
           result: false
         }
       });
-      return false;
+      console.log(`SPA >> fetchEvents Error`, err);
+      resolve(false);
     });
+  });
 }

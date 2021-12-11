@@ -9,7 +9,7 @@ export const urlValidateUsername = urlRegistration + `/validate/username/{userna
 export const urlSignup = urlRegistration + `/signup`;
 export const urlRegister = urlRegistration + `/register`;
 export const urlNews = `${process.env.API_DOMAIN}news`;
-export const urlEvents = `{PUBLIC_PATH}assets/data/events.json?_{_}`;
+export const urlEvents = `${process.env.API_DOMAIN}events`;
 export const urlMembers = `${process.env.API_DOMAIN}user/members`;
 export const urlSendOTP = `{PUBLIC_PATH}assets/data/otp.json?_={_}`;
 export const urlValidateOTP = `{PUBLIC_PATH}assets/data/otp.json?_={_}`;
