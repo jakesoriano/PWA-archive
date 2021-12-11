@@ -59,20 +59,7 @@ export function verifyOTP (data) {
       data
     })
       .then((res) => {
-        if (!res.success) {
-          updateStore({
-            alertShow: {
-              success: false,
-              content: 'Something went wrong!'
-            }
-          });
-          setTimeout(() => {
-            updateStore({
-              alertShow: null
-            });
-          }, 5300)
-          resolve(res);
-        } else {
+        if (res.success) {
           console.log(`SPA >> completeRegistration successful`, res);
           res = {
             ...res,
@@ -81,8 +68,8 @@ export function verifyOTP (data) {
           updateStore({
             authUser: res
           })
-          resolve(res);
         }
+        resolve(res);
       })
       .catch((err) => {
         // eslint-disable-next-line
