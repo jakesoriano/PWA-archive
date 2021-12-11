@@ -10,10 +10,7 @@ import style from './style';
 // eslint-disable-next-line react/prefer-stateless-function
 class Leaderboard extends Component {
 	componentDidMount = () => {
-	  const { members } = this.props;
-	  if (!members.result && !members.fetching) {
-	    fetchMembers();
-	  }
+		fetchMembers();
 	};
 
 	render = ({ members }) => {

@@ -4,6 +4,12 @@ import { xhr, urlNews } from '_helpers';
 // eslint-disable-next-line import/prefer-default-export
 export function fetchNews () {
   const { news } = store.getState();
+
+  // fetching
+  if(news.fetching) {
+    return;
+  }
+
   // initial state
   updateStore({
     news: {

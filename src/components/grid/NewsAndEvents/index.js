@@ -18,13 +18,8 @@ class NewsAndEvents extends Component {
 	};
 
 	componentDidMount = () => {
-		const { news, events } = this.props;
-		if (!news.result && !news.fetching) {
-			fetchNews();
-		}
-		if (!events.result && !events.fetching) {
-			fetchEvents();
-		}
+		fetchNews();
+		fetchEvents();
 	};
 
 	toggleTab = (tab) => {

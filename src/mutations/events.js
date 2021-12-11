@@ -5,6 +5,12 @@ import { xhr, urlEvents } from '_helpers';
 export function fetchEvents () {
   // curreny state
   const { events } = store.getState();
+
+  // fetching
+  if(events.fetching) {
+    return;
+  }
+
   // initial state
   updateStore({
     events: {
