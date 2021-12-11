@@ -5,6 +5,7 @@ import { LoaderRing, ImageLoader } from '_components/core';
 import { fetchUserData, fetchUserPoints } from '_mutations';
 import { getTranslation, formatNumber, playStore, appStore } from '_helpers';
 import { nativeShare } from '_platform/helpers';
+import { updateStore } from '_unistore';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -14,6 +15,15 @@ class AccountProfile extends Component {
 	  const { authUser } = this.props;
 	  if (authUser) {
 	    fetchUserPoints();
+			if (authUser.hasOwnProperty('isNewUser') && authUser.isNewUser) {
+				updateStore({
+					popupModal: {
+						title: getTranslation('ITS_OFFICIAL'),
+						message: getTranslation('YOURE_KAKAMPINK'),
+						bottomText: authUser.profile.refCode
+					}
+				})
+			}
 	  }
 	};
 
