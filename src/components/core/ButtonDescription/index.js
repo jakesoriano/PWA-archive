@@ -4,12 +4,12 @@ import style from './style.scss';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class ButtonDescription extends Component {
-	render = ({ onClickCallback, text, bottomDescription, isDisabled, buttonStyle, bottomDescStyle }) => {
+	render = ({ onClickCallback, text, bottomDescription, isDisabled, buttonStyle, bottomDescStyle, active }) => {
 	  return (
 	    <div className={style.buttonDescWrapper}>
 	      <button
 	        type="button"
-	        className={`bold ${style.button} ${buttonStyle}`}
+	        className={`bold ${style.button} ${buttonStyle} ${active ? style.active : ''}`}
 	        disabled={isDisabled}
 	        onClick={(e) => onClickCallback(e)}
 	      >
