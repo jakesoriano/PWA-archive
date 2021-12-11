@@ -21,7 +21,8 @@ class AccountProfile extends Component {
 						title: getTranslation('ITS_OFFICIAL'),
 						message: getTranslation('YOURE_KAKAMPINK'),
 						bottomText: authUser.profile.refCode
-					}
+					},
+					isNewUser: false
 				})
 			}
 	  }
