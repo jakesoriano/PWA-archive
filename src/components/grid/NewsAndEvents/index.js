@@ -4,6 +4,7 @@ import {
 	fetchNews, 
 	fetchEvents,
 	likeShareNews,
+	shareEvent,
 	removeLikeNews } from '_mutations';
 import { getTranslation, dateEventFormat, playStore, appStore } from '_helpers';
 import { ImageLoader } from '_components/core';
@@ -18,6 +19,7 @@ class NewsAndEvents extends Component {
 		this.state = {
 			active: 'news',
 			selectedItem: null,
+			showDropdown: false,
 		}
 	};
 
@@ -66,6 +68,10 @@ class NewsAndEvents extends Component {
 		}
 	};
 
+	onClickInterested = (item) => {
+		this.setState({showDropdown: true})
+	}
+
 	onShareEvent = (item) => {
 		nativeShare({
 			url: item.image,
@@ -79,7 +85,14 @@ class NewsAndEvents extends Component {
 				Event Location: ${item.location}
 			`
 		});
+		if (!item.shared) {
+			shareEvent(item);
+		}
 	};
+
+	onSelectEventTag = (tag) => {
+		console.log('tag', tag);
+	}
 
 	renderDetails = (data) => {
 		if (data) {
@@ -208,9 +221,13 @@ class NewsAndEvents extends Component {
 					</a>
 					<div className={style.buttons}>
 						<a
-							className={`bold ${style.buttonLike} ${i.liked ? style.buttonLikeActive : ''}`}>{getTranslation('LIKE')}</a>
+							className={i.liked ? style.buttonLikeActive : ''}
+							onClick={() => {
+								this.onClickInterested(i);
+							}}
+							>{getTranslation('INTERESTED')}</a>
 						<a
-							className={`bold ${style.buttonShare} ${i.liked ? style.buttonShareActive : ''}`}
+							className={i.shared ? style.buttonShareActive : ''}
 							onClick={() => {
 								this.onShareEvent(i);
 							}}>{getTranslation('SHARE')}</a>
@@ -241,6 +258,11 @@ class NewsAndEvents extends Component {
 					{state.active === 'news' ? this.renderNews(news.data) : this.renderEvents(events.data)}
 				</div>
 				{state.selectedItem && this.renderDetails(state.selectedItem)}
+				<div className={`${style.selectEventDropdown} ${state.showDropdown ? style.active : 'false'}`}>
+					<button onClick={this.onSelectEventTag('i')}>{getTranslation('INTERESTED')}</button>
+					<button onClick={this.onSelectEventTag('g')}>{getTranslation('GOING')}</button>
+					<button onClick={this.onSelectEventTag('n')}>{getTranslation('NOT_INTERESTED')}</button>
+				</div>
 			</div>
 		);
 	};
