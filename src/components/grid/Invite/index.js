@@ -34,10 +34,7 @@ class Invite extends Component {
 		}
 	}
 	componentDidMount = () => {
-	  const { invited } = this.props;
-	  if (!invited.result && !invited.fetching) {
-	    fetchInvited();
-	  }
+		fetchInvited();
 	};
 	
 	onFnameChange = (value) => {

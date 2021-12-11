@@ -7,6 +7,12 @@ export function fetchInvited () {
   const { invited } = store.getState();
   const { authUser } = store.getState();
   const urlInvitation = `${urlInvited}/${authUser.profile._id}`;
+
+  // fetching
+  if(invited.fetching) {
+    return;
+  }
+  
   // initial state
   updateStore({
     invited: {

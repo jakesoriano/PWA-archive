@@ -5,6 +5,12 @@ import { xhr, urlMembers } from '_helpers';
 export function fetchMembers () {
   // curreny state
   const { members } = store.getState();
+
+  // fetching
+  if(members.fetching) {
+    return;
+  }
+
   // initial state
   updateStore({
     members: {

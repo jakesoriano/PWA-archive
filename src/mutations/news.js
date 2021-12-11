@@ -4,8 +4,12 @@ import { xhr, urlNews, urlLike, urlShare } from '_helpers';
 // eslint-disable-next-line import/prefer-default-export
 export function fetchNews () {
   const { news } = store.getState();
-  const { authUser } = store.getState();
-  const _urlNews = `${urlNews}/${authUser.profile._id}`;
+  
+  // fetching
+  if(news.fetching) {
+    return;
+  }
+
   // initial state
   updateStore({
     news: {
