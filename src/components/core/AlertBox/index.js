@@ -25,8 +25,8 @@ export default class AlertBox extends Component {
   componentWillUnmount = () => {
     this.isMounted = false;
   }
-	render = ({ success, content }) => (
-    <div className={`${style.alertBox} ${style[this.state.alertClass]}`}>
+	render = ({ success, content, noTopBar }) => (
+    <div className={`${style.alertBox} ${style[this.state.alertClass]} ${noTopBar ? style.noUser : ''}`}>
       <span className={`${style.alertIcon} ${(success ? style.success : style.error)}`}>{success ? '✓' : '✖'}</span>
       <span className={style.alertText}>{content}</span>
     </div>

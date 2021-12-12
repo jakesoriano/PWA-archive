@@ -49,22 +49,26 @@ export function fetchEvents () {
 }
 
 export function shareEvent (item) {
-  const { events } = store.getState();
+  let { events } = store.getState();
   const { authUser } = store.getState();
+  
+  // fetching
+  if(events.fetching) {
+    return;
+  }
+
   // initial state
-  updateStore({
-    events: {
-      ...events,
-      data: events.data.map(i => {
-        if(i.id === item.id) {
-          i.shared = true;
-        }
-        return i;
-      }),
-      fetching: true,
-      result: false
-    }
-  });
+  events = {
+    ...events,
+    data: events.data.map(i => {
+      if(i.id === item.id) {
+        i.shared = true;
+      }
+      return i;
+    }),
+    fetching: true
+  };
+  updateStore({ events });
 
   return new Promise((resolve) => {
     xhr(urlShare, {
@@ -79,14 +83,7 @@ export function shareEvent (item) {
       updateStore({
         events: {
           ...events,
-          data: events.data.map(i => {
-            if(i.id === item.id) {
-              i.shared = true;
-            }
-            return i;
-          }),
-          fetching: false,
-          result: true
+          fetching: false
         }
       });
       console.log(`SPA >> shareEvents Success`, res);
@@ -102,8 +99,7 @@ export function shareEvent (item) {
             }
             return i;
           }),
-          fetching: false,
-          result: false
+          fetching: false
         }
       });
       console.log(`SPA >> shareEvents Error`, err);
@@ -113,23 +109,27 @@ export function shareEvent (item) {
 }
 
 export function selectTag (tag, item) {
-  const { events } = store.getState();
+  let { events } = store.getState();
   const { authUser } = store.getState();
-  const defaultTag = item.tagged
+  const defaultTag = item.tagged;
+  
+  // fetching
+  if(events.fetching) {
+    return;
+  }
+
   // initial state
-  updateStore({
-    events: {
-      ...events,
-      data: events.data.map(i => {
-        if(i.id === item.id) {
-          i.tagged = tag;
-        }
-        return i;
-      }),
-      fetching: true,
-      result: false
-    }
-  });
+  events = {
+    ...events,
+    data: events.data.map(i => {
+      if(i.id === item.id) {
+        i.tagged = tag;
+      }
+      return i;
+    }),
+    fetching: true
+  }
+  updateStore({ events });
 
   return new Promise((resolve) => {
     xhr(urlTag, {
@@ -145,17 +145,9 @@ export function selectTag (tag, item) {
       updateStore({
         events: {
           ...events,
-          data: events.data.map(i => {
-            if(i.id === item.id) {
-              i.tagged = tag;
-            }
-            return i;
-          }),
-          fetching: false,
-          result: true
+          fetching: false
         }
       });
-      console.log('eventstate', events);
       console.log(`SPA >> selectTag Success`, res);
       resolve(true);
     })
@@ -169,8 +161,7 @@ export function selectTag (tag, item) {
             }
             return i;
           }),
-          fetching: false,
-          result: false
+          fetching: false
         }
       });
       console.log(`SPA >> selectTag Error`, err);

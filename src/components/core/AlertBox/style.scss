@@ -29,4 +29,7 @@
   }
   .show {
     top: 56px;
+    &.noUser {
+      top: 5px;
+    }
   }

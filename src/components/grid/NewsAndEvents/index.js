@@ -12,6 +12,11 @@ import { ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
+const eventTags = [
+	'INTERESTED',
+	'GOING',
+	'NOT_INTERESTED'
+];
 
 // eslint-disable-next-line react/prefer-stateless-function
 class NewsAndEvents extends Component {
@@ -20,9 +25,7 @@ class NewsAndEvents extends Component {
 		this.state = {
 			active: 'news',
 			selectedItem: null,
-			showDropdown: false,
-			selectedEvent: null,
-			dropdownTopPosition: 0,
+			eventDropdown: null
 		}
 	};
 
@@ -72,13 +75,41 @@ class NewsAndEvents extends Component {
 	};
 
 	onClickInterested = (item) => {
-		const container = document.getElementById(item.id).getBoundingClientRect();
 		this.setState({
-			showDropdown: true,
-			selectedEvent: item,
-			dropdownTopPosition: `${container.top}px`,
-		})
+			eventDropdown: {
+				show: true,
+				id: item.id,
+				tagged: item.tagged
+			}
+		});
 	}
+
+	onSelectEventTag = (tag, item) => {
+		selectTag(tag, item);
+		this.setState({
+			eventDropdown: null,
+		});
+	};
+
+	renderEventsDropdown = (item, isLastItem) => {
+		const { eventDropdown } = this.state;
+		if (eventDropdown && eventDropdown.show && eventDropdown.id === item.id) {
+			return (
+				<div 
+					className={`${eventDropdown.tagged === 'INTERSTED'} ${style.selectEventDropdown} ${isLastItem ? style.lastItem : ''}`}>
+					{eventTags.map(tag => (
+						<a
+							className={eventDropdown.tagged === tag ? 'extraBold' : ''}
+							onClick={() => {
+								this.onSelectEventTag(tag, item)
+							}}>{getTranslation(tag)}
+						</a>
+					))}
+				</div>
+			);
+		}
+		return null;
+	};
 
 	onShareEvent = (item) => {
 		nativeShare({
@@ -97,13 +128,6 @@ class NewsAndEvents extends Component {
 			shareEvent(item);
 		}
 	};
-
-	onSelectEventTag = (tag, item) => {
-		selectTag(tag, item);
-		this.setState({
-			showDropdown: false,
-		})
-	}
 
 	renderDetails = (data) => {
 		if (data) {
@@ -213,7 +237,7 @@ class NewsAndEvents extends Component {
 
 	renderEvents = (data) => {
 		if (data.length) {
-			return data.map(i => (
+			return data.map((i, index) => (
 				<div className={`${style.contentItem} ${style.eventItem}`}>
 					<div className={style.community}>
 						<ImageLoader
@@ -241,26 +265,25 @@ class NewsAndEvents extends Component {
 					</a>
 					<div className={style.buttons}>
 						<a
-							className={i.tagged && i.tagged.length ? style.buttonLikeActive : ''}
+							className={i.tagged ? `extraBold ${style.buttonLikeActive}` : ''}
 							id={i.id}
 							onClick={() => {
 								this.onClickInterested(i);
 							}}
 							>
-								{i.tagged.length ? (i.tagged !== 'interested' ? (i.tagged === 'going' ? 
-								getTranslation('GOING') : 
-								getTranslation('NOT_INTERESTED')) :
-								getTranslation('INTERESTED')) : 
-								getTranslation('INTERESTED')}</a>
+							{getTranslation(i.tagged || eventTags[0])}
+						</a>
 						<a
 							className={i.shared ? style.buttonShareActive : ''}
 							onClick={() => {
 								this.onShareEvent(i);
 							}}>
-								<ImageLoader
-								src={!i.shared ? 'assets/images/share_icon_lite.png' : 'assets/images/share_icon_dark.png'}
-								style={{container: style.likeButton}}/>{getTranslation('SHARE')}
-							</a>
+							<ImageLoader
+							src={!i.shared ? 'assets/images/share_icon_lite.png' : 'assets/images/share_icon_dark.png'}
+							style={{container: `extraBold ${style.likeButton}`}}/>
+							{getTranslation('SHARE')}
+						</a>
+						{this.renderEventsDropdown(i, (data.length - 1) === index)}
 					</div>
 				</div>
 			))
@@ -288,19 +311,6 @@ class NewsAndEvents extends Component {
 					{state.active === 'news' ? this.renderNews(news.data) : this.renderEvents(events.data)}
 				</div>
 				{state.selectedItem && this.renderDetails(state.selectedItem)}
-					<div 
-						className={`${style.selectEventDropdown} ${state.showDropdown ? style.active : 'false'}`}
-						style={{bottom: this.state.dropdownBottomPosition, top: this.state.dropdownTopPosition}}>
-						<a onClick={() => {
-								this.onSelectEventTag('interested', state.selectedEvent)
-							}}>{getTranslation('INTERESTED')}</a>
-						<a onClick={() => {
-								this.onSelectEventTag('going', state.selectedEvent)
-							}}>{getTranslation('GOING')}</a>
-							<a onClick={() => {
-								this.onSelectEventTag('not interested', state.selectedEvent)
-							}}>{getTranslation('NOT_INTERESTED')}</a>
-					</div>
 			</div>
 		);
 	};

@@ -1,4 +1,4 @@
-import { updateStore, store } from '_unistore';
+import { updateStore, store, initialStore } from '_unistore';
 import { xhr, urlUserLogin, removeCookie, urlUserPoints } from '_helpers';
 
 export function logOut (callback) {
@@ -9,7 +9,7 @@ export function logOut (callback) {
     members,
     invited,
     communities,
-  } = store.getState();
+  } = initialStore;
 
   removeCookie('token');
   updateStore({
@@ -52,14 +52,14 @@ export function fetchUserPoints () {
     xhr(urlUserPoints)
       .then((res) => {
         // get current data
+        const { authUser } = store.getState();
         const {
-          authUser,
           news,
           events,
           members,
           invited,
           communities
-        } = store.getState();
+        } = initialStore;
         updateStore({
           authUser: {
             ...authUser,
@@ -102,7 +102,8 @@ export function login (data) {
           updateStore({
             alertShow: {
               success: false,
-              content: 'Invalid Username or password!'
+              content: 'Invalid Username or password!',
+              noTopBar: true
             }
           });
           setTimeout(() => {
