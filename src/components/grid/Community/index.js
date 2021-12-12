@@ -1,8 +1,9 @@
 import { Component } from 'preact';
-import { getTranslation, formatN, replaceUrlPlaceholders } from '_helpers';
+import { getTranslation, formatN } from '_helpers';
 import { filterCommunityByName, fetchAllCommunities } from '_mutations';
 import { ImageLoader, ButtonDescription } from '_components/core';
 import { route } from 'preact-router';
+import { updateStore } from '_unistore';
 import { connect } from 'unistore/preact';
 import style from './style';
 
@@ -10,24 +11,31 @@ import style from './style';
 class Community extends Component {
   constructor() {
     super();
-    this.state = {
-      data: [
-        {
-          id: 1,
-          name: 'Palugaw Ni Leni',
-          image: 'assets/images/tmp/community.JPG',
-          followers: 0
-        }
-      ]
-    }
     this.timer = null;
   }
 	componentDidMount = () => {
-    fetchAllCommunities();
+    const { communities } = this.props;
+    if (!communities.data.length) {
+      fetchAllCommunities();
+    }
 	};
 
-  handleFollow = (e) => {
+  handleFollow = (e, id) => {
     e.target.classList.add(style.followed);
+    const { communities } = this.props;
+    updateStore({
+      ...communities,
+      data: communities.data.map(item => {
+        if (item.id === id) {
+          item.followed = true
+        }
+        return item;
+      })
+    })
+    setTimeout(() => {
+      console.log(communities)
+    }, 100)
+
   }
 
   handleSearchByName = (e) => {
@@ -55,11 +63,12 @@ class Community extends Component {
         </div>
         <div className={style.cardBody}>
           <ButtonDescription
-            onClickCallback={(this.handleFollow)}
+            onClickCallback={(e) => { this.handleFollow(e, item.id)}}
             text={'Follow'}
             bottomDescription={item.name}
             buttonStyle={style.buttonStyle}
             bottomDescStyle={style.bottomDescStyle}
+            active={this.props.communities.data[i].followed}
           />
           <p className={style.followers}>{formatN(9000, 2)} kakam-PINK</p>
         </div>
