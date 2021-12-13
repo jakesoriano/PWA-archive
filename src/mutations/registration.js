@@ -4,7 +4,8 @@ import {
   urlValidateUsername,
   urlSignup,
   urlRegister,
-  urlResendOTP
+  urlResendOTP,
+  urlValidateMobile
 } from '_helpers';
 
 export function validateUsername (username) {
@@ -21,6 +22,25 @@ export function validateUsername (username) {
       .catch((err) => {
         // eslint-disable-next-line
 				console.log(`SPA >> validateUsername Error`, err);
+        resolve(false);
+      });
+  });
+}
+
+export function validateMobile (mobile) {
+  return new Promise((resolve) => {
+    let url = urlValidateMobile.replace(/{mobile}/gim, mobile);
+    xhr(url)
+      .then((res) => {
+        if (res) {
+          // eslint-disable-next-line
+          console.log(`SPA >> validateMobile successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        // eslint-disable-next-line
+				console.log(`SPA >> validateMobile Error`, err);
         resolve(false);
       });
   });
@@ -52,7 +72,6 @@ export function completeSignup (data) {
 }
 
 export function completeRegister (data) {
-  console.log(data, 'data')
   return new Promise((resolve) => {
     xhr(urlRegister, {
       method: 'POST',

@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { route } from 'preact-router';
 import { updateStore } from '_unistore';
-import { completeSignup } from '_mutations';
+import { completeSignup, validateUsername } from '_mutations';
 import {
 	getTranslation,
 	getMaxDOBDate,
@@ -23,6 +23,7 @@ import {
 } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
+import { validateMobile } from '../../../mutations/registration';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Signup extends Component {
@@ -320,29 +321,52 @@ class Signup extends Component {
 						parentRefCode: this.state.parentRefCode.value
 					};
 					displayPageLoader(true);
-					completeSignup(userData).then((res) => {
+					validateMobile(this.state.number.value)
+						.then((res) => {
 						displayPageLoader(false);
-						if (res.success) {
-							route(`/${this.props.parent}/otp`);
-						} else {
-							updateStore({
-								alertShow: {
-									success: false,
-									content: getTranslation('SOMETHING_WRONG')
-								}
-							});
-							setTimeout(() => {
-								updateStore({
-									alertShow: null
+						if (!res.hasOwnProperty('error')) {
+							if (res.available) {
+								displayPageLoader(true);
+								completeSignup(userData).then((res) => {
+									displayPageLoader(false);
+									if (res.success) {
+										route(`/${this.props.parent}/otp`);
+									} else {
+										this.showAlertBox(getTranslation('SOMETHING_WRONG'));
+									}
+								}).catch((err) => {
+									console.error('error', err);
+								})
+							} else {
+								this.setState({
+									number: {
+										...this.state.number.value,
+										hasError: true,
+										error: getTranslation('MOBILE_UNAVAILABLE')
+									}
 								});
-							}, 5300)
+							}
+						} else {
+							this.showAlertBox(getTranslation('SOMETHING_WRONG'));
 						}
-					}).catch((err) => {
-						console.error('error', err);
 					})
 				}, 100)
 			});
 		}
+	}
+
+	showAlertBox = (message) => {
+		updateStore({
+			alertShow: {
+				success: false,
+				content: message
+			}
+		});
+		setTimeout(() => {
+			updateStore({
+				alertShow: null
+			});
+		}, 5300);
 	}
 
 	render = ({}, {
@@ -360,7 +384,8 @@ class Signup extends Component {
 		regionOptions,
 		provinceOptions,
 		municipalityOptions,
-		barangayOptions
+		barangayOptions,
+		gender
 	}) => {
 
 	  return (
@@ -413,6 +438,37 @@ class Signup extends Component {
 							hasError={lname.hasError}
 							error={lname.error}
 							message={lname.message} />
+					</FormGroup>
+
+					<FormGroup label="GENDER" hasError={gender.hasError}>
+						<div className={style.radioWrap}>
+						<FormInput
+							name="male"
+							type="radio"
+							label="MALE"
+							value="male"
+							id="male"
+							checked={gender.value === 'male'}
+							onBlur={(e) => {
+								this.onGenderChange(e.target.value)
+							}}
+							onInput={(e) => {
+								this.onGenderChange(e.target.value)
+							}} />
+							<FormInput
+								name="female"
+								type="radio"
+								label="FEMALE"
+								value="female"
+								id="female"
+								checked={gender.value === 'female'}
+								onCLick={(e) => {
+									this.onGenderChange(e.target.value)
+								}}
+								onInput={(e) => {
+									this.onGenderChange(e.target.value)
+								}} />
+							</div>
 					</FormGroup>
 
 					<FormGroup label="DATE_OF_BIRTH" hasError={dob.hasError}>

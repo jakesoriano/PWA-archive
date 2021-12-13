@@ -6,6 +6,7 @@ export const urlUserData = `${process.env.apiDomain}assets/data/user.json?_={_}`
 export const urlUserPoints = `{PUBLIC_PATH}assets/data/user-points.json?_={_}`;
 export const urlRegistration = `${process.env.API_DOMAIN}registration`;
 export const urlValidateUsername = urlRegistration + `/validate/username/{username}`;
+export const urlValidateMobile = urlRegistration + `/validate/mobile/{mobile}`;
 export const urlSignup = urlRegistration + `/signup`;
 export const urlRegister = urlRegistration + `/register`;
 export const urlResendOTP = urlRegistration + `/resend-otp`;

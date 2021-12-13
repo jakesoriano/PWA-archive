@@ -78,6 +78,7 @@
 	"LOGOUT": "Logout",
 	"SIGNIN": "Sign in",
 	"USERNAME_UNAVAILABLE": "Username is already taken!",
+	"MOBILE_UNAVAILABLE": "Username is already taken!",
 	"ITS_OFFICIAL": "It's Official!",
 	"YOURE_KAKAMPINK": "You're now a KakamPink! Share your referral code and earn 100 hero points for each registered member.",
 	"SOMETHING_WRONG": "Something went wrong!"

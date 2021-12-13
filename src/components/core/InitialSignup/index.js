@@ -60,7 +60,6 @@ class InitialSignup extends Component {
         validateUsername(this.state.username.value)
           .then((res) => {
             displayPageLoader(false);
-            console.log(res, 'res');
             if (res.available) {
               this.props.toggleSignupForm();
               updateStore({
