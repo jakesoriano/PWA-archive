@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
-import { getTranslation } from '_helpers';
+import { getTranslation, displayPageLoader } from '_helpers';
 import { completeRegister, resendOTP } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
@@ -33,7 +33,9 @@ class OneTimePIN extends Component {
 			registrationId: this.props.signup.registrationId,
 			otp: pin,
 		};
+		displayPageLoader(true);
 		completeRegister(data).then((res) => {
+			displayPageLoader(false);
 			if (res.success) {
 				route('/home', true);
 			} else {
@@ -114,7 +116,9 @@ class OneTimePIN extends Component {
 			registrationId: registrationId,
 			mobile: mobile
 		}
+		displayPageLoader(true);
 		resendOTP(data).then((res) => {
+			displayPageLoader(false);
 			if (res.success) {
 				this.setCountdown();
 			}

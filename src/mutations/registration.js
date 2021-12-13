@@ -88,12 +88,6 @@ export function resendOTP (data) {
       .then((res) => {
         if (res.success) {
           console.log(`SPA >> resendOTP successful`, res);
-          updateStore({
-            signup: {
-              ...data,
-              registrationId: res.id,
-            }
-          });
         }
         resolve(res);
       })

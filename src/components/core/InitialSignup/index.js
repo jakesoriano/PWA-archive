@@ -4,7 +4,7 @@ import { Component } from 'preact';
 import { route } from 'preact-router';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
-import { getTranslation } from '_helpers';
+import { getTranslation, displayPageLoader } from '_helpers';
 import { validateUsername } from '_mutations';
 import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
 // eslint-disable-next-line import/extensions
@@ -56,8 +56,10 @@ class InitialSignup extends Component {
           }
         });
       } else {
+        displayPageLoader(true);
         validateUsername(this.state.username.value)
           .then((res) => {
+            displayPageLoader(false);
             console.log(res, 'res');
             if (res.available) {
               this.props.toggleSignupForm();

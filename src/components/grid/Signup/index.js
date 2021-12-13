@@ -10,7 +10,7 @@ import {
 	getProvince,
 	getMunicipality,
 	getBarangay,
-	// displayPageLoader
+	displayPageLoader
 } from '_helpers';
 import {
 	FormGroup,
@@ -300,8 +300,6 @@ class Signup extends Component {
 			this.onVoterChange(this.state.voter.value);
 			// this.onParentRefCodeChange(this.state.parentRefCode.value);
 		} else {
-			
-			// displayPageLoader(false);
 			nativeSelfie().then(image => {
 				// displayPageLoader(false);
 				setTimeout(() => {
@@ -321,7 +319,9 @@ class Signup extends Component {
 						isRegisteredVoter: this.state.voter.value,
 						parentRefCode: this.state.parentRefCode.value
 					};
+					displayPageLoader(true);
 					completeSignup(userData).then((res) => {
+						displayPageLoader(false);
 						if (res.success) {
 							route(`/${this.props.parent}/otp`);
 						} else {
