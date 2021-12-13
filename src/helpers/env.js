@@ -11,7 +11,7 @@ export const urlRegister = urlRegistration + `/register`;
 export const urlNews = `${process.env.API_DOMAIN}news`;
 export const urlEvents = `${process.env.API_DOMAIN}events`;
 export const urlMembers = `${process.env.API_DOMAIN}user/members`;
-export const urlSendOTP = `{PUBLIC_PATH}assets/data/otp.json?_={_}`;
+export const urlResendOTP = `{PUBLIC_PATH}assets/data/otp.json?_={_}`;
 export const urlValidateOTP = `{PUBLIC_PATH}assets/data/otp.json?_={_}`;
 export const urlInvited = `${process.env.API_DOMAIN}invitation`;
 export const urlLike = urlUser + `/like`;

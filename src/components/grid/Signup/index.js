@@ -322,14 +322,13 @@ class Signup extends Component {
 						parentRefCode: this.state.parentRefCode.value
 					};
 					completeSignup(userData).then((res) => {
-						console.log(res, 'data');
 						if (res.success) {
 							route(`/${this.props.parent}/otp`);
 						} else {
 							updateStore({
 								alertShow: {
 									success: false,
-									content: 'Something went wrong!'
+									content: getTranslation('SOMETHING_WRONG')
 								}
 							});
 							setTimeout(() => {

@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
 import { getTranslation } from '_helpers';
-import { completeRegister } from '_mutations';
+import { completeRegister, resendOTP } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
 import ButtonDescription from '_components/core/ButtonDescription';
@@ -38,19 +38,11 @@ class OneTimePIN extends Component {
 				route('/home', true);
 			} else {
 				if (!isOTPInvalid) {
-					updateStore({
-						alertShow: {
-							success: false,
-							content: getTranslation('OTP_INVALID')
-						}
-					});
+					this.showAlertBox(getTranslation('OTP_INVALID'));
 					this.setState({
 						isOTPInvalid: true,
 					});
 					setTimeout(() => {
-						updateStore({
-							alertShow: null
-						});
 						this.setState({
 							isOTPInvalid: false,
 						});
@@ -63,6 +55,12 @@ class OneTimePIN extends Component {
 	setCountdown = () => {
 		let { seconds } = this.state;
 		let timer;
+		if (seconds === 1) {
+			this.setState({
+				seconds: 60
+			})
+			seconds = 60;
+		}
 		if (!timer) {
 			this.setState({
 				isResendCd: true,
@@ -98,7 +96,7 @@ class OneTimePIN extends Component {
 		this.setState({
 			inputFocus: value
 		});
-	}
+	};
 
 	onKeyup = (e) => {
 		let _this = e.target;
@@ -108,8 +106,32 @@ class OneTimePIN extends Component {
 		if (e.target.value.length === 6) {
 			_this.blur();
 		}
-	}
+	};
 
+	resetOTP = () => {
+		resendOTP().then((res) => {
+			if (!res.success) {
+				this.setCountdown();
+			}
+			else {
+				this.showAlertBox(getTranslation('SOMETHING_WRONG'))
+			}
+		})
+	};
+
+	showAlertBox = (message) => {
+		updateStore({
+			alertShow: {
+				success: false,
+				content: message
+			}
+		});
+		setTimeout(() => {
+			updateStore({
+				alertShow: null
+			});
+		}, 5300);
+	}
 	render = ({}, { pin }) => {
 		return (
 			<div className={style.otpWrapper}>
@@ -125,7 +147,7 @@ class OneTimePIN extends Component {
 							{this.renderBox(5, true)}
 						</div>
 					</label>
-					<p>{getTranslation('OTP_SENT').replace('{4_DIGITS}', '1234')}</p>
+					<p>{getTranslation('OTP_SENT').replace('{4_DIGITS}', this.props.signup.mobile.slice(this.props.signup.mobile.length - 4))}</p>
 					<br />
 					<p>
 						{getTranslation('OTP_FAIL')}&nbsp;

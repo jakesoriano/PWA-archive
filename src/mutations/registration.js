@@ -1,5 +1,11 @@
 import { updateStore, store } from '_unistore';
-import { xhr, urlValidateUsername, urlSignup, urlRegister } from '_helpers';
+import {
+  xhr,
+  urlValidateUsername,
+  urlSignup,
+  urlRegister,
+  urlResendOTP
+} from '_helpers';
 
 export function validateUsername (username) {
   return new Promise((resolve) => {
@@ -27,11 +33,11 @@ export function completeSignup (data) {
       data
     })
       .then((res) => {
-        console.log(res);
         if (res.success) {
           console.log(`SPA >> completeSignup successful`, res);
           updateStore({
             signup: {
+              ...data,
               registrationId: res.id,
             }
           });
@@ -69,6 +75,31 @@ export function completeRegister (data) {
         // eslint-disable-next-line
 				console.log(`SPA >> completeRegister Error`, err);
         resolve(false);
+      });
+  });
+}
+
+export function resendOTP (data) {
+  return new Promise((resolve) => {
+    xhr(urlResendOTP, {
+      method: 'POST',
+      data
+    })
+      .then((res) => {
+        if (res.success) {
+          console.log(`SPA >> completeSignup successful`, res);
+          updateStore({
+            signup: {
+              ...data,
+              registrationId: res.id,
+            }
+          });
+        }
+        resolve(res);
+      })
+      .catch((err) => {
+        resolve(false);
+        console.log(`SPA >> completeSignup failed`, err);
       });
   });
 }

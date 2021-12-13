@@ -67,7 +67,7 @@ export function newInvite (data) {
           updateStore({
             alertShow: {
               success: false,
-              content: 'Something went wrong!'
+              content: getTranslation('SOMETHING_WRONG')
             }
           });
           setTimeout(() => {
