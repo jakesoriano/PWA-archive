@@ -301,56 +301,56 @@ class Signup extends Component {
 			this.onVoterChange(this.state.voter.value);
 			// this.onParentRefCodeChange(this.state.parentRefCode.value);
 		} else {
-			nativeSelfie().then(image => {
-				// displayPageLoader(false);
-				setTimeout(() => {
-					const userData = {
-						...(this.props.signup || {}),
-						image: image,
-						fname: this.state.fname.value,
-						mname: this.state.mname.value,
-						lname: this.state.lname.value,
-						gender: this.state.gender.value,
-						birthday: this.state.dob.value,
-						mobile: this.state.number.value,
-						region: this.state.region.value,
-						province: this.state.province.value,
-						municipality: this.state.municipality.value,
-						barangay: this.state.barangay.value,
-						isRegisteredVoter: this.state.voter.value,
-						parentRefCode: this.state.parentRefCode.value
-					};
-					displayPageLoader(true);
-					validateMobile(this.state.number.value)
-						.then((res) => {
-						displayPageLoader(false);
-						if (!res.hasOwnProperty('error')) {
-							if (res.available) {
-								displayPageLoader(true);
-								completeSignup(userData).then((res) => {
-									displayPageLoader(false);
-									if (res.success) {
-										route(`/${this.props.parent}/otp`);
-									} else {
-										this.showAlertBox(getTranslation('SOMETHING_WRONG'));
-									}
-								}).catch((err) => {
-									console.error('error', err);
-								})
-							} else {
-								this.setState({
-									number: {
-										...this.state.number.value,
-										hasError: true,
-										error: getTranslation('MOBILE_UNAVAILABLE')
-									}
-								});
+			displayPageLoader(true);
+			validateMobile(this.state.number.value)
+				.then((res) => {
+				displayPageLoader(false);
+				if (!res.hasOwnProperty('error')) {
+					if (res.available) {
+						nativeSelfie().then(image => {
+							// displayPageLoader(false);
+							setTimeout(() => {
+								const userData = {
+									...(this.props.signup || {}),
+									image: image,
+									fname: this.state.fname.value,
+									mname: this.state.mname.value,
+									lname: this.state.lname.value,
+									gender: this.state.gender.value,
+									birthday: this.state.dob.value,
+									mobile: this.state.number.value,
+									region: this.state.region.value,
+									province: this.state.province.value,
+									municipality: this.state.municipality.value,
+									barangay: this.state.barangay.value,
+									isRegisteredVoter: this.state.voter.value,
+									parentRefCode: this.state.parentRefCode.value
+								};
+									displayPageLoader(true);
+									completeSignup(userData).then((res) => {
+										displayPageLoader(false);
+										if (res.success) {
+											route(`/${this.props.parent}/otp`);
+										} else {
+											this.showAlertBox(getTranslation('SOMETHING_WRONG'));
+										}
+									}).catch((err) => {
+										console.error('error', err);
+									})
+							}, 100)
+						});
+					} else {
+						this.setState({
+							number: {
+								...this.state.number.value,
+								hasError: true,
+								error: getTranslation('MOBILE_UNAVAILABLE')
 							}
-						} else {
-							this.showAlertBox(getTranslation('SOMETHING_WRONG'));
-						}
-					})
-				}, 100)
+						});
+					}
+				} else {
+					this.showAlertBox(getTranslation('SOMETHING_WRONG'));
+				}
 			});
 		}
 	}
