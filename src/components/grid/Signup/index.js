@@ -446,9 +446,9 @@ class Signup extends Component {
 							name="male"
 							type="radio"
 							label="MALE"
-							value="male"
+							value="M"
 							id="male"
-							checked={gender.value === 'male'}
+							checked={gender.value === 'M'}
 							onBlur={(e) => {
 								this.onGenderChange(e.target.value)
 							}}
@@ -459,9 +459,9 @@ class Signup extends Component {
 								name="female"
 								type="radio"
 								label="FEMALE"
-								value="female"
+								value="F"
 								id="female"
-								checked={gender.value === 'female'}
+								checked={gender.value === 'F'}
 								onCLick={(e) => {
 									this.onGenderChange(e.target.value)
 								}}
