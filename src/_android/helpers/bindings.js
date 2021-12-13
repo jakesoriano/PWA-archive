@@ -39,7 +39,10 @@ export function nativeShare (data) {
   console.log('SPA >> nativeShare();');
 	callNative({
     action: 'share',
-    data: data
+    data: {
+      ...data,
+      message: (data.message || '').replace(/\t/g, '')
+    }
   });
 }
 
