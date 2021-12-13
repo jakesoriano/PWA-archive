@@ -87,7 +87,7 @@ export function resendOTP (data) {
     })
       .then((res) => {
         if (res.success) {
-          console.log(`SPA >> completeSignup successful`, res);
+          console.log(`SPA >> resendOTP successful`, res);
           updateStore({
             signup: {
               ...data,
@@ -99,7 +99,7 @@ export function resendOTP (data) {
       })
       .catch((err) => {
         resolve(false);
-        console.log(`SPA >> completeSignup failed`, err);
+        console.log(`SPA >> resendOTP failed`, err);
       });
   });
 }

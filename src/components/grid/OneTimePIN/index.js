@@ -81,12 +81,12 @@ class OneTimePIN extends Component {
 		}
 	};
 
-	renderBox = (i, isLast) => {
+	renderBox = (i, isActive, isLast) => {
 		const pin = this.state.pin || '';
 		const isFocus = this.state.inputFocus && (pin.length === i || (isLast && pin.length === (i + 1)));
 		return (
 			<div
-				className={`${style.otpBox} ${isFocus ? style.otpBoxActive : ''}`}>
+				className={`${style.otpBox} ${isFocus ? style.otpBoxActive : ''} ${isActive ? style.otpBoxActive : ''}`}>
 				{pin.charAt(i)}
 			</div>
 		);
@@ -109,8 +109,13 @@ class OneTimePIN extends Component {
 	};
 
 	resetOTP = () => {
-		resendOTP().then((res) => {
-			if (!res.success) {
+		const { registrationId, mobile } = this.props.signup || '';
+		let data = {
+			registrationId: registrationId,
+			mobile: mobile
+		}
+		resendOTP(data).then((res) => {
+			if (res.success) {
 				this.setCountdown();
 			}
 			else {
@@ -139,12 +144,12 @@ class OneTimePIN extends Component {
 					<p className={style.heading}>{getTranslation('OTP_ENTER')}</p>
 					<label for="enteredPIN">
 						<div className={style.otpBoxContainer}>
-							{this.renderBox(0)}
-							{this.renderBox(1)}
-							{this.renderBox(2)}
-							{this.renderBox(3)}
-							{this.renderBox(4)}
-							{this.renderBox(5, true)}
+							{this.renderBox(0, (pin && pin.length >= 1 ? true : false))}
+							{this.renderBox(1, (pin && pin.length >= 2 ? true : false))}
+							{this.renderBox(2, (pin && pin.length >= 3 ? true : false))}
+							{this.renderBox(3, (pin && pin.length >= 4 ? true : false))}
+							{this.renderBox(4, (pin && pin.length >= 5 ? true : false))}
+							{this.renderBox(5, (pin && pin.length >= 6 ? true : false), true)}
 						</div>
 					</label>
 					<p>{getTranslation('OTP_SENT').replace('{4_DIGITS}', this.props.signup.mobile.slice(this.props.signup.mobile.length - 4))}</p>
@@ -154,7 +159,7 @@ class OneTimePIN extends Component {
 						{!this.state.isResendCd && (
 							<span
 								onClick={() => {
-									this.setCountdown();
+									this.resetOTP();
 								}}
 								id="timer"
 								class="bold"
