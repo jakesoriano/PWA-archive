@@ -85,5 +85,6 @@
 	"INVALID_USER_PASS": "Invalid Username or password!",
 	"CHANGE_PASS": "Change Password",
 	"CHANGE_PASS_SUCCESS": "You have successfully changed your password.",
-	"ENABLE_TOUCHID": "Enable Touch ID"
+	"ENABLE_TOUCHID": "Enable Touch ID",
+	"SEND": "SEND"
 }

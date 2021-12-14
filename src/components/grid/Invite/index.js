@@ -30,6 +30,12 @@ class Invite extends Component {
 				error: '',
 				message: '',
 				hasError: false
+			},
+			mobile: {
+				value: '',
+				error: '',
+				message: '',
+				hasError: false
 			}
 		}
 	}
@@ -58,6 +64,17 @@ class Invite extends Component {
 			}
 		});
 	};
+
+	onMobileChange = (value) => {
+		this.setState({
+			mobile: {
+				...this.state.mobile,
+				value: value,
+				hasError: !Boolean(value),
+				error: !Boolean(value) ? 'REQUIRED' : ''
+			}
+		});
+	};
 	
 	onRegionChange = (value) => {
 		this.setState({
@@ -71,7 +88,10 @@ class Invite extends Component {
 	};
 
 	onShare = () => {
-		if (!this.state.fname.value || !this.state.lname.value || !this.state.region.value) {
+		if (!this.state.fname.value || 
+			!this.state.lname.value || 
+			!this.state.region.value ||
+			!this.state.mobile.value) {
 			this.onFnameChange(this.state.fname.value);
 			this.onLnameChange(this.state.lname.value);
 			this.onRegionChange(this.state.region.value);
@@ -86,9 +106,24 @@ class Invite extends Component {
 					Use my invite code: ${this.props.authUser.profile.refCode}
 				`
 			});
+		}
+	}
+
+	onSend = () => {
+		if (!this.state.fname.value || 
+			!this.state.lname.value || 
+			!this.state.region.value ||
+			!this.state.mobile.value) {
+			this.onFnameChange(this.state.fname.value);
+			this.onLnameChange(this.state.lname.value);
+			this.onRegionChange(this.state.region.value);
+			this.onMobileChange(this.state.mobile.value);
+		} else {
 			newInvite({
 				fname: this.state.fname.value,
-				lname: this.state.lname.value
+				lname: this.state.lname.value,
+				type: 'M',
+				mobile: this.state.mobile.value
 	    })
 	      .then((res) => {
 	        fetchInvited();
@@ -99,7 +134,7 @@ class Invite extends Component {
 		}
 	}
 
-	render = ({ authUser, invited }, { fname, lname, region, regionOptions }) => {
+	render = ({ authUser, invited }, { fname, lname, region, regionOptions, mobile }) => {
 
 		if (!authUser) {
 			return null;
@@ -140,7 +175,7 @@ class Invite extends Component {
 							error={lname.error}
 							message={lname.message} />
 					</FormGroup>
-					<FormGroup label="REGION" hasError={region.hasError}>
+					<FormGroup label={getTranslation("REGION")} hasError={region.hasError}>
 						<FormDropdown
 							label=""
 							className={style.region}
@@ -159,12 +194,47 @@ class Invite extends Component {
 							message={region.message}
 							 />
 					</FormGroup>
+					<FormGroup label={getTranslation("MOBILE_NUMBER")}>
+						<div className={style.mobileWrap}>
+							<div className={style.mobileInputWrap}>
+								<FormInput
+									className={style.mobile}
+									style={{error: style.mobile}}
+									value={mobile.value}
+									type="number"
+									onBlur={(e) => {
+										this.onMobileChange(e.target.value)
+									}}
+									onInput={(e) => {
+										this.onMobileChange(e.target.value)
+									}}
+									hasError={mobile.hasError}
+									error={mobile.error}
+									message={mobile.message} />
+							</div>
+							<div>
+								<a className={style.pShare} 
+									onClick={() => {
+										this.onSend()
+									}}>
+								<ImageLoader
+											src="assets/images/send_icon_white.png"
+											style={{container: style.pIconShare}} />
+										<span>{getTranslation('SEND')}</span>
+								</a>
+							</div>
+						</div>
+					</FormGroup>
 					{/* Invite */}
 					<FormGroup label="INVITE">
 						<div className={style.invite}>
 							<span className={`bold`}>{authUser.profile.refCode}</span>
 							<div>
-								<a className={style.pShare} onClick={this.onShare}>
+								<a className={style.pShare}
+									onClick={() => {
+										this.onShare()
+									}}
+								>
 									<ImageLoader
 											src="assets/images/share_icon_white.png"
 											style={{container: style.pIconShare}} />
