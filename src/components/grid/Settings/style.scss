@@ -1,0 +1,25 @@
+.settingsWrap {
+  background: #fff;
+  padding: 0 20px;
+  position: fixed;
+  width: 100%;
+  height: calc(100% - 116px);
+
+  button {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 15px 10px;
+    border-bottom: 1px solid #737373;
+    span {
+      color: #737373;
+      font-family: 'OpenSans-Bold', arial, sans-serif;
+      line-height: 25px;
+    }
+    .inputWrap {
+      float: right;
+    }
+  }
+}
