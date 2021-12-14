@@ -81,5 +81,9 @@
 	"MOBILE_UNAVAILABLE": "Mobile number is already taken!",
 	"ITS_OFFICIAL": "It's Official!",
 	"YOURE_KAKAMPINK": "You're now a KakamPink! Share your referral code and earn 100 hero points for each registered member.",
-	"SOMETHING_WRONG": "Something went wrong!"
+	"SOMETHING_WRONG": "Something went wrong!",
+	"INVALID_USER_PASS": "Invalid Username or password!",
+	"CHANGE_PASS": "Change Password",
+	"CHANGE_PASS_SUCCESS": "You have successfully changed your password.",
+	"ENABLE_TOUCHID": "Enable Touch ID"
 }
