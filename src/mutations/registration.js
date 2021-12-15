@@ -17,6 +17,8 @@ export function validateUsername (username) {
           // eslint-disable-next-line
           console.log(`SPA >> validateUsername successful`, res);
           resolve(res);
+        } else {
+          resolve(false);
         }
       })
       .catch((err) => {
@@ -36,6 +38,8 @@ export function validateMobile (mobile) {
           // eslint-disable-next-line
           console.log(`SPA >> validateMobile successful`, res);
           resolve(res);
+        } else {
+          resolve(false);
         }
       })
       .catch((err) => {
@@ -61,8 +65,10 @@ export function completeSignup (data) {
               registrationId: res.id,
             }
           });
+          resolve(res);
+        } else {
+          resolve(false);
         }
-        resolve(res);
       })
       .catch((err) => {
         resolve(false);
@@ -86,9 +92,11 @@ export function completeRegister (data) {
           }
           updateStore({
             authUser: res
-          })
+          });
+          resolve(res);
+        } else {
+          resolve(false);
         }
-        resolve(res);
       })
       .catch((err) => {
         // eslint-disable-next-line
@@ -107,8 +115,10 @@ export function resendOTP (data) {
       .then((res) => {
         if (res.success) {
           console.log(`SPA >> resendOTP successful`, res);
+          resolve(res);
+        } else {
+          resolve(false);
         }
-        resolve(res);
       })
       .catch((err) => {
         resolve(false);

@@ -27,7 +27,7 @@ export function filterCommunityByName(name) {
 			})
 			.catch((err) => {
 				console.log(err);
-				return false;
+        resolve(false);
 			});
 		});
 	} else {
@@ -54,8 +54,10 @@ export function fetchCommunityById(id) {
 						data: res.data
 					}
 				});
+        resolve(true);
+			} else {
+        resolve(false);
 			}
-			resolve(true);
 		})
 		.catch((err) => {
 			console.log(err);

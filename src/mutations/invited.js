@@ -70,9 +70,10 @@ export function newInvite (data) {
               content: getTranslation('SOMETHING_WRONG')
             }
           });
+          resolve(true);
         } else {
           console.log(`SPA >> newInvite successful`, res);
-          resolve(res);
+          resolve(false);
         }
       })
       .catch((err) => {
