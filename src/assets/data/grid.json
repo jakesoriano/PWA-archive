@@ -132,14 +132,11 @@
 	{
 		"styles": [],
 		"auth": true,
-		"pageTitle": "PAGE_CONTSCTUS",
+		"pageTitle": "PAGE_CONTACTUS",
 		"uri": "contactus",
 		"contents": [
 			{
-				"component": "PageTitle",
-				"props": {
-					"title": "ContactUs"
-				}
+				"component": "ContactUs"
 			}
 		]
 	},

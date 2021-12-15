@@ -86,5 +86,13 @@
 	"CHANGE_PASS": "Change Password",
 	"CHANGE_PASS_SUCCESS": "You have successfully changed your password.",
 	"ENABLE_TOUCHID": "Enable Touch ID",
-	"SEND": "SEND"
+	"SEND": "SEND",
+	"CATEGORY": "Category",
+	"SUBJECT": "Subject",
+	"ATTACHMENT": "Attachment",
+	"MESSAGE_SENT_TITLE": "Message Sent!",
+	"MESSAGE_SENT_MSG": "Your message has been sent and well take a look at it as soon as possible. #PinkyPromise",
+	"CODE_REF": "Ref no.",
+	"OOPS_SOMETHING_WRONG": "Oops.. something went wrong.",
+	"TRY_AGAIN_CONTINUE": "Please try again. Hit 'Continue' ."
 }
