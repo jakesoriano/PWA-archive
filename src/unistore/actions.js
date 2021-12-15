@@ -67,9 +67,11 @@ function syncDataToStorage (newState) {
     setItem(key, newState[key]);
   });
 }
-export function updateStore (newState) {
+export function updateStore (newState, disabledCache) {
   // sync data to storage
-  syncDataToStorage(newState);
+  if (!disabledCache) {
+    syncDataToStorage(newState);
+  }
   // sync data to globa state
   store.setState(newState);
 }

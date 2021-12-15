@@ -135,11 +135,6 @@ class OneTimePIN extends Component {
 				content: message
 			}
 		});
-		setTimeout(() => {
-			updateStore({
-				alertShow: null
-			});
-		}, 5300);
 	}
 	render = ({}, { pin }) => {
 		return (

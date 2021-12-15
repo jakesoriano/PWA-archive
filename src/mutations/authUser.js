@@ -99,8 +99,7 @@ export function login (data) {
       .then((res) => {
         if (res && res.success) {
           updateStore({
-            authUser: res,
-            alertShow: null
+            authUser: res
           });
           // eslint-disable-next-line
           console.log(`SPA >> login successful`, res);
@@ -113,11 +112,6 @@ export function login (data) {
               noTopBar: true
             }
           });
-          setTimeout(() => {
-            updateStore({
-              alertShow: null
-            });
-          }, 5300);
           resolve(false);
         }
       })

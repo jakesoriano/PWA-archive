@@ -70,11 +70,6 @@ export function newInvite (data) {
               content: getTranslation('SOMETHING_WRONG')
             }
           });
-          setTimeout(() => {
-            updateStore({
-              alertShow: null
-            });
-          }, 5300)
         } else {
           console.log(`SPA >> newInvite successful`, res);
           resolve(res);

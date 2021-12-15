@@ -94,11 +94,6 @@ class ChangePassword extends Component {
 				content: message
 			}
 		});
-		setTimeout(() => {
-			updateStore({
-				alertShow: null
-			});
-		}, 5000);
 	}
 
 	handleContinue = (e) => {
