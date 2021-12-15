@@ -8,3 +8,4 @@ export * from './invited';
 export * from './community';
 export * from './registration';
 export * from './contactus';
+export * from './settings';
