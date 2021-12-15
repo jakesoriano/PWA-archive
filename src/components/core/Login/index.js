@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { getTranslation } from '_helpers';
+import { getTranslation, displayPageLoader } from '_helpers';
 import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
 import { login } from '_mutations';
 import { route } from 'preact-router';
@@ -35,15 +35,19 @@ class Login extends Component {
 	    this.onUsernameChange(this.state.username.value);
 	    this.onPasswordChange(this.state.password.value);
 	  } else {
+      displayPageLoader(true);
 	    login({
         username: this.state.username.value,
         password: this.state.password.value
 	    })
 	      .then((res) => {
-	        route('/home', true);
+          displayPageLoader(false);
+          if (res) {
+            route('/home', true);
+          }
 	      })
 	      .catch((err) => {
-	        alert('Invalid Username or Password!');
+          displayPageLoader(false);
 	      });
 	  }
 	};

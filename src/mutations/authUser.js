@@ -1,5 +1,12 @@
 import { updateStore, store, initialStore } from '_unistore';
-import { xhr, urlUserLogin, removeCookie, urlUserPoints, urlChangePassword } from '_helpers';
+import {
+  xhr,
+  urlUserLogin,
+  removeCookie,
+  urlUserPoints,
+  urlChangePassword,
+  getTranslation
+} from '_helpers';
 
 export function logOut (callback) {
 
@@ -110,7 +117,8 @@ export function login (data) {
             updateStore({
               alertShow: null
             });
-          }, 5300)
+          }, 5300);
+          resolve(false);
         }
       })
       .catch((err) => {
