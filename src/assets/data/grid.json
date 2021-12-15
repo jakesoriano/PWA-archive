@@ -125,10 +125,7 @@
 		"uri": "settings",
 		"contents": [
 			{
-				"component": "PageTitle",
-				"props": {
-					"title": "Settings"
-				}
+				"component": "Settings"
 			}
 		]
 	},

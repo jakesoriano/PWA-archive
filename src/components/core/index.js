@@ -19,3 +19,4 @@ export { default as AlertBox } from './AlertBox';
 export { default as PopupModal } from './PopupModal';
 export { default as Login } from './Login';
 export { default as InitialSignup } from './InitialSignup';
+export { default as ToggleInput } from './ToggleInput';

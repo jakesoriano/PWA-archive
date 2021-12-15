@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
 import { getTranslation } from '_helpers';
-// import { changePassword } from '_mutations';
+import { changePassword } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
 import { FormGroup, FormInput, ButtonDescription } from '_components/core';
@@ -87,6 +87,20 @@ class ChangePassword extends Component {
 		});
 	};
 
+	showAlertBox = (message, hasError) => {
+		updateStore({
+			alertShow: {
+				success: !hasError,
+				content: message
+			}
+		});
+		setTimeout(() => {
+			updateStore({
+				alertShow: null
+			});
+		}, 5000);
+	}
+
 	handleContinue = (e) => {
 		if (!this.state.currentPass.value || 
       !this.state.newPass.value ||
@@ -106,11 +120,27 @@ class ChangePassword extends Component {
           }
         });
       } else {
-        route(`/${this.props.parent}`);
+				const data = {
+					password: this.state.currentPass.value,
+					newPassword: this.state.newPass.value,
+				};
+				// displayPageLoader(true);
+				changePassword(data).then((res) => {
+					if(res && res.success) {
+						this.showAlertBox('CHANGE_PASS_SUCCESS', false);
+					} else {
+						this.showAlertBox('SOMETHING_WRONG', true);
+					}
+					// displayPageLoader(false);
+					route(`/${this.props.parent}`);
+				}).catch((err) => {
+					this.showAlertBox('SOMETHING_WRONG', true);
+					// displayPageLoader(false);
+					route(`/${this.props.parent}`);
+				});
+				
       }
     }
-		// changePassword(this.props.signup).then((res) => {
-		// });
 	};
 
 	render = ({}, { currentPass, newPass, confirmPass }) => {
@@ -172,7 +202,9 @@ class ChangePassword extends Component {
 
 				<div className={style.buttonContainer}>
 					<ButtonDescription
-						onClickCallback={this.handleContinue}
+						onClickCallback={() => {
+							this.handleContinue()
+						}}
 						text="Continue"
 					/>
 				</div>
