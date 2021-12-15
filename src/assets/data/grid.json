@@ -174,5 +174,49 @@
 				"component": "ChangePassword"
 			}
 		]
+	},
+	{
+		"styles": [],
+		"auth": false,
+		"pageTitle": "PAGE_FORGOT_PW",
+		"uri": "forgot-password",
+		"contents": [
+			{
+				"component": "ForgotPassword"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": false,
+		"pageTitle": "PAGE_FORGOT_PW",
+		"uri": "enter-mobile-pw",
+		"contents": [
+			{
+				"component": "EnterMobile"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": false,
+		"pageTitle": "PAGE_OTP",
+		"uri": "forgot-otp",
+		"contents": [
+			{
+				"component": "ForgotOTP"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": false,
+		"pageTitle": "PAGE_OTP",
+		"uri": "registration-otp",
+		"contents": [
+			{
+				"component": "RegistrationOTP"
+			}
+		]
 	}
 ]

@@ -330,7 +330,7 @@ class Signup extends Component {
 									completeSignup(userData).then((res) => {
 										displayPageLoader(false);
 										if (res.success) {
-											route(`/${this.props.parent}/otp`);
+											route(`/${this.props.parent}/registration-otp`);
 										} else {
 											this.showAlertBox(getTranslation('SOMETHING_WRONG'));
 										}

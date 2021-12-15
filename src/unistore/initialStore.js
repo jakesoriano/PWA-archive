@@ -38,6 +38,7 @@ export const initialStore = {
     data: []
   },
   signup: null,
+  forgot: null,
   // user
   authUser: null,
   // modals
