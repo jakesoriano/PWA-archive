@@ -22,6 +22,7 @@ export const urlShare = urlUser + `/share`;
 export const urlCommunity = `${process.env.API_DOMAIN}community/`;
 export const urlCommunitySearch = urlCommunity + `filter/{name}`;
 export const urlCommunityGetById = urlCommunity + `{id}`;
+export const urlChangePassword = urlUser + `/change-password`;
 
 export const playStore = 'https://play.google.com/store/apps/details?id=com.facebook.katana&hl=en&gl=US';
 export const appStore = 'https://apps.apple.com/us/app/facebook/id284882215'

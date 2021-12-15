@@ -1,5 +1,5 @@
 import { updateStore, store, initialStore } from '_unistore';
-import { xhr, urlUserLogin, removeCookie, urlUserPoints } from '_helpers';
+import { xhr, urlUserLogin, removeCookie, urlUserPoints, urlChangePassword } from '_helpers';
 
 export function logOut (callback) {
 
@@ -102,7 +102,7 @@ export function login (data) {
           updateStore({
             alertShow: {
               success: false,
-              content: 'Invalid Username or password!',
+              content: getTranslation('INVALID_USER_PASS'),
               noTopBar: true
             }
           });
@@ -111,6 +111,30 @@ export function login (data) {
               alertShow: null
             });
           }, 5300)
+        }
+      })
+      .catch((err) => {
+        // eslint-disable-next-line
+				console.log(`SPA >> login Error`, err);
+        resolve(false);
+      });
+  });
+}
+
+
+export function changePassword (data) {
+  return new Promise((resolve) => {
+    xhr(urlChangePassword, {
+      method: 'POST',
+      data
+    })
+      .then((res) => {
+        if (res && res.success) {
+          // eslint-disable-next-line
+          console.log(`SPA >> login successful`, res);
+          resolve(res);
+        } else {
+          resolve(false);
         }
       })
       .catch((err) => {
