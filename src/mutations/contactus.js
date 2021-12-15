@@ -4,7 +4,7 @@ import { xhr, urlContactUs } from '_helpers';
 export function sendContactUs (data) {
   // current state
   const { authUser } = store.getState();
-  const url = `${urlInvited}/${authUser.profile._id}`;
+  const url = `${urlContactUs}/${authUser.profile._id}`;
   
   return new Promise((resolve) => {
     xhr(url, {
