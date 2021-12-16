@@ -17,5 +17,6 @@ export { default as Settings } from './Settings';
 export { default as ForgotPassword } from './ForgotPassword';
 export { default as RegistrationOTP } from './RegistrationOTP';
 export { default as ForgotOTP } from './ForgotOTP';
-export { default as EnterMobile } from './EnterMobile';
+export { default as ForgotEnterMobile } from './ForgotEnterMobile';
+export { default as Notification } from './Notification';
 

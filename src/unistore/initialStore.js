@@ -37,6 +37,11 @@ export const initialStore = {
     result: false,
     data: []
   },
+  notifications: {
+    fetching: false,
+    result: false,
+    data: []
+  },
   signup: null,
   forgot: null,
   // user

@@ -1,0 +1,48 @@
+@import '../../../style/variables.scss';
+.notificationsWrapper {
+  padding: 15px;
+  .notificationsContent {
+    background-color: $white;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 25px 0;
+    width: 100%;
+    .heading {
+      border-bottom: 2px solid $gray;
+      color: $black;
+      font-size: 1.25rem;
+      padding: 0 15px 25px;
+    }
+    .contentDetails {
+      display: flex;
+      .contentDetail {
+        display: flex;
+        padding: 15px;
+        .detailImage {
+          width: 50px;
+          margin-right: 20px;
+        }
+        .detailTitle {
+          color: #808080;
+          font-size: 0.75rem;
+          margin-bottom: 20px;
+        }
+        .detailDescription {
+          color: #808080;
+          font-size: 0.65rem;
+        }
+        .detailShare {
+          margin-left: 5px;
+          .share {
+            width: 25px;
+          }
+        }
+      }
+    }
+    .noRecord {
+      color: #808080;
+      font-size: 0.875rem;
+      margin: 10px 15px;
+    }
+  }
+}
