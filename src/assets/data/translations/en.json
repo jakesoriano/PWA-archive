@@ -10,6 +10,7 @@
 	"PAGE_OTP": "One-Time PIN",
 	"PAGE_SIGNUP": "Tell us more",
 	"PAGE_FORGOT_PW": "Forgot Password",
+	"PAGE_FORGOT_UN": "Forgot Username",
 	"MEMBERS": "Members",
 	"HERO_POINTS": "Hero Points",
 	"EARN_100P": "Earn 100 pts",
@@ -87,5 +88,7 @@
 	"CHANGE_PASS": "Change Password",
 	"CHANGE_PASS_SUCCESS": "You have successfully changed your password.",
 	"ENABLE_TOUCHID": "Enable Touch ID",
-	"SEND": "SEND"
+	"SEND": "SEND",
+	"HERE_YOU_GO": "Here you go...",
+	"YOUR_USERNAME": "Your Username is"
 }

@@ -200,6 +200,17 @@
 	{
 		"styles": [],
 		"auth": false,
+		"pageTitle": "PAGE_FORGOT_UN",
+		"uri": "enter-mobile-un",
+		"contents": [
+			{
+				"component": "EnterMobile"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": false,
 		"pageTitle": "PAGE_OTP",
 		"uri": "forgot-otp",
 		"contents": [
