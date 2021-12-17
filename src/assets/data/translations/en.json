@@ -90,5 +90,8 @@
 	"ENABLE_TOUCHID": "Enable Touch ID",
 	"SEND": "SEND",
 	"HERE_YOU_GO": "Here you go...",
-	"YOUR_USERNAME": "Your Username is"
+	"YOUR_USERNAME": "Your Username is",
+	"DOWNLOAD_KIT": "Download the volunteer Kit here",
+	"REGIONAL": "Regional",
+	"OVERALL": "Overall"
 }
