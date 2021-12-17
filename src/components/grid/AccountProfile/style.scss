@@ -6,51 +6,93 @@
   .profile {
     background: #fff;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 10px;
     .user {
       display: flex;
       width: 100%;
+      position: relative;
       .avatar {
         width: 76px;
         padding-bottom: 72px;
         border: 2px solid #ffb1bb;
         border-radius: 80px;
+        align-self: center;
+        margin-right: 10px;
       }
       .image {
         top: 12px;
       }
+      .profileInfo {
+        flex: 1;
+      }
       .nameMember {
         flex-grow: 1;
-        padding: 10px;
+        padding: 0 10px;
         .name {
           font-size: 1.2rem;
           text-transform: uppercase;
         }
       }
-      .share {
-        width: 20px;
-        padding-bottom: 20px;
+      .shareContainer {
+        position: absolute;
+        right: 0;
+        .share {
+          width: 20px;
+          padding-bottom: 20px;
+        }
       }
     }
-    .heroPoints {
-      text-align: center;
-      display: grid;
-      .points {
-        font-size: 1.8rem;
+    .pointsRank {
+      display: flex;
+      .heroPoints {
+        flex: 1;
+        text-align: center;
+        display: block;
+        margin-right: 15px;
+        align-self: flex-end;
+        margin-bottom: 4px;
+        .points {
+          font-size: 1.8rem;
+        }
+        .textPoints {
+          text-transform: uppercase;
+          font-size: 0.75rem;
+        }
       }
-      .textPoints {
-        text-transform: uppercase;
+      .heroRankingContainer {
+        flex: 1;
+        text-align: center;
+        .heroRanking {
+          flex: 1;
+          display: flex;
+          margin-top: 5px;
+          .rankBox {
+            background-color: #ffd4d9;
+            padding: 0 5px 5px;
+            width: 60px;
+            border-radius: 5px;
+            &:not(:first-of-type) {
+              margin-left: 10px;
+            }
+            .rankPoints {
+              font-size: 1.5rem;
+            }
+            .rankPointsText {
+              font-size: 0.75rem;
+            }
+          }
+        }
       }
     }
   }
-  .invite {
+  .download {
     padding: 0;
     border: none;
     display: flex;
     background: #ffb5ba;
     width: 100%;
-    border-radius: 10px 30px 30px 10px;
+    border-radius: 10px;
     overflow: hidden;
     > div {
       background: #fff;
@@ -59,7 +101,7 @@
       display: flex;
       align-items: center;
       padding: 5px;
-      .iconInvite {
+      .iconDownload {
         width: 30px;
         padding-bottom: 30px;
         display: inline-block;
