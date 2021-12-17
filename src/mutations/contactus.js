@@ -1,5 +1,6 @@
 import { store } from '_unistore';
-import { xhr, urlContactUs } from '_helpers';
+import { xhr, urlContactUs, urlUploadFile } from '_helpers';
+import axios from 'axios';
 
 export function sendContactUs (data) {
   // current state
@@ -23,6 +24,35 @@ export function sendContactUs (data) {
       .catch((err) => {
         resolve(false);
         console.log(`SPA >> contactUs failed`, err);
+      });
+  });
+}
+
+export function uploadFile (data) {
+  const formData = new FormData();
+  formData.append("file", data.file);
+  return new Promise((resolve) => {
+    // make axios post request
+    axios({
+      method: "post",
+      url: urlUploadFile,
+      data: formData,
+      headers: {
+        'content-type': 'multipart/form-data'
+      }
+    })
+      .then((res) => {
+        if (res.data && res.data.success) {
+          console.log(`SPA >> uploadFile successful`, res);
+          resolve(res.data);
+        } else {
+          console.log(`SPA >> uploadFile Error`, res);
+          resolve(false);
+        }
+      })
+      .catch((err) => {
+        resolve(false);
+        console.log(`SPA >> uploadFile failed`, err);
       });
   });
 }

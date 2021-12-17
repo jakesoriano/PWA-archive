@@ -6,7 +6,7 @@ import { ButtonDescription } from '_components/core';
 import { getTranslation, displayPageLoader } from '_helpers';
 import style from './style';
 
-class EnterMobile extends Component {
+class ForgotEnterMobile extends Component {
   constructor () {
     super();
     this.state = {
@@ -91,4 +91,4 @@ class EnterMobile extends Component {
   }
 }
 
-export default EnterMobile;
+export default ForgotEnterMobile;

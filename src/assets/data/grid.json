@@ -111,10 +111,7 @@
 		"uri": "notification",
 		"contents": [
 			{
-				"component": "PageTitle",
-				"props": {
-					"title": "Notification"
-				}
+				"component": "Notification"
 			}
 		]
 	},	
@@ -190,7 +187,18 @@
 		"uri": "enter-mobile-pw",
 		"contents": [
 			{
-				"component": "EnterMobile"
+				"component": "ForgotEnterMobile"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": false,
+		"pageTitle": "PAGE_FORGOT_UN",
+		"uri": "enter-mobile-un",
+		"contents": [
+			{
+				"component": "ForgotEnterMobile"
 			}
 		]
 	},

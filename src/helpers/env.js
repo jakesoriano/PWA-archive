@@ -29,6 +29,8 @@ export const urlForgotPassword =`${urlForgot}/password`;
 export const urlForgotUsername =`${urlForgot}/username`;
 export const urlForgotSendOTP =`${urlForgot}/otp`;
 export const urlForgotValidateOTP =`${urlForgotSendOTP}/validate`;
+export const urlNotifications =`{PUBLIC_PATH}assets/data/notifications.json?_{_}`;
+export const urlUploadFile =`${process.env.API_DOMAIN}uploader`;
 
 export const playStore = 'https://play.google.com/store/apps/details?id=com.facebook.katana&hl=en&gl=US';
 export const appStore = 'https://apps.apple.com/us/app/facebook/id284882215'

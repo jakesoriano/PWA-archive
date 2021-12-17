@@ -5,11 +5,12 @@
 	"PAGE_LEADERBOARD": "Leaderboard",
 	"PAGE_COMMUNITY": "Community",
 	"PAGE_PROFILE": "Profile",
-	"PAGE_NOTIFICATION": "Notification",
+	"PAGE_NOTIFICATION": "Notifications",
 	"PAGE_TERMS": "Terms and Conditions",
 	"PAGE_OTP": "One-Time PIN",
 	"PAGE_SIGNUP": "Tell us more",
 	"PAGE_FORGOT_PW": "Forgot Password",
+	"PAGE_FORGOT_UN": "Forgot Username",
 	"MEMBERS": "Members",
 	"HERO_POINTS": "Hero Points",
 	"EARN_100P": "Earn 100 pts",
@@ -95,5 +96,8 @@
 	"MESSAGE_SENT_MSG": "Your message has been sent and well take a look at it as soon as possible. #PinkyPromise",
 	"CODE_REF": "Ref no.",
 	"OOPS_SOMETHING_WRONG": "Oops.. something went wrong.",
-	"TRY_AGAIN_CONTINUE": "Please try again. Hit 'Continue' ."
+	"TRY_AGAIN_CONTINUE": "Please try again. Hit 'Continue' .",
+	"HERE_YOU_GO": "Here you go...",
+	"YOUR_USERNAME": "Your Username is",
+	"ADD_FILE": "Add File"
 }

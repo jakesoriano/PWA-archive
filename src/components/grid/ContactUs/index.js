@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { sendContactUs, newInvite } from '_mutations';
+import { sendContactUs, uploadFile } from '_mutations';
 import { LoaderRing } from '_components/core';
 import { FormGroup, FormInput, FormDropdown, ImageLoader, ButtonDescription } from '_components/core';
 import { getTranslation, getCategories, circleModal } from '_helpers';
@@ -11,7 +11,7 @@ import style from './style';
 class ContactUs extends Component {
 	constructor(props){
 		super(props);
-		this.state = {
+		this.initialState = {
 			categoryOptions: getCategories(),
 			category: {
 				value: '',
@@ -32,21 +32,22 @@ class ContactUs extends Component {
 				hasError: false
 			},
 			attachment: {
-				value: '',
+				file: null,
 				error: '',
 				message: '',
 				hasError: false
 			}
 		}
+		this.state = this.initialState;
 	}
 
-	onAttachmentChange = (value) => {
+	onAttachmentChange = (file) => {
 		this.setState({
 			attachment: {
 				...this.state.attachment,
-				value: value,
-				hasError: !Boolean(value),
-				error: !Boolean(value) ? 'REQUIRED' : ''
+				file: file,
+				hasError: !Boolean(file),
+				error: !Boolean(file) ? 'REQUIRED' : ''
 			}
 		});
 	};
@@ -89,33 +90,48 @@ class ContactUs extends Component {
 		if (!this.state.category.value || 
 			!this.state.subject.value || 
 			!this.state.message.value ||
-			!this.state.attachment.value) {
+			!this.state.attachment.file ) {
 			this.onCategoryChange(this.state.category.value);
 			this.onSubjectChange(this.state.subject.value);
 			this.onMessageChange(this.state.message.value);
-			this.onAttachmentChange(this.state.attachment.value);
+			this.onAttachmentChange(this.state.attachment.file);
 		} else {
-			sendContactUs({
-				category: this.state.category.value,
-				suject: this.state.subject.value,
-				message: this.state.message.value,
-				attachment: this.state.attachment.value
-	    })
-	      .then((res) => {
-					if(res && res.success) {
-						circleModal({
-							title: getTranslation('MESSAGE_SENT_TITLE'),
-							content: getTranslation('MESSAGE_SENT_MSG'),
-							code: `${getTranslation('CODE_REF')} 12345678`
-						});
+			uploadFile({
+				file: this.state.attachment.file
+			})
+				.then((res) => {
+					if(res.success && res.data) {
+						sendContactUs({
+							category: this.state.category.value,
+							suject: this.state.subject.value,
+							message: this.state.message.value,
+							attachment: res.data.image
+						})
+							.then((res) => {
+								if(res && res.success) {
+									this.setState({
+										...this.initialState
+									});
+									const { authUser } = this.props;
+									circleModal({
+										title: getTranslation('MESSAGE_SENT_TITLE'),
+										content: getTranslation('MESSAGE_SENT_MSG'),
+										code: `${getTranslation('CODE_REF')} ${authUser.profile.refCode}`
+									});
+								} else {
+									circleModal({
+										title: getTranslation('OOPS_SOMETHING_WRONG'),
+										content: getTranslation('TRY_AGAIN_CONTINUE')
+									});
+								}
+							})
 					} else {
 						circleModal({
 							title: getTranslation('OOPS_SOMETHING_WRONG'),
 							content: getTranslation('TRY_AGAIN_CONTINUE')
 						});
 					}
-	      })
-	      
+				})
 		}
 	}
 
@@ -187,31 +203,32 @@ class ContactUs extends Component {
 				<div className={style.infoWrap}>
 					<FormGroup label={getTranslation("ATTACHMENT")}>
 						<div className={style.attachmentWrap}>
-							<div className={style.attachmentInputWrap}>
-								<FormInput
-									className={style.attachment}
-									style={{error: style.attachment}}
-									value={attachment.value}
-									type="file"
-									onBlur={(e) => {
-										this.onAttachmentChange(e.target.value)
-									}}
-									onInput={(e) => {
-										this.onAttachmentChange(e.target.value)
-									}}
-									hasError={attachment.hasError}
-									error={attachment.error}
-									message={attachment.message} />
+							<div className={style.attachmentInputWrap}>								
+									<FormInput
+										id='inputAttachment'
+										className={style.attachment}
+										style={{error: style.attachment}}
+										value={attachment.file}
+										type="file"
+										onBlur={(e) => {
+											this.onAttachmentChange(e.target.files[0])
+										}}
+										onInput={(e) => {
+											this.onAttachmentChange(e.target.files[0])
+										}}
+										hasError={attachment.hasError}
+										error={attachment.error}
+										message={attachment.message} />
 							</div>
 							<div>
 								<a className={style.pShare} 
 									onClick={() => {
-										this.onSend()
+										document.getElementById('inputAttachment').click()
 									}}>
 								<ImageLoader
 											src="assets/images/attachment_icon_white.png"
 											style={{container: style.pIconShare}} />
-										<span>{getTranslation('SEND')}</span>
+										<span>{getTranslation('ADD_FILE')}</span>
 								</a>
 							</div>
 						</div>
@@ -225,7 +242,6 @@ class ContactUs extends Component {
 						}}
 						text={getTranslation('CONTINUE')}
 					/>
-
 				</div>
 
 			</div>

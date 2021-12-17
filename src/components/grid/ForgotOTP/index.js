@@ -11,21 +11,21 @@ import style from './style.scss';
 class ForgotOTP extends Component {
 	constructor(props) {
 		super(props);
-    this.settings = this.props.forgot.settings
+		this.settings = this.props.forgot.settings;
 		this.state = {
 			pin: null,
 			isOTPInvalid: false,
 			isResendCd: false,
 			seconds: 60,
-			inputFocus: false
+			inputFocus: false,
 		};
-	};
+	}
 
 	componentDidMount = () => {
 		updateStore({
 			customBack: () => {
-				route(`/${this.props.parent}/forgot`, true)
-			}
+				route(`/${this.props.parent}/forgot`, true);
+			},
 		});
 	};
 	handleContinue = (pin) => {
@@ -37,10 +37,23 @@ class ForgotOTP extends Component {
 		};
 		displayPageLoader(true);
 		forgotCredentials('validateotp', data).then((res) => {
-			displayPageLoader(false);
 			if (res.success) {
-        console.log(this.props.forgot);
-        route(`/${this.props.parent}/forgot-${this.settings}`);
+				if (this.settings === 'password') {
+					route(`/${this.props.parent}/forgot-${this.settings}`);
+				} else {
+					route(`/${this.props.parent}/`);
+					forgotCredentials('changeun', data).then((res) => {
+						if (res.success) {
+							updateStore({
+								popupModal: {
+									title: getTranslation('HERE_YOU_GO'),
+									message: getTranslation('YOUR_USERNAME'),
+									bottomText: res.username,
+								},
+							});
+						}
+					});
+				}
 			} else {
 				if (!isOTPInvalid) {
 					this.showAlertBox(getTranslation('OTP_INVALID'));
@@ -54,6 +67,7 @@ class ForgotOTP extends Component {
 					}, 5300);
 				}
 			}
+			displayPageLoader(false);
 		});
 	};
 
@@ -61,8 +75,8 @@ class ForgotOTP extends Component {
 		const { id, mobile } = this.props.forgot || '';
 		let data = {
 			id: id,
-			mobile: mobile
-		}
+			mobile: mobile,
+		};
 		return resendOTP(data);
 	};
 
@@ -70,23 +84,23 @@ class ForgotOTP extends Component {
 		updateStore({
 			alertShow: {
 				success: false,
-				content: message
-			}
+				content: message,
+			},
 		});
 		setTimeout(() => {
 			updateStore({
-				alertShow: null
+				alertShow: null,
 			});
 		}, 5300);
-	}
+	};
 	render = ({}) => {
 		return (
 			<div className={style.regOtpWrapper}>
-        <OneTimePIN
-          mobile={this.props.forgot.mobile}
-          onClickCallback={this.handleContinue}
-          onResendCallback={this.resetOTP}
-        />
+				<OneTimePIN
+					mobile={this.props.forgot.mobile}
+					onClickCallback={this.handleContinue}
+					onResendCallback={this.resetOTP}
+				/>
 			</div>
 		);
 	};
