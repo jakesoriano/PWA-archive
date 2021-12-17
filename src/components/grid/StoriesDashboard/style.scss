@@ -1,0 +1,78 @@
+@import '../../../style/variables.scss';
+.storiesWrapper {
+  background-color: $white;
+  margin: 0 15px 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  .storiesHead {
+    background-color: #f7a6ab;
+    padding: 5px 10px;
+    .title {
+      color: $white;
+      font-size: 0.875rem;
+    }
+    .subTitle {
+      font-size: 0.75rem;
+      color: #737373;
+    }
+  }
+  .storiesBody {
+    padding: 10px;
+    .details {
+      display: flex;
+      color: #737373;
+      .detailImage {
+        width: 45px;
+        padding-bottom: 45px;
+        border-radius: 50%;
+        align-self: flex-start;
+      }
+      .detailContent {
+        color: #737373;
+        flex: 1;
+        margin-left: 10px;
+        .detailHead {
+          .userName {
+            color: #737373;
+            font-size: 0.875rem;
+          }
+        }
+        .detailBody {
+          .detailTitle {
+            font-size: 0.75rem;
+            color: #737373;
+          }
+          .detailDescription {
+            font-size: 0.75rem;
+            color: #737373;
+          }
+        }
+      }
+    }
+    .buttons {
+      position: relative;
+      text-align: right;
+      a {
+        color: #737373;
+        font-size: 0.7rem;
+        &:nth-child(2) {
+          margin-left: 10px;
+        }
+        .likeButton {
+          width: 14px;
+          position: relative;
+          padding: 0;
+          height: 16px;
+          margin: 0;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 4px;
+        }
+        &.buttonLikeActive,
+        &.buttonShareActive {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

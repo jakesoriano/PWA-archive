@@ -39,6 +39,9 @@
 				"component": "AccountProfile"
 			},
 			{
+				"component": "StoriesDashboard"
+			},
+			{
 				"component": "NewsAndEvents"
 			}
 		]
