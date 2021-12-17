@@ -4,8 +4,8 @@ export function getCategories () {
   try {
     return categories.map(i => {
       return {
-        value: i.c,
-        text: i.c
+        value: i,
+        text: i
       }
     });
   } catch (error) {

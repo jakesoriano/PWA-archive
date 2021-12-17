@@ -1,12 +1,6 @@
 export const categories = [
-  {
-    "c": "Report an Incident"
-  },
-  {
-    "c": "Suggest a Plan of Action"
-  },
-  {
-    "c": "Other Concerns"
-  }
+  "Report an Incident",
+  "Suggest a Plan of Action",
+  "Other Concerns"
 ]
 
