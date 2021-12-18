@@ -32,7 +32,7 @@ import {
 } from '_components/core';
 import {
 	nativeWebReady,
-	nativeGetDeviceId,
+	nativeStatusTouchID,
 	nativeExitApp
 } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
@@ -185,12 +185,14 @@ class Grid extends Component {
 	      // Save Prev and Last/Current Page to Cookie
 	      setCookie(`${process.env.PREFIX}PrevPage`, '');
 	      setCookie(`${process.env.PREFIX}LastPage`, url);
-	      // device id
-	      nativeGetDeviceId((id) => {
-	        updateStore({
-	          deviceId: id
-	        });
-	      });
+	      // touch id
+	      nativeStatusTouchID().then(val => {
+					updateStore({
+						settings: {
+							touchId: val
+						}
+					});
+				});
 	    });
 	};
 

@@ -42,3 +42,5 @@ export function nativeSetCredential (data) {}
 export function nativeToggleTouchID (value) {}
 
 export function nativeLoginWithTouchID () {}
+
+export function nativeStatusTouchID () {}

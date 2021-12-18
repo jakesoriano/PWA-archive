@@ -101,3 +101,18 @@ export function nativeLoginWithTouchID () {
     action: 'loginWithTouchID'
   });
 }
+
+export function nativeStatusTouchID () {
+  return new Promise((resolve) => {
+    window.cb = (res) => {
+      resolve(res)
+      window.cb = null;
+    }
+    // eslint-disable-next-line no-console
+    console.log('SPA >> nativeStatusTouchID();');
+    callNative({
+      action: 'statusTouchID',
+      callback: 'window.cb',
+    });
+  });
+}
