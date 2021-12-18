@@ -100,7 +100,9 @@ class AccountProfile extends Component {
 						</div>
 						<a
 							className={style.shareContainer}
-							onClick={this.onShare()}
+							onClick={() => {
+								this.onShare();
+							}}
 						>
 							<ImageLoader
 								src="assets/images/share_icon.png"

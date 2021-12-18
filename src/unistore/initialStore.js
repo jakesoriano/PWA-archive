@@ -44,6 +44,9 @@ export const initialStore = {
   },
   signup: null,
   forgot: null,
+  settings: {
+    touchId: false
+  },
   // user
   authUser: null,
   // modals

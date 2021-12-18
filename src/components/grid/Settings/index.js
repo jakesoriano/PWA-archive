@@ -2,23 +2,29 @@ import { Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { getTranslation} from '_helpers';
 import { route } from 'preact-router';
+import { ToggleInput } from '_components/core';
+import { nativeToggleTouchID } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
-import { ToggleInput } from '../../core';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Settings extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			isTouchIdEnable: true
+			isTouchIdEnable: props.settings.touchId
 		}
 	}
 	
 	onTouchIdChange = () => {
-		this.setState({
-			isTouchIdEnable: !this.state.isTouchIdEnable
-		});
+		nativeToggleTouchID(!this.state.isTouchIdEnable)
+			.then(res => {
+				console.error(res);
+				// update state
+				this.setState({
+					isTouchIdEnable: !this.state.isTouchIdEnable
+				});
+			});
 	};
 	
 	onClickChangePass = () => {
@@ -55,4 +61,4 @@ class Settings extends Component {
 	  );
 	};
 }
-export default connect(['authUser'])(Settings);
+export default connect(['authUser', 'settings'])(Settings);

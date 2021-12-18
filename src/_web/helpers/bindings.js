@@ -36,3 +36,9 @@ export function nativeSelfie () {
     resolve('01FPKR8R3ECPFJ36G9FY8ERHD7.jpeg');
   });
 }
+
+export function nativeSetCredential (data) {}
+
+export function nativeToggleTouchID (value) {}
+
+export function nativeLoginWithTouchID () {}
