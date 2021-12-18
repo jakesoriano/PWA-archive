@@ -42,6 +42,11 @@ export const initialStore = {
     result: false,
     data: []
   },
+  stories: {
+    fetching: false,
+    result: false,
+    data: []
+  },
   signup: null,
   forgot: null,
   settings: {

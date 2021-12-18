@@ -226,5 +226,16 @@
 				"component": "RegistrationOTP"
 			}
 		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "KAKAMPINK_STORIES",
+		"uri": "story",
+		"contents": [
+			{
+				"component": "Story"
+			}
+		]
 	}
 ]
