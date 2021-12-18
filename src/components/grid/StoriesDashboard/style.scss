@@ -13,7 +13,20 @@
     }
   }
   .storiesBody {
-    padding: 10px;
+    padding: 0 10px;
+    overflow-x: scroll;
+    .storiesWindow {
+      display: flex;
+      width: 300%;
+      .storyItem {
+        width: 80%;
+        padding: 10px 0;
+        border-bottom: 1px solid #f1ebeb;
+        &:last-child {
+          border: none;
+        }
+      }
+    }
     .details {
       display: flex;
       color: #737373;
@@ -34,6 +47,7 @@
           }
         }
         .detailBody {
+          margin-left: 5px;
           .detailTitle {
             font-size: 0.75rem;
             color: #737373;
@@ -41,6 +55,9 @@
           .detailDescription {
             font-size: 0.75rem;
             color: #737373;
+            span {
+              color: #737373;
+            }
           }
         }
       }

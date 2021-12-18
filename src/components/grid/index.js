@@ -21,4 +21,5 @@ export { default as ForgotOTP } from './ForgotOTP';
 export { default as ForgotEnterMobile } from './ForgotEnterMobile';
 export { default as Notification } from './Notification';
 export { default as StoriesDashboard } from './StoriesDashboard';
+export { default as Story } from './Story';
 
