@@ -59,8 +59,7 @@ class StoriesDashboard extends Component {
 		return (
       <div className={style.storiesWrapper}>
 				<div className={style.storiesHead}>
-					<p className={style.title}>{getTranslation('A Kakam-Pink\'s Change of Heart')}</p>
-					<p className={`bold ${style.subTitle}`}>{getTranslation('A story of how I got converted')}</p>
+					<p className={style.title}>{getTranslation('KAKAMPINK_STORIES')}</p>
 				</div>
 				<div className={style.storiesBody}>
 					<div className={style.details} onClick={() => {}}>
