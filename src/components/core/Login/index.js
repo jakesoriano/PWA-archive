@@ -35,19 +35,21 @@ class Login extends Component {
     if (this.props.isOpen && prevProps.isOpen !== this.props.isOpen) {
       nativeLoginWithTouchID()
         .then(res => {
-          this.setState({
-            username: {
-              ...this.state.username,
-              value: res.username
-            },
-            password: {
-              ...this.state.password,
-              value: res.password
-            }
-          }, () => {
-            this.onClickSubmit(true);
-          });
-        })
+          if (res) {
+            this.setState({
+              username: {
+                ...this.state.username,
+                value: res.username
+              },
+              password: {
+                ...this.state.password,
+                value: res.password
+              }
+            }, () => {
+              this.onClickSubmit(true);
+            });
+          }
+        });
     }
   }
 

@@ -16,7 +16,7 @@ export const formatNumber = (value, decimals) => {
       ? parseFloat(parseValue).toLocaleString(getLanguageCode(selectedLanguage))
       : value;
   } catch (error) {
-    console.log('SPA >> Component format number failed.', error);
+    // console.log('SPA >> Component format number failed.', error);
     return value;
   }
 };
