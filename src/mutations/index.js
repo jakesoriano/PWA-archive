@@ -10,3 +10,4 @@ export * from './registration';
 export * from './contactus';
 export * from './settings';
 export * from './notifications';
+export * from './stories';

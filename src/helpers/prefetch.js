@@ -3,7 +3,8 @@ import {
   fetchNews,
   fetchEvents,
   fetchMembers,
-  fetchInvited
+  fetchInvited,
+  fetchStories,
 } from '_mutations';
 
 // eslint-disable-next-line import/prefer-default-export
@@ -13,6 +14,7 @@ export function prefetch (hasUser) {
     hasUser && fetchNews(),
     hasUser && fetchEvents(),
     hasUser && fetchMembers(),
-    hasUser && fetchInvited()
+    hasUser && fetchInvited(),
+    hasUser && fetchStories()
   ]);
 }
