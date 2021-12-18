@@ -27,11 +27,12 @@ import {
   SideBar,
   BackToTop,
 	AlertBox,
-	PopupModal
+	PopupModal,
+	CircleModal
 } from '_components/core';
 import {
 	nativeWebReady,
-	nativeGetDeviceId,
+	nativeStatusTouchID,
 	nativeExitApp
 } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
@@ -184,12 +185,14 @@ class Grid extends Component {
 	      // Save Prev and Last/Current Page to Cookie
 	      setCookie(`${process.env.PREFIX}PrevPage`, '');
 	      setCookie(`${process.env.PREFIX}LastPage`, url);
-	      // device id
-	      nativeGetDeviceId((id) => {
-	        updateStore({
-	          deviceId: id
-	        });
-	      });
+	      // touch id
+	      nativeStatusTouchID().then(val => {
+					updateStore({
+						settings: {
+							touchId: val
+						}
+					});
+				});
 	    });
 	};
 
@@ -307,8 +310,21 @@ class Grid extends Component {
 	  }
 	};
 
+	renderCircleModal = () => {
+	  const { circleModal } = this.props;
+	  try {
+	    const props = { ...circleModal };
+	    // eslint-disable-next-line react/jsx-props-no-spreading
+	    return <CircleModal {...props} />;
+	  } catch (err) {
+	    // eslint-disable-next-line no-console
+	    console.error('Widget Component >> renderCircleModal >> Error:', err);
+	    return null;
+	  }
+	};
+
 	render = (
-	  { authUser, translation, messageModal, promptModal, componentModal, pageLoader, alertShow, popupModal },
+	  { authUser, translation, messageModal, promptModal, componentModal, pageLoader, alertShow, popupModal, circleModal },
 	  { data, popup, rightSideBar, url }
 	) => {
 	  if (!data || !translation.data) {
@@ -373,6 +389,7 @@ class Grid extends Component {
 	      {promptModal && this.renderPromptModal()}
 	      {componentModal && this.renderComponentModal()}
 	      {popupModal && this.renderPopupModal()}
+				{circleModal && this.renderCircleModal()}
 	      {pageLoader.display && <LoaderRing fullpage />}
 
 	      <BackToTop
@@ -397,7 +414,8 @@ const ConnectComponent = connect([
   'componentModal',
   'pageLoader',
 	'alertShow',
-	'popupModal'
+	'popupModal',
+	'circleModal'
 ])(Grid);
 export default ConnectComponent;
 

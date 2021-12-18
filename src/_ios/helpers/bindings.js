@@ -68,3 +68,51 @@ export function nativeSelfie () {
     });
   });
 }
+
+export function nativeSetCredential (data) {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeSetCredential();');
+  callNative({
+    action: 'setCredential',
+    data
+  });
+}
+
+export function nativeToggleTouchID (value) {
+  return new Promise((resolve) => {
+    window.cb = (success) => {
+      resolve(success)
+      window.cb = null;
+    }
+    // eslint-disable-next-line no-console
+    console.log('SPA >> nativeToggleTouchID();');
+    callNative({
+      action: 'toogleTouchID',
+      callback: 'window.cb',
+      value
+    });
+  });
+}
+
+export function nativeLoginWithTouchID () {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeLoginWithTouchID();');
+  callNative({
+    action: 'loginWithTouchID'
+  });
+}
+
+export function nativeStatusTouchID () {
+  return new Promise((resolve) => {
+    window.cb = (res) => {
+      resolve(res)
+      window.cb = null;
+    }
+    // eslint-disable-next-line no-console
+    console.log('SPA >> nativeStatusTouchID();');
+    callNative({
+      action: 'statusTouchID',
+      callback: 'window.cb',
+    });
+  });
+}

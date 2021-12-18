@@ -14,3 +14,4 @@ export * from './loader';
 export * from './number';
 export * from './date';
 export * from './locations';
+export * from './category';

@@ -6,6 +6,8 @@ import { getTranslation, displayPageLoader } from '_helpers';
 import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
 import { login } from '_mutations';
 import { route } from 'preact-router';
+import { nativeSetCredential } from '_platform/helpers';
+import { nativeLoginWithTouchID } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -27,10 +29,29 @@ class Login extends Component {
         hasError: false
       }
     };
+  };
+
+  componentDidUpdate = (prevProps) => {
+    if (this.props.isOpen && prevProps.isOpen !== this.props.isOpen) {
+      nativeLoginWithTouchID()
+        .then(res => {
+          this.setState({
+            username: {
+              ...this.state.username,
+              value: res.username
+            },
+            password: {
+              ...this.state.password,
+              value: res.password
+            }
+          }, () => {
+            this.onClickSubmit(true);
+          });
+        })
+    }
   }
 
-	onClickSubmit
-   = () => {
+	onClickSubmit = (isAuto) => {
 	  if (!this.state.username.value || !this.state.password.value) {
 	    this.onUsernameChange(this.state.username.value);
 	    this.onPasswordChange(this.state.password.value);
@@ -43,6 +64,12 @@ class Login extends Component {
 	      .then((res) => {
           displayPageLoader(false);
           if (res) {
+            if (!isAuto) {
+              nativeSetCredential({
+                username: this.state.username.value,
+                password: this.state.password.value
+              });
+            }
             route('/home', true);
           }
 	      })
@@ -138,7 +165,9 @@ class Login extends Component {
               </FormGroup>
               <div className={style.buttonWrap}>
                 <ButtonDescription
-                  onClickCallback={this.onClickSubmit}
+                  onClickCallback={() => {
+                    this.onClickSubmit()
+                  }}
                   text={getTranslation('LOGIN_SUBMIT')}
                   bottomDescription=""
                 />

@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
-import { getTranslation, displayPageLoader } from '_helpers';
+import { getTranslation, displayPageLoader, circleModal } from '_helpers';
 import { forgotCredentials, resendOTP } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
@@ -44,12 +44,10 @@ class ForgotOTP extends Component {
 					route(`/${this.props.parent}/`);
 					forgotCredentials('changeun', data).then((res) => {
 						if (res.success) {
-							updateStore({
-								popupModal: {
-									title: getTranslation('HERE_YOU_GO'),
-									message: getTranslation('YOUR_USERNAME'),
-									bottomText: res.username,
-								},
+							circleModal({
+								title: getTranslation('HERE_YOU_GO'),
+								content: getTranslation('YOUR_USERNAME'),
+								code: res.username
 							});
 						}
 					});

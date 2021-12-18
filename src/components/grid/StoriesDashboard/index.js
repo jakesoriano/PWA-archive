@@ -9,6 +9,7 @@ import {
 	playStore,
 	appStore,
 	getDefaultAvatar,
+	circleModal
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 import { updateStore } from '_unistore';
@@ -22,12 +23,12 @@ class StoriesDashboard extends Component {
 		if (authUser) {
 			// fetchUserPoints();
 			if (authUser.hasOwnProperty('isNewUser') && authUser.isNewUser) {
+				circleModal({
+					title: getTranslation('ITS_OFFICIAL'),
+					content: getTranslation('YOURE_KAKAMPINK'),
+					code: authUser.profile.refCode
+				});
 				updateStore({
-					popupModal: {
-						title: getTranslation('ITS_OFFICIAL'),
-						message: getTranslation('YOURE_KAKAMPINK'),
-						bottomText: authUser.profile.refCode,
-					},
 					authUser: {
 						...authUser,
 						isNewUser: false,

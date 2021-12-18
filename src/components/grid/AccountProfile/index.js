@@ -8,6 +8,7 @@ import {
 	formatNumber,
 	playStore,
 	appStore,
+	circleModal,
 	getDefaultAvatar,
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
@@ -22,12 +23,12 @@ class AccountProfile extends Component {
 		if (authUser) {
 			// fetchUserPoints();
 			if (authUser.hasOwnProperty('isNewUser') && authUser.isNewUser) {
+				circleModal({
+					title: getTranslation('ITS_OFFICIAL'),
+					content: getTranslation('YOURE_KAKAMPINK'),
+					code: authUser.profile.refCode
+				});
 				updateStore({
-					popupModal: {
-						title: getTranslation('ITS_OFFICIAL'),
-						message: getTranslation('YOURE_KAKAMPINK'),
-						bottomText: authUser.profile.refCode,
-					},
 					authUser: {
 						...authUser,
 						isNewUser: false,
@@ -99,7 +100,9 @@ class AccountProfile extends Component {
 						</div>
 						<a
 							className={style.shareContainer}
-							onClick={this.onShare()}
+							onClick={() => {
+								this.onShare();
+							}}
 						>
 							<ImageLoader
 								src="assets/images/share_icon.png"

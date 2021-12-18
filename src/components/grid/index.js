@@ -14,6 +14,7 @@ export { default as Signup } from './Signup';
 export { default as Community } from './Community';
 export { default as ChangePassword } from './ChangePassword';
 export { default as Settings } from './Settings';
+export { default as ContactUs } from './ContactUs';
 export { default as ForgotPassword } from './ForgotPassword';
 export { default as RegistrationOTP } from './RegistrationOTP';
 export { default as ForgotOTP } from './ForgotOTP';

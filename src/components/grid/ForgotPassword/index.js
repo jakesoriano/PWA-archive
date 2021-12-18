@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
-import { getTranslation, displayPageLoader } from '_helpers';
+import { getTranslation, displayPageLoader, circleModal } from '_helpers';
 import { forgotCredentials } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
@@ -100,12 +100,10 @@ class ForgotPassword extends Component {
         };
         forgotCredentials('changepw', data).then((res) => {
           if (res.success) {
-            updateStore({
-              popupModal: {
-                title: 'Password changed successfully!',
-                message: 'Sign in now with your new password.',
-              }
-            })
+            circleModal({
+              title: getTranslation('CHANGE_PASS_SUCCESS'),
+              content: getTranslation('SIGNIN_NEW_PASS')
+            });
             route(`/${this.props.parent}`);
           }
         });
