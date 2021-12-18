@@ -1,0 +1,39 @@
+@import '../../../style/variables.scss';
+.storyWrapper {
+  position: relative;
+  .storyContent {
+    padding: 15px;
+    .storyHeader {
+      display: flex;
+      .detailImage {
+        width: 60px;
+        padding-bottom: 60px;
+        border-radius: 10px;
+        align-self: flex-start;
+      }
+      .detailContent {
+        flex: 1;
+        margin-left: 10px;
+        display: flex;
+        align-items: flex-end;
+        .userName {
+          font-size: 1.5rem;
+        }
+        
+      }
+    }
+    
+    .detailBody {
+      margin: 20px 0;
+      p {
+        margin: 10px 0;
+      }
+      .detailDescription {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  .buttonContainer {
+    padding: 0 25px;
+  }
+}
