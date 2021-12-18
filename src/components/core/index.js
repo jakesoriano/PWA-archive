@@ -20,4 +20,5 @@ export { default as PopupModal } from './PopupModal';
 export { default as Login } from './Login';
 export { default as InitialSignup } from './InitialSignup';
 export { default as ToggleInput } from './ToggleInput';
+export { default as CircleModal } from './CircleModal';
 export { default as OneTimePIN } from './OneTimePIN';

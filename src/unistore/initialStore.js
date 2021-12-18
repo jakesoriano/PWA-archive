@@ -51,6 +51,7 @@ export const initialStore = {
   messageModal: null,
   componentModal: null,
   popupModal: null,
+  circleModal: null,
   alertShow: null,
   pageLoader: {
     display: false

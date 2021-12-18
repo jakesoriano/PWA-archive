@@ -4,7 +4,8 @@ export function messageModal (data) {
   store.setState({
     messageModal: data,
     promptModal: null,
-    componentModal: null
+    componentModal: null,
+    circleModal: null
   });
 }
 
@@ -12,7 +13,8 @@ export function promptModal (data) {
   store.setState({
     messageModal: null,
     promptModal: data,
-    componentModal: null
+    componentModal: null,
+    circleModal: null
   });
 }
 
@@ -20,6 +22,16 @@ export function componentModal (data) {
   store.setState({
     messageModal: null,
     promptModal: null,
-    componentModal: data
+    componentModal: data,
+    circleModal: null
+  });
+}
+
+export function circleModal (data) {
+  store.setState({
+    messageModal: null,
+    promptModal: null,
+    componentModal: null,
+    circleModal: data
   });
 }
