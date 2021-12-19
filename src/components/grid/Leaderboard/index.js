@@ -29,7 +29,7 @@ class Leaderboard extends Component {
 					</div>
 				</div>
 				{/* content */}
-				{members.data.sort((a, b) => a.rank - b.rank).map(item => (
+				{members.data.sort((a, b) => a.rank - b.rank).map((item, index) => (
 					<div className={style.item}>
 						<ImageLoader 
 							src={item.image || getDefaultAvatar()}
@@ -41,13 +41,15 @@ class Leaderboard extends Component {
 							</div>
 						</div>
 						<div className={style.rank}>
-							<p className={`light`}>{formatNumber(item.rank)}</p>
+							<p className={`light`}>{formatNumber(item.rank || index + 1)}</p>
 						</div>
 						<div className={style.points}>
 							<p className={`light`}>{formatNumber(item.points) || 0}</p>
 						</div>
 					</div>
 				))}
+				{/* no record */}
+				{members.data.length <= 0 && <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>}
 				{/* Loader */}
 				{!members.result && <LoaderRing fullpage />}
 			</dv>

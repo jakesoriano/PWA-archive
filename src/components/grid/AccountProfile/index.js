@@ -2,14 +2,13 @@ import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader } from '_components/core';
-import { fetchUserData, fetchUserPoints } from '_mutations';
 import {
 	getTranslation,
 	formatNumber,
 	playStore,
 	appStore,
-	circleModal,
 	getDefaultAvatar,
+	circleModal
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 import { updateStore } from '_unistore';
@@ -52,6 +51,10 @@ class AccountProfile extends Component {
 		});
 	};
 
+	onDownloadKit = () => {
+		window.open('http://Bit.ly/LabanLeni22', '_blank');
+	};
+
 	render = ({ authUser }) => {
 		if (!authUser) {
 			return <LoaderRing fullpage />;
@@ -65,41 +68,15 @@ class AccountProfile extends Component {
 							src={authUser.profile.image || getDefaultAvatar()}
 							style={{ container: style.avatar }}
 						/>
-						<div className={style.profileInfo}>
-							<div className={style.nameMember}>
-								<p
-									className={`bold ${style.name}`}
-								>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
-								<p className={style.members}>{`${
-									formatNumber(authUser.members, 2) || 0
-								} ${getTranslation('MEMBERS')}`}</p>
-							</div>
-							<div className={style.pointsRank}>
-								<div className={style.heroPoints}>
-									<p className={`extraBold ${style.points}`}>
-										{formatNumber(authUser.points, 2) || 0}
-									</p>
-									<p className={`bold ${style.textPoints}`}>
-										{getTranslation('HERO_POINTS')}
-									</p>
-								</div>
-								<div className={style.heroRankingContainer}>
-									<p>Ranking</p>
-									<div className={style.heroRanking}>
-										<div className={style.rankBox}>
-											<p class={style.rankPoints}>{formatNumber(authUser.points, 2) || 0}</p>
-											<p class={style.rankPointsText}>{getTranslation('REGIONAL')}</p>
-										</div>
-										<div className={style.rankBox}>
-											<p class={style.rankPoints}>{formatNumber(authUser.points, 2) || 0}</p>
-											<p class={style.rankPointsText}>{getTranslation('OVERALL')}</p>
-										</div>
-									</div>
-								</div>
-							</div>
+						<div className={style.nameMember}>
+							<p
+								className={`bold ${style.name}`}
+							>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
+							<p className={style.members}>{`${
+								formatNumber(authUser.members, 2) || 0
+							} ${getTranslation('MEMBERS')}`}</p>
 						</div>
 						<a
-							className={style.shareContainer}
 							onClick={() => {
 								this.onShare();
 							}}
@@ -110,8 +87,16 @@ class AccountProfile extends Component {
 							/>
 						</a>
 					</div>
+					<p className={style.heroPoints}>
+						<span className={`extraBold ${style.points}`}>
+							{formatNumber(authUser.points, 2) || 0}
+						</span>
+						<span className={`bold ${style.textPoints}`}>
+							{getTranslation('HERO_POINTS')}
+						</span>
+					</p>
 				</div>
-				<Link className={style.download} href="http://Bit.ly/LabanLeni22" target="_blank">
+				<a className={style.download} onClick={this.onDownloadKit}>
 					<div>
 						<ImageLoader
 							src="assets/images/icon_download.png"
@@ -119,7 +104,7 @@ class AccountProfile extends Component {
 						/>
 						<span>{getTranslation('DOWNLOAD_KIT')}</span>
 					</div>
-				</Link>
+				</a>
 			</div>
 		);
 	};

@@ -1,112 +1,135 @@
-[
-  {
-    "image": "assets/images/avatar.jpeg",
-    "fname": "Kakam",
-    "lname": "Pink10",
-    "rank": 10,
-    "members": 1,
-    "points": 100,
-    "region": "NCR",
-    "province": "",
-    "municipality": "Taguig City"
-  },
-  {
-    "image": "assets/images/avatar.jpeg",
-    "fname": "Kakam",
-    "lname": "Pink2",
-    "rank": 2,
-    "members": 9,
-    "points": 900,
-    "region": "NCR",
-    "province": "",
-    "municipality": "Taguig City"
-  },
-  {
-    "image": "assets/images/avatar.jpeg",
-    "fname": "Kakam",
-    "lname": "Pink4",
-    "rank": 4,
-    "members": 7,
-    "points": 700,
-    "region": "NCR",
-    "province": "",
-    "municipality": "Taguig City"
-  },
-  {
-    "image": "assets/images/avatar.jpeg",
-    "fname": "Kakam",
-    "lname": "Pink8",
-    "rank": 8,
-    "members": 3,
-    "points": 300,
-    "region": "NCR",
-    "province": "",
-    "municipality": "Taguig City"
-  },
-  {
-    "image": "assets/images/avatar.jpeg",
-    "fname": "Kakam",
-    "lname": "Pink5",
-    "rank": 5,
-    "members": 6,
-    "points": 600,
-    "region": "NCR",
-    "province": "",
-    "municipality": "Taguig City"
-  },
-  {
-    "image": "assets/images/avatar.jpeg",
-    "fname": "Kakam",
-    "lname": "Pink7",
-    "rank": 7,
-    "members": 4,
-    "points": 400,
-    "region": "NCR",
-    "province": "",
-    "municipality": "Taguig City"
-  },
-  {
-    "image": "assets/images/avatar.jpeg",
-    "fname": "Kakam",
-    "lname": "Pink3",
-    "rank": 3,
-    "members": 8,
-    "points": 800,
-    "region": "NCR",
-    "province": "",
-    "municipality": "Taguig City"
-  },
-  {
-    "image": "assets/images/avatar.jpeg",
-    "fname": "Kakam",
-    "lname": "Pink1",
-    "rank": 1,
-    "members": 10,
-    "points": 1000,
-    "region": "NCR",
-    "province": "",
-    "municipality": "Taguig City"
-  },
-  {
-    "image": "assets/images/avatar.jpeg",
-    "fname": "Kakam",
-    "lname": "Pink6",
-    "rank": 6,
-    "members": 5,
-    "points": 500,
-    "region": "NCR",
-    "province": "",
-    "municipality": "Taguig City"
-  },
-  {
-    "image": "assets/images/avatar.jpeg",
-    "fname": "Kakam",
-    "lname": "Pink9",
-    "rank": 9,
-    "members": 2,
-    "points": 200,
-    "region": "NCR",
-    "province": "",
-    "municipality": "Taguig City"
-  }
-]
+{
+  "success": true,
+  "data": [
+    {
+      "rank": 10,
+      "members": 1,
+      "points": 100,
+      "profile": {
+        "image": "assets/images/avatar.jpeg",
+        "fname": "Kakam",
+        "lname": "Pink10",
+        "region": "NCR",
+        "province": "",
+        "municipality": "Taguig City"
+      }
+    },
+    {
+      "rank": 2,
+      "members": 9,
+      "points": 900,
+      "profile": {
+        "image": "assets/images/avatar.jpeg",
+        "fname": "Kakam",
+        "lname": "Pink2",
+        "region": "NCR",
+        "province": "",
+        "municipality": "Taguig City"
+      }
+    },
+    {
+      "rank": 4,
+      "members": 7,
+      "points": 700,
+      "profile": {
+        "image": "assets/images/avatar.jpeg",
+        "fname": "Kakam",
+        "lname": "Pink4",
+        "region": "NCR",
+        "province": "",
+        "municipality": "Taguig City"
+      }
+    },
+    {
+      "rank": 8,
+      "members": 3,
+      "points": 300,
+      "profile": {
+        "image": "assets/images/avatar.jpeg",
+        "fname": "Kakam",
+        "lname": "Pink8",
+        "region": "NCR",
+        "province": "",
+        "municipality": "Taguig City"
+      }
+    },
+    {
+      "rank": 5,
+      "members": 6,
+      "points": 600,
+      "profile": {
+        "image": "assets/images/avatar.jpeg",
+        "fname": "Kakam",
+        "lname": "Pink5",
+        "region": "NCR",
+        "province": "",
+        "municipality": "Taguig City"
+      }
+    },
+    {
+      "rank": 7,
+      "members": 4,
+      "points": 400,
+      "profile": {
+        "image": "assets/images/avatar.jpeg",
+        "fname": "Kakam",
+        "lname": "Pink7",
+        "region": "NCR",
+        "province": "",
+        "municipality": "Taguig City"
+      }
+    },
+    {
+      "rank": 3,
+      "members": 8,
+      "points": 800,
+      "profile": {
+        "image": "assets/images/avatar.jpeg",
+        "fname": "Kakam",
+        "lname": "Pink3",
+        "region": "NCR",
+        "province": "",
+        "municipality": "Taguig City"
+      }
+    },
+    {
+      "rank": 1,
+      "members": 10,
+      "points": 1000,
+      "profile": {
+        "image": "assets/images/avatar.jpeg",
+        "fname": "Kakam",
+        "lname": "Pink1",
+        "region": "NCR",
+        "province": "",
+        "municipality": "Taguig City"
+      }
+    },
+    {
+      "rank": 6,
+      "members": 5,
+      "points": 500,
+      "profile": {
+        "image": "assets/images/avatar.jpeg",
+        "fname": "Kakam",
+        "lname": "Pink6",
+        "region": "NCR",
+        "province": "",
+        "municipality": "Taguig City"
+      }
+    },
+    {
+      "rank": 9,
+      "members": 2,
+      "points": 200,
+      "profile": {
+        "image": "assets/images/avatar.jpeg",
+        "fname": "Kakam",
+        "lname": "Pink9",
+        "region": "NCR",
+        "province": "",
+        "municipality": "Taguig City"
+      }
+    }
+  ]
+}
