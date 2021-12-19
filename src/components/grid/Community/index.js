@@ -1,6 +1,11 @@
 import { Component } from 'preact';
 import { getTranslation, formatN } from '_helpers';
-import { filterCommunityByName, fetchAllCommunities } from '_mutations';
+import {
+  filterCommunityByName,
+  fetchAllCommunities,
+  followCommunity,
+  unFollowCommunity
+} from '_mutations';
 import { ImageLoader, ButtonDescription } from '_components/core';
 import { route } from 'preact-router';
 import { updateStore } from '_unistore';
@@ -20,22 +25,12 @@ class Community extends Component {
     }
 	};
 
-  handleFollow = (e, id) => {
-    e.target.classList.add(style.followed);
-    const { communities } = this.props;
-    updateStore({
-      ...communities,
-      data: communities.data.map(item => {
-        if (item.id === id) {
-          item.followed = true
-        }
-        return item;
-      })
-    })
-    setTimeout(() => {
-      console.log(communities)
-    }, 100)
-
+  handleFollow = (item) => {
+    if (item.followed) {
+      unFollowCommunity(item);
+    } else {
+      followCommunity(item);
+    }
   }
 
   handleSearchByName = (e) => {
@@ -63,10 +58,10 @@ class Community extends Component {
         </div>
         <div className={style.cardBody}>
           <ButtonDescription
-            onClickCallback={(e) => { this.handleFollow(e, item.id)}}
-            text={'Follow'}
+            onClickCallback={(e) => { this.handleFollow(item)}}
+            text={item.followed ? 'UnFollow' : 'Follow'}
             bottomDescription={item.name}
-            buttonStyle={style.buttonStyle}
+            buttonStyle={`${style.buttonStyle} ${item.followed ? style.followed : ''}`}
             bottomDescStyle={style.bottomDescStyle}
             active={this.props.communities.data[i].followed}
           />

@@ -1,5 +1,11 @@
 import { updateStore, store } from '_unistore';
-import { xhr, urlCommunity, urlCommunitySearch, urlCommunityGetById } from '_helpers';
+import {
+	xhr,
+	urlCommunity,
+	urlCommunitySearch,
+	urlCommunityGetById,
+	urlUser
+} from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
 export function filterCommunityByName(name) {
@@ -90,4 +96,126 @@ export function fetchAllCommunities() {
 			resolve(false);
 		});
 	});
+}
+
+export function followCommunity (item) {
+  // curreny state
+  let { communities } = store.getState();
+  const { authUser } = store.getState();
+
+  // fetching
+  if(communities.fetching) {
+    return;
+  }
+  
+  // initial state
+  communities = {
+    ...communities,
+    data: communities.data.map(i => {
+      if(i.id === item.id) {
+        i.followed = true;
+      }
+      return i;
+    }),
+    fetching: true
+  };
+  updateStore({ communities });
+
+  return new Promise((resolve) => {
+    xhr(`${urlUser}/follow`, {
+      method: 'POST',
+      data: {
+        userId: authUser.profile._id,
+        itemId: item.id,
+        itemType: 'C' 
+      }
+    })
+    .then((res) => {
+      updateStore({
+        communities: {
+          ...communities,
+          fetching: false
+        }
+      });
+      console.log(`SPA >> followCommunity Success`, res);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        communities: {
+          ...communities,
+          data: communities.data.map(i => {
+            if(i.id === item.id) {
+              i.followed = false;
+            }
+            return i;
+          }),
+          fetching: false
+        }
+      });
+      console.log(`SPA >> followCommunity Error`, err);
+      resolve(false);
+    });
+  });
+}
+
+export function unFollowCommunity (item) {
+  // curreny state
+  let { communities } = store.getState();
+  const { authUser } = store.getState();
+
+  // fetching
+  if(communities.fetching) {
+    return;
+  }
+
+  // initial state
+  communities = {
+    ...communities,
+    data: communities.data.map(i => {
+      if(i.id === item.id) {
+        i.followed = false;
+      }
+      return i;
+    }),
+    fetching: true
+  };
+  updateStore({ communities });
+
+  return new Promise((resolve) => {
+    xhr(`${urlUser}/follow`, {
+      method: 'DELETE',
+      data: {
+        userId: authUser.profile._id,
+        itemId: item.id,
+        itemType: 'C' 
+      }
+    })
+    .then((res) => {
+      updateStore({
+        communities: {
+          ...communities,
+          fetching: false
+        }
+      });
+      console.log(`SPA >> unFollowCommunity Success`, res);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        communities: {
+          ...communities,
+          data: communities.data.map(i => {
+            if(i.id === item.id) {
+              i.followed = true;
+            }
+            return i;
+          }),
+          fetching: false
+        }
+      });
+      console.log(`SPA >> unFollowCommunity Error`, err);
+      resolve(false);
+    });
+  });
 }
