@@ -2,13 +2,11 @@ import { updateStore, store } from '_unistore';
 import {
 	xhr,
 	urlCommunity,
-	urlCommunitySearch,
-	urlCommunityGetById,
 	urlUser
 } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
-export function filterCommunityByName(name) {
+export function filterCommunity(name, page, limit) {
   // curreny state
   const { communities } = store.getState();
 
@@ -17,31 +15,49 @@ export function filterCommunityByName(name) {
     return;
   }
 
-	if (name) {
-		const url = urlCommunitySearch.replace(/{name}/gim, name);
-		return new Promise((resolve) => {
-			xhr(url)
-			.then((res) => {
-				if (res.success) {
-					updateStore({
-						communities: {
-							data: res.data
-						}
-					});
-				}
-				resolve(true);
-			})
-			.catch((err) => {
-				console.log(err);
-        resolve(false);
-			});
-		});
-	} else {
-		fetchAllCommunities();
-	}
+  // initial state
+  updateStore({
+    communities: {
+      ...communities,
+      fetching: true,
+      result: false
+    }
+  });
+  
+  return new Promise((resolve) => {
+    xhr(urlCommunity + '/search', {
+      params: {
+        q: name || '', // query string
+        p: page || 1, // page number
+        s: limit || 20 // limit
+      }
+    })
+    .then((res) => {
+      updateStore({
+        communities: {
+          data: res.data.results,
+          total: res.data.total,
+          page: page || 1,
+          fetching: false,
+          result: true
+        }
+      });
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        communities: {
+          ...communities,
+          fetching: false,
+          result: false
+        }
+      });
+      resolve(false);
+    });
+  });
 }
 
-export function fetchCommunityById(id) {
+export function fetchCommunities() {
   // curreny state
   const { communities } = store.getState();
 
@@ -50,49 +66,35 @@ export function fetchCommunityById(id) {
     return;
   }
 
-  const url = urlCommunityGetById.replace(/{id}/gim, id);
-	return new Promise((resolve) => {
-		xhr(url)
-		.then((res) => {
-			if (res.success) {
-				updateStore({
-					communities: {
-						data: res.data
-					}
-				});
-        resolve(true);
-			} else {
-        resolve(false);
-			}
-		})
-		.catch((err) => {
-			console.log(err);
-			return false;
-		});
-	});
-}
-
-export function fetchAllCommunities() {
-  // curreny state
-  const { communities } = store.getState();
-
-  // fetching
-  if(communities.fetching) {
-    return;
-  }
+  // initial state
+  updateStore({
+    communities: {
+      ...communities,
+      fetching: true,
+      result: false
+    }
+  });
 
 	return new Promise((resolve) => {
 		xhr(urlCommunity)
 		.then((res) => {
-			updateStore({
-				communities: {
-					...res
-				}
-			});
+      updateStore({
+        communities: {
+          data: res.data,
+          fetching: false,
+          result: true
+        }
+      });
 			resolve(true);
 		})
 		.catch((err) => {
-			console.log(err);
+      updateStore({
+        communities: {
+          ...communities,
+          fetching: false,
+          result: false
+        }
+      });
 			resolve(false);
 		});
 	});

@@ -15,12 +15,16 @@ export const initialStore = {
   news: {
     fetching: false,
     result: false,
-    data: []
+    data: [],
+    total: 0,
+    page: 1
   },
   events: {
     fetching: false,
     result: false,
-    data: []
+    data: [],
+    total: 0,
+    page: 1
   },
   members: {
     fetching: false,
@@ -35,7 +39,9 @@ export const initialStore = {
   communities: {
     fetching: false,
     result: false,
-    data: []
+    data: [],
+    total: 0,
+    page: 1
   },
   notifications: {
     fetching: false,

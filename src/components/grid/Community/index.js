@@ -1,14 +1,12 @@
 import { Component } from 'preact';
 import { getTranslation, formatN } from '_helpers';
 import {
-  filterCommunityByName,
-  fetchAllCommunities,
+  fetchCommunities,
+  filterCommunity,
   followCommunity,
   unFollowCommunity
 } from '_mutations';
 import { ImageLoader, ButtonDescription } from '_components/core';
-import { route } from 'preact-router';
-import { updateStore } from '_unistore';
 import { connect } from 'unistore/preact';
 import style from './style';
 
@@ -21,7 +19,7 @@ class Community extends Component {
 	componentDidMount = () => {
     const { communities } = this.props;
     if (!communities.data.length) {
-      fetchAllCommunities();
+      fetchCommunities();
     }
 	};
 
@@ -37,7 +35,11 @@ class Community extends Component {
     // filter
     clearTimeout(this.timer);
     this.timer = setTimeout(() => {
-      filterCommunityByName(e.target.value)
+      if (e.target.value) {
+        filterCommunity(e.target.value);
+      } else {
+        fetchCommunities();
+      }
     }, 500);
   }
 
@@ -59,13 +61,13 @@ class Community extends Component {
         <div className={style.cardBody}>
           <ButtonDescription
             onClickCallback={(e) => { this.handleFollow(item)}}
-            text={item.followed ? 'UnFollow' : 'Follow'}
+            text={getTranslation(item.followed ? 'UNFOLLOW' : 'FOLLOW')}
             bottomDescription={item.name}
             buttonStyle={`${style.buttonStyle} ${item.followed ? style.followed : ''}`}
             bottomDescStyle={style.bottomDescStyle}
             active={this.props.communities.data[i].followed}
           />
-          <p className={style.followers}>{formatN(9000, 2)} kakam-PINK</p>
+          {item.followers && <p className={style.followers}>{formatN(item.followers, 2)} kakam-PINK</p>}
         </div>
       </div>
       ))

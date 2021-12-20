@@ -2,7 +2,7 @@ import { store, updateStore } from '_unistore';
 import { xhr, urlEvents, urlShare, urlTag } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
-export function fetchEvents () {
+export function fetchEvents (page, limit) {
   const { events } = store.getState();
   
   // fetching
@@ -20,13 +20,19 @@ export function fetchEvents () {
   });
 
   return new Promise((resolve) => {
-    xhr(urlEvents, {
+    xhr(urlEvents + '/feed/followed', {
       method: 'GET',
+      params: {
+        p: page || 1, // page number
+        s: limit || 20 // limit
+      }
     })
     .then((res) => {
       updateStore({
         events: {
-          data: res.data,
+          data: res.data.results,
+          total: res.data.total,
+          page: page || 1,
           fetching: false,
           result: true
         }
