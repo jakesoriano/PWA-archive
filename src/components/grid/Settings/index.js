@@ -43,7 +43,7 @@ class Settings extends Component {
 					onClick={() => {
 						this.onClickChangePass();
 					}}>
-						<span>{getTranslation('CHANGE_PASS')}</span>
+						<span>{getTranslation('PAGE_CHANGE_PASS')}</span>
 				</button>
 				<button>
 					<span>{getTranslation('ENABLE_TOUCHID')}</span>

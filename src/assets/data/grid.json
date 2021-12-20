@@ -164,7 +164,7 @@
 	{
 		"styles": [],
 		"auth": true,
-		"pageTitle": "SETTINGS",
+		"pageTitle": "PAGE_CHANGE_PASS",
 		"uri": "change-password",
 		"contents": [
 			{
