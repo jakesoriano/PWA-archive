@@ -15,7 +15,7 @@ class SideBar extends Component {
 		this.props.toggleSideBar();
 	};
 
-	render = ({ toggleSideBar, isOpen, authUser, page }) => {console.error(2, page)
+	render = ({ toggleSideBar, isOpen, authUser, page }) => {
 		if (!authUser) {
 			return null;
 		}
