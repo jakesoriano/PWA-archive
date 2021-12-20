@@ -88,6 +88,8 @@ export function completeRegister (data) {
           console.log(`SPA >> completeRegister successful`, res);
           res = {
             ...res,
+            points: res.points || 0,
+            rank: res.rank || 0,
             isNewUser: true
           }
           updateStore({

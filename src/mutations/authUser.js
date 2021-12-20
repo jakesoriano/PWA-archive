@@ -99,7 +99,11 @@ export function login (data) {
       .then((res) => {
         if (res && res.success) {
           updateStore({
-            authUser: res
+            authUser: {
+              ...res,
+              points: res.points || 0,
+              rank: res.rank || 0,
+            }
           });
           // eslint-disable-next-line
           console.log(`SPA >> login successful`, res);
