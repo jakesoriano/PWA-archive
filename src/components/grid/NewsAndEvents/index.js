@@ -102,7 +102,11 @@ class NewsAndEvents extends Component {
 							className={eventDropdown.tagged === tag ? 'extraBold' : ''}
 							onClick={() => {
 								this.onSelectEventTag(tag, item)
-							}}>{getTranslation(tag)}
+							}}>
+								<ImageLoader
+								src={ `assets/images/${tag}-${eventDropdown.tagged === tag ? 'pink' : 'dark'}.png`}
+								style={{container: style.likeButton}}/>
+								{getTranslation(tag)}
 						</a>
 					))}
 				</div>
@@ -271,6 +275,9 @@ class NewsAndEvents extends Component {
 								this.onClickInterested(i);
 							}}
 							>
+							<ImageLoader
+							src={!i.tagged ? 'assets/images/INTERESTED-dark.png' : `assets/images/${i.tagged}-pink.png`}
+							style={{container: style.likeButton}}/>
 							{getTranslation(i.tagged || eventTags[0])}
 						</a>
 						<a
