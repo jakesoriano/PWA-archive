@@ -47,6 +47,9 @@ class Community extends Component {
   }
 
   renderCommunities = () => {
+    if (!this.props.communities.data.length) {
+      return <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
+    }
     return this.props.communities.data.map((item, i) => (
       <div className={style.communityCard}>
         <div className={style.img}>
