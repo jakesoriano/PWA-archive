@@ -1,6 +1,7 @@
 import { Component } from 'preact';
 import { getTranslation, formatN } from '_helpers';
 import {
+  fetchCommunities,
   filterCommunity,
   followCommunity,
   unFollowCommunity
@@ -18,7 +19,7 @@ class Community extends Component {
 	componentDidMount = () => {
     const { communities } = this.props;
     if (!communities.data.length) {
-      filterCommunity();
+      fetchCommunities();
     }
 	};
 
@@ -37,7 +38,7 @@ class Community extends Component {
       if (e.target.value) {
         filterCommunity(e.target.value);
       } else {
-        filterCommunity();
+        fetchCommunities();
       }
     }, 500);
   }

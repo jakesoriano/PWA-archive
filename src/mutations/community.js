@@ -57,6 +57,56 @@ export function filterCommunity(name, page, limit) {
   });
 }
 
+export function fetchCommunities(page, limit) {
+  // curreny state
+  const { communities } = store.getState();
+
+  // fetching
+  if(communities.fetching) {
+    return;
+  }
+
+  // initial state
+  updateStore({
+    communities: {
+      ...communities,
+      fetching: true,
+      result: false
+    }
+  });
+
+	return new Promise((resolve) => {
+		xhr(urlCommunity, {
+      params: {
+        p: page || 1, // page number
+        s: limit || 20 // limit
+      }
+    })
+		.then((res) => {
+      updateStore({
+        communities: {
+          data: res.data.results,
+          total: res.data.total,
+          page: page || 1,
+          fetching: false,
+          result: true
+        }
+      });
+			resolve(true);
+		})
+		.catch((err) => {
+      updateStore({
+        communities: {
+          ...communities,
+          fetching: false,
+          result: false
+        }
+      });
+			resolve(false);
+		});
+	});
+}
+
 export function followCommunity (item) {
   // curreny state
   let { communities } = store.getState();

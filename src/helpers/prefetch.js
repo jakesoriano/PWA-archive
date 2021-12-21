@@ -5,7 +5,7 @@ import {
   fetchMembers,
   fetchInvited,
   fetchStories,
-  filterCommunity
+  fetchCommunities
 } from '_mutations';
 
 // eslint-disable-next-line import/prefer-default-export
@@ -17,6 +17,6 @@ export function prefetch (hasUser) {
     hasUser && fetchMembers(),
     hasUser && fetchInvited(),
     hasUser && fetchStories(),
-    hasUser && filterCommunity(),
+    hasUser && fetchCommunities(),
   ]);
 }
