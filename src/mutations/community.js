@@ -57,49 +57,6 @@ export function filterCommunity(name, page, limit) {
   });
 }
 
-export function fetchCommunities() {
-  // curreny state
-  const { communities } = store.getState();
-
-  // fetching
-  if(communities.fetching) {
-    return;
-  }
-
-  // initial state
-  updateStore({
-    communities: {
-      ...communities,
-      fetching: true,
-      result: false
-    }
-  });
-
-	return new Promise((resolve) => {
-		xhr(urlCommunity)
-		.then((res) => {
-      updateStore({
-        communities: {
-          data: res.data,
-          fetching: false,
-          result: true
-        }
-      });
-			resolve(true);
-		})
-		.catch((err) => {
-      updateStore({
-        communities: {
-          ...communities,
-          fetching: false,
-          result: false
-        }
-      });
-			resolve(false);
-		});
-	});
-}
-
 export function followCommunity (item) {
   // curreny state
   let { communities } = store.getState();
@@ -116,6 +73,7 @@ export function followCommunity (item) {
     data: communities.data.map(i => {
       if(i.id === item.id) {
         i.followed = true;
+        i.followers = i.followers + 1;
       }
       return i;
     }),
@@ -149,6 +107,7 @@ export function followCommunity (item) {
           data: communities.data.map(i => {
             if(i.id === item.id) {
               i.followed = false;
+              i.followers = i.followers - 1;
             }
             return i;
           }),
@@ -177,6 +136,7 @@ export function unFollowCommunity (item) {
     data: communities.data.map(i => {
       if(i.id === item.id) {
         i.followed = false;
+        i.followers = i.followers - 1;
       }
       return i;
     }),
@@ -210,6 +170,7 @@ export function unFollowCommunity (item) {
           data: communities.data.map(i => {
             if(i.id === item.id) {
               i.followed = true;
+              i.followers = i.followers + 1;
             }
             return i;
           }),

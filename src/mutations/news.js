@@ -54,7 +54,7 @@ export function fetchNews (page, limit) {
   });
 }
 
-export function likeShareNews (item, itemType, action) {
+export function likeShareNews (item, itemType, action, parentId, parentType) {
   let { news } = store.getState();
   const { authUser } = store.getState();
   const _url = action === 'liked' ? urlLike : urlShare
@@ -83,7 +83,9 @@ export function likeShareNews (item, itemType, action) {
       data: {
         userId: authUser.profile._id,
         itemId: item.id,
-        itemType 
+        itemType,
+        parentId,
+        parentType: parentType || 'C'
       }
     })
     .then((res) => {
@@ -115,7 +117,7 @@ export function likeShareNews (item, itemType, action) {
   });
 }
 
-export function removeLikeNews (item, itemType) {
+export function removeLikeNews (item, itemType, parentId, parentType) {
   let { news } = store.getState();
   const { authUser } = store.getState();
   
@@ -143,7 +145,9 @@ export function removeLikeNews (item, itemType) {
       data: {
         userId: authUser.profile._id,
         itemId: item.id,
-        itemType 
+        itemType,
+        parentId,
+        parentType: parentType || 'C'
       }
     })
     .then((res) => {
