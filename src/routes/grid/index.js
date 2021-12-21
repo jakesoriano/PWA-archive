@@ -365,6 +365,7 @@ class Grid extends Component {
 	        {/* Popup Page */}
 	        {popup && (
 	          <PopupPage
+							page={this.getPageName(true)}
 	            title={popup.pageTitle}
 	            onBack={() => {
 	              route(`/${this.getPageName()}`, true);
