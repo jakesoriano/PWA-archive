@@ -31,7 +31,9 @@ class Settings extends Component {
 		componentModal({
 			fullscreen: true,
 			title: getTranslation('PAGE_CHANGE_PASS'),
-			content: <ChangePassword />
+			content: <ChangePassword cbSuccess={() => {
+				componentModal(null);
+			}}/>
 		});
 		// route(`/${this.props.parent}/change-password`);
 	};

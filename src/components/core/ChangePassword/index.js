@@ -1,6 +1,6 @@
 import { Component } from 'preact';
-import { route } from 'preact-router';
-import { getTranslation } from '_helpers';
+// import { route } from 'preact-router';
+import { getTranslation, displayPageLoader } from '_helpers';
 import { changePassword } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
@@ -134,7 +134,7 @@ class ChangePassword extends Component {
 					password: this.state.currentPass.value,
 					newPassword: this.state.newPass.value,
 				};
-				// displayPageLoader(true);
+				displayPageLoader(true);
 				changePassword(data).then((res) => {
 					if(res && res.success) {
 						this.showAlertBox('CHANGE_PASS_SUCCESS', false);
@@ -142,14 +142,19 @@ class ChangePassword extends Component {
 							username: this.props.authUser.profile.username,
 							password: this.state.newPass.value
 						});
+						// reset form data
 						this.resetState();
+						// change password
+						if (this.props.cbSuccess) {
+							this.props.cbSuccess();
+						}
 					} else {
 						this.showAlertBox(res.error.message || 'SOMETHING_WRONG', true);
 					}
-					// displayPageLoader(false);
+					displayPageLoader(false);
 				}).catch((err) => {
 					this.showAlertBox('SOMETHING_WRONG', true);
-					// displayPageLoader(false);
+					displayPageLoader(false);
 				});
 				
       }
