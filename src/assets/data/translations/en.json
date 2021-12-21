@@ -107,5 +107,6 @@
 	"KAKAMPINK_STORIES": "Kakam-Pink Stories",
 	"READ_ALL": "READ ALL",
 	"FOLLOW": "Follow",
-	"UNFOLLOW": "Unfollow"
+	"UNFOLLOW": "Unfollow",
+	"INCORRECT_PASSWORD": "Incorrect current password"
 }

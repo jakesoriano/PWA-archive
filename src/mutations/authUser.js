@@ -138,15 +138,18 @@ export function changePassword (data) {
         if (res && res.success) {
           // eslint-disable-next-line
           console.log(`SPA >> login successful`, res);
-          resolve(res);
-        } else {
-          resolve(false);
         }
+        resolve(res);
       })
       .catch((err) => {
         // eslint-disable-next-line
 				console.log(`SPA >> login Error`, err);
-        resolve(false);
+        resolve({
+          success: false,
+          error: {
+            message: 'SOMETHING_WRONG'
+          }
+        });
       });
   });
 }

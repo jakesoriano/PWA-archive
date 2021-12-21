@@ -128,15 +128,14 @@ class ChangePassword extends Component {
 							username: this.props.authUser.profile.username,
 							password: this.state.newPass.value
 						});
+						route(`/${this.props.parent}`);
 					} else {
-						this.showAlertBox('SOMETHING_WRONG', true);
+						this.showAlertBox(res.error.message || 'SOMETHING_WRONG', true);
 					}
 					// displayPageLoader(false);
-					route(`/${this.props.parent}`);
 				}).catch((err) => {
 					this.showAlertBox('SOMETHING_WRONG', true);
 					// displayPageLoader(false);
-					route(`/${this.props.parent}`);
 				});
 				
       }
@@ -152,7 +151,7 @@ class ChangePassword extends Component {
 							<FormInput
 								className={style.fields}
 								value={currentPass.value}
-								type="text"
+								type="password"
 								onBlur={(e) => {
 									this.onCurrentPasswordChange(e.target.value)
 								}}
@@ -168,7 +167,7 @@ class ChangePassword extends Component {
 							<FormInput
 								className={style.fields}
 								value={newPass.value}
-								type="text"
+								type="password"
 								onBlur={(e) => {
 									this.onNewPasswordChange(e.target.value)
 								}}
@@ -185,7 +184,7 @@ class ChangePassword extends Component {
 							<FormInput
 								className={style.fields}
 								value={confirmPass.value}
-								type="text"
+								type="password"
 								onBlur={(e) => {
 									this.onConfirmPasswordChange(e.target.value)
 								}}

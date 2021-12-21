@@ -1,5 +1,6 @@
 import { Component } from 'preact';
 import { updateStore } from '_unistore';
+import { getTranslation } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -41,7 +42,7 @@ export default class AlertBox extends Component {
     return (
       <div className={`${style.alertBox} ${style[this.state.alertClass]} ${noTopBar ? style.noUser : ''}`}>
         <span className={`${style.alertIcon} ${(success ? style.success : style.error)}`}>{success ? '✓' : '✖'}</span>
-        <span className={style.alertText}>{content}</span>
+        <span className={style.alertText}>{getTranslation(content)}</span>
       </div>
     );
   };
