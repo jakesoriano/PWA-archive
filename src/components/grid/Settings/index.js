@@ -29,7 +29,6 @@ class Settings extends Component {
 	
 	onClickChangePass = () => {
 		componentModal({
-			fullscreen: true,
 			title: getTranslation('PAGE_CHANGE_PASS'),
 			content: <ChangePassword cbSuccess={() => {
 				componentModal(null);

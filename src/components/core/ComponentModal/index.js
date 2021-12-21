@@ -4,10 +4,10 @@ import Modal from '../Modal';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
-export default ({ title, content, fullscreen }) => (
+export default ({ title, content }) => (
   // eslint-disable-next-line react/jsx-no-bind
   <Modal
-    fullscreen={fullscreen || false}
+    fullscreen={true}
     title={title}
     cbClose={() => {
       componentModal(null);
