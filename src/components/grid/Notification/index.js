@@ -1,20 +1,21 @@
 import { connect } from 'unistore/preact';
 import { Component } from 'preact/dist/preact';
 import { ImageLoader } from '_components/core';
-import { fetechNotifications } from '_mutations';
 import { getTranslation, displayPageLoader, replaceUrlPlaceholders } from '_helpers';
 import style from './style';
 
 class Notification extends Component {
   constructor () {
     super();
+    this.state = {
+      notifications: {
+        isRead: false,
+        data: []
+      }
+    }
   }
 
   componentDidMount = () => {
-    displayPageLoader(true);
-    fetechNotifications().then((res) => {
-      displayPageLoader(false);
-    });
   }
 
   renderNotifications = () => {
@@ -26,7 +27,7 @@ class Notification extends Component {
             src={replaceUrlPlaceholders(item.image)}
             style={{ container: style.detailImage }}
           />
-          <div>
+          <div className={style.detailCopy}>
             <p className={`bold ${style.detailTitle}`}>{getTranslation(item.title)}</p>
             <p className={style.detailDescription}>{getTranslation(item.description)}</p>
           </div>
@@ -56,4 +57,4 @@ class Notification extends Component {
   }
 }
 
-export default connect(['notifications'])(Notification);
+export default connect(['notifications', 'events', 'authUser'])(Notification);

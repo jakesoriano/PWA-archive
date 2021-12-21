@@ -15,12 +15,16 @@
     }
     .contentDetails {
       display: flex;
+      flex-direction: column;
       .contentDetail {
         display: flex;
         padding: 15px;
         .detailImage {
-          width: 50px;
+          width: 35px;
           margin-right: 20px;
+        }
+        .detailCopy {
+          width: 75%;
         }
         .detailTitle {
           color: #808080;

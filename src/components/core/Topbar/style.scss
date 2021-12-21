@@ -41,6 +41,20 @@
 				padding-bottom: 30px;
 				display: block;
 				margin: 0 15px;
+				position: relative;
+			}
+			.notifCount {
+				background-color: #fff;
+				border: 1px solid #ffb1bb;
+				border-radius: 50%;
+				color: #ffb1bb;
+				position: absolute;
+				z-index: 2;
+				font-size: 0.6rem;
+				top: 0;
+				right: 13px;
+				width: 15px;
+				text-align: center;
 			}
 		}
 	}

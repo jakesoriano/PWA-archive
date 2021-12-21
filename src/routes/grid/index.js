@@ -352,6 +352,7 @@ class Grid extends Component {
 	            <Topbar
 	              page={this.getPageName()}
 	              toggleSideBar={this.toggleRightSideBar}
+								notifications={this.props.notifications}
 	            />
 	          )}
 	          <div
@@ -419,7 +420,8 @@ const ConnectComponent = connect([
   'pageLoader',
 	'alertShow',
 	'popupModal',
-	'circleModal'
+	'circleModal',
+	'notifications'
 ])(Grid);
 export default ConnectComponent;
 

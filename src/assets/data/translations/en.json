@@ -108,5 +108,8 @@
 	"READ_ALL": "READ ALL",
 	"FOLLOW": "Follow",
 	"UNFOLLOW": "Unfollow",
-	"INCORRECT_PASSWORD": "Incorrect current password"
+	"INCORRECT_PASSWORD": "Incorrect current password",
+	"CONGRATULATIONS": "Congratulations!",
+	"EARNED_POINTS": "You have earned {POINTS} hero points from recruiting an additional {MEMBERS_COUNT} members!",
+	"SEE_YOU": "See you at {LOCATION} on {DATE}. Wear your pink outfit and tie pink ribbons in your cars."
 }

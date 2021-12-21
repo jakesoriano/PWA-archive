@@ -15,7 +15,7 @@ export const dateEventFormat = (date) => {
     day = day < 10 ? `0${day}` : day;
     const year = d.getFullYear();
     const time = d.toLocaleTimeString(getLanguageCode(selectedLanguage)).replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3")
-    return `${monthNames[month]} ${day}, ${year} ${days[d.getDay()]} ${time}`;
+    return `${monthNames[month]} ${day}, ${year} ${days[d.getDay()]}, ${time}`;
   } catch (error) {
     console.log('SPA >> Component dateEventFormat failed.', error);
     return date;
@@ -52,3 +52,26 @@ export const getMaxDOBDate = () => {
   }
   return year + '-' + month + '-' + day;
 };
+
+export const dateWithinDays = (date, withinDays) => {
+  try {
+    let days = getDateDaysAway(date);
+    console.log(getDateDaysAway(days, 'days', withinDays, 'wew'))
+    return days === withinDays;
+  } catch (error) {
+    console.log('SPA >> Component checkIfDateWithin failed.', error);
+    return date;
+  }
+}
+
+export const getDateDaysAway = (date) => {
+  try {
+    const currDate = new Date();
+    let diff = (new Date(date)).getTime() - currDate.getTime();
+    let days = Math.trunc(diff / (1000 * 60 * 60 * 24));
+    return days;
+  } catch (error) {
+    console.log('SPA >> Component checkIfDateWithin failed.', error);
+    return date;
+  }
+}

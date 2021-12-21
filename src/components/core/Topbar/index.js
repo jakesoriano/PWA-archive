@@ -1,4 +1,6 @@
 import { h, Component } from 'preact';
+import { updateStore } from '_unistore';
+import { connect } from 'unistore/preact';
 import { Link } from 'preact-router/match';
 import { getTranslation } from '_helpers';
 import { ImageLoader } from '_components/core';
@@ -31,11 +33,22 @@ class Topbar extends Component {
 	          class={style.notif}
 	          activeClassName={style.active}
 	          href="/notification"
+						onClick={() => {
+							let { notifications } = this.props;
+							Object.assign(notifications, {
+								...notifications,
+								isRead: true
+							});
+							updateStore({
+								notifications: notifications
+							});
+						}}
 	        >
 	          <ImageLoader
 	            style={{ container: style.notifImg }}
 	            src="assets/images/notif.png"
 	          />
+						{props.notifications.data.length && !props.notifications.isRead ? <span className={style.notifCount}>{props.notifications.data.length}</span> : ''}
 	        </Link>
 	      </div>
 	    </header>
