@@ -6,8 +6,7 @@ import { getTranslation, displayPageLoader } from '_helpers';
 import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
 import { login } from '_mutations';
 import { route } from 'preact-router';
-import { nativeSetCredential } from '_platform/helpers';
-import { nativeLoginWithTouchID } from '_platform/helpers';
+import { nativeSetCredential, nativeLoginWithTouchID } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 

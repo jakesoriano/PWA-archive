@@ -5,6 +5,7 @@ import { changePassword } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
 import { FormGroup, FormInput, ButtonDescription } from '_components/core';
+import { nativeSetCredential } from '_platform/helpers';
 import style from './style.scss';
 
 let special_char = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
@@ -123,6 +124,10 @@ class ChangePassword extends Component {
 				changePassword(data).then((res) => {
 					if(res && res.success) {
 						this.showAlertBox('CHANGE_PASS_SUCCESS', false);
+						nativeSetCredential({
+							username: this.props.authUser.profile.username,
+							password: this.state.newPass.value
+						});
 					} else {
 						this.showAlertBox('SOMETHING_WRONG', true);
 					}
