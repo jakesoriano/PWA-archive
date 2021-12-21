@@ -219,6 +219,9 @@ class Grid extends Component {
 	      // redirect to home page
 	      route('/', true);
 	    });
+		} else if (!prevProps.authUser && this.props.authUser) {
+			// fetch data
+			prefetch(Boolean(this.props.authUser));
 	  } else {
 	    // reset page data
 	    this.resetPageData(prevProps);
