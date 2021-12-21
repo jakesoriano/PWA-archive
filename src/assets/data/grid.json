@@ -121,7 +121,7 @@
 	{
 		"styles": [],
 		"auth": true,
-		"pageTitle": "PAGE_SETTINGS",
+		"pageTitle": "SETTINGS",
 		"uri": "settings",
 		"contents": [
 			{
