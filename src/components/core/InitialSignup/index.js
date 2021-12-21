@@ -39,6 +39,7 @@ class InitialSignup extends Component {
   }
 	onClickSubmit = () => {
     if (!this.state.username.value || 
+      this.state.username.hasError || 
       !this.state.password.value ||
       !this.state.confirm_password.value ||
       this.state.password.value.length < 8 ||
