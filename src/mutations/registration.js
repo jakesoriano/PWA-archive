@@ -93,7 +93,8 @@ export function completeRegister (data) {
             isNewUser: true
           }
           updateStore({
-            authUser: res
+            authUser: res,
+            customBack: null
           });
           resolve(res);
         } else {

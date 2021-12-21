@@ -326,17 +326,21 @@ class Signup extends Component {
 									isRegisteredVoter: this.state.voter.value,
 									parentRefCode: this.state.parentRefCode.value
 								};
-									displayPageLoader(true);
-									completeSignup(userData).then((res) => {
-										displayPageLoader(false);
-										if (res.success) {
-											route(`/${this.props.parent}/registration-otp`);
-										} else {
-											this.showAlertBox(getTranslation('SOMETHING_WRONG'));
-										}
-									}).catch((err) => {
-										console.error('error', err);
-									})
+									if (this.props.signup.registrationId) {
+										route(`/${this.props.parent}/registration-otp`);
+									} else {
+										displayPageLoader(true);
+										completeSignup(userData).then((res) => {
+											displayPageLoader(false);
+											if (res.success) {
+												route(`/${this.props.parent}/registration-otp`);
+											} else {
+												this.showAlertBox(getTranslation('SOMETHING_WRONG'));
+											}
+										}).catch((err) => {
+											console.error('error', err);
+										})
+									}
 							}, 100)
 						});
 					} else {

@@ -103,7 +103,8 @@ export function login (data) {
               ...res,
               points: res.points || 0,
               rank: res.rank || 0,
-            }
+            },
+            customBack: null
           });
           // eslint-disable-next-line
           console.log(`SPA >> login successful`, res);
