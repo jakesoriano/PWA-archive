@@ -35,6 +35,30 @@ class ChangePassword extends Component {
 			},
 		};
 	};
+
+	resetState = () => {
+		this.setState({
+			currentPass: {
+				value: '',
+				error: '',
+				message: '',
+				hasError: false
+			},
+			newPass: {
+				value: '',
+				error: '',
+				message: '',
+				hasError: false
+			},
+			confirmPass: {
+				value: '',
+				error: '',
+				message: '',
+				hasError: false
+			}
+		});
+	}
+
 	onCurrentPasswordChange = (value) => {
 		this.setState({
 			currentPass: {
@@ -118,7 +142,7 @@ class ChangePassword extends Component {
 							username: this.props.authUser.profile.username,
 							password: this.state.newPass.value
 						});
-						route(`/${this.props.parent}`);
+						this.resetState();
 					} else {
 						this.showAlertBox(res.error.message || 'SOMETHING_WRONG', true);
 					}

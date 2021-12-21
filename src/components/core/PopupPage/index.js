@@ -28,8 +28,8 @@ class PopupPage extends Component {
 	  }
 	};
 
-	render = ({ title, children, onBack, customBack, page }) => (
-	  <div ref={this.ref} className={`${style.popupPage} popup-${page}`}>
+	render = ({ title, children, onBack, customBack }) => (
+	  <div ref={this.ref} className={style.popupPage}>
 	    <div className={style.header}>
 	      <button
 	        className="icon-back clickable"

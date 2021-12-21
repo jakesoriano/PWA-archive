@@ -163,17 +163,6 @@
 	},
 	{
 		"styles": [],
-		"auth": true,
-		"pageTitle": "PAGE_CHANGE_PASS",
-		"uri": "change-password",
-		"contents": [
-			{
-				"component": "ChangePassword"
-			}
-		]
-	},
-	{
-		"styles": [],
 		"auth": false,
 		"pageTitle": "PAGE_FORGOT_PW",
 		"uri": "forgot-password",
