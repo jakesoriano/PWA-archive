@@ -1,6 +1,6 @@
 import { Component } from 'preact';
-import { route } from 'preact-router';
-import { getTranslation } from '_helpers';
+// import { route } from 'preact-router';
+import { getTranslation, displayPageLoader } from '_helpers';
 import { changePassword } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
@@ -35,6 +35,30 @@ class ChangePassword extends Component {
 			},
 		};
 	};
+
+	resetState = () => {
+		this.setState({
+			currentPass: {
+				value: '',
+				error: '',
+				message: '',
+				hasError: false
+			},
+			newPass: {
+				value: '',
+				error: '',
+				message: '',
+				hasError: false
+			},
+			confirmPass: {
+				value: '',
+				error: '',
+				message: '',
+				hasError: false
+			}
+		});
+	}
+
 	onCurrentPasswordChange = (value) => {
 		this.setState({
 			currentPass: {
@@ -46,17 +70,7 @@ class ChangePassword extends Component {
 		});
 	};
 	onNewPasswordChange = (value) => {
-    if( value && special_char.test(value) ) {
-      this.setState({
-        newPass: {
-          ...this.state.newPass,
-          value,
-          hasError: true,
-          error: getTranslation('SPECIAL_CHARACTERS')
-        }
-      });
-    } 
-    else if (value && value.length < 8) {
+    if (value && value.length < 8) {
 			this.setState({
 				newPass: {
 					...this.state.newPass,
@@ -120,7 +134,7 @@ class ChangePassword extends Component {
 					password: this.state.currentPass.value,
 					newPassword: this.state.newPass.value,
 				};
-				// displayPageLoader(true);
+				displayPageLoader(true);
 				changePassword(data).then((res) => {
 					if(res && res.success) {
 						this.showAlertBox('CHANGE_PASS_SUCCESS', false);
@@ -128,14 +142,19 @@ class ChangePassword extends Component {
 							username: this.props.authUser.profile.username,
 							password: this.state.newPass.value
 						});
-						route(`/${this.props.parent}`);
+						// reset form data
+						this.resetState();
+						// change password
+						if (this.props.cbSuccess) {
+							this.props.cbSuccess();
+						}
 					} else {
 						this.showAlertBox(res.error.message || 'SOMETHING_WRONG', true);
 					}
-					// displayPageLoader(false);
+					displayPageLoader(false);
 				}).catch((err) => {
 					this.showAlertBox('SOMETHING_WRONG', true);
-					// displayPageLoader(false);
+					displayPageLoader(false);
 				});
 				
       }

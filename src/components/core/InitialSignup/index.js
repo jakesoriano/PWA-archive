@@ -112,36 +112,25 @@ class InitialSignup extends Component {
     }
 	};
   onPasswordChange = (value) => {
-    if( value && special_char.test(value) ) {
+    if (value && value.length < 8) {
       this.setState({
         password: {
           ...this.state.password,
           value,
           hasError: true,
-          error: getTranslation('SPECIAL_CHARACTERS')
+          error: getTranslation('MINIMUM_CHARACTERS')
         }
       });
-    } 
-    else 
-      if (value && value.length < 8) {
-        this.setState({
-          password: {
-            ...this.state.password,
-            value,
-            hasError: true,
-            error: getTranslation('MINIMUM_CHARACTERS')
-          }
-        });
-      } else {
-        this.setState({
-          password: {
-            ...this.state.password,
-            value,
-            hasError: !value,
-            error: !value ? 'REQUIRED' : ''
-          }
-        });
-      }
+    } else {
+      this.setState({
+        password: {
+          ...this.state.password,
+          value,
+          hasError: !value,
+          error: !value ? 'REQUIRED' : ''
+        }
+      });
+    }
    
 	};
   onConfirmPasswordChange = (value) => {

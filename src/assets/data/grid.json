@@ -121,7 +121,7 @@
 	{
 		"styles": [],
 		"auth": true,
-		"pageTitle": "PAGE_SETTINGS",
+		"pageTitle": "SETTINGS",
 		"uri": "settings",
 		"contents": [
 			{
@@ -158,17 +158,6 @@
 		"contents": [
 			{
 				"component": "OneTimePIN"
-			}
-		]
-	},
-	{
-		"styles": [],
-		"auth": true,
-		"pageTitle": "PAGE_CHANGE_PASS",
-		"uri": "change-password",
-		"contents": [
-			{
-				"component": "ChangePassword"
 			}
 		]
 	},

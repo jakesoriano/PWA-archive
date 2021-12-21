@@ -7,6 +7,7 @@ import style from './style';
 export default ({ title, content }) => (
   // eslint-disable-next-line react/jsx-no-bind
   <Modal
+    fullscreen={true}
     title={title}
     cbClose={() => {
       componentModal(null);

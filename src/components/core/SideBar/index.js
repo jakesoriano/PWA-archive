@@ -48,8 +48,8 @@ class SideBar extends Component {
 						</div>
 					</div>
 					<div className={style.sMenu}>
-						<Link href="/settings" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('SETTINGS')}</Link>
-						<Link href={`/${page || home}/contactus`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('WHERE_HERE_TO_LISTEN')}</Link>
+						<Link href={`/${page || 'home'}/settings`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('SETTINGS')}</Link>
+						<Link href={`/${page || 'home'}/contactus`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('WHERE_HERE_TO_LISTEN')}</Link>
 						{/* <Link href="/home" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PROTECT_LENI')}</Link> */}
 						<Link href={`/`} className={style.sMItem} onClick={(e) => {
 							logOut();
