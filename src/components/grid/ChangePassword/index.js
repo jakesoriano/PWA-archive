@@ -46,17 +46,7 @@ class ChangePassword extends Component {
 		});
 	};
 	onNewPasswordChange = (value) => {
-    if( value && special_char.test(value) ) {
-      this.setState({
-        newPass: {
-          ...this.state.newPass,
-          value,
-          hasError: true,
-          error: getTranslation('SPECIAL_CHARACTERS')
-        }
-      });
-    } 
-    else if (value && value.length < 8) {
+    if (value && value.length < 8) {
 			this.setState({
 				newPass: {
 					...this.state.newPass,
