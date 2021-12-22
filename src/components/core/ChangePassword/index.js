@@ -115,8 +115,7 @@ class ChangePassword extends Component {
 		if (!this.state.currentPass.value || 
       !this.state.newPass.value ||
       !this.state.confirmPass.value ||
-      this.state.newPass.value.length < 8 ||
-      special_char.test(this.state.newPass.value)) {
+      this.state.newPass.value.length < 8) {
 	    this.onCurrentPasswordChange(this.state.currentPass.value);
 	    this.onNewPasswordChange(this.state.newPass.value);
       this.onConfirmPasswordChange(this.state.confirmPass.value);
