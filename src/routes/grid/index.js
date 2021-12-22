@@ -213,11 +213,14 @@ class Grid extends Component {
 	        popupSet: false
 	      });
 	      // fetch data
-	      prefetch(Boolean(this.props.authUser));
-	      // set page data
-	      this.setPageData();
-	      // redirect to home page
-	      route('/', true);
+	      prefetch(Boolean(this.props.authUser)).then(() => {
+					// dashboard is now ready
+					nativeWebReady();
+					// set page data
+					this.setPageData();
+					// redirect to home page
+					route('/', true);
+				});
 	    });
 		} else if (!prevProps.authUser && this.props.authUser) {
 			// fetch data
