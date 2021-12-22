@@ -42,8 +42,7 @@ class InitialSignup extends Component {
       this.state.username.hasError || 
       !this.state.password.value ||
       !this.state.confirm_password.value ||
-      this.state.password.value.length < 8 ||
-      special_char.test(this.state.password.value)) {
+      this.state.password.value.length < 8) {
 	    this.onUsernameChange(this.state.username.value);
 	    this.onPasswordChange(this.state.password.value);
       this.onConfirmPasswordChange(this.state.confirm_password.value);
