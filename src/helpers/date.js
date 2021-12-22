@@ -56,7 +56,6 @@ export const getMaxDOBDate = () => {
 export const dateWithinDays = (date, withinDays) => {
   try {
     let days = getDateDaysAway(date);
-    console.log(getDateDaysAway(days, 'days', withinDays, 'wew'))
     return days === withinDays;
   } catch (error) {
     console.log('SPA >> Component checkIfDateWithin failed.', error);
