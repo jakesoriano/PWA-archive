@@ -16,6 +16,7 @@ class Community extends Component {
     super();
     this.state = {
       text: '',
+      moreFetching: false
     }
     this.timer = null;
   }
@@ -26,11 +27,26 @@ class Community extends Component {
     }
 	};
 
+  componentDidUpdate = () => {
+    if (this.state.moreFetching && !this.props.communities.fetching) {
+      this.setState({
+        moreFetching: false
+      });
+    }
+  }
+
   handleShowMore = () => {
-    if (this.state.text) {
-      filterCommunity(this.state.text, this.props.communities.page + 1);
-    } else {
-      fetchCommunities(this.props.communities.page + 1);
+    if (!this.state.moreFetching) {
+      // flag
+      this.setState({
+        moreFetching: true
+      });
+      // fetch
+      if (this.state.text) {
+        filterCommunity(this.state.text, this.props.communities.page + 1);
+      } else {
+        fetchCommunities(this.props.communities.page + 1);
+      }
     }
   };
 
@@ -112,11 +128,11 @@ class Community extends Component {
           {/* show more */}
           {communities.data.length < communities.total && !communities.fetching && (
             <button className={style.showMore} onClick={this.handleShowMore}>
-              <span>Show More</span>
+              <span>{getTranslation('SHOW_MORE')}</span>
             </button>
           )}
           {/* loader */}
-          {communities.data.length && communities.fetching && (
+          {this.state.moreFetching && (
             <LoaderRing styles={{container: style.loaderWrap}}/>
           )}
         </div>
