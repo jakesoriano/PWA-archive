@@ -9,33 +9,38 @@ export function generateNotifications () {
 
   generateEventsNotification(data, events.data);
 
-  // set isRead 
-  let isNotificationsChanged = JSON.stringify(notifications.data) === JSON.stringify(data);
-  data.sort((a, b) => a.date - b.date);
+  if (data.length) {
+    // set isRead 
+    let isNotificationsChanged = JSON.stringify(notifications.data) === JSON.stringify(data);
+    data.sort((a, b) => a.date - b.date);
 
-  updateStore({
-    notifications: {
-      ...notifications,
-      data: data,
-      isRead: isNotificationsChanged
-    }
-  });
+    updateStore({
+      notifications: {
+        ...notifications,
+        data: data,
+        isRead: (isNotificationsChanged && notifications.isRead)
+      }
+    });
+  }
+  localStorage.setItem('lastDateNotified', new Date());
 }
 
 const generatePointsNotification = (data, members) => {
-  let lastDatePointsNotified = localStorage.getItem('lastDatePointsNotified');
-  if (members && members.length) {
+  // check day if a Sunday before adding to notifications
+  if (new Date().getDay() === 3) {
+    let lastDatePointsNotified = localStorage.getItem('lastDatePointsNotified');
+    if (members && members.length) {
 
-    if (!lastDatePointsNotified) {
-      localStorage.setItem('lastDatePointsNotified', new Date());
-      lastDatePointsNotified = localStorage.getItem('lastDatePointsNotified');
-    }
+      if (!lastDatePointsNotified || dateWithinDays(lastDatePointsNotified, -7)) {
+        localStorage.setItem('lastDatePointsNotified', new Date());
+        lastDatePointsNotified = localStorage.getItem('lastDatePointsNotified');
+      }
 
-    // check date if a week ago, or first notif before adding to notifications
-    if (getDateDaysAway(lastDatePointsNotified) === -7 || (!getDateDaysAway(lastDatePointsNotified) && (new Date(lastDatePointsNotified).toISOString().split('.')[0]+'Z' === new Date().toISOString().split('.')[0]+'Z'))) {
-      members.sort((a, b) => new Date(a.date) - new Date(b.date));
-      let tmpArr = members.filter(item => (getDateDaysAway(item.profile.date) >= -7 && getDateDaysAway(item.profile.date) <= 0));
-      data.push(propsTemplate('assets/images/icon_megaphone.png', getTranslation('CONGRATULATIONS'), getTranslation('EARNED_POINTS').replace(/{POINTS}/gim, (tmpArr.length * 100)).replace(/{MEMBERS_COUNT}/gim, tmpArr.length)));
+      if ((new Date(lastDatePointsNotified).toISOString().split('.')[0]+'Z' === new Date().toISOString().split('.')[0]+'Z')) {
+        members.sort((a, b) => new Date(a.date) - new Date(b.date));
+        let tmpArr = members.filter(item => (getDateDaysAway(item.profile.date) >= -7 && getDateDaysAway(item.profile.date) <= 0));
+        data.push(propsTemplate('assets/images/icon_megaphone.png', getTranslation('CONGRATULATIONS'), getTranslation('EARNED_POINTS').replace(/{POINTS}/gim, (tmpArr.length * 100)).replace(/{MEMBERS_COUNT}/gim, tmpArr.length))); 
+      }
     }
   }
 }

@@ -8,6 +8,7 @@ import {
   fetchCommunities,
   generateNotifications
 } from '_mutations';
+import { dateWithinDays }from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
 export function prefetch (hasUser) {
@@ -20,6 +21,9 @@ export function prefetch (hasUser) {
     hasUser && fetchStories(),
     hasUser && fetchCommunities(),
   ]).then(() => {
-    generateNotifications();
+    let lastDateNotified = localStorage.getItem('lastDateNotified');
+    if (hasUser && (!lastDateNotified || dateWithinDays(lastDateNotified, -1))) {
+      generateNotifications();
+    }
   });
 }
