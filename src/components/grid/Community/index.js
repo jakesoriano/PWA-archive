@@ -6,7 +6,7 @@ import {
   followCommunity,
   unFollowCommunity
 } from '_mutations';
-import { ImageLoader, ButtonDescription } from '_components/core';
+import { ImageLoader, ButtonDescription, LoaderRing } from '_components/core';
 import { connect } from 'unistore/preact';
 import style from './style';
 
@@ -14,14 +14,25 @@ import style from './style';
 class Community extends Component {
   constructor() {
     super();
+    this.state = {
+      text: '',
+    }
     this.timer = null;
   }
 	componentDidMount = () => {
     const { communities } = this.props;
     if (!communities.data.length) {
-      fetchCommunities();
+      fetchCommunities(this.props.communities.page);
     }
 	};
+
+  handleShowMore = () => {
+    if (this.state.text) {
+      filterCommunity(this.state.text, this.props.communities.page + 1);
+    } else {
+      fetchCommunities(this.props.communities.page + 1);
+    }
+  };
 
   handleFollow = (item) => {
     if (item.followed) {
@@ -36,7 +47,10 @@ class Community extends Component {
     clearTimeout(this.timer);
     this.timer = setTimeout(() => {
       if (e.target.value) {
-        filterCommunity(e.target.value);
+        filterCommunity(e.target.value, 1);
+        this.setState({
+          text: e.target.value
+        })
       } else {
         fetchCommunities();
       }
@@ -76,7 +90,7 @@ class Community extends Component {
       ))
   }
 
-	render = () => {
+	render = ({ communities }) => {
 	  return (
 	    <div className={style.communityWrapper}>
         <div className={style.search}>
@@ -95,7 +109,18 @@ class Community extends Component {
           <div className={style.communities}>
             { this.renderCommunities() }
           </div>
+          {/* show more */}
+          {communities.data.length < communities.total && !communities.fetching && (
+            <button className={style.showMore} onClick={this.handleShowMore}>
+              <span>Show More</span>
+            </button>
+          )}
+          {/* loader */}
+          {communities.data.length && communities.fetching && (
+            <LoaderRing styles={{container: style.loaderWrap}}/>
+          )}
         </div>
+
 			</div>
 	  );
 	};

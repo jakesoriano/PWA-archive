@@ -64,5 +64,27 @@
       color: #737373;
       width: 100%;
     }
+    .showMore {
+      text-align: center;
+      border: none;
+      background: none;
+      width: 100%;
+      span {
+        color: #000;
+        font-size: 0.8rem;
+      }
+    }
+    .loaderWrap {
+      display: block;
+      text-align: center;
+      .ringloader {
+        color: #000;
+      }
+      div {
+        border-color: #fff #ffb1bb transparent transparent;
+        width: 30px;
+        height: 30px;
+      }
+    }
   }
 }

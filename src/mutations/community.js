@@ -35,7 +35,10 @@ export function filterCommunity(name, page, limit) {
     .then((res) => {
       updateStore({
         communities: {
-          data: res.data.results,
+          data: page ? [
+            ...communities.data,
+            ...res.data.results
+          ] : res.data.results,
           total: res.data.total,
           page: page || 1,
           fetching: false,
@@ -85,7 +88,10 @@ export function fetchCommunities(page, limit) {
 		.then((res) => {
       updateStore({
         communities: {
-          data: res.data.results,
+          data: page ? [
+            ...communities.data,
+            ...res.data.results
+          ] : res.data.results,
           total: res.data.total,
           page: page || 1,
           fetching: false,
