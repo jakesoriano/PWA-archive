@@ -8,7 +8,7 @@ import {
 	removeLikeNews,
 	selectTag } from '_mutations';
 import { getTranslation, dateEventFormat, playStore, appStore } from '_helpers';
-import { ImageLoader } from '_components/core';
+import { ImageLoader, LoaderRing } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -25,7 +25,8 @@ class NewsAndEvents extends Component {
 		this.state = {
 			active: 'news',
 			selectedItem: null,
-			eventDropdown: null
+			eventDropdown: null,
+      moreFetching: false
 		}
 	};
 
@@ -33,6 +34,29 @@ class NewsAndEvents extends Component {
 		fetchNews();
 		fetchEvents();
 	};
+
+  componentDidUpdate = () => {
+    if (this.state.moreFetching && !this.props[this.state.active].fetching) {
+      this.setState({
+        moreFetching: false
+      });
+    }
+  }
+
+  handleShowMore = () => {
+    if (!this.state.moreFetching) {
+      // flag
+      this.setState({
+        moreFetching: true
+      });
+      // fetch
+      if (this.state.active === 'news') {
+        fetchNews(this.props[this.state.active].page + 1);
+      } else {
+        fetchEvents(this.props[this.state.active].page + 1);
+      }
+    }
+  };
 
 	toggleTab = (tab) => {
 		this.setState({
@@ -299,7 +323,7 @@ class NewsAndEvents extends Component {
 		return <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
 	};
 
-	render = ({ news, events }, state) => {
+	render = (props, state) => {
 	  return (
 			<div className={style.newsAndEvents}>
 				<div className={style.tabWrap}>
@@ -315,7 +339,18 @@ class NewsAndEvents extends Component {
 						}}>{getTranslation('EVENTS')}</span>
 				</div>
 				<div className={style.content}>
-					{state.active === 'news' ? this.renderNews(news.data) : this.renderEvents(events.data)}
+					{/* data */}
+					{state.active === 'news' ? this.renderNews(props[state.active].data) : this.renderEvents(props[state.active].data)}
+          {/* show more */}
+          {props[state.active].data.length < props[state.active].total && !props[state.active].fetching && (
+            <button className={style.showMore} onClick={this.handleShowMore}>
+              <span>{getTranslation('SHOW_MORE')}</span>
+            </button>
+          )}
+          {/* loader */}
+          {this.state.moreFetching && (
+            <LoaderRing styles={{container: style.loaderWrap}}/>
+          )}
 				</div>
 				{state.selectedItem && this.renderDetails(state.selectedItem)}
 			</div>

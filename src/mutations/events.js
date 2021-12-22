@@ -30,7 +30,10 @@ export function fetchEvents (page, limit) {
     .then((res) => {
       updateStore({
         events: {
-          data: res.data.results,
+          data: page ? [
+            ...events.data,
+            ...res.data.results
+          ] : res.data.results,
           total: res.data.total,
           page: page || 1,
           fetching: false,
