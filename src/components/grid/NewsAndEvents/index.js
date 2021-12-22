@@ -344,7 +344,7 @@ class NewsAndEvents extends Component {
           {/* show more */}
           {props[state.active].data.length < props[state.active].total && !props[state.active].fetching && (
             <button className={style.showMore} onClick={this.handleShowMore}>
-              <span>{getTranslation('SHOW_MORE')}</span>
+              <span><span>&#8659;</span> {getTranslation('SHOW_MORE')}</span>
             </button>
           )}
           {/* loader */}

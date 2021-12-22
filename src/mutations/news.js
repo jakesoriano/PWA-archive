@@ -24,7 +24,7 @@ export function fetchNews (page, limit) {
       method: 'GET',
       params: {
         p: page || 1, // page number
-        s: limit || 20 // limit
+        s: limit || 6 // limit
       }
     })
     .then((res) => {

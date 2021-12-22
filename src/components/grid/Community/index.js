@@ -128,7 +128,7 @@ class Community extends Component {
           {/* show more */}
           {communities.data.length < communities.total && !communities.fetching && (
             <button className={style.showMore} onClick={this.handleShowMore}>
-              <span>{getTranslation('SHOW_MORE')}</span>
+              <span><span>&#8659;</span> {getTranslation('SHOW_MORE')}</span>
             </button>
           )}
           {/* loader */}

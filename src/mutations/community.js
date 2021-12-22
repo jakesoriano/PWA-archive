@@ -29,7 +29,7 @@ export function filterCommunity(name, page, limit) {
       params: {
         q: name || '', // query string
         p: page || 1, // page number
-        s: limit || 20 // limit
+        s: limit || 15 // limit
       }
     })
     .then((res) => {
