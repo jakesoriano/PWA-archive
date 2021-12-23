@@ -356,9 +356,14 @@ class Grid extends Component {
 	        <div className={style.contentWrap}>
 	          {data && data.auth && (
 	            <Topbar
+								title={data.pageTitle || ''}
 	              page={this.getPageName()}
 	              toggleSideBar={this.toggleRightSideBar}
 								notifications={this.props.notifications}
+								withBack={data.withBack}
+								onBack={() => {
+									route(`/home`, true);
+								}}
 	            />
 	          )}
 	          <div

@@ -1,8 +1,8 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { getTranslation, componentModal } from '_helpers';
+import { getTranslation } from '_helpers';
 import { route } from 'preact-router';
-import { ToggleInput, ChangePassword } from '_components/core';
+import { ToggleInput } from '_components/core';
 import { nativeToggleTouchID } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -28,13 +28,7 @@ class Settings extends Component {
 	};
 	
 	onClickChangePass = () => {
-		componentModal({
-			title: getTranslation('PAGE_CHANGE_PASS'),
-			content: <ChangePassword cbSuccess={() => {
-				componentModal(null);
-			}}/>
-		});
-		// route(`/${this.props.parent}/change-password`);
+		route(`/${this.props.parent}/change-password`);
 	};
 
 	render = ({ authUser }, {}) => {

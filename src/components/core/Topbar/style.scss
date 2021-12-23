@@ -1,3 +1,5 @@
+@import '../../../style/variables.scss';
+
 .topbar {
 	background-color: #ffb1bb;
 	padding: 0px;
@@ -12,12 +14,18 @@
 		position: relative;
 		.title {
 			margin: 0;
-			padding: 14.5px 60px;
+			padding: 14.5px 10px 14.5px 42px;
 			font-size: 1.2rem;
 			display: flex;
 			align-items: center;
 			height: 56px;
+			font-weight: 400;
+
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
 		}
+		.btnBack,
 		.burger,
 		.notif {
 			display: block;
@@ -55,6 +63,13 @@
 				right: 13px;
 				width: 15px;
 				text-align: center;
+			}
+			&.btnBack {
+				padding: 0 10px 0 20px;
+				color: $white;
+				font-size: 1.7rem;
+				background: transparent;
+				border: none;
 			}
 		}
 	}
