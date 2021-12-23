@@ -1,5 +1,6 @@
+@import '../../../style/variables.scss';
 .bottomBar {
-	background: #f2999e;
+	background: $primary_layout;
 	height: 60px;
 	position: fixed;
 	bottom: 0;

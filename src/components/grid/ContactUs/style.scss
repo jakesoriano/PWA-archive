@@ -1,3 +1,4 @@
+@import '../../../style/variables.scss';
 .contactUs {
   padding: 15px 15px 10px;
   * {
@@ -21,7 +22,7 @@
         flex-grow: 1;
       }
       .pShare {
-        background: #E88895;
+        background: $primary_layout;
         display: flex;
         width: 100px;
         margin: 0 auto;

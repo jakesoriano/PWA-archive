@@ -1,3 +1,4 @@
+@import '../../../style/variables.scss';
 .toggleWrap {
 	.switch {
     position: relative;
@@ -37,11 +38,11 @@
   }
   
   input:checked + .slider {
-    background-color: #FF66C4;
+    background-color: $primary_layout;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #FF66C4;
+    box-shadow: 0 0 1px $primary_layout;
   }
   
   input:checked + .slider:before {

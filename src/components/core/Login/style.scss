@@ -1,3 +1,4 @@
+@import '../../../style/variables.scss';
 .loginFormContainer {
 	height: 100%;
 	width: 100%;
@@ -23,7 +24,7 @@
 	z-index: 4;
 	text-align: left;
 	.formTitle {
-		background-color: #FFB5BA;
+		background-color: $primary_layout;
 		color: #fff;
 		border-radius: 15px 15px 0 0;
 		padding: 12px 10px 10px;

@@ -6,7 +6,10 @@
     padding: 15px 15px;
     p {
       margin-bottom: 8px;
-      &[class="bold heading"] {
+      &.heading {
+        &:first-of-type {
+          color: #EC7EB9;
+        }
         &:not(:first-of-type) {
           margin-top: 20px;
         }
