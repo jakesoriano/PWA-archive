@@ -1,3 +1,4 @@
+@import '../../../style/variables.scss';
 .accountProfile {
   padding: 15px 15px 0;
   * {
@@ -13,7 +14,7 @@
       .avatar {
         width: 76px;
         padding-bottom: 72px;
-        border: 2px solid #ffb1bb;
+        border: 2px solid $secondary;
         border-radius: 80px;
       }
       .nameMember {
@@ -21,6 +22,7 @@
         padding: 10px;
         .name {
           font-size: 1.2rem;
+          color: $primary;
           text-transform: uppercase;
         }
       }
@@ -32,7 +34,7 @@
     .title {
       font-size: 1.2rem;
       text-align: center;
-      color: #ff62ce;
+      color: $primary;
       text-transform: uppercase;
     }
   }
