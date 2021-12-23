@@ -193,6 +193,7 @@ class Invite extends Component {
 									style={{error: style.mobile}}
 									value={mobile.value}
 									type="number"
+									placeholder={'0919...'}
 									onBlur={(e) => {
 										this.onMobileChange(e.target.value)
 									}}
