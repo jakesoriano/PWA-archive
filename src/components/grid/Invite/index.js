@@ -88,25 +88,16 @@ class Invite extends Component {
 	};
 
 	onShare = () => {
-		if (!this.state.fname.value || 
-			!this.state.lname.value || 
-			!this.state.region.value ||
-			!this.state.mobile.value) {
-			this.onFnameChange(this.state.fname.value);
-			this.onLnameChange(this.state.lname.value);
-			this.onRegionChange(this.state.region.value);
-		} else {
-			nativeShare({
-				title: `Be a KakamPink`,
-				message: `\n
-					Come join us, be a KakamPink!\n\n
-					Download now!\n
-					Android: ${playStore}\n
-					Apple: ${appStore}\n\n
-					Use my invite code: ${this.props.authUser.profile.refCode}
-				`
-			});
-		}
+		nativeShare({
+			title: `Be a KakamPink`,
+			message: `\n
+				Come join us, be a KakamPink!\n\n
+				Download now!\n
+				Android: ${playStore}\n
+				Apple: ${appStore}\n\n
+				Use my invite code: ${this.props.authUser.profile.refCode}
+			`
+		});
 	}
 
 	onSend = () => {
