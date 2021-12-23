@@ -1,3 +1,4 @@
+@import '../../../style/variables.scss';
 .sideBarContainer {
 	height: 100%;
 	width: 100%;
@@ -13,7 +14,7 @@
 
 .sideBar {
 	color: white;
-	background-color: #FF67C4;
+	background-color: $secondary;
 	position: absolute;
 	top: 0;
 	left: 0;
