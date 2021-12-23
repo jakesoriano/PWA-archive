@@ -12,6 +12,7 @@ import {
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 import { updateStore } from '_unistore';
+import { fetchUserPoints } from '_mutations';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -20,7 +21,7 @@ class AccountProfile extends Component {
 	componentDidMount = () => {
 		const { authUser } = this.props;
 		if (authUser) {
-			// fetchUserPoints();
+			fetchUserPoints();
 			if (authUser.hasOwnProperty('isNewUser') && authUser.isNewUser) {
 				circleModal({
 					title: getTranslation('ITS_OFFICIAL'),

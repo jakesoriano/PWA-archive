@@ -11,11 +11,14 @@ import {
   getLanguageAlias,
   getQueryStringValue,
   getCookie,
-  messageModal,
-  getTranslation,
+  // messageModal,
+  // getTranslation,
   setCookie
 } from '_helpers';
-import { fetchTranslation, fetchUserData } from '_mutations';
+import {
+	fetchTranslation,
+	// fetchUserData
+} from '_mutations';
 import {
   LoaderRing,
   MessageModal,
@@ -143,25 +146,25 @@ class Grid extends Component {
 	      setCookie(`${process.env.PREFIX}_build`, process.env.BUILD_NO);
 	      return buildCookie !== process.env.BUILD_NO || shouldReFetch || (process.env.ENVIRONMENT === 'LOCAL');
 	    })
-	  // eslint-disable-next-line consistent-return
-	    .then((shouldReFetch) => {
-	      // FETCH USER DATA
-	      const token = getQueryStringValue('token') || getCookie('token');
-	      if (token && (!authUser || (authUser && authUser.Token !== token))) {
-	        return new Promise((resolve) => {
-	          fetchUserData(token).then((res) => {
-	            if (!res) {
-	              messageModal({
-	                title: '',
-	                message: getTranslation('Login_LoggedOut')
-	              });
-	            }
-	            resolve(true);
-	          });
-	        });
-	      }
-	      return shouldReFetch;
-	    })
+			// // eslint-disable-next-line consistent-return
+	    // .then((shouldReFetch) => {
+	    //   // FETCH USER DATA
+	    //   const token = getQueryStringValue('token') || getCookie('token');
+	    //   if (token && (!authUser || (authUser && authUser.Token !== token))) {
+	    //     return new Promise((resolve) => {
+	    //       fetchUserData(token).then((res) => {
+	    //         if (!res) {
+	    //           messageModal({
+	    //             title: '',
+	    //             message: getTranslation('Login_LoggedOut')
+	    //           });
+	    //         }
+	    //         resolve(true);
+	    //       });
+	    //     });
+	    //   }
+	    //   return shouldReFetch;
+	    // })
 	    .then((shouldReFetch) => {
 	      if (shouldReFetch) {
 	        return new Promise((resolve) => {

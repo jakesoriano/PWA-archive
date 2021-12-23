@@ -13,7 +13,7 @@ class AccountProfile extends Component {
 	componentDidMount = () => {
 	  const { authUser } = this.props;
 	  if (authUser) {
-	    // fetchUserPoints();
+	    fetchUserPoints();
 	  }
 	};
 

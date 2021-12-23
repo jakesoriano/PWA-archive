@@ -5,8 +5,6 @@ import { xhr, urlInvited } from '_helpers';
 export function fetchInvited () {
   // current state
   const { invited } = store.getState();
-  const { authUser } = store.getState();
-  const urlInvitation = `${urlInvited}/${authUser.profile._id}`;
 
   // fetching
   if(invited.fetching) {
@@ -23,7 +21,7 @@ export function fetchInvited () {
   });
 
   return new Promise((resolve) => {
-    xhr(urlInvitation, {
+    xhr(urlInvited, {
       method: 'GET',
     })
     .then((res) => {
@@ -52,12 +50,8 @@ export function fetchInvited () {
 }
 
 export function newInvite (data) {
-  // current state
-  const { authUser } = store.getState();
-  const urlInvitation = `${urlInvited}/${authUser.profile._id}`;
-  
   return new Promise((resolve) => {
-    xhr(urlInvitation, {
+    xhr(urlInvited, {
       method: 'POST',
       data
     })

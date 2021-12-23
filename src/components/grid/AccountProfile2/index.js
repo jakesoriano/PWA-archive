@@ -10,10 +10,10 @@ import style from './style';
 // eslint-disable-next-line react/prefer-stateless-function
 class AccountProfile extends Component {
 	componentDidMount = () => {
-	  // const { authUser } = this.props;
-	  // if (authUser) {
-	  //   fetchUserPoints();
-	  // }
+	  const { authUser } = this.props;
+	  if (authUser) {
+	    fetchUserPoints();
+	  }
 	};
 
 	render = ({ authUser }) => {

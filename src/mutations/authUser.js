@@ -1,6 +1,7 @@
 import { updateStore, store, initialStore } from '_unistore';
 import {
   xhr,
+  urlUser,
   urlUserLogin,
   removeCookie,
   urlUserPoints,
@@ -21,6 +22,7 @@ export function logOut (callback) {
   removeCookie('token');
   updateStore({
     authUser: null,
+    customBack: null,
     news,
     events,
     members,
@@ -35,7 +37,7 @@ export function logOut (callback) {
 // eslint-disable-next-line import/prefer-default-export
 export function fetchUserData (token) {
   return new Promise((resolve) => {
-    xhr(urlUserData, {
+    xhr(urlUser, {
       token
     })
       .then((res) => {
@@ -58,26 +60,17 @@ export function fetchUserPoints () {
   return new Promise((resolve) => {
     xhr(urlUserPoints)
       .then((res) => {
-        // get current data
-        const { authUser } = store.getState();
-        const {
-          news,
-          events,
-          members,
-          invited,
-          communities
-        } = initialStore;
-        updateStore({
-          authUser: {
-            ...authUser,
-            ...res
-          },
-          news,
-          events,
-          members,
-          invited,
-          communities,
-        });
+        if (res.success) {
+          // get current data
+          const { authUser } = store.getState();
+          updateStore({
+            authUser: {
+              ...authUser,
+              points: res.data.points,
+              members: res.data.members
+            }
+          });
+        }
         // eslint-disable-next-line
 				console.log(`SPA >> fetchUserPoints successful`, res);
         resolve(true);
@@ -91,6 +84,13 @@ export function fetchUserPoints () {
 }
 
 export function login (data) {
+  const {
+    news,
+    events,
+    members,
+    invited,
+    communities
+  } = initialStore;
   return new Promise((resolve) => {
     xhr(urlUserLogin, {
       method: 'POST',
@@ -104,7 +104,12 @@ export function login (data) {
               points: res.points || 0,
               rank: res.rank || 0,
             },
-            customBack: null
+            customBack: null,
+            news,
+            events,
+            members,
+            invited,
+            communities
           });
           // eslint-disable-next-line
           console.log(`SPA >> login successful`, res);

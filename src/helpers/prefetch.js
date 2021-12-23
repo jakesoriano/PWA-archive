@@ -1,5 +1,6 @@
 import {
   fetchGrids,
+  fetchUserPoints,
   fetchNews,
   fetchEvents,
   fetchMembers,
@@ -14,6 +15,7 @@ import { dateWithinDays }from '_helpers';
 export function prefetch (hasUser) {
   return Promise.all([
     fetchGrids(),
+    hasUser && fetchUserPoints(),
     hasUser && fetchNews(),
     hasUser && fetchEvents(),
     hasUser && fetchMembers(),
