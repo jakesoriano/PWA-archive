@@ -23,9 +23,6 @@ export function prefetch (hasUser) {
     hasUser && fetchStories(),
     hasUser && fetchCommunities(),
   ]).then(() => {
-    let lastDateNotified = localStorage.getItem('lastDateNotified');
-    if (hasUser && (!lastDateNotified || dateWithinDays(lastDateNotified, -1))) {
-      generateNotifications();
-    }
+    hasUser && generateNotifications();
   });
 }
