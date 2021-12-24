@@ -51,6 +51,7 @@
 		"auth": true,
 		"pageTitle": "PAGE_INVITE",
 		"uri": "invite",
+		"withBack": true,
 		"contents": [
 			{
 				"component": "Invite"
@@ -62,6 +63,7 @@
 		"auth": true,
 		"pageTitle": "PAGE_LEADERBOARD",
 		"uri": "leaderboard",
+		"withBack": true,
 		"contents": [
 			{
 				"component": "AccountProfile3"
@@ -76,6 +78,7 @@
 		"auth": true,
 		"pageTitle": "PAGE_COMMUNITY",
 		"uri": "community",
+		"withBack": true,
 		"contents": [
 			{
 				"component": "Community"
@@ -98,6 +101,7 @@
 		"auth": true,
 		"pageTitle": "PAGE_PROFILE",
 		"uri": "profile",
+		"withBack": true,
 		"contents": [
 			{
 				"component": "AccountProfile2"
