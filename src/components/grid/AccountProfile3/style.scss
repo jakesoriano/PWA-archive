@@ -6,8 +6,8 @@
   }
   .profile {
     background: #fff;
-    border-radius: 10px 10px 0 0;
-    padding: 20px 20px 0 20px;
+    border-radius: 10px;
+    padding: 10px 10px 0 10px;
     .user {
       display: flex;
       width: 100%;
@@ -25,17 +25,40 @@
           color: $primary;
           text-transform: uppercase;
         }
+        .heroRankingContainer {
+          flex: 1;
+          text-align: center;
+          margin-bottom: 10px;
+          .heroRanking {
+            flex: 1;
+            display: flex;
+            margin-top: 5px;
+            justify-content: space-around;
+            .rankBox {
+              background-color: #ffd4d9;
+              padding: 0 5px 5px;
+              width: 60px;
+              border-radius: 5px;
+              &:not(:first-of-type) {
+                margin-left: 10px;
+              }
+              .rankPoints {
+                font-size: 1.5rem;
+              }
+              .rankPointsText {
+                font-size: 0.75rem;
+              }
+            }
+          }
+        }
+        .heroPoints {
+          text-align: center;
+        }
       }
       .share {
         width: 20px;
         padding-bottom: 20px;
       }
-    }
-    .title {
-      font-size: 1.2rem;
-      text-align: center;
-      color: $primary;
-      text-transform: uppercase;
     }
   }
 }

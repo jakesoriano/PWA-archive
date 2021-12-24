@@ -42,8 +42,20 @@ class AccountProfile extends Component {
 							style={{container: style.avatar}} />
 						<div className={style.nameMember}>
 							<p className={`bold ${style.name}`}>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
-							<p className={style.members}>{`${getTranslation('RANK')} ${formatNumber(authUser.rank, 0) || 0}`}</p>
-							<p className={style.members}>{`${formatNumber(authUser.points, 2) || 0} ${getTranslation('PTS')} `}</p>
+							<div className={style.heroRankingContainer}>
+								<p className={`bold`}>Ranking</p>
+								<div className={style.heroRanking}>
+									<div className={style.rankBox}>
+										<p class={`extraBold ${style.rankPoints}`}>{formatNumber(authUser.rank.regional, 2) || 0}</p>
+										<p class={style.rankPointsText}>{getTranslation('REGIONAL')}</p>
+									</div>
+									<div className={style.rankBox}>
+										<p class={`extraBold ${style.rankPoints}`}>{formatNumber(authUser.rank.overall, 2) || 0}</p>
+										<p class={style.rankPointsText}>{getTranslation('OVERALL')}</p>
+									</div>
+								</div>
+							</div>
+							<p className={`extraBold ${style.heroPoints}`}>{`${formatNumber(authUser.points, 2) || 0} ${getTranslation('HERO_POINTS')} `}</p>
 						</div>
 						<a onClick={() => {
 							this.onShare();
@@ -53,8 +65,6 @@ class AccountProfile extends Component {
 							style={{container: style.share}} />
 						</a>
 					</div>
-					{/* Title */}
-					<p className={`bold ${style.title}`}>{getTranslation('TOP_PERFORMERS')}</p>
 	      </div>
 	    </div>
 	  );
