@@ -69,33 +69,52 @@ class AccountProfile extends Component {
 							src={authUser.profile.image || getDefaultAvatar()}
 							style={{ container: style.avatar }}
 						/>
-						<div className={style.nameMember}>
-							<p
-								className={`bold ${style.name}`}
-							>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
-							<p className={style.members}>{`${
-								formatNumber(authUser.members, 2) || 0
-							} ${getTranslation('MEMBERS')}`}</p>
+						<div className={style.profileInfo}>
+							<div className={style.nameMember}>
+								<p
+									className={`bold ${style.name}`}
+								>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
+								<p className={`bold ${style.members}`}>{`${
+									formatNumber(authUser.members, 2) || 0
+								} ${getTranslation('MEMBERS')}`}</p>
+							</div>
+							<div className={style.pointsRank}>
+								<div className={style.heroPoints}>
+									<p className={`extraBold ${style.points}`}>
+										{formatNumber(authUser.points, 2) || 0}
+									</p>
+									<p className={`bold ${style.textPoints}`}>
+										{getTranslation('HERO_POINTS')}
+									</p>
+								</div>
+								<div className={style.heroRankingContainer}>
+									<p className={`bold`}>Ranking</p>
+									<div className={style.heroRanking}>
+										<div className={style.rankBox}>
+											<p class={`extraBold ${style.rankPoints}`}>{formatNumber(authUser.rank.regional, 2) || 0}</p>
+											<p class={style.rankPointsText}>{getTranslation('REGIONAL')}</p>
+										</div>
+										<div className={style.rankBox}>
+											<p class={`extraBold ${style.rankPoints}`}>{formatNumber(authUser.rank.overall, 2) || 0}</p>
+											<p class={style.rankPointsText}>{getTranslation('OVERALL')}</p>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-						<a
-							onClick={() => {
-								this.onShare();
-							}}
-						>
-							<ImageLoader
-								src="assets/images/share_icon.png"
-								style={{ container: style.share }}
-							/>
-						</a>
+						<div class={style.shareContainer}>
+							<a
+								onClick={() => {
+									this.onShare();
+								}}
+							>
+								<ImageLoader
+									src="assets/images/share_icon.png"
+									style={{ container: style.share }}
+								/>
+							</a>
+						</div>
 					</div>
-					<p className={style.heroPoints}>
-						<span className={`extraBold ${style.points}`}>
-							{formatNumber(authUser.points, 2) || 0}
-						</span>
-						<span className={`bold ${style.textPoints}`}>
-							{getTranslation('HERO_POINTS')}
-						</span>
-					</p>
 				</div>
 				<a className={style.download} onClick={this.onDownloadKit}>
 					<div>

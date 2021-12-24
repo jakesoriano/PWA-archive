@@ -16,6 +16,9 @@ class Leaderboard extends Component {
 	render = ({ members }) => {
 	  return (
 	    <dv className={style.membersWrap}>
+				
+				{/* Title */}
+				<p className={`bold ${style.title}`}>{getTranslation('TOP_PERFORMERS')}</p>
 				{/* header */}
 				<div className={`${style.item} ${style.itemHeader}`}>
 					<div className={style.avatar}></div>
