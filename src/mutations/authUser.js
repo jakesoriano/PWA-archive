@@ -67,7 +67,11 @@ export function fetchUserPoints () {
             authUser: {
               ...authUser,
               points: res.data.points,
-              members: res.data.members
+              members: res.data.members,
+              rank: {
+                regional: res.data.region,
+                overall: res.data.global
+              }
             }
           });
         }
