@@ -161,11 +161,16 @@ class NewsAndEvents extends Component {
 		if (data) {
 			return (
 				<div className={style.pWrap}>
-					<a className={`extraBold ${style.pClose}`} onClick={() => {
+					<a className={`${style.pClose}`} onClick={() => {
 						this.setState({
 							selectedItem: null
 						});
-					}}>x</a>
+					}}>
+						<ImageLoader
+							src="assets/images/closebutton.png"
+							style={{container: style.closeBtn}}
+						/>
+					</a>
 					<div className={`${style.pHeader} ${this.state.active !== 'news' ? style.pHeaderEvents : ''}`}>
 						<ImageLoader
 								src={data.image}

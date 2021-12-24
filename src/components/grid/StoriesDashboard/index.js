@@ -12,29 +12,78 @@ import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class StoriesDashboard extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			selectedItem: null,
+		}
+	};
+
 	componentDidMount = () => {
 		fetchStories();
 	};
 
-	onClickStories = (i) => {
-		route(`/${this.props.parent}/story?id=${i.id}`);
+	onClickStories = (data) => {
+		this.setState({
+			selectedItem: data
+		});
 	}
 
-	onShare = () => {
+	onShare = (data) => {
 		nativeShare({
-				title: `Be a Hero`,
-				message: `\n
-						I've earned ${this.props.authUser.points} Hero Points!\n
-						Download the KakamPink App!\n\n
-						Android: ${playStore}\n
-						Apple: ${appStore}\n
-						Use my invite code: ${this.props.authUser.profile.refCode}\n\n
-						#LetLeniLead
-				`,
+			url: data.image,
+			title: data.title,
+			message: `\n\n
+				A Kakampink Story!\n\n
+				Title: ${data.title}\n
+				Author: ${data.name}
+			`
 		});
 	};
 
-	render = ({ stories, authUser },{}) => {
+	renderDetails = (data) => {
+		if (data) {
+			return (
+				<div className={style.pWrap}>
+					<a className={`${style.pClose}`} onClick={() => {
+						this.setState({
+							selectedItem: null
+						});
+					}}>
+						<ImageLoader
+							src="assets/images/closebutton.png"
+							style={{container: style.closeBtn}}
+						/>
+					</a>
+					<div className={`${style.pHeader}`}>
+						<ImageLoader
+								src={data.image}
+								style={{container: style.pImage}} />
+						<div className={style.pStory}>
+							<p className={`extraBold ${style.pTitle}`}>{getTranslation(data.title)}</p>
+						</div>
+					</div>
+					<p
+						className={style.pContent}
+						dangerouslySetInnerHTML={{
+							__html: data.message
+						}}
+					/>
+					<a className={style.pShare} onClick={() => {
+						this.onShare(data);
+					}}>
+						<ImageLoader
+								src="assets/images/share_icon_white.png"
+								style={{container: style.pIconShare}} />
+							<span>{getTranslation('SHARE')}</span>
+					</a>
+				</div>
+			)
+		}
+		return null;
+	};
+
+	render = ({ stories, authUser },{selectedItem}) => {
 		
 		if (!authUser) {
 			return null;
@@ -63,7 +112,7 @@ class StoriesDashboard extends Component {
 													<span className={`extraBold ${style.userName}`}>{i.name}</span>
 												</div>
 												<div className={style.detailBody}>
-													<p className={`bold ${style.detailTitle}`}>{i.title}</p>
+													<p className={`${style.detailTitle}`}>{i.title}</p>
 													<p className={style.detailDescription}>{i.message.substr(0, 100)} ...
 														<span className='bold'> {`${i.message.length > 100 ? `${getTranslation('READ_ALL')}`: ''}`}</span>
 													</p>
@@ -89,6 +138,7 @@ class StoriesDashboard extends Component {
 						) : <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>}
 					</div>
 				</div>
+				{selectedItem && this.renderDetails(selectedItem)}
 			</div>
 		);
 	};
