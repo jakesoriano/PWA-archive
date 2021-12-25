@@ -155,15 +155,13 @@
       color: #c2c2c2;
     }
     .pClose {
-      background: $primary_layout;
-      display: inline-block;
-      color: #fff;
-      padding: 0px 7.89px 3px;
-      font-size: 1rem;
-      border-radius: 20px;
       position: absolute;
       right: 5px;
       top: 5px;
+      .closeBtn {
+        width: 27px;
+        height: 27px;
+      }
     }
     .pHeader {
       display: flex;
