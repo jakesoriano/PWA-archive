@@ -15,3 +15,4 @@ export * from './number';
 export * from './date';
 export * from './locations';
 export * from './category';
+export * from './user';

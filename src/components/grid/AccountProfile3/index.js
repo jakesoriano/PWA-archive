@@ -2,8 +2,15 @@ import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader } from '_components/core';
-import { fetchUserData, fetchUserPoints } from '_mutations';
-import { getTranslation, formatNumber, getDefaultAvatar } from '_helpers';
+import { 
+	fetchUserPoints
+} from '_mutations';
+import {
+	getTranslation,
+	formatNumber,
+	getDefaultAvatar,
+	formatRank
+} from '_helpers';
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -43,14 +50,14 @@ class AccountProfile extends Component {
 						<div className={style.nameMember}>
 							<p className={`bold ${style.name}`}>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
 							<div className={style.heroRankingContainer}>
-								<p className={`bold`}>Ranking</p>
+								<p className={`bold`}>{getTranslation('RANKING')}</p>
 								<div className={style.heroRanking}>
 									<div className={style.rankBox}>
-										<p class={`extraBold ${style.rankPoints}`}>{formatNumber(authUser.rank.regional, 2) || 0}</p>
+										<p class={`extraBold ${style.rankPoints}`}>{formatRank(authUser.rank.regional)}</p>
 										<p class={style.rankPointsText}>{getTranslation('REGIONAL')}</p>
 									</div>
 									<div className={style.rankBox}>
-										<p class={`extraBold ${style.rankPoints}`}>{formatNumber(authUser.rank.overall, 2) || 0}</p>
+										<p class={`extraBold ${style.rankPoints}`}>{formatRank(authUser.rank.overall)}</p>
 										<p class={style.rankPointsText}>{getTranslation('OVERALL')}</p>
 									</div>
 								</div>

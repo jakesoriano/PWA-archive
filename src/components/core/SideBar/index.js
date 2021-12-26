@@ -3,7 +3,7 @@
 import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
-import { getTranslation, dateLastLoginFormat } from '_helpers';
+import { getTranslation, dateLastLoginFormat, isUsingSocialLogin } from '_helpers';
 import { ImageLoader } from '_components/core';
 import { logOut } from '_mutations';
 // eslint-disable-next-line import/extensions
@@ -48,7 +48,9 @@ class SideBar extends Component {
 						</div>
 					</div>
 					<div className={style.sMenu}>
-						<Link href={`/settings`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('SETTINGS')}</Link>
+						{!isUsingSocialLogin() && (
+							<Link href={`/settings`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('SETTINGS')}</Link>
+						)}
 						<Link href={`/contactus`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('WHERE_HERE_TO_LISTEN')}</Link>
 						{/* <Link href="/home" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PROTECT_LENI')}</Link> */}
 						<Link href={`/`} className={style.sMItem} onClick={(e) => {

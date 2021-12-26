@@ -8,7 +8,8 @@ import {
 	playStore,
 	appStore,
 	getDefaultAvatar,
-	circleModal
+	circleModal,
+	formatRank
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 import { updateStore } from '_unistore';
@@ -88,14 +89,14 @@ class AccountProfile extends Component {
 									</p>
 								</div>
 								<div className={style.heroRankingContainer}>
-									<p className={`bold`}>Ranking</p>
+									<p className={`bold`}>{getTranslation('RANKING')}</p>
 									<div className={style.heroRanking}>
 										<div className={style.rankBox}>
-											<p class={`extraBold ${style.rankPoints}`}>{formatNumber(authUser.rank.regional, 2) || 0}</p>
+											<p class={`extraBold ${style.rankPoints}`}>{formatRank(authUser.rank.regional)}</p>
 											<p class={style.rankPointsText}>{getTranslation('REGIONAL')}</p>
 										</div>
 										<div className={style.rankBox}>
-											<p class={`extraBold ${style.rankPoints}`}>{formatNumber(authUser.rank.overall, 2) || 0}</p>
+											<p class={`extraBold ${style.rankPoints}`}>{formatRank(authUser.rank.overall)}</p>
 											<p class={style.rankPointsText}>{getTranslation('OVERALL')}</p>
 										</div>
 									</div>

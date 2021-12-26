@@ -52,3 +52,50 @@ export function nativeStatusTouchID () {
     resolve(false);
   });
 }
+
+export function nativeSigninFacebook () {
+  return new Promise((resolve) => {
+    // error
+    resolve({
+      success: false,
+      error: {}
+    });
+    // // success
+    // resolve({
+    //   success: true,
+    //   data: {
+    //     id: 12345,
+    //     email: 'test@gmail.com',
+    //     fname: 'fname',
+    //     lname: 'lname',
+    //     image: '',
+    //     token: '',
+    //   }
+    // });
+  });
+}
+
+export function nativeSigninTwitter () {
+  return new Promise((resolve) => {
+    // error
+    resolve({
+      success: false,
+      error: {}
+    });
+  });
+}
+
+export function nativeSigninGoogle () {
+  return new Promise((resolve) => {
+    // error
+    resolve({
+      success: false,
+      error: {}
+    });
+  });
+}
+
+export function nativeOnLogout () {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeOnLogout();');
+}

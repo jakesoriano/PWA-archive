@@ -24,6 +24,7 @@
           font-size: 1.2rem;
           color: $primary;
           text-transform: uppercase;
+          text-align: center;
         }
         .heroRankingContainer {
           flex: 1;
@@ -35,7 +36,7 @@
             margin-top: 5px;
             justify-content: space-around;
             .rankBox {
-              background-color: #ffd4d9;
+              background-color: #ededed;
               padding: 0 5px 5px;
               width: 60px;
               border-radius: 5px;

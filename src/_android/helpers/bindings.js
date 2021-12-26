@@ -123,3 +123,56 @@ export function nativeStatusTouchID () {
     });
   });
 }
+
+export function nativeSigninFacebook () {
+  return new Promise((resolve) => {
+    window.cb = (res) => {
+      resolve(res)
+      window.cb = null;
+    }
+    // eslint-disable-next-line no-console
+    console.log('SPA >> nativeSigninFacebook();');
+    callNative({
+      action: 'signinFacebook',
+      callback: 'window.cb',
+    });
+  });
+}
+
+export function nativeSigninTwitter () {
+  return new Promise((resolve) => {
+    window.cb = (res) => {
+      resolve(res)
+      window.cb = null;
+    }
+    // eslint-disable-next-line no-console
+    console.log('SPA >> nativeSigninTwitter();');
+    callNative({
+      action: 'signinTwitter',
+      callback: 'window.cb',
+    });
+  });
+}
+
+export function nativeSigninGoogle () {
+  return new Promise((resolve) => {
+    window.cb = (res) => {
+      resolve(res)
+      window.cb = null;
+    }
+    // eslint-disable-next-line no-console
+    console.log('SPA >> nativeSigninGoogle();');
+    callNative({
+      action: 'signinGoogle',
+      callback: 'window.cb',
+    });
+  });
+}
+
+export function nativeOnLogout () {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeOnLogout();');
+  callNative({
+    action: 'onLogout'
+  });
+}

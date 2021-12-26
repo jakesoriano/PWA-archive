@@ -5,9 +5,11 @@ import {
   urlUserLogin,
   removeCookie,
   urlUserPoints,
-  urlChangePassword,
-  getTranslation
+  urlChangePassword
 } from '_helpers';
+import {
+  nativeOnLogout
+} from '_platform/helpers';
 
 export function logOut (callback) {
 
@@ -29,6 +31,7 @@ export function logOut (callback) {
     invited,
     communities,
   });
+  nativeOnLogout();
   if (callback) {
     callback();
   }
@@ -119,13 +122,6 @@ export function login (data) {
           console.log(`SPA >> login successful`, res);
           resolve(true);
         } else {
-          updateStore({
-            alertShow: {
-              success: false,
-              content: getTranslation('INVALID_USER_PASS'),
-              noTopBar: true
-            }
-          });
           resolve(false);
         }
       })
@@ -136,7 +132,6 @@ export function login (data) {
       });
   });
 }
-
 
 export function changePassword (data) {
   return new Promise((resolve) => {

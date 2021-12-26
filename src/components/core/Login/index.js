@@ -1,12 +1,19 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { Component } from 'preact';
+import { updateStore } from '_unistore';
 import { connect } from 'unistore/preact';
 import { getTranslation, displayPageLoader } from '_helpers';
 import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
 import { login } from '_mutations';
 import { route } from 'preact-router';
-import { nativeSetCredential, nativeLoginWithTouchID } from '_platform/helpers';
+import {
+  nativeSetCredential,
+  nativeLoginWithTouchID,
+  nativeSigninFacebook,
+  nativeSigninTwitter,
+  nativeSigninGoogle,
+} from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -35,48 +42,49 @@ class Login extends Component {
       nativeLoginWithTouchID()
         .then(res => {
           if (res) {
-            this.setState({
-              username: {
-                ...this.state.username,
-                value: res.username
-              },
-              password: {
-                ...this.state.password,
-                value: res.password
-              }
-            }, () => {
-              this.onClickSubmit(true);
-            });
+            this.onLogin({
+              username: res.username,
+              password: res.password
+            }, true);
           }
         });
     }
   }
 
-	onClickSubmit = (isAuto) => {
-	  if (!this.state.username.value || !this.state.password.value) {
-	    this.onUsernameChange(this.state.username.value);
-	    this.onPasswordChange(this.state.password.value);
-	  } else {
-      displayPageLoader(true);
-	    login({
-        username: this.state.username.value,
-        password: this.state.password.value
-	    })
+  onLogin = (payload, isAuto, errMessage) => {
+    displayPageLoader(true);
+	    login(payload)
 	      .then((res) => {
           displayPageLoader(false);
           if (res) {
             if (!isAuto) {
-              nativeSetCredential({
-                username: this.state.username.value,
-                password: this.state.password.value
-              });
+              nativeSetCredential(payload);
             }
             route('/home', true);
+          } else {
+            updateStore({
+              alertShow: {
+                success: false,
+                content: getTranslation(errMessage || 'INVALID_USER_PASS'),
+                noTopBar: true
+              }
+            });
           }
 	      })
 	      .catch((err) => {
           displayPageLoader(false);
 	      });
+  }
+
+	onClickSubmit = () => {
+	  if (!this.state.username.value || !this.state.password.value) {
+	    this.onUsernameChange(this.state.username.value);
+	    this.onPasswordChange(this.state.password.value);
+	  } else {
+      this.onLogin({
+        username: this.state.username.value,
+        password: this.state.password.value
+	    });
 	  }
 	};
 
@@ -109,6 +117,42 @@ class Login extends Component {
 	    }
 	  });
 	};
+
+  onClickSocial = (type) => {
+    (type == 'F' 
+      ? nativeSigninFacebook() 
+      : (type === 'T' 
+        ? nativeSigninTwitter() 
+        : nativeSigninGoogle()
+      )
+    )
+      .then(res => {
+        if(res.success) {
+          // submit data
+          this.onLogin({
+            username: res.data.email,
+            password: res.data.id
+          }, true, 'ACCOUNT_NOT_FOUND');
+        } else {
+          updateStore({
+            alertShow: {
+              success: false,
+              content: getTranslation('ACCOUNT_NOT_FOUND'),
+              noTopBar: true
+            }
+          });
+        }
+      })
+      .catch(err => {
+        updateStore({
+          alertShow: {
+            success: false,
+            content: getTranslation('SOMETHING_WRONG'),
+            noTopBar: true
+          }
+        });
+      })
+  };
 
 	render = ({ toggleLoginForm, isOpen }, { username, password }) => {
 	  return (
@@ -183,7 +227,9 @@ class Login extends Component {
                 <p>{getTranslation('SOCIAL_MEDIA')}</p>
                 <ul>
                   <li>
-                    <a onClick={this.onClickSocMedSignin}>
+                    <a onClick={() => {
+                        this.onClickSocial('F');
+                      }}>
                       <ImageLoader
                         src="assets/images/fb_icon.png"
                         style={{ container: style.socMedIcons }}
@@ -191,7 +237,9 @@ class Login extends Component {
                     </a>
                   </li>
                   <li>
-                    <a onClick={this.onClickSocMedSignin}>
+                    <a onClick={() => {
+                        this.onClickSocial('T');
+                      }}>
                       <ImageLoader
                         src="assets/images/twitter_icon.png"
                         style={{ container: style.socMedIcons }}
@@ -199,7 +247,9 @@ class Login extends Component {
                     </a>
                   </li>
                   <li>
-                    <a onClick={this.onClickSocMedSignin}>
+                    <a onClick={() => {
+                        this.onClickSocial('G');
+                      }}>
                       <ImageLoader
                         src="assets/images/google_icon.png"
                         style={{ container: style.socMedIcons }}

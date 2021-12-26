@@ -7,6 +7,11 @@ import { updateStore } from '_unistore';
 import { getTranslation, displayPageLoader } from '_helpers';
 import { validateUsername } from '_mutations';
 import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
+import {
+  nativeSigninFacebook,
+  nativeSigninTwitter,
+  nativeSigninGoogle,
+} from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -83,10 +88,6 @@ class InitialSignup extends Component {
     }
 	};
 
-	onClickSocMedSignin = () => {
-	  console.log('click social media');
-	};
-
   onUsernameChange = (value) => {
     // check for special characters
     if( value && special_char.test(value) ) {
@@ -142,6 +143,66 @@ class InitialSignup extends Component {
 	    }
 	  });
 	};
+
+  onClickSocial = (type) => {
+    (type == 'F' 
+      ? nativeSigninFacebook() 
+      : (type === 'T' 
+        ? nativeSigninTwitter() 
+        : nativeSigninGoogle()
+      )
+    )
+      .then(res => {
+        if(res.success) {
+        const data = res.data;
+        // validate username
+        displayPageLoader(true);
+        validateUsername(data.email)
+          .then((res) => {
+            displayPageLoader(false);
+            if (res.available) {
+              this.props.toggleSignupForm();
+              updateStore({
+                signup: {
+                  username: data.email,
+                  password: data.id,
+                  fname: data.fname,
+                  lname: data.lname,
+                  socId: data.id,
+                  socType: type
+                }
+              });
+              route(`/${this.props.parent}/terms`);
+            } else {
+              updateStore({
+                alertShow: {
+                  success: false,
+                  content: getTranslation('ACCOUNT_EXIST'),
+                  noTopBar: true
+                }
+              });
+            }
+          });
+        } else {
+          updateStore({
+            alertShow: {
+              success: false,
+              content: getTranslation('ACCOUNT_NOT_FOUND'),
+              noTopBar: true
+            }
+          });
+        }
+      })
+      .catch(err => {
+        updateStore({
+          alertShow: {
+            success: false,
+            content: getTranslation('SOMETHING_WRONG'),
+            noTopBar: true
+          }
+        });
+      })
+  };
 
 	render = (
 	  { toggleSignupForm, isOpen },
@@ -226,7 +287,9 @@ class InitialSignup extends Component {
               <p>{getTranslation('SOCIAL_MEDIA')}</p>
               <ul>
                 <li>
-                <a onClick={this.onClickSocMedSignin}>
+                <a onClick={() => {
+                    this.onClickSocial('F');
+                  }}>
                   <ImageLoader
                   src="assets/images/fb_icon.png"
                   style={{ container: style.socMedIcons }}
@@ -234,7 +297,9 @@ class InitialSignup extends Component {
                 </a>
                 </li>
                 <li>
-                <a onClick={this.onClickSocMedSignin}>
+                <a onClick={() => {
+                    this.onClickSocial('T');
+                  }}>
                   <ImageLoader
                   src="assets/images/twitter_icon.png"
                   style={{ container: style.socMedIcons }}
@@ -242,7 +307,9 @@ class InitialSignup extends Component {
                 </a>
                 </li>
                 <li>
-                <a onClick={this.onClickSocMedSignin}>
+                <a onClick={() => {
+                    this.onClickSocial('G');
+                  }}>
                   <ImageLoader
                   src="assets/images/google_icon.png"
                   style={{ container: style.socMedIcons }}
