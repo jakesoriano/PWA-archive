@@ -43,7 +43,6 @@ export function forgotCredentials (type, data) {
         resolve(res);
       })
       .catch((err) => {
-        console.log(err, 'huh')
         resolve(false);
         console.log(`SPA >> forgotCredentials type: ${type} failed`, err);
       });

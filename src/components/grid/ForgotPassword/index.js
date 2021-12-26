@@ -137,7 +137,7 @@ class ForgotPassword extends Component {
         <FormInput
           className={style.fields}
           value={newPass.value}
-          type="text"
+          type="password"
           onBlur={(e) => {
             this.onNewPasswordChange(e.target.value)
           }}
@@ -153,7 +153,7 @@ class ForgotPassword extends Component {
         <FormInput
           className={style.fields}
           value={confirmPass.value}
-          type="text"
+          type="password"
           onBlur={(e) => {
             this.onConfirmPasswordChange(e.target.value)
           }}
@@ -172,8 +172,8 @@ class ForgotPassword extends Component {
 		return (
 			<div className={style.forgotPassWrapper}>
 				<div className={style.forgotPassContent}>
-          <p className={style.title}>Change Password</p>
-          { this.renderChangeForm(newPass, confirmPass)}
+          <p className={style.title}>{getTranslation('CHANGE_PASSWORD')}</p>
+          {this.renderChangeForm(newPass, confirmPass)}
 				</div>
 
 				<div className={style.buttonContainer}>

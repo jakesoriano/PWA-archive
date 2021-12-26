@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { Component } from 'preact';
+import { Link } from 'preact-router/match';
 import { updateStore } from '_unistore';
 import { connect } from 'unistore/preact';
 import { getTranslation, displayPageLoader } from '_helpers';
@@ -89,7 +90,7 @@ class Login extends Component {
 	};
 
 	onClickForgotUserPass = () => {
-	  console.log('click onClickForgotUserPass');
+    this.props.toggleLoginForm();
 	};
 
 	onClickSocMedSignin = () => {
@@ -174,7 +175,7 @@ class Login extends Component {
           </div>
           <div className={style.formFieldWrap}>
             <form className={style.form}>
-              <FormGroup label="Username" hasError={username.hasError}>
+              <FormGroup label="USERNAME" hasError={username.hasError}>
                 <FormInput
                   className={style.fields}
                   style={{ error: style.fields }}
@@ -191,7 +192,7 @@ class Login extends Component {
                   message={username.message}
                 />
               </FormGroup>
-              <FormGroup label="Password" hasError={password.hasError}>
+              <FormGroup label="PASSWORD" hasError={password.hasError}>
                 <FormInput
                   className={style.fields}
                   style={{ error: style.fields }}
@@ -216,12 +217,19 @@ class Login extends Component {
                   text={getTranslation('LOGIN_SUBMIT')}
                   bottomDescription=""
                 />
-                <a
+                <p
                   className={style.forgotUserPass}
-                  onClick={this.onClickForgotUserPass}
+                  // onClick={this.onClickForgotUserPass}
                 >
-                  {getTranslation('FORGOT_USER_PASS')}
-                </a>
+                  {getTranslation('FORGOT')}&nbsp;
+                    <Link href={`/landing/enter-mobile-un`} 
+                        className={style.sMItem}
+                        onClick={this.onClickForgotUserPass}>{getTranslation('USERNAME')}</Link>
+                  &nbsp;{getTranslation('OR')}&nbsp;
+                    <Link href={`/landing/enter-mobile-pw`} 
+                        className={style.sMItem}
+                        onClick={this.onClickForgotUserPass}>{getTranslation('PASSWORD')}</Link>
+                </p>
               </div>
               <div className={style.socialMedia}>
                 <p>{getTranslation('SOCIAL_MEDIA')}</p>
