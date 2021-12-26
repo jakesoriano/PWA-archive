@@ -95,10 +95,12 @@ class ForgotPassword extends Component {
       } else {
         let data = {
           ...this.props.forgot,
-          otp: this.props.forgot.code,
+          otp: this.props.forgot.otp,
           newPassword: this.state.newPass.value
         };
+        displayPageLoader(true);
         forgotCredentials('changepw', data).then((res) => {
+          displayPageLoader(false);
           if (res.success) {
             circleModal({
               title: getTranslation('CHANGE_PASS_SUCCESS'),

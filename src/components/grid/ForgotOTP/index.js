@@ -18,55 +18,65 @@ class ForgotOTP extends Component {
 			isResendCd: false,
 			seconds: 60,
 			inputFocus: false,
+			isUsernameSet: false
 		};
 	}
 
 	componentDidMount = () => {
 		updateStore({
 			customBack: () => {
-				route(`/${this.props.parent}/forgot`, true);
+				route(`/${this.props.parent}/enter-mobile-${(this.settings === 'username' ? 'un' : 'pw')}`, true);
 			},
 		});
 	};
 	handleContinue = (pin) => {
-		let { isOTPInvalid } = this.state;
-		let data = {
-			id: this.props.forgot.id,
-			otp: pin,
-			mobile: this.props.forgot.mobile,
-		};
-		displayPageLoader(true);
-		forgotCredentials('validateotp', data).then((res) => {
-			if (res.success) {
-				if (this.settings === 'password') {
-					route(`/${this.props.parent}/forgot-${this.settings}`);
-				} else {
-					route(`/${this.props.parent}/`);
-					forgotCredentials('changeun', data).then((res) => {
-						if (res.success) {
-							circleModal({
-								title: getTranslation('HERE_YOU_GO'),
-								content: getTranslation('YOUR_USERNAME'),
-								code: res.username
-							});
-						}
-					});
-				}
-			} else {
-				if (!isOTPInvalid) {
-					this.showAlertBox(getTranslation('OTP_INVALID'));
-					this.setState({
-						isOTPInvalid: true,
-					});
-					setTimeout(() => {
-						this.setState({
-							isOTPInvalid: false,
+		if (!this.state.isUsernameSet) {
+			let { isOTPInvalid } = this.state;
+			let data = {
+				id: this.props.forgot.id,
+				otp: pin,
+				mobile: this.props.forgot.mobile,
+			};
+			displayPageLoader(true);
+			forgotCredentials('validateotp', data).then((res) => {
+				if (res.success) {
+					if (this.settings === 'password') {
+						route(`/${this.props.parent}/forgot-${this.settings}`);
+					} else {
+						forgotCredentials('changeun', data).then((res) => {
+							if (res.success) {
+								circleModal({
+									title: getTranslation('HERE_YOU_GO'),
+									content: getTranslation('YOUR_USERNAME'),
+									code: res.username
+								});
+								this.setState({
+									isUsernameSet: true
+								})
+							}
 						});
-					}, 5300);
+					}
+				} else {
+					if (!isOTPInvalid) {
+						this.showAlertBox(getTranslation('OTP_INVALID'));
+						this.setState({
+							isOTPInvalid: true,
+						});
+						setTimeout(() => {
+							this.setState({
+								isOTPInvalid: false,
+							});
+						}, 5300);
+					}
 				}
-			}
-			displayPageLoader(false);
-		});
+				displayPageLoader(false);
+			});
+		} else {
+			route(`/${this.props.parent}/`);
+			this.setState({
+				isUsernameSet: false
+			});
+		}
 	};
 
 	resetOTP = () => {
@@ -98,6 +108,7 @@ class ForgotOTP extends Component {
 					mobile={this.props.forgot.mobile}
 					onClickCallback={this.handleContinue}
 					onResendCallback={this.resetOTP}
+					hideContent={!this.state.isUsernameSet}
 				/>
 			</div>
 		);

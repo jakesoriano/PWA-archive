@@ -23,7 +23,7 @@ class NewsAndEvents extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			active: 'news',
+			active: 'events',
 			selectedItem: null,
 			eventDropdown: null,
       moreFetching: false
