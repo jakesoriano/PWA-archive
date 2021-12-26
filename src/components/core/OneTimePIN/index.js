@@ -70,65 +70,67 @@ class OneTimePIN extends Component {
 			_this.blur();
 		}
 	};
-	render = ({ mobile }, { pin }) => {
+	render = ({ mobile, hideContent }, { pin }) => {
 		return (
 			<div className={style.otpWrapper}>
 				<div className={style.otpContent}>
-					<p className={style.heading}>{getTranslation('OTP_ENTER')}</p>
-					<label for="enteredPIN">
-						<div className={style.otpBoxContainer}>
-							{this.renderBox(0, (pin && pin.length >= 1 ? true : false))}
-							{this.renderBox(1, (pin && pin.length >= 2 ? true : false))}
-							{this.renderBox(2, (pin && pin.length >= 3 ? true : false))}
-							{this.renderBox(3, (pin && pin.length >= 4 ? true : false))}
-							{this.renderBox(4, (pin && pin.length >= 5 ? true : false))}
-							{this.renderBox(5, (pin && pin.length >= 6 ? true : false), true)}
-						</div>
-					</label>
-					<p>{getTranslation('OTP_SENT').replace('{4_DIGITS}', mobile.slice(mobile.length - 4))}</p>
-					<br />
-					<p>
-						{getTranslation('OTP_FAIL')}&nbsp;
-						{!this.state.isResendCd && (
-							<span
-								onClick={() => {
-                  displayPageLoader(true);
-									this.props.onResendCallback().then((res) => {
-                    displayPageLoader(false);
-                    if (res.success) {
-                      this.setCountdown();
-                    }
-                    else {
-                      this.showAlertBox(getTranslation('SOMETHING_WRONG'))
-                    }
-                  });
-								}}
-								id="timer"
-								class="bold"
-							>{getTranslation('RESEND')}</span>
-						)}
-						{this.state.isResendCd && (
-							<span className={`${style.timer} ${'bold'}`}>
-								{this.state.seconds}s
-							</span>
-						)}
-					</p>
-					<input
-						type="number"
-						value={this.state.pin}
-						name="enteredPIN"
-						id="enteredPIN"
-						className={style.enteredPIN}
-						maxlength="6"
-						minLength="0"
-						onBlur={() => {
-							this.toggleInputFocus(false);
-						}}
-						onFocus={() => {
-							this.toggleInputFocus(true);
-						}}
-						onKeyUp={this.onKeyup}
-					/>
+					{hideContent && <div> 
+						<p className={style.heading}>{getTranslation('OTP_ENTER')}</p>
+						<label for="enteredPIN">
+							<div className={style.otpBoxContainer}>
+								{this.renderBox(0, (pin && pin.length >= 1 ? true : false))}
+								{this.renderBox(1, (pin && pin.length >= 2 ? true : false))}
+								{this.renderBox(2, (pin && pin.length >= 3 ? true : false))}
+								{this.renderBox(3, (pin && pin.length >= 4 ? true : false))}
+								{this.renderBox(4, (pin && pin.length >= 5 ? true : false))}
+								{this.renderBox(5, (pin && pin.length >= 6 ? true : false), true)}
+							</div>
+						</label>
+						<p>{getTranslation('OTP_SENT').replace('{4_DIGITS}', mobile.slice(mobile.length - 4))}</p>
+						<br />
+						<p>
+							{getTranslation('OTP_FAIL')}&nbsp;
+							{!this.state.isResendCd && (
+								<span
+									onClick={() => {
+										displayPageLoader(true);
+										this.props.onResendCallback().then((res) => {
+											displayPageLoader(false);
+											if (res.success) {
+												this.setCountdown();
+											}
+											else {
+												this.showAlertBox(getTranslation('SOMETHING_WRONG'))
+											}
+										});
+									}}
+									id="timer"
+									class="bold"
+								>{getTranslation('RESEND')}</span>
+							)}
+							{this.state.isResendCd && (
+								<span className={`${style.timer} ${'bold'}`}>
+									{this.state.seconds}s
+								</span>
+							)}
+						</p>
+						<input
+							type="number"
+							value={this.state.pin}
+							name="enteredPIN"
+							id="enteredPIN"
+							className={style.enteredPIN}
+							maxlength="6"
+							minLength="0"
+							onBlur={() => {
+								this.toggleInputFocus(false);
+							}}
+							onFocus={() => {
+								this.toggleInputFocus(true);
+							}}
+							onKeyUp={this.onKeyup}
+						/>
+					</div>}
 				</div>
 				<div className={style.buttonContainer}>
 					<ButtonDescription

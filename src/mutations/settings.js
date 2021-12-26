@@ -30,7 +30,7 @@ export function forgotCredentials (type, data) {
     })
       .then((res) => {
         if (res.success) {
-          if (type.toLowerCase() === 'sendotp') {
+          if (type.toLowerCase().includes('otp')) {
             updateStore({
               forgot: {
                 ...res,
