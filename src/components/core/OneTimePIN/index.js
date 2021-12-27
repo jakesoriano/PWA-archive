@@ -74,7 +74,7 @@ class OneTimePIN extends Component {
 		return (
 			<div className={style.otpWrapper}>
 				<div className={style.otpContent}>
-					{hideContent && <div> 
+					{!hideContent && <div> 
 						<p className={style.heading}>{getTranslation('OTP_ENTER')}</p>
 						<label for="enteredPIN">
 							<div className={style.otpBoxContainer}>

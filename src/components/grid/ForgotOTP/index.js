@@ -48,7 +48,10 @@ class ForgotOTP extends Component {
 								circleModal({
 									title: getTranslation('HERE_YOU_GO'),
 									content: getTranslation('YOUR_USERNAME'),
-									code: res.username
+									code: res.username,
+									callback: () => {
+										route(`/`, true);
+									}
 								});
 								this.setState({
 									isUsernameSet: true
@@ -72,7 +75,7 @@ class ForgotOTP extends Component {
 				displayPageLoader(false);
 			});
 		} else {
-			route(`/${this.props.parent}/`);
+			route(`/${this.props.parent}/`, true);
 			this.setState({
 				isUsernameSet: false
 			});
@@ -108,7 +111,7 @@ class ForgotOTP extends Component {
 					mobile={this.props.forgot.mobile}
 					onClickCallback={this.handleContinue}
 					onResendCallback={this.resetOTP}
-					hideContent={!this.state.isUsernameSet}
+					hideContent={this.state.isUsernameSet}
 				/>
 			</div>
 		);

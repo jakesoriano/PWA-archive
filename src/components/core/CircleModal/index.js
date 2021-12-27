@@ -3,7 +3,7 @@ import { circleModal } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
-export default ({ title, content, code }) => (
+export default ({ title, content, code, callback }) => (
   // eslint-disable-next-line react/jsx-no-bind
   <div id="modal" className={style.circleModal}>
     <div className={style.modalContentWrap}>
@@ -15,6 +15,9 @@ export default ({ title, content, code }) => (
           {/* x button */}
           <button className="cancel" onClick={() => {
             circleModal(null);
+            if (callback) {
+              callback();
+            }
           }}
           type="button" aria-label="Cancel">
 						x
