@@ -64,7 +64,7 @@ class Signup extends Component {
 				message: '',
 				hasError: false
 			},
-			number: {
+			mobile: {
 				value: props.signup ? props.signup.mobile : '',
 				error: '',
 				message: '',
@@ -94,7 +94,7 @@ class Signup extends Component {
 				message: '',
 				hasError: false
 			},
-			voter: {
+			isRegisteredVoter: {
 				value: props.signup && props.signup.isRegisteredVoter ? props.signup.isRegisteredVoter : 'yes',
 				error: '',
 				message: '',
@@ -130,7 +130,7 @@ class Signup extends Component {
 	onMnameChange = (value) => {
 		this.setState({
 			mname: {
-				...this.state.lname,
+				...this.state.mname,
 				value: value,
 				hasError: !Boolean(value),
 				error: !Boolean(value) ? 'REQUIRED' : ''
@@ -171,10 +171,10 @@ class Signup extends Component {
 		});
 	};
 	
-	onNumberChange = (value) => {
+	onMobileChange = (value) => {
 		this.setState({
-			number: {
-				...this.state.number,
+			mobile: {
+				...this.state.mobile,
 				value: (value || '').slice(0 ,11),
 				hasError: !Boolean(value),
 				error: !Boolean(value) ? 'REQUIRED' : ''
@@ -258,8 +258,8 @@ class Signup extends Component {
 	
 	onVoterChange = (value) => {
 		this.setState({
-			voter: {
-				...this.state.voter,
+			isRegisteredVoter: {
+				...this.state.isRegisteredVoter,
 				value: value
 			}
 		});
@@ -281,28 +281,28 @@ class Signup extends Component {
 			!this.state.mname.value ||
 			!this.state.lname.value ||
 			!this.state.dob.value ||
-			!this.state.number.value ||
+			!this.state.mobile.value ||
 			!this.state.region.value ||
 			!this.state.province.value ||
 			!this.state.municipality.value ||
 			!this.state.barangay.value ||
-			!this.state.voter.value 
+			!this.state.isRegisteredVoter.value 
 			// || !this.state.parentRefCode.value
 			) {
 			this.onFnameChange(this.state.fname.value);
 			this.onMnameChange(this.state.lname.value);
 			this.onLnameChange(this.state.lname.value);
 			this.onDobChange(this.state.dob.value);
-			this.onNumberChange(this.state.number.value);
+			this.onMobileChange(this.state.mobile.value);
 			this.onRegionChange(this.state.region.value);
 			this.onProvinceChange(this.state.province.value);
 			this.onMunicipalityChange(this.state.municipality.value);
 			this.onBarangayChange(this.state.barangay.value);
-			this.onVoterChange(this.state.voter.value);
+			this.onVoterChange(this.state.isRegisteredVoter.value);
 			// this.onParentRefCodeChange(this.state.parentRefCode.value);
 		} else {
 			displayPageLoader(true);
-			validateMobile(this.state.number.value)
+			validateMobile(this.state.mobile.value)
 				.then((res) => {
 				displayPageLoader(false);
 				if (!res.hasOwnProperty('error')) {
@@ -318,12 +318,12 @@ class Signup extends Component {
 									lname: this.state.lname.value,
 									gender: this.state.gender.value,
 									birthday: this.state.dob.value,
-									mobile: this.state.number.value,
+									mobile: this.state.mobile.value,
 									region: this.state.region.value,
 									province: this.state.province.value,
 									municipality: this.state.municipality.value,
 									barangay: this.state.barangay.value,
-									isRegisteredVoter: this.state.voter.value,
+									isRegisteredVoter: this.state.isRegisteredVoter.value,
 									parentRefCode: this.state.parentRefCode.value
 								};
 									if (this.props.signup.registrationId) {
@@ -345,8 +345,8 @@ class Signup extends Component {
 						});
 					} else {
 						this.setState({
-							number: {
-								...this.state.number.value,
+							mobile: {
+								...this.state.mobile.value,
 								hasError: true,
 								error: getTranslation('MOBILE_UNAVAILABLE')
 							}
@@ -373,12 +373,12 @@ class Signup extends Component {
 		mname,
 		lname,
 		dob,
-		number,
+		mobile,
 		region,
 		province,
 		municipality,
 		barangay,
-		voter,
+		isRegisteredVoter,
 		parentRefCode,
 		regionOptions,
 		provinceOptions,
@@ -486,21 +486,21 @@ class Signup extends Component {
 							message={dob.message} />
 					</FormGroup>
 
-					<FormGroup label="MOBILE_NUMBER" hasError={number.hasError}>
+					<FormGroup label="MOBILE_NUMBER" hasError={mobile.hasError}>
 						<FormInput
-							value={number.value}
+							value={mobile.value}
 							type="number"
 							placeholder={'0919...'}
 							max={11}
 							onBlur={(e) => {
-								this.onNumberChange(e.target.value)
+								this.onMobileChange(e.target.value)
 							}}
 							onInput={(e) => {
-								this.onNumberChange(e.target.value)
+								this.onMobileChange(e.target.value)
 							}}
-							hasError={number.hasError}
-							error={number.error}
-							message={number.message} />
+							hasError={mobile.hasError}
+							error={mobile.error}
+							message={mobile.message} />
 					</FormGroup>
 
 					<FormGroup label="REGION" hasError={region.hasError}>
@@ -579,7 +579,7 @@ class Signup extends Component {
 							/>
 					</FormGroup>
 
-					<FormGroup label="REGISTERED_VOTER" hasError={voter.hasError}>
+					<FormGroup label="REGISTERED_VOTER" hasError={isRegisteredVoter.hasError}>
 						<div className={style.radioWrap}>
 						<FormInput
 							name="voter"
@@ -587,7 +587,7 @@ class Signup extends Component {
 							label="YES"
 							value="yes"
 							id="yes"
-							checked={voter.value === 'yes'}
+							checked={isRegisteredVoter.value === 'yes'}
 							onBlur={(e) => {
 								this.onVoterChange(e.target.value)
 							}}
@@ -600,7 +600,7 @@ class Signup extends Component {
 								label="NO"
 								value="no"
 								id="no"
-								checked={voter.value === 'no'}
+								checked={isRegisteredVoter.value === 'no'}
 								onCLick={(e) => {
 									this.onVoterChange(e.target.value)
 								}}
