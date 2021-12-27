@@ -93,10 +93,6 @@ class Login extends Component {
     this.props.toggleLoginForm();
 	};
 
-	onClickSocMedSignin = () => {
-	  console.log('click social media');
-	};
-
 	onUsernameChange = (value) => {
 	  this.setState({
 	    username: {
@@ -134,7 +130,7 @@ class Login extends Component {
             username: res.data.email,
             password: res.data.id
           }, true, 'ACCOUNT_NOT_FOUND');
-        } else {
+        } else if (res.error !== 'SIGN_IN_CANCELLED') {
           updateStore({
             alertShow: {
               success: false,

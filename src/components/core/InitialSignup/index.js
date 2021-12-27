@@ -183,11 +183,11 @@ class InitialSignup extends Component {
               });
             }
           });
-        } else {
+        } else if (res.error !== 'SIGN_IN_CANCELLED') {
           updateStore({
             alertShow: {
               success: false,
-              content: getTranslation('ACCOUNT_NOT_FOUND'),
+              content: getTranslation(typeof res.error === 'string' ? res.error : 'SOMETHING_WRONG'),
               noTopBar: true
             }
           });

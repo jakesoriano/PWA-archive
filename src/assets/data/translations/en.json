@@ -119,5 +119,8 @@
 	"SHOW_MORE": "Show more",
 	"ACCOUNT_NOT_FOUND": "Account not found.",
 	"ACCOUNT_EXIST": "Account already exist!",
-	"RANKING": "Ranking"
+	"RANKING": "Ranking",
+	"SIGN_IN_CANCELLED": "Signin Cancelled.",
+	"IN_PROGRESS": "In Progress.",
+	"PLAY_SERVICES_NOT_AVAILABLE": "Google play service is not available."
 }
