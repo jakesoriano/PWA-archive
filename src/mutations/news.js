@@ -181,3 +181,62 @@ export function removeLikeNews (item, itemType, parentId, parentType) {
     });
   });
 }
+
+export function fetchNewsByCommunity (communityId, page, limit) {
+  const { news, communityDetails } = store.getState();
+  
+  // fetching
+  if(news.fetching) {
+    return;
+  }
+
+  // initial state
+  updateStore({
+    news: {
+      ...news,
+      fetching: true,
+      result: false
+    }
+  });
+
+  return new Promise((resolve) => {
+    xhr(urlNews + `/${communityId}`, {
+      method: 'GET',
+      params: {
+        p: page || 1, // page number
+        s: limit || 6 // limit
+      }
+    })
+    .then((res) => {
+      const {}
+      updateStore({
+        communityDetails: {
+          ...communityDetails,
+          news: {
+            data: page ? [
+              ...news.data,
+              ...res.data
+            ] : res.data,
+            total: res.data.total,
+            page: page || 1,
+            fetching: false,
+            result: true
+          }
+        }
+      });
+      console.log(`SPA >> fetchNews Success`, res.success);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        news: {
+          ...news,
+          fetching: false,
+          result: false
+        }
+      });
+      console.log(`SPA >> fetchNews Error`, err);
+      resolve(false);
+    });
+  });
+}

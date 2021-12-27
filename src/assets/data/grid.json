@@ -92,7 +92,7 @@
 		"uri": "community-details",
 		"contents": [
 			{
-				"component": "CommunityDetails"
+				"component": "NewsAndEvents"
 			}
 		]
 	},

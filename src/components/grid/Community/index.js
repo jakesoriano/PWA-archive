@@ -1,4 +1,6 @@
 import { Component } from 'preact';
+import { route } from 'preact-router';
+import { store, updateStore } from '_unistore';
 import { getTranslation, formatN } from '_helpers';
 import {
   fetchCommunities,
@@ -74,6 +76,14 @@ class Community extends Component {
   }
 
   visitCommunity = (id) => {
+    let { communityDetails } = store.getState();
+    updateStore({
+      communityDetails: {
+        ...communityDetails,
+        id: id
+      }
+    });
+    route(`/${this.props.parent}/community-details`);
   }
 
   renderCommunities = () => {
@@ -82,10 +92,12 @@ class Community extends Component {
     }
     return this.props.communities.data.map((item, i) => (
       <div className={style.communityCard}>
-        <div className={style.img}>
+        <div
+          className={style.img}
+          onClick={() => { this.visitCommunity(item.id) }}
+        >
           {item.image &&
           <ImageLoader
-            onClick={this.visitCommunity(item.id)}
             src={item.image}
             style={{container: style.img}}
           />

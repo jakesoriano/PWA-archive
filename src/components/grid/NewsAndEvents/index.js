@@ -1,7 +1,8 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { 
-	fetchNews, 
+	fetchNews,
+	fetchNewsByCommunity,
 	fetchEvents,
 	likeShareNews,
 	shareEvent,
@@ -10,6 +11,7 @@ import {
 import { getTranslation, dateEventFormat, playStore, appStore } from '_helpers';
 import { ImageLoader, LoaderRing } from '_components/core';
 import { nativeShare } from '_platform/helpers';
+import { getCurrentUrl } from 'preact-router';
 // eslint-disable-next-line import/extensions
 import style from './style';
 const eventTags = [
@@ -31,7 +33,7 @@ class NewsAndEvents extends Component {
 	};
 
 	componentDidMount = () => {
-		fetchNews();
+		this.fetchNews();
 		fetchEvents();
 	};
 
@@ -345,7 +347,7 @@ class NewsAndEvents extends Component {
 				</div>
 				<div className={style.content}>
 					{/* data */}
-					{state.active === 'news' ? this.renderNews(props[state.active].data) : this.renderEvents(props[state.active].data)}
+					{state.active === 'news' ? this.renderNews(this.selected([state.active]).data) : this.renderEvents(props[state.active].data)}
           {/* show more */}
           {props[state.active].data.length < props[state.active].total && !props[state.active].fetching && (
             <button className={style.showMore} onClick={this.handleShowMore}>
@@ -361,5 +363,18 @@ class NewsAndEvents extends Component {
 			</div>
 		);
 	};
+
+	selected = (selected) => {
+		return getCurrentUrl().includes('community') ? this.props.communityDetails[selected] : this.props[selected]
+	}
+ 
+	fetchNews = () => {
+		if (getCurrentUrl().includes('community')) {
+			let { id } = this.props.communityDetails;
+			fetchNewsByCommunity(id)
+		} else {
+			fetchNews();
+		}
+	}
 }
-export default connect(['news', 'events', 'authUser'])(NewsAndEvents);
+export default connect(['news', 'events', 'authUser', 'communityDetails'])(NewsAndEvents);
