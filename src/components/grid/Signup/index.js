@@ -58,7 +58,7 @@ class Signup extends Component {
 				message: '',
 				hasError: false
 			},
-			dob: {
+			birthday: {
 				value: props.signup ? props.signup.birthday : '',
 				error: '',
 				message: '',
@@ -162,8 +162,8 @@ class Signup extends Component {
 	
 	onDobChange = (value) => {
 		this.setState({
-			dob: {
-				...this.state.dob,
+			birthday: {
+				...this.state.birthday,
 				value: value,
 				hasError: !Boolean(value),
 				error: !Boolean(value) ? 'REQUIRED' : ''
@@ -197,12 +197,12 @@ class Signup extends Component {
 			},
 			municipalityOptions: [],
 			municipality: {
-				...this.state.province,
+				...this.state.municipality,
 				value: '',
 			},
 			barangayOptions: [],
 			barangay: {
-				...this.state.province,
+				...this.state.barangay,
 				value: '',
 			},
 		});
@@ -218,12 +218,12 @@ class Signup extends Component {
 			},
 			municipalityOptions: value ? getMunicipality(this.state.region.value, value) : [],
 			municipality: {
-				...this.state.province,
+				...this.state.municipality,
 				value: '',
 			},
 			barangayOptions: [],
 			barangay: {
-				...this.state.province,
+				...this.state.barangay,
 				value: '',
 			},
 		});
@@ -239,7 +239,7 @@ class Signup extends Component {
 			},
 			barangayOptions: value ? getBarangay(this.state.region.value, this.state.province.value, value) : [],
 			barangay: {
-				...this.state.province,
+				...this.state.barangay,
 				value: '',
 			},
 		});
@@ -280,7 +280,7 @@ class Signup extends Component {
 		if (!this.state.fname.value ||
 			!this.state.mname.value ||
 			!this.state.lname.value ||
-			!this.state.dob.value ||
+			!this.state.birthday.value ||
 			!this.state.mobile.value ||
 			!this.state.region.value ||
 			!this.state.province.value ||
@@ -290,9 +290,9 @@ class Signup extends Component {
 			// || !this.state.parentRefCode.value
 			) {
 			this.onFnameChange(this.state.fname.value);
-			this.onMnameChange(this.state.lname.value);
+			this.onMnameChange(this.state.mname.value);
 			this.onLnameChange(this.state.lname.value);
-			this.onDobChange(this.state.dob.value);
+			this.onDobChange(this.state.birthday.value);
 			this.onMobileChange(this.state.mobile.value);
 			this.onRegionChange(this.state.region.value);
 			this.onProvinceChange(this.state.province.value);
@@ -317,7 +317,7 @@ class Signup extends Component {
 									mname: this.state.mname.value,
 									lname: this.state.lname.value,
 									gender: this.state.gender.value,
-									birthday: this.state.dob.value,
+									birthday: this.state.birthday.value,
 									mobile: this.state.mobile.value,
 									region: this.state.region.value,
 									province: this.state.province.value,
@@ -372,7 +372,7 @@ class Signup extends Component {
 		fname,
 		mname,
 		lname,
-		dob,
+		birthday,
 		mobile,
 		region,
 		province,
@@ -470,9 +470,9 @@ class Signup extends Component {
 							</div>
 					</FormGroup>
 
-					<FormGroup label="DATE_OF_BIRTH" hasError={dob.hasError}>
+					<FormGroup label="DATE_OF_BIRTH" hasError={birthday.hasError}>
 						<FormInput
-							value={dob.value}
+							value={birthday.value}
 							type="date"
 							max={getMaxDOBDate()}
 							onBlur={(e) => {
@@ -481,9 +481,9 @@ class Signup extends Component {
 							onInput={(e) => {
 								this.onDobChange(e.target.value)
 							}}
-							hasError={dob.hasError}
-							error={dob.error}
-							message={dob.message} />
+							hasError={birthday.hasError}
+							error={birthday.error}
+							message={birthday.message} />
 					</FormGroup>
 
 					<FormGroup label="MOBILE_NUMBER" hasError={mobile.hasError}>
