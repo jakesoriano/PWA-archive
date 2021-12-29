@@ -46,8 +46,8 @@ class ContactUs extends Component {
 			attachment: {
 				...this.state.attachment,
 				file: file,
-				hasError: !Boolean(file),
-				error: !Boolean(file) ? 'REQUIRED' : ''
+				// hasError: !Boolean(file),
+				// error: !Boolean(file) ? 'REQUIRED' : ''
 			}
 		});
 	};
@@ -120,7 +120,6 @@ class ContactUs extends Component {
 			this.onCategoryChange(this.state.category.value);
 			this.onSubjectChange(this.state.subject.value);
 			this.onMessageChange(this.state.message.value);
-			this.onAttachmentChange(this.state.attachment.file);
 		} else {
 			if (!this.state.attachment.file) {
 				this.submitData();
