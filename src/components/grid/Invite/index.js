@@ -87,16 +87,20 @@ class Invite extends Component {
 		});
 	};
 
+	getCopyText = () => {
+		return `\n
+			Come join us, be a KakamPink!\n\n
+			Download now!\n
+			Android: ${playStore}\n
+			Apple: ${appStore}\n\n
+			Use my invite code: ${this.props.authUser.profile.refCode}
+		`;
+	};
+
 	onShare = () => {
 		nativeShare({
 			title: `Be a KakamPink`,
-			message: `\n
-				Come join us, be a KakamPink!\n\n
-				Download now!\n
-				Android: ${playStore}\n
-				Apple: ${appStore}\n\n
-				Use my invite code: ${this.props.authUser.profile.refCode}
-			`
+			message: this.getCopyText()
 		});
 	}
 

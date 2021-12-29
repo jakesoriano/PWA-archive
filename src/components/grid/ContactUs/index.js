@@ -85,53 +85,60 @@ class ContactUs extends Component {
 		});
 	};
 
+	submitData  = (image) => {
+		sendContactUs({
+			category: this.state.category.value,
+			suject: this.state.subject.value,
+			message: this.state.message.value,
+			attachment: image
+		})
+			.then((res) => {
+				if(res && res.success) {
+					this.setState({
+						...this.initialState
+					});
+					const { authUser } = this.props;
+					circleModal({
+						title: getTranslation('MESSAGE_SENT_TITLE'),
+						content: getTranslation('MESSAGE_SENT_MSG'),
+						code: `${getTranslation('CODE_REF')} ${res.refcode || ''}`
+					});
+				} else {
+					circleModal({
+						title: getTranslation('OOPS_SOMETHING_WRONG'),
+						content: getTranslation('TRY_AGAIN_CONTINUE')
+					});
+				}
+			})
+	}
+
 	handleContinue = () => {
 		
 		if (!this.state.category.value || 
 			!this.state.subject.value || 
-			!this.state.message.value ||
-			!this.state.attachment.file ) {
+			!this.state.message.value) {
 			this.onCategoryChange(this.state.category.value);
 			this.onSubjectChange(this.state.subject.value);
 			this.onMessageChange(this.state.message.value);
 			this.onAttachmentChange(this.state.attachment.file);
 		} else {
-			uploadFile({
-				file: this.state.attachment.file
-			})
-				.then((res) => {
-					if(res.success && res.data) {
-						sendContactUs({
-							category: this.state.category.value,
-							suject: this.state.subject.value,
-							message: this.state.message.value,
-							attachment: res.data.image
-						})
-							.then((res) => {
-								if(res && res.success) {
-									this.setState({
-										...this.initialState
-									});
-									const { authUser } = this.props;
-									circleModal({
-										title: getTranslation('MESSAGE_SENT_TITLE'),
-										content: getTranslation('MESSAGE_SENT_MSG'),
-										code: `${getTranslation('CODE_REF')} ${res.refcode || ''}`
-									});
-								} else {
-									circleModal({
-										title: getTranslation('OOPS_SOMETHING_WRONG'),
-										content: getTranslation('TRY_AGAIN_CONTINUE')
-									});
-								}
-							})
-					} else {
-						circleModal({
-							title: getTranslation('OOPS_SOMETHING_WRONG'),
-							content: getTranslation('TRY_AGAIN_CONTINUE')
-						});
-					}
+			if (!this.state.attachment.file) {
+				this.submitData();
+			} else {
+				uploadFile({
+					file: this.state.attachment.file
 				})
+					.then((res) => {
+						if(res.success && res.data) {
+							this.submitData(res.data.image);
+						} else {
+							circleModal({
+								title: getTranslation('OOPS_SOMETHING_WRONG'),
+								content: getTranslation('TRY_AGAIN_CONTINUE')
+							});
+						}
+					});
+			}
 		}
 	}
 
