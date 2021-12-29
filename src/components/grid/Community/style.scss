@@ -35,8 +35,13 @@
       .communityCard {
         width: 30%;
         margin: 20px 5px;
-        .img {
+        .imgCont {
           width: 100%;
+          .img {
+            height: 100%;
+            width: auto;
+            left: -50%;
+          }
         }
         .buttonStyle {
           padding: 3px 0;

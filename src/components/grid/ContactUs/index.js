@@ -116,7 +116,7 @@ class ContactUs extends Component {
 									circleModal({
 										title: getTranslation('MESSAGE_SENT_TITLE'),
 										content: getTranslation('MESSAGE_SENT_MSG'),
-										code: `${getTranslation('CODE_REF')} ${authUser.profile.refCode}`
+										code: `${getTranslation('CODE_REF')} ${res.refcode || ''}`
 									});
 								} else {
 									circleModal({

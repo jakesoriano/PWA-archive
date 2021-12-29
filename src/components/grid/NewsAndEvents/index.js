@@ -333,15 +333,15 @@ class NewsAndEvents extends Component {
 			<div className={style.newsAndEvents}>
 				<div className={style.tabWrap}>
 					<span 
-						className={`bold ${state.active === 'news' ? style.activeTab : ''}`}
-						onClick={() => {
-							this.toggleTab('news');
-						}}>{getTranslation('IWAS_FAKE_NEWS')}</span>
-					<span 
 						className={`bold ${state.active !== 'news' ? style.activeTab : ''}`}
 						onClick={() => {
 							this.toggleTab('events');
 						}}>{getTranslation('EVENTS')}</span>
+					<span 
+						className={`bold ${state.active === 'news' ? style.activeTab : ''}`}
+						onClick={() => {
+							this.toggleTab('news');
+						}}>{getTranslation('IWAS_FAKE_NEWS')}</span>
 				</div>
 				<div className={style.content}>
 					{/* data */}
