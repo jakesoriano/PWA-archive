@@ -63,26 +63,24 @@ export function fetchUserData (token) {
 
 export function fetchUserPoints () {
   return new Promise((resolve) => {
-  const { authUser } = store.getState();
-    if (!authUser) {
-      resolve(true);
-    }
     xhr(urlUserPoints)
       .then((res) => {
         if (res.success) {
           // get current data
           const { authUser } = store.getState();
-          updateStore({
-            authUser: {
-              ...authUser,
-              points: res.data.points,
-              members: res.data.members,
-              rank: {
-                regional: res.data.region,
-                overall: res.data.global
+          if (authUser) {
+            updateStore({
+              authUser: {
+                ...authUser,
+                points: res.data.points,
+                members: res.data.members,
+                rank: {
+                  regional: res.data.region,
+                  overall: res.data.global
+                }
               }
-            }
-          });
+            });
+          }
         }
         // eslint-disable-next-line
 				console.log(`SPA >> fetchUserPoints successful`, res);
