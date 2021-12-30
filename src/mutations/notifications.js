@@ -56,8 +56,7 @@ const generateEventsNotification = (data, events) => {
     // check if event already exists in notification, only add if not existing
     if (existingEvents.indexOf(item.id) === -1) {
       // check if 2 days before event
-      if (dateWithinDays(item.date, 2)) {
-
+      if ([0, 1, 2].indexOf(getDateDaysAway(item.date)) > -1)  {
         if (!data.includes(JSON.stringify(item))) {
           let template = propsTemplate('assets/images/icon_megaphone.png', getTranslation(item.title), getTranslation('SEE_YOU').replace(/{LOCATION}/gim, item.location).replace(/{DATE}/gim, dateEventFormat(item.date)));
           template.eventId = item.id
