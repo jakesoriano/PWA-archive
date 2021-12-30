@@ -234,8 +234,8 @@ class NewsAndEvents extends Component {
 							<span className={`bold ${style.detailTitle}`}>{getTranslation(i.title)}</span>
 							{i.likeCount || i.shareCount ? (
 								<div className={style.detailCount}>
-									{i.likeCount && <span>{`${i.likeCount} ${getTranslation('LIKES')}`}</span>}
-									{i.shareCount && <span>{`${i.shareCount} ${getTranslation('SHARES')}`}</span>}
+									{i.likeCount ? <span>{`${i.likeCount} ${getTranslation('LIKES')}`}</span> : ''}
+									{i.shareCount ? <span>{`${i.shareCount} ${getTranslation('SHARES')}`}</span> :''}
 								</div>
 							): null}
 						</div>
