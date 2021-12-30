@@ -63,6 +63,10 @@ export function fetchUserData (token) {
 
 export function fetchUserPoints () {
   return new Promise((resolve) => {
+  const { authUser } = store.getState();
+    if (!authUser) {
+      resolve(true);
+    }
     xhr(urlUserPoints)
       .then((res) => {
         if (res.success) {
