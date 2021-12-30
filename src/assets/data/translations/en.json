@@ -122,5 +122,7 @@
 	"RANKING": "Ranking",
 	"SIGN_IN_CANCELLED": "Signin Cancelled.",
 	"IN_PROGRESS": "In Progress.",
-	"PLAY_SERVICES_NOT_AVAILABLE": "Google play service is not available."
+	"PLAY_SERVICES_NOT_AVAILABLE": "Google play service is not available.",
+	"MOBILE_ALREADY_REGISTERED": "Mobile number is already registered!",
+	"MOBILE_ALREADY_INVITED": "Mobile number is already invited!"
 }

@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { route } from 'preact-router';
 import { updateStore } from '_unistore';
-import { completeSignup, validateUsername } from '_mutations';
+import { completeSignup, validateMobile } from '_mutations';
 import {
 	getTranslation,
 	getMaxDOBDate,
@@ -23,7 +23,6 @@ import {
 } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
-import { validateMobile } from '../../../mutations/registration';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Signup extends Component {

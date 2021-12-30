@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { fetchInvited, newInvite } from '_mutations';
-import { getTranslation, getRegions, playStore, appStore} from '_helpers';
+import { fetchInvited, newInvite, validateMobile } from '_mutations';
+import { getTranslation, getRegions, playStore, appStore, displayPageLoader} from '_helpers';
 import { FormGroup, FormInput, FormDropdown, ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
@@ -101,7 +101,11 @@ class Invite extends Component {
 			title: `Be a KakamPink`,
 			message: this.getCopyText()
 		});
-	}
+	};
+
+	mobileIsInvited = (mobile) => {
+		return this.props.invited.data.find(i => i.mobile === mobile);
+	};
 
 	onSend = () => {
 		if (!this.state.fname.value || 
@@ -113,19 +117,49 @@ class Invite extends Component {
 			this.onRegionChange(this.state.region.value);
 			this.onMobileChange(this.state.mobile.value);
 		} else {
-			newInvite({
-				fname: this.state.fname.value,
-				lname: this.state.lname.value,
-				type: 'M',
-				mobile: this.state.mobile.value,
-				message: this.getCopyText()
-	    })
-	      .then((res) => {
-	        fetchInvited();
-	      })
-	      .catch((err) => {
-          console.log('err', err);
-	      });
+			displayPageLoader(true);
+			// validate number if registered
+			validateMobile(this.state.mobile.value)
+				.then((res) => {
+					if (res.available) {
+						// validate number if invited
+						const invited = this.mobileIsInvited(this.state.mobile.value)
+						if (!invited) {
+							// post invite
+							newInvite({
+								fname: this.state.fname.value,
+								lname: this.state.lname.value,
+								type: 'M',
+								mobile: this.state.mobile.value,
+								message: this.getCopyText()
+							})
+								.then((res) => {
+									fetchInvited();
+								})
+								.catch((err) => {
+									console.log('err', err);
+								});
+							} else {
+								displayPageLoader(false);
+								this.setState({
+									mobile: {
+										...this.state.mobile.value,
+										hasError: true,
+										error: getTranslation('MOBILE_ALREADY_INVITED')
+									}
+								});
+							}
+					} else {
+						displayPageLoader(false);
+						this.setState({
+							mobile: {
+								...this.state.mobile.value,
+								hasError: true,
+								error: getTranslation('MOBILE_ALREADY_REGISTERED')
+							}
+						});
+					}
+			});
 		}
 	}
 
