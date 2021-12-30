@@ -47,7 +47,9 @@ export const initialStore = {
     fetching: false,
     result: false,
     data: [],
-    isRead: false
+    isRead: false,
+    lastDateNotified: null,
+    lastDatePointsNotified: null
   },
   stories: {
     fetching: false,

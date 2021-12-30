@@ -2,14 +2,15 @@ import { store, updateStore } from '_unistore';
 import { getTranslation, dateWithinDays, getDateDaysAway, dateEventFormat } from '_helpers';
 
 export function generateNotifications () {
-  
-  let lastDateNotified = localStorage.getItem('lastDateNotified');
+  let { notifications } = store.getState();
+  let { lastDateNotified, lastDatePointsNotified } = notifications;
 
   if (!lastDateNotified || dateWithinDays(lastDateNotified, -1)) {
 
-    let { notifications, members, events } = store.getState(), data = [...notifications.data];
+    let { members, events } = store.getState();
+    let data = [...notifications.data];
 
-    generatePointsNotification(data, members.data);
+    generatePointsNotification(data, members.data, lastDatePointsNotified);
 
     generateEventsNotification(data, events.data);
 
@@ -22,22 +23,21 @@ export function generateNotifications () {
         notifications: {
           ...notifications,
           data: data,
-          isRead: (isNotificationsChanged && notifications.isRead)
+          isRead: (isNotificationsChanged && notifications.isRead),
+          lastDateNotified: new Date(),
+          lastDatePointsNotified: lastDatePointsNotified
         }
       });
     }
   }
-  localStorage.setItem('lastDateNotified', new Date());
 }
 
-const generatePointsNotification = (data, members) => {
+const generatePointsNotification = (data, members, lastDatePointsNotified) => {
   // check day if a Sunday before adding to notifications
-  let lastDatePointsNotified = localStorage.getItem('lastDatePointsNotified');
   if (members && members.length) {
 
     if (!lastDatePointsNotified || dateWithinDays(lastDatePointsNotified, -7)) {
-      localStorage.setItem('lastDatePointsNotified', new Date());
-      lastDatePointsNotified = localStorage.getItem('lastDatePointsNotified');
+      lastDatePointsNotified = new Date();
     }
 
     if ((new Date(lastDatePointsNotified).toISOString().split('.')[0]+'Z' === new Date().toISOString().split('.')[0]+'Z')) {

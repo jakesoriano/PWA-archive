@@ -19,6 +19,7 @@ export function logOut (callback) {
     members,
     invited,
     communities,
+    notifications
   } = initialStore;
 
   removeCookie('token');
@@ -30,6 +31,7 @@ export function logOut (callback) {
     members,
     invited,
     communities,
+    notifications
   });
   nativeOnLogout();
   if (callback) {
