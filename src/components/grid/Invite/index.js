@@ -88,8 +88,7 @@ class Invite extends Component {
 	};
 
 	getCopyText = () => {
-		return `\n
-			Come join us, be a KakamPink!\n\n
+		return `Come join us, be a KakamPink!\n\n
 			Download now!\n
 			Android: ${playStore}\n
 			Apple: ${appStore}\n\n
@@ -118,7 +117,8 @@ class Invite extends Component {
 				fname: this.state.fname.value,
 				lname: this.state.lname.value,
 				type: 'M',
-				mobile: this.state.mobile.value
+				mobile: this.state.mobile.value,
+				message: this.getCopyText()
 	    })
 	      .then((res) => {
 	        fetchInvited();
