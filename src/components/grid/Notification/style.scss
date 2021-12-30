@@ -30,6 +30,9 @@
           color: #808080;
           font-size: 0.75rem;
           margin-bottom: 20px;
+          &.points {
+            color: $primary;
+          }
         }
         .detailDescription {
           color: #808080;

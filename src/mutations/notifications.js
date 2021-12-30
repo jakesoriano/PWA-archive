@@ -32,20 +32,18 @@ export function generateNotifications () {
 
 const generatePointsNotification = (data, members) => {
   // check day if a Sunday before adding to notifications
-  if (new Date().getDay() === 0) {
-    let lastDatePointsNotified = localStorage.getItem('lastDatePointsNotified');
-    if (members && members.length) {
+  let lastDatePointsNotified = localStorage.getItem('lastDatePointsNotified');
+  if (members && members.length) {
 
-      if (!lastDatePointsNotified || dateWithinDays(lastDatePointsNotified, -7)) {
-        localStorage.setItem('lastDatePointsNotified', new Date());
-        lastDatePointsNotified = localStorage.getItem('lastDatePointsNotified');
-      }
+    if (!lastDatePointsNotified || dateWithinDays(lastDatePointsNotified, -7)) {
+      localStorage.setItem('lastDatePointsNotified', new Date());
+      lastDatePointsNotified = localStorage.getItem('lastDatePointsNotified');
+    }
 
-      if ((new Date(lastDatePointsNotified).toISOString().split('.')[0]+'Z' === new Date().toISOString().split('.')[0]+'Z')) {
-        members.sort((a, b) => new Date(a.date) - new Date(b.date));
-        let tmpArr = members.filter(item => (getDateDaysAway(item.profile.date) >= -7 && getDateDaysAway(item.profile.date) <= 0));
-        data.push(propsTemplate('assets/images/icon_megaphone.png', getTranslation('CONGRATULATIONS'), getTranslation('EARNED_POINTS').replace(/{POINTS}/gim, (tmpArr.length * 100)).replace(/{MEMBERS_COUNT}/gim, tmpArr.length))); 
-      }
+    if ((new Date(lastDatePointsNotified).toISOString().split('.')[0]+'Z' === new Date().toISOString().split('.')[0]+'Z')) {
+      members.sort((a, b) => new Date(a.date) - new Date(b.date));
+      let tmpArr = members.filter(item => (getDateDaysAway(item.profile.date) >= -7 && getDateDaysAway(item.profile.date) <= 0));
+      data.push(propsTemplate(getTranslation('CONGRATULATIONS'), getTranslation('EARNED_POINTS').replace(/{POINTS}/gim, (tmpArr.length * 100)).replace(/{MEMBERS_COUNT}/gim, tmpArr.length), 'points')); 
     }
   }
 }
@@ -58,7 +56,7 @@ const generateEventsNotification = (data, events) => {
       // check if 2 days before event
       if ([0, 1, 2].indexOf(getDateDaysAway(item.date)) > -1)  {
         if (!data.includes(JSON.stringify(item))) {
-          let template = propsTemplate('assets/images/icon_megaphone.png', getTranslation(item.title), getTranslation('SEE_YOU').replace(/{LOCATION}/gim, item.location).replace(/{DATE}/gim, dateEventFormat(item.date)));
+          let template = propsTemplate(getTranslation(item.title), getTranslation('SEE_YOU').replace(/{LOCATION}/gim, item.location).replace(/{DATE}/gim, dateEventFormat(item.date)), 'event');
           template.eventId = item.id
           data.push(template)
         }
@@ -67,11 +65,11 @@ const generateEventsNotification = (data, events) => {
   });
 }
 
-const propsTemplate = (image, title, desc) => {
+const propsTemplate = (title, desc, type) => {
   return {
-    image: image,
     title: title,
     description: desc,
+    type: type,
     date: new Date()
   }
 }
