@@ -32,7 +32,7 @@ class Leaderboard extends Component {
 					</div>
 				</div>
 				{/* content */}
-				{members.data.sort((a, b) => a.rank - b.rank).map((item, index) => (
+				{members.data.sort((a, b) => b.points - a.points).map((item, index) => (
 					<div className={style.item}>
 						<ImageLoader 
 							src={item.image || getDefaultAvatar()}
