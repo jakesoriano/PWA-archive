@@ -39,7 +39,13 @@ class ForgotEnterMobile extends Component {
       if (res.success) {
         route(`/${this.props.parent}/forgot-otp`);
       } else {
-        this.showAlertBox(getTranslation('SOMETHING_WRONG'));
+        if (res.error === 'MOBILE_NOT_FOUND') {
+          this.showAlertBox(getTranslation(res.error));
+        } else if (res.error === 'MOBILE_NOT_ALLOWED') {
+          this.showAlertBox(getTranslation(res.error));
+        } else {
+          this.showAlertBox(getTranslation('SOMETHING_WRONG'));
+        }
       }
     })
   }
@@ -68,14 +74,14 @@ class ForgotEnterMobile extends Component {
     return (
       <div class={style.enterMobileWrapper}>
         <div class={style.inputContainer}>
-          <p class={style.heading}>Enter Mobile Number</p>
+          <p class={style.heading}>{getTranslation('ENTER_MOBILE')}</p>
           <input
             type="number"
             minLength={0}
             maxLength={11}
             onKeyUp={this.onKeyup}
           />
-          <p class={style.inputSubtext}>Enter your 11-digit mobile number to proceed retrieving your password.</p>
+          <p class={style.inputSubtext}>{getTranslation('ENTER_11_DIGIT_MOBILE')}</p>
         </div>
 				<div className={style.buttonContainer}>
 					<ButtonDescription

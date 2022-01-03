@@ -124,5 +124,9 @@
 	"IN_PROGRESS": "In Progress.",
 	"PLAY_SERVICES_NOT_AVAILABLE": "Google play service is not available.",
 	"MOBILE_ALREADY_REGISTERED": "Mobile number is already registered!",
-	"MOBILE_ALREADY_INVITED": "Mobile number is already invited!"
+	"MOBILE_ALREADY_INVITED": "Mobile number is already invited!",
+	"MOBILE_NOT_FOUND": "Mobile not found!",
+	"MOBILE_NOT_ALLOWED": "Account not allowed! Please use Social Media to login.",
+	"ENTER_MOBILE": "Enter Mobile Number",
+	"ENTER_11_DIGIT_MOBILE": "Enter your 11-digit mobile number to proceed retrieving your password."
 }
