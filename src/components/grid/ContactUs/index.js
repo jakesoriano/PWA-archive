@@ -88,7 +88,7 @@ class ContactUs extends Component {
 	submitData  = (image) => {
 		sendContactUs({
 			category: this.state.category.value,
-			suject: this.state.subject.value,
+			subject: this.state.subject.value,
 			message: this.state.message.value,
 			attachment: image
 		})

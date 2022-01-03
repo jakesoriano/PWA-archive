@@ -134,10 +134,18 @@ class Invite extends Component {
 								message: this.getCopyText()
 							})
 								.then((res) => {
+									displayPageLoader(false);
 									fetchInvited();
 								})
 								.catch((err) => {
-									console.log('err', err);
+									displayPageLoader(false);
+									this.setState({
+										mobile: {
+											...this.state.mobile.value,
+											hasError: true,
+											error: getTranslation('SOMETHING_WRONG')
+										}
+									});
 								});
 							} else {
 								displayPageLoader(false);
