@@ -29,13 +29,14 @@ export function xhr (url, options, externalAPI) {
 
     // worker response
     requestWorker.onmessage = (ev) => {
+      const { authUser } = store.getState();
 
       if ('result' in ev.data) {
         resolve(ev.data.result);
-      } else if (ev.data && ev.data.status === 401){
+      } else if (authUser && ev.data && ev.data.status === 401){
         // Unauthorized
         logOut();
-        displayPageLoader();
+        displayPageLoader(false);
         reject(null);
       } else if ('error' in ev.data) {
         reject(ev.data);
