@@ -38,9 +38,12 @@
         .imgCont {
           width: 100%;
           .img {
-            height: 100%;
-            width: auto;
-            left: -50%;
+            position: absolute;
+            top: -9999px;
+            bottom: -9999px;
+            left: -9999px;
+            right: -9999px;
+            margin: auto;
           }
         }
         .buttonStyle {

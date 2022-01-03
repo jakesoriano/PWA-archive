@@ -333,35 +333,37 @@ class NewsAndEvents extends Component {
 
 	render = (props, state) => {
 	  return (
-			<div className={style.newsAndEvents}>
-				<div className={style.tabWrap}>
-					<span 
-						className={`bold ${state.active !== 'news' ? style.activeTab : ''}`}
-						onClick={() => {
-							this.toggleTab('events');
-						}}>{getTranslation('EVENTS')}</span>
-					<span 
-						className={`bold ${state.active === 'news' ? style.activeTab : ''}`}
-						onClick={() => {
-							this.toggleTab('news');
-						}}>{getTranslation('IWAS_FAKE_NEWS')}</span>
-				</div>
-				<div className={style.content}>
-					{/* data */}
-					{state.active === 'news' ? this.renderNews(props[state.active].data) : this.renderEvents(props[state.active].data)}
-          {/* show more */}
-          {props[state.active].data.length < props[state.active].total && !props[state.active].fetching && (
-            <button className={style.showMore} onClick={this.handleShowMore}>
-              <span><span>&#8659;</span> {getTranslation('SHOW_MORE')}</span>
-            </button>
-          )}
-          {/* loader */}
-          {this.state.moreFetching && (
-            <LoaderRing styles={{container: style.loaderWrap}}/>
-          )}
+			<>
+				<div className={style.newsAndEvents}>
+					<div className={style.tabWrap}>
+						<span 
+							className={`bold ${state.active !== 'news' ? style.activeTab : ''}`}
+							onClick={() => {
+								this.toggleTab('events');
+							}}>{getTranslation('EVENTS')}</span>
+						<span 
+							className={`bold ${state.active === 'news' ? style.activeTab : ''}`}
+							onClick={() => {
+								this.toggleTab('news');
+							}}>{getTranslation('IWAS_FAKE_NEWS')}</span>
+					</div>
+					<div className={style.content}>
+						{/* data */}
+						{state.active === 'news' ? this.renderNews(props[state.active].data) : this.renderEvents(props[state.active].data)}
+						{/* show more */}
+						{props[state.active].data.length < props[state.active].total && !props[state.active].fetching && (
+							<button className={style.showMore} onClick={this.handleShowMore}>
+								<span><span>&#8659;</span> {getTranslation('SHOW_MORE')}</span>
+							</button>
+						)}
+						{/* loader */}
+						{this.state.moreFetching && (
+							<LoaderRing styles={{container: style.loaderWrap}}/>
+						)}
+					</div>
 				</div>
 				{state.selectedItem && this.renderDetails(state.selectedItem)}
-			</div>
+			</>
 		);
 	};
 }

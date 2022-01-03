@@ -51,15 +51,18 @@ const generatePointsNotification = (members, lastDatePointsNotified) => {
       let count = members
         .filter(item => (getDateDaysAway(item.profile.date) >= -7 && getDateDaysAway(item.profile.date) <= 0))
         .length;
-      return [
-        propsTemplate(
-          getTranslation('CONGRATULATIONS'),
-          getTranslation('EARNED_POINTS')
-            .replace(/{POINTS}/gim, (count * 100))
-            .replace(/{MEMBERS_COUNT}/gim, count),
-          'points'
-        )
-      ]
+
+      if (count) {
+        return [
+          propsTemplate(
+            getTranslation('CONGRATULATIONS'),
+            getTranslation('EARNED_POINTS')
+              .replace(/{POINTS}/gim, (count * 100))
+              .replace(/{MEMBERS_COUNT}/gim, count),
+            'points'
+          )
+        ]
+      }
     }
   }
   return [];

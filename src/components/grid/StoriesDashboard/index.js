@@ -90,56 +90,58 @@ class StoriesDashboard extends Component {
 		}
 
 		return (
-      <div className={style.storiesWrapper}>
-				<div className={style.storiesHead}>
-					<p className={` bold ${style.title}`}>{getTranslation('KAKAMPINK_STORIES')}</p>
-				</div>
-				<div className={style.storiesBody}>
-					<div className={style.storiesWindow}>
-						{stories.data.length > 0 ? (
-							<div className={`${style.storiesWrap} ${style['i' + stories.data.length]}`}>
-								{stories.data.map((i) => (
-									<div className={style.storyItem}>
-										<div className={style.details} onClick={() => {
-											this.onClickStories(i)
-										}}>
-											<ImageLoader
-												src={i.image}
-												style={{container: style.detailImage}}
-											/>
-											<div className={style.detailContent}>
-												<div className={style.detailHead}>
-													<span className={`extraBold ${style.userName}`}>{i.name}</span>
-												</div>
-												<div className={style.detailBody}>
-													<p className={`${style.detailTitle}`}>{i.title}</p>
-													<p className={style.detailDescription}>{i.message.substr(0, 100)} ...
-														<span className='bold'> {`${i.message.length > 100 ? `${getTranslation('READ_ALL')}`: ''}`}</span>
-													</p>
+			<>
+				<div className={style.storiesWrapper}>
+					<div className={style.storiesHead}>
+						<p className={` bold ${style.title}`}>{getTranslation('KAKAMPINK_STORIES')}</p>
+					</div>
+					<div className={style.storiesBody}>
+						<div className={style.storiesWindow}>
+							{stories.data.length > 0 ? (
+								<div className={`${style.storiesWrap} ${style['i' + stories.data.length]}`}>
+									{stories.data.map((i) => (
+										<div className={style.storyItem}>
+											<div className={style.details} onClick={() => {
+												this.onClickStories(i)
+											}}>
+												<ImageLoader
+													src={i.image}
+													style={{container: style.detailImage}}
+												/>
+												<div className={style.detailContent}>
+													<div className={style.detailHead}>
+														<span className={`extraBold ${style.userName}`}>{i.name}</span>
+													</div>
+													<div className={style.detailBody}>
+														<p className={`${style.detailTitle}`}>{i.title}</p>
+														<p className={style.detailDescription}>{i.message.substr(0, 100)} ...
+															<span className='bold'> {`${i.message.length > 100 ? `${getTranslation('READ_ALL')}`: ''}`}</span>
+														</p>
+													</div>
 												</div>
 											</div>
+											{/* <div className={style.buttons}>
+												<a
+													className={i.liked ? `extraBold ${style.buttonLikeActive}` : ''}
+													onClick={() => {
+														this.onLikeStory(i);
+													}}
+													>
+														<ImageLoader
+														src={!i.liked ? 'assets/images/fb-like-transparent.png' : 'assets/images/fb-like-transparent-dark.png'}
+														style={{container: style.likeButton}}/>
+														{getTranslation('LIKE')}
+													</a>
+											</div> */}
 										</div>
-										{/* <div className={style.buttons}>
-											<a
-												className={i.liked ? `extraBold ${style.buttonLikeActive}` : ''}
-												onClick={() => {
-													this.onLikeStory(i);
-												}}
-												>
-													<ImageLoader
-													src={!i.liked ? 'assets/images/fb-like-transparent.png' : 'assets/images/fb-like-transparent-dark.png'}
-													style={{container: style.likeButton}}/>
-													{getTranslation('LIKE')}
-												</a>
-										</div> */}
-									</div>
-								))}
-							</div>
-						) : <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>}
+									))}
+								</div>
+							) : <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>}
+						</div>
 					</div>
 				</div>
 				{selectedItem && this.renderDetails(selectedItem)}
-			</div>
+			</>
 		);
 	};
 }
