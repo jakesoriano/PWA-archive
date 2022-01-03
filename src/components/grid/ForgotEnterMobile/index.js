@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import { route, getCurrentUrl } from 'preact-router';
 import { updateStore } from '_unistore';
-import { forgotCredentials, validateMobile } from '_mutations';
+import { forgotCredentials } from '_mutations';
 import { ButtonDescription } from '_components/core';
 import { getTranslation, displayPageLoader } from '_helpers';
 import style from './style';
@@ -29,24 +29,24 @@ class ForgotEnterMobile extends Component {
   }
 
   handleContinue = () => {
+    let data = {
+      mobile: this.state.mobile,
+      settings: this.state.settings
+    }
     displayPageLoader(true);
-    validateMobile(this.state.mobile).then((res) => {
-      if (res && !res.available) {
-        let data = {
-          mobile: this.state.mobile,
-          settings: this.state.settings
-        }
-        forgotCredentials('sendotp', data).then((res) => {
-          if (res.success) {
-            route(`/${this.props.parent}/forgot-otp`);
-          } else {
-            this.showAlertBox(getTranslation('SOMETHING_WRONG'));
-          }
-        });
-      } else {
-        this.showAlertBox(getTranslation('MOBILE_NOT_FOUND'))
-      }
+    forgotCredentials('sendotp', data).then((res) => {
       displayPageLoader(false);
+      if (res.success) {
+        route(`/${this.props.parent}/forgot-otp`);
+      } else {
+        if (res.error === 'MOBILE_NOT_FOUND') {
+          this.showAlertBox(getTranslation(res.error));
+        } else if (res.error === 'MOBILE_NOT_ALLOWED') {
+          this.showAlertBox(getTranslation(res.error));
+        } else {
+          this.showAlertBox(getTranslation('SOMETHING_WRONG'));
+        }
+      }
     })
   }
 
