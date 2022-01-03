@@ -1,7 +1,12 @@
 import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { fetchInvited, newInvite, validateMobile } from '_mutations';
-import { getTranslation, getRegions, playStore, appStore, displayPageLoader} from '_helpers';
+import {
+	getTranslation,
+	getRegions,
+	playStore,
+	displayPageLoader
+} from '_helpers';
 import { FormGroup, FormInput, FormDropdown, ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
@@ -90,8 +95,7 @@ class Invite extends Component {
 	getCopyText = () => {
 		return `Come join us, be a KakamPink!\n\n
 			Download now!\n
-			Android: ${playStore}\n
-			Apple: ${appStore}\n\n
+			Android: ${playStore}\n\n
 			Use my invite code: ${this.props.authUser.profile.refCode}
 		`;
 	};
