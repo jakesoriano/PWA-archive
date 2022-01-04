@@ -33,8 +33,7 @@ class StoriesDashboard extends Component {
 		nativeShare({
 			url: data.image,
 			title: data.title,
-			message: `\n\n
-				A Kakampink Story!\n\n
+			message: `A Kakampink Story!\n\n
 				Title: ${data.title}\n
 				Author: ${data.name}
 			`
@@ -69,14 +68,14 @@ class StoriesDashboard extends Component {
 							__html: data.message
 						}}
 					/>
-					<a className={style.pShare} onClick={() => {
+					{/* <a className={style.pShare} onClick={() => {
 						this.onShare(data);
 					}}>
 						<ImageLoader
 								src="assets/images/share_icon_white.png"
 								style={{container: style.pIconShare}} />
 							<span>{getTranslation('SHARE')}</span>
-					</a>
+					</a> */}
 				</div>
 			)
 		}
