@@ -1,4 +1,4 @@
-/** @format */
+@import '../../../style/variables.scss';
 
 .imageLoader {
 	width: 88px;
@@ -22,7 +22,7 @@
 		}
 	}
 	&.notLoaded {
-		background-color: #03435d;
+		background-color: $primary_layout;
 		border-radius: 4px;
 		img {
 			-ms-transform: translate(
