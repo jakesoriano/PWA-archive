@@ -110,7 +110,7 @@ class Signup extends Component {
 	componentDidMount = () => {
 		updateStore({
 			customBack: () => {
-				route(`/${this.props.parent}/terms`, true)
+				route(`/${this.props.parent}/data-privacy`, true)
 			}
 		});
 	};

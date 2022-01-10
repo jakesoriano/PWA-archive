@@ -170,7 +170,7 @@ class NewsAndEvents extends Component {
 						});
 					}}>
 						<ImageLoader
-							src="assets/images/closebutton.png"
+							src="assets/images/NOT_INTERESTED-pink.png"
 							style={{container: style.closeBtn}}
 						/>
 					</a>

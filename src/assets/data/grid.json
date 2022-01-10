@@ -21,6 +21,16 @@
 	},
 	{
 		"styles": [],
+		"pageTitle": "PAGE_DATA_PRIVACY",
+		"uri": "data-privacy",
+		"contents": [
+			{
+				"component": "DataPrivacy"
+			}
+		]
+	},
+	{
+		"styles": [],
 		"pageTitle": "PAGE_SIGNUP",
 		"uri": "signup",
 		"contents": [

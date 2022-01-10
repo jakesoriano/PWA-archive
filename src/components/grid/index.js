@@ -22,4 +22,5 @@ export { default as Notification } from './Notification';
 export { default as StoriesDashboard } from './StoriesDashboard';
 export { default as Story } from './Story';
 export { default as ChangePassword } from './ChangePassword';
+export { default as DataPrivacy } from './DataPrivacy';
 

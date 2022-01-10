@@ -114,7 +114,8 @@
 	"UNFOLLOW": "Unfollow",
 	"INCORRECT_PASSWORD": "Incorrect current password",
 	"CONGRATULATIONS": "Congratulations!",
-	"EARNED_POINTS": "You have earned {POINTS} hero points from recruiting an additional {MEMBERS_COUNT} members!",
+	"EARNED_POINTS_OLD": "You have earned {POINTS} hero points from recruiting an additional {MEMBERS_COUNT} members!",
+	"EARNED_POINTS": "You have successfully invited {MEMBERS_COUNT} new members over the past week.",
 	"SEE_YOU": "See you at {LOCATION} on {DATE}. Wear your pink outfit and tie pink ribbons in your cars.",
 	"SHOW_MORE": "Show more",
 	"ACCOUNT_NOT_FOUND": "Account not found.",
@@ -128,5 +129,8 @@
 	"MOBILE_NOT_FOUND": "Mobile not found!",
 	"MOBILE_NOT_ALLOWED": "Account not allowed! Please use Social Media to login.",
 	"ENTER_MOBILE": "Enter Mobile Number",
-	"ENTER_11_DIGIT_MOBILE": "Enter your 11-digit mobile number to proceed retrieving your password."
+	"ENTER_11_DIGIT_MOBILE": "Enter your 11-digit mobile number to proceed retrieving your password.",
+	"PAGE_DATA_PRIVACY": "Data Privacy Acceptance",
+	"CONSENT": "Consent",
+	"PRIVACY_BOTTON_DESC": "By clicking continue, I accept the data privacy consent indicated herewith."
 }

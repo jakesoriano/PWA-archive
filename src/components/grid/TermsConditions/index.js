@@ -37,7 +37,7 @@ class TermsConditions extends Component {
 	};
 
 	handleContinue = (e) => {
-		route(`/${this.props.parent}/signup`);
+		route(`/${this.props.parent}/data-privacy`);
 	};
 
 	renderContent = () => {
