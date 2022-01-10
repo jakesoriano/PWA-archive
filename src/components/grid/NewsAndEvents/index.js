@@ -185,7 +185,7 @@ class NewsAndEvents extends Component {
 							</div>
 						) : (
 							<div className={style.pEvents}>
-								<p className={`${style.pTitle}`}>{getTranslation(data.title)}</p>
+								<p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
 								<p className={`${style.pDate}`}>
 									{`${getTranslation('WHEN')}: ${dateEventFormat(data.date)}`} <br />
 									{`${getTranslation('WHERE')}: ${data.location}`}
