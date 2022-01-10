@@ -23,6 +23,18 @@ class StoriesDashboard extends Component {
 		fetchStories();
 	};
 
+	removeTags(str) {
+    if ((str===null) || (str===''))
+        return false;
+    else
+        str = str.toString();
+          
+    // Regular expression to identify HTML tags in 
+    // the input string. Replacing the identified 
+    // HTML tag with a null string.
+    return str.replace( /(<([^>]+)>)/ig, '');
+}
+
 	onClickStories = (data) => {
 		this.setState({
 			selectedItem: data
@@ -113,7 +125,7 @@ class StoriesDashboard extends Component {
 													</div>
 													<div className={style.detailBody}>
 														<p className={`${style.detailTitle}`}>{i.title}</p>
-														<p className={style.detailDescription}>{i.message.substr(0, 100)} ...
+														<p className={style.detailDescription}>{this.removeTags(i.message || '').substr(0, 100)} ...
 															<span className='bold'> {`${i.message.length > 100 ? `${getTranslation('READ_ALL')}`: ''}`}</span>
 														</p>
 													</div>

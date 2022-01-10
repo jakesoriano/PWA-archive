@@ -311,6 +311,9 @@ class NewsAndEvents extends Component {
 							src={!i.tagged ? 'assets/images/INTERESTED-dark.png' : `assets/images/${i.tagged}-pink.png`}
 							style={{container: style.likeButton}}/>
 							{getTranslation(i.tagged || eventTags[0])}
+							<ImageLoader
+								src={'assets/images/drop_down_icon.png'}
+								style={{container: style.likeButton}}/>
 						</a>
 						<a
 							className={i.shared ? style.buttonShareActive : ''}
