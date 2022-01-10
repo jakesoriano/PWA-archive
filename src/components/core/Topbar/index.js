@@ -36,7 +36,12 @@ class Topbar extends Component {
 							className={style.btnBack}
 							onClick={props.onBack}
 							aria-label="Toggle Sidebar"
-						>❮</button>
+						>
+							<ImageLoader
+								style={{ container: style.backImg }}
+								src="assets/images/backbutton.png"
+							/>
+						</button>
 					)}
 					{/* page title */}
 	        <h1 id="topbar_title" className={style.title}>

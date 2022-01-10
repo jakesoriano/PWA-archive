@@ -14,7 +14,7 @@
 		position: relative;
 		.title {
 			margin: 0;
-			padding: 14.5px 10px 14.5px 42px;
+			padding: 14.5px 10px 14.5px 52px;
 			font-size: 1.2rem;
 			display: flex;
 			align-items: center;
@@ -42,6 +42,10 @@
 			&.notif {
 				right: 0;
 				left: auto;
+			}
+			.backImg {
+				width: 20px;
+				padding-bottom: 20px;
 			}
 			.burgerImg,
 			.notifImg {
