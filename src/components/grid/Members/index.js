@@ -24,7 +24,8 @@ class Members extends Component {
 					<div className={style.item}>
 						<ImageLoader 
 							src={item.image || getDefaultAvatar()}
-							style={{container: style.avatar}} />
+							style={{container: style.avatar}}
+							lazy />
 						<div className={style.nameMember}>
 							<div>
 								<p className={`light ${style.name}`}>{`${item.profile.fname} ${item.profile.lname}, ${item.profile.region}. ${item.profile.municipality}`}</p>

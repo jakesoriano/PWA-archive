@@ -12,18 +12,9 @@
             .landingImg {
                 width: 100%;
                 height: auto;
-                overflow: unset;
-                max-width: 450px;
-                margin: 0 auto;
                 padding: 0;
-                img {
-                    left: -30px;
-                    margin-top: 5%;
-                    position: relative;
-                    width: 105%;
-                    border-radius: 50%;
-                    border: 20px solid $primary_layout;
-                }
+                margin: 0 auto;
+                padding-bottom: 110%;
             }
         }
         .signInUpBtnWrap {

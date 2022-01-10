@@ -87,6 +87,7 @@ class Community extends Component {
           onClick={this.visitCommunity(item.id)}
           src={item.image}
           style={{container: style.imgCont, image: style.img}}
+          lazy
         />
         }
         <div className={style.cardBody}>

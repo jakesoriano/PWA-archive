@@ -29,7 +29,7 @@ class Notification extends Component {
       return data.map((item) => (
         <div className={style.contentDetail}>
           <ImageLoader
-            src={item.type === 'event' ? 'assets/images/tmp_notif2.jpg' : 'assets/images/tmp_notif1.jpg'}
+            src={item.type === 'event' ? 'assets/images/announcement.png' : 'assets/images/badge.png'}
             style={{ container: style.detailImage }}
           />
           <div className={style.detailCopy}>

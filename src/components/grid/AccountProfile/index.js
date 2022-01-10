@@ -67,6 +67,7 @@ class AccountProfile extends Component {
 						<ImageLoader
 							src={authUser.profile.image || getDefaultAvatar()}
 							style={{ container: style.avatar }}
+							lazy
 						/>
 						<div className={style.profileInfo}>
 							<div className={style.nameMember}>

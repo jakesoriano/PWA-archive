@@ -22,5 +22,5 @@ export function overrideCurrencyCode () {
 }
 
 export function getDefaultAvatar() {
-  return 'assets/images/myaccount_icon_inactive.png';
+  return 'assets/images/avatar.png';
 }

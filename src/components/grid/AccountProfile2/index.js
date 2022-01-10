@@ -27,7 +27,8 @@ class AccountProfile extends Component {
 					<div className={style.user}>
 						<ImageLoader 
 							src={authUser.profile.image || getDefaultAvatar()}
-							style={{container: style.avatar}} />
+							style={{container: style.avatar}}
+							lazy />
 						<div className={style.nameMember}>
 							<p className={`bold ${style.name}`}>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
 							<p className={style.members}>{`${formatNumber(authUser.members, 2) || 0} ${getTranslation('MEMBERS')}`}</p>

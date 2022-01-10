@@ -62,14 +62,15 @@ class StoriesDashboard extends Component {
 						});
 					}}>
 						<ImageLoader
-							src="assets/images/NOT_INTERESTED-pink.png"
+							src="assets/images/closebutton.png"
 							style={{container: style.closeBtn}}
 						/>
 					</a>
 					<div className={`${style.pHeader}`}>
 						<ImageLoader
 								src={data.image}
-								style={{container: style.pImage}} />
+								style={{container: style.pImage}}
+								lazy />
 						<div className={style.pStory}>
 							<p className={`extraBold ${style.pTitle}`}>{getTranslation(data.title)}</p>
 						</div>

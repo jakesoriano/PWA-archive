@@ -170,14 +170,15 @@ class NewsAndEvents extends Component {
 						});
 					}}>
 						<ImageLoader
-							src="assets/images/NOT_INTERESTED-pink.png"
+							src="assets/images/closebutton.png"
 							style={{container: style.closeBtn}}
 						/>
 					</a>
 					<div className={`${style.pHeader} ${this.state.active !== 'news' ? style.pHeaderEvents : ''}`}>
 						<ImageLoader
 								src={data.image}
-								style={{container: style.pImage}} />
+								style={{container: style.pImage}}
+								lazy />
 						{this.state.active === 'news' ? (
 							<div className={style.pNews}>
 								<p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
@@ -224,7 +225,8 @@ class NewsAndEvents extends Component {
 					<div className={style.community}>
 						<ImageLoader
 							src={i.community.image}
-							style={{container: style.comImage}} />
+							style={{container: style.comImage}}
+							lazy />
 						<span>{getTranslation(i.community.name)}</span>
 					</div>
 					<a className={style.details} onClick={() => {
@@ -232,7 +234,8 @@ class NewsAndEvents extends Component {
 					}}>
 						<ImageLoader
 							src={i.image}
-							style={{container: style.detailImage}} />
+							style={{container: style.detailImage}}
+							lazy />
 						<div className={style.detailContent}>
 							<span className={`bold ${style.detailTitle}`}>{getTranslation(i.title)}</span>
 							{i.likeCount || i.shareCount ? (
@@ -278,7 +281,8 @@ class NewsAndEvents extends Component {
 					<div className={style.community}>
 						<ImageLoader
 							src={i.community.image}
-							style={{container: style.comImage}} />
+							style={{container: style.comImage}}
+							lazy />
 						<span>{getTranslation(i.community.name)}</span>
 					</div>
 					<a className={style.details} onClick={() => {
@@ -286,7 +290,8 @@ class NewsAndEvents extends Component {
 					}}>
 						<ImageLoader
 							src={i.image}
-							style={{container: style.detailImage}} />
+							style={{container: style.detailImage}}
+							lazy />
 						<div className={style.detailContent}>
 							<p>{dateEventFormat(i.date)} <br />
 							{`${getTranslation('EVENT_BY')}: ${i.by}`} <br />
