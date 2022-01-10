@@ -58,6 +58,7 @@ class SideBar extends Component {
 							this.onClickMenu(e);
 						}}>{getTranslation('LOGOUT')}</Link>
 					</div>
+	      	<div className={style.footer}>v{process.env.BUILD_NO}</div>
 				</div>
 			</div>
 		);
