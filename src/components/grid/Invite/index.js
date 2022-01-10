@@ -5,7 +5,8 @@ import {
 	getTranslation,
 	getRegions,
 	playStore,
-	displayPageLoader
+	displayPageLoader,
+	circleModal
 } from '_helpers';
 import { FormGroup, FormInput, FormDropdown, ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
@@ -111,6 +112,18 @@ class Invite extends Component {
 		return this.props.invited.data.find(i => i.mobile === mobile);
 	};
 
+	handleClickJoin = () => {
+		circleModal({
+			headerIcon: 'assets/images/info2.png',
+			title: getTranslation('INVITE_JOIN_TITLE'),
+			content: getTranslation('INVITE_JOIN_CONTENT')
+		});
+	};
+
+	handleClickDiscord = () => {
+		window.open('https://forms.gle/RZLdKo1UtiEQRSRX6', '_blank');
+	};
+
 	onSend = () => {
 		if (!this.state.fname.value || 
 			!this.state.lname.value || 
@@ -173,7 +186,7 @@ class Invite extends Component {
 					}
 			});
 		}
-	}
+	};
 
 	render = ({ authUser, invited }, { fname, lname, region, regionOptions, mobile }) => {
 
@@ -290,11 +303,24 @@ class Invite extends Component {
 					<div className={`${style.item} ${style.header}`}>
 						<p className={`bold ${style.name}`}>{getTranslation('ADDED_MEMBERS')}</p>
 						<p className={`bold ${style.status}`}>{getTranslation('STATUS')}</p>
+						<a className={`bold ${style.status}`}
+							onClick={this.handleClickJoin}>
+							{getTranslation('JOIN')}
+							<ImageLoader 
+								src="assets/images/info.png"
+								style={{container: style.listIcon}} />
+						</a>
 					</div>
 					{invited.data.map(item => (
 						<div className={style.item}>
 							<p className={`light ${style.name}`}>{`${item.fname} ${item.lname}`}</p>
 							<p className={`light ${style.status}`}>{getTranslation(item.status)}</p>
+							<a className={`light ${style.status}`}
+								onClick={this.handleClickDiscord}>
+								<ImageLoader 
+									src="assets/images/discord.png"
+									style={{container: style.listIcon}} />
+							</a>
 						</div>
 					))}
 				</div>

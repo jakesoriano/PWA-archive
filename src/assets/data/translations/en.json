@@ -132,5 +132,8 @@
 	"ENTER_11_DIGIT_MOBILE": "Enter your 11-digit mobile number to proceed retrieving your password.",
 	"PAGE_DATA_PRIVACY": "Data Privacy Acceptance",
 	"CONSENT": "Consent",
-	"PRIVACY_BOTTON_DESC": "By clicking continue, I accept the data privacy consent indicated herewith."
+	"PRIVACY_BOTTON_DESC": "By clicking continue, I accept the data privacy consent indicated herewith.",
+	"JOIN": "Join",
+	"INVITE_JOIN_TITLE": "We can help you!",
+	"INVITE_JOIN_CONTENT": "Ang Usapang Kakampink Discord server ay para sa mga nahihirapang kumausap sa mga mahal sa buhay tungkol kay Leni Robredo"
 }

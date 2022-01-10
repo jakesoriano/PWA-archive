@@ -19,13 +19,21 @@
     width: 100%;
     border-radius: 50% 50% 0;
     padding: 0 40px;
-    background: #FF66C4;
+    background: $primary_layout;
     text-align: center;
     position: relative;
     display: flex;
     flex-direction: column;
     height: 48%;
     justify-content: center;
+      .modalIcon {
+        display: block;
+        .imgCont {
+          display: inline-block;
+          width: 50px;
+          padding-bottom: 50px;
+        }
+      }
 			.modalHeader {
 				display: flex;
 				padding: 0;
