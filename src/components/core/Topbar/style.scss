@@ -52,10 +52,10 @@
 				position: relative;
 			}
 			.notifCount {
-				background-color: #fff;
-				border: 1px solid #ffb1bb;
+				background-color: $primary_layout;
+				border: 1px solid $light_pink;
 				border-radius: 50%;
-				color: #ffb1bb;
+				color: $light_pink;
 				position: absolute;
 				z-index: 2;
 				font-size: 0.6rem;
