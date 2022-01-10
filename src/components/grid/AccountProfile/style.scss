@@ -16,7 +16,7 @@
       .avatar {
         width: 76px;
         padding-bottom: 72px;
-        border: 2px solid #ffb1bb;
+        border: 2px solid $primary;
         border-radius: 80px;
         align-self: center;
         margin-right: 15px;
@@ -89,7 +89,7 @@
           display: flex;
           margin-top: 5px;
           .rankBox {
-            background-color: #ffd4d9;
+            background-color: $light_pink;
             padding: 0 5px 5px;
             width: 60px;
             border-radius: 5px;
