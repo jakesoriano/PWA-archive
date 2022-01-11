@@ -115,7 +115,7 @@
 	"INCORRECT_PASSWORD": "Incorrect current password",
 	"CONGRATULATIONS": "Congratulations!",
 	"EARNED_POINTS_OLD": "You have earned {POINTS} hero points from recruiting an additional {MEMBERS_COUNT} members!",
-	"EARNED_POINTS": "You have successfully invited {MEMBERS_COUNT} new members over the past week.",
+	"EARNED_POINTS": "You have successfully invited {MEMBERS_COUNT} additional member(s) to be kakampink.",
 	"SEE_YOU": "See you at {LOCATION} on {DATE}. Wear your pink outfit and tie pink ribbons in your cars.",
 	"SHOW_MORE": "Show more",
 	"ACCOUNT_NOT_FOUND": "Account not found.",
