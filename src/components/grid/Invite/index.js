@@ -315,12 +315,12 @@ class Invite extends Component {
 						<div className={style.item}>
 							<p className={`light ${style.name}`}>{`${item.fname} ${item.lname}`}</p>
 							<p className={`light ${style.status}`}>{getTranslation(item.status)}</p>
-							<a className={`light ${style.status}`}
+							{item.status === 'PENDING' ? <a className={`light ${style.status}`}
 								onClick={this.handleClickDiscord}>
 								<ImageLoader 
 									src="assets/images/discord.png"
 									style={{container: style.listIcon}} />
-							</a>
+							</a> : <p className={style.status}></p>}
 						</div>
 					))}
 				</div>
