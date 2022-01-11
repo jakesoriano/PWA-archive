@@ -8,8 +8,20 @@
     p {
       margin-bottom: 8px;
       &.heading {
-        margin-bottom: 3px;
+        margin: 15px 0;
         text-transform: uppercase;
+      }
+    }
+    .inputCont {
+      margin-top: 20px;
+      > div {
+        align-items: center;
+        input {
+          margin-top: 0;
+        }
+      }
+      label {
+        font-family: 'OpenSans-SemiBold', arial, sans-serif;
       }
     }
   }
