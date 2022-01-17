@@ -191,7 +191,6 @@ class Grid extends Component {
 	      setCookie(`${process.env.PREFIX}LastPage`, url);
 	      // device id
 	      nativeGetDeviceId((id) => {
-					alert(id);
 	        updateStore({
 	          deviceId: id
 	        });
