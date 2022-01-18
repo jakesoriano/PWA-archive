@@ -136,5 +136,7 @@
 	"JOIN": "Join",
 	"INVITE_JOIN_TITLE": "We can help you!",
 	"INVITE_JOIN_CONTENT": "Ang Usapang Kakampink Discord server ay para sa mga nahihirapang kumausap sa mga mahal sa buhay tungkol kay Leni Robredo",
-	"I_ACCEPT": "I Accept."
+	"I_ACCEPT": "I Accept.",
+	"TASK_CENTER": "Task Center",
+	"TASK_INSTRUCTION": "Once you received the task, the deadline countdown starts. Complete ahead of time to get more Hero Points and Rewards!"
 }

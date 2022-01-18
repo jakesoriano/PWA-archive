@@ -253,5 +253,17 @@
 				"component": "Story"
 			}
 		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "TASK_CENTER",
+		"uri": "task-center",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "TaskCenter"
+			}
+		]
 	}
 ]
