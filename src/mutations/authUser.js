@@ -230,6 +230,16 @@ export function updateAvatar (data) {
       .then((res) => {
         if (res && res.success) {
           // eslint-disable-next-line
+          const { authUser } = store.getState();
+          updateStore({
+            authUser: {
+              ...authUser,
+              profile: {
+                ...authUser.profile,
+                image: data.image
+              }
+            }
+          });
           console.log(`SPA >> updateAvatar successful`, res);
         }
         resolve(res);
