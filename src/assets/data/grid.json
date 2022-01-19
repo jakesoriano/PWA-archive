@@ -253,5 +253,16 @@
 				"component": "Story"
 			}
 		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "KAKAMPINK_STORIES",
+		"uri": "registration-invite",
+		"contents": [
+			{
+				"component": "RegistrationInvite"
+			}
+		]
 	}
 ]

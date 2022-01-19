@@ -23,4 +23,4 @@ export { default as StoriesDashboard } from './StoriesDashboard';
 export { default as Story } from './Story';
 export { default as ChangePassword } from './ChangePassword';
 export { default as DataPrivacy } from './DataPrivacy';
-
+export { default as RegistrationInvite } from './RegistrationInvite';

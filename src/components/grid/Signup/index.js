@@ -10,184 +10,196 @@ import {
 	getProvince,
 	getMunicipality,
 	getBarangay,
-	displayPageLoader
+	displayPageLoader,
 } from '_helpers';
 import {
 	FormGroup,
 	FormInput,
 	FormDropdown,
-	ButtonDescription
+	ButtonDescription,
 } from '_components/core';
-import {
-	nativeSelfie
-} from '_platform/helpers';
+import { nativeSelfie } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Signup extends Component {
-	constructor(props){
+	constructor(props) {
 		super(props);
 		this.state = {
 			regionOptions: getRegions(),
-			provinceOptions: props.signup ? getProvince(props.signup.region) :[],
-			municipalityOptions: props.signup ? getMunicipality(props.signup.region, props.signup.province) :[],
-			barangayOptions: props.signup ? getBarangay(props.signup.region, props.signup.province, props.signup.municipality) :[],
+			provinceOptions: props.signup ? getProvince(props.signup.region) : [],
+			municipalityOptions: props.signup
+				? getMunicipality(props.signup.region, props.signup.province)
+				: [],
+			barangayOptions: props.signup
+				? getBarangay(
+						props.signup.region,
+						props.signup.province,
+						props.signup.municipality
+				  )
+				: [],
 			fname: {
 				value: props.signup ? props.signup.fname : '',
 				error: '',
 				message: '',
-				hasError: false
+				hasError: false,
 			},
 			mname: {
 				value: props.signup ? props.signup.mname : '',
 				error: '',
 				message: '',
-				hasError: false
+				hasError: false,
 			},
 			lname: {
 				value: props.signup ? props.signup.lname : '',
 				error: '',
 				message: '',
-				hasError: false
+				hasError: false,
 			},
 			gender: {
 				value: props.signup ? props.signup.gender : '',
 				error: '',
 				message: '',
-				hasError: false
+				hasError: false,
 			},
 			birthday: {
 				value: props.signup ? props.signup.birthday : '',
 				error: '',
 				message: '',
-				hasError: false
+				hasError: false,
 			},
 			mobile: {
 				value: props.signup ? props.signup.mobile : '',
 				error: '',
 				message: '',
-				hasError: false
+				hasError: false,
 			},
 			region: {
 				value: props.signup ? props.signup.region : '',
 				error: '',
 				message: '',
-				hasError: false
+				hasError: false,
 			},
 			province: {
 				value: props.signup ? props.signup.province : '',
 				error: '',
 				message: '',
-				hasError: false
+				hasError: false,
 			},
 			municipality: {
 				value: props.signup ? props.signup.municipality : '',
 				error: '',
 				message: '',
-				hasError: false
+				hasError: false,
 			},
 			barangay: {
 				value: props.signup ? props.signup.barangay : '',
 				error: '',
 				message: '',
-				hasError: false
+				hasError: false,
 			},
 			isRegisteredVoter: {
-				value: props.signup && props.signup.isRegisteredVoter ? props.signup.isRegisteredVoter : 'yes',
+				value:
+					props.signup && props.signup.isRegisteredVoter
+						? props.signup.isRegisteredVoter
+						: 'yes',
 				error: '',
 				message: '',
-				hasError: false
+				hasError: false,
 			},
 			parentRefCode: {
-				value: props.signup && props.signup.parentRefCode? props.signup.parentRefCode : '',
+				value:
+					props.signup && props.signup.parentRefCode
+						? props.signup.parentRefCode
+						: '',
 				error: '',
 				message: '',
-				hasError: false
-			}
-		}
+				hasError: false,
+			},
+		};
 	}
 	componentDidMount = () => {
 		updateStore({
 			customBack: () => {
-				route(`/${this.props.parent}/data-privacy`, true)
-			}
+				route(`/${this.props.parent}/data-privacy`, true);
+			},
 		});
 	};
-	
+
 	onFnameChange = (value) => {
 		this.setState({
 			fname: {
 				...this.state.fname,
 				value: value,
 				hasError: !Boolean(value),
-				error: !Boolean(value) ? 'REQUIRED' : ''
-			}
+				error: !Boolean(value) ? 'REQUIRED' : '',
+			},
 		});
 	};
-	
+
 	onMnameChange = (value) => {
 		this.setState({
 			mname: {
 				...this.state.mname,
 				value: value,
 				hasError: !Boolean(value),
-				error: !Boolean(value) ? 'REQUIRED' : ''
-			}
+				error: !Boolean(value) ? 'REQUIRED' : '',
+			},
 		});
 	};
-	
+
 	onLnameChange = (value) => {
 		this.setState({
 			lname: {
 				...this.state.lname,
 				value: value,
 				hasError: !Boolean(value),
-				error: !Boolean(value) ? 'REQUIRED' : ''
-			}
+				error: !Boolean(value) ? 'REQUIRED' : '',
+			},
 		});
 	};
-	
+
 	onGenderChange = (value) => {
 		this.setState({
 			gender: {
 				...this.state.gender,
 				value: value,
 				hasError: !Boolean(value),
-				error: !Boolean(value) ? 'REQUIRED' : ''
-			}
+				error: !Boolean(value) ? 'REQUIRED' : '',
+			},
 		});
 	};
-	
+
 	onDobChange = (value) => {
 		this.setState({
 			birthday: {
 				...this.state.birthday,
 				value: value,
 				hasError: !Boolean(value),
-				error: !Boolean(value) ? 'REQUIRED' : ''
-			}
+				error: !Boolean(value) ? 'REQUIRED' : '',
+			},
 		});
 	};
-	
+
 	onMobileChange = (value) => {
 		this.setState({
 			mobile: {
 				...this.state.mobile,
-				value: (value || '').slice(0 ,11),
+				value: (value || '').slice(0, 11),
 				hasError: !Boolean(value),
-				error: !Boolean(value) ? 'REQUIRED' : ''
-			}
+				error: !Boolean(value) ? 'REQUIRED' : '',
+			},
 		});
 	};
-	
+
 	onRegionChange = (value) => {
 		this.setState({
 			region: {
 				...this.state.region,
 				value: value,
 				hasError: !Boolean(value),
-				error: !Boolean(value) ? 'REQUIRED' : ''
+				error: !Boolean(value) ? 'REQUIRED' : '',
 			},
 			provinceOptions: value ? getProvince(value) : [],
 			province: {
@@ -206,16 +218,18 @@ class Signup extends Component {
 			},
 		});
 	};
-	
+
 	onProvinceChange = (value) => {
 		this.setState({
 			province: {
 				...this.state.province,
 				value: value,
 				hasError: !Boolean(value),
-				error: !Boolean(value) ? 'REQUIRED' : ''
+				error: !Boolean(value) ? 'REQUIRED' : '',
 			},
-			municipalityOptions: value ? getMunicipality(this.state.region.value, value) : [],
+			municipalityOptions: value
+				? getMunicipality(this.state.region.value, value)
+				: [],
 			municipality: {
 				...this.state.municipality,
 				value: '',
@@ -227,43 +241,45 @@ class Signup extends Component {
 			},
 		});
 	};
-	
+
 	onMunicipalityChange = (value) => {
 		this.setState({
 			municipality: {
 				...this.state.municipality,
 				value: value,
 				hasError: !Boolean(value),
-				error: !Boolean(value) ? 'REQUIRED' : ''
+				error: !Boolean(value) ? 'REQUIRED' : '',
 			},
-			barangayOptions: value ? getBarangay(this.state.region.value, this.state.province.value, value) : [],
+			barangayOptions: value
+				? getBarangay(this.state.region.value, this.state.province.value, value)
+				: [],
 			barangay: {
 				...this.state.barangay,
 				value: '',
 			},
 		});
 	};
-	
+
 	onBarangayChange = (value) => {
 		this.setState({
 			barangay: {
 				...this.state.barangay,
 				value: value,
 				hasError: !Boolean(value),
-				error: !Boolean(value) ? 'REQUIRED' : ''
-			}
+				error: !Boolean(value) ? 'REQUIRED' : '',
+			},
 		});
 	};
-	
+
 	onVoterChange = (value) => {
 		this.setState({
 			isRegisteredVoter: {
 				...this.state.isRegisteredVoter,
-				value: value
-			}
+				value: value,
+			},
 		});
 	};
-	
+
 	onParentRefCodeChange = (value) => {
 		this.setState({
 			parentRefCode: {
@@ -271,12 +287,13 @@ class Signup extends Component {
 				value: value,
 				// hasError: !Boolean(value),
 				// error: !Boolean(value) ? 'REQUIRED' : ''
-			}
+			},
 		});
 	};
 
 	handleContinue = () => {
-		if (!this.state.fname.value ||
+		if (
+			!this.state.fname.value ||
 			!this.state.mname.value ||
 			!this.state.lname.value ||
 			!this.state.birthday.value ||
@@ -285,9 +302,9 @@ class Signup extends Component {
 			!this.state.province.value ||
 			!this.state.municipality.value ||
 			!this.state.barangay.value ||
-			!this.state.isRegisteredVoter.value 
+			!this.state.isRegisteredVoter.value
 			// || !this.state.parentRefCode.value
-			) {
+		) {
 			this.onFnameChange(this.state.fname.value);
 			this.onMnameChange(this.state.mname.value);
 			this.onLnameChange(this.state.lname.value);
@@ -301,54 +318,52 @@ class Signup extends Component {
 			// this.onParentRefCodeChange(this.state.parentRefCode.value);
 		} else {
 			displayPageLoader(true);
-			validateMobile(this.state.mobile.value)
-				.then((res) => {
+			validateMobile(this.state.mobile.value).then((res) => {
 				displayPageLoader(false);
 				if (!res.hasOwnProperty('error')) {
 					if (res.available) {
-						nativeSelfie().then(image => {
-							// displayPageLoader(false);
-							setTimeout(() => {
-								const userData = {
-									...(this.props.signup || {}),
-									image: image,
-									fname: this.state.fname.value,
-									mname: this.state.mname.value,
-									lname: this.state.lname.value,
-									gender: this.state.gender.value,
-									birthday: this.state.birthday.value,
-									mobile: this.state.mobile.value,
-									region: this.state.region.value,
-									province: this.state.province.value,
-									municipality: this.state.municipality.value,
-									barangay: this.state.barangay.value,
-									isRegisteredVoter: this.state.isRegisteredVoter.value,
-									parentRefCode: this.state.parentRefCode.value
-								};
-									if (this.props.signup.registrationId) {
-										route(`/${this.props.parent}/registration-otp`);
-									} else {
-										displayPageLoader(true);
-										completeSignup(userData).then((res) => {
-											displayPageLoader(false);
-											if (res.success) {
-												route(`/${this.props.parent}/registration-otp`);
-											} else {
-												this.showAlertBox(getTranslation('SOMETHING_WRONG'));
-											}
-										}).catch((err) => {
-											console.error('error', err);
-										})
-									}
-							}, 100)
-						});
+						// displayPageLoader(false);
+						setTimeout(() => {
+							const userData = {
+								...(this.props.signup || {}),
+								fname: this.state.fname.value,
+								mname: this.state.mname.value,
+								lname: this.state.lname.value,
+								gender: this.state.gender.value,
+								birthday: this.state.birthday.value,
+								mobile: this.state.mobile.value,
+								region: this.state.region.value,
+								province: this.state.province.value,
+								municipality: this.state.municipality.value,
+								barangay: this.state.barangay.value,
+								isRegisteredVoter: this.state.isRegisteredVoter.value,
+								parentRefCode: this.state.parentRefCode.value,
+							};
+							if (this.props.signup.registrationId) {
+								route(`/${this.props.parent}/registration-otp`);
+							} else {
+								displayPageLoader(true);
+								completeSignup(userData)
+									.then((res) => {
+										displayPageLoader(false);
+										if (res.success) {
+											route(`/${this.props.parent}/registration-otp`);
+										} else {
+											this.showAlertBox(getTranslation('SOMETHING_WRONG'));
+										}
+									})
+									.catch((err) => {
+										console.error('error', err);
+									});
+							}
+						}, 100);
 					} else {
 						this.setState({
 							mobile: {
 								...this.state.mobile.value,
 								hasError: true,
-								error: getTranslation('MOBILE_UNAVAILABLE')
-							}
+								error: getTranslation('MOBILE_UNAVAILABLE'),
+							},
 						});
 					}
 				} else {
@@ -356,103 +371,111 @@ class Signup extends Component {
 				}
 			});
 		}
-	}
+	};
 
 	showAlertBox = (message) => {
 		updateStore({
 			alertShow: {
 				success: false,
-				content: message
-			}
+				content: message,
+			},
 		});
-	}
+	};
 
-	render = ({}, {
-		fname,
-		mname,
-		lname,
-		birthday,
-		mobile,
-		region,
-		province,
-		municipality,
-		barangay,
-		isRegisteredVoter,
-		parentRefCode,
-		regionOptions,
-		provinceOptions,
-		municipalityOptions,
-		barangayOptions,
-		gender
-	}) => {
-
-	  return (
+	render = (
+		{},
+		{
+			fname,
+			mname,
+			lname,
+			birthday,
+			mobile,
+			region,
+			province,
+			municipality,
+			barangay,
+			isRegisteredVoter,
+			parentRefCode,
+			regionOptions,
+			provinceOptions,
+			municipalityOptions,
+			barangayOptions,
+			gender,
+		}
+	) => {
+		return (
 			<div className={style.signupWrap}>
 				<form className={style.form}>
-
-					<FormGroup label="NAME" hasError={fname.hasError || mname.hasError || lname.hasError}>
+					<FormGroup
+						label="NAME"
+						hasError={fname.hasError || mname.hasError || lname.hasError}
+					>
 						<FormInput
 							className={style.name}
-							style={{error: style.name}}
+							style={{ error: style.name }}
 							value={fname.value}
 							type="text"
 							placeholder={getTranslation('FIRST_NAME')}
 							onBlur={(e) => {
-								this.onFnameChange(e.target.value)
+								this.onFnameChange(e.target.value);
 							}}
 							onInput={(e) => {
-								this.onFnameChange(e.target.value)
+								this.onFnameChange(e.target.value);
 							}}
 							hasError={fname.hasError}
 							error={fname.error}
-							message={fname.message} />
+							message={fname.message}
+						/>
 						<FormInput
 							className={style.name}
-							style={{error: style.name}}
+							style={{ error: style.name }}
 							value={mname.value}
 							type="text"
 							placeholder={getTranslation('MIDDLE_NAME')}
 							onBlur={(e) => {
-								this.onMnameChange(e.target.value)
+								this.onMnameChange(e.target.value);
 							}}
 							onInput={(e) => {
-								this.onMnameChange(e.target.value)
+								this.onMnameChange(e.target.value);
 							}}
 							hasError={mname.hasError}
 							error={mname.error}
-							message={mname.message} />
+							message={mname.message}
+						/>
 						<FormInput
 							className={style.name}
-							style={{error: style.name}}
+							style={{ error: style.name }}
 							value={lname.value}
 							type="text"
 							placeholder={getTranslation('LAST_NAME')}
 							onBlur={(e) => {
-								this.onLnameChange(e.target.value)
+								this.onLnameChange(e.target.value);
 							}}
 							onInput={(e) => {
-								this.onLnameChange(e.target.value)
+								this.onLnameChange(e.target.value);
 							}}
 							hasError={lname.hasError}
 							error={lname.error}
-							message={lname.message} />
+							message={lname.message}
+						/>
 					</FormGroup>
 
 					<FormGroup label="GENDER" hasError={gender.hasError}>
 						<div className={style.radioWrap}>
-						<FormInput
-							name="male"
-							type="radio"
-							label="MALE"
-							value="M"
-							id="male"
-							checked={gender.value === 'M'}
-							onBlur={(e) => {
-								this.onGenderChange(e.target.value)
-							}}
-							onInput={(e) => {
-								this.onGenderChange(e.target.value)
-							}} />
+							<FormInput
+								name="male"
+								type="radio"
+								label="MALE"
+								value="M"
+								id="male"
+								checked={gender.value === 'M'}
+								onBlur={(e) => {
+									this.onGenderChange(e.target.value);
+								}}
+								onInput={(e) => {
+									this.onGenderChange(e.target.value);
+								}}
+							/>
 							<FormInput
 								name="female"
 								type="radio"
@@ -461,12 +484,13 @@ class Signup extends Component {
 								id="female"
 								checked={gender.value === 'F'}
 								onCLick={(e) => {
-									this.onGenderChange(e.target.value)
+									this.onGenderChange(e.target.value);
 								}}
 								onInput={(e) => {
-									this.onGenderChange(e.target.value)
-								}} />
-							</div>
+									this.onGenderChange(e.target.value);
+								}}
+							/>
+						</div>
 					</FormGroup>
 
 					<FormGroup label="DATE_OF_BIRTH" hasError={birthday.hasError}>
@@ -475,14 +499,15 @@ class Signup extends Component {
 							type="date"
 							max={getMaxDOBDate()}
 							onBlur={(e) => {
-								this.onDobChange(e.target.value)
+								this.onDobChange(e.target.value);
 							}}
 							onInput={(e) => {
-								this.onDobChange(e.target.value)
+								this.onDobChange(e.target.value);
 							}}
 							hasError={birthday.hasError}
 							error={birthday.error}
-							message={birthday.message} />
+							message={birthday.message}
+						/>
 					</FormGroup>
 
 					<FormGroup label="MOBILE_NUMBER" hasError={mobile.hasError}>
@@ -492,14 +517,15 @@ class Signup extends Component {
 							placeholder={'0919...'}
 							max={11}
 							onBlur={(e) => {
-								this.onMobileChange(e.target.value)
+								this.onMobileChange(e.target.value);
 							}}
 							onInput={(e) => {
-								this.onMobileChange(e.target.value)
+								this.onMobileChange(e.target.value);
 							}}
 							hasError={mobile.hasError}
 							error={mobile.error}
-							message={mobile.message} />
+							message={mobile.message}
+						/>
 					</FormGroup>
 
 					<FormGroup label="REGION" hasError={region.hasError}>
@@ -507,18 +533,18 @@ class Signup extends Component {
 							className={style.region}
 							value={region.value}
 							options={regionOptions}
-							getValue={option => option.value}
-							getText={option => option.text}
+							getValue={(option) => option.value}
+							getText={(option) => option.text}
 							onBlur={(e) => {
-								this.onRegionChange(e.target.value)
+								this.onRegionChange(e.target.value);
 							}}
 							onIonChangenput={(e) => {
-								this.onRegionChange(e.target.value)
+								this.onRegionChange(e.target.value);
 							}}
 							hasError={region.hasError}
 							error={region.error}
 							message={region.message}
-							 />
+						/>
 					</FormGroup>
 
 					<FormGroup label="PROVINCE" hasError={province.hasError}>
@@ -526,18 +552,18 @@ class Signup extends Component {
 							className={style.province}
 							value={province.value}
 							options={provinceOptions}
-							getValue={option => option.value}
-							getText={option => option.text}
+							getValue={(option) => option.value}
+							getText={(option) => option.text}
 							onBlur={(e) => {
-								this.onProvinceChange(e.target.value)
+								this.onProvinceChange(e.target.value);
 							}}
 							onIonChangenput={(e) => {
-								this.onProvinceChange(e.target.value)
+								this.onProvinceChange(e.target.value);
 							}}
 							hasError={province.hasError}
 							error={province.error}
 							message={province.message}
-							 />
+						/>
 					</FormGroup>
 
 					<FormGroup label="MUNICIPALITY" hasError={municipality.hasError}>
@@ -545,18 +571,18 @@ class Signup extends Component {
 							className={style.municipality}
 							value={municipality.value}
 							options={municipalityOptions}
-							getValue={option => option.value}
-							getText={option => option.text}
+							getValue={(option) => option.value}
+							getText={(option) => option.text}
 							onBlur={(e) => {
-								this.onMunicipalityChange(e.target.value)
+								this.onMunicipalityChange(e.target.value);
 							}}
 							onIonChangenput={(e) => {
-								this.onMunicipalityChange(e.target.value)
+								this.onMunicipalityChange(e.target.value);
 							}}
 							hasError={municipality.hasError}
 							error={municipality.error}
 							message={municipality.message}
-							/>
+						/>
 					</FormGroup>
 
 					<FormGroup label="BARANGAY" hasError={barangay.hasError}>
@@ -564,35 +590,39 @@ class Signup extends Component {
 							className={style.barangay}
 							value={barangay.value}
 							options={barangayOptions}
-							getValue={option => option.value}
-							getText={option => option.text}
+							getValue={(option) => option.value}
+							getText={(option) => option.text}
 							onBlur={(e) => {
-								this.onBarangayChange(e.target.value)
+								this.onBarangayChange(e.target.value);
 							}}
 							onIonChangenput={(e) => {
-								this.onBarangayChange(e.target.value)
+								this.onBarangayChange(e.target.value);
 							}}
 							hasError={barangay.hasError}
 							error={barangay.error}
 							message={barangay.message}
-							/>
+						/>
 					</FormGroup>
 
-					<FormGroup label="REGISTERED_VOTER" hasError={isRegisteredVoter.hasError}>
+					<FormGroup
+						label="REGISTERED_VOTER"
+						hasError={isRegisteredVoter.hasError}
+					>
 						<div className={style.radioWrap}>
-						<FormInput
-							name="voter"
-							type="radio"
-							label="YES"
-							value="yes"
-							id="yes"
-							checked={isRegisteredVoter.value === 'yes'}
-							onBlur={(e) => {
-								this.onVoterChange(e.target.value)
-							}}
-							onInput={(e) => {
-								this.onVoterChange(e.target.value)
-							}} />
+							<FormInput
+								name="voter"
+								type="radio"
+								label="YES"
+								value="yes"
+								id="yes"
+								checked={isRegisteredVoter.value === 'yes'}
+								onBlur={(e) => {
+									this.onVoterChange(e.target.value);
+								}}
+								onInput={(e) => {
+									this.onVoterChange(e.target.value);
+								}}
+							/>
 							<FormInput
 								name="voter"
 								type="radio"
@@ -601,12 +631,13 @@ class Signup extends Component {
 								id="no"
 								checked={isRegisteredVoter.value === 'no'}
 								onCLick={(e) => {
-									this.onVoterChange(e.target.value)
+									this.onVoterChange(e.target.value);
 								}}
 								onInput={(e) => {
-									this.onVoterChange(e.target.value)
-								}} />
-							</div>
+									this.onVoterChange(e.target.value);
+								}}
+							/>
+						</div>
 					</FormGroup>
 
 					<FormGroup label="REFERRAL_CODE" hasError={parentRefCode.hasError}>
@@ -614,24 +645,25 @@ class Signup extends Component {
 							value={parentRefCode.value}
 							type="text"
 							onBlur={(e) => {
-								this.onParentRefCodeChange(e.target.value)
+								this.onParentRefCodeChange(e.target.value);
 							}}
 							onInput={(e) => {
-								this.onParentRefCodeChange(e.target.value)
+								this.onParentRefCodeChange(e.target.value);
 							}}
 							hasError={parentRefCode.hasError}
 							error={parentRefCode.error}
-							message={parentRefCode.message} />
+							message={parentRefCode.message}
+						/>
 					</FormGroup>
 
 					<ButtonDescription
-	          onClickCallback={this.handleContinue}
-	          text="CONTINUE"
-	          isDisabled={this.state.isReading}
-	        />
+						onClickCallback={this.handleContinue}
+						text="CONTINUE"
+						isDisabled={this.state.isReading}
+					/>
 				</form>
 			</div>
-	  );
+		);
 	};
 }
 export default connect(['signup'])(Signup);
