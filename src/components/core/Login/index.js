@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { Component } from 'preact';
 import { Link } from 'preact-router/match';
-import { updateStore } from '_unistore';
+import { store, updateStore } from '_unistore';
 import { connect } from 'unistore/preact';
 import { getTranslation, displayPageLoader } from '_helpers';
 import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
@@ -61,7 +61,26 @@ class Login extends Component {
             if (!isAuto) {
               nativeSetCredential(payload);
             }
-            route('/home', true);
+            if (res.otp) {
+              const { loginInfo } = store.getState();
+              updateStore({
+                loginInfo: {
+                  ...loginInfo,
+                  mobile: res.mobile,
+                },
+                password: payload.password
+              }, true);
+              this.props.toggleLoginForm();
+              route(`/landing/login-otp`);
+            } else if (res.success === false) {
+              updateStore({
+                alertShow: {
+                  success: false,
+                  content: getTranslation(errMessage || 'INVALID_USER_PASS'),
+                  noTopBar: true
+                }
+              });
+            }
           } else {
             updateStore({
               alertShow: {
