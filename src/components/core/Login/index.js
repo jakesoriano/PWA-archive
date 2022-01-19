@@ -57,11 +57,27 @@ class Login extends Component {
 	    login(payload)
 	      .then((res) => {
           displayPageLoader(false);
-          if (res) {
+          /**
+           * 1. login success
+           * 2. login require otp
+           * 3. login fail
+           */
+          if (res === true) {
             if (!isAuto) {
               nativeSetCredential(payload);
             }
             route('/home', true);
+          } else if (res.otp) {
+            updateStore({
+              loginInfo: {
+                username: payload.username,
+                password: payload.password,
+                mobile: res.mobile,
+                isAuto
+              }
+            }, true);
+            this.props.toggleLoginForm();
+            route(`/landing/login-otp`);
           } else {
             updateStore({
               alertShow: {

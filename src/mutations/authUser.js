@@ -6,7 +6,8 @@ import {
   removeCookie,
   urlUserPoints,
   urlChangePassword,
-  urlUserProfile
+  urlUserProfile,
+  urlUserLoginOTP
 } from '_helpers';
 import {
   nativeOnLogout,
@@ -33,7 +34,8 @@ export function logOut (callback) {
     members,
     invited,
     communities,
-    notifications
+    notifications,
+    loginInfo: null,
   });
   nativeOnLogout();
   if (callback) {
@@ -97,6 +99,7 @@ export function fetchUserPoints () {
 }
 
 export function login (data) {
+  const { deviceId, loginInfo } = store.getState();
   const {
     news,
     events,
@@ -107,7 +110,10 @@ export function login (data) {
   return new Promise((resolve) => {
     xhr(urlUserLogin, {
       method: 'POST',
-      data
+      data: {
+        ...data,
+        deviceId: 'B7BA296B-A979-4448-87C8-89ED30A73F19'
+      }
     })
       .then((res) => {
         if (res && res.success) {
@@ -122,7 +128,8 @@ export function login (data) {
             events,
             members,
             invited,
-            communities
+            communities,
+            loginInfo: null
           });
           // set auth token in native
           nativeSetAuthToken(res.token);
@@ -136,6 +143,53 @@ export function login (data) {
       .catch((err) => {
         // eslint-disable-next-line
 				console.log(`SPA >> login Error`, err);
+        resolve(err.data);
+      });
+  });
+}
+
+export function loginOTP (data) {
+  const {
+    news,
+    events,
+    members,
+    invited,
+    communities
+  } = initialStore;
+  return new Promise((resolve) => {
+    xhr(urlUserLoginOTP, {
+      method: 'POST',
+      data
+    })
+      .then((res) => {
+        console.log('resAuth', res);
+        if (res && res.success) {
+          updateStore({
+            authUser: {
+              ...res.data,
+              points: res.data.points || 0,
+              rank: res.data.rank || 0,
+            },
+            customBack: null,
+            news,
+            events,
+            members,
+            invited,
+            communities,
+            loginInfo: null
+          });
+          // set auth token in native
+          nativeSetAuthToken(res.token);
+          // eslint-disable-next-line
+          console.log(`SPA >> login OTP successful`, res);
+          resolve(true);
+        } else {
+          resolve(false);
+        }
+      })
+      .catch((err) => {
+        // eslint-disable-next-line
+				console.log(`SPA >> login OTP Error`, err);
         resolve(false);
       });
   });
