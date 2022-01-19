@@ -5,7 +5,8 @@ import {
   urlUserLogin,
   removeCookie,
   urlUserPoints,
-  urlChangePassword
+  urlChangePassword,
+  urlUserProfile
 } from '_helpers';
 import {
   nativeOnLogout,
@@ -156,6 +157,32 @@ export function changePassword (data) {
       .catch((err) => {
         // eslint-disable-next-line
 				console.log(`SPA >> login Error`, err);
+        resolve({
+          success: false,
+          error: {
+            message: 'SOMETHING_WRONG'
+          }
+        });
+      });
+  });
+}
+
+export function updateAvatar (data) {
+  return new Promise((resolve) => {
+    xhr(urlUserProfile, {
+      method: 'PATCH',
+      data
+    })
+      .then((res) => {
+        if (res && res.success) {
+          // eslint-disable-next-line
+          console.log(`SPA >> updateAvatar successful`, res);
+        }
+        resolve(res);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line
+				console.log(`SPA >> updateAvatar Error`, err);
         resolve({
           success: false,
           error: {

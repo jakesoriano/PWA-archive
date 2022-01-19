@@ -326,18 +326,23 @@ class Signup extends Component {
 						setTimeout(() => {
 							const userData = {
 								...(this.props.signup || {}),
-								fname: this.state.fname.value,
-								mname: this.state.mname.value,
-								lname: this.state.lname.value,
-								gender: this.state.gender.value,
-								birthday: this.state.birthday.value,
-								mobile: this.state.mobile.value,
-								region: this.state.region.value,
-								province: this.state.province.value,
-								municipality: this.state.municipality.value,
-								barangay: this.state.barangay.value,
-								isRegisteredVoter: this.state.isRegisteredVoter.value,
-								parentRefCode: this.state.parentRefCode.value,
+								'fname': this.state.fname.value,
+								'mname': this.state.mname.value,
+								'lname': this.state.lname.value,
+								'gender': this.state.gender.value,
+								'birthday': this.state.birthday.value,
+								'mobile': this.state.mobile.value,
+								'region': this.state.region.value,
+								'province': this.state.province.value,
+								'municipality': this.state.municipality.value,
+								'barangay': this.state.barangay.value,
+								'isRegisteredVoter': this.state.isRegisteredVoter.value === 'yes' ? true : false,
+								'parentRefCode': this.state.parentRefCode.value,
+								'deviceId': this.props.deviceId,
+								'socType': this.props.signup.socType,
+								'socId': this.props.signup.socId,
+								'image': '',
+								'industry': ''
 							};
 							if (this.props.signup.registrationId) {
 								route(`/${this.props.parent}/registration-otp`);
@@ -666,4 +671,4 @@ class Signup extends Component {
 		);
 	};
 }
-export default connect(['signup'])(Signup);
+export default connect(['signup', 'deviceId'])(Signup);

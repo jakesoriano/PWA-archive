@@ -1,5 +1,7 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
+import { updateStore } from '_unistore';
+import { updateAvatar } from '_mutations';
 import { connect } from 'unistore/preact';
 import { nativeSelfie } from '_platform/helpers';
 import { getTranslation } from '_helpers';
@@ -22,8 +24,23 @@ class RegistrationInvite extends Component {
 	};
 
 	componentDidMount = () => {
-		nativeSelfie().then((res) => {
-			console.log(res);
+		nativeSelfie().then((image) => {
+			if (image) {
+				let data = {
+					image: image
+				}
+				updateAvatar(data).then((res) => {
+					if (!res.success) {
+						updateStore({
+							alertShow: {
+								success: false,
+								content: getTranslation('SOMETHING_WRONG'),
+								noTopBar: true
+							}
+						});
+					}
+				})
+			}
 		});
 	};
 
