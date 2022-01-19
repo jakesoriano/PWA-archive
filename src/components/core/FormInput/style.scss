@@ -1,6 +1,7 @@
 .inputWrap {
 	.formInput {
 		border: none;
+		border-radius: 0;
 		border-bottom: 1px solid #737373;
 		padding: 10px 0;
 		display: block;
@@ -28,6 +29,7 @@
 			display: inline-block;
 			width: max-content !important;
 			margin-right: 5px;
+			padding: 0;
 		}
 	}
 }
