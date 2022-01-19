@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { Component } from 'preact';
 import { Link } from 'preact-router/match';
-import { store, updateStore } from '_unistore';
+import { updateStore } from '_unistore';
 import { connect } from 'unistore/preact';
 import { getTranslation, displayPageLoader } from '_helpers';
 import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
@@ -57,30 +57,27 @@ class Login extends Component {
 	    login(payload)
 	      .then((res) => {
           displayPageLoader(false);
-          if (res) {
+          /**
+           * 1. login success
+           * 2. login require otp
+           * 3. login fail
+           */
+          if (res === true) {
             if (!isAuto) {
               nativeSetCredential(payload);
             }
-            if (res.otp) {
-              const { loginInfo } = store.getState();
-              updateStore({
-                loginInfo: {
-                  ...loginInfo,
-                  mobile: res.mobile,
-                },
-                password: payload.password
-              }, true);
-              this.props.toggleLoginForm();
-              route(`/landing/login-otp`);
-            } else if (res.success === false) {
-              updateStore({
-                alertShow: {
-                  success: false,
-                  content: getTranslation(errMessage || 'INVALID_USER_PASS'),
-                  noTopBar: true
-                }
-              });
-            }
+            route('/home', true);
+          } else if (res.otp) {
+            updateStore({
+              loginInfo: {
+                username: payload.username,
+                password: payload.password,
+                mobile: res.mobile,
+                isAuto
+              }
+            }, true);
+            this.props.toggleLoginForm();
+            route(`/landing/login-otp`);
           } else {
             updateStore({
               alertShow: {

@@ -3,9 +3,12 @@ import { route } from 'preact-router';
 import { getTranslation, displayPageLoader } from '_helpers';
 import { loginOTP, login } from '_mutations';
 import { connect } from 'unistore/preact';
-import { store,updateStore } from '_unistore';
+import { updateStore } from '_unistore';
 import { OneTimePIN } from '_components/core';
 import style from './style.scss';
+import {
+  nativeSetCredential,
+} from '_platform/helpers';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class LoginOTP extends Component {
@@ -29,15 +32,23 @@ class LoginOTP extends Component {
 		});
 	};
 	handleContinue = (pin) => {
-		let { isOTPInvalid } = this.state;
-		let data = {
+		const { isOTPInvalid } = this.state;
+		const {
+			isAuto,
+			username,
+			password
+		} = this.props.loginInfo;
+		const data = {
 			otp: pin,
-			username: this.props.loginInfo.username,
+			username: username,
 		};
 		displayPageLoader(true);
 		loginOTP(data).then((res) => {
 			if (res) {
-				route(`/`);
+				if (!isAuto) {
+					nativeSetCredential({username, password});
+				}
+				route(`/home`, true);
 			} else {
 				if (!isOTPInvalid) {
 					this.showAlertBox(getTranslation('OTP_INVALID'));
@@ -56,18 +67,21 @@ class LoginOTP extends Component {
 	};
 
 	resetOTP = () => {
-		const { loginInfo, password } = store.getState();
 		let data = {
-			username: loginInfo.username,
-			password
+			username: this.props.loginInfo.username,
+			password: this.props.loginInfo.password,
+			deviceId: this.props.loginInfo.deviceId
 		};
-		displayPageLoader(true);
-		login(data)
+		return login(data)
 			.then((res) => {
-				displayPageLoader(false);
+				return {
+					success: res.otp
+				}
 			})
 			.catch((err) => {
-				displayPageLoader(false);
+				return {
+					success: false
+				}
 			});;
 	};
 
@@ -88,7 +102,7 @@ class LoginOTP extends Component {
 		return (
 			<div className={style.loginOtpWrapper}>
 				<OneTimePIN
-					mobile={loginInfo.mobile}
+					mobile={(loginInfo && loginInfo.mobile) || ''}
 					onClickCallback={this.handleContinue}
 					onResendCallback={this.resetOTP}
 				/>

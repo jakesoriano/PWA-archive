@@ -98,11 +98,6 @@ export function fetchUserPoints () {
 
 export function login (data) {
   const { deviceId, loginInfo } = store.getState();
-  const payload = {
-    username: data.username,
-    password: data.password,
-    deviceId
-  }
   const {
     news,
     events,
@@ -113,10 +108,12 @@ export function login (data) {
   return new Promise((resolve) => {
     xhr(urlUserLogin, {
       method: 'POST',
-      data: payload
+      data: {
+        ...data,
+        deviceId
+      }
     })
       .then((res) => {
-        console.log('resAuth', res);
         if (res && res.success) {
           updateStore({
             authUser: {
@@ -130,10 +127,7 @@ export function login (data) {
             members,
             invited,
             communities,
-            loginInfo: {
-              ...loginInfo,
-              username: data.username
-            }
+            loginInfo: null
           });
           // eslint-disable-next-line
           console.log(`SPA >> login successful`, res);
@@ -146,18 +140,11 @@ export function login (data) {
         // eslint-disable-next-line
 				console.log(`SPA >> login Error`, err);
         resolve(err.data);
-        updateStore({
-          loginInfo: {
-            ...loginInfo,
-            username: data.username
-          }
-        });
       });
   });
 }
 
 export function loginOTP (data) {
-  const { loginInfo } = store.getState();
   const {
     news,
     events,
@@ -185,10 +172,7 @@ export function loginOTP (data) {
             members,
             invited,
             communities,
-            loginInfo: {
-              ...loginInfo,
-              username: data.username
-            }
+            loginInfo: null
           });
           // eslint-disable-next-line
           console.log(`SPA >> login OTP successful`, res);
