@@ -9,7 +9,8 @@ export function nativeWebReady () {
   // eslint-disable-next-line no-console
   console.log('SPA >> nativeWebReady();');
   callNative({
-    action: 'loaded'
+    action: 'loaded',
+    apiUrl: process.env.API_DOMAIN
   });
 }
 
@@ -166,5 +167,14 @@ export function nativeOnLogout () {
   console.log('SPA >> nativeOnLogout();');
   callNative({
     action: 'onLogout'
+  });
+}
+
+export function nativeSetAuthToken (token) {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeSetAuthToken();');
+  callNative({
+    action: 'setAuthToken',
+    token
   });
 }
