@@ -99,7 +99,7 @@ export function fetchUserPoints () {
 }
 
 export function login (data) {
-  const { deviceId, loginInfo } = store.getState();
+  const { deviceId } = store.getState();
   const {
     news,
     events,

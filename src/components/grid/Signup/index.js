@@ -18,7 +18,6 @@ import {
 	FormDropdown,
 	ButtonDescription,
 } from '_components/core';
-import { nativeSelfie } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
