@@ -177,6 +177,8 @@ export function loginOTP (data) {
             communities,
             loginInfo: null
           });
+          // set auth token in native
+          nativeSetAuthToken(res.token);
           // eslint-disable-next-line
           console.log(`SPA >> login OTP successful`, res);
           resolve(true);
