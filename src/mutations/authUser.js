@@ -112,7 +112,7 @@ export function login (data) {
       method: 'POST',
       data: {
         ...data,
-        deviceId: 'B7BA296B-A979-4448-87C8-89ED30A73F19'
+        deviceId
       }
     })
       .then((res) => {
