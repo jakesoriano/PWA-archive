@@ -99,3 +99,8 @@ export function nativeOnLogout () {
   // eslint-disable-next-line no-console
   console.log('SPA >> nativeOnLogout();');
 }
+
+export function nativeSetAuthToken (token) {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeSetAuthToken();');
+}

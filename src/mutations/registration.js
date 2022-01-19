@@ -7,6 +7,9 @@ import {
   urlResendOTP,
   urlValidateMobile
 } from '_helpers';
+import {
+  nativeSetAuthToken
+} from '_platform/helpers';
 
 export function validateUsername (username) {
   return new Promise((resolve) => {
@@ -96,6 +99,10 @@ export function completeRegister (data) {
             authUser: res,
             customBack: null
           });
+          // set auth token in native
+          nativeSetAuthToken(res.token);
+          // eslint-disable-next-line
+          console.log(`SPA >> register successful`, res);
           resolve(res);
         } else {
           resolve(false);

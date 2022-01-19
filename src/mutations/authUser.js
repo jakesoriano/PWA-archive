@@ -8,7 +8,8 @@ import {
   urlChangePassword
 } from '_helpers';
 import {
-  nativeOnLogout
+  nativeOnLogout,
+  nativeSetAuthToken
 } from '_platform/helpers';
 
 export function logOut (callback) {
@@ -122,6 +123,8 @@ export function login (data) {
             invited,
             communities
           });
+          // set auth token in native
+          nativeSetAuthToken(res.token);
           // eslint-disable-next-line
           console.log(`SPA >> login successful`, res);
           resolve(true);
