@@ -1,14 +1,17 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
 import { getTranslation, displayPageLoader } from '_helpers';
-import { completeRegister, resendOTP } from '_mutations';
+import { loginOTP, login } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
-import { ButtonDescription, OneTimePIN } from '_components/core';
+import { OneTimePIN } from '_components/core';
 import style from './style.scss';
+import {
+  nativeSetCredential,
+} from '_platform/helpers';
 
 // eslint-disable-next-line react/prefer-stateless-function
-class RegistrationOTP extends Component {
+class LoginOTP extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -17,27 +20,35 @@ class RegistrationOTP extends Component {
 			isResendCd: false,
 			seconds: 60,
 			inputFocus: false,
+			isUsernameSet: false
 		};
 	}
 
 	componentDidMount = () => {
 		updateStore({
 			customBack: () => {
-				route(`/${this.props.parent}/signup`, true);
+				route(`/`, true);
 			},
 		});
 	};
 	handleContinue = (pin) => {
-		let { isOTPInvalid } = this.state;
-		let data = {
-			registrationId: this.props.signup.registrationId,
+		const { isOTPInvalid } = this.state;
+		const {
+			isAuto,
+			username,
+			password
+		} = this.props.loginInfo;
+		const data = {
 			otp: pin,
+			username: username,
 		};
 		displayPageLoader(true);
-		completeRegister(data).then((res) => {
-			displayPageLoader(false);
-			if (res.success) {
-				route(`registration-invite`, true);
+		loginOTP(data).then((res) => {
+			if (res) {
+				if (!isAuto) {
+					nativeSetCredential({username, password});
+				}
+				route(`/home`, true);
 			} else {
 				if (!isOTPInvalid) {
 					this.showAlertBox(getTranslation('OTP_INVALID'));
@@ -51,16 +62,27 @@ class RegistrationOTP extends Component {
 					}, 5300);
 				}
 			}
+			displayPageLoader(false);
 		});
 	};
 
 	resetOTP = () => {
-		const { registrationId, mobile } = this.props.signup || '';
 		let data = {
-			registrationId: registrationId,
-			mobile: mobile,
+			username: this.props.loginInfo.username,
+			password: this.props.loginInfo.password,
+			deviceId: this.props.loginInfo.deviceId
 		};
-		return resendOTP(data);
+		return login(data)
+			.then((res) => {
+				return {
+					success: res.otp
+				}
+			})
+			.catch((err) => {
+				return {
+					success: false
+				}
+			});;
 	};
 
 	showAlertBox = (message) => {
@@ -76,11 +98,11 @@ class RegistrationOTP extends Component {
 			});
 		}, 5300);
 	};
-	render = ({}) => {
+	render = ({loginInfo},{}) => {
 		return (
-			<div className={style.regOtpWrapper}>
+			<div className={style.loginOtpWrapper}>
 				<OneTimePIN
-					mobile={this.props.signup.mobile}
+					mobile={(loginInfo && loginInfo.mobile) || ''}
 					onClickCallback={this.handleContinue}
 					onResendCallback={this.resetOTP}
 				/>
@@ -88,4 +110,4 @@ class RegistrationOTP extends Component {
 		);
 	};
 }
-export default connect(['signup'])(RegistrationOTP);
+export default connect(['loginInfo'])(LoginOTP);

@@ -137,6 +137,11 @@
 	"INVITE_JOIN_TITLE": "We can help you!",
 	"INVITE_JOIN_CONTENT": "Ang Usapang Kakampink Discord server ay para sa mga nahihirapang kumausap sa mga mahal sa buhay tungkol kay Leni Robredo",
 	"I_ACCEPT": "I Accept.",
+	"INVITATION_SENT": "Successfully sent invitation!",
+	"SET_GOAL": "Set a goal. Convert someone to be a Kakampink!",
+	"DOWNLOAD_KITS": "Start a converstation, we can help. Download conversation kits below:",
+	"CONVERSION_KIT": "Conversion Kit",
+	"SKIP": "Skip",
 	"TASK_CENTER": "Task Center",
 	"TASK_INSTRUCTION": "Once you received the task, the deadline countdown starts. Complete ahead of time to get more Hero Points and Rewards!"
 }

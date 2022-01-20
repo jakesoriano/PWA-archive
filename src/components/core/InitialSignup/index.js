@@ -71,6 +71,8 @@ class InitialSignup extends Component {
                 signup: {
                   username: this.state.username.value,
                   password: this.state.password.value,
+                  socType: 'U',
+                  socId: ''
                 }
               });
               route(`/${this.props.parent}/terms`);

@@ -236,6 +236,17 @@
 		"styles": [],
 		"auth": false,
 		"pageTitle": "PAGE_OTP",
+		"uri": "login-otp",
+		"contents": [
+			{
+				"component": "LoginOTP"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": false,
+		"pageTitle": "PAGE_OTP",
 		"uri": "registration-otp",
 		"contents": [
 			{
@@ -251,6 +262,17 @@
 		"contents": [
 			{
 				"component": "Story"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "KAKAMPINK_STORIES",
+		"uri": "registration-invite",
+		"contents": [
+			{
+				"component": "RegistrationInvite"
 			}
 		]
 	},

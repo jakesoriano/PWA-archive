@@ -5,11 +5,26 @@
     overflow-y: scroll;
     padding: 15px 15px;
     min-height: calc(100vh - 165px);
+    a {
+      text-decoration: underline;
+      color: $primary;
+    }
     p {
       margin-bottom: 8px;
       &.heading {
         margin: 15px 0;
         text-transform: uppercase;
+      }
+    }
+    ul {
+      padding-left: 20px;
+      margin: 0;
+      li {
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+      }
+      ul li {
+        font-size: 0.8rem;
       }
     }
     .inputCont {
