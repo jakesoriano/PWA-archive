@@ -149,5 +149,10 @@
 	"COMMUNITY_SETUP_DESC": "Post events, announcements and stories for your community.",
 	"COMMUNITY_NAME": "Community Name",
 	"COMMUNITY_ABOUT": "Tell your members about your community",
-	"COMMUNITY_LOGO": "Upload Community Logo"
+	"COMMUNITY_LOGO": "Upload Community Logo",
+	"INVITATION_SENT": "Successfully sent invitation!",
+	"SET_GOAL": "Set a goal. Convert someone to be a Kakampink!",
+	"DOWNLOAD_KITS": "Start a converstation, we can help. Download conversation kits below:",
+	"CONVERSION_KIT": "Conversion Kit",
+	"SKIP": "Skip"
 }

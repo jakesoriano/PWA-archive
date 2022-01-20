@@ -6,6 +6,7 @@ import {
   removeCookie,
   urlUserPoints,
   urlChangePassword,
+  urlUserProfile,
   urlUserLoginOTP
 } from '_helpers';
 import {
@@ -98,7 +99,7 @@ export function fetchUserPoints () {
 }
 
 export function login (data) {
-  const { deviceId, loginInfo } = store.getState();
+  const { deviceId } = store.getState();
   const {
     news,
     events,
@@ -210,6 +211,42 @@ export function changePassword (data) {
       .catch((err) => {
         // eslint-disable-next-line
 				console.log(`SPA >> login Error`, err);
+        resolve({
+          success: false,
+          error: {
+            message: 'SOMETHING_WRONG'
+          }
+        });
+      });
+  });
+}
+
+export function updateAvatar (data) {
+  return new Promise((resolve) => {
+    xhr(urlUserProfile, {
+      method: 'PATCH',
+      data
+    })
+      .then((res) => {
+        if (res && res.success) {
+          // eslint-disable-next-line
+          const { authUser } = store.getState();
+          updateStore({
+            authUser: {
+              ...authUser,
+              profile: {
+                ...authUser.profile,
+                image: data.image
+              }
+            }
+          });
+          console.log(`SPA >> updateAvatar successful`, res);
+        }
+        resolve(res);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line
+				console.log(`SPA >> updateAvatar Error`, err);
         resolve({
           success: false,
           error: {

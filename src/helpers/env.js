@@ -2,6 +2,7 @@ export const urlTranslation = `{PUBLIC_PATH}assets/data/translations/{langAlias}
 export const urlGrid = `{PUBLIC_PATH}assets/data/grid.json?_{_}`;
 export const urlUser = `${process.env.API_DOMAIN}user`;
 export const urlUserLogin = urlUser + `/login`;
+export const urlUserProfile = urlUser + `/profile`;
 export const urlUserPoints = `${process.env.API_DOMAIN}user/points`;
 export const urlRegistration = `${process.env.API_DOMAIN}registration`;
 export const urlValidateUsername = urlRegistration + `/validate/username/{username}`;
