@@ -1,3 +1,5 @@
+@import '../../../style/variables.scss';
+
 .taskCenterWrapper {
   position: relative;
   .taskCenterInstruction {
@@ -13,48 +15,40 @@
 
     
   }
-  .taskContainer {
-    padding-top: 10px;
-    margin-top: 25px;
+  .steps {
+    width: 100%;
+    display: flex;
+    margin: 15px 0 0;
+    padding: 15px 0;
     border-top: 1px solid #ddd;
-    width:100%;
-    .progressbar {
-    counter-reset: step;
-    li{
-      list-style-type: none;
-      float: left;
-      width: 25%;
-      position:relative;
-      text-align: center;
-      font-weight: 600;
-        .step {
-          width: 25px;
-        }
-        &:first-child:after {
-          content:none;
-        }
-        &:before {
-          counter-increment: step;
-          height:30px;
-          width:30px;
-          line-height: 30px;
-          border: 2px solid #af0061;
-          display:block;
-          text-align: center;
-          margin: 0 auto 10px auto;
-          border-radius: 50%;
-          background-color: white;
-        }
-        &:after {
-          /* CSS for creating horizontal line*/
-          content:'';
-          position: absolute;
-          width:100%;
-          height:2px;
-          background-color: #af0061;
-          top: 11px;
-          left: -90%;
-        }
+    border-top: 1px solid #ddd;
+    button {
+      border: none;
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+      flex-grow: 1;
+      position: relative;
+      .imgWrap {
+        width: 25px;
+        padding-bottom: 25px;
+        margin: 0 auto;
+      }
+      &:after {
+        /* CSS for creating horizontal line*/
+        content:'';
+        position: absolute;
+        width:100%;
+        height:2px;
+        background-color: #af0061;
+        top: 11px;
+        left: 0;
+      }
+      &:first-child:after {
+        left: 50%;
+      }
+      &:last-child:after {
+        left: -50%;
       }
     }
   }
