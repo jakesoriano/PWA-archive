@@ -21,11 +21,7 @@ class Account extends Component {
 				hasError: false
 			},
 			communityRadio: {
-				value: '',
-				error: '',
-				message: '',
 				checked: true,
-				hasError: false
 			}
 		};
 	};
@@ -39,11 +35,7 @@ class Account extends Component {
 				hasError: false
 			},
 			communityRadio: {
-				value: '',
-				error: '',
-				message: '',
 				checked: true,
-				hasError: false
 			}
 		});
 	}
@@ -73,9 +65,16 @@ class Account extends Component {
 	}
 
 	handleContinue = (e) => {
-		// validate text input
-		// submit invite code
-		route(`/${this.props.parent}/community-setup`);
+		if (!this.state.inviteCode.value) {
+			this.onCodeChange(this.state.inviteCode.value);
+		} else {
+		const data = {
+			inviteCode: this.state.inviteCode.value,
+		};
+			// Submit invite code
+			route(`/${this.props.parent}/community-setup`);
+		}
+		
 	};
 
 	render = ({}, { inviteCode, communityRadio}) => {
@@ -89,16 +88,9 @@ class Account extends Component {
 						<FormGroup hasError={inviteCode.hasError}>
 							<FormInput
 								className={style.communityRadio}
-								value={communityRadio.value}
 								type='radio'
 								checked={communityRadio.checked}
 								label={getTranslation('COMMUNITY_LEADER')}
-								onBlur={(e) => {
-									this.onCommunityRadioChange(e.target.value)
-								}}
-								onInput={(e) => {
-									this.onCommunityRadioChange(e.target.value)
-								}}
 							/>
 							<FormInput
 								className={style.communityInputCode}

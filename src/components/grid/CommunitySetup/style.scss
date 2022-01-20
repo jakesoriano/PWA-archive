@@ -22,6 +22,7 @@
       border: none;
       border-radius: 3px;
       padding: 10px;
+      color: #686868;
     }
     input.name {
       color: #D13584;
@@ -34,6 +35,7 @@
       align-items: center;
       .attachmentInputWrap {
         flex-grow: 1;
+        display: none;
         .attachment {
           width: 95%;
         }
@@ -42,16 +44,18 @@
         flex-grow: 1;
       }
       .pShare {
-        background: $primary_layout;
-        display: flex;
+        display: block;
         width: 100px;
         margin: 0 auto;
         padding: 5px 10px;
         width: max-content;
         min-width: 85px;
+        background: #d4d4d4;
+        padding: 20px;
+        border-radius: 50%;
         .pIconShare {
-          padding-bottom: 18px;
-          width: 18px;
+          padding-bottom: 67px;
+          width: 67px;
           margin-right: 5px;
         }
         span {

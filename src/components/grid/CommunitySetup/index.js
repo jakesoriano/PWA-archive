@@ -73,7 +73,7 @@ class CommunitySetup extends Component {
 							style={{error: style.about}}
 							value={about.value}
 							type="textarea"
-							rows="4"
+							rows="6"
 							hasError={about.hasError}
 							error={about.error}
 							message={about.message} />
@@ -100,8 +100,19 @@ class CommunitySetup extends Component {
 										error={attachment.error}
 										message={attachment.message} />
 							</div>
+							<div>
+								<a className={style.pShare} 
+									onClick={() => {
+										document.getElementById('inputAttachment').click()
+									}}>
+								<ImageLoader
+											src="assets/images/upload-logo.png"
+											style={{container: style.pIconShare}} />
+								</a>
+							</div>
 						</div>
 					</FormGroup>
+				
 				</div>
 				
 				<div className={style.buttonContainer}>
