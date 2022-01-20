@@ -24,4 +24,6 @@ export { default as Story } from './Story';
 export { default as ChangePassword } from './ChangePassword';
 export { default as DataPrivacy } from './DataPrivacy';
 export { default as LoginOTP } from './LoginOTP';
+export { default as Account } from './Account';
+export { default as CommunitySetup } from './CommunitySetup';
 

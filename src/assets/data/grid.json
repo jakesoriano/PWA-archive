@@ -264,5 +264,28 @@
 				"component": "Story"
 			}
 		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "ACCOUNT_PROFILE",
+		"uri": "account-profile",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "Account"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "COMMUNITY_SETUP",
+		"uri": "community-setup",
+		"contents": [
+			{
+				"component": "CommunitySetup"
+			}
+		]
 	}
 ]

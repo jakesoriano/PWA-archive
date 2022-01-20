@@ -48,6 +48,7 @@ class SideBar extends Component {
 						</div>
 					</div>
 					<div className={style.sMenu}>
+						<Link href={`/account-profile`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('ACCOUNT_PROFILE')}</Link>
 						{!isUsingSocialLogin() && (
 							<Link href={`/settings`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('SETTINGS')}</Link>
 						)}

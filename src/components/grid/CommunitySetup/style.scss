@@ -1,0 +1,65 @@
+@import '../../../style/variables.scss';
+.communitySetup {
+  padding: 15px 15px 10px;
+  * {
+    color: #686868;
+  }
+
+  .infoWrap {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    label {
+      color: #686868;
+      font-family: 'OpenSans-Regular', arial, sans-serif;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    input, textarea {
+      background: #d4d4d4;
+      border: none;
+      border-radius: 3px;
+      padding: 10px;
+    }
+    input.name {
+      color: #D13584;
+      font-family: 'OpenSans-extraBold', arial, sans-serif;
+      font-size: 20px;
+    }
+
+    .attachmentWrap {
+      display: flex;
+      align-items: center;
+      .attachmentInputWrap {
+        flex-grow: 1;
+        .attachment {
+          width: 95%;
+        }
+      }
+      .pShare {
+        flex-grow: 1;
+      }
+      .pShare {
+        background: $primary_layout;
+        display: flex;
+        width: 100px;
+        margin: 0 auto;
+        padding: 5px 10px;
+        width: max-content;
+        min-width: 85px;
+        .pIconShare {
+          padding-bottom: 18px;
+          width: 18px;
+          margin-right: 5px;
+        }
+        span {
+          color: #fff;
+          font-size: 0.8rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
