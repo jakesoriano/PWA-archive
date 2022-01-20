@@ -42,6 +42,28 @@ class CommunitySetup extends Component {
 		});
 	}
 
+	onAboutChange = (value) => {
+		this.setState({
+			about: {
+				...this.state.about,
+				value: value,
+				hasError: !Boolean(value),
+				error: !Boolean(value) ? 'REQUIRED' : ''
+			}
+		});
+	};
+
+	onNameChange = (value) => {
+		this.setState({
+			name: {
+				...this.state.name,
+				value: value,
+				hasError: !Boolean(value),
+				error: !Boolean(value) ? 'REQUIRED' : ''
+			}
+		});
+	};
+
 	onAttachmentChange = (file) => {
 		this.setState({
 			attachment: {
@@ -53,8 +75,16 @@ class CommunitySetup extends Component {
 	};
 
 	handleContinue = () => {
-		
-		
+		if (!this.state.about.value || 
+			!this.state.name.value) {
+			this.onAboutChange(this.state.about.value);
+			this.onNameChange(this.state.name.value);
+		} else {
+			if (this.state.attachment.file) {
+				// upload file to S3
+				// submit data
+			} 
+		}
 	}
 
 	render = ({ authUser },{name, about, attachment}) => {
@@ -72,6 +102,12 @@ class CommunitySetup extends Component {
 							style={{error: style.name}}
 							value={name.value}
 							type="text"
+							onBlur={(e) => {
+								this.onNameChange(e.target.value)
+							}}
+							onInput={(e) => {
+								this.onNameChange(e.target.value)
+							}}
 							hasError={name.hasError}
 							error={name.error}
 							message={name.message} />
@@ -85,6 +121,12 @@ class CommunitySetup extends Component {
 							style={{error: style.about}}
 							value={about.value}
 							type="textarea"
+							onBlur={(e) => {
+								this.onAboutChange(e.target.value)
+							}}
+							onInput={(e) => {
+								this.onAboutChange(e.target.value)
+							}}
 							rows="6"
 							hasError={about.hasError}
 							error={about.error}
