@@ -1,7 +1,6 @@
 import { Component } from 'preact';
-import { getTranslation, displayPageLoader } from '_helpers';
+import { getTranslation, dateEventFormat, displayPageLoader } from '_helpers';
 import { connect } from 'unistore/preact';
-import { updateStore } from '_unistore';
 import { ImageLoader } from '_components/core';
 import style from './style.scss';
 
@@ -12,10 +11,26 @@ class TaskCenter extends Component {
 		this.state = {
 			step: 0,
 			posts: [
-				"https://www.facebook.com/VPLeniRobredoPH/posts/492358148913293",
-				"https://www.facebook.com/VPLeniRobredoPH/posts/491955892286852",
-				"https://www.facebook.com/VPLeniRobredoPH/posts/492009615614813",
-				"https://www.facebook.com/VPLeniRobredoPH/posts/491922975623477"
+				{
+					url: "https://www.facebook.com/VPLeniRobredoPH/posts/492358148913293",
+					points: 10,
+					expDate: '2022-02-08',
+				},
+				{
+					url: "https://www.facebook.com/VPLeniRobredoPH/posts/491955892286852",
+					points: 10,
+					expDate: '2022-02-08',
+				},
+				{
+					url: "https://www.facebook.com/VPLeniRobredoPH/posts/492009615614813",
+					points: 10,
+					expDate: '2022-02-08',
+				},
+				{
+					url: "https://www.facebook.com/VPLeniRobredoPH/posts/491922975623477",
+					points: 10,
+					expDate: '2022-02-08',
+				}
 			]
 		};
 	};
@@ -35,9 +50,12 @@ class TaskCenter extends Component {
 	};
 
 	render = () => {
+
+		const currentPost = this.state.posts[this.state.step];
+
 		return (
 			<div className={style.taskCenterWrapper}>
-				<div className={style.taskCenterInstruction}>
+				<div className={style.header}>
 					
 					<p>{getTranslation('TASK_INSTRUCTION')}</p>
 
@@ -57,10 +75,17 @@ class TaskCenter extends Component {
 					</div>
 
 					{/* FB Post */}
-					<div class="fb-post" data-href={this.state.posts[this.state.step]}></div>
-			
+					<div className={style.fbContainer}>
+						<div class="fb-post" data-href={currentPost.url}></div>
+					</div>
+
+					{/* Footer */}
+					<div className={style.footer}>
+						<p>Like VP FB Post for {currentPost.points}pts</p>
+						<p>Deadline: {dateEventFormat(currentPost.expDate)}</p>
+						<p>Note: Lofin to Facebook if you cannot see the post</p>
+					</div>
 				</div>
-				
 			</div>
 		);
 	};

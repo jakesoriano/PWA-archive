@@ -2,25 +2,20 @@
 
 .taskCenterWrapper {
   position: relative;
-  .taskCenterInstruction {
-    height: calc(100vh - 116px);
-    padding: 35px 0;
-    background: #fff;
-    * {
-      color: #737373;
-    }
+  background: #fff;
+  padding: 35px 0;
+  min-height: 100vh;
+  .header {
     p {
       margin: 0 35px;
+      color: #737373;
     }
-
-    
   }
   .steps {
     width: 100%;
     display: flex;
     margin: 15px 0 0;
     padding: 15px 0;
-    border-top: 1px solid #ddd;
     border-top: 1px solid #ddd;
     button {
       border: none;
@@ -50,6 +45,16 @@
       &:last-child:after {
         left: -50%;
       }
+    }
+  }
+  .fbContainer {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .footer {
+    p {
+      margin: 5px 15px;
+      color: #737373;
     }
   }
 }
