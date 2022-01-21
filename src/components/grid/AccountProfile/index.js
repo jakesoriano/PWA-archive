@@ -1,12 +1,11 @@
 import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
-import { LoaderRing, ImageLoader } from '_components/core';
+import { LoaderRing, ImageLoader, UserAvatar } from '_components/core';
 import {
 	getTranslation,
 	formatNumber,
 	playStore,
-	getDefaultAvatar,
 	circleModal,
 	formatRank
 } from '_helpers';
@@ -64,11 +63,7 @@ class AccountProfile extends Component {
 			<div className={style.accountProfile}>
 				<div className={style.profile}>
 					<div className={style.user}>
-						<ImageLoader
-							src={authUser.profile.image || getDefaultAvatar()}
-							style={{ container: style.avatar }}
-							lazy
-						/>
+						<UserAvatar />
 						<div className={style.profileInfo}>
 							<div className={style.nameMember}>
 								<p

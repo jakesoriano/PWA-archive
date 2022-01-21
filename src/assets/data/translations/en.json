@@ -148,5 +148,6 @@
 	"TASK_POINTS": "Like VP FB Post for {POINTS}pts",
 	"TASK_DEADLINE": "Deadline: {DATE}",
 	"TASK_NOTE": "Note: Lofin to Facebook if you cannot see the post",
-	"TASK_COMPLETED": "All tasks completed! Come back again later to earn more points."
+	"TASK_COMPLETED": "All tasks completed! Come back again later to earn more points.",
+	"UPDATE_AVATAR_SUCCESS": "Avatar updated successfully!"
 }

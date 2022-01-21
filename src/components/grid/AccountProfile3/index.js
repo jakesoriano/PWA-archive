@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
-import { LoaderRing, ImageLoader } from '_components/core';
+import { LoaderRing, ImageLoader, UserAvatar } from '_components/core';
 import { 
 	fetchUserPoints
 } from '_mutations';
@@ -44,10 +44,9 @@ class AccountProfile extends Component {
 	    <div className={style.accountProfile}>
 	      <div className={style.profile}>
 					<div className={style.user}>
-						<ImageLoader 
-							src={authUser.profile.image || getDefaultAvatar()}
-							style={{container: style.avatar}}
-							lazy />
+						<div className={style.avatar}>
+							<UserAvatar /> 
+						</div>
 						<div className={style.nameMember}>
 							<p className={`bold ${style.name}`}>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
 							<div className={style.heroRankingContainer}>

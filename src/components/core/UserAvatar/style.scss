@@ -1,0 +1,17 @@
+@import '../../../style/variables.scss';
+.userAvatarWrap {
+  position: relative;
+  align-self: center;
+  .avatar {
+    width: 76px;
+    padding-bottom: 72px;
+    border: 2px solid $primary;
+    border-radius: 80px;
+    margin-right: 15px;
+  }
+  .attachment {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+  }
+}
