@@ -22,7 +22,8 @@ export function logOut (callback) {
     members,
     invited,
     communities,
-    notifications
+    notifications,
+    tasks
   } = initialStore;
 
   removeCookie('token');
@@ -35,6 +36,7 @@ export function logOut (callback) {
     invited,
     communities,
     notifications,
+    tasks,
     loginInfo: null,
   });
   nativeOnLogout();
@@ -149,6 +151,7 @@ export function login (data) {
 }
 
 export function loginOTP (data) {
+  const { deviceId } = store.getState();
   const {
     news,
     events,
@@ -159,16 +162,19 @@ export function loginOTP (data) {
   return new Promise((resolve) => {
     xhr(urlUserLoginOTP, {
       method: 'POST',
-      data
+      data: {
+        ...data,
+        deviceId
+      }
     })
       .then((res) => {
         console.log('resAuth', res);
         if (res && res.success) {
           updateStore({
             authUser: {
-              ...res.data,
-              points: res.data.points || 0,
-              rank: res.data.rank || 0,
+              ...res,
+              points: res.points || 0,
+              rank: res.rank || 0,
             },
             customBack: null,
             news,

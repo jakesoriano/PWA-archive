@@ -53,13 +53,14 @@ class SideBar extends Component {
 							<Link href={`/settings`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('SETTINGS')}</Link>
 						)}
 						<Link href={`/contactus`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('WHERE_HERE_TO_LISTEN')}</Link>
+						<Link href={`/task-center`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('TASK_CENTER')}</Link>
 						{/* <Link href="/home" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PROTECT_LENI')}</Link> */}
 						<Link href={`/`} className={style.sMItem} onClick={(e) => {
 							logOut();
 							this.onClickMenu(e);
 						}}>{getTranslation('LOGOUT')}</Link>
 					</div>
-	      	<div className={style.footer}>v{process.env.BUILD_NO}</div>
+	      	<div className={style.footer}>{process.env.ENVIRONMENT !== 'PROD' && process.env.ENVIRONMENT} {process.env.BUILD_NO}</div>
 				</div>
 			</div>
 		);
