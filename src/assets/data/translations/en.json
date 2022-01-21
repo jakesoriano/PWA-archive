@@ -154,5 +154,6 @@
 	"SET_GOAL": "Set a goal. Convert someone to be a Kakampink!",
 	"DOWNLOAD_KITS": "Start a converstation, we can help. Download conversation kits below:",
 	"CONVERSION_KIT": "Conversion Kit",
-	"SKIP": "Skip"
+	"SKIP": "Skip",
+	"INCORRECT_CODE": "Incorrect Code"
 }

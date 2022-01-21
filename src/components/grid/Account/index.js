@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 // import { route } from 'preact-router';
 import { getTranslation, displayPageLoader } from '_helpers';
-import { changePassword } from '_mutations';
+import { useCode } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
 import { FormGroup, FormInput, ButtonDescription } from '_components/core';
@@ -72,9 +72,24 @@ class Account extends Component {
 			inviteCode: this.state.inviteCode.value,
 		};
 			// Submit invite code
-			route(`/${this.props.parent}/community-setup`);
+			useCode(data).then((res) => {
+				if(res && res.success) {
+					// reset form data
+					this.resetState();
+					/**
+						update store ---> auth.token
+						call nativeSetAuthToken(res.token); 
+					 */
+					route(`/${this.props.parent}/community-setup`);
+				} else {
+					this.showAlertBox('INCORRECT_CODE', true);
+				}
+				displayPageLoader(false);
+			}).catch((err) => {
+				this.showAlertBox('INCORRECT_CODE', true);
+				displayPageLoader(false);
+			});
 		}
-		
 	};
 
 	render = ({}, { inviteCode, communityRadio}) => {
