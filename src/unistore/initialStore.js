@@ -70,7 +70,6 @@ export const initialStore = {
   },
   // user
   authUser: null,
-  deviceId: null,
   // modals
   promptModal: null,
   messageModal: null,
