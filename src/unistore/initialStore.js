@@ -61,6 +61,13 @@ export const initialStore = {
   settings: {
     touchId: false
   },
+  tasks: {
+    fetching: false,
+    result: false,
+    data: null,
+    date: null,
+    completed: false
+  },
   // user
   authUser: null,
   deviceId: null,

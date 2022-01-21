@@ -7,9 +7,9 @@ import {
   fetchInvited,
   fetchStories,
   fetchCommunities,
-  generateNotifications
+  generateNotifications,
+  fetchTasks
 } from '_mutations';
-import { dateWithinDays }from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
 export function prefetch (hasUser) {
@@ -22,6 +22,7 @@ export function prefetch (hasUser) {
     hasUser && fetchInvited(),
     hasUser && fetchStories(),
     hasUser && fetchCommunities(),
+    hasUser && fetchTasks(),
   ]).then(() => {
     hasUser && generateNotifications();
   });

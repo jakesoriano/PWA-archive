@@ -11,3 +11,4 @@ export * from './contactus';
 export * from './settings';
 export * from './notifications';
 export * from './stories';
+export * from './tasks';

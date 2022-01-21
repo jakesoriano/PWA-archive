@@ -2,6 +2,7 @@ import { Component } from 'preact';
 import { getTranslation, dateEventFormat, displayPageLoader } from '_helpers';
 import { connect } from 'unistore/preact';
 import { ImageLoader, ButtonDescription } from '_components/core';
+import { fetchTasks, doneTask } from '_mutations';
 import style from './style.scss';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -9,72 +10,66 @@ class TaskCenter extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			step: 0,
-			posts: null,
-			complete: false
+			item: null
 		};
 	};
 
 	componentDidMount = () => {
-		try {
-			this.setState({
-				active: 0,
-				posts : [
-					{
-						url: "https://www.facebook.com/VPLeniRobredoPH/posts/492358148913293",
-						points: 10,
-						expDate: '2022-02-08',
-					},
-					{
-						url: "https://www.facebook.com/VPLeniRobredoPH/posts/491955892286852",
-						points: 10,
-						expDate: '2022-02-08',
-					},
-					{
-						url: "https://www.facebook.com/VPLeniRobredoPH/posts/492009615614813",
-						points: 10,
-						expDate: '2022-02-08',
-					},
-					{
-						url: "https://www.facebook.com/VPLeniRobredoPH/posts/491922975623477",
-						points: 10,
-						expDate: '2022-02-08',
-					}
-				]
-			}, () => {
-				FB.XFBML.parse();
-			})
-		} catch(err) {}
+		fetchTasks();
+		this.setData();
 	};
+
+	componentDidUpdate = () => {
+		this.setData();
+	};
+
+	setData = () => {
+		try {
+			if (!this.state.item && this.props.tasks.data) {
+				this.setState({
+          item: this.props.tasks.data.reduce((result, item) => {
+            if (!result || (!item.completed && result.completed)) {
+              return item;
+						}
+            return result;
+          }, null)
+				}, () => {
+					FB.XFBML.parse();
+				});
+			}
+		} catch (err) {}
+	}
 	
 	handleDone = () => {
-		// go to next task
-		if (this.state.active < this.state.posts.length) {
-			displayPageLoader(true);
-
-			setTimeout(() => {
+		displayPageLoader(true);
+		doneTask(this.state.item.id)
+			.then(() => {
 				displayPageLoader(false);
-				// update active item or completed
-				if ((this.state.active + 1) === this.state.posts.length) {
-					this.setState({ completed: true });
-				} else {
-					this.setState({ active: this.state.active + 1 }, () => {
-						FB.XFBML.parse();
-					});
-				}
-			}, 1000)
-		}
+				this.setState({
+					item: this.props.tasks.data.reduce((result, item) => {
+						if (!result || (!item.completed && result.completed)) {
+							return item;
+						}
+						return result;
+					}, null)
+				}, () => {
+					FB.XFBML.parse();
+				});
+			});
 	};
 
-	render = (props, { active, posts, completed}) => {
-
+	render = ({ tasks }, { item }) => {
+		
 		// no data available yet
-		if (!posts) {
-			return null;
+		if (!tasks.data || !item) {
+			return (
+				<div className={style.taskCenterWrapper}>
+				</div>
+			);
 		}
 
 		// tasks completed
-		if (completed) {
+		if (tasks.completed) {
 			return (
 				<div className={style.taskCenterWrapper}>
 					<p>{getTranslation('TASK_COMPLETED')}</p>
@@ -82,8 +77,6 @@ class TaskCenter extends Component {
 			);
 		}
 
-
-		const currentPost = posts[active];
 		return (
 			<div className={style.taskCenterWrapper}>
 				<div className={style.header}>
@@ -91,11 +84,11 @@ class TaskCenter extends Component {
 					<p>{getTranslation('TASK_INSTRUCTION')}</p>
 
 					<div className={style.steps}>
-						{posts.map((item, index) => {
+						{tasks.data.map(item => {
 							return (
 								<button>
 									<ImageLoader
-										src={`assets/images/step-${index <= active ? 'active' : 'inactive'}.png`}
+										src={`assets/images/step-${item.completed ? 'active' : 'inactive'}.png`}
 										style={{container: style.imgWrap}}
 									/>
 								</button>
@@ -105,13 +98,13 @@ class TaskCenter extends Component {
 
 					{/* FB Post */}
 					<div className={style.fbContainer}>
-						<div class="fb-post" data-href={currentPost.url}></div>
+						<div class="fb-post" data-href={item.url}></div>
 					</div>
 
 					{/* Footer */}
 					<div className={style.footer}>
-						<p>{getTranslation('TASK_POINTS').replace('{POINTS}', currentPost.points)}</p>
-						<p>{getTranslation('TASK_DEADLINE').replace('{DATE}', dateEventFormat(currentPost.expDate))}</p>
+						<p>{getTranslation('TASK_POINTS').replace('{POINTS}', item.points)}</p>
+						<p>{getTranslation('TASK_DEADLINE').replace('{DATE}', dateEventFormat(item.expDate))}</p>
 						<p>{getTranslation('TASK_NOTE')}</p>
 					</div>
 				</div>
@@ -126,4 +119,4 @@ class TaskCenter extends Component {
 		);
 	};
 }
-export default connect(['signup'])(TaskCenter);
+export default connect(['tasks'])(TaskCenter);
