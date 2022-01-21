@@ -172,9 +172,9 @@ export function loginOTP (data) {
         if (res && res.success) {
           updateStore({
             authUser: {
-              ...res.data,
-              points: res.data.points || 0,
-              rank: res.data.rank || 0,
+              ...res,
+              points: res.points || 0,
+              rank: res.rank || 0,
             },
             customBack: null,
             news,
