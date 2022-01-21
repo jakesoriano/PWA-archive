@@ -171,7 +171,6 @@ class Signup extends Component {
 	};
 
 	onDobChange = (value) => {
-		const { birthday } = this.state;
 		this.setState({
 			birthday: {
 				...this.state.birthday,
