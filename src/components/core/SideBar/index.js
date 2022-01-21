@@ -48,7 +48,17 @@ class SideBar extends Component {
 						</div>
 					</div>
 					<div className={style.sMenu}>
-						<Link href={`/account-profile`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('ACCOUNT_PROFILE')}</Link>
+						{(!authUser.profile.roles || authUser.profile.roles !== '100') && (
+							<Link href={`/account-profile`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('ACCOUNT_PROFILE')}</Link>
+						)}
+
+						{(authUser.profile.roles && authUser.profile.roles === '100') && ( 
+							<div>
+								<Link className={style.sMItem}>{getTranslation('MANAGE_COMMUNITY_PAGE')}</Link>
+								<Link href={`/community-setup`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('SETUP_PAGE')}</Link>
+								<Link href={`/post-content`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('POST_CONTENT')}</Link>
+							</div>
+						)}
 						{!isUsingSocialLogin() && (
 							<Link href={`/settings`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('SETTINGS')}</Link>
 						)}

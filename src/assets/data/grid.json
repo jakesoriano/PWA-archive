@@ -292,6 +292,7 @@
 		"styles": [],
 		"auth": true,
 		"pageTitle": "COMMUNITY_SETUP",
+		"withBack": true,
 		"uri": "community-setup",
 		"contents": [
 			{

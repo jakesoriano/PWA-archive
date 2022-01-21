@@ -1,9 +1,8 @@
-import { store } from '_unistore';
-import { xhr, urlCommunityInviteCode, urlUploadFile } from '_helpers';
+import { updateStore, store } from '_unistore';
+import { xhr, urlCommunityInviteCode } from '_helpers';
+import { nativeSetAuthToken } from '_platform/helpers';
 
 export function useCode (data) {
-  // current state
-  const { authUser } = store.getState();
   const url = `${urlCommunityInviteCode}/${data.inviteCode}`;
   console.log('url', url);
   return new Promise((resolve) => {
@@ -15,6 +14,22 @@ export function useCode (data) {
           console.log(`SPA >> Community Invite Code Error`, res);
           resolve(false);
         } else {
+          if(res.token) {
+            const token =  JSON.parse(atob(res.token.split('.')[1]));
+            const { authUser } = store.getState();
+            updateStore({
+              authUser: {
+                ...authUser,
+                token: res.token,
+                profile: {
+                  ...authUser.profile,
+                  roles: token.roles
+                }
+              }
+            });
+            // set auth token in native
+            nativeSetAuthToken(res.token);
+          }
           console.log(`SPA >> Community Invite Code successful`, res);
           resolve(res);
         }

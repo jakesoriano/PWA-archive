@@ -1,6 +1,9 @@
 import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { LoaderRing } from '_components/core';
+import { updateStore } from '_unistore';
+import { route } from 'preact-router';
+import { setupCommunityInfo, uploadFile } from '_mutations';
 import { FormGroup, FormInput, ImageLoader, ButtonDescription } from '_components/core';
 import { getTranslation, circleModal } from '_helpers';
 // eslint-disable-next-line import/extensions
@@ -36,10 +39,15 @@ class CommunitySetup extends Component {
 		this.state = this.initialState;
 	}
 	componentDidMount = () => {
-		circleModal({
-			title: getTranslation('COMMUNITY_SETUP_SUCCESS'),
-			content: getTranslation('COMMUNITY_SETUP_DESC')
-		});
+		if(this.props.isCommunityCodeSuccess) {
+			circleModal({
+				title: getTranslation('COMMUNITY_SETUP_SUCCESS'),
+				content: getTranslation('COMMUNITY_SETUP_DESC')
+			});
+			updateStore({
+				isCommunityCodeSuccess: null
+			}, true)
+		}
 	}
 
 	onAboutChange = (value) => {
@@ -74,6 +82,37 @@ class CommunitySetup extends Component {
 		});
 	};
 
+	showAlertBox = (message, hasError) => {
+		updateStore({
+			alertShow: {
+				success: !hasError,
+				content: message
+			}
+		});
+	}
+
+	submitData  = (image) => {
+		setupCommunityInfo({
+			name: this.state.name.value,
+			desc: this.state.about.value,
+			image: image
+		})
+			.then((res) => {
+				if(res && res.success) {
+					this.setState({
+						...this.initialState
+					});
+					this.showAlertBox('COMMUNITY_SETUP_SUCCESS', false);
+					route(`/`);
+				} else {
+					circleModal({
+						title: getTranslation('OOPS_SOMETHING_WRONG'),
+						content: getTranslation('TRY_AGAIN_CONTINUE')
+					});
+				}
+			})
+	}
+
 	handleContinue = () => {
 		if (!this.state.about.value || 
 			!this.state.name.value) {
@@ -83,6 +122,19 @@ class CommunitySetup extends Component {
 			if (this.state.attachment.file) {
 				// upload file to S3
 				// submit data
+				uploadFile({
+					file: this.state.attachment.file
+				})
+				.then((res) => {
+					if(res.success && res.data) {
+						this.submitData(res.data.image);
+					} else {
+						circleModal({
+							title: getTranslation('OOPS_SOMETHING_WRONG'),
+							content: getTranslation('TRY_AGAIN_CONTINUE')
+						});
+					}
+				});
 			} 
 		}
 	}
@@ -182,4 +234,4 @@ class CommunitySetup extends Component {
 		);
 	};
 }
-export default connect(['authUser'])(CommunitySetup);
+export default connect(['authUser','isCommunityCodeSuccess'])(CommunitySetup);

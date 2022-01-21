@@ -5,7 +5,6 @@ import { useCode } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
 import { FormGroup, FormInput, ButtonDescription } from '_components/core';
-import { nativeSetCredential } from '_platform/helpers';
 import { route } from 'preact-router';
 import style from './style.scss';
 
@@ -76,11 +75,10 @@ class Account extends Component {
 				if(res && res.success) {
 					// reset form data
 					this.resetState();
-					/**
-						update store ---> auth.token
-						call nativeSetAuthToken(res.token); 
-					 */
-					route(`/${this.props.parent}/community-setup`);
+					updateStore({
+						isCommunityCodeSuccess: true
+					}, true)
+					route(`/community-setup`);
 				} else {
 					this.showAlertBox('INCORRECT_CODE', true);
 				}

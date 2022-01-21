@@ -1,6 +1,8 @@
 @import '../../../style/variables.scss';
 .communitySetup {
   padding: 15px 15px 10px;
+  background: #fff;
+  height: calc(100vh - 116px);
   * {
     color: #686868;
   }
