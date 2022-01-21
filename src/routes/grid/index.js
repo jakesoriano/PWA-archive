@@ -405,7 +405,7 @@ class Grid extends Component {
 	          isOpen={rightSideBar}
 	          toggleSideBar={this.toggleRightSideBar}
 	        />}
-	        {!authUser && <div className={style.footer}>v{process.env.BUILD_NO}</div>}
+	        {!authUser && <div className={style.footer}>{process.env.ENVIRONMENT !== 'PROD' && process.env.ENVIRONMENT}  {process.env.BUILD_NO}</div>}
 	      </div>
 	      {/* Modals */}
 	      {messageModal && this.renderMessageModal()}
@@ -458,4 +458,10 @@ if (typeof window !== 'undefined') {
 			nativeExitApp();
 		}
   };
+
+	// native on resume
+	window.onResume = () => {
+		const path = location.hash.replace('#', '');
+		console.log('onResume', path);
+	}
 }
