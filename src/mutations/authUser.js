@@ -149,6 +149,7 @@ export function login (data) {
 }
 
 export function loginOTP (data) {
+  const { deviceId } = store.getState();
   const {
     news,
     events,
@@ -159,7 +160,10 @@ export function loginOTP (data) {
   return new Promise((resolve) => {
     xhr(urlUserLoginOTP, {
       method: 'POST',
-      data
+      data: {
+        ...data,
+        deviceId
+      }
     })
       .then((res) => {
         console.log('resAuth', res);
