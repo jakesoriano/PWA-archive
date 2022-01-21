@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import { getTranslation, dateEventFormat, displayPageLoader } from '_helpers';
 import { connect } from 'unistore/preact';
-import { ImageLoader } from '_components/core';
+import { ImageLoader, ButtonDescription } from '_components/core';
 import style from './style.scss';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -10,49 +10,80 @@ class TaskCenter extends Component {
 		super(props);
 		this.state = {
 			step: 0,
-			posts: [
-				{
-					url: "https://www.facebook.com/VPLeniRobredoPH/posts/492358148913293",
-					points: 10,
-					expDate: '2022-02-08',
-				},
-				{
-					url: "https://www.facebook.com/VPLeniRobredoPH/posts/491955892286852",
-					points: 10,
-					expDate: '2022-02-08',
-				},
-				{
-					url: "https://www.facebook.com/VPLeniRobredoPH/posts/492009615614813",
-					points: 10,
-					expDate: '2022-02-08',
-				},
-				{
-					url: "https://www.facebook.com/VPLeniRobredoPH/posts/491922975623477",
-					points: 10,
-					expDate: '2022-02-08',
-				}
-			]
+			posts: null,
+			complete: false
 		};
 	};
 
 	componentDidMount = () => {
 		try {
-			FB.XFBML.parse();
+			this.setState({
+				active: 0,
+				posts : [
+					{
+						url: "https://www.facebook.com/VPLeniRobredoPH/posts/492358148913293",
+						points: 10,
+						expDate: '2022-02-08',
+					},
+					{
+						url: "https://www.facebook.com/VPLeniRobredoPH/posts/491955892286852",
+						points: 10,
+						expDate: '2022-02-08',
+					},
+					{
+						url: "https://www.facebook.com/VPLeniRobredoPH/posts/492009615614813",
+						points: 10,
+						expDate: '2022-02-08',
+					},
+					{
+						url: "https://www.facebook.com/VPLeniRobredoPH/posts/491922975623477",
+						points: 10,
+						expDate: '2022-02-08',
+					}
+				]
+			}, () => {
+				FB.XFBML.parse();
+			})
 		} catch(err) {}
 	};
 	
-	handleStep = (index) => {
-		if (this.state.active !== index) {
-			this.setState({ step: index }, () => {
-				FB.XFBML.parse();
-			});
-		};
+	handleDone = () => {
+		// go to next task
+		if (this.state.active < this.state.posts.length) {
+			displayPageLoader(true);
+
+			setTimeout(() => {
+				displayPageLoader(false);
+				// update active item or completed
+				if ((this.state.active + 1) === this.state.posts.length) {
+					this.setState({ completed: true });
+				} else {
+					this.setState({ active: this.state.active + 1 }, () => {
+						FB.XFBML.parse();
+					});
+				}
+			}, 1000)
+		}
 	};
 
-	render = () => {
+	render = (props, { active, posts, completed}) => {
 
-		const currentPost = this.state.posts[this.state.step];
+		// no data available yet
+		if (!posts) {
+			return null;
+		}
 
+		// tasks completed
+		if (completed) {
+			return (
+				<div className={style.taskCenterWrapper}>
+					<p>{getTranslation('TASK_COMPLETED')}</p>
+				</div>
+			);
+		}
+
+
+		const currentPost = posts[active];
 		return (
 			<div className={style.taskCenterWrapper}>
 				<div className={style.header}>
@@ -60,13 +91,11 @@ class TaskCenter extends Component {
 					<p>{getTranslation('TASK_INSTRUCTION')}</p>
 
 					<div className={style.steps}>
-						{this.state.posts.map((item, index) => {
+						{posts.map((item, index) => {
 							return (
-								<button onClick={() => {
-									this.handleStep(index);
-								}}>
+								<button>
 									<ImageLoader
-										src={`assets/images/step-${index <= this.state.step ? 'active' : 'inactive'}.png`}
+										src={`assets/images/step-${index <= active ? 'active' : 'inactive'}.png`}
 										style={{container: style.imgWrap}}
 									/>
 								</button>
@@ -81,11 +110,18 @@ class TaskCenter extends Component {
 
 					{/* Footer */}
 					<div className={style.footer}>
-						<p>Like VP FB Post for {currentPost.points}pts</p>
-						<p>Deadline: {dateEventFormat(currentPost.expDate)}</p>
-						<p>Note: Lofin to Facebook if you cannot see the post</p>
+						<p>{getTranslation('TASK_POINTS').replace('{POINTS}', currentPost.points)}</p>
+						<p>{getTranslation('TASK_DEADLINE').replace('{DATE}', dateEventFormat(currentPost.expDate))}</p>
+						<p>{getTranslation('TASK_NOTE')}</p>
 					</div>
 				</div>
+
+				<div className={style.buttonContainer}>
+	        <ButtonDescription
+	          onClickCallback={this.handleDone}
+	          text="DONE"
+	        />
+	      </div>
 			</div>
 		);
 	};

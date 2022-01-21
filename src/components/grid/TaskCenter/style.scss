@@ -4,12 +4,10 @@
   position: relative;
   background: #fff;
   padding: 35px 0;
-  min-height: 100vh;
-  .header {
-    p {
-      margin: 0 35px;
-      color: #737373;
-    }
+  min-height: calc(100vh - 116px);
+  p {
+    margin: 0 35px;
+    color: #737373;
   }
   .steps {
     width: 100%;
@@ -56,5 +54,8 @@
       margin: 5px 15px;
       color: #737373;
     }
+  }
+  .buttonContainer {
+    padding: 0 15px;
   }
 }
