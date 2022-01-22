@@ -132,7 +132,7 @@ class TaskCenter extends Component {
 					{/* Footer */}
 					<div className={style.footer}>
 						<p>{getTranslation('TASK_POINTS').replace('{POINTS}', item.points)}</p>
-						<p>{getTranslation('TASK_DEADLINE').replace('{DATE}', dateEventFormat(item.expDate))}</p>
+						<p>{getTranslation('TASK_DEADLINE').replace('{DATE}', dateEventFormat(item.endDate))}</p>
 						<p>{getTranslation('TASK_NOTE')}</p>
 					</div>
 				</div>
