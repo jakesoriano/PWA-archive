@@ -166,5 +166,9 @@
 	"MANAGE_COMMUNITY_PAGE": "Manage Community Page",
 	"SETUP_PAGE": "Setup page",
 	"POST_CONTENT": "Post Content",
-	"COMMUNITY_SETUP_SUCCESS": "Community Page Setup Success"
+	"COMMUNITY_SETUP_SUCCESS": "Community Page Setup Success",
+	"CONTENT_TITLE": "Event Title",
+	"CONTENT_DESC": "Event Description",
+	"CONTENT_DATE": "Event Date",
+	"CONTENT_LOCATION": "Event Location"
 }
