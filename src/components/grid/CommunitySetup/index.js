@@ -9,8 +9,6 @@ import { getTranslation, circleModal } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
-let imagePlaceholder = 'assets/images/upload-logo.png';
-
 // eslint-disable-next-line react/prefer-stateless-function
 class CommunitySetup extends Component {
 	constructor(props){
@@ -30,7 +28,6 @@ class CommunitySetup extends Component {
 			},
 			attachment: {
 				file: null,
-				imgSrc: imagePlaceholder,
 				error: '',
 				message: '',
 				hasError: false
@@ -64,8 +61,7 @@ class CommunitySetup extends Component {
 		this.setState({
 			attachment: {
 				...this.state.attachment,
-				file: file,
-				imgSrc: file ? URL.createObjectURL(file) : imagePlaceholder 
+				file: file
 			}
 		});
 	};
@@ -200,8 +196,9 @@ class CommunitySetup extends Component {
 										document.getElementById('inputAttachment').click()
 									}}>
 								<ImageLoader
-											src={attachment.imgSrc}
+											src="assets/images/attachment_icon_white.png"
 											style={{container: style.pIconShare}} />
+										<span>{getTranslation('ADD_IMAGE')}</span>
 								</a>
 							</div>
 						</div>

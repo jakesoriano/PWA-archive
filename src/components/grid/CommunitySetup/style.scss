@@ -1,8 +1,6 @@
 @import '../../../style/variables.scss';
 .communitySetup {
   padding: 15px 15px 10px;
-  background: #fff;
-  height: calc(100vh - 116px);
   * {
     color: #686868;
   }
@@ -11,25 +9,11 @@
     background: #fff;
     border-radius: 10px;
     margin-bottom: 10px;
+    padding: 20px;
 
     label {
       color: #686868;
-      font-family: 'OpenSans-Regular', arial, sans-serif;
-      font-size: 1rem;
-      margin-bottom: 10px;
-    }
-
-    input, textarea {
-      background: #d4d4d4;
-      border: none;
-      border-radius: 3px;
-      padding: 10px;
-      color: #686868;
-    }
-    input.name {
-      color: #D13584;
-      font-family: 'OpenSans-extraBold', arial, sans-serif;
-      font-size: 20px;
+      font-family: 'OpenSans-Bold', arial, sans-serif;
     }
 
     .attachmentWrap {
@@ -37,7 +21,6 @@
       align-items: center;
       .attachmentInputWrap {
         flex-grow: 1;
-        display: none;
         .attachment {
           width: 95%;
         }
@@ -46,16 +29,17 @@
         flex-grow: 1;
       }
       .pShare {
-        display: block;
+        background: $primary_layout;
+        display: flex;
         width: 100px;
         margin: 0 auto;
+        padding: 5px 10px;
         width: max-content;
         min-width: 85px;
         .pIconShare {
-          padding-bottom: 100px;
-          width: 100px;
-          background: #d4d4d4;
-          border-radius: 50%;
+          padding-bottom: 18px;
+          width: 18px;
+          margin-right: 5px;
         }
         span {
           color: #fff;
