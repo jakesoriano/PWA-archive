@@ -179,6 +179,9 @@ class Signup extends Component {
 				error: !Boolean(value) ? 'REQUIRED' : '',
 			},
 		});
+		if (value && !birthday.hasError) { // ios workaround
+			this.validateDob(value);
+		}
 	};
 
 	onMobileChange = (value) => {
@@ -288,6 +291,22 @@ class Signup extends Component {
 				// error: !Boolean(value) ? 'REQUIRED' : ''
 			},
 		});
+	};
+
+	validateDob = (value) => {
+		let difference = Date.now() - new Date(value).getTime();
+		let age_date = new Date(difference);
+		let age = Math.abs(age_date.getUTCFullYear() - 1970);
+		if (age < 18) {
+			this.setState({
+				birthday: {
+					...this.state.birthday,
+					value: value,
+					hasError: true,
+					error: 'You should be at least 18 years old to register.',
+				}
+			})
+		}
 	};
 
 	handleContinue = () => {
