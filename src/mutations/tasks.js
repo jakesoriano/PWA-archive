@@ -44,7 +44,8 @@ export function fetchTasks () {
     });
 }
 
-export function doneTask (id) {
+export function doneTask (id, token) {
+  
   return new Promise((resolve) => {
     // curreny state
     const { tasks } = store.getState();
