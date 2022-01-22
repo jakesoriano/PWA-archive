@@ -23,3 +23,4 @@ export { default as ToggleInput } from './ToggleInput';
 export { default as CircleModal } from './CircleModal';
 export { default as OneTimePIN } from './OneTimePIN';
 export { default as InviteForm } from './InviteForm';
+export { default as UserAvatar } from './UserAvatar';
