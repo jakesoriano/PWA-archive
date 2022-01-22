@@ -63,7 +63,7 @@ class AccountProfile extends Component {
 			<div className={style.accountProfile}>
 				<div className={style.profile}>
 					<div className={style.user}>
-						<UserAvatar />
+						<UserAvatar allowUpdate={true} />
 						<div className={style.profileInfo}>
 							<div className={style.nameMember}>
 								<p

@@ -25,7 +25,7 @@ class AccountProfile extends Component {
 	    <div className={style.accountProfile}>
 	      <div className={style.profile}>
 					<div className={style.user}>
-						<UserAvatar allowUpdate={false} /> 
+						<UserAvatar /> 
 						<div className={style.nameMember}>
 							<p className={`bold ${style.name}`}>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
 							<p className={style.members}>{`${formatNumber(authUser.members, 2) || 0} ${getTranslation('MEMBERS')}`}</p>

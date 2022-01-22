@@ -49,7 +49,7 @@ class UserAvatar extends Component {
 		});
 	};
 
-  render = ({ authUser, allowUpdate=true }, { attachment }) => (
+  render = ({ authUser, allowUpdate }, { attachment }) => (
     <div className={style.userAvatarWrap}>
       <label for="inputAttachment">
         <ImageLoader
