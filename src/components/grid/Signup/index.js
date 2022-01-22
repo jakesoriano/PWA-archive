@@ -178,10 +178,10 @@ class Signup extends Component {
 				hasError: !Boolean(value),
 				error: !Boolean(value) ? 'REQUIRED' : '',
 			},
-		});
-		if (value && !birthday.hasError) { // ios workaround
+		}, () =>  {
+			// ios workaround
 			this.validateDob(value);
-		}
+		});
 	};
 
 	onMobileChange = (value) => {
@@ -294,16 +294,15 @@ class Signup extends Component {
 	};
 
 	validateDob = (value) => {
-		let difference = Date.now() - new Date(value).getTime();
-		let age_date = new Date(difference);
-		let age = Math.abs(age_date.getUTCFullYear() - 1970);
-		if (age < 18) {
+		const maxDate = new Date(getMaxDOBDate()).getTime();
+		const selectedDate = new Date(value).getTime();
+		if (maxDate < selectedDate) {
 			this.setState({
 				birthday: {
 					...this.state.birthday,
 					value: value,
 					hasError: true,
-					error: 'You should be at least 18 years old to register.',
+					error: getTranslation('ERRMSG_DOB'),
 				}
 			})
 		}
@@ -520,7 +519,7 @@ class Signup extends Component {
 						<FormInput
 							value={birthday.value}
 							type="date"
-							max={getMaxDOBDate()}
+							// max={getMaxDOBDate()}
 							onBlur={(e) => {
 								this.onDobChange(e.target.value);
 							}}
