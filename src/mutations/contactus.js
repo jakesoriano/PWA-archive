@@ -31,6 +31,7 @@ export function sendContactUs (data) {
 export function uploadFile (data) {
   const formData = new FormData();
   formData.append("file", data.file);
+  const { authUser } = store.getState();
   return new Promise((resolve) => {
     // make axios post request
     axios({
@@ -38,7 +39,7 @@ export function uploadFile (data) {
       url: urlUploadFile,
       data: formData,
       headers: {
-        'content-type': 'multipart/form-data'
+        'Authorization': `Bearer ${authUser.token}` 
       }
     })
       .then((res) => {
