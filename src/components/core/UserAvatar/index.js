@@ -49,7 +49,7 @@ class UserAvatar extends Component {
 		});
 	};
 
-  render = ({ authUser }, { attachment }) => (
+  render = ({ authUser, allowUpdate=true }, { attachment }) => (
     <div className={style.userAvatarWrap}>
       <label for="inputAttachment">
         <ImageLoader
@@ -65,6 +65,7 @@ class UserAvatar extends Component {
           value={attachment.file}
           type="file"
           accept="image/*"
+          disabled={!allowUpdate}
           onBlur={(e) => {
             this.onAttachmentChange(e.target.files[0])
           }}

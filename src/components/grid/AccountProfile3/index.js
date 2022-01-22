@@ -45,7 +45,7 @@ class AccountProfile extends Component {
 	      <div className={style.profile}>
 					<div className={style.user}>
 						<div className={style.avatar}>
-							<UserAvatar /> 
+							<UserAvatar allowUpdate={false} /> 
 						</div>
 						<div className={style.nameMember}>
 							<p className={`bold ${style.name}`}>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
