@@ -287,5 +287,17 @@
 				"component": "TaskCenter"
 			}
 		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "POST_CONTENT",
+		"uri": "post-content",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "PostContent"
+			}
+		]
 	}
 ]
