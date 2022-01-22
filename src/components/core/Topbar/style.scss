@@ -14,7 +14,7 @@
 		position: relative;
 		.title {
 			margin: 0;
-			padding: 14.5px 10px 14.5px 42px;
+			padding: 14.5px 10px 14.5px 52px;
 			font-size: 1.2rem;
 			display: flex;
 			align-items: center;
@@ -43,6 +43,10 @@
 				right: 0;
 				left: auto;
 			}
+			.backImg {
+				width: 20px;
+				padding-bottom: 20px;
+			}
 			.burgerImg,
 			.notifImg {
 				width: 30px;
@@ -52,10 +56,10 @@
 				position: relative;
 			}
 			.notifCount {
-				background-color: #fff;
-				border: 1px solid #ffb1bb;
+				background-color: $primary_layout;
+				border: 1px solid $light_pink;
 				border-radius: 50%;
-				color: #ffb1bb;
+				color: $light_pink;
 				position: absolute;
 				z-index: 2;
 				font-size: 0.6rem;

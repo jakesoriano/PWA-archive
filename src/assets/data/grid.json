@@ -21,6 +21,16 @@
 	},
 	{
 		"styles": [],
+		"pageTitle": "PAGE_DATA_PRIVACY",
+		"uri": "data-privacy",
+		"contents": [
+			{
+				"component": "DataPrivacy"
+			}
+		]
+	},
+	{
+		"styles": [],
 		"pageTitle": "PAGE_SIGNUP",
 		"uri": "signup",
 		"contents": [
@@ -226,6 +236,17 @@
 		"styles": [],
 		"auth": false,
 		"pageTitle": "PAGE_OTP",
+		"uri": "login-otp",
+		"contents": [
+			{
+				"component": "LoginOTP"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": false,
+		"pageTitle": "PAGE_OTP",
 		"uri": "registration-otp",
 		"contents": [
 			{
@@ -241,6 +262,53 @@
 		"contents": [
 			{
 				"component": "Story"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "KAKAMPINK_STORIES",
+		"uri": "registration-invite",
+		"contents": [
+			{
+				"component": "RegistrationInvite"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "ACCOUNT_PROFILE",
+		"uri": "account-profile",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "Account"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "COMMUNITY_SETUP",
+		"withBack": true,
+		"uri": "community-setup",
+		"contents": [
+			{
+				"component": "CommunitySetup"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "TASK_CENTER",
+		"uri": "task-center",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "TaskCenter"
 			}
 		]
 	}

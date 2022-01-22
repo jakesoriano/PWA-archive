@@ -65,7 +65,9 @@ export const initialStore = {
     fetching: false,
     result: false,
     data: [],
-    isRead: false
+    isRead: false,
+    lastDateNotified: null,
+    lastDatePointsNotified: null
   },
   stories: {
     fetching: false,
@@ -77,8 +79,16 @@ export const initialStore = {
   settings: {
     touchId: false
   },
+  tasks: {
+    fetching: false,
+    result: false,
+    data: null,
+    date: null,
+    completed: false
+  },
   // user
   authUser: null,
+  deviceId: null,
   // modals
   promptModal: null,
   messageModal: null,

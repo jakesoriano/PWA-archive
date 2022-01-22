@@ -6,7 +6,6 @@ import {
 	getTranslation,
 	formatNumber,
 	playStore,
-	appStore,
 	getDefaultAvatar,
 	circleModal,
 	formatRank
@@ -46,7 +45,6 @@ class AccountProfile extends Component {
 				I've earned ${this.props.authUser.points} Hero Points!\n
 				Download the KakamPink App!\n\n
 				Android: ${playStore}\n
-				Apple: ${appStore}\n
 				Use my invite code: ${this.props.authUser.profile.refCode}\n\n
 				#LetLeniLead
 			`,
@@ -69,6 +67,7 @@ class AccountProfile extends Component {
 						<ImageLoader
 							src={authUser.profile.image || getDefaultAvatar()}
 							style={{ container: style.avatar }}
+							lazy
 						/>
 						<div className={style.profileInfo}>
 							<div className={style.nameMember}>

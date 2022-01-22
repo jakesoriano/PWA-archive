@@ -1,6 +1,7 @@
 import { Component } from 'preact';
 import { getTranslation, displayPageLoader } from '_helpers';
 import { ButtonDescription } from '_components/core';
+import { updateStore } from '_unistore';
 import style from './style.scss';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -42,6 +43,20 @@ class OneTimePIN extends Component {
 				}
 			}, 1000);
 		}
+	};
+
+	showAlertBox = (message) => {
+		updateStore({
+			alertShow: {
+				success: false,
+				content: message,
+			},
+		});
+		setTimeout(() => {
+			updateStore({
+				alertShow: null,
+			});
+		}, 5300);
 	};
 
 	renderBox = (i, isActive, isLast) => {

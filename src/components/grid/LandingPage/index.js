@@ -39,6 +39,7 @@ class LandingPage extends Component {
 								<ImageLoader
 									src="assets/images/appLogo.png"
 									style={{ container: style.landingImg }}
+									lazy
 								/>
 							</div>
 						</div>

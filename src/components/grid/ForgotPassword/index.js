@@ -30,17 +30,7 @@ class ForgotPassword extends Component {
 		};
 	};
 	onNewPasswordChange = (value) => {
-    if( value && special_char.test(value) ) {
-      this.setState({
-        newPass: {
-          ...this.state.newPass,
-          value,
-          hasError: true,
-          error: getTranslation('SPECIAL_CHARACTERS')
-        }
-      });
-    } 
-    else if (value && value.length < 8) {
+    if (value && value.length < 8) {
 			this.setState({
 				newPass: {
 					...this.state.newPass,
@@ -79,8 +69,7 @@ class ForgotPassword extends Component {
   handleChangePassowrd = () => {
     if (!this.state.newPass.value ||
       !this.state.confirmPass.value ||
-      this.state.newPass.value.length < 8 ||
-      special_char.test(this.state.newPass.value)) {
+      this.state.newPass.value.length < 8) {
 	    this.onNewPasswordChange(this.state.newPass.value);
       this.onConfirmPasswordChange(this.state.confirmPass.value);
 	  } else {

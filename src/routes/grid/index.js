@@ -36,7 +36,8 @@ import {
 import {
 	nativeWebReady,
 	nativeStatusTouchID,
-	nativeExitApp
+	nativeExitApp,
+	nativeGetDeviceId
 } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -188,6 +189,12 @@ class Grid extends Component {
 	      // Save Prev and Last/Current Page to Cookie
 	      setCookie(`${process.env.PREFIX}PrevPage`, '');
 	      setCookie(`${process.env.PREFIX}LastPage`, url);
+	      // device id
+	      nativeGetDeviceId((id) => {
+	        updateStore({
+	          deviceId: id
+	        });
+	      });
 	      // touch id
 	      nativeStatusTouchID().then(val => {
 					updateStore({
@@ -398,7 +405,7 @@ class Grid extends Component {
 	          isOpen={rightSideBar}
 	          toggleSideBar={this.toggleRightSideBar}
 	        />}
-	        {/* <div className={style.footer}>{process.env.BUILD_NO}</div> */}
+	        {!authUser && <div className={style.footer}>{process.env.ENVIRONMENT !== 'PROD' && process.env.ENVIRONMENT}  {process.env.BUILD_NO}</div>}
 	      </div>
 	      {/* Modals */}
 	      {messageModal && this.renderMessageModal()}
@@ -451,4 +458,10 @@ if (typeof window !== 'undefined') {
 			nativeExitApp();
 		}
   };
+
+	// native on resume
+	window.onResume = () => {
+		const path = location.hash.replace('#', '');
+		console.log('onResume', path);
+	}
 }

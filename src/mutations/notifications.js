@@ -2,77 +2,92 @@ import { store, updateStore } from '_unistore';
 import { getTranslation, dateWithinDays, getDateDaysAway, dateEventFormat } from '_helpers';
 
 export function generateNotifications () {
-  
-  let lastDateNotified = localStorage.getItem('lastDateNotified');
+  let { notifications } = store.getState();
+  let { lastDateNotified, lastDatePointsNotified } = notifications;
 
   if (!lastDateNotified || dateWithinDays(lastDateNotified, -1)) {
 
-    let { notifications, members, events } = store.getState(), data = [...notifications.data];
+    const { members, events } = store.getState();
 
-    generatePointsNotification(data, members.data);
+    // prep new data
+    const pointsNotif = generatePointsNotification(members.data, lastDatePointsNotified);
+    const eventsNotif = generateEventsNotification(events.data);
+    const newData = [
+      ...pointsNotif,
+      ...eventsNotif
+    ].sort((a, b) => a.date - b.date);
 
-    generateEventsNotification(data, events.data);
+    if (newData.length) {
 
-    if (data.length) {
       // set isRead 
-      let isNotificationsChanged = JSON.stringify(notifications.data) === JSON.stringify(data);
-      data.sort((a, b) => a.date - b.date);
+      let isNotificationsChanged = JSON.stringify(notifications.data) === JSON.stringify(newData);
 
       updateStore({
         notifications: {
           ...notifications,
-          data: data,
-          isRead: (isNotificationsChanged && notifications.isRead)
+          data: [
+            ...pointsNotif,
+            ...eventsNotif
+          ],
+          isRead: (isNotificationsChanged && notifications.isRead),
+          lastDateNotified: new Date(),
+          lastDatePointsNotified: lastDatePointsNotified
         }
       });
     }
   }
-  localStorage.setItem('lastDateNotified', new Date());
 }
 
-const generatePointsNotification = (data, members) => {
+const generatePointsNotification = (members, lastDatePointsNotified) => {
   // check day if a Sunday before adding to notifications
-  if (new Date().getDay() === 0) {
-    let lastDatePointsNotified = localStorage.getItem('lastDatePointsNotified');
-    if (members && members.length) {
+  if (members && members.length) {
 
-      if (!lastDatePointsNotified || dateWithinDays(lastDatePointsNotified, -7)) {
-        localStorage.setItem('lastDatePointsNotified', new Date());
-        lastDatePointsNotified = localStorage.getItem('lastDatePointsNotified');
-      }
+    if (!lastDatePointsNotified || dateWithinDays(lastDatePointsNotified, -7)) {
+      lastDatePointsNotified = new Date();
+    }
 
-      if ((new Date(lastDatePointsNotified).toISOString().split('.')[0]+'Z' === new Date().toISOString().split('.')[0]+'Z')) {
-        members.sort((a, b) => new Date(a.date) - new Date(b.date));
-        let tmpArr = members.filter(item => (getDateDaysAway(item.profile.date) >= -7 && getDateDaysAway(item.profile.date) <= 0));
-        data.push(propsTemplate('assets/images/icon_megaphone.png', getTranslation('CONGRATULATIONS'), getTranslation('EARNED_POINTS').replace(/{POINTS}/gim, (tmpArr.length * 100)).replace(/{MEMBERS_COUNT}/gim, tmpArr.length))); 
+    if ((new Date(lastDatePointsNotified).toISOString().split('.')[0]+'Z' === new Date().toISOString().split('.')[0]+'Z')) {
+      members.sort((a, b) => new Date(a.date) - new Date(b.date));
+      let count = members
+        .filter(item => (getDateDaysAway(item.profile.date) >= -7 && getDateDaysAway(item.profile.date) <= 0))
+        .length;
+
+      if (count) {
+        return [
+          propsTemplate(
+            getTranslation('CONGRATULATIONS'),
+            getTranslation('EARNED_POINTS')
+              .replace(/{POINTS}/gim, (count * 100))
+              .replace(/{MEMBERS_COUNT}/gim, count),
+            'points'
+          )
+        ]
       }
     }
   }
+  return [];
 }
 
-const generateEventsNotification = (data, events) => {
-  let existingEvents = data.reduce((arr, {eventId}) => ((eventId ? arr.push(eventId) : undefined), arr), []);
-  events.map((item) => {
-    // check if event already exists in notification, only add if not existing
-    if (existingEvents.indexOf(item.id) === -1) {
-      // check if 2 days before event
-      if (dateWithinDays(item.date, 2)) {
-
-        if (!data.includes(JSON.stringify(item))) {
-          let template = propsTemplate('assets/images/icon_megaphone.png', getTranslation(item.title), getTranslation('SEE_YOU').replace(/{LOCATION}/gim, item.location).replace(/{DATE}/gim, dateEventFormat(item.date)));
-          template.eventId = item.id
-          data.push(template)
-        }
-      }
-    }
-  });
+const generateEventsNotification = (events) => {
+  const data = events
+    .filter(item => [0, 1, 2].indexOf(getDateDaysAway(item.date)) > -1 && item.tagged === 'GOING')
+    .map(item => 
+      propsTemplate(
+        getTranslation(item.title), 
+        getTranslation('SEE_YOU')
+          .replace(/{LOCATION}/gim, item.location)
+          .replace(/{DATE}/gim, dateEventFormat(item.date)), 
+        'event'
+      )
+    );
+  return data;
 }
 
-const propsTemplate = (image, title, desc) => {
+const propsTemplate = (title, desc, type) => {
   return {
-    image: image,
     title: title,
     description: desc,
+    type: type,
     date: new Date()
   }
 }

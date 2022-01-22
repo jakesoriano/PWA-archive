@@ -71,6 +71,8 @@ class InitialSignup extends Component {
                 signup: {
                   username: this.state.username.value,
                   password: this.state.password.value,
+                  socType: 'U',
+                  socId: ''
                 }
               });
               route(`/${this.props.parent}/terms`);
@@ -183,11 +185,11 @@ class InitialSignup extends Component {
               });
             }
           });
-        } else {
+        } else if (res.error !== 'SIGN_IN_CANCELLED') {
           updateStore({
             alertShow: {
               success: false,
-              content: getTranslation('ACCOUNT_NOT_FOUND'),
+              content: getTranslation(typeof res.error === 'string' ? res.error : 'SOMETHING_WRONG'),
               noTopBar: true
             }
           });

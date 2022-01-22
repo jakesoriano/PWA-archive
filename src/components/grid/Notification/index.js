@@ -1,7 +1,8 @@
 import { connect } from 'unistore/preact';
 import { Component } from 'preact/dist/preact';
 import { ImageLoader } from '_components/core';
-import { getTranslation, displayPageLoader, replaceUrlPlaceholders } from '_helpers';
+import { nativeShare } from '_platform/helpers';
+import { getTranslation } from '_helpers';
 import style from './style';
 
 class Notification extends Component {
@@ -15,8 +16,12 @@ class Notification extends Component {
     }
   }
 
-  componentDidMount = () => {
-  }
+	onShare = (item) => {
+		nativeShare({
+			title: item.title,
+			message: item.description
+		});
+	};
 
   renderNotifications = () => {
     const { data } = this.props.notifications
@@ -24,14 +29,14 @@ class Notification extends Component {
       return data.map((item) => (
         <div className={style.contentDetail}>
           <ImageLoader
-            src={replaceUrlPlaceholders(item.image)}
+            src={item.type === 'event' ? 'assets/images/announcement.png' : 'assets/images/badge.png'}
             style={{ container: style.detailImage }}
           />
           <div className={style.detailCopy}>
-            <p className={`bold ${style.detailTitle}`}>{getTranslation(item.title)}</p>
+            <p className={`bold ${style.detailTitle} ${style[item.type]}`}>{getTranslation(item.title)}</p>
             <p className={style.detailDescription}>{getTranslation(item.description)}</p>
           </div>
-          <a className={style.detailShare} onClick={this.onShare}>
+          <a className={style.detailShare} onClick={() => this.onShare(item)}>
             <ImageLoader
               src="assets/images/share_icon.png"
               style={{ container: style.share }}

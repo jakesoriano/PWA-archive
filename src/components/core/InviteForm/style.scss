@@ -1,0 +1,41 @@
+@import '../../../style/variables.scss';
+.form {
+  padding: 0px 5px 10px;
+  .name {
+    margin-left: 20px;
+    width: calc( 100% - 20px);
+  }
+  .invite, .mobileWrap {
+    display: flex;
+    align-items: center;
+    .mobileInputWrap {
+      flex-grow: 1;
+      .mobile {
+        width: 95%;
+      }
+    }
+    span,
+    .pShare {
+      flex-grow: 1;
+    }
+    .pShare {
+      background: $primary_layout;
+      display: flex;
+      width: 100px;
+      margin: 0 auto;
+      padding: 5px 10px;
+      width: max-content;
+      min-width: 85px;
+      .pIconShare {
+        padding-bottom: 18px;
+        width: 18px;
+        margin-right: 5px;
+      }
+      span {
+        color: #fff;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

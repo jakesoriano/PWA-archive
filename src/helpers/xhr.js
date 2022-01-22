@@ -1,7 +1,12 @@
 import { store } from '_unistore';
-import { getLanguageInfo, platform, replaceUrlPlaceholders } from '_helpers';
+import {
+  getLanguageInfo,
+  platform,
+  displayPageLoader
+} from '_helpers';
 import XHRWorker from '_workers/XHRWorker';
 import { getCurrencyCode } from './language';
+import { logOut } from '_mutations';
 
 const xhrInstances = {};
 // eslint-disable-next-line import/prefer-default-export
@@ -24,8 +29,15 @@ export function xhr (url, options, externalAPI) {
 
     // worker response
     requestWorker.onmessage = (ev) => {
+      const { authUser } = store.getState();
+
       if ('result' in ev.data) {
         resolve(ev.data.result);
+      } else if (authUser && ev.data && ev.data.status === 401){
+        // Unauthorized
+        logOut();
+        displayPageLoader(false);
+        reject(null);
       } else if ('error' in ev.data) {
         reject(ev.data);
       }

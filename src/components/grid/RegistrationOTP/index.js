@@ -16,15 +16,15 @@ class RegistrationOTP extends Component {
 			isOTPInvalid: false,
 			isResendCd: false,
 			seconds: 60,
-			inputFocus: false
+			inputFocus: false,
 		};
-	};
+	}
 
 	componentDidMount = () => {
 		updateStore({
 			customBack: () => {
-				route(`/${this.props.parent}/signup`, true)
-			}
+				route(`/${this.props.parent}/signup`, true);
+			},
 		});
 	};
 	handleContinue = (pin) => {
@@ -37,7 +37,7 @@ class RegistrationOTP extends Component {
 		completeRegister(data).then((res) => {
 			displayPageLoader(false);
 			if (res.success) {
-				route('/home', true);
+				route(`registration-invite`, true);
 			} else {
 				if (!isOTPInvalid) {
 					this.showAlertBox(getTranslation('OTP_INVALID'));
@@ -58,8 +58,8 @@ class RegistrationOTP extends Component {
 		const { registrationId, mobile } = this.props.signup || '';
 		let data = {
 			registrationId: registrationId,
-			mobile: mobile
-		}
+			mobile: mobile,
+		};
 		return resendOTP(data);
 	};
 
@@ -67,23 +67,23 @@ class RegistrationOTP extends Component {
 		updateStore({
 			alertShow: {
 				success: false,
-				content: message
-			}
+				content: message,
+			},
 		});
 		setTimeout(() => {
 			updateStore({
-				alertShow: null
+				alertShow: null,
 			});
 		}, 5300);
-	}
+	};
 	render = ({}) => {
 		return (
 			<div className={style.regOtpWrapper}>
-        <OneTimePIN
-          mobile={this.props.signup.mobile}
-          onClickCallback={this.handleContinue}
-          onResendCallback={this.resetOTP}
-        />
+				<OneTimePIN
+					mobile={this.props.signup.mobile}
+					onClickCallback={this.handleContinue}
+					onResendCallback={this.resetOTP}
+				/>
 			</div>
 		);
 	};

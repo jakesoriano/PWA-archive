@@ -95,6 +95,14 @@ export function likeShareNews (item, itemType, action, parentId, parentType) {
       updateStore({
         news: {
           ...news,
+          data: news.data.map(i => {
+            if(i.id === item.id) {
+              action === 'liked' ? 
+                i.likeCount = i.likeCount+1 : 
+                i.shareCount = i.shareCount+1;
+            }
+            return i;
+          }),
           fetching: false
         }
       });
@@ -157,6 +165,12 @@ export function removeLikeNews (item, itemType, parentId, parentType) {
       updateStore({
         news: {
           ...news,
+          data: news.data.map(i => {
+            if(i.id === item.id) {
+              i.likeCount = i.likeCount - 1;
+            }
+            return i;
+          }),
           fetching: false
         }
       });

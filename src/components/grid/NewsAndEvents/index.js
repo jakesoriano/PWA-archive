@@ -8,7 +8,11 @@ import {
 	shareEvent,
 	removeLikeNews,
 	selectTag } from '_mutations';
-import { getTranslation, dateEventFormat, playStore, appStore } from '_helpers';
+import {
+	getTranslation,
+	dateEventFormat,
+	playStore
+} from '_helpers';
 import { ImageLoader, LoaderRing } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 import { getCurrentUrl } from 'preact-router';
@@ -88,8 +92,7 @@ class NewsAndEvents extends Component {
 				We tell it as it is. Only the truth, KakamPink!\n\n
 				Shared via Kakampink App\n
 				Download now!\n
-				Android: ${playStore}\n
-				Apple: ${appStore}\n\n
+				Android: ${playStore}\n\n
 				Article Title: ${item.title}\n
 				Ariticle Link: ${item.link || ''}\n
 				Use my invite code: ${this.props.authUser.profile.refCode}
@@ -176,7 +179,8 @@ class NewsAndEvents extends Component {
 					<div className={`${style.pHeader} ${this.state.active !== 'news' ? style.pHeaderEvents : ''}`}>
 						<ImageLoader
 								src={data.image}
-								style={{container: style.pImage}} />
+								style={{container: style.pImage}}
+								lazy />
 						{this.state.active === 'news' ? (
 							<div className={style.pNews}>
 								<p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
@@ -184,7 +188,7 @@ class NewsAndEvents extends Component {
 							</div>
 						) : (
 							<div className={style.pEvents}>
-								<p className={`${style.pTitle}`}>{getTranslation(data.title)}</p>
+								<p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
 								<p className={`${style.pDate}`}>
 									{`${getTranslation('WHEN')}: ${dateEventFormat(data.date)}`} <br />
 									{`${getTranslation('WHERE')}: ${data.location}`}
@@ -223,7 +227,8 @@ class NewsAndEvents extends Component {
 					<div className={style.community}>
 						<ImageLoader
 							src={i.community.image}
-							style={{container: style.comImage}} />
+							style={{container: style.comImage}}
+							lazy />
 						<span>{getTranslation(i.community.name)}</span>
 					</div>
 					<a className={style.details} onClick={() => {
@@ -231,13 +236,14 @@ class NewsAndEvents extends Component {
 					}}>
 						<ImageLoader
 							src={i.image}
-							style={{container: style.detailImage}} />
+							style={{container: style.detailImage}}
+							lazy />
 						<div className={style.detailContent}>
 							<span className={`bold ${style.detailTitle}`}>{getTranslation(i.title)}</span>
 							{i.likeCount || i.shareCount ? (
 								<div className={style.detailCount}>
-									{i.likeCount && <span>{`${i.likeCount} ${getTranslation('LIKES')}`}</span>}
-									{i.shareCount && <span>{`${i.shareCount} ${getTranslation('SHARES')}`}</span>}
+									{i.likeCount ? <span>{`${i.likeCount} ${getTranslation('LIKES')}`}</span> : ''}
+									{i.shareCount ? <span>{`${i.shareCount} ${getTranslation('SHARES')}`}</span> :''}
 								</div>
 							): null}
 						</div>
@@ -277,7 +283,8 @@ class NewsAndEvents extends Component {
 					<div className={style.community}>
 						<ImageLoader
 							src={i.community.image}
-							style={{container: style.comImage}} />
+							style={{container: style.comImage}}
+							lazy />
 						<span>{getTranslation(i.community.name)}</span>
 					</div>
 					<a className={style.details} onClick={() => {
@@ -285,7 +292,8 @@ class NewsAndEvents extends Component {
 					}}>
 						<ImageLoader
 							src={i.image}
-							style={{container: style.detailImage}} />
+							style={{container: style.detailImage}}
+							lazy />
 						<div className={style.detailContent}>
 							<p>{dateEventFormat(i.date)} <br />
 							{`${getTranslation('EVENT_BY')}: ${i.by}`} <br />
@@ -310,6 +318,9 @@ class NewsAndEvents extends Component {
 							src={!i.tagged ? 'assets/images/INTERESTED-dark.png' : `assets/images/${i.tagged}-pink.png`}
 							style={{container: style.likeButton}}/>
 							{getTranslation(i.tagged || eventTags[0])}
+							<ImageLoader
+								src={'assets/images/drop_down_icon.png'}
+								style={{container: style.likeButton}}/>
 						</a>
 						<a
 							className={i.shared ? style.buttonShareActive : ''}
@@ -332,35 +343,37 @@ class NewsAndEvents extends Component {
 
 	render = (props, state) => {
 	  return (
-			<div className={style.newsAndEvents}>
-				<div className={style.tabWrap}>
-					<span 
-						className={`bold ${state.active === 'news' ? style.activeTab : ''}`}
-						onClick={() => {
-							this.toggleTab('news');
-						}}>{getTranslation('IWAS_FAKE_NEWS')}</span>
-					<span 
-						className={`bold ${state.active !== 'news' ? style.activeTab : ''}`}
-						onClick={() => {
-							this.toggleTab('events');
-						}}>{getTranslation('EVENTS')}</span>
-				</div>
-				<div className={style.content}>
-					{/* data */}
-					{state.active === 'news' ? this.renderNews(this.selected([state.active]).data) : this.renderEvents(props[state.active].data)}
-          {/* show more */}
-          {props[state.active].data.length < props[state.active].total && !props[state.active].fetching && (
-            <button className={style.showMore} onClick={this.handleShowMore}>
-              <span><span>&#8659;</span> {getTranslation('SHOW_MORE')}</span>
-            </button>
-          )}
-          {/* loader */}
-          {this.state.moreFetching && (
-            <LoaderRing styles={{container: style.loaderWrap}}/>
-          )}
+			<>
+				<div className={style.newsAndEvents}>
+					<div className={style.tabWrap}>
+						<span 
+							className={`bold ${state.active !== 'news' ? style.activeTab : ''}`}
+							onClick={() => {
+								this.toggleTab('events');
+							}}>{getTranslation('EVENTS')}</span>
+						<span 
+							className={`bold ${state.active === 'news' ? style.activeTab : ''}`}
+							onClick={() => {
+								this.toggleTab('news');
+							}}>{getTranslation('IWAS_FAKE_NEWS')}</span>
+					</div>
+					<div className={style.content}>
+						{/* data */}
+						{state.active === 'news' ? this.renderNews(props[state.active].data) : this.renderEvents(props[state.active].data)}
+						{/* show more */}
+						{props[state.active].data.length < props[state.active].total && !props[state.active].fetching && (
+							<button className={style.showMore} onClick={this.handleShowMore}>
+								<span><span>&#8659;</span> {getTranslation('SHOW_MORE')}</span>
+							</button>
+						)}
+						{/* loader */}
+						{this.state.moreFetching && (
+							<LoaderRing styles={{container: style.loaderWrap}}/>
+						)}
+					</div>
 				</div>
 				{state.selectedItem && this.renderDetails(state.selectedItem)}
-			</div>
+			</>
 		);
 	};
 

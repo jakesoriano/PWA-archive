@@ -9,7 +9,8 @@ export function nativeWebReady () {
   // eslint-disable-next-line no-console
   console.log('SPA >> nativeWebReady();');
   callNative({
-    action: 'loaded'
+    action: 'loaded',
+    apiUrl: process.env.API_DOMAIN
   });
 }
 
@@ -30,8 +31,23 @@ async function getFingerPrint (callback) {
 }
 
 export function nativeGetDeviceId (callback) {
-  // eslint-disable-next-line
-	getFingerPrint(callback);
+  // using web
+  if (!window.ReactNativeWebView) {
+    // eslint-disable-next-line
+    getFingerPrint(callback);
+    return;
+  }
+  // using native
+  window.cbDeviceId = (res) => {
+    callback(res)
+    window.cbDeviceId = null;
+  }
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeGetDeviceId();');
+  callNative({
+    action: 'getDeviceId',
+    callback: 'window.cbDeviceId',
+  });
 }
 
 export function nativeShare (data) {
@@ -174,5 +190,14 @@ export function nativeOnLogout () {
   console.log('SPA >> nativeOnLogout();');
   callNative({
     action: 'onLogout'
+  });
+}
+
+export function nativeSetAuthToken (token) {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeSetAuthToken();');
+  callNative({
+    action: 'setAuthToken',
+    token
   });
 }

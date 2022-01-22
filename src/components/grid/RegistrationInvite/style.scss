@@ -1,0 +1,47 @@
+@import '../../../style/variables.scss';
+.inviteWrap {
+  padding: 15px;
+  .inviteForm, .kitsContainer {
+    background-color: $white;
+    border-radius: 10px;
+    padding: 10px 0;
+  }
+  .kitsContainer {
+    margin-top: 15px;
+    .kits {
+      margin-top: 10px;
+      .kitsItem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 25px;
+        span {
+          color: #737373;
+        }
+      }
+    }
+  }
+  .heading {
+    color: $primary_layout;
+    text-align: center;
+    margin: 0 20px;
+  }
+  .skip {
+    text-align: right;
+    padding: 0 15px;
+    a {
+      color: $primary_layout;
+      text-decoration: underline;
+    }
+  }
+  .iconDownload {
+    width: 30px;
+    padding-bottom: 30px;
+    display: inline-block;
+    margin: 0 10px 0 15px;
+  }
+  .buttonContainer {
+    margin: 20px 0;
+    padding: 0 15px;
+  }
+}

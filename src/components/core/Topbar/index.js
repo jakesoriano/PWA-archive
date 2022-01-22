@@ -36,7 +36,12 @@ class Topbar extends Component {
 							className={style.btnBack}
 							onClick={props.onBack}
 							aria-label="Toggle Sidebar"
-						>❮</button>
+						>
+							<ImageLoader
+								style={{ container: style.backImg }}
+								src="assets/images/backbutton.png"
+							/>
+						</button>
 					)}
 					{/* page title */}
 	        <h1 id="topbar_title" className={style.title}>
@@ -61,7 +66,7 @@ class Topbar extends Component {
 						>
 							<ImageLoader
 								style={{ container: style.notifImg }}
-								src="assets/images/notif.png"
+								src="assets/images/notificationbell.png"
 							/>
 							{props.notifications.data.length && !props.notifications.isRead ? <span className={style.notifCount}>{props.notifications.data.length}</span> : ''}
 						</Link>

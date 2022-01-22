@@ -2,46 +2,6 @@
 @import '../../../style/variables.scss';
 .inviteWrap {
   background: #fff;
-  .form {
-    padding: 0px 5px 10px;
-    .name {
-      margin-left: 20px;
-      width: calc( 100% - 20px);
-    }
-    .invite, .mobileWrap {
-      display: flex;
-      align-items: center;
-      .mobileInputWrap {
-        flex-grow: 1;
-        .mobile {
-          width: 95%;
-        }
-      }
-      span,
-      .pShare {
-        flex-grow: 1;
-      }
-      .pShare {
-        background: $primary_layout;
-        display: flex;
-        width: 100px;
-        margin: 0 auto;
-        padding: 5px 10px;
-        width: max-content;
-        min-width: 85px;
-        .pIconShare {
-          padding-bottom: 18px;
-          width: 18px;
-          margin-right: 5px;
-        }
-        span {
-          color: #fff;
-          font-size: 0.8rem;
-          text-transform: uppercase;
-        }
-      }
-    }
-  }
 
   .list {
     background: $primary;
@@ -67,11 +27,23 @@
         flex-grow: 1;
         font-size: 0.9rem;
       }
+      a {
+        flex-grow: 1;
+        font-size: 0.9rem;
+        color: #fff;
+        display: flex;
+      }
       .name {
         width: calc(100% - 100px);
       }
       .status {
         width: 100px;
+      }
+      .listIcon {
+        width: 20px;
+        display: inline-block;
+        padding-bottom: 20px;
+        margin-left: 5px;
       }
     }
   }

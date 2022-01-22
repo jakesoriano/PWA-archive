@@ -92,17 +92,14 @@ class Community extends Component {
     }
     return this.props.communities.data.map((item, i) => (
       <div className={style.communityCard}>
-        <div
-          className={style.img}
-          onClick={() => { this.visitCommunity(item.id) }}
-        >
-          {item.image &&
-          <ImageLoader
-            src={item.image}
-            style={{container: style.img}}
-          />
-          }
-        </div>
+        {item.image &&
+        <ImageLoader
+          onClick={this.visitCommunity(item.id)}
+          src={item.image}
+          style={{container: style.imgCont, image: style.img}}
+          lazy
+        />
+        }
         <div className={style.cardBody}>
           <ButtonDescription
             onClickCallback={(e) => { this.handleFollow(item)}}

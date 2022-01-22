@@ -5,10 +5,13 @@ import {
   urlUserLogin,
   removeCookie,
   urlUserPoints,
-  urlChangePassword
+  urlChangePassword,
+  urlUserProfile,
+  urlUserLoginOTP
 } from '_helpers';
 import {
-  nativeOnLogout
+  nativeOnLogout,
+  nativeSetAuthToken
 } from '_platform/helpers';
 
 export function logOut (callback) {
@@ -19,6 +22,8 @@ export function logOut (callback) {
     members,
     invited,
     communities,
+    notifications,
+    tasks
   } = initialStore;
 
   removeCookie('token');
@@ -30,6 +35,9 @@ export function logOut (callback) {
     members,
     invited,
     communities,
+    notifications,
+    tasks,
+    loginInfo: null,
   });
   nativeOnLogout();
   if (callback) {
@@ -66,17 +74,19 @@ export function fetchUserPoints () {
         if (res.success) {
           // get current data
           const { authUser } = store.getState();
-          updateStore({
-            authUser: {
-              ...authUser,
-              points: res.data.points,
-              members: res.data.members,
-              rank: {
-                regional: res.data.region,
-                overall: res.data.global
+          if (authUser) {
+            updateStore({
+              authUser: {
+                ...authUser,
+                points: res.data.points,
+                members: res.data.members,
+                rank: {
+                  regional: res.data.region,
+                  overall: res.data.global
+                }
               }
-            }
-          });
+            });
+          }
         }
         // eslint-disable-next-line
 				console.log(`SPA >> fetchUserPoints successful`, res);
@@ -91,6 +101,7 @@ export function fetchUserPoints () {
 }
 
 export function login (data) {
+  const { deviceId } = store.getState();
   const {
     news,
     events,
@@ -101,7 +112,10 @@ export function login (data) {
   return new Promise((resolve) => {
     xhr(urlUserLogin, {
       method: 'POST',
-      data
+      data: {
+        ...data,
+        deviceId
+      }
     })
       .then((res) => {
         if (res && res.success) {
@@ -116,8 +130,11 @@ export function login (data) {
             events,
             members,
             invited,
-            communities
+            communities,
+            loginInfo: null
           });
+          // set auth token in native
+          nativeSetAuthToken(res.token);
           // eslint-disable-next-line
           console.log(`SPA >> login successful`, res);
           resolve(true);
@@ -128,6 +145,57 @@ export function login (data) {
       .catch((err) => {
         // eslint-disable-next-line
 				console.log(`SPA >> login Error`, err);
+        resolve(err.data);
+      });
+  });
+}
+
+export function loginOTP (data) {
+  const { deviceId } = store.getState();
+  const {
+    news,
+    events,
+    members,
+    invited,
+    communities
+  } = initialStore;
+  return new Promise((resolve) => {
+    xhr(urlUserLoginOTP, {
+      method: 'POST',
+      data: {
+        ...data,
+        deviceId
+      }
+    })
+      .then((res) => {
+        console.log('resAuth', res);
+        if (res && res.success) {
+          updateStore({
+            authUser: {
+              ...res,
+              points: res.points || 0,
+              rank: res.rank || 0,
+            },
+            customBack: null,
+            news,
+            events,
+            members,
+            invited,
+            communities,
+            loginInfo: null
+          });
+          // set auth token in native
+          nativeSetAuthToken(res.token);
+          // eslint-disable-next-line
+          console.log(`SPA >> login OTP successful`, res);
+          resolve(true);
+        } else {
+          resolve(false);
+        }
+      })
+      .catch((err) => {
+        // eslint-disable-next-line
+				console.log(`SPA >> login OTP Error`, err);
         resolve(false);
       });
   });
@@ -149,6 +217,42 @@ export function changePassword (data) {
       .catch((err) => {
         // eslint-disable-next-line
 				console.log(`SPA >> login Error`, err);
+        resolve({
+          success: false,
+          error: {
+            message: 'SOMETHING_WRONG'
+          }
+        });
+      });
+  });
+}
+
+export function updateAvatar (data) {
+  return new Promise((resolve) => {
+    xhr(urlUserProfile, {
+      method: 'PATCH',
+      data
+    })
+      .then((res) => {
+        if (res && res.success) {
+          // eslint-disable-next-line
+          const { authUser } = store.getState();
+          updateStore({
+            authUser: {
+              ...authUser,
+              profile: {
+                ...authUser.profile,
+                image: data.image
+              }
+            }
+          });
+          console.log(`SPA >> updateAvatar successful`, res);
+        }
+        resolve(res);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line
+				console.log(`SPA >> updateAvatar Error`, err);
         resolve({
           success: false,
           error: {

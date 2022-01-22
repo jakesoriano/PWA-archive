@@ -57,11 +57,27 @@ class Login extends Component {
 	    login(payload)
 	      .then((res) => {
           displayPageLoader(false);
-          if (res) {
+          /**
+           * 1. login success
+           * 2. login require otp
+           * 3. login fail
+           */
+          if (res === true) {
             if (!isAuto) {
               nativeSetCredential(payload);
             }
             route('/home', true);
+          } else if (res.otp) {
+            updateStore({
+              loginInfo: {
+                username: payload.username,
+                password: payload.password,
+                mobile: res.mobile,
+                isAuto
+              }
+            }, true);
+            this.props.toggleLoginForm();
+            route(`/landing/login-otp`);
           } else {
             updateStore({
               alertShow: {
@@ -91,10 +107,6 @@ class Login extends Component {
 
 	onClickForgotUserPass = () => {
     this.props.toggleLoginForm();
-	};
-
-	onClickSocMedSignin = () => {
-	  console.log('click social media');
 	};
 
 	onUsernameChange = (value) => {
@@ -134,7 +146,7 @@ class Login extends Component {
             username: res.data.email,
             password: res.data.id
           }, true, 'ACCOUNT_NOT_FOUND');
-        } else {
+        } else if (res.error !== 'SIGN_IN_CANCELLED') {
           updateStore({
             alertShow: {
               success: false,

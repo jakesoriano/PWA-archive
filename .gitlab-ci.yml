@@ -12,6 +12,7 @@ cache:
     - npm install --production=false
     - echo "APP_ENV_PROJECT=Kakampink" >> .env
     - echo "APP_ENV_API_DOMAIN=$API_DOMAIN" >> .env
+    - echo "APP_ENV_CDN_DOMAIN=$CDN_DOMAIN" >> .env
     - echo "APP_ENV_PLATFORM=$PLATFORM" >> .env
     - echo "APP_ENV_PREFIX=$PREFIX" >> .env
     - echo "APP_ENV_ENVIRONMENT=$ENVIRONMENT" >> .env
@@ -23,7 +24,7 @@ cache:
     # - npm run pwa-config
   script:
     - rm -rf build
-    - npm run build
+    - npm run build:android
     - npm run web-redirection
   # after_script:
 
@@ -31,10 +32,33 @@ build:
   stage: build
   only:
     - develop
+  extends: .buildPipeLine
+  variables:
+    API_DOMAIN: https://n0k58tc0x4.execute-api.ap-southeast-1.amazonaws.com/develop/
+    CDN_DOMAIN: https://mobile-kkp.s3.ap-southeast-1.amazonaws.com/uploads/
+    PLATFORM: android
+    PREFIX: kkpd
+    ENVIRONMENT: DEV
+
+build:
+  stage: build
+  only:
+    - staging
+  extends: .buildPipeLine
+  variables:
+    API_DOMAIN: https://7oquizbc8g.execute-api.ap-southeast-1.amazonaws.com/staging/
+    CDN_DOMAIN: https://mobile-kkp.s3.ap-southeast-1.amazonaws.com/uploads/
+    PLATFORM: android
+    PREFIX: kkps
+    ENVIRONMENT: STG
+
+build:
+  stage: build
+  only:
     - master
   extends: .buildPipeLine
   variables:
     API_DOMAIN: /
-    PLATFORM: web
+    PLATFORM: android
     PREFIX: kkp
     ENVIRONMENT: PROD

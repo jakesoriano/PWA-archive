@@ -35,15 +35,23 @@
       .communityCard {
         width: 30%;
         margin: 20px 5px;
-        .img {
+        .imgCont {
           width: 100%;
+          .img {
+            position: absolute;
+            top: -9999px;
+            bottom: -9999px;
+            left: -9999px;
+            right: -9999px;
+            margin: auto;
+          }
         }
         .buttonStyle {
           padding: 3px 0;
           font-size: 0.75rem;
           border-radius: 2px;
           &.followed {
-            background-color: $kakampink;
+            background-color: $primary_layout;
           }
         }
         .bottomDescStyle {

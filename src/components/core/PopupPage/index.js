@@ -4,6 +4,7 @@
 import { h, Component, createRef } from 'preact';
 import { connect } from 'unistore/preact';
 import { getTranslation } from '_helpers';
+import { ImageLoader } from '_components/core';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -36,7 +37,12 @@ class PopupPage extends Component {
 	        onClick={() => {
 	          this.handleBack(customBack || onBack);
 	        }}
-	      >❮</button>
+	      >
+					<ImageLoader
+						style={{ container: style.backImg }}
+						src="assets/images/backbutton.png"
+					/>
+				</button>
 	      <h3>{getTranslation(title)}</h3>
 	    </div>
 	    <div className={style.body}>{children}</div>

@@ -25,7 +25,7 @@ class TermsConditions extends Component {
 	    setTimeout(() => {
 				try {
 					this.setState({
-						isReading: !(this.el.scrollTop > (this.el.scrollHeight / 4))
+						isReading: false
 					});
 				} catch (er) {
 					this.setState({
@@ -37,7 +37,7 @@ class TermsConditions extends Component {
 	};
 
 	handleContinue = (e) => {
-		route(`/${this.props.parent}/signup`);
+		route(`/${this.props.parent}/data-privacy`);
 	};
 
 	renderContent = () => {

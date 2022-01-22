@@ -1,4 +1,4 @@
-/** @format */
+@import '../../../style/variables.scss';
 
 .imageLoader {
 	width: 88px;
@@ -18,11 +18,11 @@
 		display: block;
 		position: absolute;
 		&.popIn {
-			animation: pop-in 0.18s;
+			animation: pop-in 0.100s;
 		}
 	}
 	&.notLoaded {
-		background-color: #03435d;
+		background-color: $primary_layout;
 		border-radius: 4px;
 		img {
 			-ms-transform: translate(
@@ -39,10 +39,6 @@
 	0% {
 		opacity: 0;
 		-webkit-transform: scale(0);
-	}
-	90% {
-		opacity: 1;
-		-webkit-transform: scale(1.1);
 	}
 	100% {
 		opacity: 1;

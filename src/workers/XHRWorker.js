@@ -56,11 +56,12 @@ self.onmessage = (ev) => {
     })
     .catch((err) => {
       // eslint-disable-next-line
-			console.log(`Worker >> xhrWorker ${config.url} , ${err.message}`);
+      console.log(`Worker >> xhrWorker ${config.url}`, err);
 
       self.postMessage({
-        error: err.message,
-        status: err.response ? err.response.status : null
+        error: (err.data && err.data.message) || err.message,
+        status: err.response ? err.response.status : null,
+        data: err.response.data
       });
     });
 };

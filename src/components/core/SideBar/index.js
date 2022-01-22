@@ -48,16 +48,29 @@ class SideBar extends Component {
 						</div>
 					</div>
 					<div className={style.sMenu}>
+						{(!authUser.profile.roles || authUser.profile.roles !== '100') && (
+							<Link href={`/account-profile`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('ACCOUNT_PROFILE')}</Link>
+						)}
+
+						{(authUser.profile.roles && authUser.profile.roles === '100') && ( 
+							<div>
+								<Link className={style.sMItem}>{getTranslation('MANAGE_COMMUNITY_PAGE')}</Link>
+								<Link href={`/community-setup`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('SETUP_PAGE')}</Link>
+								<Link href={`/post-content`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('POST_CONTENT')}</Link>
+							</div>
+						)}
 						{!isUsingSocialLogin() && (
 							<Link href={`/settings`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('SETTINGS')}</Link>
 						)}
 						<Link href={`/contactus`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('WHERE_HERE_TO_LISTEN')}</Link>
+						<Link href={`/task-center`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('TASK_CENTER')}</Link>
 						{/* <Link href="/home" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PROTECT_LENI')}</Link> */}
 						<Link href={`/`} className={style.sMItem} onClick={(e) => {
 							logOut();
 							this.onClickMenu(e);
 						}}>{getTranslation('LOGOUT')}</Link>
 					</div>
+	      	<div className={style.footer}>{process.env.ENVIRONMENT !== 'PROD' && process.env.ENVIRONMENT} {process.env.BUILD_NO}</div>
 				</div>
 			</div>
 		);
