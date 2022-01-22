@@ -341,25 +341,44 @@ class NewsAndEvents extends Component {
 		return <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
 	};
 
+	renderData = (active) => {
+
+		if (active === 'news') {
+			this.renderNews(props[state.active].data)
+		} else if (active === 'events') {
+			
+		} else {
+			this.renderEvents(props[state.active].data)}
+		}
+	}
+
 	render = (props, state) => {
 	  return (
 			<>
 				<div className={style.newsAndEvents}>
 					<div className={style.tabWrap}>
 						<span 
-							className={`bold ${state.active !== 'news' ? style.activeTab : ''}`}
+							className={`bold ${state.active === 'events' ? style.activeTab : ''}`}
 							onClick={() => {
 								this.toggleTab('events');
 							}}>{getTranslation('EVENTS')}</span>
+						{
+							props.showNews &&
+							<span 
+								className={`bold ${state.active === 'news' ? style.activeTab : ''}`}
+								onClick={() => {
+									this.toggleTab('news');
+								}}>{getTranslation('IWAS_FAKE_NEWS')}</span>
+						}
 						<span 
-							className={`bold ${state.active === 'news' ? style.activeTab : ''}`}
-							onClick={() => {
-								this.toggleTab('news');
-							}}>{getTranslation('IWAS_FAKE_NEWS')}</span>
+								className={`bold ${state.active === 'announcements' ? style.activeTab : ''}`}
+								onClick={() => {
+									this.toggleTab('news');
+								}}>{getTranslation('IWAS_FAKE_NEWS')}</span>
 					</div>
 					<div className={style.content}>
 						{/* data */}
-						{state.active === 'news' ? this.renderNews(props[state.active].data) : this.renderEvents(props[state.active].data)}
+						{ this.renderData() }
 						{/* show more */}
 						{props[state.active].data.length < props[state.active].total && !props[state.active].fetching && (
 							<button className={style.showMore} onClick={this.handleShowMore}>

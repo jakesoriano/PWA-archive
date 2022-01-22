@@ -100,7 +100,11 @@
 		"auth": true,
 		"pageTitle": "PAGE_COMMUNITY",
 		"uri": "community-details",
+		"withBack": true,
 		"contents": [
+			{
+				"component": "CommunityDetails"
+			},
 			{
 				"component": "NewsAndEvents"
 			}

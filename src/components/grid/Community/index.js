@@ -76,14 +76,16 @@ class Community extends Component {
   }
 
   visitCommunity = (id) => {
-    let { communityDetails } = store.getState();
+    let { communityDetails, communities } = store.getState();
+    let details = communities.data.filter((item) => item.id === id)[0];
     updateStore({
       communityDetails: {
         ...communityDetails,
+        details,
         id: id
       }
     });
-    route(`/${this.props.parent}/community-details`);
+    route(`community-details`);
   }
 
   renderCommunities = () => {
@@ -93,12 +95,13 @@ class Community extends Component {
     return this.props.communities.data.map((item, i) => (
       <div className={style.communityCard}>
         {item.image &&
-        <ImageLoader
-          onClick={this.visitCommunity(item.id)}
-          src={item.image}
-          style={{container: style.imgCont, image: style.img}}
-          lazy
-        />
+        <div onClick={() => { this.visitCommunity(item.id) }}>
+          <ImageLoader
+            src={item.image}
+            style={{container: style.imgCont, image: style.img}}
+            lazy
+          />
+        </div>
         }
         <div className={style.cardBody}>
           <ButtonDescription

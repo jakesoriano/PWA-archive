@@ -222,7 +222,7 @@ export function fetchNewsByCommunity (communityId, page, limit) {
       }
     })
     .then((res) => {
-      const {}
+      const { communityDetails } = store.getState();
       updateStore({
         communityDetails: {
           ...communityDetails,
