@@ -162,7 +162,7 @@
 	"TASK_DEADLINE": "Deadline: {DATE}",
 	"TASK_NOTE": "Note: Lofin to Facebook if you cannot see the post",
 	"TASK_COMPLETED": "All tasks completed! Come back again later to earn more points.",
-	"INCORRECT_CODE": "Incorrect Code",
+	"INVALID_CODE": "Invalid Code",
 	"MANAGE_COMMUNITY_PAGE": "Manage Community Page",
 	"SETUP_PAGE": "Setup page",
 	"POST_CONTENT": "Post Content",

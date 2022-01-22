@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 // import { route } from 'preact-router';
-import { getTranslation, displayPageLoader } from '_helpers';
+import { getTranslation, displayPageLoader, circleModal } from '_helpers';
 import { useCode } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
@@ -75,16 +75,17 @@ class Account extends Component {
 				if(res && res.success) {
 					// reset form data
 					this.resetState();
-					updateStore({
-						isCommunityCodeSuccess: true
-					}, true)
+					circleModal({
+						title: getTranslation('COMMUNITY_CODE_SUCCESS'),
+						content: getTranslation('COMMUNITY_CODE_DESC')
+					});
 					route(`/community-setup`);
 				} else {
-					this.showAlertBox('INCORRECT_CODE', true);
+					this.showAlertBox('INVALID_CODE', true);
 				}
 				displayPageLoader(false);
 			}).catch((err) => {
-				this.showAlertBox('INCORRECT_CODE', true);
+				this.showAlertBox('INVALID_CODE', true);
 				displayPageLoader(false);
 			});
 		}

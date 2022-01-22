@@ -38,18 +38,6 @@ class CommunitySetup extends Component {
 		}
 		this.state = this.initialState;
 	}
-	componentDidMount = () => {
-		if(this.props.isCommunityCodeSuccess) {
-			circleModal({
-				title: getTranslation('COMMUNITY_SETUP_SUCCESS'),
-				content: getTranslation('COMMUNITY_SETUP_DESC')
-			});
-			updateStore({
-				isCommunityCodeSuccess: null
-			}, true)
-		}
-	}
-
 	onAboutChange = (value) => {
 		this.setState({
 			about: {
@@ -234,4 +222,4 @@ class CommunitySetup extends Component {
 		);
 	};
 }
-export default connect(['authUser','isCommunityCodeSuccess'])(CommunitySetup);
+export default connect(['authUser'])(CommunitySetup);
