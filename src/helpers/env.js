@@ -33,7 +33,7 @@ export const urlFetchStories =`${process.env.API_DOMAIN}stories`;
 export const urlUserLoginOTP = urlUserLogin + `/otp`;
 export const urlCommunityInviteCode = urlCommunity + `/useCode`;
 export const urlCommunitySetup = urlCommunity + `/setup`;
-export const urlTasks = `{PUBLIC_PATH}assets/data/tasks.json?_{_}`;
+export const urlTasks = urlUser + `/tasks`;
 
 export const playStore = 'https://play.google.com/store/apps/details?id=com.leni2022&hl=en&gl=US';
 export const appStore = 'https://apps.apple.com/us/app/facebook/id284882215'

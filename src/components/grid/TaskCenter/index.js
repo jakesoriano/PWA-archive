@@ -91,6 +91,7 @@ class TaskCenter extends Component {
 		if (!tasks.data || !item) {
 			return (
 				<div className={style.taskCenterWrapper}>
+					<p>{getTranslation('TASK_NODATA')}</p>
 				</div>
 			);
 		}
