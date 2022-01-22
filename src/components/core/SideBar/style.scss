@@ -61,6 +61,13 @@
 		display: block;
 		padding: 10px 0;
 		border-bottom: 2px solid #fff;
+		font-family: 'OpenSans-Bold', arial, sans-serif;
+		&.subItem {
+			text-align: right;
+			font-size: .9rem;
+			font-family: 'OpenSans-Regular', arial, sans-serif;
+			padding: 8px 0;
+		}
 	}
 }
 

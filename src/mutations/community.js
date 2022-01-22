@@ -4,6 +4,7 @@ import {
 	urlCommunity,
 	urlUser
 } from '_helpers';
+import { urlCommunitySetup } from '../helpers/env';
 
 // eslint-disable-next-line import/prefer-default-export
 export function filterCommunity(name, page, limit) {
@@ -236,5 +237,30 @@ export function unFollowCommunity (item) {
       console.log(`SPA >> unFollowCommunity Error`, err);
       resolve(false);
     });
+  });
+}
+
+export function setupCommunityInfo (data) {
+  // current state
+  const url = `${urlCommunitySetup}`;
+  
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'POST',
+      data
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> setupCommunity Error`, res);
+          resolve(false);
+        } else {
+          console.log(`SPA >> setupCommunity successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(false);
+        console.log(`SPA >> setupCommunity failed`, err);
+      });
   });
 }

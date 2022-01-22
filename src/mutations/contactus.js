@@ -39,8 +39,7 @@ export function uploadFile (data) {
       url: urlUploadFile,
       data: formData,
       headers: {
-        'content-type': 'multipart/form-data',
-        'Authorization': 'Bearer ' + authUser.token
+        'Authorization': `Bearer ${authUser.token}` 
       }
     })
       .then((res) => {
