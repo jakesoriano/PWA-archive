@@ -16,7 +16,7 @@ export function prefetch (hasUser) {
   return Promise.all([
     fetchGrids(),
     // hasUser && fetchUserPoints(),
-    hasUser && fetchNews(),
+    // hasUser && fetchNews(),
     hasUser && fetchEvents(),
     hasUser && fetchMembers(),
     hasUser && fetchInvited(),

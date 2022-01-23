@@ -32,12 +32,18 @@ class NewsAndEvents extends Component {
 		if (hiddenTabs) {
 			tabs = tabs.filter((i) => hiddenTabs.indexOf(i) === -1);
 			this.setState({
-				tabs: tabs
+				tabs: tabs,
+				active: tabs[0]
 			}, () => {
-				this.toggleTab(tabs[0])
+				this.initFetch()
 			});
+		} else {
+			this.initFetch()
 		}
-		tabs.map((i) => { 
+	};
+
+	initFetch = () => {
+		this.state.tabs.map((i) => { 
 			if (i === 'events') {
 				fetchEvents();
 			} else if (i === 'news') {
@@ -46,7 +52,7 @@ class NewsAndEvents extends Component {
 				fetchAnnouncements();
 			}
 		});
-	};
+	}
 
   componentDidUpdate = () => {
     if (this.state.moreFetching && !this.props[this.state.active].fetching) {

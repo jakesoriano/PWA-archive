@@ -76,17 +76,16 @@ class Community extends Component {
     }, 500);
   }
 
-  visitCommunity = (id) => {
-    let { communityDetails, communities } = store.getState();
-    let details = communities.data.filter((item) => item.id === id)[0];
+  visitCommunity = (item) => {
+    let { communityDetails } = store.getState();
+    let details = item;
     updateStore({
       communityDetails: {
         ...communityDetails,
-        details,
-        id: id
+        details
       }
     });
-    fetchEventsByCommunityId(id);
+    fetchEventsByCommunityId(item.id);
     route(`community-details`);
   }
 
@@ -97,7 +96,7 @@ class Community extends Component {
     return this.props.communities.data.map((item, i) => (
       <div className={style.communityCard}>
         {item.image &&
-        <div onClick={() => { this.visitCommunity(item.id) }}>
+        <div onClick={() => { this.visitCommunity(item) }}>
           <ImageLoader
             src={item.image}
             style={{container: style.imgCont, image: style.img}}
