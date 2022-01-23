@@ -11,12 +11,6 @@
     .user {
       display: flex;
       width: 100%;
-      .avatar {
-        width: 76px;
-        padding-bottom: 72px;
-        border: 2px solid $secondary;
-        border-radius: 80px;
-      }
       .nameMember {
         flex-grow: 1;
         padding: 10px;

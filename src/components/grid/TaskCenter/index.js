@@ -1,8 +1,10 @@
 import { Component } from 'preact';
+import { updateStore } from '_unistore';
 import { getTranslation, dateEventFormat, displayPageLoader } from '_helpers';
 import { connect } from 'unistore/preact';
 import { ImageLoader, ButtonDescription } from '_components/core';
-import { fetchTasks, doneTask } from '_mutations';
+import { fetchTasks, validateTask } from '_mutations';
+import { nativeSigninFacebook } from '_platform/helpers';
 import style from './style.scss';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -41,21 +43,77 @@ class TaskCenter extends Component {
 	}
 	
 	handleDone = () => {
-		displayPageLoader(true);
-		doneTask(this.state.item.id)
-			.then(() => {
-				displayPageLoader(false);
-				this.setState({
-					item: this.props.tasks.data.reduce((result, item) => {
-						if (!result || (!item.completed && result.completed)) {
-							return item;
+
+		// get facebook access token
+		nativeSigninFacebook() 
+			.then(res => {
+				if(res.success) {
+					// validate / complete the task
+					displayPageLoader(true);
+					validateTask(this.state.item.id, res.data.token)
+					.then((status) => {
+						/**
+						 * 1 = success
+						 * 0 = not liked
+						 * -1 = server error
+						 */
+						displayPageLoader(false);
+						if (status === 1) {
+							updateStore({
+								alertShow: {
+									success: true,
+									content: getTranslation('TASK_MSG_SUCCESS'),
+									noTopBar: true
+								}
+							});
+							this.setState({
+								item: this.props.tasks.data.reduce((result, item) => {
+									if (!result || (!item.completed && result.completed)) {
+										return item;
+									}
+									return result;
+								}, null)
+							}, () => {
+								FB.XFBML.parse();
+							});
+						} else if (status === 0) {
+							updateStore({
+								alertShow: {
+									success: false,
+									content: getTranslation('TASK_MSG_FAIL'),
+									noTopBar: true
+								}
+							});
+						} else {
+							updateStore({
+								alertShow: {
+									success: false,
+									content: getTranslation('SOMETHING_WRONG'),
+									noTopBar: true
+								}
+							});
 						}
-						return result;
-					}, null)
-				}, () => {
-					FB.XFBML.parse();
-				});
-			});
+					})
+					.catch(err => {
+						updateStore({
+							alertShow: {
+								success: false,
+								content: getTranslation('SOMETHING_WRONG'),
+								noTopBar: true
+							}
+						});
+					});
+				} else if (res.error !== 'SIGN_IN_CANCELLED') {
+					displayPageLoader(false);
+					updateStore({
+						alertShow: {
+							success: false,
+							content: getTranslation('ACCOUNT_NOT_FOUND'),
+							noTopBar: true
+						}
+					});
+				}
+			})
 	};
 
 	render = ({ tasks }, { item }) => {
@@ -64,6 +122,7 @@ class TaskCenter extends Component {
 		if (!tasks.data || !item) {
 			return (
 				<div className={style.taskCenterWrapper}>
+					<p>{getTranslation('TASK_NODATA')}</p>
 				</div>
 			);
 		}
@@ -104,7 +163,7 @@ class TaskCenter extends Component {
 					{/* Footer */}
 					<div className={style.footer}>
 						<p>{getTranslation('TASK_POINTS').replace('{POINTS}', item.points)}</p>
-						<p>{getTranslation('TASK_DEADLINE').replace('{DATE}', dateEventFormat(item.expDate))}</p>
+						<p>{getTranslation('TASK_DEADLINE').replace('{DATE}', dateEventFormat(item.endDate))}</p>
 						<p>{getTranslation('TASK_NOTE')}</p>
 					</div>
 				</div>
