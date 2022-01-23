@@ -3,7 +3,7 @@ import { connect } from 'unistore/preact';
 import { getCommunityInfo, createCommunityEvent } from '_mutations';
 import { LoaderRing } from '_components/core';
 import { FormGroup, FormInput, FormDropdown, ImageLoader, ButtonDescription } from '_components/core';
-import { getTranslation, getContentTypes, circleModal, messageModal, uploadFile } from '_helpers';
+import { getTranslation, getContentTypes, displayPageLoader, messageModal, uploadFile } from '_helpers';
 import { updateStore } from '_unistore';
 import { route } from 'preact-router';
 // eslint-disable-next-line import/extensions
@@ -185,6 +185,7 @@ class PostContent extends Component {
 			communityId: this.state.communityId
 		})
 			.then((res) => {
+				displayPageLoader(false)
 				if(res && res.success) {
 					this.setState({
 						...this.initialState
@@ -194,7 +195,10 @@ class PostContent extends Component {
 				} else {
 					this.showAlertBox(res.error.message || 'SOMETHING_WRONG', true);
 				}
-			})
+			}).catch(() => {
+				this.showAlertBox('SOMETHING_WRONG', true);
+				displayPageLoader(false);
+			});
 	}
 
 	handleContinue = () => {
@@ -213,6 +217,7 @@ class PostContent extends Component {
 			this.onEventByChange(this.state.eventBy.value);
 		} else {
 			if (this.state.attachment.file) {
+				displayPageLoader(true);
 				uploadFile({
 					file: this.state.attachment.file
 				})
@@ -220,9 +225,12 @@ class PostContent extends Component {
 						if(res.success && res.data) {
 							this.submitData(res.data.image);
 						} else {
-							circleModal({
-								title: getTranslation('OOPS_SOMETHING_WRONG'),
-								content: getTranslation('TRY_AGAIN_CONTINUE')
+							displayPageLoader(false)
+							updateStore({
+								alertShow: {
+									success: false,
+									content: res.errMessage || 'OOPS_SOMETHING_WRONG'
+								}
 							});
 						}
 					});
