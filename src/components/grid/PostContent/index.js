@@ -67,7 +67,6 @@ class PostContent extends Component {
 				if(!res) {
 					messageModal({
 						title: getTranslation('NO_COMMUNITY_INFO'),
-						btnText: getTranslation('SETUP_COMMUNITY_PAGE_NOW'),
 						message: getTranslation('SETUP_COMMUNITY_PAGE_MSG'),
 						disableClose: true,
 						cbOk: () => {

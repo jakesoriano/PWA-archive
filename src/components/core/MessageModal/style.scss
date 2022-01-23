@@ -1,2 +1,21 @@
+@import '../../../style/variables.scss';
 .messageModal {
+  p {
+    color: #686868;
+  }
+  .footer {
+    text-align: right;
+    button {
+      color: #fff;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      background-color: $primary_layout;
+      text-align: center;
+      padding: 5px 15px;
+      box-shadow: none;
+      margin: 10px 0 0;
+      font-size: 0.8rem;
+    }
+  }
 }

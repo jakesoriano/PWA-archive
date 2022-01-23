@@ -1,6 +1,8 @@
 import { h } from 'preact';
 import { messageModal } from '_helpers';
 import Modal from '../Modal';
+// eslint-disable-next-line import/extensions
+import style from './style';
 
 export default ({ title, message, btnText, cbOk, disableClose }) => (
   <Modal
@@ -10,18 +12,24 @@ export default ({ title, message, btnText, cbOk, disableClose }) => (
       messageModal(null);
     }}
   >
-    <p>{message}</p>
+    <div className={style.messageModal}>
+      <p>{message}</p>
 
-    {/* Yes Button */}
-    <button
-      onClick={() => {
-        cbOk();
-      }}
-      type="button"
-      aria-label="Ok"
-    >
-      {btnText || 'Ok'}
-    </button>
+      {/* buttons */}
+      <div className={style.footer}>
+        {/* Yes Button */}
+        <button
+          onClick={() => {
+            cbOk();
+          }}
+          type="button"
+          aria-label="Ok"
+        >
+          {btnText || 'Ok'}
+        </button>
+      </div>
+
+    </div>
 
   </Modal>
 );
