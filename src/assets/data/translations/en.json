@@ -173,5 +173,6 @@
 	"POST_CONTENT": "Post Content",
 	"COMMUNITY_SETUP_SUCCESS": "Community Page Setup Success",
 	"ERRMSG_DOB": "You should be at least 18 years old to register.",
+	"NEWS": "News",
 	"ERRMSG_FILESIZE": "File / Image too large too upload."
 }

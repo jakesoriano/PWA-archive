@@ -116,7 +116,7 @@ export function fetchCommunities(page, limit) {
 
 export function followCommunity (item) {
   // curreny state
-  let { communities } = store.getState();
+  let { communities, communityDetails } = store.getState();
   const { authUser } = store.getState();
 
   // fetching
@@ -154,6 +154,17 @@ export function followCommunity (item) {
           fetching: false
         }
       });
+      if (communityDetails.hasOwnProperty('details')) {
+        updateStore({
+          communityDetails: {
+            ...communityDetails,
+            details: {
+              ...communityDetails.details,
+              followed: true
+            }
+          }
+        })
+      }
       console.log(`SPA >> followCommunity Success`, res);
       resolve(true);
     })
@@ -179,7 +190,7 @@ export function followCommunity (item) {
 
 export function unFollowCommunity (item) {
   // curreny state
-  let { communities } = store.getState();
+  let { communities, communityDetails } = store.getState();
   const { authUser } = store.getState();
 
   // fetching
@@ -217,6 +228,17 @@ export function unFollowCommunity (item) {
           fetching: false
         }
       });
+      if (communityDetails.hasOwnProperty('details')) {
+        updateStore({
+          communityDetails: {
+            ...communityDetails,
+            details: {
+              ...communityDetails.details,
+              followed: false
+            }
+          }
+        })
+      }
       console.log(`SPA >> unFollowCommunity Success`, res);
       resolve(true);
     })

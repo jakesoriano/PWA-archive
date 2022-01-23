@@ -52,7 +52,10 @@
 				"component": "StoriesDashboard"
 			},
 			{
-				"component": "NewsAndEvents"
+				"component": "NewsAndEvents",
+				"props": {
+					"hiddenTabs": ["news"]
+				}
 			}
 		]
 	},
@@ -100,9 +103,16 @@
 		"auth": true,
 		"pageTitle": "PAGE_COMMUNITY",
 		"uri": "community-details",
+		"withBack": true,
 		"contents": [
 			{
 				"component": "CommunityDetails"
+			},
+			{
+				"component": "NewsAndEvents",
+				"props": {
+					"hiddenTabs": ["news", "announcements"]
+				}
 			}
 		]
 	},

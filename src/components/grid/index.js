@@ -28,4 +28,5 @@ export { default as LoginOTP } from './LoginOTP';
 export { default as Account } from './Account';
 export { default as CommunitySetup } from './CommunitySetup';
 export { default as TaskCenter } from './TaskCenter';
+export { default as CommunityDetails } from './CommunityDetails';
 

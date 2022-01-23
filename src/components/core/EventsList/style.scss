@@ -1,0 +1,147 @@
+
+
+.eventsListWrap {
+  .noRecord {
+    text-align: center;
+    padding: 10px;
+  }
+  .contentItem {
+    display: grid;
+    padding: 10px;
+    border-bottom: 1px solid #f1ebeb;
+    .community {
+      display: flex;
+      margin-bottom: 10px;
+      align-items: center;
+      .comImage {
+        width: 30px;
+        padding-bottom: 30px;
+        border-radius: 15px;
+      }
+      span {
+        font-size: 0.6rem;
+        padding: 0 10px 0 5px;
+      }
+    }
+    .details {
+      display: flex;
+      .detailImage {
+        width: 90px;
+        flex-grow: 1;
+        margin-right: 5px;
+      }
+      .detailTitle {
+        font-size: 1rem;
+      }
+      .detailContent {
+        display: grid;
+        width: calc(100% - 95px);
+      }
+      .detailCount {
+        line-height: 0.4rem;
+        span {
+          font-size: 0.4rem;
+          &:nth-child(2) {
+            margin-left: 5px;
+            padding-left: 5px;
+            border-left: 1px solid #f1ebeb;
+          }
+        }
+      }
+    }
+    .buttons {
+      position: relative;
+      text-align: right;
+      a {
+        font-size: 0.7rem;
+        &:nth-child(2) {
+          margin-left: 10px;
+        }
+        .likeButton {
+          width: 14px;
+          position: relative;
+          padding: 0;
+          height: 16px;
+          margin: 0;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 4px;
+          margin-left: 4px;
+        }
+        &.buttonLikeActive,
+        &.buttonShareActive {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .eventItem {
+    .details {
+      .detailImage {
+        width: 40%;
+      }
+      .detailContent {
+        display: grid;
+        width: 60%;
+        p {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+  .showMore {
+    text-align: right;
+    border: none;
+    background: none;
+    width: 100%;
+    padding: 10px;
+    span {
+      font-size: 0.7rem;
+      color: #737373;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      span {
+        color: #ff2cd7;
+      }
+    }
+  }
+  .loaderWrap {
+    display: block;
+    text-align: right;
+    > div div {
+      border: 4px solid #fff;
+      border-color: #ffb1bb transparent transparent transparent;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .selectEventDropdown {
+    background: #f2f2f2;
+    position: absolute;
+    top: 24px;
+    width: 180px;
+    right: 45px;
+    height: 100px;
+    z-index: 2;
+    border-radius: 10px;
+    display: grid;
+    &.lastItem {
+      top: auto;
+      bottom: 21px;
+    }
+    a {
+      text-align: left;
+      border: none;
+      border-bottom: 2px solid #d9d9d9;
+      color: #606060;
+      font-weight: bold;
+      padding: 8px 15px;
+      font-size: 12px;
+      background: none;
+      margin-left: 5px !important;
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}

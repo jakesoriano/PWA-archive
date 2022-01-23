@@ -56,13 +56,69 @@ export function fetchEvents (page, limit) {
     });
   });
 }
+export function fetchEventsByCommunityId (id, page, limit) {
+  const { communityDetails } = store.getState();
+  
+  // fetching
+  if(communityDetails.fetching) {
+    return;
+  }
 
-export function shareEvent (item) {
-  let { events } = store.getState();
+  // initial state
+  updateStore({
+    communityDetails: {
+      ...communityDetails,
+      fetching: true,
+      result: false
+    }
+  });
+
+  return new Promise((resolve) => {
+    xhr(urlEvents + `/${id}`, {
+      method: 'GET',
+      params: {
+        p: page || 1, // page number
+        s: limit || 6 // limit
+      }
+    })
+    .then((res) => {
+      updateStore({
+        communityDetails: {
+          ...communityDetails,
+          events: {
+            data: [
+              ...res.data
+            ],
+            total: res.data.total,
+          },
+          page: page || 1,
+          fetching: false,
+          result: true
+        }
+      });
+      console.log(`SPA >> fetchEventsByCommunityId Success`, res.success);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        communityDetails: {
+          ...communityDetails,
+          fetching: false,
+          result: true
+        }
+      });
+      console.log(`SPA >> fetchEventsByCommunityId Error`, err);
+      resolve(false);
+    });
+  });
+}
+
+export function shareEvent (item, parentId, parentType) {
+  let { events, communityDetails } = store.getState();
   const { authUser } = store.getState();
   
   // fetching
-  if(events.fetching) {
+  if(events.fetching || communityDetails.fetching) {
     return;
   }
 
@@ -77,7 +133,19 @@ export function shareEvent (item) {
     }),
     fetching: true
   };
-  updateStore({ events });
+  communityDetails = {
+    ...communityDetails,
+    events: {
+      data: communityDetails.events.data.map(i => {
+        if(i.id === item.id) {
+          i.shared = true;
+        }
+        return i;
+      }),
+    },
+    fetching: true
+  };
+  updateStore({ events, communityDetails });
 
   return new Promise((resolve) => {
     xhr(urlShare, {
@@ -85,13 +153,22 @@ export function shareEvent (item) {
       data: {
         userId: authUser.profile._id,
         itemId: item.id,
-        itemType: 'E'
+        itemType: 'E',
+        parentId: parentId || 'X',
+        parentType: parentType || 'X'
       }
     })
     .then((res) => {
       updateStore({
         events: {
           ...events,
+          fetching: false
+        },
+        communityDetails: {
+          ...communityDetails,
+          events: {
+            ...communityDetails.events,
+          },
           fetching: false
         }
       });
@@ -109,6 +186,18 @@ export function shareEvent (item) {
             return i;
           }),
           fetching: false
+        },
+        communityDetails: {
+          ...communityDetails,
+          events: {
+            data: communityDetails.events.data.map(i => {
+              if(i.id === item.id) {
+                i.shared = false;
+              }
+              return i;
+            }),
+          },
+          fetching: false
         }
       });
       console.log(`SPA >> shareEvents Error`, err);
@@ -118,12 +207,12 @@ export function shareEvent (item) {
 }
 
 export function selectTag (tag, item) {
-  let { events } = store.getState();
+  let { events, communityDetails } = store.getState();
   const { authUser } = store.getState();
   const defaultTag = item.tagged;
   
   // fetching
-  if(events.fetching) {
+  if(events.fetching || communityDetails.fetching) {
     return;
   }
 
@@ -138,7 +227,19 @@ export function selectTag (tag, item) {
     }),
     fetching: true
   }
-  updateStore({ events });
+  communityDetails = {
+    ...communityDetails,
+    events: {
+      data: communityDetails.events.data.map(i => {
+        if(i.id === item.id) {
+          i.tagged = tag;
+        }
+        return i;
+      }),
+      fetching: true
+    }
+  }
+  updateStore({ events, communityDetails });
 
   return new Promise((resolve) => {
     xhr(urlTag, {
@@ -155,6 +256,13 @@ export function selectTag (tag, item) {
         events: {
           ...events,
           fetching: false
+        },
+        communityDetails: {
+          ...communityDetails,
+          events: {
+            ...communityDetails.events,
+          },
+          fetching: false
         }
       });
       console.log(`SPA >> selectTag Success`, res);
@@ -170,6 +278,18 @@ export function selectTag (tag, item) {
             }
             return i;
           }),
+          fetching: false
+        },
+        communityDetails: {
+          ...communityDetails,
+          events: {
+            data: communityDetails.events.data.map(i => {
+              if(i.id === item.id) {
+                i.tagged = defaultTag;
+              }
+              return i;
+            }),
+          },
           fetching: false
         }
       });

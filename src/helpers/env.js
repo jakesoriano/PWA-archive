@@ -33,6 +33,7 @@ export const urlFetchStories =`${process.env.API_DOMAIN}stories`;
 export const urlUserLoginOTP = urlUserLogin + `/otp`;
 export const urlCommunityInviteCode = urlCommunity + `/useCode`;
 export const urlCommunitySetup = urlCommunity + `/setup`;
+export const urlAnnouncements =`${process.env.API_DOMAIN}announcements`;
 export const urlTasks = urlUser + `/tasks`;
 export const urlValidateTask = urlUser + `/tasks/validate/{id}`;
 

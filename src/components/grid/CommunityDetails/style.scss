@@ -1,0 +1,34 @@
+@import '../../../style/variables.scss';
+.communityDetailsWrap {
+  display: flex;
+  background-color: $white;
+  padding: 15px;
+  margin: 15px 15px 0;
+  align-items: center;
+  border-radius: 15px;
+  flex: 1;
+  flex-direction: row;
+  .heading {
+    color: #737373;
+    text-transform: capitalize;
+    font-size: 1rem;
+    max-width: 150px;
+  }
+  .avatar {
+    border-radius: 50%;
+    width: 70px;
+    padding-bottom: 70px;
+    margin-right: 20px;
+  }
+  .buttonContainer {
+    margin-left: auto;
+  }
+  button.buttonStyle {
+    padding: 3px 30px;
+    font-size: 0.75rem;
+    border-radius: 2px;
+    &.followed {
+      background-color: $primary_layout;
+    }
+  }
+}

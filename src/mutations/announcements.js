@@ -1,26 +1,26 @@
 import { store, updateStore } from '_unistore';
-import { xhr, urlNews, urlLike, urlShare } from '_helpers';
+import { xhr, urlAnnouncements, urlLike, urlShare } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
-export function fetchNews (page, limit) {
-  const { news } = store.getState();
+export function fetchAnnouncements (page, limit) {
+  const { announcements } = store.getState();
   
   // fetching
-  if(news.fetching) {
+  if(announcements.fetching) {
     return;
   }
 
   // initial state
   updateStore({
-    news: {
-      ...news,
+    announcements: {
+      ...announcements,
       fetching: true,
       result: false
     }
   });
 
   return new Promise((resolve) => {
-    xhr(urlNews + '/feed/followed', {
+    xhr(urlAnnouncements, {
       method: 'GET',
       params: {
         p: page || 1, // page number
@@ -29,7 +29,7 @@ export function fetchNews (page, limit) {
     })
     .then((res) => {
       updateStore({
-        news: {
+        announcements: {
           data: page ? [
             ...news.data,
             ...res.data.results
@@ -40,37 +40,37 @@ export function fetchNews (page, limit) {
           result: true
         }
       });
-      console.log(`SPA >> fetchNews Success`, res.success);
+      console.log(`SPA >> fetchAnnouncements Success`, res.success);
       resolve(true);
     })
     .catch((err) => {
       updateStore({
-        news: {
-          ...news,
+        announcements: {
+          ...announcements,
           fetching: false,
           result: false
         }
       });
-      console.log(`SPA >> fetchNews Error`, err);
+      console.log(`SPA >> fetchAnnouncements Error`, err);
       resolve(false);
     });
   });
 }
 
-export function likeShareNews (item, itemType, action, parentId, parentType) {
-  let { news } = store.getState();
+export function likeShareAnnouncements (item, itemType, action, parentId, parentType) {
+  let { announcements } = store.getState();
   const { authUser } = store.getState();
   const _url = action === 'liked' ? urlLike : urlShare
   
   // fetching
-  if(news.fetching) {
+  if(announcements.fetching) {
     return;
   }
   
   // initial state
-  news = {
-    ...news,
-    data: news.data.map(i => {
+  announcements = {
+    ...announcements,
+    data: announcements.data.map(i => {
       if(i.id === item.id) {
         i[action] = true;
       }
@@ -78,7 +78,7 @@ export function likeShareNews (item, itemType, action, parentId, parentType) {
     }),
     fetching: true
   };
-  updateStore({ news });
+  updateStore({ announcements });
 
   return new Promise((resolve) => {
     xhr(_url, {
@@ -88,14 +88,14 @@ export function likeShareNews (item, itemType, action, parentId, parentType) {
         itemId: item.id,
         itemType,
         parentId,
-        parentType: parentType || 'C'
+        parentType: parentType || 'X'
       }
     })
     .then((res) => {
       updateStore({
-        news: {
-          ...news,
-          data: news.data.map(i => {
+        announcements: {
+          ...announcements,
+          data: announcements.data.map(i => {
             if(i.id === item.id) {
               action === 'liked' ? 
                 i.likeCount = i.likeCount+1 : 
@@ -106,14 +106,14 @@ export function likeShareNews (item, itemType, action, parentId, parentType) {
           fetching: false
         }
       });
-      console.log(`SPA >> likeNews Success`, res);
+      console.log(`SPA >> likeAnnoucements Success`, res);
       resolve(true);
     })
     .catch((err) => {
       updateStore({
-        news: {
-          ...news,
-          data: news.data.map(i => {
+        announcements: {
+          ...announcements,
+          data: announcements.data.map(i => {
             if(i.id === item.id) {
               i[action] = false;
             }
@@ -122,25 +122,25 @@ export function likeShareNews (item, itemType, action, parentId, parentType) {
           fetching: false
         }
       });
-      console.log(`SPA >> likeNews Error`, err);
+      console.log(`SPA >> likeAnnouncements Error`, err);
       resolve(false);
     });
   });
 }
 
-export function removeLikeNews (item, itemType, parentId, parentType) {
-  let { news } = store.getState();
+export function removeLikeAnnouncements (item, itemType, parentId, parentType) {
+  let { announcements } = store.getState();
   const { authUser } = store.getState();
   
   // fetching
-  if(news.fetching) {
+  if(announcements.fetching) {
     return;
   }
 
   // initial state
-  news = {
-    ...news,
-    data: news.data.map(i => {
+  announcements = {
+    ...announcements,
+    data: announcements.data.map(i => {
       if(i.id === item.id) {
         i.liked = false;
       }
@@ -148,7 +148,7 @@ export function removeLikeNews (item, itemType, parentId, parentType) {
     }),
     fetching: true
   };
-  updateStore({ news });
+  updateStore({ announcements });
 
   return new Promise((resolve) => {
     xhr(urlLike, {
@@ -158,14 +158,14 @@ export function removeLikeNews (item, itemType, parentId, parentType) {
         itemId: item.id,
         itemType,
         parentId,
-        parentType: parentType || 'C'
+        parentType: parentType || 'X'
       }
     })
     .then((res) => {
       updateStore({
-        news: {
-          ...news,
-          data: news.data.map(i => {
+        announcements: {
+          ...announcements,
+          data: announcements.data.map(i => {
             if(i.id === item.id) {
               i.likeCount = i.likeCount - 1;
             }
@@ -174,14 +174,14 @@ export function removeLikeNews (item, itemType, parentId, parentType) {
           fetching: false
         }
       });
-      console.log(`SPA >> removeLikeNews Success`, res);
+      console.log(`SPA >> removeLikeAnnouncements Success`, res);
       resolve(true);
     })
     .catch((err) => {
       updateStore({
-        news: {
-          ...news,
-          data: news.data.map(i => {
+        announcements: {
+          ...announcements,
+          data: announcements.data.map(i => {
             if(i.id === item.id) {
               i.liked = true;
             }
@@ -190,66 +190,7 @@ export function removeLikeNews (item, itemType, parentId, parentType) {
           fetching: false
         }
       });
-      console.log(`SPA >> removeLikeNews Error`, err);
-      resolve(false);
-    });
-  });
-}
-
-export function fetchNewsByCommunity (communityId, page, limit) {
-  const { news, communityDetails } = store.getState();
-  
-  // fetching
-  if(news.fetching) {
-    return;
-  }
-
-  // initial state
-  updateStore({
-    news: {
-      ...news,
-      fetching: true,
-      result: false
-    }
-  });
-
-  return new Promise((resolve) => {
-    xhr(urlNews + `/${communityId}`, {
-      method: 'GET',
-      params: {
-        p: page || 1, // page number
-        s: limit || 6 // limit
-      }
-    })
-    .then((res) => {
-      const { communityDetails } = store.getState();
-      updateStore({
-        communityDetails: {
-          ...communityDetails,
-          news: {
-            data: page ? [
-              ...news.data,
-              ...res.data
-            ] : res.data,
-            total: res.data.total,
-            page: page || 1,
-            fetching: false,
-            result: true
-          }
-        }
-      });
-      console.log(`SPA >> fetchNews Success`, res.success);
-      resolve(true);
-    })
-    .catch((err) => {
-      updateStore({
-        news: {
-          ...news,
-          fetching: false,
-          result: false
-        }
-      });
-      console.log(`SPA >> fetchNews Error`, err);
+      console.log(`SPA >> removeLikeAnnouncements Error`, err);
       resolve(false);
     });
   });

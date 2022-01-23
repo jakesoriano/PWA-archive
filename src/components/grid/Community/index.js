@@ -1,7 +1,10 @@
 import { Component } from 'preact';
+import { route } from 'preact-router';
+import { store, updateStore } from '_unistore';
 import { getTranslation, formatN } from '_helpers';
 import {
   fetchCommunities,
+  fetchEventsByCommunityId,
   filterCommunity,
   followCommunity,
   unFollowCommunity
@@ -73,7 +76,17 @@ class Community extends Component {
     }, 500);
   }
 
-  visitCommunity = (id) => {
+  visitCommunity = (item) => {
+    let { communityDetails } = store.getState();
+    let details = item;
+    updateStore({
+      communityDetails: {
+        ...communityDetails,
+        details
+      }
+    });
+    fetchEventsByCommunityId(item.id);
+    route(`community-details`);
   }
 
   renderCommunities = () => {
@@ -83,12 +96,13 @@ class Community extends Component {
     return this.props.communities.data.map((item, i) => (
       <div className={style.communityCard}>
         {item.image &&
-        <ImageLoader
-          onClick={this.visitCommunity(item.id)}
-          src={item.image}
-          style={{container: style.imgCont, image: style.img}}
-          lazy
-        />
+        <div onClick={() => { this.visitCommunity(item) }}>
+          <ImageLoader
+            src={item.image}
+            style={{container: style.imgCont, image: style.img}}
+            lazy
+          />
+        </div>
         }
         <div className={style.cardBody}>
           <ButtonDescription
