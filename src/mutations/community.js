@@ -5,7 +5,7 @@ import {
 	urlUser,
   urlCommunitySetup, 
   urlCommunityGetInfo,
-  urlCommunityCreateEvent
+  urlCommunityLeader
 } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
@@ -269,7 +269,7 @@ export function setupCommunityInfo (data) {
 
 export function createCommunityEvent (data) {
   // current state
-  const url = `${urlCommunityCreateEvent}/${data.communityId}/events`;
+  const url = `${urlCommunityLeader}/${data.communityId}/events`;
   return new Promise((resolve) => {
     xhr(url, {
       method: 'POST',

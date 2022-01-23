@@ -35,7 +35,7 @@ export const urlCommunityInviteCode = urlCommunity + `/useCode`;
 export const urlCommunitySetup = urlCommunity + `/setup`;
 export const urlTasks = urlUser + `/tasks`;
 export const urlCommunityGetInfo = urlCommunity + `/info`;
-export const urlCommunityCreateEvent = urlCommunity + `/leader`;
+export const urlCommunityLeader = urlCommunity + `/leader`;
 export const urlValidateTask = urlUser + `/tasks/validate/{id}`;
 
 export const playStore = 'https://play.google.com/store/apps/details?id=com.leni2022&hl=en&gl=US';
