@@ -27,6 +27,22 @@
   .content {
     border-radius: 10px;
     overflow: hidden;
+    .showMore {
+      text-align: right;
+      border: none;
+      background: none;
+      width: 100%;
+      padding: 10px;
+      span {
+        font-size: 0.7rem;
+        color: #737373;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        span {
+          color: #ff2cd7;
+        }
+      }
+    }
     .loaderWrap {
       display: block;
       text-align: right;
