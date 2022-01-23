@@ -2,9 +2,11 @@ import { updateStore, store } from '_unistore';
 import {
 	xhr,
 	urlCommunity,
-	urlUser
+	urlUser,
+  urlCommunitySetup, 
+  urlCommunityGetInfo,
+  urlCommunityCreateEvent
 } from '_helpers';
-import { urlCommunitySetup } from '../helpers/env';
 
 // eslint-disable-next-line import/prefer-default-export
 export function filterCommunity(name, page, limit) {
@@ -261,6 +263,41 @@ export function setupCommunityInfo (data) {
       .catch((err) => {
         resolve(false);
         console.log(`SPA >> setupCommunity failed`, err);
+      });
+  });
+}
+
+export function getCommunityInfo () {
+  return new Promise((resolve) => {
+    xhr(urlCommunityGetInfo, {
+    }).then((res) => {
+      resolve(res);
+    }).catch((err) => {
+      resolve(false);
+    });
+  });
+}
+
+export function createCommunityEvent (data) {
+  // current state
+  const url = `${urlCommunityCreateEvent}/${data.communityId}/events`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'POST',
+      data: data.data
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> createCommunityEvent Error`, res);
+          resolve(false);
+        } else {
+          console.log(`SPA >> createCommunityEvent successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(res);
+        console.log(`SPA >> createCommunityEvent failed`, err);
       });
   });
 }

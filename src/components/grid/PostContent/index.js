@@ -1,9 +1,11 @@
 import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { sendContactUs, uploadFile } from '_mutations';
+import { getCommunityInfo, createCommunityEvent, uploadFile } from '_mutations';
 import { LoaderRing } from '_components/core';
 import { FormGroup, FormInput, FormDropdown, ImageLoader, ButtonDescription } from '_components/core';
-import { getTranslation, getContentTypes, circleModal } from '_helpers';
+import { getTranslation, getContentTypes, circleModal, promptModal } from '_helpers';
+import { updateStore } from '_unistore';
+import { route } from 'preact-router';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -38,6 +40,12 @@ class PostContent extends Component {
 				message: '',
 				hasError: false
 			},
+			eventBy: {
+				value: '',
+				error: '',
+				message: '',
+				hasError: false
+			},
 			date: {
 				value: '',
 				error: '',
@@ -49,9 +57,38 @@ class PostContent extends Component {
 				error: '',
 				message: '',
 				hasError: false
-			}
+			},
+			communityId: null
 		}
 		this.state = this.initialState;
+	}
+
+	componentDidMount = () => {
+	  getCommunityInfo()
+			.then((res) => {
+				console.log('result----', res);
+				if(res && res.success) {
+					this.setState({
+						...this.initialState,
+						communityId: res.data._id
+					});
+				} else {
+					promptModal({
+						title: getTranslation('NO_COMMUNITY_INFO'),
+						textYes: getTranslation('SETUP_COMMUNITY_PAGE_NOW'),
+						textNo: null,
+						cbOk: () => {
+							// no action here
+							promptModal(null);
+							this.gotoCommunitySetup();
+						}
+					});
+				}
+			})
+	};
+
+	gotoCommunitySetup = () => {
+		route(`/community-setup`);
 	}
 
 	onAttachmentChange = (file) => {
@@ -59,8 +96,6 @@ class PostContent extends Component {
 			attachment: {
 				...this.state.attachment,
 				file: file,
-				// hasError: !Boolean(file),
-				// error: !Boolean(file) ? 'REQUIRED' : ''
 			}
 		});
 	};
@@ -98,6 +133,17 @@ class PostContent extends Component {
 		});
 	};
 
+	onEventByChange = (value) => {
+		this.setState({
+			eventBy: {
+				...this.state.eventBy,
+				value: value,
+				hasError: !Boolean(value),
+				error: !Boolean(value) ? 'REQUIRED' : ''
+			}
+		});
+	};
+
 	onDateChange = (value) => {
 		this.setState({
 			date: {
@@ -120,47 +166,57 @@ class PostContent extends Component {
 		});
 	};
 
+	showAlertBox = (message, hasError) => {
+		updateStore({
+			alertShow: {
+				success: !hasError,
+				content: message
+			}
+		});
+	}
+
 	submitData  = (image) => {
-		sendContactUs({
-			contentType: this.state.contentType.value,
+		const data = {
 			title: this.state.title.value,
-			desc: this.state.desc.value,
+			image: image,
+			date: this.state.date.value,
+			by: this.state.eventBy.value,
+			isOnline: true,
 			location: this.state.location.value,
-			image: image
+			desc: this.state.desc.value
+		}
+		createCommunityEvent({
+			data,
+			communityId: this.state.communityId
 		})
 			.then((res) => {
 				if(res && res.success) {
 					this.setState({
 						...this.initialState
 					});
-					const { authUser } = this.props;
-					circleModal({
-						title: getTranslation('MESSAGE_SENT_TITLE'),
-						content: getTranslation('MESSAGE_SENT_MSG'),
-						code: `${getTranslation('CODE_REF')} ${res.refcode || ''}`
-					});
+					route(`/`);
+					this.showAlertBox('POST_CONTENT_SUCCESS');
 				} else {
-					circleModal({
-						title: getTranslation('OOPS_SOMETHING_WRONG'),
-						content: getTranslation('TRY_AGAIN_CONTINUE')
-					});
+					this.showAlertBox(res.error.message || 'SOMETHING_WRONG', true);
 				}
 			})
 	}
 
 	handleContinue = () => {
+		console.log('state', this.state);
 		if (!this.state.contentType.value || 
 			!this.state.title.value || 
 			!this.state.desc.value ||
 			!this.state.date.value || 
+			!this.state.eventBy.value || 
 			!this.state.location.value) {
 			this.onContentTypeChange(this.state.contentType.value);
 			this.onTitleChange(this.state.title.value);
 			this.onDescChange(this.state.desc.value);
 			this.onDateChange(this.state.desc.value);
 			this.onLocationChange(this.state.location.value);
+			this.onEventByChange(this.state.eventBy.value);
 		} else {
-			console.log('state',this.state);
 			if (this.state.attachment.file) {
 				uploadFile({
 					file: this.state.attachment.file
@@ -179,7 +235,7 @@ class PostContent extends Component {
 		}
 	}
 
-	render = ({ authUser },{title, desc, location, date, attachment, contentType, contentTypeOptions}) => {
+	render = ({ authUser },{title, desc, location, date, attachment, contentType, contentTypeOptions, eventBy}) => {
 		if (!authUser) {
 			return <LoaderRing fullpage />;
 		}
@@ -187,7 +243,7 @@ class PostContent extends Component {
 		return (
 			<div className={style.postContent}>
 				<div className={style.infoWrap}>
-					<FormGroup hasError={contentType.hasError}>
+					<FormGroup label={getTranslation("CONTENT_TYPE")} hasError={contentType.hasError}>
 						<FormDropdown
 							className={style.contentType}
 							value={contentType.value}
@@ -246,37 +302,21 @@ class PostContent extends Component {
 				</div>
 
 				<div className={style.infoWrap}>
-					<FormGroup label={getTranslation("ATTACHMENT")}>
-						<div className={style.attachmentWrap}>
-							<div className={style.attachmentInputWrap}>								
-									<FormInput
-										id='inputAttachment'
-										className={style.attachment}
-										style={{error: style.attachment}}
-										value={attachment.file}
-										type="file"
-										onBlur={(e) => {
-											this.onAttachmentChange(e.target.files[0])
-										}}
-										onInput={(e) => {
-											this.onAttachmentChange(e.target.files[0])
-										}}
-										hasError={attachment.hasError}
-										error={attachment.error}
-										message={attachment.message} />
-							</div>
-							<div>
-								<a className={style.pShare} 
-									onClick={() => {
-										document.getElementById('inputAttachment').click()
-									}}>
-								<ImageLoader
-											src="assets/images/attachment_icon_white.png"
-											style={{container: style.pIconShare}} />
-										<span>{getTranslation('ADD_FILE')}</span>
-								</a>
-							</div>
-						</div>
+					<FormGroup label={getTranslation("EVENT_BY")}>
+						<FormInput
+							className={style.eventBy}
+							style={{error: style.eventBy}}
+							value={eventBy.value}
+							type="text"
+							onBlur={(e) => {
+								this.onEventByChange(e.target.value)
+							}}
+							onInput={(e) => {
+								this.onEventByChange(e.target.value)
+							}}
+							hasError={eventBy.hasError}
+							error={eventBy.error}
+							message={eventBy.message} />
 					</FormGroup>
 				</div>
 
@@ -315,6 +355,41 @@ class PostContent extends Component {
 							hasError={date.hasError}
 							error={date.error}
 							message={date.message} />
+					</FormGroup>
+				</div>
+
+				<div className={style.infoWrap}>
+					<FormGroup label={getTranslation("ATTACHMENT")}>
+						<div className={style.attachmentWrap}>
+							<div className={style.attachmentInputWrap}>								
+									<FormInput
+										id='inputAttachment'
+										className={style.attachment}
+										style={{error: style.attachment}}
+										value={attachment.file}
+										type="file"
+										onBlur={(e) => {
+											this.onAttachmentChange(e.target.files[0])
+										}}
+										onInput={(e) => {
+											this.onAttachmentChange(e.target.files[0])
+										}}
+										hasError={attachment.hasError}
+										error={attachment.error}
+										message={attachment.message} />
+							</div>
+							<div>
+								<a className={style.pShare} 
+									onClick={() => {
+										document.getElementById('inputAttachment').click()
+									}}>
+								<ImageLoader
+											src="assets/images/attachment_icon_white.png"
+											style={{container: style.pIconShare}} />
+										<span>{getTranslation('ADD_FILE')}</span>
+								</a>
+							</div>
+						</div>
 					</FormGroup>
 				</div>
 				

@@ -1,3 +1,4 @@
+@import '../../../style/variables.scss';
 .modal {
 	position: absolute;
 	width: 100%;
@@ -17,16 +18,22 @@
 			background: #FFF;
 			color: #fff;
 			width: 90%;
+			border-radius: 5px;
+			overflow: auto;
 			.modalHeader {
-				background: #FFB5BA;
+				background: #b00061;
 				border-bottom: 1px solid #FFB5BA;;
 				display: flex;
 				padding: 0;
 				h3 {
 					flex-grow: 1;
-					padding: 10px;
+					padding: 20px;
 					margin: 0;
+					&.prompt {
+						font-size: 10px;
+					}
 				}
+				
 				button {
 					color: #FFF;
 					height: 42px;
@@ -39,6 +46,18 @@
 			}
 			.modalBody {
 				padding: 10px;
+				button {
+					color: #fff;
+					font-size: 1.2rem;
+					border: none;
+					border-radius: 5px;
+					background-color: #b00061;
+					width: 100%;
+					text-align: center;
+					padding: 10px 0;
+					margin-top: 10px;
+					box-shadow: none;
+				}
 			}
 		}
 	}
