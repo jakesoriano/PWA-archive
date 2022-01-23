@@ -3,7 +3,7 @@ import { connect } from 'unistore/preact';
 import { getCommunityInfo, createCommunityEvent } from '_mutations';
 import { LoaderRing } from '_components/core';
 import { FormGroup, FormInput, FormDropdown, ImageLoader, ButtonDescription } from '_components/core';
-import { getTranslation, getContentTypes, circleModal, promptModal, uploadFile } from '_helpers';
+import { getTranslation, getContentTypes, circleModal, messageModal, uploadFile } from '_helpers';
 import { updateStore } from '_unistore';
 import { route } from 'preact-router';
 // eslint-disable-next-line import/extensions
@@ -67,13 +67,14 @@ class PostContent extends Component {
 	  getCommunityInfo()
 			.then((res) => {
 				if(!res) {
-					promptModal({
+					messageModal({
 						title: getTranslation('NO_COMMUNITY_INFO'),
-						textYes: getTranslation('SETUP_COMMUNITY_PAGE_NOW'),
-						textNo: null,
+						btnText: getTranslation('SETUP_COMMUNITY_PAGE_NOW'),
+						message: getTranslation('SETUP_COMMUNITY_PAGE_MSG'),
+						disableClose: true,
 						cbOk: () => {
 							// no action here
-							promptModal(null);
+							messageModal(null);
 							this.gotoCommunitySetup();
 						}
 					});

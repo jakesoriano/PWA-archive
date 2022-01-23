@@ -182,6 +182,7 @@
 	"POST_CONTENT_SUCCESS": "Content successfully posted.",
 	"NO_COMMUNITY_INFO": "Community page is required.",
 	"SETUP_COMMUNITY_PAGE_NOW": "OK",
+	"SETUP_COMMUNITY_PAGE_MSG": "You need to setup community page before creating events",
 	"ERRMSG_DOB": "You should be at least 18 years old to register.",
 	"ERRMSG_FILESIZE": "File / Image too large too upload."
 }
