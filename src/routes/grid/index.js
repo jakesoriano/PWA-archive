@@ -126,7 +126,7 @@ class Grid extends Component {
 	};
 
 	componentDidMount = () => {
-	  const { selectedLanguage, authUser, url } = this.props;
+	  const { selectedLanguage, authUser } = this.props;
 	  let langAlias = getLanguageAlias(
 	    getQueryStringValue('lang') || getCookie('language')
 	  );
@@ -184,25 +184,7 @@ class Grid extends Component {
 	      return false;
 	    })
 	    .then(() => {
-	      // dashboard is now ready
-	      nativeWebReady();
-	      // Save Prev and Last/Current Page to Cookie
-	      setCookie(`${process.env.PREFIX}PrevPage`, '');
-	      setCookie(`${process.env.PREFIX}LastPage`, url);
-	      // device id
-	      nativeGetDeviceId((id) => {
-	        updateStore({
-	          deviceId: id
-	        });
-	      });
-	      // touch id
-	      nativeStatusTouchID().then(val => {
-					updateStore({
-						settings: {
-							touchId: val
-						}
-					});
-				});
+				this.dashboardReady();
 	    });
 	};
 
@@ -224,8 +206,9 @@ class Grid extends Component {
 	      });
 	      // fetch data
 	      prefetch(Boolean(this.props.authUser)).then(() => {
-					// dashboard is now ready
-					nativeWebReady();
+					if (!this.props.deviceId) {
+						this.dashboardReady();
+					}
 					// set page data
 					this.setPageData();
 					// redirect to home page
@@ -240,14 +223,26 @@ class Grid extends Component {
 	    this.resetPageData(prevProps);
 	  }
 
-	  // change route
-	  if (prevProps.url !== url) {
-	    // Save Prev and Last/Current Page to Cookie
-	    setCookie(`${process.env.PREFIX}PrevPage`, prevProps.url);
-	    setCookie(`${process.env.PREFIX}LastPage`, url);
-	  }
-
 	  this.setPageData();
+	};
+
+	dashboardReady = () => {
+		// dashboard is now ready
+		nativeWebReady();
+		// device id
+		nativeGetDeviceId((id) => {
+			updateStore({
+				deviceId: id
+			});
+		});
+		// touch id
+		nativeStatusTouchID().then(val => {
+			updateStore({
+				settings: {
+					touchId: val
+				}
+			});
+		});
 	};
 
 	toggleRightSideBar = () => {
@@ -439,7 +434,8 @@ const ConnectComponent = connect([
 	'alertShow',
 	'popupModal',
 	'circleModal',
-	'notifications'
+	'notifications',
+	'deviceId'
 ])(Grid);
 export default ConnectComponent;
 

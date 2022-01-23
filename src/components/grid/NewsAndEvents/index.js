@@ -178,47 +178,15 @@ class NewsAndEvents extends Component {
 		}
 	}
 
-	renderEventsTab = () => {
-		return (
-			<span 
-				className={`bold ${this.state.active === 'events' ? style.activeTab : ''}`}
-				onClick={() => {
-					this.toggleTab('events');
-				}}>{getTranslation('EVENTS')}</span>
-		);
-	}
-
-	renderNewsTab = () => {
-		return (
-			<span 
-				className={`bold ${this.state.active === 'news' ? style.activeTab : ''}`}
-				onClick={() => {
-					this.toggleTab('news');
-				}}>{getTranslation('NEWS')}</span>
-		);
-	}
-
-	renderAnnouncementsTab = () => {
-		return (
-			<span 
-				className={`bold ${this.state.active === 'announcements' ? style.activeTab : ''}`}
-				onClick={() => {
-					this.toggleTab('announcements');
-				}}>{getTranslation('IWAS_FAKE_NEWS')}</span>
-		);
-	}
-
 	renderTabs = () => {
 		return this.state.tabs.map((i) => {
-			if (i === 'events') {
-				return this.renderEventsTab();
-			}
-			if (i === 'news') {
-				return this.renderNewsTab();
-			}
-			if (i === 'announcements') {
-				return this.renderAnnouncementsTab();
-			}
+			return (
+				<span 
+					className={`bold ${this.state.active === i ? style.activeTab : ''}`}
+					onClick={() => {
+						this.toggleTab(i);
+					}}>{getTranslation(i.toUpperCase())}</span>
+			);
 		});
 	}
 

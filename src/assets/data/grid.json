@@ -99,7 +99,20 @@
 		]
 	},
 	{
-		"styles": [],
+		"styles": [
+			{
+				"selector": "#w1 > div",
+				"styles": "border-bottom: 1px solid #f1ebeb;border-radius: 10px 10px 0 0;"
+			},
+			{
+				"selector": "#w2 > div > div span",
+				"styles": "display: none;"
+			},
+			{
+				"selector": "#w2 > div",
+				"styles": "border-radius: 0 0 10px 10px;"
+			}
+		],
 		"auth": true,
 		"pageTitle": "PAGE_COMMUNITY",
 		"uri": "community-details",
