@@ -55,7 +55,9 @@ class NewsAndEvents extends Component {
 	}
 
   componentDidUpdate = () => {
-    if (this.state.moreFetching && !this.props[this.state.active].fetching) {
+		let { active } = this.state;
+		let selector = (getCurrentUrl().includes('community')) ? this.props.communityDetails[active] : this.props[active];
+    if (this.state.moreFetching && selector && !selector.fetching) {
       this.setState({
         moreFetching: false
       });
@@ -64,16 +66,20 @@ class NewsAndEvents extends Component {
 
   handleShowMore = () => {
     if (!this.state.moreFetching) {
+			let { active } = this.state;
+			let selector = (getCurrentUrl().includes('community')) ? this.props.communityDetails[active] : this.props[active];
       // flag
       this.setState({
         moreFetching: true
       });
       // fetch
-      if (this.state.active === 'news') {
-        fetchNews(this.props[this.state.active].page + 1);
+      if (active === 'news') {
+        fetchNews(selector.page + 1);
+      } else if (active === 'events') {
+        fetchEvents(selector.page + 1);
       } else {
-        fetchEvents(this.props[this.state.active].page + 1);
-      }
+        fetchAnnouncements(selector.page + 1);
+			}
     }
   };
 
@@ -160,13 +166,15 @@ class NewsAndEvents extends Component {
 	};
 
 	renderData = (active) => {
-		let selector = (getCurrentUrl().includes('community') && active === 'events') ? this.props.communityDetails[active] : this.props[active];
-		if (active === 'news') {
-			return this.renderNews(selector.data)
-		} else if (active === 'events') {
-			return this.renderEvents(selector.data)
-		} else if (active === 'announcements') {
-			return this.renderAnnouncements(selector.data)
+		let selector = (getCurrentUrl().includes('community')) ? this.props.communityDetails[active] : this.props[active];
+		if (selector) {
+			if (active === 'news') {
+				return this.renderNews(selector.data)
+			} else if (active === 'events') {
+				return this.renderEvents(selector.data)
+			} else if (active === 'announcements') {
+				return this.renderAnnouncements(selector.data)
+			}
 		}
 	}
 

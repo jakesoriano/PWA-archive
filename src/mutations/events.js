@@ -89,9 +89,9 @@ export function fetchEventsByCommunityId (id, page, limit) {
             data: [
               ...res.data
             ],
-            total: res.data.total,
+            total: res.data.length,
+            page: page || 1
           },
-          page: page || 1,
           fetching: false,
           result: true
         }
