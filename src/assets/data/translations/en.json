@@ -172,7 +172,16 @@
 	"SETUP_PAGE": "Setup page",
 	"POST_CONTENT": "Post Content",
 	"COMMUNITY_SETUP_SUCCESS": "Community Page Setup Success",
+	"CONTENT_TYPE": "Content Type",
+	"CONTENT_TITLE": "Event Title",
+	"CONTENT_DESC": "Event Description",
+	"CONTENT_DATE": "Event Date",
+	"CONTENT_LOCATION": "Event Location",
 	"ERRMSG_DOB": "You should be at least 18 years old to register.",
 	"NEWS": "News",
+	"COMMUNITY_NAME_EXIST": "Community name already taken.",
+	"POST_CONTENT_SUCCESS": "Content successfully posted.",
+	"NO_COMMUNITY_INFO": "Community Info.",
+	"SETUP_COMMUNITY_PAGE_MSG": "You need to setup community before creating events.",
 	"ERRMSG_FILESIZE": "File / Image too large too upload."
 }

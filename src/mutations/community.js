@@ -2,9 +2,11 @@ import { updateStore, store } from '_unistore';
 import {
 	xhr,
 	urlCommunity,
-	urlUser
+	urlUser,
+  urlCommunitySetup, 
+  urlCommunityGetInfo,
+  urlCommunityLeader
 } from '_helpers';
-import { urlCommunitySetup } from '../helpers/env';
 
 // eslint-disable-next-line import/prefer-default-export
 export function filterCommunity(name, page, limit) {
@@ -285,4 +287,73 @@ export function setupCommunityInfo (data) {
         console.log(`SPA >> setupCommunity failed`, err);
       });
   });
+}
+
+export function createCommunityEvent (data) {
+  // current state
+  const { communityInfo } = store.getState();
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/events`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'POST',
+      data: data.data
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> createCommunityEvent Error`, res);
+          resolve(res);
+        } else {
+          console.log(`SPA >> createCommunityEvent successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> createCommunityEvent failed`, err);
+      });
+  });
+}
+
+export function getCommunityInfo () {
+ // curreny state
+ const { communityInfo } = store.getState();
+
+ // fetching
+ if(communityInfo.fetching) {
+   return;
+ }
+
+ // initial state
+ updateStore({
+   communityInfo: {
+     ...communityInfo,
+     fetching: true,
+     result: false
+   }
+ });
+ 
+ return new Promise((resolve) => {
+   xhr(urlCommunityGetInfo, {
+   }).then((res) => {
+     updateStore({
+      communityInfo: {
+         data: res.data,
+         fetching: false,
+         result: true
+       }
+     });
+     resolve(true);
+   })
+   .catch((err) => {
+     updateStore({
+       communityInfo: {
+         ...communityInfo,
+         data: null,
+         fetching: false,
+         result: false
+       }
+     });
+     resolve(false);
+   });
+ });
 }

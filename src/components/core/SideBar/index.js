@@ -15,7 +15,7 @@ class SideBar extends Component {
 		this.props.toggleSideBar();
 	};
 
-	render = ({ toggleSideBar, isOpen, authUser, page }) => {
+	render = ({ toggleSideBar, isOpen, authUser, page, communityInfo }) => {
 		if (!authUser) {
 			return null;
 		}
@@ -56,7 +56,9 @@ class SideBar extends Component {
 						{(authUser.profile.roles && authUser.profile.roles === '100') && ( 
 							<div>
 								<Link className={style.sMItem}>{getTranslation('MANAGE_COMMUNITY_PAGE')}</Link>
-								<Link href={`/community-setup`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('SETUP_PAGE')}</Link>
+								{!communityInfo.data && (
+									<Link href={`/community-setup`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('SETUP_PAGE')}</Link>)
+								}
 								<Link href={`/post-content`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('POST_CONTENT')}</Link>
 							</div>
 						)}
@@ -78,4 +80,4 @@ class SideBar extends Component {
 	}
 }
 
-export default connect(['authUser'])(SideBar);
+export default connect(['authUser','communityInfo'])(SideBar);

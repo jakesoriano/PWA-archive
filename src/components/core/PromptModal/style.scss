@@ -1,13 +1,25 @@
+@import '../../../style/variables.scss';
 .promptModal {
+  p {
+    color: #686868;
+  }
   .footer {
-    display: flex;
+    text-align: right;
     button {
-      padding: 5px;
-      flex-grow: 1;
-      background: #ccc;
+      color: #fff;
+      font-size: 1.2rem;
       border: none;
-      margin: 5px;
-      box-shadow: 1px 1px 1px #000;
-    }	
+      border-radius: 5px;
+      background-color: $primary_layout;
+      text-align: center;
+      padding: 5px 15px;
+      box-shadow: none;
+      margin: 10px 0 0;
+      font-size: 0.8rem;
+      &:first-child {
+        margin-right: 10px;
+        background-color: $kakampink;
+      }
+    }
   }
 }

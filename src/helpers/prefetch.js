@@ -7,6 +7,7 @@ import {
   fetchInvited,
   fetchStories,
   fetchCommunities,
+  getCommunityInfo,
   generateNotifications,
   fetchTasks
 } from '_mutations';
@@ -22,6 +23,7 @@ export function prefetch (hasUser) {
     hasUser && fetchInvited(),
     hasUser && fetchStories(),
     hasUser && fetchCommunities(),
+    hasUser && getCommunityInfo(),
     hasUser && fetchTasks(),
   ]).then(() => {
     hasUser && generateNotifications();

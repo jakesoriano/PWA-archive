@@ -93,5 +93,10 @@ export const initialStore = {
   alertShow: null,
   pageLoader: {
     display: false
-  }
+  },
+  communityInfo: {
+    fetching: false,
+    result: false,
+    data: null
+  },
 };

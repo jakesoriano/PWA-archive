@@ -2,7 +2,7 @@ import { h } from 'preact';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
-export default ({ title, cbClose, children, fullscreen }) => (
+export default ({ title, cbClose, children, fullscreen, disableClose }) => (
   <div id="modal" className={`${style.modal} ${fullscreen ? style.fullscreen : ''}`}>
     <div className={style.modalContentWrap}>
       <div id="modal_content" className={style.modalContent}>
@@ -11,9 +11,9 @@ export default ({ title, cbClose, children, fullscreen }) => (
           {/* back for fullscreen */}
           {fullscreen && <button className="icon-back clickable" onClick={cbClose}>❮</button>}
           {/* text */}
-          <h3>{title}</h3>
+          <h3 className={`${disableClose ? 'light' : ''}`}>{title}</h3>
           {/* x button */}
-          {!fullscreen && <button className="cancel" onClick={cbClose} type="button" aria-label="Cancel">x</button>}
+          {!fullscreen && !disableClose && <button className='cancel' onClick={cbClose} type="button" aria-label="Cancel">x</button>}
         </div>
 
         {/* Body */}
