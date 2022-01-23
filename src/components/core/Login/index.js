@@ -223,7 +223,8 @@ class Login extends Component {
               </FormGroup>
               <div className={style.buttonWrap}>
                 <ButtonDescription
-                  onClickCallback={() => {
+                  onClickCallback={(e) => {
+                    e.stopPropagation();
                     this.onClickSubmit()
                   }}
                   text={getTranslation('LOGIN_SUBMIT')}

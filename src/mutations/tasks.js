@@ -1,5 +1,5 @@
 import { store, updateStore } from '_unistore';
-import { xhr, urlTasks } from '_helpers';
+import { xhr, urlTasks, urlValidateTask } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
 export function fetchTasks () {
@@ -54,24 +54,39 @@ export function fetchTasks () {
     });
 }
 
-export function doneTask (id, token) {
+export function validateTask (id, token) {
   return new Promise((resolve) => {
-    // curreny state
-    const { tasks } = store.getState();
-    // update status
-    const newData = tasks.data.map(i => {
-      if (i.id === id) {
-        i.completed = true;
+    xhr(urlValidateTask.replace('{id}', id), {
+      method: 'POST',
+      data: {
+        token
       }
-      return i;
     })
-    updateStore({
-      tasks: {
-        ...tasks,
-        data: newData,
-        completed: !Boolean(newData.find(i => i.completed !== true))
-      }
-    });
-    resolve(true);
+      .then((res) => {
+        if (res.success) {
+          // curreny state
+          const { tasks } = store.getState();
+          // update status
+          const newData = tasks.data.map(i => {
+            if (i.id === id) {
+              i.completed = true;
+            }
+            return i;
+          })
+          updateStore({
+            tasks: {
+              ...tasks,
+              data: newData,
+              completed: !Boolean(newData.find(i => i.completed !== true))
+            }
+          });
+          resolve(1);
+        } else {
+          resolve(0);
+        }
+      })
+      .catch((err) => {
+        resolve(-1);
+      });
   });
 }
