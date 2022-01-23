@@ -1,8 +1,9 @@
 import { Component } from 'preact';
+import { updateStore } from '_unistore';
 import { getTranslation, dateEventFormat, displayPageLoader } from '_helpers';
 import { connect } from 'unistore/preact';
 import { ImageLoader, ButtonDescription } from '_components/core';
-import { fetchTasks, doneTask } from '_mutations';
+import { fetchTasks, validateTask } from '_mutations';
 import { nativeSigninFacebook } from '_platform/helpers';
 import style from './style.scss';
 
@@ -47,24 +48,63 @@ class TaskCenter extends Component {
 		nativeSigninFacebook() 
 			.then(res => {
 				if(res.success) {
-					// submit data
+					// validate / complete the task
 					displayPageLoader(true);
-					doneTask(this.state.item.id, res.data.token)
-					.then(() => {
+					validateTask(this.state.item.id, res.data.token)
+					.then((status) => {
+						/**
+						 * 1 = success
+						 * 0 = not liked
+						 * -1 = server error
+						 */
 						displayPageLoader(false);
-						this.setState({
-							item: this.props.tasks.data.reduce((result, item) => {
-								if (!result || (!item.completed && result.completed)) {
-									return item;
+						if (status === 1) {
+							updateStore({
+								alertShow: {
+									success: true,
+									content: getTranslation('TASK_MSG_SUCCESS'),
+									noTopBar: true
 								}
-								return result;
-							}, null)
-						}, () => {
-							FB.XFBML.parse();
+							});
+							this.setState({
+								item: this.props.tasks.data.reduce((result, item) => {
+									if (!result || (!item.completed && result.completed)) {
+										return item;
+									}
+									return result;
+								}, null)
+							}, () => {
+								FB.XFBML.parse();
+							});
+						} else if (status === 0) {
+							updateStore({
+								alertShow: {
+									success: false,
+									content: getTranslation('TASK_MSG_FAIL'),
+									noTopBar: true
+								}
+							});
+						} else {
+							updateStore({
+								alertShow: {
+									success: false,
+									content: getTranslation('SOMETHING_WRONG'),
+									noTopBar: true
+								}
+							});
+						}
+					})
+					.catch(err => {
+						updateStore({
+							alertShow: {
+								success: false,
+								content: getTranslation('SOMETHING_WRONG'),
+								noTopBar: true
+							}
 						});
 					});
-
 				} else if (res.error !== 'SIGN_IN_CANCELLED') {
+					displayPageLoader(false);
 					updateStore({
 						alertShow: {
 							success: false,
@@ -74,15 +114,6 @@ class TaskCenter extends Component {
 					});
 				}
 			})
-			.catch(err => {
-				updateStore({
-					alertShow: {
-						success: false,
-						content: getTranslation('SOMETHING_WRONG'),
-						noTopBar: true
-					}
-				});
-			});
 	};
 
 	render = ({ tasks }, { item }) => {

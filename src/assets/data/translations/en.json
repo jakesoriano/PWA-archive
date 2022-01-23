@@ -164,6 +164,8 @@
 	"TASK_NOTE": "Note: If the like button is not working, Please click the post image or message / share icon to open the post via Facebook then hit \"Like\". Once done, click \"Done\" to earn points.",
 	"TASK_COMPLETED": "All tasks completed! Come back again later to earn more points.",
 	"TASK_NODATA": "No Available task for today!",
+	"TASK_MSG_SUCCESS": "You have successfully completed the task.",
+	"TASK_MSG_FAIL": "Please complete the task by following the instructions.",
 	"UPDATE_AVATAR_SUCCESS": "Avatar updated successfully!",
 	"INVALID_CODE": "Invalid Code",
 	"MANAGE_COMMUNITY_PAGE": "Manage Community Page",

@@ -519,7 +519,7 @@ class Signup extends Component {
 						<FormInput
 							value={birthday.value}
 							type="date"
-							// max={getMaxDOBDate()}
+							max={getMaxDOBDate()}
 							onBlur={(e) => {
 								this.onDobChange(e.target.value);
 							}}
