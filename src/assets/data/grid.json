@@ -54,7 +54,7 @@
 			{
 				"component": "NewsAndEvents",
 				"props": {
-					"hiddenTabs": [""]
+					"hiddenTabs": ["news"]
 				}
 			}
 		]
