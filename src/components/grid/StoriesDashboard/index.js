@@ -5,6 +5,7 @@ import { ImageLoader } from '_components/core';
 import { fetchStories } from '_mutations';
 import {
 	getTranslation,
+	componentModal,
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
@@ -14,9 +15,6 @@ import style from './style';
 class StoriesDashboard extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			selectedItem: null,
-		}
 	};
 
 	componentDidMount = () => {
@@ -36,8 +34,9 @@ class StoriesDashboard extends Component {
 }
 
 	onClickStories = (data) => {
-		this.setState({
-			selectedItem: data
+		componentModal({
+			title: null,
+			content: this.renderDetails(data)
 		});
 	}
 
@@ -56,16 +55,6 @@ class StoriesDashboard extends Component {
 		if (data) {
 			return (
 				<div className={style.pWrap}>
-					<a className={`${style.pClose}`} onClick={() => {
-						this.setState({
-							selectedItem: null
-						});
-					}}>
-						<ImageLoader
-							src="assets/images/closebutton.png"
-							style={{container: style.closeBtn}}
-						/>
-					</a>
 					<div className={`${style.pHeader}`}>
 						<ImageLoader
 								src={data.image}
@@ -152,7 +141,6 @@ class StoriesDashboard extends Component {
 						</div>
 					</div>
 				</div>
-				{selectedItem && this.renderDetails(selectedItem)}
 			</>
 		);
 	};
