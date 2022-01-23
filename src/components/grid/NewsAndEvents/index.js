@@ -224,7 +224,7 @@ class NewsAndEvents extends Component {
 							style={{container: style.closeBtn}}
 						/>
 					</a>
-					<div className={`${style.pHeader} ${this.state.active === 'news' ? style.pHeaderEvents : ''}`}>
+					<div className={`${style.pHeader} ${this.state.active === 'events' ? style.pHeaderEvents : ''}`}>
 						<ImageLoader
 								src={data.image}
 								style={{container: style.pImage}}
