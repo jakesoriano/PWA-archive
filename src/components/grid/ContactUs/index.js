@@ -1,9 +1,22 @@
 import { h, Component } from 'preact';
+import { updateStore } from '_unistore';
 import { connect } from 'unistore/preact';
-import { sendContactUs, uploadFile } from '_mutations';
+import { sendContactUs } from '_mutations';
 import { LoaderRing } from '_components/core';
-import { FormGroup, FormInput, FormDropdown, ImageLoader, ButtonDescription } from '_components/core';
-import { getTranslation, getCategories, circleModal } from '_helpers';
+import {
+	FormGroup,
+	FormInput,
+	FormDropdown,
+	ImageLoader,
+	ButtonDescription
+} from '_components/core';
+import {
+	getTranslation,
+	getCategories,
+	circleModal,
+	uploadFile,
+	displayPageLoader
+} from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -93,6 +106,7 @@ class ContactUs extends Component {
 			attachment: image
 		})
 			.then((res) => {
+				displayPageLoader(false);
 				if(res && res.success) {
 					this.setState({
 						...this.initialState
@@ -104,9 +118,11 @@ class ContactUs extends Component {
 						code: `${getTranslation('CODE_REF')} ${res.refcode || ''}`
 					});
 				} else {
-					circleModal({
-						title: getTranslation('OOPS_SOMETHING_WRONG'),
-						content: getTranslation('TRY_AGAIN_CONTINUE')
+					updateStore({
+						alertShow: {
+							success: false,
+							content: res.errMessage || 'OOPS_SOMETHING_WRONG'
+						}
 					});
 				}
 			})
@@ -121,6 +137,7 @@ class ContactUs extends Component {
 			this.onSubjectChange(this.state.subject.value);
 			this.onMessageChange(this.state.message.value);
 		} else {
+			displayPageLoader(true);
 			if (!this.state.attachment.file) {
 				this.submitData();
 			} else {
@@ -131,9 +148,12 @@ class ContactUs extends Component {
 						if(res.success && res.data) {
 							this.submitData(res.data.image);
 						} else {
-							circleModal({
-								title: getTranslation('OOPS_SOMETHING_WRONG'),
-								content: getTranslation('TRY_AGAIN_CONTINUE')
+							displayPageLoader(false);
+							updateStore({
+								alertShow: {
+									success: false,
+									content: res.errMessage || 'OOPS_SOMETHING_WRONG'
+								}
 							});
 						}
 					});

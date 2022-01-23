@@ -2,9 +2,14 @@ import { Component } from 'preact';
 import { updateStore } from '_unistore';
 import { connect } from 'unistore/preact';
 import { ImageLoader, FormInput } from '_components/core';
-import { getDefaultAvatar, displayPageLoader } from '_helpers';
-import { updateAvatar, uploadFile } from '_mutations';
-import { getTranslation } from '../../../helpers';
+import {
+  getDefaultAvatar,
+  displayPageLoader,
+  getTranslation,
+  resizeImage,
+  uploadFile
+} from '_helpers';
+import { updateAvatar } from '_mutations';
 import style from './style';
 
 class UserAvatar extends Component {
@@ -17,27 +22,46 @@ class UserAvatar extends Component {
     };
   };
 
-	onAttachmentChange = (file) => {
+  updateUserImage = (file) => {
 		this.setState({
 			attachment: {
 				file: file,
 			}
 		});
     displayPageLoader(true);
-    uploadFile({file: file}).then((res) => {
+    uploadFile({file: file}).then((res) => {console.error(res);
       displayPageLoader(false);
       if (res.success && res.data) {
-        updateAvatar(res.data).then((res) => {
-          if (res.success) {
+        updateAvatar(res.data).then((resUpdate) => {
+          if (resUpdate.success) {
             this.showAlertBox(getTranslation('UPDATE_AVATAR_SUCCESS'));
           } else {
-            this.showAlertBox(getTranslation('SOMETHING_WRONG'), true);
+            this.showAlertBox(getTranslation(resUpdate.errMessage || 'SOMETHING_WRONG'), true);
           }
         })
       } else {
-        this.showAlertBox(getTranslation('SOMETHING_WRONG'), true);
+        this.showAlertBox(getTranslation(res.errMessage || 'SOMETHING_WRONG'), true);
       }
     })
+  }
+
+	onAttachmentChange = (file) => {
+    if (!file) {
+      return;
+    }
+
+    resizeImage({
+      file: file,
+      maxSize: 1200
+    })
+    .then(resizedImage => {
+      console.log("upload resized image", resizedImage);
+      this.updateUserImage(resizedImage);
+    })
+    .catch(err => {
+      // console.error(err);
+      this.updateUserImage(file);
+    });
 	};
 
 	showAlertBox = (message, hasError) => {
@@ -65,6 +89,7 @@ class UserAvatar extends Component {
           value={attachment.file}
           type="file"
           accept="image/*"
+          capture="user"
           disabled={!allowUpdate}
           onBlur={(e) => {
             this.onAttachmentChange(e.target.files[0])

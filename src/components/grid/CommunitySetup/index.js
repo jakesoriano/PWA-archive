@@ -3,9 +3,9 @@ import { connect } from 'unistore/preact';
 import { LoaderRing } from '_components/core';
 import { updateStore } from '_unistore';
 import { route } from 'preact-router';
-import { setupCommunityInfo, uploadFile } from '_mutations';
+import { setupCommunityInfo } from '_mutations';
 import { FormGroup, FormInput, ImageLoader, ButtonDescription } from '_components/core';
-import { getTranslation, circleModal } from '_helpers';
+import { getTranslation, uploadFile } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -89,9 +89,11 @@ class CommunitySetup extends Component {
 					this.showAlertBox('COMMUNITY_SETUP_SUCCESS', false);
 					route(`/`);
 				} else {
-					circleModal({
-						title: getTranslation('OOPS_SOMETHING_WRONG'),
-						content: getTranslation('TRY_AGAIN_CONTINUE')
+					updateStore({
+						alertShow: {
+							success: false,
+							content: res.errMessage || 'OOPS_SOMETHING_WRONG'
+						}
 					});
 				}
 			})
@@ -113,9 +115,11 @@ class CommunitySetup extends Component {
 					if(res.success && res.data) {
 						this.submitData(res.data.image);
 					} else {
-						circleModal({
-							title: getTranslation('OOPS_SOMETHING_WRONG'),
-							content: getTranslation('TRY_AGAIN_CONTINUE')
+						updateStore({
+							alertShow: {
+								success: false,
+								content: res.errMessage || 'OOPS_SOMETHING_WRONG'
+							}
 						});
 					}
 				});
