@@ -15,7 +15,11 @@ export default ({ title, message, btnText, cbOk, disableClose }) => (
     {/* Yes Button */}
     <button
       onClick={() => {
-        cbOk();
+        if(cbOk) {
+          cbOk();
+        } else {
+          messageModal(null);
+        }
       }}
       type="button"
       aria-label="Ok"
