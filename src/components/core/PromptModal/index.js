@@ -4,16 +4,31 @@ import Modal from '../Modal';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
-export default ({ title, textYes, cbOk }) => (
+export default ({ title, message, textNo, textYes, cbOk }) => (
   <Modal
     title={title}
-    disableClose={true}
     cbClose={() => {
       promptModal(null);
     }}
   >
     <div className={style.promptModal}>
+      {/* Message */}
+      <p>{message}</p>
+
+      {/* buttons */}
       <div className={style.footer}>
+        {/* No button */}
+        <button
+          onClick={() => {
+            promptModal(null);
+          }}
+          type="button"
+          aria-label="No"
+        >
+          {textNo || 'No'}
+        </button>
+
+        {/* Yes Button */}
         <button
           onClick={() => {
             cbOk();
