@@ -23,15 +23,25 @@ export function fetchTasks () {
 
   return xhr(urlTasks)
     .then((res) => {
-      updateStore({
-        tasks: {
-          data: res,
-          fetching: false,
-          result: true,
-          date: new Date().setHours(23, 59, 50),
-          completed: !Boolean(res.find(i => i.completed !== true))
-        }
-      });
+      if (res.success && res.data && res.data.length) {
+        updateStore({
+          tasks: {
+            data: res.data,
+            fetching: false,
+            result: true,
+            date: new Date().setHours(23, 59, 50),
+            completed: !Boolean(res.data.find(i => i.completed !== true))
+          }
+        });
+      } else {
+        updateStore({
+          tasks: {
+            ...tasks,
+            fetching: false,
+            result: false
+          }
+        });
+      }
     })
     .catch(() => {
       updateStore({
@@ -44,7 +54,7 @@ export function fetchTasks () {
     });
 }
 
-export function doneTask (id) {
+export function doneTask (id, token) {
   return new Promise((resolve) => {
     // curreny state
     const { tasks } = store.getState();

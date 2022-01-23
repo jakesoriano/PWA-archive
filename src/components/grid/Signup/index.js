@@ -178,6 +178,9 @@ class Signup extends Component {
 				hasError: !Boolean(value),
 				error: !Boolean(value) ? 'REQUIRED' : '',
 			},
+		}, () =>  {
+			// ios workaround
+			this.validateDob(value);
 		});
 	};
 
@@ -288,6 +291,21 @@ class Signup extends Component {
 				// error: !Boolean(value) ? 'REQUIRED' : ''
 			},
 		});
+	};
+
+	validateDob = (value) => {
+		const maxDate = new Date(getMaxDOBDate()).getTime();
+		const selectedDate = new Date(value).getTime();
+		if (maxDate < selectedDate) {
+			this.setState({
+				birthday: {
+					...this.state.birthday,
+					value: value,
+					hasError: true,
+					error: getTranslation('ERRMSG_DOB'),
+				}
+			})
+		}
 	};
 
 	handleContinue = () => {
@@ -501,7 +519,7 @@ class Signup extends Component {
 						<FormInput
 							value={birthday.value}
 							type="date"
-							max={getMaxDOBDate()}
+							// max={getMaxDOBDate()}
 							onBlur={(e) => {
 								this.onDobChange(e.target.value);
 							}}

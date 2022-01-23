@@ -279,6 +279,30 @@
 	{
 		"styles": [],
 		"auth": true,
+		"pageTitle": "ACCOUNT_PROFILE",
+		"uri": "account-profile",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "Account"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "COMMUNITY_SETUP",
+		"withBack": true,
+		"uri": "community-setup",
+		"contents": [
+			{
+				"component": "CommunitySetup"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
 		"pageTitle": "TASK_CENTER",
 		"uri": "task-center",
 		"withBack": true,

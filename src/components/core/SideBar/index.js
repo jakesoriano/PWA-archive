@@ -39,7 +39,8 @@ class SideBar extends Component {
 					<div className={style.sUser}>
 						<ImageLoader 
 							src={authUser.profile.image || 'assets/images/myaccount_icon_inactive.png'}
-							style={{container: style.sAvatar}} />
+							style={{container: style.sAvatar}}
+							lazy />
 						<div>
 							<div>
 									<p className={`${style.sName}`}>{`${getTranslation('HI_NAME').replace('{NAME}', authUser.profile.fname)}`}</p>
