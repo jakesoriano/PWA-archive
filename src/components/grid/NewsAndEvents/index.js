@@ -4,6 +4,9 @@ import {
 	fetchNews,
 	fetchNewsByCommunity,
 	fetchEvents,
+	fetchAnnouncements,
+	likeShareAnnouncements,
+	removeLikeAnnouncements,
 	likeShareNews,
 	shareEvent,
 	removeLikeNews,
@@ -29,7 +32,8 @@ class NewsAndEvents extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			active: 'events',
+			active: '',
+			tabs: ['events', 'announcements', 'news'],
 			selectedItem: null,
 			eventDropdown: null,
       moreFetching: false
@@ -37,8 +41,25 @@ class NewsAndEvents extends Component {
 	};
 
 	componentDidMount = () => {
-		this.fetchNews();
-		fetchEvents();
+		const { hiddenTabs } = this.props;
+		let { tabs } = this.state;
+		if (hiddenTabs) {
+			tabs = tabs.filter((i) => hiddenTabs.indexOf(i) === -1);
+			this.setState({
+				tabs: tabs
+			}, () => {
+				this.toggleTab(tabs[0])
+			});
+		}
+		tabs.map((i) => {
+			if (i === 'events') {
+				fetchEvents();
+			} else if (i === 'news') {
+				this.fetchNews();
+			} else if (i === 'announcements') {
+				fetchAnnouncements();
+			}
+		});
 	};
 
   componentDidUpdate = () => {
@@ -75,6 +96,14 @@ class NewsAndEvents extends Component {
 			selectedItem: data
 		});
 	};
+	
+	onLikeAnnouncement = (item) => {
+		if (!item.liked) {
+			likeShareAnnouncements(item, 'A', 'liked', 'X');
+		} else {
+			removeLikeAnnouncements(item, 'A', 'X');
+		}
+	}
 
 	onLikeNews = (item) => {
 		if (!item.liked) {
@@ -100,6 +129,25 @@ class NewsAndEvents extends Component {
 		});
 		if (!item.shared) {
 			likeShareNews(item, 'N', 'shared', item.community.id);
+		}
+	};
+
+	onShareAnnouncement = (item) => {
+		nativeShare({
+			url: item.image,
+			title: item.title,
+			message: `\n\n
+				We tell it as it is. Only the truth, KakamPink!\n\n
+				Shared via Kakampink App\n
+				Download now!\n
+				Android: ${playStore}\n\n
+				Article Title: ${item.title}\n
+				Ariticle Link: ${item.link || ''}\n
+				Use my invite code: ${this.props.authUser.profile.refCode}
+			`
+		});
+		if (!item.shared) {
+			likeShareAnnouncements(item, 'A', 'shared', 'X');
 		}
 	};
 
@@ -176,12 +224,12 @@ class NewsAndEvents extends Component {
 							style={{container: style.closeBtn}}
 						/>
 					</a>
-					<div className={`${style.pHeader} ${this.state.active !== 'news' ? style.pHeaderEvents : ''}`}>
+					<div className={`${style.pHeader} ${this.state.active === 'news' ? style.pHeaderEvents : ''}`}>
 						<ImageLoader
 								src={data.image}
 								style={{container: style.pImage}}
 								lazy />
-						{this.state.active === 'news' ? (
+						{(this.state.active === 'news' || this.state.active === 'announcements') ? (
 							<div className={style.pNews}>
 								<p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
 								<a className={style.pLink} href={data.link}>{data.link}</a>
@@ -276,6 +324,55 @@ class NewsAndEvents extends Component {
 		return <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
 	};
 
+	renderAnnouncements = (data) => {
+		if (data.length) {
+			return data.map(i => (
+				<div className={style.contentItem}>
+					<a className={style.details} onClick={() => {
+						this.onClickItem(i);
+					}}>
+						<ImageLoader
+							src={i.image}
+							style={{container: style.detailImage}}
+							lazy />
+						<div className={style.detailContent}>
+							<span className={`bold ${style.detailTitle}`}>{getTranslation(i.title)}</span>
+							{i.likeCount || i.shareCount ? (
+								<div className={style.detailCount}>
+									{i.likeCount ? <span>{`${i.likeCount} ${getTranslation('LIKES')}`}</span> : ''}
+									{i.shareCount ? <span>{`${i.shareCount} ${getTranslation('SHARES')}`}</span> :''}
+								</div>
+							): null}
+						</div>
+					</a>
+					<div className={style.buttons}>
+						<a
+							className={i.liked ? `extraBold ${style.buttonLikeActive}` : ''}
+							onClick={() => {
+								this.onLikeAnnouncement(i);
+							}}>
+								<ImageLoader
+								src={!i.liked ? 'assets/images/fb-like-transparent.png' : 'assets/images/fb-like-transparent-dark.png'}
+								style={{container: style.likeButton}}/>
+								{getTranslation('LIKE')}
+							</a>
+						<a
+							className={i.shared ? `extraBold ${style.buttonShareActive}` : ''}
+							onClick={() => {
+								this.onShareAnnouncement(i);
+							}}>
+								<ImageLoader
+								src={!i.shared ? 'assets/images/share_icon_lite.png' : 'assets/images/share_icon_dark.png'}
+								style={{container: style.likeButton}}/>
+								{getTranslation('SHARE')}</a>
+					</div>
+				</div>
+			))
+		}
+
+		return <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
+	};
+
 	renderEvents = (data) => {
 		if (data.length) {
 			return data.map((i, index) => (
@@ -342,14 +439,57 @@ class NewsAndEvents extends Component {
 	};
 
 	renderData = (active) => {
-
 		if (active === 'news') {
-			this.renderNews(props[state.active].data)
+			return this.renderNews(this.props[active].data)
 		} else if (active === 'events') {
-			
-		} else {
-			this.renderEvents(props[state.active].data)}
+			return this.renderEvents(this.props[active].data)
+		} else if (active === 'announcements') {
+			return this.renderAnnouncements(this.props[active].data)
 		}
+	}
+
+	renderEventsTab = () => {
+		return (
+			<span 
+				className={`bold ${this.state.active === 'events' ? style.activeTab : ''}`}
+				onClick={() => {
+					this.toggleTab('events');
+				}}>{getTranslation('EVENTS')}</span>
+		);
+	}
+
+	renderNewsTab = () => {
+		return (
+			<span 
+				className={`bold ${this.state.active === 'news' ? style.activeTab : ''}`}
+				onClick={() => {
+					this.toggleTab('news');
+				}}>{getTranslation('NEWS')}</span>
+		);
+	}
+
+	renderAnnouncementsTab = () => {
+		return (
+			<span 
+				className={`bold ${this.state.active === 'announcements' ? style.activeTab : ''}`}
+				onClick={() => {
+					this.toggleTab('announcements');
+				}}>{getTranslation('IWAS_FAKE_NEWS')}</span>
+		);
+	}
+
+	renderTabs = () => {
+		return this.state.tabs.map((i) => {
+			if (i === 'events') {
+				return this.renderEventsTab();
+			}
+			if (i === 'news') {
+				return this.renderNewsTab();
+			}
+			if (i === 'announcements') {
+				return this.renderAnnouncementsTab();
+			}
+		});
 	}
 
 	render = (props, state) => {
@@ -357,30 +497,13 @@ class NewsAndEvents extends Component {
 			<>
 				<div className={style.newsAndEvents}>
 					<div className={style.tabWrap}>
-						<span 
-							className={`bold ${state.active === 'events' ? style.activeTab : ''}`}
-							onClick={() => {
-								this.toggleTab('events');
-							}}>{getTranslation('EVENTS')}</span>
-						{
-							props.showNews &&
-							<span 
-								className={`bold ${state.active === 'news' ? style.activeTab : ''}`}
-								onClick={() => {
-									this.toggleTab('news');
-								}}>{getTranslation('IWAS_FAKE_NEWS')}</span>
-						}
-						<span 
-								className={`bold ${state.active === 'announcements' ? style.activeTab : ''}`}
-								onClick={() => {
-									this.toggleTab('news');
-								}}>{getTranslation('IWAS_FAKE_NEWS')}</span>
+						{state.active && this.renderTabs()}
 					</div>
 					<div className={style.content}>
 						{/* data */}
-						{ this.renderData() }
+						{ this.renderData(state.active) }
 						{/* show more */}
-						{props[state.active].data.length < props[state.active].total && !props[state.active].fetching && (
+						{state.active && props[state.active] && props[state.active].data.length < props[state.active].total && !props[state.active].fetching && (
 							<button className={style.showMore} onClick={this.handleShowMore}>
 								<span><span>&#8659;</span> {getTranslation('SHOW_MORE')}</span>
 							</button>
@@ -409,4 +532,4 @@ class NewsAndEvents extends Component {
 		}
 	}
 }
-export default connect(['news', 'events', 'authUser', 'communityDetails'])(NewsAndEvents);
+export default connect(['news', 'events', 'announcements', 'authUser', 'communityDetails',])(NewsAndEvents);

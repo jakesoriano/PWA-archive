@@ -13,3 +13,4 @@ export * from './notifications';
 export * from './stories';
 export * from './accountProfile';
 export * from './tasks';
+export * from './announcements';
