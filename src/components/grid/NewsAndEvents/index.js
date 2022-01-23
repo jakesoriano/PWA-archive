@@ -215,6 +215,7 @@ class NewsAndEvents extends Component {
 	}
 
 	render = (props, state) => {
+		let selector = getCurrentUrl().includes('community') ? props.communityDetails[state.active] : props[state.active];
 	  return (
 			<>
 				<div className={style.newsAndEvents}>
@@ -225,7 +226,7 @@ class NewsAndEvents extends Component {
 						{/* data */}
 						{ this.renderData(state.active) }
 						{/* show more */}
-						{state.active && props[state.active] && props[state.active].data.length < props[state.active].total && !props[state.active].fetching && (
+						{state.active && selector && selector.data.length < selector.total && !selector.fetching && (
 							<button className={style.showMore} onClick={this.handleShowMore}>
 								<span><span>&#8659;</span> {getTranslation('SHOW_MORE')}</span>
 							</button>
