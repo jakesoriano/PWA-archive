@@ -1,0 +1,72 @@
+.newsListWrap {
+  .contentItem {
+    display: grid;
+    padding: 10px;
+    border-bottom: 1px solid #f1ebeb;
+    .community {
+      display: flex;
+      margin-bottom: 10px;
+      align-items: center;
+      .comImage {
+        width: 30px;
+        padding-bottom: 30px;
+        border-radius: 15px;
+      }
+      span {
+        font-size: 0.6rem;
+        padding: 0 10px 0 5px;
+      }
+    }
+    .details {
+      display: flex;
+      .detailImage {
+        width: 90px;
+        flex-grow: 1;
+        margin-right: 5px;
+      }
+      .detailTitle {
+        font-size: 1rem;
+      }
+      .detailContent {
+        display: grid;
+        width: calc(100% - 95px);
+      }
+      .detailCount {
+        line-height: 0.4rem;
+        span {
+          font-size: 0.4rem;
+          &:nth-child(2) {
+            margin-left: 5px;
+            padding-left: 5px;
+            border-left: 1px solid #f1ebeb;
+          }
+        }
+      }
+    }
+    .buttons {
+      position: relative;
+      text-align: right;
+      a {
+        font-size: 0.7rem;
+        &:nth-child(2) {
+          margin-left: 10px;
+        }
+        .likeButton {
+          width: 14px;
+          position: relative;
+          padding: 0;
+          height: 16px;
+          margin: 0;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 4px;
+          margin-left: 4px;
+        }
+        &.buttonLikeActive,
+        &.buttonShareActive {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

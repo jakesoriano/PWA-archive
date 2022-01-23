@@ -4,16 +4,12 @@ import {
 	fetchNews,
 	fetchNewsByCommunity,
 	fetchEvents,
-	fetchAnnouncements,
-	likeShareNews,
-	removeLikeNews } from '_mutations';
+	fetchAnnouncements } from '_mutations';
 import {
 	getTranslation,
-	dateEventFormat,
-	playStore
+	dateEventFormat
 } from '_helpers';
-import { ImageLoader, LoaderRing, EventsList, AnnouncementsList } from '_components/core';
-import { nativeShare } from '_platform/helpers';
+import { ImageLoader, LoaderRing, EventsList, AnnouncementsList, NewsList } from '_components/core';
 import { getCurrentUrl } from 'preact-router';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -87,33 +83,6 @@ class NewsAndEvents extends Component {
 		});
 	};
 
-	onLikeNews = (item) => {
-		if (!item.liked) {
-			likeShareNews(item, 'N', 'liked', item.community.id);
-		} else {
-			removeLikeNews(item, 'N', item.community.id);
-		}
-	}
-
-	onShareNews = (item) => {
-		nativeShare({
-			url: item.image,
-			title: item.title,
-			message: `\n\n
-				We tell it as it is. Only the truth, KakamPink!\n\n
-				Shared via Kakampink App\n
-				Download now!\n
-				Android: ${playStore}\n\n
-				Article Title: ${item.title}\n
-				Ariticle Link: ${item.link || ''}\n
-				Use my invite code: ${this.props.authUser.profile.refCode}
-			`
-		});
-		if (!item.shared) {
-			likeShareNews(item, 'N', 'shared', item.community.id);
-		}
-	};
-
 	renderDetails = (data) => {
 		if (data) {
 			return (
@@ -173,6 +142,7 @@ class NewsAndEvents extends Component {
 	};
 
 	renderNews = (data) => {
+		return <NewsList data={data} authUser={this.props.authUser} onClickItemCallback={this.onClickItem} />
 	};
 
 	renderAnnouncements = (data) => {
