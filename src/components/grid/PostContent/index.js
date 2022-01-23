@@ -13,7 +13,6 @@ import style from './style';
 class PostContent extends Component {
 	constructor(props){
 		super(props);
-		console.log('content type', getContentTypes);
 		this.initialState = {
 			contentTypeOptions: getContentTypes(),
 			contentType: {
@@ -57,8 +56,7 @@ class PostContent extends Component {
 				error: '',
 				message: '',
 				hasError: false
-			},
-			communityId: null
+			}
 		}
 		this.state = this.initialState;
 	}
@@ -91,6 +89,8 @@ class PostContent extends Component {
 			attachment: {
 				...this.state.attachment,
 				file: file,
+				hasError: !Boolean(file),
+				error: !Boolean(file) ? 'REQUIRED' : ''
 			}
 		});
 	};
@@ -181,8 +181,7 @@ class PostContent extends Component {
 			desc: this.state.desc.value
 		}
 		createCommunityEvent({
-			data,
-			communityId: this.state.communityId
+			data
 		})
 			.then((res) => {
 				displayPageLoader(false)
@@ -195,46 +194,45 @@ class PostContent extends Component {
 				} else {
 					this.showAlertBox(res.error.message || 'SOMETHING_WRONG', true);
 				}
-			}).catch(() => {
-				this.showAlertBox('SOMETHING_WRONG', true);
+			}).catch((err) => {
+				this.showAlertBox(err.message || 'SOMETHING_WRONG', true);
 				displayPageLoader(false);
 			});
 	}
 
 	handleContinue = () => {
-		console.log('state', this.state);
 		if (!this.state.contentType.value || 
 			!this.state.title.value || 
 			!this.state.desc.value ||
 			!this.state.date.value || 
 			!this.state.eventBy.value || 
-			!this.state.location.value) {
+			!this.state.location.value ||
+			!this.state.attachment.file) {
 			this.onContentTypeChange(this.state.contentType.value);
 			this.onTitleChange(this.state.title.value);
 			this.onDescChange(this.state.desc.value);
-			this.onDateChange(this.state.desc.value);
+			this.onDateChange(this.state.date.value);
 			this.onLocationChange(this.state.location.value);
 			this.onEventByChange(this.state.eventBy.value);
+			this.onAttachmentChange(this.state.attachment.file);
 		} else {
-			if (this.state.attachment.file) {
-				displayPageLoader(true);
-				uploadFile({
-					file: this.state.attachment.file
-				})
-					.then((res) => {
-						if(res.success && res.data) {
-							this.submitData(res.data.image);
-						} else {
-							displayPageLoader(false)
-							updateStore({
-								alertShow: {
-									success: false,
-									content: res.errMessage || 'OOPS_SOMETHING_WRONG'
-								}
-							});
-						}
-					});
-			}
+			displayPageLoader(true);
+			uploadFile({
+				file: this.state.attachment.file
+			})
+				.then((res) => {
+					if(res.success && res.data) {
+						this.submitData(res.data.image);
+					} else {
+						displayPageLoader(false)
+						updateStore({
+							alertShow: {
+								success: false,
+								content: res.errMessage || 'OOPS_SOMETHING_WRONG'
+							}
+						});
+					}
+				});
 		}
 	}
 

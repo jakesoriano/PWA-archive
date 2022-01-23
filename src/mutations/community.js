@@ -269,7 +269,8 @@ export function setupCommunityInfo (data) {
 
 export function createCommunityEvent (data) {
   // current state
-  const url = `${urlCommunityLeader}/${data.communityId}/events`;
+  const { communityInfo } = store.getState();
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/events`;
   return new Promise((resolve) => {
     xhr(url, {
       method: 'POST',
@@ -278,14 +279,14 @@ export function createCommunityEvent (data) {
       .then((res) => {
         if (!res.success) {
           console.log(`SPA >> createCommunityEvent Error`, res);
-          resolve(false);
+          resolve(res);
         } else {
           console.log(`SPA >> createCommunityEvent successful`, res);
           resolve(res);
         }
       })
       .catch((err) => {
-        resolve(res);
+        resolve(err);
         console.log(`SPA >> createCommunityEvent failed`, err);
       });
   });
