@@ -267,17 +267,6 @@ export function setupCommunityInfo (data) {
   });
 }
 
-export function getCommunityInfo () {
-  return new Promise((resolve) => {
-    xhr(urlCommunityGetInfo, {
-    }).then((res) => {
-      resolve(res);
-    }).catch((err) => {
-      resolve(false);
-    });
-  });
-}
-
 export function createCommunityEvent (data) {
   // current state
   const url = `${urlCommunityCreateEvent}/${data.communityId}/events`;
@@ -300,4 +289,48 @@ export function createCommunityEvent (data) {
         console.log(`SPA >> createCommunityEvent failed`, err);
       });
   });
+}
+
+export function getCommunityInfo () {
+ // curreny state
+ const { communityInfo } = store.getState();
+
+ // fetching
+ if(communityInfo.fetching) {
+   return;
+ }
+
+ // initial state
+ updateStore({
+   communityInfo: {
+     ...communityInfo,
+     fetching: true,
+     result: false
+   }
+ });
+ 
+ return new Promise((resolve) => {
+   xhr(urlCommunityGetInfo, {
+   }).then((res) => {
+     updateStore({
+      communityInfo: {
+         data: res.data,
+         fetching: false,
+         result: true
+       }
+     });
+     resolve(true);
+   })
+   .catch((err) => {
+     updateStore({
+       communityInfo: {
+         ...communityInfo,
+         data: null,
+         fetching: false,
+         result: false
+       }
+     });
+     resolve(false);
+   });
+ });
 }

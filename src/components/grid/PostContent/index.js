@@ -1,9 +1,9 @@
 import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { getCommunityInfo, createCommunityEvent, uploadFile } from '_mutations';
+import { getCommunityInfo, createCommunityEvent } from '_mutations';
 import { LoaderRing } from '_components/core';
 import { FormGroup, FormInput, FormDropdown, ImageLoader, ButtonDescription } from '_components/core';
-import { getTranslation, getContentTypes, circleModal, promptModal } from '_helpers';
+import { getTranslation, getContentTypes, circleModal, promptModal, uploadFile } from '_helpers';
 import { updateStore } from '_unistore';
 import { route } from 'preact-router';
 // eslint-disable-next-line import/extensions
@@ -66,13 +66,7 @@ class PostContent extends Component {
 	componentDidMount = () => {
 	  getCommunityInfo()
 			.then((res) => {
-				console.log('result----', res);
-				if(res && res.success) {
-					this.setState({
-						...this.initialState,
-						communityId: res.data._id
-					});
-				} else {
+				if(!res) {
 					promptModal({
 						title: getTranslation('NO_COMMUNITY_INFO'),
 						textYes: getTranslation('SETUP_COMMUNITY_PAGE_NOW'),
