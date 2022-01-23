@@ -53,20 +53,8 @@ export const initialStore = {
   communityDetails: {
     id: '',
     image: '',
-    news: {
-      fetching: false,
-      result: false,
-      data: [],
-      total: 0,
-      page: 1 
-    },
-    events: {
-      fetching: false,
-      result: false,
-      data: [],
-      total: 0,
-      page: 1 
-    }
+    fetching: false,
+    result: false,
   },
   notifications: {
     fetching: false,

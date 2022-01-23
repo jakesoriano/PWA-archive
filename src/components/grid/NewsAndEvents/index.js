@@ -5,27 +5,18 @@ import {
 	fetchNewsByCommunity,
 	fetchEvents,
 	fetchAnnouncements,
-	likeShareAnnouncements,
-	removeLikeAnnouncements,
 	likeShareNews,
-	shareEvent,
-	removeLikeNews,
-	selectTag } from '_mutations';
+	removeLikeNews } from '_mutations';
 import {
 	getTranslation,
 	dateEventFormat,
 	playStore
 } from '_helpers';
-import { ImageLoader, LoaderRing } from '_components/core';
+import { ImageLoader, LoaderRing, EventsList, AnnouncementsList } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 import { getCurrentUrl } from 'preact-router';
 // eslint-disable-next-line import/extensions
 import style from './style';
-const eventTags = [
-	'INTERESTED',
-	'GOING',
-	'NOT_INTERESTED'
-];
 
 // eslint-disable-next-line react/prefer-stateless-function
 class NewsAndEvents extends Component {
@@ -35,7 +26,6 @@ class NewsAndEvents extends Component {
 			active: '',
 			tabs: ['events', 'announcements', 'news'],
 			selectedItem: null,
-			eventDropdown: null,
       moreFetching: false
 		}
 	};
@@ -51,11 +41,11 @@ class NewsAndEvents extends Component {
 				this.toggleTab(tabs[0])
 			});
 		}
-		tabs.map((i) => {
+		tabs.map((i) => { 
 			if (i === 'events') {
 				fetchEvents();
 			} else if (i === 'news') {
-				this.fetchNews();
+				fetchNews();
 			} else if (i === 'announcements') {
 				fetchAnnouncements();
 			}
@@ -96,14 +86,6 @@ class NewsAndEvents extends Component {
 			selectedItem: data
 		});
 	};
-	
-	onLikeAnnouncement = (item) => {
-		if (!item.liked) {
-			likeShareAnnouncements(item, 'A', 'liked', 'X');
-		} else {
-			removeLikeAnnouncements(item, 'A', 'X');
-		}
-	}
 
 	onLikeNews = (item) => {
 		if (!item.liked) {
@@ -129,84 +111,6 @@ class NewsAndEvents extends Component {
 		});
 		if (!item.shared) {
 			likeShareNews(item, 'N', 'shared', item.community.id);
-		}
-	};
-
-	onShareAnnouncement = (item) => {
-		nativeShare({
-			url: item.image,
-			title: item.title,
-			message: `\n\n
-				We tell it as it is. Only the truth, KakamPink!\n\n
-				Shared via Kakampink App\n
-				Download now!\n
-				Android: ${playStore}\n\n
-				Article Title: ${item.title}\n
-				Ariticle Link: ${item.link || ''}\n
-				Use my invite code: ${this.props.authUser.profile.refCode}
-			`
-		});
-		if (!item.shared) {
-			likeShareAnnouncements(item, 'A', 'shared', 'X');
-		}
-	};
-
-	onClickInterested = (item) => {
-		this.setState({
-			eventDropdown: {
-				show: true,
-				id: item.id,
-				tagged: item.tagged
-			}
-		});
-	}
-
-	onSelectEventTag = (tag, item) => {
-		selectTag(tag, item);
-		this.setState({
-			eventDropdown: null,
-		});
-	};
-
-	renderEventsDropdown = (item, isLastItem) => {
-		const { eventDropdown } = this.state;
-		if (eventDropdown && eventDropdown.show && eventDropdown.id === item.id) {
-			return (
-				<div 
-					className={`${eventDropdown.tagged === 'INTERSTED'} ${style.selectEventDropdown} ${isLastItem ? style.lastItem : ''}`}>
-					{eventTags.map(tag => (
-						<a
-							className={eventDropdown.tagged === tag ? 'extraBold' : ''}
-							onClick={() => {
-								this.onSelectEventTag(tag, item)
-							}}>
-								<ImageLoader
-								src={ `assets/images/${tag}-${eventDropdown.tagged === tag ? 'pink' : 'dark'}.png`}
-								style={{container: style.likeButton}}/>
-								{getTranslation(tag)}
-						</a>
-					))}
-				</div>
-			);
-		}
-		return null;
-	};
-
-	onShareEvent = (item) => {
-		nativeShare({
-			url: item.image,
-			title: item.title,
-			message: `\n\n
-				Unity despite diversity leads to victory. Come join us, KakamPink!\n\n
-				Event Title: ${item.title}\n
-				Event Date: ${dateEventFormat(item.date)}\n
-				${item.link ? 'Event Link: ' + item.link : ''}\n\n
-				${getTranslation(item.isOnline ? 'ONLINE_EVENT' : 'ONSITE_EVENT')}:\n
-				Event Location: ${item.location}
-			`
-		});
-		if (!item.shared) {
-			shareEvent(item);
 		}
 	};
 
@@ -269,182 +173,24 @@ class NewsAndEvents extends Component {
 	};
 
 	renderNews = (data) => {
-		if (data.length) {
-			return data.map(i => (
-				<div className={style.contentItem}>
-					<div className={style.community}>
-						<ImageLoader
-							src={i.community.image}
-							style={{container: style.comImage}}
-							lazy />
-						<span>{getTranslation(i.community.name)}</span>
-					</div>
-					<a className={style.details} onClick={() => {
-						this.onClickItem(i);
-					}}>
-						<ImageLoader
-							src={i.image}
-							style={{container: style.detailImage}}
-							lazy />
-						<div className={style.detailContent}>
-							<span className={`bold ${style.detailTitle}`}>{getTranslation(i.title)}</span>
-							{i.likeCount || i.shareCount ? (
-								<div className={style.detailCount}>
-									{i.likeCount ? <span>{`${i.likeCount} ${getTranslation('LIKES')}`}</span> : ''}
-									{i.shareCount ? <span>{`${i.shareCount} ${getTranslation('SHARES')}`}</span> :''}
-								</div>
-							): null}
-						</div>
-					</a>
-					<div className={style.buttons}>
-						<a
-							className={i.liked ? `extraBold ${style.buttonLikeActive}` : ''}
-							onClick={() => {
-								this.onLikeNews(i);
-							}}>
-								<ImageLoader
-								src={!i.liked ? 'assets/images/fb-like-transparent.png' : 'assets/images/fb-like-transparent-dark.png'}
-								style={{container: style.likeButton}}/>
-								{getTranslation('LIKE')}
-							</a>
-						<a
-							className={i.shared ? `extraBold ${style.buttonShareActive}` : ''}
-							onClick={() => {
-								this.onShareNews(i);
-							}}>
-								<ImageLoader
-								src={!i.shared ? 'assets/images/share_icon_lite.png' : 'assets/images/share_icon_dark.png'}
-								style={{container: style.likeButton}}/>
-								{getTranslation('SHARE')}</a>
-					</div>
-				</div>
-			))
-		}
-
-		return <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
 	};
 
 	renderAnnouncements = (data) => {
-		if (data.length) {
-			return data.map(i => (
-				<div className={style.contentItem}>
-					<a className={style.details} onClick={() => {
-						this.onClickItem(i);
-					}}>
-						<ImageLoader
-							src={i.image}
-							style={{container: style.detailImage}}
-							lazy />
-						<div className={style.detailContent}>
-							<span className={`bold ${style.detailTitle}`}>{getTranslation(i.title)}</span>
-							{i.likeCount || i.shareCount ? (
-								<div className={style.detailCount}>
-									{i.likeCount ? <span>{`${i.likeCount} ${getTranslation('LIKES')}`}</span> : ''}
-									{i.shareCount ? <span>{`${i.shareCount} ${getTranslation('SHARES')}`}</span> :''}
-								</div>
-							): null}
-						</div>
-					</a>
-					<div className={style.buttons}>
-						<a
-							className={i.liked ? `extraBold ${style.buttonLikeActive}` : ''}
-							onClick={() => {
-								this.onLikeAnnouncement(i);
-							}}>
-								<ImageLoader
-								src={!i.liked ? 'assets/images/fb-like-transparent.png' : 'assets/images/fb-like-transparent-dark.png'}
-								style={{container: style.likeButton}}/>
-								{getTranslation('LIKE')}
-							</a>
-						<a
-							className={i.shared ? `extraBold ${style.buttonShareActive}` : ''}
-							onClick={() => {
-								this.onShareAnnouncement(i);
-							}}>
-								<ImageLoader
-								src={!i.shared ? 'assets/images/share_icon_lite.png' : 'assets/images/share_icon_dark.png'}
-								style={{container: style.likeButton}}/>
-								{getTranslation('SHARE')}</a>
-					</div>
-				</div>
-			))
-		}
-
-		return <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
+		return <AnnouncementsList data={data} authUser={this.props.authUser} onClickItemCallback={this.onClickItem} />
 	};
 
 	renderEvents = (data) => {
-		if (data.length) {
-			return data.map((i, index) => (
-				<div className={`${style.contentItem} ${style.eventItem}`}>
-					<div className={style.community}>
-						<ImageLoader
-							src={i.community.image}
-							style={{container: style.comImage}}
-							lazy />
-						<span>{getTranslation(i.community.name)}</span>
-					</div>
-					<a className={style.details} onClick={() => {
-						this.onClickItem(i);
-					}}>
-						<ImageLoader
-							src={i.image}
-							style={{container: style.detailImage}}
-							lazy />
-						<div className={style.detailContent}>
-							<p>{dateEventFormat(i.date)} <br />
-							{`${getTranslation('EVENT_BY')}: ${i.by}`} <br />
-							{getTranslation(i.isOnline ? 'ONLINE_EVENT' : 'ONSITE_EVENT')}</p>
-							{i.likeCount || i.shareCount ? (
-								<div className={style.detailCount}>
-									{i.likeCount && <span>{`${i.likeCount} ${getTranslation('LIKES')}`}</span>}
-									{i.shareCount && <span>{`${i.shareCount} ${getTranslation('SHARES')}`}</span>}
-								</div>
-							): null}
-						</div>
-					</a>
-					<div className={style.buttons}>
-						<a
-							className={i.tagged ? `extraBold ${style.buttonLikeActive}` : ''}
-							id={i.id}
-							onClick={() => {
-								this.onClickInterested(i);
-							}}
-							>
-							<ImageLoader
-							src={!i.tagged ? 'assets/images/INTERESTED-dark.png' : `assets/images/${i.tagged}-pink.png`}
-							style={{container: style.likeButton}}/>
-							{getTranslation(i.tagged || eventTags[0])}
-							<ImageLoader
-								src={'assets/images/drop_down_icon.png'}
-								style={{container: style.likeButton}}/>
-						</a>
-						<a
-							className={i.shared ? style.buttonShareActive : ''}
-							onClick={() => {
-								this.onShareEvent(i);
-							}}>
-							<ImageLoader
-							src={!i.shared ? 'assets/images/share_icon_lite.png' : 'assets/images/share_icon_dark.png'}
-							style={{container: `extraBold ${style.likeButton}`}}/>
-							{getTranslation('SHARE')}
-						</a>
-						{this.renderEventsDropdown(i, (data.length - 1) === index)}
-					</div>
-				</div>
-			))
-		}
-
-		return <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
+		return <EventsList data={data} onClickItemCallback={this.onClickItem} />
 	};
 
 	renderData = (active) => {
+		let selector = (getCurrentUrl().includes('community') && active === 'events') ? this.props.communityDetails[active] : this.props[active];
 		if (active === 'news') {
-			return this.renderNews(this.props[active].data)
+			return this.renderNews(selector.data)
 		} else if (active === 'events') {
-			return this.renderEvents(this.props[active].data)
+			return this.renderEvents(selector.data)
 		} else if (active === 'announcements') {
-			return this.renderAnnouncements(this.props[active].data)
+			return this.renderAnnouncements(selector.data)
 		}
 	}
 

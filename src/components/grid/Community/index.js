@@ -4,6 +4,7 @@ import { store, updateStore } from '_unistore';
 import { getTranslation, formatN } from '_helpers';
 import {
   fetchCommunities,
+  fetchEventsByCommunityId,
   filterCommunity,
   followCommunity,
   unFollowCommunity
@@ -85,6 +86,7 @@ class Community extends Component {
         id: id
       }
     });
+    fetchEventsByCommunityId(id);
     route(`community-details`);
   }
 
