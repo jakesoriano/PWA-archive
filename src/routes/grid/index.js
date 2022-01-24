@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-indent */
 import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { route } from 'preact-router';
+import { route, getCurrentUrl } from 'preact-router';
 import { updateStore, store } from '_unistore';
 import {
   prefetch,
@@ -190,7 +190,7 @@ class Grid extends Component {
 
 	componentDidUpdate = (prevProps) => {
 	  // change language
-	  const { selectedLanguage, url } = this.props;
+	  const { selectedLanguage } = this.props;
 	  if (
 	    prevProps !== undefined &&
 			prevProps.selectedLanguage !== selectedLanguage
@@ -336,19 +336,19 @@ class Grid extends Component {
 
 	render = (
 	  { authUser, translation, messageModal, promptModal, componentModal, pageLoader, alertShow, popupModal, circleModal },
-	  { data, popup, rightSideBar, url }
+	  { data, popup, rightSideBar }
 	) => {
 	  if (!data || !translation.data) {
 	    return <LoaderRing fullpage />;
 	  }
-
 		// redirect to landing page
+		const url = getCurrentUrl();
 		if (!authUser && data.auth && url !== '/') {
 			route('/', true);
+		} else if (authUser && authUser.isNewUser && url !== '/registration-invite' && url !== '/home') {
+			route('/registration-invite', true);
 		} else if (authUser && !authUser.isNewUser && !data.auth && url !== '/home') {
 			route('/home', true);
-		} else if (authUser && authUser.isNewUser) {
-			route('/registration-invite', true);
 		}
 
 	  return (
@@ -447,7 +447,7 @@ if (typeof window !== 'undefined') {
 	// native back
   window.onNativeBack = () => {
 		const { authUser } = store.getState();
-		const path = location.hash.replace('#', '');
+		const path = getCurrentUrl();
 		if (authUser && path !== '/home') {
 			history.back();
 		} else if (!authUser && path !== '/landing' && path !== '/') {
@@ -459,7 +459,7 @@ if (typeof window !== 'undefined') {
 
 	// native on resume
 	window.onResume = () => {
-		const path = location.hash.replace('#', '');
+		const path = getCurrentUrl();
 		console.log('onResume', path);
 	}
 }
