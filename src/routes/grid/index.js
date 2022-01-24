@@ -345,8 +345,10 @@ class Grid extends Component {
 		// redirect to landing page
 		if (!authUser && data.auth && url !== '/') {
 			route('/', true);
-		} else if (authUser && !data.auth && url !== '/home') {
+		} else if (authUser && !authUser.isNewUser && !data.auth && url !== '/home') {
 			route('/home', true);
+		} else if (authUser && authUser.isNewUser) {
+			route('/registration-invite', true);
 		}
 
 	  return (

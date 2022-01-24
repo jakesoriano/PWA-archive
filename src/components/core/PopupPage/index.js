@@ -12,42 +12,47 @@ class PopupPage extends Component {
 	ref = createRef();
 
 	handleBack = (cb) => {
-	  if (this.ref.current) {
-	    this.ref.current && this.ref.current.classList.remove(style.animate);
-	    this.ref.current && this.ref.current.classList.add(style.close);
-	    setTimeout(cb, 400);
-	  } else {
-	    cb();
-	  }
+		if (this.ref.current) {
+			this.ref.current && this.ref.current.classList.remove(style.animate);
+			this.ref.current && this.ref.current.classList.add(style.close);
+			setTimeout(cb, 400);
+		} else {
+			cb();
+		}
 	};
 
 	componentDidMount = () => {
-	  if (this.ref.current) {
-	    setTimeout(() => {
-	      this.ref.current && this.ref.current.classList.add(style.animate);
-	    }, 0);
-	  }
+		if (this.ref.current) {
+			setTimeout(() => {
+				this.ref.current && this.ref.current.classList.add(style.animate);
+			}, 0);
+		}
 	};
 
-	render = ({ title, children, onBack, customBack, page }) => (
-	  <div ref={this.ref} className={`${style.popupPage} popup-${page}`}>
-	    <div className={style.header}>
-	      <button
-	        className="icon-back clickable"
-	        onClick={() => {
-	          this.handleBack(customBack || onBack);
-	        }}
-	      >
+	render = ({ title, children, onBack, customBack, page, authUser }) => (
+		<div
+			ref={this.ref}
+			className={`${style.popupPage} popup-${page} ${
+				!authUser ? style.noAnimate : ''
+			}`}
+		>
+			<div className={style.header}>
+				<button
+					className="icon-back clickable"
+					onClick={() => {
+						this.handleBack(customBack || onBack);
+					}}
+				>
 					<ImageLoader
 						style={{ container: style.backImg }}
 						src="assets/images/backbutton.png"
 					/>
 				</button>
-	      <h3>{getTranslation(title)}</h3>
-	    </div>
-	    <div className={style.body}>{children}</div>
-	  </div>
+				<h3>{getTranslation(title)}</h3>
+			</div>
+			<div className={style.body}>{children}</div>
+		</div>
 	);
 }
 
-export default connect(['customBack'])(PopupPage);
+export default connect(['customBack', 'authUser'])(PopupPage);
