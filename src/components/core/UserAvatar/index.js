@@ -78,7 +78,7 @@ class UserAvatar extends Component {
       <label for="inputAttachment">
         <ImageLoader
           src={authUser.profile.image || getDefaultAvatar()}
-          style={{ container: style.avatar }}
+          style={{ container: style.avatar, image: style.img }}
           lazy
         />
         </label>

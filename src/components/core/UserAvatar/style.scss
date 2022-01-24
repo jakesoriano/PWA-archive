@@ -9,6 +9,10 @@
     border-radius: 80px;
     margin-right: 15px;
   }
+  .img {
+    top: 50%;
+    transform: translateY(-50%);
+  }
   .attachment {
     visibility: hidden;
     position: absolute;
