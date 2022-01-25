@@ -3,6 +3,7 @@ import { connect } from 'unistore/preact';
 import { 
 	fetchNews,
 	fetchNewsByCommunity,
+	fetchEventsByCommunityId,
 	fetchEvents,
 	fetchAnnouncements } from '_mutations';
 import {
@@ -55,9 +56,7 @@ class NewsAndEvents extends Component {
 	}
 
   componentDidUpdate = () => {
-		let { active } = this.state;
-		let selector = (getCurrentUrl().includes('community')) ? this.props.communityDetails[active] : this.props[active];
-    if (this.state.moreFetching && selector && !selector.fetching) {
+    if (this.state.moreFetching && this.getSelectedTabContent() && !this.getSelectedTabContent().fetching) {
       this.setState({
         moreFetching: false
       });
@@ -67,18 +66,17 @@ class NewsAndEvents extends Component {
   handleShowMore = () => {
     if (!this.state.moreFetching) {
 			let { active } = this.state;
-			let selector = (getCurrentUrl().includes('community')) ? this.props.communityDetails[active] : this.props[active];
       // flag
       this.setState({
         moreFetching: true
       });
       // fetch
       if (active === 'news') {
-        fetchNews(selector.page + 1);
+        fetchNews(this.getSelectedTabContent().page + 1);
       } else if (active === 'events') {
-        fetchEvents(selector.page + 1);
+        getCurrentUrl().includes('community') ? fetchEventsByCommunityId(this.props.communityDetails.details.id, this.getSelectedTabContent().page + 1) : fetchEvents(this.getSelectedTabContent().page + 1);
       } else {
-        fetchAnnouncements(selector.page + 1);
+        fetchAnnouncements(this.getSelectedTabContent().page + 1);
 			}
     }
   };
@@ -166,14 +164,13 @@ class NewsAndEvents extends Component {
 	};
 
 	renderData = (active) => {
-		let selector = (getCurrentUrl().includes('community')) ? this.props.communityDetails[active] : this.props[active];
-		if (selector) {
+		if (this.getSelectedTabContent()) {
 			if (active === 'news') {
-				return this.renderNews(selector.data)
+				return this.renderNews(this.getSelectedTabContent().data)
 			} else if (active === 'events') {
-				return this.renderEvents(selector.data)
+				return this.renderEvents(this.getSelectedTabContent().data)
 			} else if (active === 'announcements') {
-				return this.renderAnnouncements(selector.data)
+				return this.renderAnnouncements(this.getSelectedTabContent().data)
 			}
 		}
 	}
@@ -191,7 +188,6 @@ class NewsAndEvents extends Component {
 	}
 
 	render = (props, state) => {
-		let selector = getCurrentUrl().includes('community') ? props.communityDetails[state.active] : props[state.active];
 	  return (
 			<>
 				<div className={style.newsAndEvents}>
@@ -200,9 +196,11 @@ class NewsAndEvents extends Component {
 					</div>
 					<div className={style.content}>
 						{/* data */}
-						{ this.renderData(state.active) }
+						{ this.getSelectedTabContent() && this.getSelectedTabContent().page === 1 && !this.getSelectedTabContent().data.length && this.getSelectedTabContent().fetching 
+							? <LoaderRing styles={{container: style.loaderWrapCenter}} />
+							: this.renderData(state.active) }
 						{/* show more */}
-						{state.active && selector && selector.data.length < selector.total && !selector.fetching && (
+						{state.active && this.getSelectedTabContent() && this.getSelectedTabContent().data.length < this.getSelectedTabContent().total && !this.getSelectedTabContent().fetching && (
 							<button className={style.showMore} onClick={this.handleShowMore}>
 								<span><span>&#8659;</span> {getTranslation('SHOW_MORE')}</span>
 							</button>
@@ -218,8 +216,8 @@ class NewsAndEvents extends Component {
 		);
 	};
 
-	selected = (selected) => {
-		return getCurrentUrl().includes('community') ? this.props.communityDetails[selected] : this.props[selected]
+	getSelectedTabContent = () => {
+		return getCurrentUrl().includes('community') ? this.props[`c${this.state.active}`] : this.props[this.state.active]
 	}
  
 	fetchNews = () => {
@@ -231,4 +229,4 @@ class NewsAndEvents extends Component {
 		}
 	}
 }
-export default connect(['news', 'events', 'announcements', 'authUser', 'communityDetails',])(NewsAndEvents);
+export default connect(['news', 'events', 'announcements', 'authUser', 'cevents', 'communityDetails',])(NewsAndEvents);

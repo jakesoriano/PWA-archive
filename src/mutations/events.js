@@ -57,17 +57,17 @@ export function fetchEvents (page, limit) {
   });
 }
 export function fetchEventsByCommunityId (id, page, limit) {
-  const { communityDetails } = store.getState();
+  const { cevents } = store.getState();
   
   // fetching
-  if(communityDetails.fetching) {
+  if(cevents.fetching) {
     return;
   }
 
   // initial state
   updateStore({
-    communityDetails: {
-      ...communityDetails,
+    cevents: {
+      ...cevents,
       fetching: true,
       result: false
     }
@@ -82,27 +82,28 @@ export function fetchEventsByCommunityId (id, page, limit) {
       }
     })
     .then((res) => {
-      updateStore({
-        communityDetails: {
-          ...communityDetails,
-          events: {
-            data: [
-              ...res.data
-            ],
-            total: res.data.length,
-            page: page || 1
-          },
-          fetching: false,
-          result: true
-        }
-      });
-      console.log(`SPA >> fetchEventsByCommunityId Success`, res.success);
+      if (res && res.success) {
+        updateStore({
+          cevents: {
+            ...cevents,
+            data: page ? [
+              ...cevents.data,
+              ...res.data.results
+            ] : res.data.results,
+            total: res.data.total,
+            page: page || 1,
+            fetching: false,
+            result: true
+          }
+        });
+      }
+      console.log(`SPA >> fetchEventsByCommunityId Success`, res);
       resolve(true);
     })
     .catch((err) => {
       updateStore({
-        communityDetails: {
-          ...communityDetails,
+        cevents: {
+          ...cevents,
           fetching: false,
           result: true
         }
@@ -207,12 +208,12 @@ export function shareEvent (item, parentId, parentType) {
 }
 
 export function selectTag (tag, item) {
-  let { events, communityDetails } = store.getState();
+  let { events, cevents } = store.getState();
   const { authUser } = store.getState();
   const defaultTag = item.tagged;
   
   // fetching
-  if(events.fetching || communityDetails.fetching) {
+  if(events.fetching || cevents.fetching) {
     return;
   }
 
@@ -227,19 +228,17 @@ export function selectTag (tag, item) {
     }),
     fetching: true
   }
-  communityDetails = {
-    ...communityDetails,
-    events: {
-      data: communityDetails.events.data.map(i => {
-        if(i.id === item.id) {
-          i.tagged = tag;
-        }
-        return i;
-      }),
-      fetching: true
-    }
+  cevents = {
+    ...cevents,
+    data: cevents.data.map(i => {
+      if(i.id === item.id) {
+        i.tagged = tag;
+      }
+      return i;
+    }),
+    fetching: true
   }
-  updateStore({ events, communityDetails });
+  updateStore({ events, cevents });
 
   return new Promise((resolve) => {
     xhr(urlTag, {
@@ -257,11 +256,8 @@ export function selectTag (tag, item) {
           ...events,
           fetching: false
         },
-        communityDetails: {
-          ...communityDetails,
-          events: {
-            ...communityDetails.events,
-          },
+        cevents: {
+          ...cevents,
           fetching: false
         }
       });
@@ -280,16 +276,14 @@ export function selectTag (tag, item) {
           }),
           fetching: false
         },
-        communityDetails: {
-          ...communityDetails,
-          events: {
-            data: communityDetails.events.data.map(i => {
-              if(i.id === item.id) {
-                i.tagged = defaultTag;
-              }
-              return i;
-            }),
-          },
+        cevents: {
+          ...cevents,
+          data: cevents.data.map(i => {
+            if(i.id === item.id) {
+              i.tagged = defaultTag;
+            }
+            return i;
+          }),
           fetching: false
         }
       });

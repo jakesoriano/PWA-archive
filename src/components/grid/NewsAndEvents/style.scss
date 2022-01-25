@@ -43,7 +43,8 @@
         }
       }
     }
-    .loaderWrap {
+    .loaderWrap,
+    .loaderWrapCenter {
       display: block;
       text-align: right;
       > div div {
@@ -52,6 +53,9 @@
         width: 30px;
         height: 30px;
       }
+    }
+    .loaderWrapCenter {
+      text-align: center;
     }
   }
 }
