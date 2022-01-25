@@ -200,7 +200,9 @@ class NewsAndEvents extends Component {
 					</div>
 					<div className={style.content}>
 						{/* data */}
-						{ this.renderData(state.active) }
+						{ selector && selector.page === 1 && !selector.data.length && selector.fetching 
+							? <LoaderRing styles={{container: style.loaderWrapCenter}} />
+							: this.renderData(state.active) }
 						{/* show more */}
 						{state.active && selector && selector.data.length < selector.total && !selector.fetching && (
 							<button className={style.showMore} onClick={this.handleShowMore}>
