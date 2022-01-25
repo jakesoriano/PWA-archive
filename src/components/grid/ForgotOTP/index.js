@@ -61,7 +61,9 @@ class ForgotOTP extends Component {
 					}
 				} else {
 					if (!isOTPInvalid) {
-						showAlertBox('OTP_INVALID', true);
+						showAlertBox({
+							message: 'OTP_INVALID'
+						});
 						this.setState({
 							isOTPInvalid: true,
 						});

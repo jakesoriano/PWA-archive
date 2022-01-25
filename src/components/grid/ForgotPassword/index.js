@@ -108,20 +108,6 @@ class ForgotPassword extends Component {
     });
   }
 
-	showAlertBox = (message) => {
-		updateStore({
-			alertShow: {
-				success: false,
-				content: message
-			}
-		});
-		setTimeout(() => {
-			updateStore({
-				alertShow: null
-			});
-		}, 5300);
-	}
-
   renderChangeForm = (newPass, confirmPass) => {
     return <form className={style.form}>
       <FormGroup label="New Password" hasError={newPass.hasError}>

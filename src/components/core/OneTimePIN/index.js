@@ -100,7 +100,9 @@ class OneTimePIN extends Component {
 												this.setCountdown();
 											}
 											else {
-												showAlertBox('SOMETHING_WRONG', true)
+												showAlertBox({
+													message: 'SOMETHING_WRONG'
+												});
 											}
 										});
 									}}

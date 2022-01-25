@@ -180,12 +180,19 @@ class PostContent extends Component {
 						...this.initialState
 					});
 					route(`/`);
-					showAlertBox('POST_CONTENT_SUCCESS');
+					showAlertBox({
+						message: 'POST_CONTENT_SUCCESS',
+						success: true
+					});
 				} else {
-					showAlertBox(res.error.message || 'SOMETHING_WRONG', true);
+					showAlertBox({
+						message: es.error.message || 'SOMETHING_WRONG'
+					});
 				}
 			}).catch((err) => {
-				showAlertBox(err.message || 'SOMETHING_WRONG', true);
+				showAlertBox({
+					message: err.message || 'SOMETHING_WRONG'
+				});
 				displayPageLoader(false);
 			});
 	}
@@ -215,7 +222,9 @@ class PostContent extends Component {
 						this.submitData(res.data.image);
 					} else {
 						displayPageLoader(false)
-						showAlertBox(res.errMessage || 'SOMETHING_WRONG', true);
+						showAlertBox({
+							message: res.errMessage || 'SOMETHING_WRONG'
+						});
 					}
 				});
 		}

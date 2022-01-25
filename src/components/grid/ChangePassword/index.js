@@ -126,7 +126,10 @@ class ChangePassword extends Component {
 				displayPageLoader(true);
 				changePassword(data).then((res) => {
 					if(res && res.success) {
-						showAlertBox('CHANGE_PASS_SUCCESS', false);
+						showAlertBox({
+							message: 'CHANGE_PASS_SUCCESS',
+							success: true
+						});
 						nativeSetCredential({
 							username: this.props.authUser.profile.username,
 							password: this.state.newPass.value
@@ -138,11 +141,15 @@ class ChangePassword extends Component {
 							this.props.cbSuccess();
 						}
 					} else {
-						showAlertBox(res.error.message || 'SOMETHING_WRONG', true);
+						showAlertBox({
+							message: res.error.message || 'SOMETHING_WRONG'
+						});
 					}
 					displayPageLoader(false);
 				}).catch((err) => {
-					showAlertBox('SOMETHING_WRONG', true);
+					showAlertBox({
+						message: 'SOMETHING_WRONG'
+					});
 					displayPageLoader(false);
 				});
 				

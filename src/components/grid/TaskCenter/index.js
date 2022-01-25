@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { updateStore } from '_unistore';
-import { getTranslation, dateEventFormat, displayPageLoader } from '_helpers';
+import { getTranslation, dateEventFormat, displayPageLoader, showAlertBox } from '_helpers';
 import { connect } from 'unistore/preact';
 import { ImageLoader, ButtonDescription } from '_components/core';
 import { fetchTasks, validateTask } from '_mutations';
@@ -59,12 +59,9 @@ class TaskCenter extends Component {
 						 */
 						displayPageLoader(false);
 						if (status === 1) {
-							updateStore({
-								alertShow: {
-									success: true,
-									content: getTranslation('TASK_MSG_SUCCESS'),
-									noTopBar: true
-								}
+							showAlertBox({
+								message: getTranslation('TASK_MSG_SUCCESS'),
+								success: true
 							});
 							this.setState({
 								item: this.props.tasks.data.reduce((result, item) => {
@@ -77,40 +74,24 @@ class TaskCenter extends Component {
 								FB.XFBML.parse();
 							});
 						} else if (status === 0) {
-							updateStore({
-								alertShow: {
-									success: false,
-									content: getTranslation('TASK_MSG_FAIL'),
-									noTopBar: true
-								}
+							showAlertBox({
+								message: getTranslation('TASK_MSG_FAIL')
 							});
 						} else {
-							updateStore({
-								alertShow: {
-									success: false,
-									content: getTranslation('SOMETHING_WRONG'),
-									noTopBar: true
-								}
+							showAlertBox({
+								message: getTranslation('SOMETHING_WRONG')
 							});
 						}
 					})
 					.catch(err => {
-						updateStore({
-							alertShow: {
-								success: false,
-								content: getTranslation('SOMETHING_WRONG'),
-								noTopBar: true
-							}
+						showAlertBox({
+							message: getTranslation('SOMETHING_WRONG')
 						});
 					});
 				} else if (res.error !== 'SIGN_IN_CANCELLED') {
 					displayPageLoader(false);
-					updateStore({
-						alertShow: {
-							success: false,
-							content: getTranslation('ACCOUNT_NOT_FOUND'),
-							noTopBar: true
-						}
+					showAlertBox({
+						message: getTranslation('ACCOUNT_NOT_FOUND')
 					});
 				}
 			})

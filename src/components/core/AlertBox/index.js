@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { updateStore } from '_unistore';
-import { getTranslation } from '_helpers';
+import { getTranslation, showAlertBox } from '_helpers';
 import { ImageLoader } from '_components/core';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -25,9 +25,7 @@ export default class AlertBox extends Component {
       }
       // remove data
       setTimeout(() => {
-        updateStore({
-          alertShow: null
-        });
+        showAlertBox(null);
       }, 200);
     }, 5000);
 	};
@@ -35,8 +33,8 @@ export default class AlertBox extends Component {
   componentWillUnmount = () => {
     this.isMounted = false;
   }
-	render = ({ success, content, noTopBar }) => {
-    if (!content) {
+	render = ({ success, message, noTopBar }) => {
+    if (!message) {
       return null;
     }
     
@@ -48,7 +46,7 @@ export default class AlertBox extends Component {
           style={{ container: style.ico }}
         />
          </span>
-        <span className={style.alertText}>{getTranslation(content)}</span>
+        <span className={style.alertText}>{getTranslation(message)}</span>
       </div>
     );
   };

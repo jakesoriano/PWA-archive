@@ -372,7 +372,9 @@ class Signup extends Component {
 										if (res.success) {
 											route(`/${this.props.parent}/registration-otp`);
 										} else {
-											showAlertBox('SOMETHING_WRONG', true);
+											showAlertBox({
+												message: 'SOMETHING_WRONG'
+											});
 										}
 									})
 									.catch((err) => {
@@ -390,19 +392,12 @@ class Signup extends Component {
 						});
 					}
 				} else {
-					showAlertBox('SOMETHING_WRONG', true);
+					showAlertBox({
+						message: 'SOMETHING_WRONG'
+					});
 				}
 			});
 		}
-	};
-
-	showAlertBox = (message) => {
-		updateStore({
-			alertShow: {
-				success: false,
-				content: message,
-			},
-		});
 	};
 
 	render = (

@@ -40,7 +40,9 @@ class OneTimePIN extends Component {
 				route('/home', true);
 			} else {
 				if (!isOTPInvalid) {
-					showAlertBox('OTP_INVALID', true);
+					showAlertBox({
+						message: 'OTP_INVALID'
+					});
 					this.setState({
 						isOTPInvalid: true,
 					});
@@ -123,7 +125,9 @@ class OneTimePIN extends Component {
 				this.setCountdown();
 			}
 			else {
-				showAlertBox('SOMETHING_WRONG', true);
+				showAlertBox({
+					message: 'SOMETHING_WRONG'
+				});
 			}
 		})
 	};

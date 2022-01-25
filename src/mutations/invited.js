@@ -58,7 +58,9 @@ export function newInvite (data) {
       .then((res) => {
         if (!res.success) {
           console.log(`SPA >> newInvite Error`, res);
-          showAlertBox('SOMETHING_WRONG', true)
+          showAlertBox({
+						message: 'SOMETHING_WRONG'
+          })
           resolve(true);
         } else {
           console.log(`SPA >> newInvite successful`, res);

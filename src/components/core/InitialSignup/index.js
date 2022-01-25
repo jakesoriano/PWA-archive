@@ -4,7 +4,7 @@ import { Component } from 'preact';
 import { route } from 'preact-router';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
-import { getTranslation, displayPageLoader } from '_helpers';
+import { getTranslation, displayPageLoader, showAlertBox } from '_helpers';
 import { validateUsername } from '_mutations';
 import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
 import {
@@ -176,32 +176,23 @@ class InitialSignup extends Component {
               });
               route(`/${this.props.parent}/terms`);
             } else {
-              updateStore({
-                alertShow: {
-                  success: false,
-                  content: getTranslation('ACCOUNT_EXIST'),
-                  noTopBar: true
-                }
+              showAlertBox({
+                message: 'ACCOUNT_EXIST',
+                noTopBar: true
               });
             }
           });
         } else if (res.error !== 'SIGN_IN_CANCELLED') {
-          updateStore({
-            alertShow: {
-              success: false,
-              content: getTranslation(typeof res.error === 'string' ? res.error : 'SOMETHING_WRONG'),
+            showAlertBox({
+              message: typeof res.error === 'string' ? res.error : 'SOMETHING_WRONG',
               noTopBar: true
-            }
-          });
+            });
         }
       })
       .catch(err => {
-        updateStore({
-          alertShow: {
-            success: false,
-            content: getTranslation('SOMETHING_WRONG'),
-            noTopBar: true
-          }
+        showAlertBox({
+          message: 'SOMETHING_WRONG',
+          noTopBar: true
         });
       })
   };

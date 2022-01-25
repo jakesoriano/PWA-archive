@@ -4,7 +4,7 @@ import { updateStore } from '_unistore';
 import { updateAvatar } from '_mutations';
 import { connect } from 'unistore/preact';
 import { nativeSelfie } from '_platform/helpers';
-import { getTranslation } from '_helpers';
+import { getTranslation, showAlertBox } from '_helpers';
 import { InviteForm, ImageLoader, ButtonDescription } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
@@ -31,12 +31,8 @@ class RegistrationInvite extends Component {
 				}
 				updateAvatar(data).then((res) => {
 					if (!res.success) {
-						updateStore({
-							alertShow: {
-								success: false,
-								content: getTranslation('SOMETHING_WRONG'),
-								noTopBar: true
-							}
+						showAlertBox({
+							message: getTranslation('SOMETHING_WRONG')
 						});
 					}
 				})
