@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
-import { getTranslation, displayPageLoader, circleModal } from '_helpers';
+import { getTranslation, displayPageLoader, circleModal, showAlertBox } from '_helpers';
 import { forgotCredentials, resendOTP } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
@@ -61,7 +61,7 @@ class ForgotOTP extends Component {
 					}
 				} else {
 					if (!isOTPInvalid) {
-						this.showAlertBox(getTranslation('OTP_INVALID'));
+						showAlertBox('OTP_INVALID', true);
 						this.setState({
 							isOTPInvalid: true,
 						});
@@ -91,19 +91,6 @@ class ForgotOTP extends Component {
 		return resendOTP(data);
 	};
 
-	showAlertBox = (message) => {
-		updateStore({
-			alertShow: {
-				success: false,
-				content: message,
-			},
-		});
-		setTimeout(() => {
-			updateStore({
-				alertShow: null,
-			});
-		}, 5300);
-	};
 	render = ({}) => {
 		return (
 			<div className={style.regOtpWrapper}>

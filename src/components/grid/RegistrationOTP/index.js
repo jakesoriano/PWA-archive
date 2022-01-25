@@ -1,10 +1,10 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
-import { getTranslation, displayPageLoader } from '_helpers';
+import { displayPageLoader, showAlertBox } from '_helpers';
 import { completeRegister, resendOTP } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
-import { ButtonDescription, OneTimePIN } from '_components/core';
+import { OneTimePIN } from '_components/core';
 import style from './style.scss';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -40,7 +40,7 @@ class RegistrationOTP extends Component {
 				route(`registration-invite`, true);
 			} else {
 				if (!isOTPInvalid) {
-					this.showAlertBox(getTranslation('OTP_INVALID'));
+					showAlertBox('OTP_INVALID', true);
 					this.setState({
 						isOTPInvalid: true,
 					});
@@ -63,19 +63,6 @@ class RegistrationOTP extends Component {
 		return resendOTP(data);
 	};
 
-	showAlertBox = (message) => {
-		updateStore({
-			alertShow: {
-				success: false,
-				content: message,
-			},
-		});
-		setTimeout(() => {
-			updateStore({
-				alertShow: null,
-			});
-		}, 5300);
-	};
 	render = ({}) => {
 		return (
 			<div className={style.regOtpWrapper}>

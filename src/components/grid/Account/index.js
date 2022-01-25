@@ -1,9 +1,8 @@
 import { Component } from 'preact';
 // import { route } from 'preact-router';
-import { getTranslation, displayPageLoader, circleModal } from '_helpers';
+import { getTranslation, displayPageLoader, circleModal, showAlertBox } from '_helpers';
 import { useCode } from '_mutations';
 import { connect } from 'unistore/preact';
-import { updateStore } from '_unistore';
 import { FormGroup, FormInput, ButtonDescription } from '_components/core';
 import { route } from 'preact-router';
 import style from './style.scss';
@@ -54,15 +53,6 @@ class Account extends Component {
 		console.log('radio change');
 	};
 
-	showAlertBox = (message, hasError) => {
-		updateStore({
-			alertShow: {
-				success: !hasError,
-				content: message
-			}
-		});
-	}
-
 	handleContinue = (e) => {
 		if (!this.state.inviteCode.value) {
 			this.onCodeChange(this.state.inviteCode.value);
@@ -71,6 +61,7 @@ class Account extends Component {
 			inviteCode: this.state.inviteCode.value,
 		};
 			// Submit invite code
+			displayPageLoader(true)
 			useCode(data).then((res) => {
 				if(res && res.success) {
 					// reset form data
@@ -81,11 +72,11 @@ class Account extends Component {
 					});
 					route(`/community-setup`);
 				} else {
-					this.showAlertBox('INVALID_CODE', true);
+					showAlertBox('INVALID_CODE', true);
 				}
 				displayPageLoader(false);
 			}).catch((err) => {
-				this.showAlertBox('INVALID_CODE', true);
+				showAlertBox('INVALID_CODE', true);
 				displayPageLoader(false);
 			});
 		}

@@ -5,9 +5,9 @@ import { ImageLoader, FormInput } from '_components/core';
 import {
   getDefaultAvatar,
   displayPageLoader,
-  getTranslation,
   resizeImage,
-  uploadFile
+  uploadFile,
+  showAlertBox
 } from '_helpers';
 import { updateAvatar } from '_mutations';
 import style from './style';
@@ -34,13 +34,13 @@ class UserAvatar extends Component {
       if (res.success && res.data) {
         updateAvatar(res.data).then((resUpdate) => {
           if (resUpdate.success) {
-            this.showAlertBox(getTranslation('UPDATE_AVATAR_SUCCESS'));
+            showAlertBox('UPDATE_AVATAR_SUCCESS');
           } else {
-            this.showAlertBox(getTranslation(resUpdate.errMessage || 'SOMETHING_WRONG'), true);
+            showAlertBox((resUpdate.errMessage || 'SOMETHING_WRONG'), true);
           }
         })
       } else {
-        this.showAlertBox(getTranslation(res.errMessage || 'SOMETHING_WRONG'), true);
+        showAlertBox((res.errMessage || 'SOMETHING_WRONG'), true);
       }
     })
   }

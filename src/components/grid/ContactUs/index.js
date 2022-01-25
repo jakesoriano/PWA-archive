@@ -15,7 +15,8 @@ import {
 	getCategories,
 	circleModal,
 	uploadFile,
-	displayPageLoader
+	displayPageLoader,
+	showAlertBox
 } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -118,12 +119,7 @@ class ContactUs extends Component {
 						code: `${getTranslation('CODE_REF')} ${res.refcode || ''}`
 					});
 				} else {
-					updateStore({
-						alertShow: {
-							success: false,
-							content: res.errMessage || 'OOPS_SOMETHING_WRONG'
-						}
-					});
+					showAlertBox(res.errMessage || 'OOPS_SOMETHING_WRONG', true)
 				}
 			})
 	}
@@ -149,12 +145,7 @@ class ContactUs extends Component {
 							this.submitData(res.data.image);
 						} else {
 							displayPageLoader(false);
-							updateStore({
-								alertShow: {
-									success: false,
-									content: res.errMessage || 'OOPS_SOMETHING_WRONG'
-								}
-							});
+							showAlertBox(res.errMessage || 'OOPS_SOMETHING_WRONG', true);
 						}
 					});
 			}

@@ -3,7 +3,7 @@ import { connect } from 'unistore/preact';
 import { getCommunityInfo, createCommunityEvent } from '_mutations';
 import { LoaderRing } from '_components/core';
 import { FormGroup, FormInput, FormDropdown, ImageLoader, ButtonDescription } from '_components/core';
-import { getTranslation, getContentTypes, displayPageLoader, messageModal, uploadFile } from '_helpers';
+import { getTranslation, getContentTypes, displayPageLoader, messageModal, uploadFile, showAlertBox } from '_helpers';
 import { updateStore } from '_unistore';
 import { route } from 'preact-router';
 // eslint-disable-next-line import/extensions
@@ -160,15 +160,6 @@ class PostContent extends Component {
 		});
 	};
 
-	showAlertBox = (message, hasError) => {
-		updateStore({
-			alertShow: {
-				success: !hasError,
-				content: message
-			}
-		});
-	}
-
 	submitData  = (image) => {
 		const data = {
 			title: this.state.title.value,
@@ -189,12 +180,12 @@ class PostContent extends Component {
 						...this.initialState
 					});
 					route(`/`);
-					this.showAlertBox('POST_CONTENT_SUCCESS');
+					showAlertBox('POST_CONTENT_SUCCESS');
 				} else {
-					this.showAlertBox(res.error.message || 'SOMETHING_WRONG', true);
+					showAlertBox(res.error.message || 'SOMETHING_WRONG', true);
 				}
 			}).catch((err) => {
-				this.showAlertBox(err.message || 'SOMETHING_WRONG', true);
+				showAlertBox(err.message || 'SOMETHING_WRONG', true);
 				displayPageLoader(false);
 			});
 	}
@@ -224,12 +215,7 @@ class PostContent extends Component {
 						this.submitData(res.data.image);
 					} else {
 						displayPageLoader(false)
-						updateStore({
-							alertShow: {
-								success: false,
-								content: res.errMessage || 'OOPS_SOMETHING_WRONG'
-							}
-						});
+						showAlertBox(res.errMessage || 'SOMETHING_WRONG', true);
 					}
 				});
 		}

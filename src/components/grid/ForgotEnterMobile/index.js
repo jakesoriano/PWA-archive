@@ -3,7 +3,7 @@ import { route, getCurrentUrl } from 'preact-router';
 import { updateStore } from '_unistore';
 import { forgotCredentials } from '_mutations';
 import { ButtonDescription } from '_components/core';
-import { getTranslation, displayPageLoader } from '_helpers';
+import { getTranslation, displayPageLoader, showAlertBox } from '_helpers';
 import style from './style';
 
 class ForgotEnterMobile extends Component {
@@ -40,11 +40,11 @@ class ForgotEnterMobile extends Component {
         route(`/${this.props.parent}/forgot-otp`);
       } else {
         if (res.error === 'MOBILE_NOT_FOUND') {
-          this.showAlertBox(getTranslation(res.error));
+          showAlertBox(res.error, true);
         } else if (res.error === 'MOBILE_NOT_ALLOWED') {
-          this.showAlertBox(getTranslation(res.error));
+          showAlertBox(res.error, true);
         } else {
-          this.showAlertBox(getTranslation('SOMETHING_WRONG'));
+          showAlertBox('SOMETHING_WRONG', true);
         }
       }
     })

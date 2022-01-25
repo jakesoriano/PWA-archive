@@ -1,5 +1,5 @@
 import { store, updateStore } from '_unistore';
-import { xhr, urlInvited } from '_helpers';
+import { xhr, urlInvited, showAlertBox } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
 export function fetchInvited () {
@@ -58,12 +58,7 @@ export function newInvite (data) {
       .then((res) => {
         if (!res.success) {
           console.log(`SPA >> newInvite Error`, res);
-          updateStore({
-            alertShow: {
-              success: false,
-              content: getTranslation('SOMETHING_WRONG')
-            }
-          });
+          showAlertBox('SOMETHING_WRONG', true)
           resolve(true);
         } else {
           console.log(`SPA >> newInvite successful`, res);
