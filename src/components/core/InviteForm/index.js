@@ -138,7 +138,10 @@ class InviteForm extends Component {
 							})
 								.then((res) => {
 									displayPageLoader(false);
-									showAlertBox('INVITATION_SENT');
+									showAlertBox({
+										message: 'INVITATION_SENT',
+										success: true
+									});
 									this.props.onSendCallback();
 									this.clearForm();
 								})

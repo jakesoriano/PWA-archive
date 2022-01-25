@@ -77,10 +77,15 @@ class CommunitySetup extends Component {
 					this.setState({
 						...this.initialState
 					});
-					showAlertBox('COMMUNITY_SETUP_SUCCESS');
+					showAlertBox({
+						message: 'COMMUNITY_SETUP_SUCCESS',
+						success: true
+					});
 					route(`/home`);
 				} else {
-					showAlertBox(res.message || 'OOPS_SOMETHING_WRONG', true);
+					showAlertBox({
+						message: res.message || 'OOPS_SOMETHING_WRONG'
+					});
 				}
 			})
 	}
@@ -103,10 +108,14 @@ class CommunitySetup extends Component {
 					if(res.success && res.data) {
 						this.submitData(res.data.image);
 					} else {
-						showAlertBox(res.errMessage || 'OOPS_SOMETHING_WRONG', true);
+						showAlertBox({
+							message: res.errMessage || 'OOPS_SOMETHING_WRONG'
+						});
 					}
 				}).catch((err) => {
-					showAlertBox(res.errMessage || 'OOPS_SOMETHING_WRONG', true);
+					showAlertBox({
+						message: res.errMessage || 'OOPS_SOMETHING_WRONG'
+					});
 				});
 			} 
 		}

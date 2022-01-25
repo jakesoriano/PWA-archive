@@ -40,7 +40,9 @@ class RegistrationOTP extends Component {
 				route(`registration-invite`, true);
 			} else {
 				if (!isOTPInvalid) {
-					showAlertBox('OTP_INVALID', true);
+					showAlertBox({
+						message: 'OTP_INVALID'
+					});
 					this.setState({
 						isOTPInvalid: true,
 					});

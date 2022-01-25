@@ -34,13 +34,20 @@ class UserAvatar extends Component {
       if (res.success && res.data) {
         updateAvatar(res.data).then((resUpdate) => {
           if (resUpdate.success) {
-            showAlertBox('UPDATE_AVATAR_SUCCESS');
+            showAlertBox({
+              message: 'UPDATE_AVATAR_SUCCESS',
+              success: true
+            });
           } else {
-            showAlertBox((resUpdate.errMessage || 'SOMETHING_WRONG'), true);
+            showAlertBox({
+              message: (resUpdate.errMessage || 'SOMETHING_WRONG')
+            });
           }
         })
       } else {
-        showAlertBox((res.errMessage || 'SOMETHING_WRONG'), true);
+        showAlertBox({
+          message: (res.errMessage || 'SOMETHING_WRONG')
+        });
       }
     })
   }
@@ -62,15 +69,6 @@ class UserAvatar extends Component {
       // console.error(err);
       this.updateUserImage(file);
     });
-	};
-
-	showAlertBox = (message, hasError) => {
-		updateStore({
-			alertShow: {
-				success: !hasError,
-				content: message
-			}
-		});
 	};
 
   render = ({ authUser, allowUpdate }, { attachment }) => (

@@ -51,7 +51,9 @@ class LoginOTP extends Component {
 				route(`/home`, true);
 			} else {
 				if (!isOTPInvalid) {
-					showAlertBox('OTP_INVALID', true);
+					showAlertBox({
+						message: 'OTP_INVALID'
+					});
 					this.setState({
 						isOTPInvalid: true,
 					});

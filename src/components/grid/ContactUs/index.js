@@ -119,7 +119,9 @@ class ContactUs extends Component {
 						code: `${getTranslation('CODE_REF')} ${res.refcode || ''}`
 					});
 				} else {
-					showAlertBox(res.errMessage || 'OOPS_SOMETHING_WRONG', true)
+					showAlertBox({
+						message: res.errMessage || 'OOPS_SOMETHING_WRONG'
+					})
 				}
 			})
 	}
@@ -145,7 +147,9 @@ class ContactUs extends Component {
 							this.submitData(res.data.image);
 						} else {
 							displayPageLoader(false);
-							showAlertBox(res.errMessage || 'OOPS_SOMETHING_WRONG', true);
+							showAlertBox({
+								message: res.errMessage || 'OOPS_SOMETHING_WRONG'
+							});
 						}
 					});
 			}

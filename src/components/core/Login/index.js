@@ -4,7 +4,7 @@ import { Component } from 'preact';
 import { Link } from 'preact-router/match';
 import { updateStore } from '_unistore';
 import { connect } from 'unistore/preact';
-import { getTranslation, displayPageLoader } from '_helpers';
+import { getTranslation, displayPageLoader, showAlertBox } from '_helpers';
 import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
 import { login } from '_mutations';
 import { route } from 'preact-router';
@@ -79,12 +79,9 @@ class Login extends Component {
             this.props.toggleLoginForm();
             route(`/landing/login-otp`);
           } else {
-            updateStore({
-              alertShow: {
-                success: false,
-                content: getTranslation(errMessage || 'INVALID_USER_PASS'),
-                noTopBar: true
-              }
+            showAlertBox({
+              message: errMessage || 'INVALID_USER_PASS',
+              noTopBar: true
             });
           }
 	      })
@@ -147,22 +144,16 @@ class Login extends Component {
             password: res.data.id
           }, true, 'ACCOUNT_NOT_FOUND');
         } else if (res.error !== 'SIGN_IN_CANCELLED') {
-          updateStore({
-            alertShow: {
-              success: false,
-              content: getTranslation('ACCOUNT_NOT_FOUND'),
-              noTopBar: true
-            }
+          showAlertBox({
+            message: 'ACCOUNT_NOT_FOUND',
+            noTopBar: true
           });
         }
       })
       .catch(err => {
-        updateStore({
-          alertShow: {
-            success: false,
-            content: getTranslation('SOMETHING_WRONG'),
-            noTopBar: true
-          }
+        showAlertBox({
+          message: 'SOMETHING_WRONG',
+          noTopBar: true
         });
       })
   };

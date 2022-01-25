@@ -40,11 +40,17 @@ class ForgotEnterMobile extends Component {
         route(`/${this.props.parent}/forgot-otp`);
       } else {
         if (res.error === 'MOBILE_NOT_FOUND') {
-          showAlertBox(res.error, true);
+          showAlertBox({
+						message: res.error
+          });
         } else if (res.error === 'MOBILE_NOT_ALLOWED') {
-          showAlertBox(res.error, true);
+          showAlertBox({
+						message: res.error
+          });
         } else {
-          showAlertBox('SOMETHING_WRONG', true);
+          showAlertBox({
+						message: 'SOMETHING_WRONG'
+          });
         }
       }
     })
@@ -55,20 +61,6 @@ class ForgotEnterMobile extends Component {
       mobile: e.target.value,
     });
   }
-  
-	showAlertBox = (message) => {
-		updateStore({
-			alertShow: {
-				success: false,
-				content: message
-			}
-		});
-		setTimeout(() => {
-			updateStore({
-				alertShow: null
-			});
-		}, 5300);
-	}
 
   render = () => {
     return (

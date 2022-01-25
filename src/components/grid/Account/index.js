@@ -72,11 +72,15 @@ class Account extends Component {
 					});
 					route(`/community-setup`);
 				} else {
-					showAlertBox('INVALID_CODE', true);
+					showAlertBox({
+						message: 'INVALID_CODE'
+					});
 				}
 				displayPageLoader(false);
 			}).catch((err) => {
-				showAlertBox('INVALID_CODE', true);
+				showAlertBox({
+					message: 'INVALID_CODE'
+				});
 				displayPageLoader(false);
 			});
 		}
