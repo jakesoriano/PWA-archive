@@ -83,7 +83,6 @@ export function fetchEventsByCommunityId (id, page, limit) {
     })
     .then((res) => {
       if (res && res.success) {
-        console.log(res, 'wew')
         updateStore({
           communityDetailsevents: {
             ...communityDetailsevents,

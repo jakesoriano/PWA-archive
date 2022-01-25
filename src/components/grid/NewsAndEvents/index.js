@@ -77,7 +77,6 @@ class NewsAndEvents extends Component {
       if (active === 'news') {
         fetchNews(selector.page + 1);
       } else if (active === 'events') {
-				console.log(selector.page)
         getCurrentUrl().includes('community') ? fetchEventsByCommunityId(this.props.communityDetails.details.id, selector.page + 1) : fetchEvents(selector.page + 1);
       } else {
         fetchAnnouncements(selector.page + 1);
