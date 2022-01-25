@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
-import { getTranslation, displayPageLoader } from '_helpers';
+import { getTranslation, displayPageLoader, showAlertBox } from '_helpers';
 import { completeRegister, resendOTP } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
@@ -40,7 +40,7 @@ class OneTimePIN extends Component {
 				route('/home', true);
 			} else {
 				if (!isOTPInvalid) {
-					this.showAlertBox(getTranslation('OTP_INVALID'));
+					showAlertBox('OTP_INVALID', true);
 					this.setState({
 						isOTPInvalid: true,
 					});
@@ -123,19 +123,11 @@ class OneTimePIN extends Component {
 				this.setCountdown();
 			}
 			else {
-				this.showAlertBox(getTranslation('SOMETHING_WRONG'))
+				showAlertBox('SOMETHING_WRONG', true);
 			}
 		})
 	};
 
-	showAlertBox = (message) => {
-		updateStore({
-			alertShow: {
-				success: false,
-				content: message
-			}
-		});
-	}
 	render = ({}, { pin }) => {
 		return (
 			<div className={style.otpWrapper}>

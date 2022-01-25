@@ -11,6 +11,7 @@ import {
 	getMunicipality,
 	getBarangay,
 	displayPageLoader,
+	showAlertBox
 } from '_helpers';
 import {
 	FormGroup,
@@ -371,7 +372,7 @@ class Signup extends Component {
 										if (res.success) {
 											route(`/${this.props.parent}/registration-otp`);
 										} else {
-											this.showAlertBox(getTranslation('SOMETHING_WRONG'));
+											showAlertBox('SOMETHING_WRONG', true);
 										}
 									})
 									.catch((err) => {
@@ -389,7 +390,7 @@ class Signup extends Component {
 						});
 					}
 				} else {
-					this.showAlertBox(getTranslation('SOMETHING_WRONG'));
+					showAlertBox('SOMETHING_WRONG', true);
 				}
 			});
 		}

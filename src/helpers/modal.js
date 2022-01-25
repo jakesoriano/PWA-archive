@@ -35,3 +35,12 @@ export function circleModal (data) {
     circleModal: data
   });
 }
+
+export function showAlertBox (message, hasError) {
+  store.setState({
+    alertShow: {
+      success: !hasError,
+      content: message
+    }
+  });
+}

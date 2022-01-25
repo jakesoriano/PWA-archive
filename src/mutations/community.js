@@ -276,7 +276,7 @@ export function setupCommunityInfo (data) {
       .then((res) => {
         if (!res.success) {
           console.log(`SPA >> setupCommunity Error`, res);
-          resolve(false);
+          resolve(res.error);
         } else {
           console.log(`SPA >> setupCommunity successful`, res);
           resolve(res);

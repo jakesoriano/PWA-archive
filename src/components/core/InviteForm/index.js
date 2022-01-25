@@ -6,7 +6,8 @@ import {
 	getTranslation,
 	getRegions,
 	playStore,
-	displayPageLoader
+	displayPageLoader,
+	showAlertBox
 } from '_helpers';
 import { FormGroup, FormInput, FormDropdown, ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
@@ -109,15 +110,6 @@ class InviteForm extends Component {
 		return this.props.invited.data.find(i => i.mobile === mobile);
 	};
 
-	showAlertBox = (message, hasError) => {
-		updateStore({
-			alertShow: {
-				success: !hasError,
-				content: message
-			}
-		});
-	};
-
 	onSend = () => {
 		if (!this.state.fname.value || 
 			!this.state.lname.value || 
@@ -146,7 +138,7 @@ class InviteForm extends Component {
 							})
 								.then((res) => {
 									displayPageLoader(false);
-									this.showAlertBox(getTranslation('INVITATION_SENT'));
+									showAlertBox('INVITATION_SENT');
 									this.props.onSendCallback();
 									this.clearForm();
 								})

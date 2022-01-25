@@ -1,11 +1,10 @@
 import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { LoaderRing } from '_components/core';
-import { updateStore } from '_unistore';
 import { route } from 'preact-router';
 import { setupCommunityInfo } from '_mutations';
 import { FormGroup, FormInput, ImageLoader, ButtonDescription } from '_components/core';
-import { getTranslation, uploadFile } from '_helpers';
+import { getTranslation, uploadFile, showAlertBox, displayPageLoader } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -66,15 +65,6 @@ class CommunitySetup extends Component {
 		});
 	};
 
-	showAlertBox = (message, hasError) => {
-		updateStore({
-			alertShow: {
-				success: !hasError,
-				content: message
-			}
-		});
-	}
-
 	submitData  = (image) => {
 		setupCommunityInfo({
 			name: this.state.name.value,
@@ -82,24 +72,21 @@ class CommunitySetup extends Component {
 			image: image
 		})
 			.then((res) => {
+				displayPageLoader(false);
 				if(res && res.success) {
 					this.setState({
 						...this.initialState
 					});
-					this.showAlertBox('COMMUNITY_SETUP_SUCCESS', false);
+					showAlertBox('COMMUNITY_SETUP_SUCCESS');
 					route(`/home`);
 				} else {
-					updateStore({
-						alertShow: {
-							success: false,
-							content: res.errMessage || 'OOPS_SOMETHING_WRONG'
-						}
-					});
+					showAlertBox(res.message || 'OOPS_SOMETHING_WRONG', true);
 				}
 			})
 	}
 
-	handleContinue = () => {
+	handleContinue = (e) => {
+		e.stopPropagation();
 		if (!this.state.about.value || 
 			!this.state.name.value) {
 			this.onAboutChange(this.state.about.value);
@@ -108,6 +95,7 @@ class CommunitySetup extends Component {
 			if (this.state.attachment.file) {
 				// upload file to S3
 				// submit data
+				displayPageLoader(true);
 				uploadFile({
 					file: this.state.attachment.file
 				})
@@ -115,13 +103,10 @@ class CommunitySetup extends Component {
 					if(res.success && res.data) {
 						this.submitData(res.data.image);
 					} else {
-						updateStore({
-							alertShow: {
-								success: false,
-								content: res.errMessage || 'OOPS_SOMETHING_WRONG'
-							}
-						});
+						showAlertBox(res.errMessage || 'OOPS_SOMETHING_WRONG', true);
 					}
+				}).catch((err) => {
+					showAlertBox(res.errMessage || 'OOPS_SOMETHING_WRONG', true);
 				});
 			} 
 		}
@@ -212,9 +197,7 @@ class CommunitySetup extends Component {
 				
 				<div className={style.buttonContainer}>
 					<ButtonDescription
-						onClickCallback={() => {
-							this.handleContinue()
-						}}
+						onClickCallback={this.handleContinue}
 						text={getTranslation('CONTINUE')}
 					/>
 				</div>

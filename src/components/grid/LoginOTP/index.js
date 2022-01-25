@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
-import { getTranslation, displayPageLoader } from '_helpers';
+import { getTranslation, displayPageLoader, showAlertBox } from '_helpers';
 import { loginOTP, login } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
@@ -51,7 +51,7 @@ class LoginOTP extends Component {
 				route(`/home`, true);
 			} else {
 				if (!isOTPInvalid) {
-					this.showAlertBox(getTranslation('OTP_INVALID'));
+					showAlertBox('OTP_INVALID', true);
 					this.setState({
 						isOTPInvalid: true,
 					});
@@ -85,19 +85,6 @@ class LoginOTP extends Component {
 			});;
 	};
 
-	showAlertBox = (message) => {
-		updateStore({
-			alertShow: {
-				success: false,
-				content: message,
-			},
-		});
-		setTimeout(() => {
-			updateStore({
-				alertShow: null,
-			});
-		}, 5300);
-	};
 	render = ({loginInfo},{}) => {
 		return (
 			<div className={style.loginOtpWrapper}>

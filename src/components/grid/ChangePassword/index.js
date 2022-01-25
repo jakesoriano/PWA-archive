@@ -1,9 +1,8 @@
 import { Component } from 'preact';
 // import { route } from 'preact-router';
-import { getTranslation, displayPageLoader } from '_helpers';
+import { getTranslation, displayPageLoader, showAlertBox } from '_helpers';
 import { changePassword } from '_mutations';
 import { connect } from 'unistore/preact';
-import { updateStore } from '_unistore';
 import { FormGroup, FormInput, ButtonDescription } from '_components/core';
 import { nativeSetCredential } from '_platform/helpers';
 import style from './style.scss';
@@ -102,15 +101,6 @@ class ChangePassword extends Component {
 		});
 	};
 
-	showAlertBox = (message, hasError) => {
-		updateStore({
-			alertShow: {
-				success: !hasError,
-				content: message
-			}
-		});
-	}
-
 	handleContinue = (e) => {
 		if (!this.state.currentPass.value || 
       !this.state.newPass.value ||
@@ -136,7 +126,7 @@ class ChangePassword extends Component {
 				displayPageLoader(true);
 				changePassword(data).then((res) => {
 					if(res && res.success) {
-						this.showAlertBox('CHANGE_PASS_SUCCESS', false);
+						showAlertBox('CHANGE_PASS_SUCCESS', false);
 						nativeSetCredential({
 							username: this.props.authUser.profile.username,
 							password: this.state.newPass.value
@@ -148,11 +138,11 @@ class ChangePassword extends Component {
 							this.props.cbSuccess();
 						}
 					} else {
-						this.showAlertBox(res.error.message || 'SOMETHING_WRONG', true);
+						showAlertBox(res.error.message || 'SOMETHING_WRONG', true);
 					}
 					displayPageLoader(false);
 				}).catch((err) => {
-					this.showAlertBox('SOMETHING_WRONG', true);
+					showAlertBox('SOMETHING_WRONG', true);
 					displayPageLoader(false);
 				});
 				
