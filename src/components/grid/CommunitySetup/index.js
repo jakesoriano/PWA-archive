@@ -87,7 +87,7 @@ class CommunitySetup extends Component {
 						...this.initialState
 					});
 					this.showAlertBox('COMMUNITY_SETUP_SUCCESS', false);
-					route(`/`);
+					route(`/home`);
 				} else {
 					updateStore({
 						alertShow: {
