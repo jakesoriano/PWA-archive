@@ -3,6 +3,7 @@ import { connect } from 'unistore/preact';
 import { 
 	fetchNews,
 	fetchNewsByCommunity,
+	fetchEventsByCommunityId,
 	fetchEvents,
 	fetchAnnouncements } from '_mutations';
 import {
@@ -56,7 +57,7 @@ class NewsAndEvents extends Component {
 
   componentDidUpdate = () => {
 		let { active } = this.state;
-		let selector = (getCurrentUrl().includes('community')) ? this.props.communityDetails[active] : this.props[active];
+		let selector = (getCurrentUrl().includes('community')) ? this.props[`communityDetails${active}`] : this.props[active];
     if (this.state.moreFetching && selector && !selector.fetching) {
       this.setState({
         moreFetching: false
@@ -67,7 +68,7 @@ class NewsAndEvents extends Component {
   handleShowMore = () => {
     if (!this.state.moreFetching) {
 			let { active } = this.state;
-			let selector = (getCurrentUrl().includes('community')) ? this.props.communityDetails[active] : this.props[active];
+			let selector = (getCurrentUrl().includes('community')) ? this.props[`communityDetails${active}`] : this.props[active];
       // flag
       this.setState({
         moreFetching: true
@@ -76,7 +77,8 @@ class NewsAndEvents extends Component {
       if (active === 'news') {
         fetchNews(selector.page + 1);
       } else if (active === 'events') {
-        fetchEvents(selector.page + 1);
+				console.log(selector.page)
+        getCurrentUrl().includes('community') ? fetchEventsByCommunityId(this.props.communityDetails.details.id, selector.page + 1) : fetchEvents(selector.page + 1);
       } else {
         fetchAnnouncements(selector.page + 1);
 			}
@@ -166,7 +168,7 @@ class NewsAndEvents extends Component {
 	};
 
 	renderData = (active) => {
-		let selector = (getCurrentUrl().includes('community')) ? this.props.communityDetails[active] : this.props[active];
+		let selector = (getCurrentUrl().includes('community')) ? this.props[`communityDetails${active}`] : this.props[active];
 		if (selector) {
 			if (active === 'news') {
 				return this.renderNews(selector.data)
@@ -191,7 +193,7 @@ class NewsAndEvents extends Component {
 	}
 
 	render = (props, state) => {
-		let selector = getCurrentUrl().includes('community') ? props.communityDetails[state.active] : props[state.active];
+		let selector = getCurrentUrl().includes('community') ? props[`communityDetails${state.active}`] : props[state.active];
 	  return (
 			<>
 				<div className={style.newsAndEvents}>
@@ -221,7 +223,7 @@ class NewsAndEvents extends Component {
 	};
 
 	selected = (selected) => {
-		return getCurrentUrl().includes('community') ? this.props.communityDetails[selected] : this.props[selected]
+		return getCurrentUrl().includes('community') ? this.props[`communityDetails${this.state.active}`] : this.props[selected]
 	}
  
 	fetchNews = () => {
@@ -233,4 +235,4 @@ class NewsAndEvents extends Component {
 		}
 	}
 }
-export default connect(['news', 'events', 'announcements', 'authUser', 'communityDetails',])(NewsAndEvents);
+export default connect(['news', 'events', 'announcements', 'authUser', 'communityDetailsevents', 'communityDetails',])(NewsAndEvents);

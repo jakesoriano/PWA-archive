@@ -105,7 +105,7 @@
 				"styles": "border-bottom: 1px solid #f1ebeb;border-radius: 10px 10px 0 0;"
 			},
 			{
-				"selector": "#w2 > div > div span",
+				"selector": "#w2 > div:first-child > div > span",
 				"styles": "display: none;"
 			},
 			{

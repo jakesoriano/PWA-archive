@@ -56,6 +56,13 @@ export const initialStore = {
     fetching: false,
     result: false,
   },
+  communityDetailsevents: {
+    fetching: false,
+    result: false,
+    data: [],
+    total: 0,
+    page: 1
+  },
   notifications: {
     fetching: false,
     result: false,
