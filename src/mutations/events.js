@@ -68,6 +68,7 @@ export function fetchEventsByCommunityId (id, page, limit) {
   updateStore({
     cevents: {
       ...cevents,
+      data: page && page > 1 ? cevents.data : [],
       fetching: true,
       result: false
     }
