@@ -56,7 +56,7 @@ export const initialStore = {
     fetching: false,
     result: false,
   },
-  communityDetailsevents: {
+  cevents: {
     fetching: false,
     result: false,
     data: [],

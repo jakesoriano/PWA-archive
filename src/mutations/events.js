@@ -57,17 +57,17 @@ export function fetchEvents (page, limit) {
   });
 }
 export function fetchEventsByCommunityId (id, page, limit) {
-  const { communityDetailsevents } = store.getState();
+  const { cevents } = store.getState();
   
   // fetching
-  if(communityDetailsevents.fetching) {
+  if(cevents.fetching) {
     return;
   }
 
   // initial state
   updateStore({
-    communityDetailsevents: {
-      ...communityDetailsevents,
+    cevents: {
+      ...cevents,
       fetching: true,
       result: false
     }
@@ -84,10 +84,10 @@ export function fetchEventsByCommunityId (id, page, limit) {
     .then((res) => {
       if (res && res.success) {
         updateStore({
-          communityDetailsevents: {
-            ...communityDetailsevents,
+          cevents: {
+            ...cevents,
             data: page ? [
-              ...communityDetailsevents.data,
+              ...cevents.data,
               ...res.data.results
             ] : res.data.results,
             total: res.data.total,
@@ -102,8 +102,8 @@ export function fetchEventsByCommunityId (id, page, limit) {
     })
     .catch((err) => {
       updateStore({
-        communityDetailsevents: {
-          ...communityDetailsevents,
+        cevents: {
+          ...cevents,
           fetching: false,
           result: true
         }
@@ -208,12 +208,12 @@ export function shareEvent (item, parentId, parentType) {
 }
 
 export function selectTag (tag, item) {
-  let { events, communityDetailsevents } = store.getState();
+  let { events, cevents } = store.getState();
   const { authUser } = store.getState();
   const defaultTag = item.tagged;
   
   // fetching
-  if(events.fetching || communityDetailsevents.fetching) {
+  if(events.fetching || cevents.fetching) {
     return;
   }
 
@@ -228,9 +228,9 @@ export function selectTag (tag, item) {
     }),
     fetching: true
   }
-  communityDetailsevents = {
-    ...communityDetailsevents,
-    data: communityDetailsevents.data.map(i => {
+  cevents = {
+    ...cevents,
+    data: cevents.data.map(i => {
       if(i.id === item.id) {
         i.tagged = tag;
       }
@@ -238,7 +238,7 @@ export function selectTag (tag, item) {
     }),
     fetching: true
   }
-  updateStore({ events, communityDetailsevents });
+  updateStore({ events, cevents });
 
   return new Promise((resolve) => {
     xhr(urlTag, {
@@ -256,8 +256,8 @@ export function selectTag (tag, item) {
           ...events,
           fetching: false
         },
-        communityDetailsevents: {
-          ...communityDetailsevents,
+        cevents: {
+          ...cevents,
           fetching: false
         }
       });
@@ -276,9 +276,9 @@ export function selectTag (tag, item) {
           }),
           fetching: false
         },
-        communityDetailsevents: {
-          ...communityDetailsevents,
-          data: communityDetailsevents.data.map(i => {
+        cevents: {
+          ...cevents,
+          data: cevents.data.map(i => {
             if(i.id === item.id) {
               i.tagged = defaultTag;
             }

@@ -217,7 +217,7 @@ class NewsAndEvents extends Component {
 	};
 
 	getSelectedTabContent = () => {
-		return getCurrentUrl().includes('community') ? this.props[`communityDetails${this.state.active}`] : this.props[this.state.active]
+		return getCurrentUrl().includes('community') ? this.props[`c${this.state.active}`] : this.props[this.state.active]
 	}
  
 	fetchNews = () => {
@@ -229,4 +229,4 @@ class NewsAndEvents extends Component {
 		}
 	}
 }
-export default connect(['news', 'events', 'announcements', 'authUser', 'communityDetailsevents', 'communityDetails',])(NewsAndEvents);
+export default connect(['news', 'events', 'announcements', 'authUser', 'cevents', 'communityDetails',])(NewsAndEvents);
