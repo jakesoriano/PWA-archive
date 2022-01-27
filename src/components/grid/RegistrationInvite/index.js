@@ -75,14 +75,13 @@ class RegistrationInvite extends Component {
 						{getTranslation('DOWNLOAD_KITS')}
 					</p>
 					<div className={style.kits}>
-						<div className={style.kitsItem}>
+						<a className={style.kitsItem} onClick={this.onDownloadKit}>
 							<span>{getTranslation('CONVERSION_KIT')} 1</span>
 							<ImageLoader
 								src="assets/images/icon_download.png"
 								style={{ container: style.iconDownload }}
-								onClick={this.onDownloadKit}
 							/>
-						</div>
+						</a>
 					</div>
 				</div>
 				<div className={style.buttonContainer}>
