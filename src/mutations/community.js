@@ -279,6 +279,14 @@ export function setupCommunityInfo (data) {
           resolve(res.error);
         } else {
           console.log(`SPA >> setupCommunity successful`, res);
+          // update community info
+          updateStore({
+            communityInfo: {
+              data,
+              fetching: false,
+              result: true
+            }
+          });
           resolve(res);
         }
       })
