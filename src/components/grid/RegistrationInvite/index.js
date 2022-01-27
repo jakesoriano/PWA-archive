@@ -19,8 +19,8 @@ class RegistrationInvite extends Component {
 		};
 	}
 
-	onDownloadKit = () => {
-		window.open('http://Bit.ly/LabanLeni22', '_blank');
+	onDownloadKit = (url) => {
+		window.open(url, '_blank');
 	};
 
 	componentDidMount = () => {
@@ -75,8 +75,21 @@ class RegistrationInvite extends Component {
 						{getTranslation('DOWNLOAD_KITS')}
 					</p>
 					<div className={style.kits}>
-						<a className={style.kitsItem} onClick={this.onDownloadKit}>
+						<a className={style.kitsItem} onClick={(e) => {
+							e.stopPropagation();
+							this.onDownloadKit('https://bit.ly/KKP_volunteer_toolkit');
+						}}>
 							<span>{getTranslation('CONVERSION_KIT')} 1</span>
+							<ImageLoader
+								src="assets/images/icon_download.png"
+								style={{ container: style.iconDownload }}
+							/>
+						</a>
+						<a className={style.kitsItem} onClick={(e) => {
+							e.stopPropagation();
+							this.onDownloadKit('https://bit.ly/bakitsileni');
+						}}>
+							<span>{getTranslation('CONVERSION_KIT')} 2</span>
 							<ImageLoader
 								src="assets/images/icon_download.png"
 								style={{ container: style.iconDownload }}
