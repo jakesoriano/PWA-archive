@@ -279,14 +279,6 @@ export function setupCommunityInfo (data) {
           resolve(res.error);
         } else {
           console.log(`SPA >> setupCommunity successful`, res);
-          // update community info
-          updateStore({
-            communityInfo: {
-              data,
-              fetching: false,
-              result: true
-            }
-          });
           resolve(res);
         }
       })
@@ -343,14 +335,25 @@ export function getCommunityInfo () {
  return new Promise((resolve) => {
    xhr(urlCommunityGetInfo, {
    }).then((res) => {
-     updateStore({
-      communityInfo: {
-         data: res.data,
-         fetching: false,
-         result: true
-       }
-     });
-     resolve(true);
+     if(res.success) {
+      updateStore({
+        communityInfo: {
+          data: res.data,
+          fetching: false,
+          result: true
+        }
+      });
+      resolve(true);
+     } else {
+      updateStore({
+        communityInfo: {
+          data: null,
+          fetching: false,
+          result: false
+        }
+      });
+      resolve(false);
+     }
    })
    .catch((err) => {
      updateStore({

@@ -62,7 +62,8 @@ class PostContent extends Component {
 	}
 
 	componentDidMount = () => {
-	  getCommunityInfo()
+		if(!this.props.communityInfo.data) {
+			getCommunityInfo()
 			.then((res) => {
 				if(!res) {
 					messageModal({
@@ -77,6 +78,7 @@ class PostContent extends Component {
 					});
 				}
 			})
+		}
 	};
 
 	gotoCommunitySetup = () => {
@@ -401,4 +403,4 @@ class PostContent extends Component {
 		);
 	};
 }
-export default connect(['authUser'])(PostContent);
+export default connect(['authUser', 'communityInfo'])(PostContent);
