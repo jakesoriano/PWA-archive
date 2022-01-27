@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { LoaderRing } from '_components/core';
 import { route } from 'preact-router';
-import { setupCommunityInfo } from '_mutations';
+import { setupCommunityInfo, getCommunityInfo } from '_mutations';
 import { FormGroup, FormInput, ImageLoader, ButtonDescription } from '_components/core';
 import { getTranslation, uploadFile, showAlertBox, displayPageLoader } from '_helpers';
 // eslint-disable-next-line import/extensions
@@ -74,6 +74,7 @@ class CommunitySetup extends Component {
 			.then((res) => {
 				displayPageLoader(false);
 				if(res && res.success) {
+					getCommunityInfo()
 					this.setState({
 						...this.initialState
 					});
