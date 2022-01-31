@@ -110,7 +110,7 @@ class NewsAndEvents extends Component {
 			`
 		});
 		if (!item.shared) {
-			likeShareNews(item, 'N', 'shared', item.community.id);
+			likeShareNews(item, 'shared', item.community.id);
 		}
 	};
 
@@ -147,7 +147,7 @@ class NewsAndEvents extends Component {
 			`
 		});
 		if (!item.shared) {
-			likeShareAnnouncements(item, 'X', 'shared', 'X');
+			likeShareAnnouncements(item, 'shared');
 		}
 	};
 

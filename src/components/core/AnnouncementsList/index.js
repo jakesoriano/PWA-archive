@@ -8,9 +8,9 @@ class AnnouncementsList extends Component {
   
 	onLikeAnnouncement = (item) => {
 		if (!item.liked) {
-			likeShareAnnouncements(item, 'A', 'liked', 'X');
+			likeShareAnnouncements(item, 'liked');
 		} else {
-			removeLikeAnnouncements(item, 'A', 'X');
+			removeLikeAnnouncements(item, 'A');
 		}
 	};
 
@@ -29,7 +29,7 @@ class AnnouncementsList extends Component {
 			`
 		});
 		if (!item.shared) {
-			likeShareAnnouncements(item, 'X', 'shared', 'X');
+			likeShareAnnouncements(item, 'shared');
 		}
 	};
 
