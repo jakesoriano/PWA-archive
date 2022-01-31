@@ -114,25 +114,6 @@ class NewsAndEvents extends Component {
 		}
 	};
 
-	onShareNews = (item) => {
-		nativeShare({
-			url: item.image,
-			title: item.title,
-			message: `\n\n
-				We tell it as it is. Only the truth, KakamPink!\n\n
-				Shared via Kakampink App\n
-				Download now!\n
-				Android: ${playStore}\n\n
-				Article Title: ${item.title}\n
-				Ariticle Link: ${item.link || ''}\n
-				Use my invite code: ${this.props.authUser.profile.refCode}
-			`
-		});
-		if (!item.shared) {
-			likeShareNews(item, 'N', 'shared', item.community.id);
-		}
-	};
-
 	onShareEvent = (item) => {
 		nativeShare({
 			url: item.image,
