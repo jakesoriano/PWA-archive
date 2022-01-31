@@ -29,7 +29,7 @@ class AnnouncementsList extends Component {
 			`
 		});
 		if (!item.shared) {
-			likeShareAnnouncements(item, 'A', 'shared', 'X');
+			likeShareAnnouncements(item, 'X', 'shared', 'X');
 		}
 	};
 
