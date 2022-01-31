@@ -10,7 +10,7 @@ class AnnouncementsList extends Component {
 		if (!item.liked) {
 			likeShareAnnouncements(item, 'liked');
 		} else {
-			removeLikeAnnouncements(item, 'A');
+			removeLikeAnnouncements(item);
 		}
 	};
 
