@@ -8,8 +8,10 @@ import {
 	fetchAnnouncements } from '_mutations';
 import {
 	getTranslation,
-	dateEventFormat
+	dateEventFormat,
+	playStore
 } from '_helpers';
+import { nativeShare } from '_platform/helpers';
 import { ImageLoader, LoaderRing, EventsList, AnnouncementsList, NewsList } from '_components/core';
 import { getCurrentUrl } from 'preact-router';
 // eslint-disable-next-line import/extensions
@@ -93,6 +95,81 @@ class NewsAndEvents extends Component {
 		});
 	};
 
+	onShareNews = (item) => {
+		nativeShare({
+			url: item.image,
+			title: item.title,
+			message: `\n\n
+				We tell it as it is. Only the truth, KakamPink!\n\n
+				Shared via Kakampink App\n
+				Download now!\n
+				Android: ${playStore}\n\n
+				Article Title: ${item.title}\n
+				Ariticle Link: ${item.link || ''}\n
+				Use my invite code: ${this.props.authUser.profile.refCode}
+			`
+		});
+		if (!item.shared) {
+			likeShareNews(item, 'N', 'shared', item.community.id);
+		}
+	};
+
+	onShareNews = (item) => {
+		nativeShare({
+			url: item.image,
+			title: item.title,
+			message: `\n\n
+				We tell it as it is. Only the truth, KakamPink!\n\n
+				Shared via Kakampink App\n
+				Download now!\n
+				Android: ${playStore}\n\n
+				Article Title: ${item.title}\n
+				Ariticle Link: ${item.link || ''}\n
+				Use my invite code: ${this.props.authUser.profile.refCode}
+			`
+		});
+		if (!item.shared) {
+			likeShareNews(item, 'N', 'shared', item.community.id);
+		}
+	};
+
+	onShareEvent = (item) => {
+		nativeShare({
+			url: item.image,
+			title: item.title,
+			message: `\n\n
+				Unity despite diversity leads to victory. Come join us, KakamPink!\n\n
+				Event Title: ${item.title}\n
+				Event Date: ${dateEventFormat(item.date)}\n
+				${item.link ? 'Event Link: ' + item.link : ''}\n\n
+				${getTranslation(item.isOnline ? 'ONLINE_EVENT' : 'ONSITE_EVENT')}:\n
+				Event Location: ${item.location}
+			`
+		});
+		if (!item.shared) {
+			shareEvent(item);
+		}
+	};
+
+	onShareAnnouncement = (item) => {
+		nativeShare({
+			url: item.image,
+			title: item.title,
+			message: `\n\n
+				We tell it as it is. Only the truth, KakamPink!\n\n
+				Shared via Kakampink App\n
+				Download now!\n
+				Android: ${playStore}\n\n
+				Article Title: ${item.title}\n
+				Ariticle Link: ${item.link || ''}\n
+				Use my invite code: ${this.props.authUser.profile.refCode}
+			`
+		});
+		if (!item.shared) {
+			likeShareAnnouncements(item, 'A', 'shared', 'X');
+		}
+	};
+
 	renderDetails = (data) => {
 		if (data) {
 			return (
@@ -134,10 +211,12 @@ class NewsAndEvents extends Component {
 						}}
 					/>
 					<a className={style.pShare} onClick={() => {
-						if(this.state.active == 'news') {
+						if (this.state.active == 'news') {
 							this.onShareNews(this.state.selectedItem);
-						} else {
+						} else if (this.state.active == 'events') {
 							this.onShareEvent(this.state.selectedItem);
+						} else if (this.state.active == 'announcements') {
+							this.onShareAnnouncement(this.state.selectedItem);
 						}
 					}}>
 						<ImageLoader
