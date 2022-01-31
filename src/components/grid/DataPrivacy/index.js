@@ -21,7 +21,7 @@ class DataPrivacy extends Component {
 	componentDidMount = () => {
 		updateStore({
 			customBack: () => {
-				route('/landing/terms', true)
+				route('/', true)
 			}
 		});
 	};
