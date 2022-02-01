@@ -23,7 +23,8 @@ class RegistrationInvite extends Component {
 	};
 
 	componentDidMount = () => {
-		if (this.props.route && this.props.route.previous && this.props.route.previous.indexOf('registration-otp') > -1) {
+		if (this.props.route && this.props.route.previous &&
+			this.props.route.previous.indexOf('registration-otp') > -1) {
 			nativeSelfie().then((image) => {
 				if (image) {
 					let data = {
