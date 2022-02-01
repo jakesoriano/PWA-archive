@@ -1,10 +1,10 @@
 import { h, Component } from 'preact';
+import { updateStore } from '_unistore';
 import { Router } from 'preact-router';
 import { createHashHistory } from 'history';
 import { Provider } from 'unistore/preact';
 import { store, restoreData } from '_unistore';
 import { LoaderRing } from '_components/core';
-import { getQueryStringValue, setCookie } from '_helpers';
 
 // Code-splitting is automated for routes
 import Grid from '_routes/grid';
@@ -32,7 +32,9 @@ export default class App extends Component {
 	 *	@param {string} event.url	The newly routed URL
 	 */
 	handleRoute = (e) => {
-	  this.currentUrl = e.url;
+		updateStore({
+			route: e
+		}, true);
 	};
 
 	renderStyle = () => {

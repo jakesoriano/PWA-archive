@@ -1,12 +1,11 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
-import { updateStore } from '_unistore';
 import { updateAvatar } from '_mutations';
 import { connect } from 'unistore/preact';
 import { nativeSelfie } from '_platform/helpers';
 import { getTranslation, showAlertBox } from '_helpers';
 import { InviteForm, ImageLoader, ButtonDescription } from '_components/core';
-import { nativeShare } from '_platform/helpers';
+// import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -24,20 +23,22 @@ class RegistrationInvite extends Component {
 	};
 
 	componentDidMount = () => {
-		nativeSelfie().then((image) => {
-			if (image) {
-				let data = {
-					image: image
-				}
-				updateAvatar(data).then((res) => {
-					if (!res.success) {
-						showAlertBox({
-							message: getTranslation('SOMETHING_WRONG')
-						});
+		if (this.props.route && this.props.route.previous && this.props.route.previous.indexOf('registration-otp') > -1) {
+			nativeSelfie().then((image) => {
+				if (image) {
+					let data = {
+						image: image
 					}
-				})
-			}
-		});
+					updateAvatar(data).then((res) => {
+						if (!res.success) {
+							showAlertBox({
+								message: getTranslation('SOMETHING_WRONG')
+							});
+						}
+					})
+				}
+			});
+		}
 	};
 
 	handleContinue = () => {
@@ -108,4 +109,4 @@ class RegistrationInvite extends Component {
 		);
 	};
 }
-export default connect(['authUser', 'invited'])(RegistrationInvite);
+export default connect(['authUser', 'invited', 'route'])(RegistrationInvite);
