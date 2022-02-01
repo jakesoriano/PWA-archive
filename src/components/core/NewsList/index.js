@@ -7,9 +7,9 @@ import style from './style';
 class NewsList extends Component {
 	onLikeNews = (item) => {
 		if (!item.liked) {
-			likeShareNews(item, 'N', 'liked', item.community.id);
+			likeShareNews(item, 'liked', item.community.id);
 		} else {
-			removeLikeNews(item, 'N', item.community.id);
+			removeLikeNews(item, item.community.id);
 		}
 	};
 
@@ -28,7 +28,7 @@ class NewsList extends Component {
 			`
 		});
 		if (!item.shared) {
-			likeShareNews(item, 'N', 'shared', item.community.id);
+			likeShareNews(item, 'shared', item.community.id);
 		}
 	};
 
