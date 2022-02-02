@@ -26,6 +26,11 @@ class ForgotEnterMobile extends Component {
         settings: 'username'
       })
     }
+		updateStore({
+			customBack: () => {
+				route(`/${this.props.parent}/`, true);
+			},
+		});
   }
 
   handleContinue = () => {
