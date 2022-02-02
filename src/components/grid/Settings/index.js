@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { getTranslation } from '_helpers';
+import { getTranslation, showAlertBox } from '_helpers';
 import { route } from 'preact-router';
 import { ToggleInput } from '_components/core';
 import { nativeToggleTouchID } from '_platform/helpers';
@@ -19,11 +19,16 @@ class Settings extends Component {
 	onTouchIdChange = () => {
 		nativeToggleTouchID(!this.state.isTouchIdEnable)
 			.then(res => {
-				console.error(res);
-				// update state
-				this.setState({
-					isTouchIdEnable: !this.state.isTouchIdEnable
-				});
+				if (res) {
+					// update state
+					this.setState({
+						isTouchIdEnable: !this.state.isTouchIdEnable
+					});
+				} else {
+					showAlertBox({
+						message: 'SOMETHING_WRONG'
+					});
+				}
 			});
 	};
 	
