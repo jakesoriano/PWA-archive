@@ -9,6 +9,9 @@
     margin: 0 35px;
     color: #737373;
     font-size: 0.9rem;
+    a {
+      color: $primary;
+    }
   }
   .steps {
     width: 100%;
@@ -49,6 +52,7 @@
   .fbContainer {
     position: relative;
     margin-bottom: 10px;
+    overflow: scroll;
   }
   .footer {
     p {
