@@ -147,7 +147,7 @@ class TaskCenter extends Component {
 						<p>{getTranslation('TASK_DEADLINE').replace('{DATE}', dateEventFormat(item.endDate))}</p>
 						<p
 							dangerouslySetInnerHTML={{
-								__html: getTranslation('TASK_NOTE').replace('Like', `<a href=${item.url}>Like</a>`)
+								__html: getTranslation('TASK_NOTE').replace(/link/gim, `<a href=${item.url}>link</a>`)
 							}}
 						/>
 					</div>
