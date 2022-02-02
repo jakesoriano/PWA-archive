@@ -18,7 +18,7 @@ function getApiPlatform () {
 // eslint-disable-next-line import/prefer-default-export
 export const platform = {
   consumer: 'mobile',
-  device: /ipad|iphone|ipod/.test(getUserAgent()) ? 'ios' : 'other',
+  os: /ipad|iphone|ipod/.test(getUserAgent()) ? 'ios' : 'android',
   apiPlatform: getApiPlatform()
 };
 

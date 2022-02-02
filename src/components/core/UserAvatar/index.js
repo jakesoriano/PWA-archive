@@ -1,5 +1,4 @@
 import { Component } from 'preact';
-import { updateStore } from '_unistore';
 import { connect } from 'unistore/preact';
 import { ImageLoader, FormInput } from '_components/core';
 import {
@@ -7,7 +6,8 @@ import {
   displayPageLoader,
   resizeImage,
   uploadFile,
-  showAlertBox
+  showAlertBox,
+  platform
 } from '_helpers';
 import { updateAvatar } from '_mutations';
 import style from './style';
@@ -29,7 +29,7 @@ class UserAvatar extends Component {
 			}
 		});
     displayPageLoader(true);
-    uploadFile({file: file}).then((res) => {console.error(res);
+    uploadFile({file: file}).then((res) => {
       displayPageLoader(false);
       if (res.success && res.data) {
         updateAvatar(res.data).then((resUpdate) => {
@@ -80,22 +80,40 @@ class UserAvatar extends Component {
           lazy
         />
         </label>
-        <FormInput
-          id='inputAttachment'
-          className={style.attachment}
-          style={{error: style.attachment}}
-          value={attachment.file}
-          type="file"
-          accept="image/*"
-          capture="user"
-          disabled={!allowUpdate}
-          onBlur={(e) => {
-            this.onAttachmentChange(e.target.files[0])
-          }}
-          onInput={(e) => {
-            this.onAttachmentChange(e.target.files[0])
-          }}
-        />
+        {platform.os === 'ios' ? (
+          <FormInput
+            id='inputAttachment'
+            className={style.attachment}
+            style={{error: style.attachment}}
+            value={attachment.file}
+            type="file"
+            accept="image/*"
+            disabled={!allowUpdate}
+            onBlur={(e) => {
+              this.onAttachmentChange(e.target.files[0])
+            }}
+            onInput={(e) => {
+              this.onAttachmentChange(e.target.files[0])
+            }}
+          />
+        ) : (
+          <FormInput
+            id='inputAttachment'
+            className={style.attachment}
+            style={{error: style.attachment}}
+            value={attachment.file}
+            type="file"
+            accept="image/*"
+            capture="user"
+            disabled={!allowUpdate}
+            onBlur={(e) => {
+              this.onAttachmentChange(e.target.files[0])
+            }}
+            onInput={(e) => {
+              this.onAttachmentChange(e.target.files[0])
+            }}
+          />
+        )}
     </div>
   )
 }

@@ -45,9 +45,10 @@
 				}
 				button {
           height: 30px;
-          margin: 0;
-          font-size: 1rem;
           width: 30px;
+          margin: 0;
+          padding: 0;
+          font-size: 1rem;
           background: none;
           position: absolute;
           bottom: 10px;
@@ -56,6 +57,7 @@
           color: #FFB5BA;
           text-transform: uppercase;
           border-radius: 50%;
+          text-align: center;
 				}
 			}
 			.modalBody {
