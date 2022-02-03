@@ -34,7 +34,14 @@ class Topbar extends Component {
 							type="button"
 							id="topbar_back"
 							className={style.btnBack}
-							onClick={props.onBack}
+							onClick={(e) => {
+								e.stopPropagation();
+								try {
+									this.props.route.router.props.history.goBack();
+								} catch(err) {
+									props.onBack();
+								}
+							}}
 							aria-label="Toggle Sidebar"
 						>
 							<ImageLoader
@@ -76,4 +83,4 @@ class Topbar extends Component {
 	  );
 	};
 }
-export default Topbar;
+export default connect(['route'])(Topbar);
