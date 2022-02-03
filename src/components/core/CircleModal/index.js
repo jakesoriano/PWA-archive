@@ -18,7 +18,7 @@ export default ({ headerIcon, title, content, code, callback }) => (
         {/* header */}
         <div id="modal_header" className={style.modalHeader}>
           {/* text */}
-          <h3>{title}</h3>
+          <h3 className="bold">{title}</h3>
           {/* x button */}
           <button className="cancel" onClick={() => {
             circleModal(null);

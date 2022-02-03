@@ -41,7 +41,8 @@
 					flex-grow: 1;
 					padding: 10px;
 					margin: 0;
-          font-size: 1.6rem;
+          font-size: 1.4rem;
+          font-weight: normal;
 				}
 				button {
           height: 30px;
@@ -66,12 +67,12 @@
           display: block;
           .desc{
             color: #fff;
-            font-size: 1.2em;
+            font-size: 0.8em;
           }
         }
         .code {
           margin-top: 20px;
-          color: $secondary;
+          color: #fff;
           display: block;
           font-size: 25px;
         }
