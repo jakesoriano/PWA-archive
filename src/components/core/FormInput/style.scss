@@ -13,9 +13,6 @@
 		&.error {
 			border-color: red;
 		}
-		&::file-selector-button {
-			display: none;
-		}
 	}
 	.text {
 		font-size: 0.6rem;
