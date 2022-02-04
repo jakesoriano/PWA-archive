@@ -18,6 +18,10 @@
 		&.dummyInput {
 			width: calc(100% - 10px);
 			margin-right: 10px;
+			&:disabled {
+				opacity: 1;
+				color: #312f2f;
+			}
 		}
 	}
 	.text {
