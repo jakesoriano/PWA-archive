@@ -8,9 +8,15 @@
     margin: 0 35px;
     color: #737373;
     font-size: 0.9rem;
-    a {
-      color: $primary;
-    }
+  }
+  a {
+    color: $primary;
+    padding: 0 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: block;
   }
   .steps {
     width: 100%;

@@ -143,13 +143,10 @@ class TaskCenter extends Component {
 
 					{/* Footer */}
 					<div className={style.footer}>
+						<a href={item.url}>{item.url}</a>
 						<p>{getTranslation('TASK_POINTS').replace('{POINTS}', item.points)}</p>
 						<p>{getTranslation('TASK_DEADLINE').replace('{DATE}', dateEventFormat(item.endDate))}</p>
-						<p
-							dangerouslySetInnerHTML={{
-								__html: getTranslation('TASK_NOTE').replace(/link/gim, `<a href=${item.url}>link</a>`)
-							}}
-						/>
+						<p>{getTranslation('TASK_NOTE')}</p>
 					</div>
 				</div>
 
