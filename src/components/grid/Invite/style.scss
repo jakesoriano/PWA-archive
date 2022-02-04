@@ -1,11 +1,15 @@
 
 @import '../../../style/variables.scss';
 .inviteWrap {
-  background: #fff;
+  min-height: 100vh;
+	background: rgb(255,177,187);
+	background: linear-gradient(180deg, #b32774 0%, #c1789f 100%);
 
+  > div {
+    background: $white;
+  }
   .list {
-    background: $primary;
-    border-radius: 20px 20px 0 0;
+    background: $white;
     margin: 0 0;
     display: block;
     overflow: hidden;
@@ -13,6 +17,8 @@
       color: #000;
     }
     .header {
+      background: $primary;
+      border-radius: 20px 20px 0 0;
       p {
         color: #fff;
         font-size: 1rem;
@@ -23,6 +29,7 @@
       padding: 10px 15px;
       border-bottom: 1px dotted #f1ebeb;
       width: 100%;
+      background: $primary;
       p {
         flex-grow: 1;
         font-size: 0.9rem;
