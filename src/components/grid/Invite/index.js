@@ -42,12 +42,12 @@ class Invite extends Component {
 				/>
 				<div className={style.list}>
 					<div className={`${style.item} ${style.header}`}>
-						<p className={`bold ${style.name}`}>
+						<p className={`extraBold ${style.name}`}>
 							{getTranslation('ADDED_MEMBERS')}
 						</p>
-						<p className={`bold ${style.status}`}>{getTranslation('STATUS')}</p>
+						<p className={`extraBold ${style.status}`}>{getTranslation('STATUS')}</p>
 						<a
-							className={`bold ${style.status}`}
+							className={`extraBold ${style.status}`}
 							onClick={this.handleClickJoin}
 						>
 							{getTranslation('JOIN')}
