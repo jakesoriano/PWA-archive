@@ -2,8 +2,7 @@
 @import '../../../style/variables.scss';
 .inviteWrap {
   min-height: 100vh;
-	background: rgb(255,177,187);
-	background: linear-gradient(180deg, #b32774 0%, #c1789f 100%);
+	background: $details_bg;
 
   > div {
     background: $white;
@@ -17,19 +16,18 @@
       color: #000;
     }
     .header {
-      background: $primary;
       border-radius: 20px 20px 0 0;
-      p {
-        color: #fff;
+      p, a {
+        color: $primary;
         font-size: 1rem;
       }
     }
     .item {
       display: flex;
       padding: 10px 15px;
-      border-bottom: 1px dotted #f1ebeb;
+      border-bottom: 1px dotted $item_border;
       width: 100%;
-      background: $primary;
+      background: $details_bg;
       p {
         flex-grow: 1;
         font-size: 0.9rem;
@@ -37,7 +35,6 @@
       a {
         flex-grow: 1;
         font-size: 0.9rem;
-        color: #fff;
         display: flex;
       }
       .name {
