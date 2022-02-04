@@ -102,7 +102,7 @@
 		"styles": [
 			{
 				"selector": "#w1 > div",
-				"styles": "border-bottom: 1px solid #f8b6cc;border-radius: 10px 10px 0 0;"
+				"styles": "border-bottom: 1px solid #f7dadf;border-radius: 10px 10px 0 0;"
 			},
 			{
 				"selector": "#w2 > div:first-child > div > span",
