@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { getTranslation, showAlertBox } from '_helpers';
+import { getTranslation, showAlertBox, platform } from '_helpers';
 import { route } from 'preact-router';
 import { ToggleInput } from '_components/core';
 import { nativeToggleTouchID, nativeStatusTouchID } from '_platform/helpers';
@@ -59,7 +59,7 @@ class Settings extends Component {
 						<span>{getTranslation('PAGE_CHANGE_PASS')}</span>
 				</button>
 				<button>
-					<span>{getTranslation('ENABLE_TOUCHID')}</span>
+					<span>{getTranslation(platform.os === 'ios' ? 'ENABLE_FACEID' : 'ENABLE_TOUCHID')}</span>
 					<div className={style.inputWrap}>
 						<ToggleInput
 							onClickCallback={() => {

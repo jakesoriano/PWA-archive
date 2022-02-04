@@ -93,6 +93,7 @@
 	"CHANGE_PASS_SUCCESS": "You have successfully changed your password.",
 	"SIGNIN_NEW_PASS": "Sign in now with your new password.",
 	"ENABLE_TOUCHID": "Enable Touch ID",
+	"ENABLE_FACEID": "Enable Touch / Face ID",
 	"SEND": "SEND",
 	"CATEGORY": "Category",
 	"SUBJECT": "Subject",
