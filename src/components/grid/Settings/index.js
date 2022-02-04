@@ -11,18 +11,17 @@ import style from './style';
 class Settings extends Component {
 	constructor(props){
 		super(props);
-		this.state = {
-			isTouchIdEnable: props.settings.touchId
-		}
 	}
 	
 	onTouchIdChange = () => {
-		nativeToggleTouchID(!this.state.isTouchIdEnable)
+		nativeToggleTouchID(!this.props.settings.touchId)
 			.then(res => {
 				if (res) {
-					// update state
-					this.setState({
-						isTouchIdEnable: !this.state.isTouchIdEnable
+					// update value
+					updateStore({
+						settings: {
+							touchId: !this.props.settings.touchId
+						}
 					});
 				} else {
 					showAlertBox({
@@ -57,7 +56,7 @@ class Settings extends Component {
 							onClickCallback={() => {
 								this.onTouchIdChange()
 							}}
-							isChecked={this.state.isTouchIdEnable}
+							isChecked={this.props.settings.touchId}
 							>	
 						</ToggleInput>
 					</div>

@@ -229,7 +229,7 @@ class Login extends Component {
                     <Link href={`/landing/enter-mobile-un`} 
                         className={style.sMItem}
                         onClick={this.onClickForgotUserPass}>{getTranslation('USERNAME')}</Link>
-                  &nbsp;{getTranslation('OR')}&nbsp;
+                  &nbsp;<span>{getTranslation('OR')}</span>&nbsp;
                     <Link href={`/landing/enter-mobile-pw`} 
                         className={style.sMItem}
                         onClick={this.onClickForgotUserPass}>{getTranslation('PASSWORD')}</Link>

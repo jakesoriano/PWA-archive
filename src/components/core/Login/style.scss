@@ -38,7 +38,7 @@
 		> label {
 			font-family: 'OpenSans-Regular', arial, sans-serif;
 		  }
-		p, a {
+		p, a, span {
 			color: #737373;
 			text-align: center;
 		}
@@ -49,8 +49,8 @@
 				display: block;
 				margin: 15px;
 				font-weight: bold;
-				a {
-					color: $primary;
+				span {
+					font-weight: normal;
 				}
 			}
 		}
