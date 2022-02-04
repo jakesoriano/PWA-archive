@@ -3,7 +3,7 @@ import { connect } from 'unistore/preact';
 import { getTranslation, showAlertBox } from '_helpers';
 import { route } from 'preact-router';
 import { ToggleInput } from '_components/core';
-import { nativeToggleTouchID } from '_platform/helpers';
+import { nativeToggleTouchID, nativeStatusTouchID } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -11,17 +11,26 @@ import style from './style';
 class Settings extends Component {
 	constructor(props){
 		super(props);
+		this.state = {
+			isTouchIdEnable: false
+		}
+	};
+
+	componentDidMount = () => {
+		nativeStatusTouchID().then(val => {
+			this.setState({
+				isTouchIdEnable: Boolean(val === true)
+			});
+		});
 	}
 	
 	onTouchIdChange = () => {
-		nativeToggleTouchID(!this.props.settings.touchId)
+		nativeToggleTouchID(!this.state.isTouchIdEnable)
 			.then(res => {
 				if (res) {
-					// update value
-					updateStore({
-						settings: {
-							touchId: !this.props.settings.touchId
-						}
+					// update state
+					this.setState({
+						isTouchIdEnable: !this.state.isTouchIdEnable
 					});
 				} else {
 					showAlertBox({
@@ -56,7 +65,7 @@ class Settings extends Component {
 							onClickCallback={() => {
 								this.onTouchIdChange()
 							}}
-							isChecked={this.props.settings.touchId}
+							isChecked={this.state.isTouchIdEnable}
 							>	
 						</ToggleInput>
 					</div>

@@ -35,7 +35,6 @@ import {
 } from '_components/core';
 import {
 	nativeWebReady,
-	nativeStatusTouchID,
 	nativeExitApp,
 	nativeGetDeviceId
 } from '_platform/helpers';
@@ -233,14 +232,6 @@ class Grid extends Component {
 		nativeGetDeviceId((id) => {
 			updateStore({
 				deviceId: id
-			});
-		});
-		// touch id
-		nativeStatusTouchID().then(val => {
-			updateStore({
-				settings: {
-					touchId: val
-				}
 			});
 		});
 	};
