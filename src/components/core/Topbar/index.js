@@ -37,7 +37,11 @@ class Topbar extends Component {
 							onClick={(e) => {
 								e.stopPropagation();
 								try {
-									this.props.route.router.props.history.goBack();
+									if (this.props.route && this.props.route.url && this.props.route.url.indexOf('community-details') > -1) {
+										this.props.route.router.props.history.goBack();
+									} else {
+										props.onBack();
+									}
 								} catch(err) {
 									props.onBack();
 								}
