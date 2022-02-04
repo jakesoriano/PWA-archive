@@ -3,7 +3,7 @@
   padding: 15px;
   .search {
     width: 100%;
-    background-color: #f2f2f2;
+    background-color: $details_bg;
     border-radius: 50px;
     padding: 10px 20px;
     margin-bottom: 15px;
@@ -22,7 +22,7 @@
   }
   .communityBody {
     padding: 15px;
-    background: $white;
+    background: $details_bg;
     border-radius: 15px;
     .title {
       color: $black;

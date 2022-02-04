@@ -1,5 +1,4 @@
-
-
+@import '../../../style/variables.scss';
 .eventsListWrap {
   .noRecord {
     text-align: center;
@@ -8,7 +7,7 @@
   .contentItem {
     display: grid;
     padding: 10px;
-    border-bottom: 1px solid #f1ebeb;
+    border-bottom: 1px solid $light_pink;
     .community {
       display: flex;
       margin-bottom: 10px;

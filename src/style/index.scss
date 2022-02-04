@@ -11,8 +11,9 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow: hidden;
-	background: rgb(255,177,187);
-	background: linear-gradient(180deg, #b32774 0%, #c1789f 100%);
+	// background: rgb(255,177,187);
+	// background: linear-gradient(180deg, #b32774 0%, #c1789f 100%);
+	background: #FFF;
 
 	.clickable {
 		cursor: pointer;

@@ -5,10 +5,15 @@
     color: #737373;
   }
   .infoWrap {
-    background: #fff;
+    background: $details_bg;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 10px; 
+    input,
+    select,
+    textarea {
+      background: $details_bg;
+    }
     .attachmentWrap {
       display: flex;
       align-items: center;

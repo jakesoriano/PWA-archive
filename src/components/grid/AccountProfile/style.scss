@@ -5,7 +5,7 @@
     color: #737373;
   }
   .profile {
-    background: #fff;
+    background: $details_bg;
     border-radius: 10px;
     padding: 10px 10px 0;
     margin-bottom: 10px;
@@ -103,12 +103,11 @@
     padding: 0;
     border: none;
     display: flex;
-    background: #ffb5ba;
+    background: $details_bg;
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
     > div {
-      background: #fff;
       border-radius: 10px;
       flex-grow: 1;
       display: flex;
