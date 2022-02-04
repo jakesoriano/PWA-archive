@@ -1,17 +1,23 @@
 .inputWrap {
-	.formInput {
+	.formInput,
+	.dummyInput {
 		border: none;
 		border-radius: 0;
 		border-bottom: 1px solid #737373;
 		padding: 10px 0;
 		display: block;
 		width: 100%;
-		background: #fff;
+		background: transparent;
 		&::placeholder {
 			font-size: 0.6rem;
 		}
 		&.error {
 			border-color: red;
+		}
+
+		&.dummyInput {
+			width: calc(100% - 10px);
+			margin-right: 10px;
 		}
 	}
 	.text {
@@ -31,5 +37,8 @@
 			margin-right: 5px;
 			padding: 0;
 		}
+	}
+	input[type='file'] {
+		display: none;
 	}
 }
