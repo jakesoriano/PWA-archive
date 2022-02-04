@@ -49,6 +49,9 @@
 				display: block;
 				margin: 15px;
 				font-weight: bold;
+				a {
+					color: $primary;
+				}
 			}
 		}
 		.socialMedia {
