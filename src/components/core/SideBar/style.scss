@@ -10,11 +10,12 @@
 	opacity: 0.5;
 	z-index: 4;
 	position: absolute;
+	background: #000;
 }
 
 .sideBar {
 	color: white;
-	background-color: $secondary;
+	background-color: $primary_layout;
 	position: absolute;
 	top: 0;
 	left: 0;
