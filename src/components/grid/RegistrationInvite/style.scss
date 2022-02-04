@@ -1,9 +1,15 @@
 @import '../../../style/variables.scss';
 .inviteWrap {
   padding: 15px;
-  .inviteForm, .kitsContainer {
+  .inviteForm,
+  .kitsContainer {
     border-radius: 10px;
     padding: 10px 0;
+    background: $details_bg;
+    input,
+    select {
+      background: $details_bg;
+    }
   }
   .kitsContainer {
     margin-top: 15px;
