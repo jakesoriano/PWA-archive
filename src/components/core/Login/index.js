@@ -222,15 +222,15 @@ class Login extends Component {
                   bottomDescription=""
                 />
                 <p
-                  className={style.forgotUserPass}
+                  className={`bold ${style.forgotUserPass}`}
                   // onClick={this.onClickForgotUserPass}
                 >
                   {getTranslation('FORGOT')}&nbsp;
-                    <Link href={`/landing/enter-mobile-un`} 
+                    <Link class={`bold`} href={`/landing/enter-mobile-un`} 
                         className={style.sMItem}
                         onClick={this.onClickForgotUserPass}>{getTranslation('USERNAME')}</Link>
                   &nbsp;<span>{getTranslation('OR')}</span>&nbsp;
-                    <Link href={`/landing/enter-mobile-pw`} 
+                    <Link class={`bold`} href={`/landing/enter-mobile-pw`} 
                         className={style.sMItem}
                         onClick={this.onClickForgotUserPass}>{getTranslation('PASSWORD')}</Link>
                 </p>

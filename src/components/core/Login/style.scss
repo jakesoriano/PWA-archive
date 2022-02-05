@@ -36,8 +36,7 @@
 		padding: 15px;
 		color: #737373;
 		> label {
-			font-family: 'OpenSans-Regular', arial, sans-serif;
-		  }
+		}
 		p, a, span {
 			color: #737373;
 			text-align: center;
@@ -48,9 +47,9 @@
 			.forgotUserPass {
 				display: block;
 				margin: 15px;
-				font-weight: bold;
+				font-weight: normal;
 				span {
-					font-weight: normal;
+					font-family: 'OpenSans-Regular', arial, sans-serif;
 				}
 			}
 		}
