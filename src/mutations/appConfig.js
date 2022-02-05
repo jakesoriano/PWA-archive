@@ -5,7 +5,9 @@ import {
   platform,
   messageModal,
   getTranslation,
-  getConfigByKey
+  getConfigByKey,
+  setCookieWithExpiration,
+  getCookie
 } from '_helpers';
 import { nativeGetVersion } from '_platform/helpers';
 
@@ -30,15 +32,23 @@ export function fetchAppConfig () {
 
   return xhr(urlAppConfig)
     .then((res) => {
+    
+      try {
+        // check if has new pwa version
+        const currentBuild = parseInt(process.env.BUILD_NO.replace(/\./gim, ''));
+        const expectedBuild = parseInt(res.web.replace(/\./gim, ''));
+        const cookieReload = parseInt(getCookie('reload') || '0');
+        if (currentBuild < expectedBuild && cookieReload < res.maxReload) {
+          setCookieWithExpiration('reload', cookieReload + 1, new Date().setHours('23', '59', '59'));
+          window.location.reload();
+        }
 
-      // Get Native Version
-      nativeGetVersion((nativeVersion) => {
-
-        try {
+        // Get Native Version
+        nativeGetVersion((nativeVersion) => {
           // parse versions
           const native  = parseInt(nativeVersion.replace(/\./gim, ''));
           const android  = parseInt(res.android.replace(/\./gim, ''));
-          const ios  = parseInt(res.ios.replace(/\./gim, ''));
+          const ios = parseInt(res.ios.replace(/\./gim, ''));
           let hasUpdate = false;
           
           // check if has new andoird version
@@ -50,7 +60,7 @@ export function fetchAppConfig () {
           if (platform.os === 'ios' && native < ios) {
             hasUpdate = true;
           }
-  
+
           // has update
           if (hasUpdate) {
             messageModal({
@@ -64,8 +74,8 @@ export function fetchAppConfig () {
               }
             });
           }
-        } catch(err){}
-      });
+        });
+      } catch(err){}
 
       // update config
       updateStore({
