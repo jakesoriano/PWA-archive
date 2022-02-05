@@ -187,5 +187,8 @@
 	"ERRMSG_FILESIZE": "File / Image too large too upload.",
 	"SELFIE_TITLE": "Selfie",
 	"SELFIE_MSG" : "Take a selfie photo for your avatar. You can update your profile photo at a later time by clicking your photo in the Home page.",
-	"OPEN_CAMERA": "Open Camera"
+	"OPEN_CAMERA": "Open Camera",
+	"NEW_UPDATE_TITLE": "New update available.",
+	"NEW_UPDATE_DESC": "You will have to update your app to the latest version to continue using",
+	"NEW_UPDATE_BTN": "Update"
 }
