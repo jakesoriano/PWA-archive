@@ -3,6 +3,7 @@ import {
 	xhr,
 	urlCommunity,
 	urlUser,
+  urlNews,
   urlCommunitySetup, 
   urlCommunityGetInfo,
   urlCommunityLeader
@@ -310,6 +311,31 @@ export function createCommunityEvent (data) {
       .catch((err) => {
         resolve(err);
         console.log(`SPA >> createCommunityEvent failed`, err);
+      });
+  });
+}
+
+export function createCommunityNews (data) {
+  // current state
+  const { communityInfo } = store.getState();
+  const url = `${urlNews}/${communityInfo.data._id}`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'POST',
+      data: data.data
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> createCommunityNews Error`, res);
+          resolve(res);
+        } else {
+          console.log(`SPA >> createCommunityNews successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> createCommunityNews failed`, err);
       });
   });
 }
