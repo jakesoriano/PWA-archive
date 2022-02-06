@@ -54,8 +54,9 @@
       }
     }
     &.hasOneItem {
-      button:last-child:after {
-        left: 0%;
+      padding: 0;
+      button {
+        display: none;
       }
     }
   }
