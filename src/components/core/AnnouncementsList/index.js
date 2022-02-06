@@ -80,8 +80,7 @@ class AnnouncementsList extends Component {
 		}
 		return <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
   }
-  render = ({data, authUser, onClickItemCallback}) => {
-    console.log(data)
+  render = ({data}) => {
     return (
       <div className={style.announcementsListWrap}>
         {this.renderDom(data)}
