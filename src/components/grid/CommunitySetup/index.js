@@ -74,7 +74,7 @@ class CommunitySetup extends Component {
 			.then((res) => {
 				displayPageLoader(false);
 				if(res && res.success) {
-					getCommunityInfo()
+					getCommunityInfo();
 					this.setState({
 						...this.initialState
 					});
