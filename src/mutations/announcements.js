@@ -30,7 +30,7 @@ export function fetchAnnouncements (page, limit) {
     .then((res) => {
       updateStore({
         announcements: {
-          data: page ? [
+          data: page && page > 1 ? [
             ...news.data,
             ...res.data.results
           ] : res.data.results,

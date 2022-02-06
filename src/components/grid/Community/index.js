@@ -26,7 +26,7 @@ class Community extends Component {
 	componentDidMount = () => {
     const { communities } = this.props;
     if (!communities.data.length) {
-      fetchCommunities(this.props.communities.page);
+      fetchCommunities();
     }
 	};
 
@@ -66,7 +66,7 @@ class Community extends Component {
     clearTimeout(this.timer);
     this.timer = setTimeout(() => {
       if (e.target.value) {
-        filterCommunity(e.target.value, 1);
+        filterCommunity(e.target.value);
         this.setState({
           text: e.target.value
         })

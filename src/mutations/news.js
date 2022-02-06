@@ -24,13 +24,13 @@ export function fetchNews (page, limit) {
       method: 'GET',
       params: {
         p: page || 1, // page number
-        s: limit || 6 // limit
+        s: limit || 9 // limit
       }
     })
     .then((res) => {
       updateStore({
         news: {
-          data: page ? [
+          data: page && page > 1 ? [
             ...news.data,
             ...res.data.results
           ] : res.data.results,
@@ -227,7 +227,7 @@ export function fetchNewsByCommunity (communityId, page, limit) {
         communityDetails: {
           ...communityDetails,
           news: {
-            data: page ? [
+            data: page && page > 1 ? [
               ...news.data,
               ...res.data
             ] : res.data,
