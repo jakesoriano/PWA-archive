@@ -53,6 +53,11 @@
         left: -50%;
       }
     }
+    &.hasOneItem {
+      button:last-child:after {
+        left: 0%;
+      }
+    }
   }
   .fbContainer {
     position: relative;
