@@ -32,13 +32,13 @@ export function filterCommunity(name, page, limit) {
       params: {
         q: name || '', // query string
         p: page || 1, // page number
-        s: limit || 15 // limit
+        s: limit || 9 // limit
       }
     })
     .then((res) => {
       updateStore({
         communities: {
-          data: page ? [
+          data: page && page > 1 ? [
             ...communities.data,
             ...res.data.results
           ] : res.data.results,
@@ -85,13 +85,13 @@ export function fetchCommunities(page, limit) {
 		xhr(urlCommunity, {
       params: {
         p: page || 1, // page number
-        s: limit || 20 // limit
+        s: limit || 9 // limit
       }
     })
 		.then((res) => {
       updateStore({
         communities: {
-          data: page ? [
+          data: page && page > 1 ? [
             ...communities.data,
             ...res.data.results
           ] : res.data.results,
