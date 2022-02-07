@@ -1,7 +1,7 @@
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
 function callNative(data) {
-  window.ReactNativeWebView && window.ReactNativeWebView.postMessage(data)
+  window.ReactNativeWebView && window.ReactNativeWebView.postMessage(JSON.stringify(data));
 }
 
 // eslint-disable-next-line import/prefer-default-export
@@ -105,7 +105,7 @@ export function nativeToggleTouchID (value) {
     callNative({
       action: 'toogleTouchID',
       callback: 'window.cb',
-      value
+      data: value
     });
   });
 }
