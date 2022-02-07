@@ -4,7 +4,7 @@ import { Component } from 'preact';
 import { Link } from 'preact-router/match';
 import { updateStore } from '_unistore';
 import { connect } from 'unistore/preact';
-import { getTranslation, displayPageLoader, showAlertBox, platform } from '_helpers';
+import { getTranslation, displayPageLoader, showAlertBox } from '_helpers';
 import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
 import { login } from '_mutations';
 import { route } from 'preact-router';
@@ -235,41 +235,44 @@ class Login extends Component {
                         onClick={this.onClickForgotUserPass}>{getTranslation('PASSWORD')}</Link>
                 </p>
               </div>
-              <div className={`${style.socialMedia} ${style[platform.os]}`}>
-                <p>{getTranslation('SOCIAL_MEDIA')}</p>
-                <ul>
-                  <li>
-                    <a onClick={() => {
-                        this.onClickSocial('F');
-                      }}>
-                      <ImageLoader
-                        src="assets/images/fb_icon.png"
-                        style={{ container: style.socMedIcons }}
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a onClick={() => {
-                        this.onClickSocial('T');
-                      }}>
-                      <ImageLoader
-                        src="assets/images/twitter_icon.png"
-                        style={{ container: style.socMedIcons }}
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a onClick={() => {
-                        this.onClickSocial('G');
-                      }}>
-                      <ImageLoader
-                        src="assets/images/google_icon.png"
-                        style={{ container: style.socMedIcons }}
-                      />
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              
+              {process.env.PLATFORM !== 'ios' && (
+                <div className={`${style.socialMedia}`}>
+                  <p>{getTranslation('SOCIAL_MEDIA')}</p>
+                  <ul>
+                    <li>
+                      <a onClick={() => {
+                          this.onClickSocial('F');
+                        }}>
+                        <ImageLoader
+                          src="assets/images/fb_icon.png"
+                          style={{ container: style.socMedIcons }}
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a onClick={() => {
+                          this.onClickSocial('T');
+                        }}>
+                        <ImageLoader
+                          src="assets/images/twitter_icon.png"
+                          style={{ container: style.socMedIcons }}
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a onClick={() => {
+                          this.onClickSocial('G');
+                        }}>
+                        <ImageLoader
+                          src="assets/images/google_icon.png"
+                          style={{ container: style.socMedIcons }}
+                        />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              )}
             </form>
           </div>
 	      </div>

@@ -4,7 +4,7 @@ import { Component } from 'preact';
 import { route } from 'preact-router';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
-import { getTranslation, displayPageLoader, showAlertBox, platform } from '_helpers';
+import { getTranslation, displayPageLoader, showAlertBox } from '_helpers';
 import { validateUsername } from '_mutations';
 import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
 import {
@@ -276,41 +276,44 @@ class InitialSignup extends Component {
               />
             </div>
             </form>
-            <div className={`${style.socialMedia} ${style[platform.os]}`}>
-              <p>{getTranslation('SOCIAL_MEDIA')}</p>
-              <ul>
-                <li>
-                <a onClick={() => {
-                    this.onClickSocial('F');
-                  }}>
-                  <ImageLoader
-                  src="assets/images/fb_icon.png"
-                  style={{ container: style.socMedIcons }}
-                  />
-                </a>
-                </li>
-                <li>
-                <a onClick={() => {
-                    this.onClickSocial('T');
-                  }}>
-                  <ImageLoader
-                  src="assets/images/twitter_icon.png"
-                  style={{ container: style.socMedIcons }}
-                  />
-                </a>
-                </li>
-                <li>
-                <a onClick={() => {
-                    this.onClickSocial('G');
-                  }}>
-                  <ImageLoader
-                  src="assets/images/google_icon.png"
-                  style={{ container: style.socMedIcons }}
-                  />
-                </a>
-                </li>
-              </ul>
-            </div>
+              
+            {process.env.PLATFORM !== 'ios' && (
+              <div className={`${style.socialMedia}`}>
+                <p>{getTranslation('SOCIAL_MEDIA')}</p>
+                <ul>
+                  <li>
+                  <a onClick={() => {
+                      this.onClickSocial('F');
+                    }}>
+                    <ImageLoader
+                    src="assets/images/fb_icon.png"
+                    style={{ container: style.socMedIcons }}
+                    />
+                  </a>
+                  </li>
+                  <li>
+                  <a onClick={() => {
+                      this.onClickSocial('T');
+                    }}>
+                    <ImageLoader
+                    src="assets/images/twitter_icon.png"
+                    style={{ container: style.socMedIcons }}
+                    />
+                  </a>
+                  </li>
+                  <li>
+                  <a onClick={() => {
+                      this.onClickSocial('G');
+                    }}>
+                    <ImageLoader
+                    src="assets/images/google_icon.png"
+                    style={{ container: style.socMedIcons }}
+                    />
+                  </a>
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
 	      </div>
 	    </div>
