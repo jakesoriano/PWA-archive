@@ -293,7 +293,7 @@ class PostContent extends Component {
 					!this.state.attachment.file) {
 					this.onTitleChange(this.state.title.value);
 					this.onDescChange(this.state.desc.value);
-					this.onLinkChange(this.state.date.value);
+					this.onLinkChange(this.state.link.value);
 					this.onAttachmentChange(this.state.attachment.file);
 				} else {
 					this.uploadImage();

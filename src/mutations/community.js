@@ -318,7 +318,7 @@ export function createCommunityEvent (data) {
 export function createCommunityNews (data) {
   // current state
   const { communityInfo } = store.getState();
-  const url = `${urlNews}/${communityInfo.data._id}`;
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/news`;
   return new Promise((resolve) => {
     xhr(url, {
       method: 'POST',
