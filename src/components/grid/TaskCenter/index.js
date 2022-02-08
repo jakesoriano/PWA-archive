@@ -123,7 +123,7 @@ class TaskCenter extends Component {
 					
 					<p>{getTranslation('TASK_INSTRUCTION')}</p>
 
-					<div className={style.steps}>
+					<div className={`${style.steps} ${tasks.data.length === 1 ? style.hasOneItem: ''}`}>
 						{tasks.data.map(item => {
 							return (
 								<button>
