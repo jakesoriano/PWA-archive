@@ -17,6 +17,7 @@ import {
 } from '_helpers';
 import {
 	fetchTranslation,
+	fetchAppConfig,
 	// fetchUserData
 } from '_mutations';
 import {
@@ -185,6 +186,9 @@ class Grid extends Component {
 	    .then(() => {
 				this.dashboardReady();
 	    });
+		
+		// fetch app config
+		fetchAppConfig();
 	};
 
 	componentDidUpdate = (prevProps) => {
@@ -223,6 +227,12 @@ class Grid extends Component {
 	  }
 
 	  this.setPageData();
+
+		// page change
+		if (prevProps && this.props && prevProps.url !== this.props.url) {
+			// fetch app config
+			fetchAppConfig();
+		}
 	};
 
 	dashboardReady = () => {

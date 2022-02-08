@@ -201,3 +201,17 @@ export function nativeSetAuthToken (token) {
     token
   });
 }
+
+export function nativeGetVersion (callback) {
+  // using native
+  window.cbGetVersion = (res) => {
+    callback(res)
+    window.cbGetVersion = null;
+  }
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeGetVersion();');
+  callNative({
+    action: 'getVersion',
+    callback: 'window.cbGetVersion',
+  });
+}
