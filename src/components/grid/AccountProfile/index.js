@@ -118,6 +118,10 @@ class AccountProfile extends Component {
 							style={{ container: style.iconDownload }}
 						/>
 						<span>{getTranslation('DOWNLOAD_KIT')}</span>
+						<ImageLoader
+							src="assets/images/downarrow.png"
+							style={{ container: style.dropdown }}
+						/>
 					</div>
 				</a>
 			</div>

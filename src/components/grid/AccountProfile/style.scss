@@ -120,6 +120,13 @@
         display: inline-block;
         margin: 0 10px 0 15px;
       }
+      .dropdown {
+        width: 15px;
+        padding-bottom: 15px;
+        border-radius: 0;
+        position: absolute;
+        right: 30px;
+      }
     }
     > span {
       padding: 11px;
