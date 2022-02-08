@@ -5,7 +5,7 @@ import { LoaderRing, ImageLoader, UserAvatar } from '_components/core';
 import {
 	getTranslation,
 	formatNumber,
-	playStore,
+	getConfigByKey,
 	circleModal,
 	formatRank
 } from '_helpers';
@@ -43,7 +43,7 @@ class AccountProfile extends Component {
 			message: `\n
 				I've earned ${this.props.authUser.points} Hero Points!\n
 				Download the KakamPink App!\n\n
-				Android: ${playStore}\n
+				Android: ${getConfigByKey('playStore')}\n
 				Use my invite code: ${this.props.authUser.profile.refCode}\n\n
 				#LetLeniLead
 			`,

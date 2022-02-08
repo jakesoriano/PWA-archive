@@ -104,3 +104,8 @@ export function nativeSetAuthToken (token) {
   // eslint-disable-next-line no-console
   console.log('SPA >> nativeSetAuthToken();');
 }
+
+export function nativeGetVersion (callback) {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeGetVersion();');
+}

@@ -1,24 +1,13 @@
 import { store } from '_unistore';
-import { getCurrencyCode } from './language';
 
-const pwaConfig = process.env.CONFIG;
 
 export function getConfigByKey (key, subKey) {
+  const { appConfig } = store.getState();
   try {
-    return subKey ? pwaConfig[key][subKey] : pwaConfig[key];
+    return subKey ? appConfig.data[key][subKey] : appConfig.data[key];
   } catch (error) {
     return null;
   }
-}
-
-export function overrideCurrencyCode () {
-  const { selectedLanguage, authUser } = store.getState();
-  if (authUser) {
-    return authUser.CurrencyCode.toUpperCase();
-    // } else if (isMYCountry()) {
-    //   return 'MYR';
-  }
-  return (getCurrencyCode(selectedLanguage) || '').toUpperCase();
 }
 
 export function getDefaultAvatar() {
