@@ -49,13 +49,10 @@
 				"component": "AccountProfile"
 			},
 			{
-				"component": "StoriesDashboard"
+				"component": "GlobalAnnouncement"
 			},
 			{
-				"component": "NewsAndEvents",
-				"props": {
-					"hiddenTabs": ["news"]
-				}
+				"component": "StoriesDashboard"
 			}
 		]
 	},

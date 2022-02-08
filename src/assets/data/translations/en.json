@@ -120,6 +120,7 @@
 	"EARNED_POINTS": "You have successfully invited {MEMBERS_COUNT} additional member(s) to be kakampink.",
 	"SEE_YOU": "See you at {LOCATION} on {DATE}. Wear your pink outfit and tie pink ribbons in your cars.",
 	"SHOW_MORE": "Show more",
+	"SEE_ALL": "SEE ALL",
 	"ACCOUNT_NOT_FOUND": "Account not found.",
 	"ACCOUNT_EXIST": "Account already exist!",
 	"RANKING": "Ranking",
@@ -187,5 +188,6 @@
 	"ERRMSG_FILESIZE": "File / Image too large too upload.",
 	"SELFIE_TITLE": "Selfie",
 	"SELFIE_MSG" : "Capture a selfie for your avatar. You can update it at a later time by clicking your photo in the Home page.",
-	"OPEN_CAMERA": "Open Camera"
+	"OPEN_CAMERA": "Open Camera",
+	"GLOBAL_ANNOUNCEMENT": "Kaya Natin Announcements"
 }
