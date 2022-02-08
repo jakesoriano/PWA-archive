@@ -46,11 +46,14 @@
       }
       .detailContent {
         flex: 1;
-        margin-top: 20px;
+        margin-top: 40px;
         z-index: 1;
         background: rgba(43,45,50,0.5);
         border-radius: 10px 10px 0 0;
         padding: 10px;
+        &.rows{
+          margin-top: 20px;
+        }
         .detailHead {
           .userName {
             font-size: 0.875rem;
@@ -64,7 +67,7 @@
             font-size: 0.75rem;
             span {
               float: right;
-              color:  $primary_layout;
+              color:  $primary;
               text-decoration: underline;
             }
           }

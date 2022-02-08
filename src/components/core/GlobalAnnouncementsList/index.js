@@ -42,7 +42,7 @@ class GlobalAnnouncementsList extends Component {
 												src={i.image}
 												style={{container: style.detailImage}}
 											/>
-											<div className={style.detailContent}>
+											<div className={`${style.detailContent} ${isDisplayFlex ? style.rows : ''}`}>
 												<div className={style.detailHead}>
 													<span className={`extraBold ${style.userName}`}>
 														{`${i.title.length > 30 ? `${this.removeTags(i.title || '').substr(0, 30)}...` :  i.title }`}
