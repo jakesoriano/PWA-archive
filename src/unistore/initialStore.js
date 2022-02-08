@@ -81,6 +81,11 @@ export const initialStore = {
   settings: {
     touchId: false
   },
+  appConfig: {
+    fetching: false,
+    result: false,
+    data: {}
+  },
   tasks: {
     fetching: false,
     result: false,
