@@ -55,6 +55,9 @@
 		}
 		.socialMedia {
 			text-align: center;
+			&.ios {
+				display: none;
+			}
 			ul {
 				display: inline-flex;
 				padding: 0;

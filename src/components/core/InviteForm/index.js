@@ -5,7 +5,7 @@ import { newInvite, validateMobile } from '_mutations';
 import {
 	getTranslation,
 	getRegions,
-	playStore,
+	getConfigByKey,
 	displayPageLoader,
 	showAlertBox
 } from '_helpers';
@@ -94,7 +94,7 @@ class InviteForm extends Component {
 	getCopyText = () => {
 		return `Come join us, be a KakamPink!\n\n
 			Download now!\n
-			Android: ${playStore}\n\n
+			Android: ${getConfigByKey('playStore')}\n\n
 			Use my invite code: ${this.props.refCode}
 		`;
 	};

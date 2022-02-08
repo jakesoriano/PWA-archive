@@ -31,7 +31,7 @@ export function fetchAnnouncements (page, limit) {
       updateStore({
         announcements: {
           data: page && page > 1 ? [
-            ...news.data,
+            ...announcements.data,
             ...res.data.results
           ] : res.data.results,
           total: res.data.total,

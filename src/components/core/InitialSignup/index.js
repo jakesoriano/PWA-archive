@@ -276,41 +276,44 @@ class InitialSignup extends Component {
               />
             </div>
             </form>
-            <div className={style.socialMedia}>
-              <p>{getTranslation('SOCIAL_MEDIA')}</p>
-              <ul>
-                <li>
-                <a onClick={() => {
-                    this.onClickSocial('F');
-                  }}>
-                  <ImageLoader
-                  src="assets/images/fb_icon.png"
-                  style={{ container: style.socMedIcons }}
-                  />
-                </a>
-                </li>
-                <li>
-                <a onClick={() => {
-                    this.onClickSocial('T');
-                  }}>
-                  <ImageLoader
-                  src="assets/images/twitter_icon.png"
-                  style={{ container: style.socMedIcons }}
-                  />
-                </a>
-                </li>
-                <li>
-                <a onClick={() => {
-                    this.onClickSocial('G');
-                  }}>
-                  <ImageLoader
-                  src="assets/images/google_icon.png"
-                  style={{ container: style.socMedIcons }}
-                  />
-                </a>
-                </li>
-              </ul>
-            </div>
+              
+            {process.env.PLATFORM !== 'ios' && (
+              <div className={`${style.socialMedia}`}>
+                <p>{getTranslation('SOCIAL_MEDIA')}</p>
+                <ul>
+                  <li>
+                  <a onClick={() => {
+                      this.onClickSocial('F');
+                    }}>
+                    <ImageLoader
+                    src="assets/images/fb_icon.png"
+                    style={{ container: style.socMedIcons }}
+                    />
+                  </a>
+                  </li>
+                  <li>
+                  <a onClick={() => {
+                      this.onClickSocial('T');
+                    }}>
+                    <ImageLoader
+                    src="assets/images/twitter_icon.png"
+                    style={{ container: style.socMedIcons }}
+                    />
+                  </a>
+                  </li>
+                  <li>
+                  <a onClick={() => {
+                      this.onClickSocial('G');
+                    }}>
+                    <ImageLoader
+                    src="assets/images/google_icon.png"
+                    style={{ container: style.socMedIcons }}
+                    />
+                  </a>
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
 	      </div>
 	    </div>

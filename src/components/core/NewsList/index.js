@@ -1,5 +1,5 @@
 import { Component } from 'preact';
-import { getTranslation, playStore } from '_helpers';
+import { getTranslation, getConfigByKey } from '_helpers';
 import { ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 import { likeShareNews, removeLikeNews } from '_mutations';
@@ -21,7 +21,7 @@ class NewsList extends Component {
 				We tell it as it is. Only the truth, KakamPink!\n\n
 				Shared via Kakampink App\n
 				Download now!\n
-				Android: ${playStore}\n\n
+				Android: ${getConfigByKey('playStore')}\n\n
 				Article Title: ${item.title}\n
 				Ariticle Link: ${item.link || ''}\n
 				Use my invite code: ${this.props.authUser.profile.refCode}
