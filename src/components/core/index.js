@@ -26,4 +26,5 @@ export { default as InviteForm } from './InviteForm';
 export { default as UserAvatar } from './UserAvatar';
 export { default as EventsList } from './EventsList';
 export { default as AnnouncementsList } from './AnnouncementsList';
+export { default as GlobalAnnouncementsList } from './GlobalAnnouncementsList';
 export { default as NewsList } from './NewsList';

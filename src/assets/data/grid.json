@@ -49,7 +49,10 @@
 				"component": "AccountProfile"
 			},
 			{
-				"component": "GlobalAnnouncement"
+				"component": "GlobalAnnouncement",
+				"props": {
+					"isDisplayFlex": true
+				}
 			},
 			{
 				"component": "StoriesDashboard"
@@ -341,6 +344,18 @@
 		"contents": [
 			{
 				"component": "PostContent"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_GLOBAL_ANNOUNCEMENT",
+		"uri": "global-announcements",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "GlobalAnnouncement"
 			}
 		]
 	}
