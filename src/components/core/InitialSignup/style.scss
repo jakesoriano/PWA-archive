@@ -50,11 +50,13 @@
 					font-weight: bold;
 				}
 			}
+			.appleLogo {
+				img {
+					top: -2px;
+				}
+			}
 			.socialMedia {
 				text-align: center;
-				&.ios {
-					display: none;
-				}
 				ul {
 					display: inline-flex;
 					padding: 0;
@@ -64,6 +66,7 @@
 						.socMedIcons {
 							width: 60px;
 							padding-bottom: 60px;
+							border-radius: 60px;
 						}
 					}
 				}

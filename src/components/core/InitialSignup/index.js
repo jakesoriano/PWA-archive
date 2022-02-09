@@ -11,6 +11,7 @@ import {
   nativeSigninFacebook,
   nativeSigninTwitter,
   nativeSigninGoogle,
+  nativeSigninApple,
 } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -151,7 +152,10 @@ class InitialSignup extends Component {
       ? nativeSigninFacebook() 
       : (type === 'T' 
         ? nativeSigninTwitter() 
-        : nativeSigninGoogle()
+        : (type === 'A' 
+          ? nativeSigninApple() 
+          : nativeSigninGoogle()
+        )
       )
     )
       .then(res => {
@@ -277,11 +281,10 @@ class InitialSignup extends Component {
             </div>
             </form>
               
-            {process.env.PLATFORM !== 'ios' && (
-              <div className={`${style.socialMedia}`}>
-                <p>{getTranslation('SOCIAL_MEDIA')}</p>
-                <ul>
-                  <li>
+            <div className={`${style.socialMedia}`}>
+              <p>{getTranslation('SOCIAL_MEDIA')}</p>
+              <ul>
+                <li>
                   <a onClick={() => {
                       this.onClickSocial('F');
                     }}>
@@ -290,8 +293,8 @@ class InitialSignup extends Component {
                     style={{ container: style.socMedIcons }}
                     />
                   </a>
-                  </li>
-                  <li>
+                </li>
+                <li>
                   <a onClick={() => {
                       this.onClickSocial('T');
                     }}>
@@ -300,8 +303,8 @@ class InitialSignup extends Component {
                     style={{ container: style.socMedIcons }}
                     />
                   </a>
-                  </li>
-                  <li>
+                </li>
+                <li>
                   <a onClick={() => {
                       this.onClickSocial('G');
                     }}>
@@ -310,10 +313,22 @@ class InitialSignup extends Component {
                     style={{ container: style.socMedIcons }}
                     />
                   </a>
-                  </li>
-                </ul>
-              </div>
-            )}
+                </li>
+                {process.env.PLATFORM === 'ios' && (
+                <li>
+                  <a className={style.appleLogo} 
+                    onClick={() => {
+                      this.onClickSocial('G');
+                    }}>
+                    <ImageLoader
+                    src="assets/images/apple_icon.png"
+                    style={{ container: style.socMedIcons }}
+                    />
+                  </a>
+                </li>
+                )}
+              </ul>
+            </div>
           </div>
 	      </div>
 	    </div>

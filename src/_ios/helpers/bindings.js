@@ -185,6 +185,21 @@ export function nativeSigninGoogle () {
   });
 }
 
+export function nativeSigninApple () {
+  return new Promise((resolve) => {
+    window.cb = (res) => {
+      resolve(res)
+      window.cb = null;
+    }
+    // eslint-disable-next-line no-console
+    console.log('SPA >> nativeSigninApple();');
+    callNative({
+      action: 'signinApple',
+      callback: 'window.cb',
+    });
+  });
+}
+
 export function nativeOnLogout () {
   // eslint-disable-next-line no-console
   console.log('SPA >> nativeOnLogout();');

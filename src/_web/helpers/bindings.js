@@ -95,6 +95,16 @@ export function nativeSigninGoogle () {
   });
 }
 
+export function nativeSigninApple () {
+  return new Promise((resolve) => {
+    // error
+    resolve({
+      success: false,
+      error: {}
+    });
+  });
+}
+
 export function nativeOnLogout () {
   // eslint-disable-next-line no-console
   console.log('SPA >> nativeOnLogout();');
