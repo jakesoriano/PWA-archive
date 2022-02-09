@@ -9,7 +9,8 @@ import {
   fetchCommunities,
   getCommunityInfo,
   generateNotifications,
-  fetchTasks
+  fetchTasks,
+  fetchVideos
 } from '_mutations';
 
 // eslint-disable-next-line import/prefer-default-export
@@ -25,6 +26,7 @@ export function prefetch (hasUser) {
     hasUser && fetchCommunities(),
     hasUser && getCommunityInfo(),
     hasUser && fetchTasks(),
+    hasUser && fetchVideos(),
   ]).then(() => {
     hasUser && generateNotifications();
   });

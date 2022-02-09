@@ -37,3 +37,4 @@ export const urlTasks = urlUser + `/tasks`;
 export const urlCommunityGetInfo = urlCommunity + `/info`;
 export const urlCommunityLeader = urlCommunity + `/leader`;
 export const urlValidateTask = urlUser + `/tasks/validate/{id}`;
+export const urlVideos = urlUser + `/videos`;

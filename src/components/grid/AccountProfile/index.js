@@ -1,6 +1,7 @@
 import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
+import { route } from 'preact-router';
 import { LoaderRing, ImageLoader, UserAvatar } from '_components/core';
 import {
 	getTranslation,
@@ -17,6 +18,13 @@ import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class AccountProfile extends Component {
+	constructor(props) {
+    super(props);
+    this.state = {
+      showDropdown: false
+    }
+  }
+
 	componentDidMount = () => {
 		const { authUser } = this.props;
 		if (authUser) {
@@ -54,7 +62,45 @@ class AccountProfile extends Component {
 		window.open('http://Bit.ly/LabanLeni22', '_blank');
 	};
 
-	render = ({ authUser }) => {
+	gotoVideos = () => {
+		route(`/videos`);
+	}
+
+	clickDropdown = () => {
+		this.setState({
+			showDropdown: !this.state.showDropdown
+		});
+	}
+
+	renderDropdown = () => {
+		const { showDropdown } = this.state;
+		if (showDropdown) {
+			return (
+				<div className={style.selectDropdown}>
+					<a className={style.download} onClick={this.onDownloadKit}>
+						<div>
+							<ImageLoader
+								src="assets/images/icon_download.png"
+								style={{ container: style.iconDownload }}
+							/>
+							<span>{getTranslation('DOWNLOAD_KIT')}</span>
+						</div>
+					</a>
+					<a className={style.download} onClick={this.gotoVideos}>
+						<div>
+							<ImageLoader
+								src="assets/images/icon_download.png"
+								style={{ container: style.iconDownload }}
+							/>
+							<span>{getTranslation('WATCH_VIDEOS')}</span>
+						</div>
+					</a>
+				</div>
+			);
+		}
+	}
+
+	render = ({ authUser },{showDropdown}) => {
 		if (!authUser) {
 			return <LoaderRing fullpage />;
 		}
@@ -111,19 +157,20 @@ class AccountProfile extends Component {
 						</div>
 					</div>
 				</div>
-				<a className={style.download} onClick={this.onDownloadKit}>
+				<a className={style.download} onClick={this.clickDropdown}>
 					<div>
 						<ImageLoader
 							src="assets/images/icon_download.png"
 							style={{ container: style.iconDownload }}
 						/>
-						<span>{getTranslation('DOWNLOAD_KIT')}</span>
+						<span>{getTranslation('GET_KIT')}</span>
 						<ImageLoader
 							src="assets/images/downarrow.png"
-							style={{ container: style.dropdown }}
+							style={{ container: `${style.dropdown} ${showDropdown ? style.active : ''}` }}
 						/>
 					</div>
 				</a>
+				{this.renderDropdown()}
 			</div>
 		);
 	};

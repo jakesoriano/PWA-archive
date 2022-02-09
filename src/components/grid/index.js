@@ -30,4 +30,6 @@ export { default as CommunitySetup } from './CommunitySetup';
 export { default as TaskCenter } from './TaskCenter';
 export { default as CommunityDetails } from './CommunityDetails';
 export { default as PostContent } from './PostContent';
+export { default as Videos } from './Videos';
+export { default as VideoDetails } from './VideoDetails';
 

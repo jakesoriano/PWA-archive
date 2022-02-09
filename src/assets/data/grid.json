@@ -346,5 +346,29 @@
 				"component": "PostContent"
 			}
 		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_VIDEOS",
+		"uri": "videos",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "Videos"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_VIDEOS",
+		"uri": "video-details",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "VideoDetails"
+			}
+		]
 	}
 ]
