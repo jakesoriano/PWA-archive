@@ -14,6 +14,7 @@ import {
   nativeSigninFacebook,
   nativeSigninTwitter,
   nativeSigninGoogle,
+  nativeSigninApple,
 } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -133,7 +134,10 @@ class Login extends Component {
       ? nativeSigninFacebook() 
       : (type === 'T' 
         ? nativeSigninTwitter() 
-        : nativeSigninGoogle()
+        : (type === 'A' 
+          ? nativeSigninApple() 
+          : nativeSigninGoogle()
+        )
       )
     )
       .then(res => {
@@ -143,7 +147,7 @@ class Login extends Component {
             username: res.data.email,
             password: res.data.id
           }, true, 'ACCOUNT_NOT_FOUND');
-        } else if (res.error !== 'SIGN_IN_CANCELLED') {
+        } else if (res.error !== 'SIGN_IN_CANCELLED') {alert(res.error);
           showAlertBox({
             message: 'ACCOUNT_NOT_FOUND',
             noTopBar: true
@@ -236,43 +240,54 @@ class Login extends Component {
                 </p>
               </div>
               
-              {process.env.PLATFORM !== 'ios' && (
-                <div className={`${style.socialMedia}`}>
-                  <p>{getTranslation('SOCIAL_MEDIA')}</p>
-                  <ul>
+              <div className={`${style.socialMedia}`}>
+                <p>{getTranslation('SOCIAL_MEDIA')}</p>
+                <ul>
+                  <li>
+                    <a onClick={() => {
+                        this.onClickSocial('F');
+                      }}>
+                      <ImageLoader
+                        src="assets/images/fb_icon.png"
+                        style={{ container: style.socMedIcons }}
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a onClick={() => {
+                        this.onClickSocial('T');
+                      }}>
+                      <ImageLoader
+                        src="assets/images/twitter_icon.png"
+                        style={{ container: style.socMedIcons }}
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a onClick={() => {
+                        this.onClickSocial('G');
+                      }}>
+                      <ImageLoader
+                        src="assets/images/google_icon.png"
+                        style={{ container: style.socMedIcons }}
+                      />
+                    </a>
+                  </li>
+                  {process.env.PLATFORM === 'ios' && (
                     <li>
-                      <a onClick={() => {
-                          this.onClickSocial('F');
+                      <a className={style.appleLogo} 
+                        onClick={() => {
+                          this.onClickSocial('A');
                         }}>
                         <ImageLoader
-                          src="assets/images/fb_icon.png"
+                          src="assets/images/apple_icon.png"
                           style={{ container: style.socMedIcons }}
                         />
                       </a>
                     </li>
-                    <li>
-                      <a onClick={() => {
-                          this.onClickSocial('T');
-                        }}>
-                        <ImageLoader
-                          src="assets/images/twitter_icon.png"
-                          style={{ container: style.socMedIcons }}
-                        />
-                      </a>
-                    </li>
-                    <li>
-                      <a onClick={() => {
-                          this.onClickSocial('G');
-                        }}>
-                        <ImageLoader
-                          src="assets/images/google_icon.png"
-                          style={{ container: style.socMedIcons }}
-                        />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              )}
+                  )}
+                </ul>
+              </div>
             </form>
           </div>
 	      </div>

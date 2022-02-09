@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { getCommunityInfo, createCommunityEvent } from '_mutations';
+import { getCommunityInfo, createCommunityEvent, createCommunityNews } from '_mutations';
 import { LoaderRing } from '_components/core';
 import { FormGroup, FormInput, FormDropdown, ImageLoader, ButtonDescription } from '_components/core';
 import { getTranslation, getContentTypes, displayPageLoader, messageModal, uploadFile, showAlertBox } from '_helpers';
@@ -28,6 +28,12 @@ class PostContent extends Component {
 				hasError: false
 			},
 			desc: {
+				value: '',
+				error: '',
+				message: '',
+				hasError: false
+			},
+			link: {
 				value: '',
 				error: '',
 				message: '',
@@ -107,6 +113,17 @@ class PostContent extends Component {
 		});
 	};
 
+	onLinkChange = (value) => {
+		this.setState({
+			link: {
+				...this.state.link,
+				value: value,
+				hasError: !Boolean(value),
+				error: !Boolean(value) ? 'REQUIRED' : ''
+			}
+		});
+	};
+
 	onTitleChange = (value) => {
 		this.setState({
 			title: {
@@ -163,19 +180,19 @@ class PostContent extends Component {
 	};
 
 	submitData  = (image) => {
-		const data = {
-			title: this.state.title.value,
-			image: image,
-			date: this.state.date.value,
-			by: this.state.eventBy.value,
-			isOnline: true,
-			location: this.state.location.value,
-			desc: this.state.desc.value
-		}
-		createCommunityEvent({
-			data
-		})
-			.then((res) => {
+		if(this.state.contentType.value === 'Event') {
+			const data = {
+				title: this.state.title.value,
+				image: image,
+				date: this.state.date.value,
+				by: this.state.eventBy.value,
+				isOnline: true,
+				location: this.state.location.value,
+				desc: this.state.desc.value
+			}
+			createCommunityEvent({
+				data
+			}).then((res) => {
 				displayPageLoader(false)
 				if(res && res.success) {
 					this.setState({
@@ -188,7 +205,7 @@ class PostContent extends Component {
 					});
 				} else {
 					showAlertBox({
-						message: es.error.message || 'SOMETHING_WRONG'
+						message: res.error.message || 'SOMETHING_WRONG'
 					});
 				}
 			}).catch((err) => {
@@ -197,74 +214,103 @@ class PostContent extends Component {
 				});
 				displayPageLoader(false);
 			});
+		} else {
+			const data = {
+				title: this.state.title.value,
+				image: image,
+				link: this.state.link.value,
+				desc: this.state.desc.value
+			}
+			createCommunityNews({
+				data
+			}).then((res) => {
+				displayPageLoader(false)
+				if(res && res.success) {
+					this.setState({
+						...this.initialState
+					});
+					route(`/`);
+					showAlertBox({
+						message: 'POST_CONTENT_SUCCESS',
+						success: true
+					});
+				} else {
+					showAlertBox({
+						message: res.error.message || 'SOMETHING_WRONG'
+					});
+				}
+			}).catch((err) => {
+				showAlertBox({
+					message: err.message || 'SOMETHING_WRONG'
+				});
+				displayPageLoader(false);
+			});
+		}
+		
+	}
+
+	uploadImage = () => {
+		displayPageLoader(true);
+		uploadFile({
+			file: this.state.attachment.file
+		})
+			.then((res) => {
+				if(res.success && res.data) {
+					this.submitData(res.data.image);
+				} else {
+					displayPageLoader(false)
+					showAlertBox({
+						message: res.errMessage || 'SOMETHING_WRONG'
+					});
+				}
+			});
 	}
 
 	handleContinue = () => {
-		if (!this.state.contentType.value || 
-			!this.state.title.value || 
-			!this.state.desc.value ||
-			!this.state.date.value || 
-			!this.state.eventBy.value || 
-			!this.state.location.value ||
-			!this.state.attachment.file) {
+		if(!this.state.contentType.value) {
 			this.onContentTypeChange(this.state.contentType.value);
-			this.onTitleChange(this.state.title.value);
-			this.onDescChange(this.state.desc.value);
-			this.onDateChange(this.state.date.value);
-			this.onLocationChange(this.state.location.value);
-			this.onEventByChange(this.state.eventBy.value);
-			this.onAttachmentChange(this.state.attachment.file);
 		} else {
-			displayPageLoader(true);
-			uploadFile({
-				file: this.state.attachment.file
-			})
-				.then((res) => {
-					if(res.success && res.data) {
-						this.submitData(res.data.image);
-					} else {
-						displayPageLoader(false)
-						showAlertBox({
-							message: res.errMessage || 'SOMETHING_WRONG'
-						});
-					}
-				});
+			if(this.state.contentType.value === 'Event') {
+				if(!this.state.title.value || 
+					!this.state.desc.value ||
+					!this.state.date.value || 
+					!this.state.eventBy.value || 
+					!this.state.location.value ||
+					!this.state.attachment.file) {
+					this.onTitleChange(this.state.title.value);
+					this.onDescChange(this.state.desc.value);
+					this.onDateChange(this.state.date.value);
+					this.onLocationChange(this.state.location.value);
+					this.onEventByChange(this.state.eventBy.value);
+					this.onAttachmentChange(this.state.attachment.file);
+				} else {
+					this.uploadImage();
+				}
+			} else {
+				if(!this.state.title.value || 
+					!this.state.desc.value ||
+					!this.state.link.value || 
+					!this.state.attachment.file) {
+					this.onTitleChange(this.state.title.value);
+					this.onDescChange(this.state.desc.value);
+					this.onLinkChange(this.state.link.value);
+					this.onAttachmentChange(this.state.attachment.file);
+				} else {
+					this.uploadImage();
+				}
+			}
 		}
 	}
 
-	render = ({ authUser },{title, desc, location, date, attachment, contentType, contentTypeOptions, eventBy}) => {
-		if (!authUser) {
-			return <LoaderRing fullpage />;
-		}
-
+	renderEventForm = () => {
 		return (
-			<div className={style.postContent}>
-				<div className={style.infoWrap}>
-					<FormGroup label={getTranslation("CONTENT_TYPE")} hasError={contentType.hasError}>
-						<FormDropdown
-							className={style.contentType}
-							value={contentType.value}
-							options={contentTypeOptions}
-							getValue={option => option.value}
-							getText={option => option.text}
-							onBlur={(e) => {
-								this.onContentTypeChange(e.target.value)
-							}}
-							onIonChangenput={(e) => {
-								this.onContentTypeChange(e.target.value)
-							}}
-							hasError={contentType.hasError}
-							error={contentType.error}
-							message={contentType.message}
-							 />
-					</FormGroup>
-				</div>
+			<div>	
 				<div className={style.infoWrap}>
 					<FormGroup label={getTranslation("CONTENT_TITLE")}>
 						<FormInput
 							className={style.title}
 							style={{error: style.title}}
-							value={title.value}
+							value={this.state.title.value}
 							type="text"
 							onBlur={(e) => {
 								this.onTitleChange(e.target.value)
@@ -272,9 +318,9 @@ class PostContent extends Component {
 							onInput={(e) => {
 								this.onTitleChange(e.target.value)
 							}}
-							hasError={title.hasError}
-							error={title.error}
-							message={title.message} />
+							hasError={this.state.title.hasError}
+							error={this.state.title.error}
+							message={this.state.title.message} />
 					</FormGroup>
 				</div>
 
@@ -283,7 +329,7 @@ class PostContent extends Component {
 						<FormInput
 							className={style.desc}
 							style={{error: style.desc}}
-							value={desc.value}
+							value={this.state.desc.value}
 							type="textarea"
 							rows="4"
 							onBlur={(e) => {
@@ -292,9 +338,9 @@ class PostContent extends Component {
 							onInput={(e) => {
 								this.onDescChange(e.target.value)
 							}}
-							hasError={desc.hasError}
-							error={desc.error}
-							message={desc.message} />
+							hasError={this.state.desc.hasError}
+							error={this.state.desc.error}
+							message={this.state.desc.message} />
 					</FormGroup>
 				</div>
 
@@ -303,7 +349,7 @@ class PostContent extends Component {
 						<FormInput
 							className={style.eventBy}
 							style={{error: style.eventBy}}
-							value={eventBy.value}
+							value={this.state.eventBy.value}
 							type="text"
 							onBlur={(e) => {
 								this.onEventByChange(e.target.value)
@@ -311,9 +357,9 @@ class PostContent extends Component {
 							onInput={(e) => {
 								this.onEventByChange(e.target.value)
 							}}
-							hasError={eventBy.hasError}
-							error={eventBy.error}
-							message={eventBy.message} />
+							hasError={this.state.eventBy.hasError}
+							error={this.state.eventBy.error}
+							message={this.state.eventBy.message} />
 					</FormGroup>
 				</div>
 
@@ -322,7 +368,7 @@ class PostContent extends Component {
 						<FormInput
 							className={style.location}
 							style={{error: style.location}}
-							value={location.value}
+							value={this.state.location.value}
 							type="text"
 							onBlur={(e) => {
 								this.onLocationChange(e.target.value)
@@ -330,9 +376,9 @@ class PostContent extends Component {
 							onInput={(e) => {
 								this.onLocationChange(e.target.value)
 							}}
-							hasError={location.hasError}
-							error={location.error}
-							message={location.message} />
+							hasError={this.state.location.hasError}
+							error={this.state.location.error}
+							message={this.state.location.message} />
 					</FormGroup>
 				</div>
 
@@ -341,7 +387,7 @@ class PostContent extends Component {
 						<FormInput
 							className={style.date}
 							style={{error: style.date}}
-							value={date.value}
+							value={this.state.date.value}
 							type="date"
 							onBlur={(e) => {
 								this.onDateChange(e.target.value)
@@ -349,21 +395,21 @@ class PostContent extends Component {
 							onInput={(e) => {
 								this.onDateChange(e.target.value)
 							}}
-							hasError={date.hasError}
-							error={date.error}
-							message={date.message} />
+							hasError={this.state.date.hasError}
+							error={this.state.date.error}
+							message={this.state.date.message} />
 					</FormGroup>
 				</div>
 
 				<div className={style.infoWrap}>
-					<FormGroup label={getTranslation("ATTACHMENT")}>
+					<FormGroup label={getTranslation("IMAGE")}>
 						<div className={style.attachmentWrap}>
 							<div className={style.attachmentInputWrap}>								
 									<FormInput
 										id='inputAttachment'
 										className={style.attachment}
 										style={{error: style.attachment}}
-										value={attachment.file}
+										value={this.state.attachment.file}
 										type="file"
 										onBlur={(e) => {
 											this.onAttachmentChange(e.target.files[0])
@@ -371,9 +417,9 @@ class PostContent extends Component {
 										onInput={(e) => {
 											this.onAttachmentChange(e.target.files[0])
 										}}
-										hasError={attachment.hasError}
-										error={attachment.error}
-										message={attachment.message} />
+										hasError={this.state.attachment.hasError}
+										error={this.state.attachment.error}
+										message={this.state.attachment.message} />
 							</div>
 							<div>
 								<a className={style.pShare} 
@@ -383,12 +429,147 @@ class PostContent extends Component {
 								<ImageLoader
 											src="assets/images/attachment_icon_white.png"
 											style={{container: style.pIconShare}} />
-										<span>{getTranslation('ADD_FILE')}</span>
+										<span>{getTranslation('ADD_IMAGE')}</span>
 								</a>
 							</div>
 						</div>
 					</FormGroup>
 				</div>
+			</div>
+		);
+	}
+
+	renderNewsForm = () => {
+		return (
+			<div>
+				<div className={style.infoWrap}>
+					<FormGroup label={getTranslation("CONTENT_TITLE")}>
+						<FormInput
+							className={style.title}
+							style={{error: style.title}}
+							value={this.state.title.value}
+							type="text"
+							onBlur={(e) => {
+								this.onTitleChange(e.target.value)
+							}}
+							onInput={(e) => {
+								this.onTitleChange(e.target.value)
+							}}
+							hasError={this.state.title.hasError}
+							error={this.state.title.error}
+							message={this.state.title.message} />
+					</FormGroup>
+				</div>
+
+				<div className={style.infoWrap}>
+					<FormGroup label={getTranslation("CONTENT_DESC")}>
+						<FormInput
+							className={style.desc}
+							style={{error: style.desc}}
+							value={this.state.desc.value}
+							type="textarea"
+							rows="4"
+							onBlur={(e) => {
+								this.onDescChange(e.target.value)
+							}}
+							onInput={(e) => {
+								this.onDescChange(e.target.value)
+							}}
+							hasError={this.state.desc.hasError}
+							error={this.state.desc.error}
+							message={this.state.desc.message} />
+					</FormGroup>
+				</div>
+
+				<div className={style.infoWrap}>
+					<FormGroup label={getTranslation("CONTENT_LINK")}>
+						<FormInput
+							className={style.link}
+							style={{error: style.link}}
+							value={this.state.link.value}
+							type="text"
+							rows="4"
+							onBlur={(e) => {
+								this.onLinkChange(e.target.value)
+							}}
+							onInput={(e) => {
+								this.onLinkChange(e.target.value)
+							}}
+							hasError={this.state.link.hasError}
+							error={this.state.link.error}
+							message={this.state.link.message} />
+					</FormGroup>
+				</div>
+
+				<div className={style.infoWrap}>
+					<FormGroup label={getTranslation("IMAGE")}>
+						<div className={style.attachmentWrap}>
+							<div className={style.attachmentInputWrap}>								
+									<FormInput
+										id='inputAttachment'
+										className={style.attachment}
+										style={{error: style.attachment}}
+										value={this.state.attachment.file}
+										type="file"
+										onBlur={(e) => {
+											this.onAttachmentChange(e.target.files[0])
+										}}
+										onInput={(e) => {
+											this.onAttachmentChange(e.target.files[0])
+										}}
+										hasError={this.state.attachment.hasError}
+										error={this.state.attachment.error}
+										message={this.state.attachment.message} />
+							</div>
+							<div>
+								<a className={style.pShare} 
+									onClick={() => {
+										document.getElementById('inputAttachment').click()
+									}}>
+								<ImageLoader
+											src="assets/images/attachment_icon_white.png"
+											style={{container: style.pIconShare}} />
+										<span>{getTranslation('ADD_IMAGE')}</span>
+								</a>
+							</div>
+						</div>
+					</FormGroup>
+				</div>
+
+			</div>
+		);
+	}
+
+	render = ({ authUser },{contentType, contentTypeOptions}) => {
+		if (!authUser) {
+			return <LoaderRing fullpage />;
+		}
+
+		return (
+			<div className={style.postContent}>
+				<div className={style.infoWrap}>
+					<FormGroup label={getTranslation("CONTENT_TYPE")} hasError={this.state.contentType.hasError}>
+						<FormDropdown
+							className={style.contentType}
+							value={contentType.value}
+							options={contentTypeOptions}
+							getValue={option => option.value}
+							getText={option => option.text}
+							onBlur={(e) => {
+								this.onContentTypeChange(e.target.value)
+							}}
+							onChange={(e) => {
+								this.onContentTypeChange(e.target.value)
+							}}
+							hasError={contentType.hasError}
+							error={contentType.error}
+							message={contentType.message}
+							/>
+					</FormGroup>
+				</div>
+
+				{contentType.value === 'Event' && this.renderEventForm()}
+				{contentType.value === 'Announcement' && this.renderNewsForm()}
 				
 				<div className={style.buttonContainer}>
 					<ButtonDescription
