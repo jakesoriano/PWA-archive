@@ -373,7 +373,7 @@ class Signup extends Component {
 											route(`/${this.props.parent}/registration-otp`);
 										} else {
 											showAlertBox({
-												message: 'SOMETHING_WRONG'
+												message: res.error || 'SOMETHING_WRONG'
 											});
 										}
 									})
