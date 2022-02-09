@@ -70,11 +70,11 @@ export function completeSignup (data) {
           });
           resolve(res);
         } else {
-          resolve(false);
+          resolve(res);
         }
       })
       .catch((err) => {
-        resolve(false);
+        resolve(res);
         console.log(`SPA >> completeSignup failed`, err);
       });
   });

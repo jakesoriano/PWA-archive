@@ -70,7 +70,7 @@ export function fetchAppConfig () {
               btnText: getTranslation('NEW_UPDATE_BTN'),
               cbOk: () => {
                 // no action here
-                window.open(platform.os === 'ios' ? getConfigByKey('appStore') : getConfigByKey('playStore'), '_blank')
+                window.open(process.env.PLATFORM === 'ios' ? getConfigByKey('appStore') : getConfigByKey('playStore'), '_blank')
               }
             });
           }
