@@ -52,12 +52,12 @@ export function fetchAppConfig () {
           let hasUpdate = false;
           
           // check if has new andoird version
-          if (platform.os !== 'ios' && native < android) {
+          if (process.env.PLATFORM !== 'ios' && native < android) {
             hasUpdate = true;
           }
     
           // check if has new ios version
-          if (platform.os === 'ios' && native < ios) {
+          if (process.env.PLATFORM === 'ios' && native < ios) {
             hasUpdate = true;
           }
 
