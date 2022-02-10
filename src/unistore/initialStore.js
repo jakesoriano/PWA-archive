@@ -88,6 +88,12 @@ export const initialStore = {
     date: null,
     completed: false
   },
+  topOverall: {
+    fetching: false,
+    result: false,
+    data: null
+  },
+  filters: null,
   // user
   authUser: null,
   deviceId: null,
@@ -98,6 +104,7 @@ export const initialStore = {
   popupModal: null,
   circleModal: null,
   alertShow: null,
+  filterShow: null,
   pageLoader: {
     display: false
   },

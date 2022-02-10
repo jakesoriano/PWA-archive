@@ -1,5 +1,6 @@
 export const urlTranslation = `{PUBLIC_PATH}assets/data/translations/{langAlias}.json?_{_}`;
 export const urlGrid = `{PUBLIC_PATH}assets/data/grid.json?_{_}`;
+export const urlLeaderboardFilters = `{PUBLIC_PATH}assets/data/leaderboard-filters.json?_{_}`;
 export const urlUser = `${process.env.API_DOMAIN}user`;
 export const urlUserLogin = urlUser + `/login`;
 export const urlUserProfile = urlUser + `/profile`;
@@ -38,6 +39,7 @@ export const urlTasks = urlUser + `/tasks`;
 export const urlCommunityGetInfo = urlCommunity + `/info`;
 export const urlCommunityLeader = urlCommunity + `/leader`;
 export const urlValidateTask = urlUser + `/tasks/validate/{id}`;
+export const urlTopOverall = `${process.env.API_DOMAIN}overall`;
 
 export const playStore = 'https://play.google.com/store/apps/details?id=com.leni2022&hl=en&gl=US';
 export const appStore = 'https://apps.apple.com/us/app/facebook/id284882215'

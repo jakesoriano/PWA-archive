@@ -1,36 +1,17 @@
 @import '../../../style/variables.scss';
-.membersWrap {
+.featuredTopWrap {
   background: $details_bg;
   border-radius: 10px;
   margin: 15px;
-  padding-top: 10px;
+  padding: 10px;
   display: block;
   overflow: hidden;
-  * {
-    color: #737373;
-    font-size: 0.9rem;
-  }
-  .titleHead {
-    position: relative;
-    .filter {
-      display: flex;
-      align-items: center;
-      position: absolute;
-      right: 10px;
-      top: 0;
-      .filterIcon {
-        width: 24px;
-        padding-bottom: 24px;
-        margin-right: 10px;
-      }
-    }
-  }
-  .title {
-    font-size: 1.2rem;
-    text-align: center;
+  .heading {
+    text-transform: uppercase;
     color: $primary;
+    font-size: 15px;
   }
-  .item {
+  .featured {
     display: flex;
     padding: 10px 15px;
     border-bottom: 1px solid $item_border;
@@ -45,8 +26,11 @@
       align-content: center;
       flex-grow: 1;
       width: calc(100% - 190px);
+      .name {
+        color: #737373;
+      }
       .members {
-        font-size: 0.5rem;
+        color: #737373;
       }
     }
     .rank,
@@ -61,21 +45,10 @@
       }
     }
   }
-  .itemHeader {
-    border-bottom: 1px solid $item_border;
-    .avatar{
-      width: 60px;
-      padding-bottom: 0;
-    }
-    .rank,
-    .points {
-      p {
-        padding-bottom: 0;
-      }
-    }
-  }
   .noRecord {
     text-align: center;
-    padding: 10px;
+    margin: 10px 10px 0;
+    color: #737373;
+    font-size: 0.9rem;
   }
 }

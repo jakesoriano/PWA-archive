@@ -31,7 +31,8 @@ import {
   BackToTop,
 	AlertBox,
 	PopupModal,
-	CircleModal
+	CircleModal,
+	Filter
 } from '_components/core';
 import {
 	nativeWebReady,
@@ -325,8 +326,22 @@ class Grid extends Component {
 	  }
 	};
 
+	renderFilter = () => {
+	  const { filterShow } = this.props;
+	  try {
+	    const props = { ...filterShow };
+			console.log(props);
+	    // eslint-disable-next-line react/jsx-props-no-spreading
+	    return <Filter {...props} show={filterShow && true} />;
+	  } catch (err) {
+	    // eslint-disable-next-line no-console
+	    console.error('Widget Component >> renderCircleModal >> Error:', err);
+	    return null;
+	  }
+	};
+
 	render = (
-	  { authUser, translation, messageModal, promptModal, componentModal, pageLoader, alertShow, popupModal, circleModal },
+	  { authUser, translation, messageModal, promptModal, componentModal, pageLoader, alertShow, popupModal, circleModal, filterShow },
 	  { data, popup, rightSideBar }
 	) => {
 	  if (!data || !translation.data) {
@@ -401,6 +416,7 @@ class Grid extends Component {
 	      {componentModal && this.renderComponentModal()}
 	      {popupModal && this.renderPopupModal()}
 				{circleModal && this.renderCircleModal()}
+				{this.renderFilter()}
 	      {pageLoader.display && <LoaderRing fullpage />}
 
 	      <BackToTop
@@ -428,7 +444,8 @@ const ConnectComponent = connect([
 	'popupModal',
 	'circleModal',
 	'notifications',
-	'deviceId'
+	'deviceId',
+	'filterShow'
 ])(Grid);
 export default ConnectComponent;
 

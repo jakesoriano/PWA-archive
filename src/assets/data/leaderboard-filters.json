@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Overall",
+    "value": "overall",
+    "children": []
+  },
+  {
+    "label": "Regional",
+    "value": "regional",
+    "children": []
+  },
+  {
+    "label": "Personal",
+    "value": "personal",
+    "children": []
+  }
+]

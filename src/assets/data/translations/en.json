@@ -187,5 +187,8 @@
 	"ERRMSG_FILESIZE": "File / Image too large too upload.",
 	"SELFIE_TITLE": "Selfie",
 	"SELFIE_MSG" : "Take a selfie photo for your avatar. You can update your profile photo at a later time by clicking your photo in the Home page.",
-	"OPEN_CAMERA": "Open Camera"
+	"OPEN_CAMERA": "Open Camera",
+	"FEATURED_TOP_RANKING_LEADER": "Featured top overall ranking leader",
+	"FILTER": "Filter",
+	"BACK": "Back"
 }

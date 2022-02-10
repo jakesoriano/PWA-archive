@@ -2,8 +2,8 @@ import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader } from '_components/core';
-import { fetchMembers } from '_mutations';
-import { getTranslation, formatNumber, getDefaultAvatar } from '_helpers';
+import { fetchMembers, getLeaderboardFilters } from '_mutations';
+import { getTranslation, formatNumber, getDefaultAvatar, showFilter, getRegions } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -11,14 +11,47 @@ import style from './style';
 class Leaderboard extends Component {
 	componentDidMount = () => {
 		fetchMembers();
+		getLeaderboardFilters();
 	};
+	
+	onShowFilter = () => {
+		let { filters } = this.props;
+		filters.data.map(item => {
+			if (item.value === 'regional') {
+				item.children = getRegions()
+			}
+		});
+		console.log(filters.data)
+		let props = {
+			data: filters.data,
+			onClickCallback: () => this.onClickCallback()
+		}
 
-	render = ({ members }) => {
+		showFilter(props)
+	}
+
+	onClickCallback = () => {
+		alert(1)
+	}
+
+	render = ({ members, filters, filterShow }) => {
 	  return (
 	    <dv className={style.membersWrap}>
 				
 				{/* Title */}
-				<p className={`bold ${style.title}`}>{getTranslation('TOP_PERFORMERS')}</p>
+				<div className={style.titleHead}>
+					<p className={`bold ${style.title}`}>{getTranslation('TOP_PERFORMERS')}</p>
+					<div
+						className={style.filter}
+						onClick={this.onShowFilter}
+					>
+						<ImageLoader 
+							src="assets/icons/filter_icon.png"
+							style={{container: style.filterIcon}}
+						/>
+						<span>{getTranslation('FILTER')}</span>
+					</div>
+				</div>
 				{/* header */}
 				<div className={`${style.item} ${style.itemHeader}`}>
 					<div className={style.avatar}></div>
@@ -55,8 +88,9 @@ class Leaderboard extends Component {
 				{members.data.length <= 0 && <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>}
 				{/* Loader */}
 				{!members.result && <LoaderRing fullpage />}
+				{/* Filter */}
 			</dv>
 	  );
 	};
 }
-export default connect(['members'])(Leaderboard);
+export default connect(['members', 'filters'])(Leaderboard);
