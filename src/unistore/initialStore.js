@@ -93,6 +93,11 @@ export const initialStore = {
     result: false,
     data: null
   },
+  topPerformers: {
+    fetching: false,
+    result: false,
+    data: []
+  },
   filters: null,
   // user
   authUser: null,

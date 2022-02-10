@@ -1,40 +1,45 @@
 import { store, updateStore } from '_unistore';
-import { xhr, urlTopOverall, urlLeaderboardFilters } from '_helpers';
+import { xhr, urlLeaderboard, urlLeaderboardFilters } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
-export function fetchTopRanking () {
+export function fetchTopRanking (data) {
   // curreny state
-  const { topOverall } = store.getState();
+  const { topOverall, topPerformers } = store.getState();
+  let selectedObj = data.isFromFilter ? topPerformers : topOverall;
+  let selectedKey = data.isFromFilter ? 'topPerformers' : 'topOverall';
 
   // fetching
-  if(topOverall.fetching) {
+  if(selectedObj.fetching) {
     return;
   }
 
   // initial state
   updateStore({
-    topOverall: {
-      ...topOverall,
+    [selectedKey]: {
+      ...selectedObj,
       fetching: true,
       result: false
     }
   });
 
-  return xhr(urlTopOverall)
+  return xhr(`${urlLeaderboard}?type=${data.type}&top=${data.top}${data.type === 'regional' && data.region ? '&region=' + data.region : ''}`)
     .then((res) => {
-      updateStore({
-        topOverall: {
-          data: res.data,
-          fetching: false,
-          result: true
-        }
-      });
+      if (res.data.length) {
+        console.log(selectedKey)
+        updateStore({
+          [selectedKey]: {
+            data: data.isFromFilter ? res.data : res.data[0],
+            fetching: false,
+            result: true
+          }
+        });
+      }
       return true;
     })
     .catch(() => {
       updateStore({
-        topOverall: {
-          ...topOverall,
+        [selectedKey]: {
+          ...selectedObj,
           fetching: false,
           result: false
         }

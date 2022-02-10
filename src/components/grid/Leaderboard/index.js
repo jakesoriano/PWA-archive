@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader } from '_components/core';
-import { fetchMembers, getLeaderboardFilters } from '_mutations';
+import { fetchMembers, getLeaderboardFilters, fetchTopRanking } from '_mutations';
 import { getTranslation, formatNumber, getDefaultAvatar, showFilter, getRegions } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -10,8 +10,14 @@ import style from './style';
 // eslint-disable-next-line react/prefer-stateless-function
 class Leaderboard extends Component {
 	componentDidMount = () => {
+    let data = {
+      type: 'global',
+      top: 10,
+			isFromFilter: true
+    }
 		fetchMembers();
 		getLeaderboardFilters();
+		fetchTopRanking(data)
 	};
 	
 	onShowFilter = () => {
@@ -34,7 +40,7 @@ class Leaderboard extends Component {
 		alert(1)
 	}
 
-	render = ({ members, filters, filterShow }) => {
+	render = ({ topPerformers, filters }) => {
 	  return (
 	    <dv className={style.membersWrap}>
 				
@@ -65,7 +71,7 @@ class Leaderboard extends Component {
 					</div>
 				</div>
 				{/* content */}
-				{members.data.sort((a, b) => b.points - a.points).map((item, index) => (
+				{topPerformers.data.length && topPerformers.data.sort((a, b) => b.points - a.points).map((item, index) => (
 					<div className={style.item}>
 						<ImageLoader 
 							src={item.image || getDefaultAvatar()}
@@ -85,12 +91,12 @@ class Leaderboard extends Component {
 					</div>
 				))}
 				{/* no record */}
-				{members.data.length <= 0 && <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>}
+				{topPerformers.data.length <= 0 && <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>}
 				{/* Loader */}
-				{!members.result && <LoaderRing fullpage />}
+				{!topPerformers.result && <LoaderRing fullpage />}
 				{/* Filter */}
 			</dv>
 	  );
 	};
 }
-export default connect(['members', 'filters'])(Leaderboard);
+export default connect(['members', 'filters', 'topPerformers'])(Leaderboard);

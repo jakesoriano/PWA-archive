@@ -14,23 +14,27 @@ class FeaturedTopRanking extends Component {
   };
 
   componentDidMount = () => {
-    fetchTopRanking();
+    let data = {
+      type: 'global',
+      top: 1
+    }
+    fetchTopRanking(data);
   };
 
   renderDom = (data) => {
     return data ? (
       <div className={style.featured}>
         <ImageLoader 
-          src={'https://static.wikia.nocookie.net/chuckychildsplay/images/9/90/GoodGuy1.jpg/revision/latest?cb=20191031223424' || getDefaultAvatar()}
+          src={data.profile.image || getDefaultAvatar()}
           style={{container: style.avatar}}
         />
         <div className={style.nameMember}>
           <div>
-            <p className={`light ${style.name}`}>
-              {`${data.profile.fname} ${data.profile.lname}`},
-              {`${data.profile.region} ${data.profile.municipality}`}
+            <p className={`bold ${style.name}`}>
+              {`${data.profile.fname} ${data.profile.lname}, `}
+              {`${data.profile.region}, ${data.profile.municipality}`}
             </p>
-            <p className={`light ${style.members}`}>{`${data.members} ${getTranslation('MEMBERS')}`}</p>
+            <p className={`bold ${style.members}`}>{`${data.members} ${getTranslation('MEMBERS')}`}</p>
           </div>
         </div>
       </div>
