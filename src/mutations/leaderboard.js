@@ -24,19 +24,17 @@ export function fetchTopRanking (data) {
 
   return xhr(`${urlLeaderboard}?type=${data.type}&top=${data.top}${data.type === 'regional' && data.region ? '&region=' + data.region : ''}`)
     .then((res) => {
-      if (res.data.length) {
-        console.log(selectedKey)
-        updateStore({
-          [selectedKey]: {
-            data: data.isFromFilter ? res.data : res.data[0],
-            fetching: false,
-            result: true
-          }
-        });
-      }
+      updateStore({
+        [selectedKey]: {
+          data: data.isFromFilter ? res.data : res.data[0],
+          fetching: false,
+          result: true
+        }
+      });
+      console.log(`SPA >> fetchTopRanking Success`, res.success);
       return true;
     })
-    .catch(() => {
+    .catch((err) => {
       updateStore({
         [selectedKey]: {
           ...selectedObj,
@@ -44,6 +42,7 @@ export function fetchTopRanking (data) {
           result: false
         }
       });
+      console.log(`SPA >> fetchTopRanking failed`, err);
       return false;
     });
 }

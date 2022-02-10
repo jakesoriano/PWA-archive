@@ -11,7 +11,7 @@ class Filter extends Component {
     this.state = {
       showChildren: false,
       children: [],
-      selected: ''
+      parent: ''
     }
   }
 
@@ -29,7 +29,7 @@ class Filter extends Component {
     }
   };
 
-  onParentClick = (e) => {
+  onClickParent = (e) => {
     const { data } = this.props;
     let obj = data.reduce((o, i) => Object.assign(o, {[i.value]: i}), {})
     let selected = obj[e.target.value];
@@ -37,9 +37,22 @@ class Filter extends Component {
       this.setState({
         showChildren: true,
         children: selected.children,
-        selected: selected.label
+        parent: e.target.value
       });
     }
+    let val = {
+      parentVal: e.target.value,
+      hasChildren: selected.children && selected.children.length ? true : false
+    }
+    this.props.onClickParent(val)
+  }
+
+  onClickChild = (e) => {
+    let val = {
+      childVal: e.target.value,
+      parentVal: this.state.parent
+    }
+    this.props.onClickChild(val)
   }
 
   onHideChildren = () => {
@@ -59,7 +72,7 @@ class Filter extends Component {
   
   renderChildren = (data) => {
     return (
-      <div className={`${style.childrenWrap} ${this.state.showChildren && style.show}`}>
+      <div className={`${style.childrenWrap} ${this.state.showChildren && this.props.show && style.show}`}>
       <div className={style.header}>
         <p className={style.back} onClick={this.onHideChildren}>&lt; {getTranslation('BACK')}</p>
         <p className={style.title}>{getTranslation('FILTER')} - {this.state.selected}</p>
@@ -71,7 +84,7 @@ class Filter extends Component {
               <FormInput
                 type={this.props.isSubMultiselect ? 'checkbox' : 'radio'}
                 label={item.text}
-                onClick={this.props.onClickCallback}
+                onClick={this.onClickChild}
                 value={item.value}
                 id={item.value}
                 name="filter"
@@ -96,7 +109,7 @@ class Filter extends Component {
               <FormInput
                 type={props.isMultiselect ? 'checkbox' : 'radio'}
                 label={item.label}
-                onClick={this.onParentClick}
+                onClick={this.onClickParent}
                 value={item.value}
                 id={item.value}
                 name="filter"

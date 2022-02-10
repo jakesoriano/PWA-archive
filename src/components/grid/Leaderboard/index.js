@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader } from '_components/core';
 import { fetchMembers, getLeaderboardFilters, fetchTopRanking } from '_mutations';
-import { getTranslation, formatNumber, getDefaultAvatar, showFilter, getRegions } from '_helpers';
+import { getTranslation, formatNumber, getDefaultAvatar, showFilter, getRegions, getConfigByKey, displayPageLoader } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -12,7 +12,7 @@ class Leaderboard extends Component {
 	componentDidMount = () => {
     let data = {
       type: 'global',
-      top: 10,
+      top: getConfigByKey('leaderboardTop'),
 			isFromFilter: true
     }
 		fetchMembers();
@@ -27,17 +27,33 @@ class Leaderboard extends Component {
 				item.children = getRegions()
 			}
 		});
-		console.log(filters.data)
 		let props = {
 			data: filters.data,
-			onClickCallback: () => this.onClickCallback()
+			onClickParent: (val) => this.onClickCallback(val),
+			onClickChild: (val) => this.onClickCallback(val)
 		}
 
 		showFilter(props)
 	}
 
-	onClickCallback = () => {
-		alert(1)
+	onClickCallback = (val) => {
+		let data = {
+			type: val.parentVal,
+			top: getConfigByKey('leaderboardTop'),
+			isFromFilter: true
+		}
+		if (data.type === 'regional') {
+			data.region = val.childVal
+		}
+		if (!val.hasChildren) {
+			try {
+				fetchTopRanking(data).then(() => {
+					showFilter(null);
+				});
+			} catch (err) {
+				console.log(err);
+			}
+		}
 	}
 
 	render = ({ topPerformers, filters }) => {
@@ -71,7 +87,7 @@ class Leaderboard extends Component {
 					</div>
 				</div>
 				{/* content */}
-				{topPerformers.data.length && topPerformers.data.sort((a, b) => b.points - a.points).map((item, index) => (
+				{topPerformers.data && topPerformers.data.length && topPerformers.data.sort((a, b) => b.points - a.points).map((item, index) => (
 					<div className={style.item}>
 						<ImageLoader 
 							src={item.image || getDefaultAvatar()}
@@ -91,7 +107,7 @@ class Leaderboard extends Component {
 					</div>
 				))}
 				{/* no record */}
-				{topPerformers.data.length <= 0 && <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>}
+				{!topPerformers.data || topPerformers.data.length <= 0 && <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>}
 				{/* Loader */}
 				{!topPerformers.result && <LoaderRing fullpage />}
 				{/* Filter */}
