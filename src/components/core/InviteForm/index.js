@@ -94,7 +94,8 @@ class InviteForm extends Component {
 	getCopyText = () => {
 		return `Come join us, be a KakamPink!\n\n
 			Download now!\n
-			Android: ${getConfigByKey('playStore')}\n\n
+			Android: ${getConfigByKey('playStore')}\n
+			iOS: ${getConfigByKey('appStore')}\n\n
 			Use my invite code: ${this.props.refCode}
 		`;
 	};
