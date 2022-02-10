@@ -49,13 +49,13 @@
 				"component": "AccountProfile"
 			},
 			{
-				"component": "StoriesDashboard"
+				"component": "GlobalAnnouncement",
+				"props": {
+					"isDisplayFlex": true
+				}
 			},
 			{
-				"component": "NewsAndEvents",
-				"props": {
-					"hiddenTabs": ["news"]
-				}
+				"component": "StoriesDashboard"
 			}
 		]
 	},
@@ -368,6 +368,18 @@
 		"contents": [
 			{
 				"component": "VideoDetails"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_GLOBAL_ANNOUNCEMENT",
+		"uri": "global-announcements",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "GlobalAnnouncement"
 			}
 		]
 	}

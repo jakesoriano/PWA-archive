@@ -52,6 +52,7 @@ class AccountProfile extends Component {
 				I've earned ${this.props.authUser.points} Hero Points!\n
 				Download the KakamPink App!\n\n
 				Android: ${getConfigByKey('playStore')}\n
+				iOS: ${getConfigByKey('appStore')}\n
 				Use my invite code: ${this.props.authUser.profile.refCode}\n\n
 				#LetLeniLead
 			`,

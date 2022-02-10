@@ -32,4 +32,5 @@ export { default as CommunityDetails } from './CommunityDetails';
 export { default as PostContent } from './PostContent';
 export { default as Videos } from './Videos';
 export { default as VideoDetails } from './VideoDetails';
+export { default as GlobalAnnouncement } from './GlobalAnnouncement';
 
