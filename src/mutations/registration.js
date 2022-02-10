@@ -53,7 +53,7 @@ export function validateMobile (mobile) {
   });
 }
 
-export function completeSignup (data) {
+export function completeSignup (data) {console.error(123, data);
   return new Promise((resolve) => {
     xhr(urlSignup, {
       method: 'POST',
@@ -70,11 +70,11 @@ export function completeSignup (data) {
           });
           resolve(res);
         } else {
-          resolve(false);
+          resolve(res);
         }
       })
       .catch((err) => {
-        resolve(false);
+        resolve(res);
         console.log(`SPA >> completeSignup failed`, err);
       });
   });

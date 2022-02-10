@@ -1,5 +1,5 @@
 import { Component } from 'preact';
-import { getTranslation, playStore } from '_helpers';
+import { getTranslation, getConfigByKey } from '_helpers';
 import { ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 import { likeShareAnnouncements, removeLikeAnnouncements } from '_mutations';
@@ -22,7 +22,8 @@ class AnnouncementsList extends Component {
 				We tell it as it is. Only the truth, KakamPink!\n\n
 				Shared via Kakampink App\n
 				Download now!\n
-				Android: ${playStore}\n\n
+				Android: ${getConfigByKey('playStore')}\n
+				iOS: ${getConfigByKey('appStore')}\n\n
 				Article Title: ${item.title}\n
 				Ariticle Link: ${item.link || ''}\n
 				Use my invite code: ${this.props.authUser.profile.refCode}
@@ -80,8 +81,7 @@ class AnnouncementsList extends Component {
 		}
 		return <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
   }
-  render = ({data, authUser, onClickItemCallback}) => {
-    console.log(data)
+  render = ({data}) => {
     return (
       <div className={style.announcementsListWrap}>
         {this.renderDom(data)}

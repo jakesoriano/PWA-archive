@@ -22,6 +22,15 @@ export const dateEventFormat = (date) => {
   }
 };
 
+export const dateNewsFormat = (date) => {
+  try {
+    return new Date(date).toLocaleDateString('default', {year: 'numeric', month: 'long', day: 'numeric'})
+  } catch (error) {
+    console.log('SPA >> Component dateNewsFormat failed.', error);
+    return date;
+  }
+};
+
 export const dateLastLoginFormat = (date) => {
   const { selectedLanguage } = store.getState();
   try {

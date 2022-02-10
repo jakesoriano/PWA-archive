@@ -11,6 +11,7 @@ import {
   nativeSigninFacebook,
   nativeSigninTwitter,
   nativeSigninGoogle,
+  nativeSigninApple,
 } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -151,7 +152,10 @@ class InitialSignup extends Component {
       ? nativeSigninFacebook() 
       : (type === 'T' 
         ? nativeSigninTwitter() 
-        : nativeSigninGoogle()
+        : (type === 'A' 
+          ? nativeSigninApple() 
+          : nativeSigninGoogle()
+        )
       )
     )
       .then(res => {
@@ -174,7 +178,7 @@ class InitialSignup extends Component {
                   socType: type
                 }
               });
-              route(`/${this.props.parent}/terms`);
+              route(`/${this.props.parent}/data-privacy`);
             } else {
               showAlertBox({
                 message: 'ACCOUNT_EXIST',
@@ -276,39 +280,53 @@ class InitialSignup extends Component {
               />
             </div>
             </form>
-            <div className={style.socialMedia}>
+              
+            <div className={`${style.socialMedia}`}>
               <p>{getTranslation('SOCIAL_MEDIA')}</p>
               <ul>
                 <li>
-                <a onClick={() => {
-                    this.onClickSocial('F');
-                  }}>
-                  <ImageLoader
-                  src="assets/images/fb_icon.png"
-                  style={{ container: style.socMedIcons }}
-                  />
-                </a>
+                  <a onClick={() => {
+                      this.onClickSocial('F');
+                    }}>
+                    <ImageLoader
+                    src="assets/images/fb_icon.png"
+                    style={{ container: style.socMedIcons }}
+                    />
+                  </a>
                 </li>
                 <li>
-                <a onClick={() => {
-                    this.onClickSocial('T');
-                  }}>
-                  <ImageLoader
-                  src="assets/images/twitter_icon.png"
-                  style={{ container: style.socMedIcons }}
-                  />
-                </a>
+                  <a onClick={() => {
+                      this.onClickSocial('T');
+                    }}>
+                    <ImageLoader
+                    src="assets/images/twitter_icon.png"
+                    style={{ container: style.socMedIcons }}
+                    />
+                  </a>
                 </li>
                 <li>
-                <a onClick={() => {
-                    this.onClickSocial('G');
-                  }}>
-                  <ImageLoader
-                  src="assets/images/google_icon.png"
-                  style={{ container: style.socMedIcons }}
-                  />
-                </a>
+                  <a onClick={() => {
+                      this.onClickSocial('G');
+                    }}>
+                    <ImageLoader
+                    src="assets/images/google_icon.png"
+                    style={{ container: style.socMedIcons }}
+                    />
+                  </a>
                 </li>
+                {process.env.PLATFORM === 'ios' && (
+                <li>
+                  <a className={style.appleLogo} 
+                    onClick={() => {
+                      this.onClickSocial('A');
+                    }}>
+                    <ImageLoader
+                    src="assets/images/apple_icon.png"
+                    style={{ container: style.socMedIcons }}
+                    />
+                  </a>
+                </li>
+                )}
               </ul>
             </div>
           </div>

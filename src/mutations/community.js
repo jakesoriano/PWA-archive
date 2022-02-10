@@ -3,6 +3,7 @@ import {
 	xhr,
 	urlCommunity,
 	urlUser,
+  urlNews,
   urlCommunitySetup, 
   urlCommunityGetInfo,
   urlCommunityLeader
@@ -32,13 +33,13 @@ export function filterCommunity(name, page, limit) {
       params: {
         q: name || '', // query string
         p: page || 1, // page number
-        s: limit || 15 // limit
+        s: limit || 9 // limit
       }
     })
     .then((res) => {
       updateStore({
         communities: {
-          data: page ? [
+          data: page && page > 1 ? [
             ...communities.data,
             ...res.data.results
           ] : res.data.results,
@@ -85,13 +86,13 @@ export function fetchCommunities(page, limit) {
 		xhr(urlCommunity, {
       params: {
         p: page || 1, // page number
-        s: limit || 20 // limit
+        s: limit || 9 // limit
       }
     })
 		.then((res) => {
       updateStore({
         communities: {
-          data: page ? [
+          data: page && page > 1 ? [
             ...communities.data,
             ...res.data.results
           ] : res.data.results,
@@ -310,6 +311,31 @@ export function createCommunityEvent (data) {
       .catch((err) => {
         resolve(err);
         console.log(`SPA >> createCommunityEvent failed`, err);
+      });
+  });
+}
+
+export function createCommunityNews (data) {
+  // current state
+  const { communityInfo } = store.getState();
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/news`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'POST',
+      data: data.data
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> createCommunityNews Error`, res);
+          resolve(res);
+        } else {
+          console.log(`SPA >> createCommunityNews successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> createCommunityNews failed`, err);
       });
   });
 }

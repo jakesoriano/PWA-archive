@@ -14,6 +14,7 @@ import {
   nativeSigninFacebook,
   nativeSigninTwitter,
   nativeSigninGoogle,
+  nativeSigninApple,
 } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -133,7 +134,10 @@ class Login extends Component {
       ? nativeSigninFacebook() 
       : (type === 'T' 
         ? nativeSigninTwitter() 
-        : nativeSigninGoogle()
+        : (type === 'A' 
+          ? nativeSigninApple() 
+          : nativeSigninGoogle()
+        )
       )
     )
       .then(res => {
@@ -235,7 +239,8 @@ class Login extends Component {
                         onClick={this.onClickForgotUserPass}>{getTranslation('PASSWORD')}</Link>
                 </p>
               </div>
-              <div className={style.socialMedia}>
+              
+              <div className={`${style.socialMedia}`}>
                 <p>{getTranslation('SOCIAL_MEDIA')}</p>
                 <ul>
                   <li>
@@ -268,6 +273,19 @@ class Login extends Component {
                       />
                     </a>
                   </li>
+                  {process.env.PLATFORM === 'ios' && (
+                    <li>
+                      <a className={style.appleLogo} 
+                        onClick={() => {
+                          this.onClickSocial('A');
+                        }}>
+                        <ImageLoader
+                          src="assets/images/apple_icon.png"
+                          style={{ container: style.socMedIcons }}
+                        />
+                      </a>
+                    </li>
+                  )}
                 </ul>
               </div>
             </form>

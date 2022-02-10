@@ -1,7 +1,7 @@
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
 function callNative(data) {
-  window.ReactNativeWebView && window.ReactNativeWebView.postMessage(data)
+  window.ReactNativeWebView && window.ReactNativeWebView.postMessage(JSON.stringify(data));
 }
 
 // eslint-disable-next-line import/prefer-default-export
@@ -105,7 +105,7 @@ export function nativeToggleTouchID (value) {
     callNative({
       action: 'toogleTouchID',
       callback: 'window.cb',
-      value
+      data: value
     });
   });
 }
@@ -185,6 +185,21 @@ export function nativeSigninGoogle () {
   });
 }
 
+export function nativeSigninApple () {
+  return new Promise((resolve) => {
+    window.cb = (res) => {
+      resolve(res)
+      window.cb = null;
+    }
+    // eslint-disable-next-line no-console
+    console.log('SPA >> nativeSigninApple();');
+    callNative({
+      action: 'signinApple',
+      callback: 'window.cb',
+    });
+  });
+}
+
 export function nativeOnLogout () {
   // eslint-disable-next-line no-console
   console.log('SPA >> nativeOnLogout();');
@@ -199,5 +214,19 @@ export function nativeSetAuthToken (token) {
   callNative({
     action: 'setAuthToken',
     token
+  });
+}
+
+export function nativeGetVersion (callback) {
+  // using native
+  window.cbGetVersion = (res) => {
+    callback(res)
+    window.cbGetVersion = null;
+  }
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeGetVersion();');
+  callNative({
+    action: 'getVersion',
+    callback: 'window.cbGetVersion',
   });
 }
