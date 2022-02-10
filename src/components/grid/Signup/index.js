@@ -314,6 +314,7 @@ class Signup extends Component {
 			!this.state.fname.value ||
 			!this.state.mname.value ||
 			!this.state.lname.value ||
+			!this.state.gender.value ||
 			!this.state.birthday.value ||
 			!this.state.mobile.value ||
 			!this.state.region.value ||
@@ -326,6 +327,7 @@ class Signup extends Component {
 			this.onFnameChange(this.state.fname.value);
 			this.onMnameChange(this.state.mname.value);
 			this.onLnameChange(this.state.lname.value);
+			this.onGenderChange(this.state.gender.value);
 			this.onDobChange(this.state.birthday.value);
 			this.onMobileChange(this.state.mobile.value);
 			this.onRegionChange(this.state.region.value);
