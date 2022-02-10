@@ -100,10 +100,7 @@ class Signup extends Component {
 				hasError: false,
 			},
 			isRegisteredVoter: {
-				value:
-					props.signup && props.signup.isRegisteredVoter
-						? props.signup.isRegisteredVoter
-						: 'yes',
+				value: props.signup && props.signup.isRegisteredVoter === false ? 'no' : 'yes',
 				error: '',
 				message: '',
 				hasError: false,
@@ -364,25 +361,21 @@ class Signup extends Component {
 								'image': '',
 								'industry': ''
 							};
-							if (this.props.signup.registrationId) {
-								route(`/${this.props.parent}/registration-otp`);
-							} else {
-								displayPageLoader(true);
-								completeSignup(userData)
-									.then((res) => {
-										displayPageLoader(false);
-										if (res.success) {
-											route(`/${this.props.parent}/registration-otp`);
-										} else {
-											showAlertBox({
-												message: res.error || 'SOMETHING_WRONG'
-											});
-										}
-									})
-									.catch((err) => {
-										console.error('error', err);
-									});
-							}
+							displayPageLoader(true);
+							completeSignup(userData)
+								.then((res) => {
+									displayPageLoader(false);
+									if (res.success) {
+										route(`/${this.props.parent}/registration-otp`);
+									} else {
+										showAlertBox({
+											message: res.error || 'SOMETHING_WRONG'
+										});
+									}
+								})
+								.catch((err) => {
+									console.error('error', err);
+								});
 						}, 100);
 					} else {
 						this.setState({
@@ -489,9 +482,6 @@ class Signup extends Component {
 								value="M"
 								id="male"
 								checked={gender.value === 'M'}
-								onBlur={(e) => {
-									this.onGenderChange(e.target.value);
-								}}
 								onInput={(e) => {
 									this.onGenderChange(e.target.value);
 								}}
@@ -503,9 +493,6 @@ class Signup extends Component {
 								value="F"
 								id="female"
 								checked={gender.value === 'F'}
-								onCLick={(e) => {
-									this.onGenderChange(e.target.value);
-								}}
 								onInput={(e) => {
 									this.onGenderChange(e.target.value);
 								}}
@@ -636,9 +623,6 @@ class Signup extends Component {
 								value="yes"
 								id="yes"
 								checked={isRegisteredVoter.value === 'yes'}
-								onBlur={(e) => {
-									this.onVoterChange(e.target.value);
-								}}
 								onInput={(e) => {
 									this.onVoterChange(e.target.value);
 								}}
@@ -650,9 +634,6 @@ class Signup extends Component {
 								value="no"
 								id="no"
 								checked={isRegisteredVoter.value === 'no'}
-								onCLick={(e) => {
-									this.onVoterChange(e.target.value);
-								}}
 								onInput={(e) => {
 									this.onVoterChange(e.target.value);
 								}}
