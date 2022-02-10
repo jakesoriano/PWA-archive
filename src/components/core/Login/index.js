@@ -147,7 +147,7 @@ class Login extends Component {
             username: res.data.email,
             password: res.data.id
           }, true, 'ACCOUNT_NOT_FOUND');
-        } else if (res.error !== 'SIGN_IN_CANCELLED') {alert(res.error);
+        } else if (res.error !== 'SIGN_IN_CANCELLED') {
           showAlertBox({
             message: 'ACCOUNT_NOT_FOUND',
             noTopBar: true
