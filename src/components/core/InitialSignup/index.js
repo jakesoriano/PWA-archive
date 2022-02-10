@@ -318,7 +318,7 @@ class InitialSignup extends Component {
                 <li>
                   <a className={style.appleLogo} 
                     onClick={() => {
-                      this.onClickSocial('G');
+                      this.onClickSocial('A');
                     }}>
                     <ImageLoader
                     src="assets/images/apple_icon.png"
