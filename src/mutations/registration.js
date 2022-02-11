@@ -53,7 +53,7 @@ export function validateMobile (mobile) {
   });
 }
 
-export function completeSignup (data) {
+export function completeSignup (data) {console.error(123, data);
   return new Promise((resolve) => {
     xhr(urlSignup, {
       method: 'POST',

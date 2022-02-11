@@ -178,7 +178,7 @@ class GlobalAnnouncement extends Component {
 				<div className={`${style.globalAnnouncement} ${!this.props.isDisplayFlex ? style.marginTop : ''}`}>
 					<div className={style.tabWrap}>
 						<span className={`bold ${style.activeTab}`}>
-							{getTranslation('GLOBAL_ANNOUNCEMENT')}
+							{getTranslation('ANNOUNCEMENTS')}
 						</span>
 					</div>
 					<div className={style.content}>
