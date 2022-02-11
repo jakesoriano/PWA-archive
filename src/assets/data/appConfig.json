@@ -5,5 +5,7 @@
   "maxReload": 3,
   "playStore": "https://play.google.com/store/apps/details?id=com.leni2022&hl=en&gl=US",
   "appStore": "https://apps.apple.com/app/leni-2022/id1607452732",
-  "leaderboardTop": 10
+  "leaderboard": {
+    "top": 10
+  }
 }

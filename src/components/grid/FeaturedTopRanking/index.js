@@ -26,14 +26,17 @@ class FeaturedTopRanking extends Component {
     ) : <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
   };
 
-  render = ({topOverall}) => {
+  render = ({leaderboard}) => {
+    if (!leaderboard.featured) {
+      return null
+    }
     return (
       <div className={style.featuredTopWrap}>
         <p className={`bold ${style.heading}`}>{getTranslation('FEATURED_TOP_RANKING_LEADER')}</p>
-        {this.renderDom(topOverall.data)}
+        {this.renderDom(leaderboard.featured)}
       </div>
     ) 
   };
 };
 
-export default connect(['topOverall'])(FeaturedTopRanking);
+export default connect(['leaderboard'])(FeaturedTopRanking);

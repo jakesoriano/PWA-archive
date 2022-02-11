@@ -4,46 +4,44 @@ import { xhr, urlLeaderboard, getConfigByKey } from '_helpers';
 // eslint-disable-next-line import/prefer-default-export
 export function fetchLeaderboard (type, region, top) {
   // curreny state
-  const { topOverall, topPerformers } = store.getState();
+  const { leaderboard } = store.getState();
 
   // fetching
-  if(topPerformers.fetching) {
+  if(leaderboard.fetching) {
     return;
   }
 
   // initial state
   updateStore({
-    topPerformers: {
-      ...topPerformers,
+    leaderboard: {
+      ...leaderboard,
       fetching: true,
       result: false
     }
   });
 
-  return xhr(`${urlLeaderboard}?type=${type || 'global'}&top=${top || getConfigByKey('leaderboardTop')}${type === 'regional' && region ? '&region=' + region : ''}`)
+  return xhr(`${urlLeaderboard}?type=${type || 'global'}&top=${top || getConfigByKey('leaderboard', 'top')}${type === 'regional' && region ? '&region=' + region : ''}`)
     .then((res) => {
       updateStore({
-        topPerformers: {
-          data: res.data,
+        leaderboard: {
+          ...leaderboard,
           fetching: false,
           result: true,
+          data: res.data,
+          featured: (!type ? res.data[0] : res.featured), // get top 1 from overall
           filter: {
             type: type || 'global',
             region: region || ''
-          }
+          },
         },
-        topOverall: {
-          ...topOverall,
-          data: (!type ? res.data[0] : topOverall.data) // get top 1 from overall
-        }
       });
       console.log(`SPA >> fetchTopRanking Success`, res.success);
       return true;
     })
     .catch((err) => {
       updateStore({
-        topPerformers: {
-          ...topPerformers,
+        leaderboard: {
+          ...leaderboard,
           fetching: false,
           result: false
         }

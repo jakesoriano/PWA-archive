@@ -344,7 +344,6 @@ class Grid extends Component {
 		const { filterShow } = this.props;
 		try {
 			const props = { ...filterShow };
-			console.log(props);
 			// eslint-disable-next-line react/jsx-props-no-spreading
 			return <CustomListSelection {...props} show={filterShow && true} />;
 		} catch (err) {

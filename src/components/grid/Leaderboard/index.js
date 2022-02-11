@@ -23,7 +23,7 @@ class Leaderboard extends Component {
 	}
 
 	componentDidMount = () => {
-		if (!this.props.topPerformers.fetching && !this.props.topPerformers.data) {
+		if (!this.props.leaderboard.fetching && !this.props.leaderboard.data) {
 			displayPageLoader(true);
 			fetchLeaderboard().then(() => {
 				displayPageLoader(false);
@@ -35,7 +35,7 @@ class Leaderboard extends Component {
 		leaderboardOptions.map((item) => {
 			if (item.value === 'regional') {
 				item.children = getRegions().map((i) => {
-					if (this.props.topPerformers.filter.region === i.value) {
+					if (this.props.leaderboard.filter.region === i.value) {
 						i.selected = true;
 					}
 					return i;
@@ -46,7 +46,7 @@ class Leaderboard extends Component {
 			data: leaderboardOptions,
 			onClickParent: (val) => this.onClickCallback(val),
 			onClickChild: (val) => this.onClickCallback(val),
-			selected: this.props.topPerformers.filter.type || null,
+			selected: this.props.leaderboard.filter.type || null,
 		};
 
 		// show popup options
@@ -56,19 +56,16 @@ class Leaderboard extends Component {
 	onClickCallback = (val) => {
 		if (!val.hasChildren) {
 			try {
-				if (
-					this.props.topPerformers.filter.type !== val.parentVal ||
-					this.props.topPerformers.filter.region !== val.childVal
-				) {
+				if ((val.parentVal === 'regional' && this.props.leaderboard.filter.region === val.childVal) || 
+				(val.parentVal !== 'regional' &&  this.props.leaderboard.filter.type === val.parentVal)) {
+					showFilter(null);
+				} else {
 					displayPageLoader(true);
 					fetchLeaderboard(
 						val.parentVal,
 						val.parentVal === 'regional' ? val.childVal : null
-					).then(() => {
+					).then((a) => {
 						displayPageLoader(false);
-						this.setState({
-							type: val.parentVal,
-						});
 						showFilter(null);
 					});
 				}
@@ -78,7 +75,7 @@ class Leaderboard extends Component {
 		}
 	};
 
-	render = ({ topPerformers }) => {
+	render = ({ leaderboard }) => {
 		return (
 			<dv className={style.membersWrap}>
 				{/* Title */}
@@ -106,9 +103,9 @@ class Leaderboard extends Component {
 					</div>
 				</div>
 				{/* content */}
-				{topPerformers.data &&
-					topPerformers.data.length &&
-					topPerformers.data
+				{leaderboard.data &&
+					leaderboard.data.length &&
+					leaderboard.data
 						.sort((a, b) => b.points - a.points)
 						.map((item, index) => (
 							<div className={style.item}>
@@ -137,15 +134,15 @@ class Leaderboard extends Component {
 							</div>
 						))}
 				{/* no record */}
-				{!topPerformers.data ||
-					(topPerformers.data.length <= 0 && (
+				{!leaderboard.data ||
+					(leaderboard.data.length <= 0 && (
 						<p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
 					))}
 				{/* Loader */}
-				{!topPerformers.result && <LoaderRing fullpage />}
+				{!leaderboard.result && <LoaderRing fullpage />}
 				{/* Filter */}
 			</dv>
 		);
 	};
 }
-export default connect(['topPerformers'])(Leaderboard);
+export default connect(['leaderboard'])(Leaderboard);

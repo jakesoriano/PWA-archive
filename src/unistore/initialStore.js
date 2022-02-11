@@ -93,15 +93,11 @@ export const initialStore = {
     date: null,
     completed: false
   },
-  topOverall: {
-    fetching: false,
-    result: false,
-    data: null
-  },
-  topPerformers: {
+  leaderboard: {
     fetching: false,
     result: false,
     data: null,
+    featured: null,
     filter: {}
   },
   // user

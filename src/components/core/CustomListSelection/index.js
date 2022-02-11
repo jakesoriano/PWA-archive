@@ -1,7 +1,6 @@
 import { Component, createRef } from 'preact';
 import { FormGroup, FormInput, ImageLoader } from '_components/core';
-import { getTranslation } from '_helpers';
-import { updateStore } from '_unistore';
+import { getTranslation, showFilter } from '_helpers';
 import style from './style';
 
 class CustomListSelection extends Component {
@@ -68,9 +67,7 @@ class CustomListSelection extends Component {
 		this.setState({
 			showChildren: false,
 		});
-		updateStore({
-			filterShow: null,
-		});
+		showFilter(null);
 	};
 
 	renderChildren = (data) => {
@@ -107,7 +104,7 @@ class CustomListSelection extends Component {
 									src="assets/images/GOING-dark.png"
 									style={{
 										container: `${style.iconCheck} ${
-											this.state.child === item.value && style.active
+											item.selected ? style.active : ''
 										}`,
 									}}
 								/>
@@ -146,7 +143,7 @@ class CustomListSelection extends Component {
 									src="assets/images/GOING-dark.png"
 									style={{
 										container: `${style.iconCheck} ${
-											parent === item.value && style.active
+											props.selected === item.value ? style.active : ''
 										}`,
 									}}
 								/>
