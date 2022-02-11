@@ -37,12 +37,30 @@
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 1;
     &.show {
       left: 0;
     }
     .header {
       .title {
         padding-left: 0;
+      }
+    }
+  }
+  .inputContainer {
+    position: relative;
+    .hideCheck {
+      opacity: 0;
+    }
+    .iconCheck {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 18px;
+      padding-bottom: 18px;
+      opacity: 0.5;
+      &.active {
+        opacity: 1;
       }
     }
   }

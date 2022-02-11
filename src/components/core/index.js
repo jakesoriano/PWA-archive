@@ -27,4 +27,4 @@ export { default as UserAvatar } from './UserAvatar';
 export { default as EventsList } from './EventsList';
 export { default as AnnouncementsList } from './AnnouncementsList';
 export { default as NewsList } from './NewsList';
-export { default as Filter } from './Filter';
+export { default as CustomListSelection } from './CustomListSelection';

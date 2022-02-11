@@ -11,17 +11,16 @@ import {
 	showFilter,
 	getRegions,
 	getConfigByKey,
-	displayPageLoader
+	displayPageLoader,
 } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Leaderboard extends Component {
-
-  constructor(props) {
-    super(props);
-  }
+	constructor(props) {
+		super(props);
+	}
 
 	componentDidMount = () => {
 		if (!this.props.topPerformers.fetching && !this.props.topPerformers.data) {
@@ -31,16 +30,16 @@ class Leaderboard extends Component {
 			});
 		}
 	};
-	
+
 	onShowFilter = () => {
-		leaderboardOptions.map(item => {
+		leaderboardOptions.map((item) => {
 			if (item.value === 'regional') {
-				item.children = getRegions().map(i => {
+				item.children = getRegions().map((i) => {
 					if (this.props.topPerformers.filter.region === i.value) {
 						i.selected = true;
 					}
 					return i;
-				})
+				});
 			}
 		});
 		let props = {
@@ -48,43 +47,49 @@ class Leaderboard extends Component {
 			onClickParent: (val) => this.onClickCallback(val),
 			onClickChild: (val) => this.onClickCallback(val),
 			selected: this.props.topPerformers.filter.type || null,
-		}
-	
+		};
+
 		// show popup options
 		showFilter(props);
-	}
+	};
 
 	onClickCallback = (val) => {
 		if (!val.hasChildren) {
 			try {
-				displayPageLoader(true);
-				fetchLeaderboard(val.parentVal, val.parentVal === 'regional' ? val.childVal : null).then(() => {
-					displayPageLoader(false);
-					this.setState({
-						type: val.parentVal
+				if (
+					this.props.topPerformers.filter.type !== val.parentVal ||
+					this.props.topPerformers.filter.region !== val.childVal
+				) {
+					displayPageLoader(true);
+					fetchLeaderboard(
+						val.parentVal,
+						val.parentVal === 'regional' ? val.childVal : null
+					).then(() => {
+						displayPageLoader(false);
+						this.setState({
+							type: val.parentVal,
+						});
+						showFilter(null);
 					});
-					showFilter(null);
-				});
+				}
 			} catch (err) {
 				console.log(err);
 			}
 		}
-	}
+	};
 
 	render = ({ topPerformers }) => {
-	  return (
-	    <dv className={style.membersWrap}>
-				
+		return (
+			<dv className={style.membersWrap}>
 				{/* Title */}
 				<div className={style.titleHead}>
-					<p className={`bold ${style.title}`}>{getTranslation('TOP_PERFORMERS')}</p>
-					<div
-						className={style.filter}
-						onClick={this.onShowFilter}
-					>
-						<ImageLoader 
+					<p className={`bold ${style.title}`}>
+						{getTranslation('TOP_PERFORMERS')}
+					</p>
+					<div className={style.filter} onClick={this.onShowFilter}>
+						<ImageLoader
 							src="assets/icons/filter_icon.png"
-							style={{container: style.filterIcon}}
+							style={{ container: style.filterIcon }}
 						/>
 						<span>{getTranslation('FILTER')}</span>
 					</div>
@@ -92,8 +97,7 @@ class Leaderboard extends Component {
 				{/* header */}
 				<div className={`${style.item} ${style.itemHeader}`}>
 					<div className={style.avatar}></div>
-					<div className={style.nameMember}>
-					</div>
+					<div className={style.nameMember}></div>
 					<div className={style.rank}>
 						<p className={`bold`}>{getTranslation('RANK')}</p>
 					</div>
@@ -102,32 +106,46 @@ class Leaderboard extends Component {
 					</div>
 				</div>
 				{/* content */}
-				{topPerformers.data && topPerformers.data.length && topPerformers.data.sort((a, b) => b.points - a.points).map((item, index) => (
-					<div className={style.item}>
-						<ImageLoader 
-							src={item.profile.image || getDefaultAvatar()}
-							style={{container: style.avatar}} />
-						<div className={style.nameMember}>
-							<div>
-								<p className={`light ${style.name}`}>{`${item.profile.fname} ${item.profile.lname}`}</p>
-								<p className={`light ${style.members}`}>{`${item.members} ${getTranslation('MEMBERS')}`}</p>
+				{topPerformers.data &&
+					topPerformers.data.length &&
+					topPerformers.data
+						.sort((a, b) => b.points - a.points)
+						.map((item, index) => (
+							<div className={style.item}>
+								<ImageLoader
+									src={item.profile.image || getDefaultAvatar()}
+									style={{ container: style.avatar }}
+								/>
+								<div className={style.nameMember}>
+									<div>
+										<p
+											className={`light ${style.name}`}
+										>{`${item.profile.fname} ${item.profile.lname}`}</p>
+										<p className={`light ${style.members}`}>{`${
+											item.members
+										} ${getTranslation('MEMBERS')}`}</p>
+									</div>
+								</div>
+								<div className={style.rank}>
+									<p className={`light`}>
+										{formatNumber(item.rank || index + 1)}
+									</p>
+								</div>
+								<div className={style.points}>
+									<p className={`light`}>{formatNumber(item.points) || 0}</p>
+								</div>
 							</div>
-						</div>
-						<div className={style.rank}>
-							<p className={`light`}>{formatNumber(item.rank || index + 1)}</p>
-						</div>
-						<div className={style.points}>
-							<p className={`light`}>{formatNumber(item.points) || 0}</p>
-						</div>
-					</div>
-				))}
+						))}
 				{/* no record */}
-				{!topPerformers.data || topPerformers.data.length <= 0 && <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>}
+				{!topPerformers.data ||
+					(topPerformers.data.length <= 0 && (
+						<p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
+					))}
 				{/* Loader */}
 				{!topPerformers.result && <LoaderRing fullpage />}
 				{/* Filter */}
 			</dv>
-	  );
+		);
 	};
 }
 export default connect(['topPerformers'])(Leaderboard);
