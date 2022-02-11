@@ -75,8 +75,8 @@ class Filter extends Component {
       <div className={`${style.childrenWrap} ${this.state.showChildren && this.props.show && style.show}`}>
       <div className={style.header}>
         <p className={style.back} onClick={this.onHideChildren}>&lt; {getTranslation('BACK')}</p>
-        <p className={style.title}>{getTranslation('FILTER')} - {this.state.selected}</p>
-        <p className={style.clear}>{getTranslation('CLEAR')}</p>
+        <p className={style.title}>{getTranslation('FILTER')} - {this.state.parent}</p>
+        {/* <p className={style.clear}>{getTranslation('CLEAR')}</p> */}
       </div>
         <FormGroup>
           {data &&
@@ -87,6 +87,7 @@ class Filter extends Component {
                 onClick={this.onClickChild}
                 value={item.value}
                 id={item.value}
+								checked={item.selected}
                 name="filter"
               ></FormInput>
             ))
@@ -101,7 +102,7 @@ class Filter extends Component {
       <div ref={this.ref} className={`${style.filterWrap} ${props.show && style.show}`}>
         <div className={style.header}>
           <p className={style.title}>{getTranslation('FILTER')}</p>
-          <p className={style.clear}>{getTranslation('CLEAR')}</p>
+          {/* <p className={style.clear}>{getTranslation('CLEAR')}</p> */}
         </div>
         <FormGroup className={style.parentWrap} onBlur={this.onHideFilter}>
           {props.data &&
@@ -112,6 +113,7 @@ class Filter extends Component {
                 onClick={this.onClickParent}
                 value={item.value}
                 id={item.value}
+								checked={props.selected === item.value}
                 name="filter"
               ></FormInput>
             ))

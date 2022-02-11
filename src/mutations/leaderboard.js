@@ -1,34 +1,40 @@
 import { store, updateStore } from '_unistore';
-import { xhr, urlLeaderboard, urlLeaderboardFilters } from '_helpers';
+import { xhr, urlLeaderboard, getConfigByKey } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
-export function fetchTopRanking (data) {
+export function fetchLeaderboard (type, region, top) {
   // curreny state
   const { topOverall, topPerformers } = store.getState();
-  let selectedObj = data.isFromFilter ? topPerformers : topOverall;
-  let selectedKey = data.isFromFilter ? 'topPerformers' : 'topOverall';
 
   // fetching
-  if(selectedObj.fetching) {
+  if(topPerformers.fetching) {
     return;
   }
 
   // initial state
   updateStore({
-    [selectedKey]: {
-      ...selectedObj,
+    topPerformers: {
+      ...topPerformers,
       fetching: true,
       result: false
     }
   });
 
-  return xhr(`${urlLeaderboard}?type=${data.type}&top=${data.top}${data.type === 'regional' && data.region ? '&region=' + data.region : ''}`)
+  return xhr(`${urlLeaderboard}?type=${type || 'global'}&top=${top || getConfigByKey('leaderboardTop')}${type === 'regional' && region ? '&region=' + region : ''}`)
     .then((res) => {
       updateStore({
-        [selectedKey]: {
-          data: data.isFromFilter ? res.data : res.data[0],
+        topPerformers: {
+          data: res.data,
           fetching: false,
-          result: true
+          result: true,
+          filter: {
+            type: type || 'global',
+            region: region || ''
+          }
+        },
+        topOverall: {
+          ...topOverall,
+          data: (!type ? res.data[0] : topOverall.data) // get top 1 from overall
         }
       });
       console.log(`SPA >> fetchTopRanking Success`, res.success);
@@ -36,46 +42,13 @@ export function fetchTopRanking (data) {
     })
     .catch((err) => {
       updateStore({
-        [selectedKey]: {
-          ...selectedObj,
+        topPerformers: {
+          ...topPerformers,
           fetching: false,
           result: false
         }
       });
       console.log(`SPA >> fetchTopRanking failed`, err);
       return false;
-    });
-}
-
-export function getLeaderboardFilters () {
-  const { filters } = store.getState();
-
-  // initial state
-  updateStore({
-    filters: {
-      ...filters,
-      fetching: true,
-      result: false
-    }
-  });
-
-  return xhr(urlLeaderboardFilters)
-    .then((res) => {
-      updateStore({
-        filters: {
-          data: res,
-          fetching: false,
-          result: true
-        }
-      });
-    })
-    .catch(() => {
-      updateStore({
-        filters: {
-          ...filters,
-          fetching: false,
-          result: false
-        }
-      });
     });
 }

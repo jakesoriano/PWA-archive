@@ -1,8 +1,7 @@
-[
+export const leaderboardOptions = [
   {
     "label": "Overall",
-    "value": "global",
-    "children": []
+    "value": "global"
   },
   {
     "label": "Regional",
@@ -11,7 +10,6 @@
   },
   {
     "label": "Personal",
-    "value": "personal",
-    "children": []
+    "value": "personal"
   }
-]
+];

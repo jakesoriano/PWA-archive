@@ -101,9 +101,9 @@ export const initialStore = {
   topPerformers: {
     fetching: false,
     result: false,
-    data: []
+    data: null,
+    filter: {}
   },
-  filters: null,
   // user
   authUser: null,
   deviceId: null,

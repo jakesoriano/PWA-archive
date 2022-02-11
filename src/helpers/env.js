@@ -1,6 +1,5 @@
 export const urlTranslation = `{PUBLIC_PATH}assets/data/translations/{langAlias}.json?_{_}`;
 export const urlGrid = `{PUBLIC_PATH}assets/data/grid.json?_{_}`;
-export const urlLeaderboardFilters = `{PUBLIC_PATH}assets/data/leaderboard-filters.json?_{_}`;
 export const urlAppConfig = `{PUBLIC_PATH}assets/data/appConfig.json?_{_}`;
 export const urlUser = `${process.env.API_DOMAIN}user`;
 export const urlUserLogin = urlUser + `/login`;

@@ -2,52 +2,67 @@ import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader } from '_components/core';
-import { fetchMembers, getLeaderboardFilters, fetchTopRanking } from '_mutations';
-import { getTranslation, formatNumber, getDefaultAvatar, showFilter, getRegions, getConfigByKey, displayPageLoader } from '_helpers';
+import { fetchLeaderboard } from '_mutations';
+import { leaderboardOptions } from '_constant';
+import {
+	getTranslation,
+	formatNumber,
+	getDefaultAvatar,
+	showFilter,
+	getRegions,
+	getConfigByKey,
+	displayPageLoader
+} from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Leaderboard extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
 	componentDidMount = () => {
-    let data = {
-      type: 'global',
-      top: getConfigByKey('leaderboardTop'),
-			isFromFilter: true
-    }
-		fetchMembers();
-		getLeaderboardFilters();
-		fetchTopRanking(data)
+		if (!this.props.topPerformers.fetching && !this.props.topPerformers.data) {
+			displayPageLoader(true);
+			fetchLeaderboard().then(() => {
+				displayPageLoader(false);
+			});
+		}
 	};
 	
 	onShowFilter = () => {
-		let { filters } = this.props;
-		filters.data.map(item => {
+		leaderboardOptions.map(item => {
 			if (item.value === 'regional') {
-				item.children = getRegions()
+				item.children = getRegions().map(i => {
+					if (this.props.topPerformers.filter.region === i.value) {
+						i.selected = true;
+					}
+					return i;
+				})
 			}
 		});
 		let props = {
-			data: filters.data,
+			data: leaderboardOptions,
 			onClickParent: (val) => this.onClickCallback(val),
-			onClickChild: (val) => this.onClickCallback(val)
+			onClickChild: (val) => this.onClickCallback(val),
+			selected: this.props.topPerformers.filter.type || null,
 		}
-
-		showFilter(props)
+	
+		// show popup options
+		showFilter(props);
 	}
 
 	onClickCallback = (val) => {
-		let data = {
-			type: val.parentVal,
-			top: getConfigByKey('leaderboardTop'),
-			isFromFilter: true
-		}
-		if (data.type === 'regional') {
-			data.region = val.childVal
-		}
 		if (!val.hasChildren) {
 			try {
-				fetchTopRanking(data).then(() => {
+				displayPageLoader(true);
+				fetchLeaderboard(val.parentVal, val.parentVal === 'regional' ? val.childVal : null).then(() => {
+					displayPageLoader(false);
+					this.setState({
+						type: val.parentVal
+					});
 					showFilter(null);
 				});
 			} catch (err) {
@@ -56,7 +71,7 @@ class Leaderboard extends Component {
 		}
 	}
 
-	render = ({ topPerformers, filters }) => {
+	render = ({ topPerformers }) => {
 	  return (
 	    <dv className={style.membersWrap}>
 				
@@ -90,7 +105,7 @@ class Leaderboard extends Component {
 				{topPerformers.data && topPerformers.data.length && topPerformers.data.sort((a, b) => b.points - a.points).map((item, index) => (
 					<div className={style.item}>
 						<ImageLoader 
-							src={item.image || getDefaultAvatar()}
+							src={item.profile.image || getDefaultAvatar()}
 							style={{container: style.avatar}} />
 						<div className={style.nameMember}>
 							<div>
@@ -115,4 +130,4 @@ class Leaderboard extends Component {
 	  );
 	};
 }
-export default connect(['members', 'filters', 'topPerformers'])(Leaderboard);
+export default connect(['topPerformers'])(Leaderboard);
