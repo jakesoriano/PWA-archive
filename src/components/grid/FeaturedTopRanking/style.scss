@@ -1,0 +1,54 @@
+@import '../../../style/variables.scss';
+.featuredTopWrap {
+  background: $details_bg;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 10px;
+  display: block;
+  overflow: hidden;
+  .heading {
+    text-transform: uppercase;
+    color: $primary;
+    font-size: 15px;
+  }
+  .featured {
+    display: flex;
+    padding: 10px 15px 0;
+    .avatar {
+      width: 50px;
+      padding-bottom: 50px;
+      border-radius: 80px;
+    }
+    .nameMember {
+      padding-left: 15px;
+      display: grid;
+      align-content: center;
+      flex-grow: 1;
+      width: calc(100% - 190px);
+      .name {
+        color: #737373;
+        text-transform: capitalize;
+      }
+      .members {
+        color: #737373;
+      }
+    }
+    .rank,
+    .points {
+      display: grid;
+      align-content: center;
+      flex-grow: 1;
+      width: 70px;
+      p {
+        padding-bottom: 12px;
+        text-align: center;;
+      }
+    }
+  }
+  .noRecord {
+    text-align: center;
+    margin: 10px 10px 0;
+    color: #737373;
+    font-size: 0.9rem;
+  }
+}

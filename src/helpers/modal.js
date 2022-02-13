@@ -41,3 +41,9 @@ export function showAlertBox (data) {
     alertShow: data
   });
 }
+
+export function showFilter (data) {
+  store.setState({
+    filterShow: data
+  });
+}

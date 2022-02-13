@@ -1,0 +1,67 @@
+@import '../../../style/variables.scss';
+.filterWrap {
+  background-color: $white;
+  width: 100%;
+  position: absolute;
+  bottom: -100%;
+  z-index: 10;
+  transition: all ease-in-out 0.3s;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  * {
+    color: #737373;
+  }
+  &.show {
+    bottom: 0;
+  }
+  .header {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border-bottom: 1px solid #737373;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title {
+      font-size: 1.5rem;
+      align-self: center;
+      flex: 1;
+    }
+  }
+  .childrenWrap {
+    background-color: $white;
+    left: calc(-100% - 20px);
+    transition: all ease-in-out 0.3s;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    &.show {
+      left: 0;
+    }
+    .header {
+      .title {
+        padding-left: 0;
+      }
+    }
+  }
+  .inputContainer {
+    position: relative;
+    .hideCheck {
+      opacity: 0;
+    }
+    .iconCheck {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 18px;
+      padding-bottom: 18px;
+      opacity: 0.5;
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}

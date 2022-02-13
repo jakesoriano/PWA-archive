@@ -2,28 +2,99 @@ import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader } from '_components/core';
-import { fetchMembers } from '_mutations';
-import { getTranslation, formatNumber, getDefaultAvatar } from '_helpers';
+import { fetchLeaderboard } from '_mutations';
+import { leaderboardOptions } from '_constant';
+import {
+	getTranslation,
+	formatNumber,
+	getDefaultAvatar,
+	showFilter,
+	getRegions,
+	getConfigByKey,
+	displayPageLoader,
+} from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Leaderboard extends Component {
+	constructor(props) {
+		super(props);
+	}
+
 	componentDidMount = () => {
-		fetchMembers();
+		if (!this.props.leaderboard.fetching && !this.props.leaderboard.data) {
+			displayPageLoader(true);
+			fetchLeaderboard().then(() => {
+				displayPageLoader(false);
+			});
+		}
 	};
 
-	render = ({ members }) => {
-	  return (
-	    <dv className={style.membersWrap}>
-				
+	onShowFilter = () => {
+		leaderboardOptions.map((item) => {
+			if (item.value === 'regional') {
+				item.children = getRegions().map((i) => {
+					if (this.props.leaderboard.filter.region === i.value) {
+						i.selected = true;
+					}
+					return i;
+				});
+			}
+		});
+		let props = {
+			data: leaderboardOptions,
+			onClickParent: (val) => this.onClickCallback(val),
+			onClickChild: (val) => this.onClickCallback(val),
+			selected: this.props.leaderboard.filter.type || null,
+		};
+
+		// show popup options
+		showFilter(props);
+	};
+
+	onClickCallback = (val) => {
+		if (!val.hasChildren) {
+			try {
+				if ((val.parentVal === 'regional' && this.props.leaderboard.filter.region === val.childVal) || 
+				(val.parentVal !== 'regional' &&  this.props.leaderboard.filter.type === val.parentVal)) {
+					showFilter(null);
+				} else {
+					displayPageLoader(true);
+					fetchLeaderboard(
+						val.parentVal,
+						val.parentVal === 'regional' ? val.childVal : null
+					).then((a) => {
+						displayPageLoader(false);
+						showFilter(null);
+					});
+				}
+			} catch (err) {
+				console.log(err);
+			}
+		}
+	};
+
+	render = ({ leaderboard }) => {
+		return (
+			<dv className={style.membersWrap}>
 				{/* Title */}
-				<p className={`bold ${style.title}`}>{getTranslation('TOP_PERFORMERS')}</p>
+				<div className={style.titleHead}>
+					<p className={`bold ${style.title}`}>
+						{getTranslation('TOP_PERFORMERS')}
+					</p>
+					<div className={style.filter} onClick={this.onShowFilter}>
+						<ImageLoader
+							src="assets/icons/filter_icon.png"
+							style={{ container: style.filterIcon }}
+						/>
+						<span>{getTranslation('FILTER')}</span>
+					</div>
+				</div>
 				{/* header */}
 				<div className={`${style.item} ${style.itemHeader}`}>
 					<div className={style.avatar}></div>
-					<div className={style.nameMember}>
-					</div>
+					<div className={style.nameMember}></div>
 					<div className={style.rank}>
 						<p className={`bold`}>{getTranslation('RANK')}</p>
 					</div>
@@ -32,31 +103,46 @@ class Leaderboard extends Component {
 					</div>
 				</div>
 				{/* content */}
-				{members.data.sort((a, b) => b.points - a.points).map((item, index) => (
-					<div className={style.item}>
-						<ImageLoader 
-							src={item.image || getDefaultAvatar()}
-							style={{container: style.avatar}} />
-						<div className={style.nameMember}>
-							<div>
-								<p className={`light ${style.name}`}>{`${item.profile.fname} ${item.profile.lname}`}</p>
-								<p className={`light ${style.members}`}>{`${item.members} ${getTranslation('MEMBERS')}`}</p>
+				{leaderboard.data &&
+					leaderboard.data.length &&
+					leaderboard.data
+						.sort((a, b) => b.points - a.points)
+						.map((item, index) => (
+							<div className={style.item}>
+								<ImageLoader
+									src={item.profile.image || getDefaultAvatar()}
+									style={{ container: style.avatar }}
+								/>
+								<div className={style.nameMember}>
+									<div>
+										<p
+											className={`light ${style.name}`}
+										>{`${item.profile.fname} ${item.profile.lname}`}</p>
+										<p className={`light ${style.members}`}>{`${
+											item.members
+										} ${getTranslation('MEMBERS')}`}</p>
+									</div>
+								</div>
+								<div className={style.rank}>
+									<p className={`light`}>
+										{formatNumber(item.rank || index + 1)}
+									</p>
+								</div>
+								<div className={style.points}>
+									<p className={`light`}>{formatNumber(item.points) || 0}</p>
+								</div>
 							</div>
-						</div>
-						<div className={style.rank}>
-							<p className={`light`}>{formatNumber(item.rank || index + 1)}</p>
-						</div>
-						<div className={style.points}>
-							<p className={`light`}>{formatNumber(item.points) || 0}</p>
-						</div>
-					</div>
-				))}
+						))}
 				{/* no record */}
-				{members.data.length <= 0 && <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>}
+				{!leaderboard.data ||
+					(leaderboard.data.length <= 0 && (
+						<p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
+					))}
 				{/* Loader */}
-				{!members.result && <LoaderRing fullpage />}
+				{!leaderboard.result && <LoaderRing fullpage />}
+				{/* Filter */}
 			</dv>
-	  );
+		);
 	};
 }
-export default connect(['members'])(Leaderboard);
+export default connect(['leaderboard'])(Leaderboard);

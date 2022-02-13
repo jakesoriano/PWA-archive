@@ -1,7 +1,7 @@
 import {
   fetchGrids,
   // fetchUserPoints,
-  fetchNews,
+  // fetchNews,
   fetchEvents,
   fetchMembers,
   fetchInvited,
@@ -9,7 +9,9 @@ import {
   fetchCommunities,
   getCommunityInfo,
   generateNotifications,
-  fetchTasks
+  fetchTasks,
+  fetchLeaderboard,
+  fetchVideos
 } from '_mutations';
 
 // eslint-disable-next-line import/prefer-default-export
@@ -25,6 +27,8 @@ export function prefetch (hasUser) {
     hasUser && fetchCommunities(),
     hasUser && getCommunityInfo(),
     hasUser && fetchTasks(),
+    hasUser && fetchLeaderboard(),
+    hasUser && fetchVideos(),
   ]).then(() => {
     hasUser && generateNotifications();
   });
