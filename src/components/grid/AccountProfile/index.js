@@ -59,8 +59,8 @@ class AccountProfile extends Component {
 		});
 	};
 
-	onDownloadKit = () => {
-		window.open('http://Bit.ly/LabanLeni22', '_blank');
+	onDownloadKit = (url) => {
+		window.open(url, '_blank');
 	};
 
 	gotoVideos = () => {
@@ -78,21 +78,37 @@ class AccountProfile extends Component {
 		if (showDropdown) {
 			return (
 				<div className={style.selectDropdown}>
-					<a className={style.download} onClick={this.onDownloadKit}>
+					<a className={style.download} onClick={() => {
+						this.onDownloadKit('http://bit.ly/LabanLeni22');
+					}}>
 						<div>
-							<ImageLoader
+							{/* <ImageLoader
 								src="assets/images/icon_download.png"
 								style={{ container: style.iconDownload }}
-							/>
-							<span>{getTranslation('DOWNLOAD_KIT')}</span>
+							/> */}
+							<span>{getTranslation('DOWNLOAD_CAMPAIGN_KIT')}</span>
+						</div>
+					</a>
+					<a className={style.download} onClick={() => {
+						this.onDownloadKit('http://bit.ly/bakitsileni');
+					}}>
+						<div>
+							<span>{getTranslation('DOWNLOAD_CONVERSTIONAL_KIT')}</span>
+						</div>
+					</a>
+					<a className={style.download} onClick={() => {
+						this.onDownloadKit('http://bit.ly/KKP_volunteer_toolkit');
+					}}>
+						<div>
+							<span>{getTranslation('DOWNLOAD_VOLUNTEER_KIT')}</span>
 						</div>
 					</a>
 					<a className={style.download} onClick={this.gotoVideos}>
 						<div>
-							<ImageLoader
+							{/* <ImageLoader
 								src="assets/images/icon_download.png"
 								style={{ container: style.iconDownload }}
-							/>
+							/> */}
 							<span>{getTranslation('WATCH_VIDEOS')}</span>
 						</div>
 					</a>
