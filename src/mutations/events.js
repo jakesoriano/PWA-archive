@@ -240,7 +240,13 @@ export function selectTag (tag, item) {
     fetching: true
   }
   updateStore({ events, cevents });
-
+  let parentType = 'X';
+  if(item.communityId) {
+    parentType = 'C'
+  } else {
+    parentType = 'U'
+  }
+  if(authUser.profile.roles)
   return new Promise((resolve) => {
     xhr(urlTag, {
       method: 'POST',
@@ -248,6 +254,8 @@ export function selectTag (tag, item) {
         userId: authUser.profile._id,
         itemId: item.id,
         itemType: 'E',
+        parentId: item.communityId,
+        parentType,
         tag
       }
     })

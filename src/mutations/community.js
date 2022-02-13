@@ -394,3 +394,114 @@ export function getCommunityInfo () {
    });
  });
 }
+
+export function fetchCommunityEvents(page, limit) {
+  
+  const { communityInfo, communityEvents } = store.getState();
+  
+  // fetching
+  if(communityEvents.fetching) {
+    return;
+  }
+
+  // initial state
+  updateStore({
+    communityEvents: {
+      ...communityEvents,
+      fetching: true,
+      result: false
+    }
+  });
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/events`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'GET',
+      params: {
+        p: page || 1, // page number
+        s: limit || 9 // limit
+      }
+    })
+    .then((res) => {
+      updateStore({
+        communityEvents: {
+          data: page && page > 1 ? [
+            ...communityEvents.data,
+            ...res.data.results
+          ] : res.data.results,
+          total: res.data.total,
+          page: page || 1,
+          fetching: false,
+          result: true
+        }
+      });
+      console.log(`SPA >> fetchCommunityEvents Success`, res);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        communityEvents: {
+          ...communityEvents,
+          fetching: false,
+          result: false
+        }
+      });
+      console.log(`SPA >> fetchCommunityEvents Error`, err);
+      resolve(false);
+    });
+  });
+}
+
+export function fetchCommunityAnnouncement(page, limit) {
+  const { communityInfo, communityAnnouncements } = store.getState();
+  
+  // fetching
+  if(communityAnnouncements.fetching) {
+    return;
+  }
+
+  // initial state
+  updateStore({
+    communityAnnouncements: {
+      ...communityAnnouncements,
+      fetching: true,
+      result: false
+    }
+  });
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/news`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'GET',
+      params: {
+        p: page || 1, // page number
+        s: limit || 9 // limit
+      }
+    })
+    .then((res) => {
+      updateStore({
+        communityAnnouncements: {
+          data: page && page > 1 ? [
+            ...communityAnnouncements.data,
+            ...res.data.results
+          ] : res.data.results,
+          total: res.data.total,
+          page: page || 1,
+          fetching: false,
+          result: true
+        }
+      });
+      console.log(`SPA >> fetchCommunityAnnouncements Success`, res.success);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        communityAnnouncements: {
+          ...communityAnnouncements,
+          fetching: false,
+          result: false
+        }
+      });
+      console.log(`SPA >> fetchCommunityAnnouncements Error`, err);
+      resolve(false);
+    });
+  });
+}
