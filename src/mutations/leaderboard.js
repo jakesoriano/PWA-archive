@@ -27,7 +27,7 @@ export function fetchLeaderboard (type, region, top) {
           ...leaderboard,
           fetching: false,
           result: true,
-          data: res.data,
+          data: res.data.filter(i => i),
           featured: (!type ? res.data[0] : res.featured), // get top 1 from overall
           filter: {
             type: type || 'global',
