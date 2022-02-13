@@ -397,5 +397,17 @@
 				"component": "CommunityManagement"
 			}
 		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "EDIT_POST_CONTENT",
+		"uri": "edit-post-content",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "PostContent"
+			}
+		]
 	}
 ]

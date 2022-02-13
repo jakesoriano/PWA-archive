@@ -134,23 +134,30 @@
       margin: 10px 0;
     }
   }
-  .pShare {
-    background: $primary;
+  .pShareButton {
     display: flex;
-    width: 100px;
+    max-width: 200px;
     margin: 0 auto;
-    padding: 5px 10px;
-    width: max-content;
-    margin-top: 20px;
-    .pIconShare {
-      padding-bottom: 18px;
-      width: 18px;
-      margin-right: 5px;
-    }
-    span {
-      color: #fff;
-      font-size: 0.8rem;
-      text-transform: uppercase;
+    .pShare {
+      background: $primary;
+      width: 100px;
+      margin: 0 auto;
+      padding: 5px 10px;
+      width: max-content;
+      min-width: 80px;
+      margin-top: 20px;
+      border-radius: 3px;
+      text-align: center;
+      .pIconShare {
+        padding-bottom: 18px;
+        width: 18px;
+        margin-right: 5px;
+      }
+      span {
+        color: #fff;
+        font-size: 1rem;
+        text-transform: uppercase;
+      }
     }
   }
 }

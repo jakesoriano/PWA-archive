@@ -1,5 +1,6 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
+import { route } from 'preact-router';
 import {
 	fetchCommunityEvents,
 	fetchCommunityAnnouncement } from '_mutations';
@@ -9,7 +10,7 @@ import {
 	getConfigByKey
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
-import { ImageLoader, LoaderRing, EventsList, AnnouncementsList } from '_components/core';
+import { ImageLoader, LoaderRing, CommunityEvents, AnnouncementsList } from '_components/core';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -180,18 +181,18 @@ class CommunityManagement extends Component {
 							__html: data.desc
 						}}
 					/>
-					<a className={style.pShare} onClick={() => {
-						if (this.state.active == 'events') {
-							this.onShareEvent(this.state.selectedItem);
-						} else if (this.state.active == 'announcements') {
-							this.onShareAnnouncement(this.state.selectedItem);
-						}
-					}}>
-						<ImageLoader
-								src="assets/images/share_icon_white.png"
-								style={{container: style.pIconShare}} />
-							<span>{getTranslation('SHARE')}</span>
-					</a>
+					<div className={style.pShareButton}>
+						<a className={style.pShare} onClick={() => {
+							route('/edit-post-content');
+						}}>
+							<span className='extraBold'>{getTranslation('EDIT')}</span>
+						</a>
+						<a className={style.pShare} onClick={() => {
+							console.log('delete');
+						}}>
+							<span className='extraBold'>{getTranslation('DELETE')}</span>
+						</a>
+					</div>
 				</div>
 			)
 		}
@@ -203,7 +204,7 @@ class CommunityManagement extends Component {
 	};
 
 	renderEvents = (data) => {
-		return <EventsList data={data} onClickItemCallback={this.onClickItem} />
+		return <CommunityEvents data={data} onClickItemCallback={this.onClickItem} />
 	};
 
 	renderData = (active) => {
