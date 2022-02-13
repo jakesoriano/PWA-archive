@@ -201,6 +201,64 @@ class InitialSignup extends Component {
       })
   };
 
+  renderSocialMedia = () => {
+    if (process.env.PLATFORM === 'ios' &&
+      this.props.nativeVersion &&
+      parseInt(this.props.nativeVersion.replace(/\./gim, '')) < 110) {
+      return null;
+    }
+    return (
+      <div className={`${style.socialMedia}`}>
+        <p>{getTranslation('SOCIAL_MEDIA')}</p>
+        <ul>
+          <li>
+            <a onClick={() => {
+                this.onClickSocial('F');
+              }}>
+              <ImageLoader
+              src="assets/images/fb_icon.png"
+              style={{ container: style.socMedIcons }}
+              />
+            </a>
+          </li>
+          <li>
+            <a onClick={() => {
+                this.onClickSocial('T');
+              }}>
+              <ImageLoader
+              src="assets/images/twitter_icon.png"
+              style={{ container: style.socMedIcons }}
+              />
+            </a>
+          </li>
+          <li>
+            <a onClick={() => {
+                this.onClickSocial('G');
+              }}>
+              <ImageLoader
+              src="assets/images/google_icon.png"
+              style={{ container: style.socMedIcons }}
+              />
+            </a>
+          </li>
+          {process.env.PLATFORM === 'ios' && (
+          <li>
+            <a className={style.appleLogo} 
+              onClick={() => {
+                this.onClickSocial('A');
+              }}>
+              <ImageLoader
+              src="assets/images/apple_icon.png"
+              style={{ container: style.socMedIcons }}
+              />
+            </a>
+          </li>
+          )}
+        </ul>
+      </div>
+    );
+  };
+
 	render = (
 	  { toggleSignupForm, isOpen },
 	  { username, password, confirm_password }
@@ -281,58 +339,12 @@ class InitialSignup extends Component {
             </div>
             </form>
               
-            <div className={`${style.socialMedia}`}>
-              <p>{getTranslation('SOCIAL_MEDIA')}</p>
-              <ul>
-                <li>
-                  <a onClick={() => {
-                      this.onClickSocial('F');
-                    }}>
-                    <ImageLoader
-                    src="assets/images/fb_icon.png"
-                    style={{ container: style.socMedIcons }}
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a onClick={() => {
-                      this.onClickSocial('T');
-                    }}>
-                    <ImageLoader
-                    src="assets/images/twitter_icon.png"
-                    style={{ container: style.socMedIcons }}
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a onClick={() => {
-                      this.onClickSocial('G');
-                    }}>
-                    <ImageLoader
-                    src="assets/images/google_icon.png"
-                    style={{ container: style.socMedIcons }}
-                    />
-                  </a>
-                </li>
-                {process.env.PLATFORM === 'ios' && (
-                <li>
-                  <a className={style.appleLogo} 
-                    onClick={() => {
-                      this.onClickSocial('A');
-                    }}>
-                    <ImageLoader
-                    src="assets/images/apple_icon.png"
-                    style={{ container: style.socMedIcons }}
-                    />
-                  </a>
-                </li>
-                )}
-              </ul>
-            </div>
+            {/* Social Media */}
+            {this.renderSocialMedia()}
           </div>
 	      </div>
 	    </div>
 	  );
 	};
 }
-export default connect(['signup'])(InitialSignup);
+export default connect(['signup', 'nativeVersion'])(InitialSignup);

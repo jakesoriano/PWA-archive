@@ -37,7 +37,8 @@ import {
 import {
 	nativeWebReady,
 	nativeExitApp,
-	nativeGetDeviceId
+	nativeGetDeviceId,
+	nativeGetVersion
 } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -189,6 +190,13 @@ class Grid extends Component {
 		
 		// fetch app config
 		fetchAppConfig();
+
+		// get native version
+		nativeGetVersion((v) => {
+			updateStore({
+				nativeVersion: v
+			});
+		});
 	};
 
 	componentDidUpdate = (prevProps) => {
