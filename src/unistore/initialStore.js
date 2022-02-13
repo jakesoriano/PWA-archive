@@ -119,4 +119,12 @@ export const initialStore = {
     result: false,
     data: null
   },
+  videos: {
+    fetching: false,
+    result: false,
+    data: [],
+    total: 0,
+    page: 1,
+    selected: null
+  },
 };

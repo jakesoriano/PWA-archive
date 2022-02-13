@@ -31,5 +31,7 @@ export { default as TaskCenter } from './TaskCenter';
 export { default as CommunityDetails } from './CommunityDetails';
 export { default as PostContent } from './PostContent';
 export { default as FeaturedTopRanking } from './FeaturedTopRanking';
+export { default as Videos } from './Videos';
+export { default as VideoDetails } from './VideoDetails';
 export { default as GlobalAnnouncement } from './GlobalAnnouncement';
 

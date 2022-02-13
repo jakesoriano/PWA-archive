@@ -24,7 +24,8 @@ export function logOut (callback) {
     communities,
     notifications,
     tasks,
-    communityInfo
+    communityInfo,
+    videos
   } = initialStore;
 
   removeCookie('token');
@@ -39,7 +40,8 @@ export function logOut (callback) {
     notifications,
     tasks,
     loginInfo: null,
-    communityInfo
+    communityInfo,
+    videos
   });
   nativeOnLogout();
   if (callback) {
@@ -109,7 +111,8 @@ export function login (data) {
     events,
     members,
     invited,
-    communities
+    communities,
+    videos
   } = initialStore;
   return new Promise((resolve) => {
     xhr(urlUserLogin, {
@@ -133,6 +136,7 @@ export function login (data) {
             members,
             invited,
             communities,
+            videos,
             loginInfo: null
           });
           // set auth token in native
@@ -159,7 +163,8 @@ export function loginOTP (data) {
     events,
     members,
     invited,
-    communities
+    communities,
+    videos
   } = initialStore;
   return new Promise((resolve) => {
     xhr(urlUserLoginOTP, {
@@ -184,6 +189,7 @@ export function loginOTP (data) {
             members,
             invited,
             communities,
+            videos,
             loginInfo: null
           });
           // set auth token in native

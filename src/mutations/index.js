@@ -16,3 +16,4 @@ export * from './tasks';
 export * from './announcements';
 export * from './leaderboard';
 export * from './appConfig';
+export * from './videos';
