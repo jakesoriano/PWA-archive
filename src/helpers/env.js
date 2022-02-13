@@ -37,3 +37,7 @@ export const urlTasks = urlUser + `/tasks`;
 export const urlCommunityGetInfo = urlCommunity + `/info`;
 export const urlCommunityLeader = urlCommunity + `/leader`;
 export const urlValidateTask = urlUser + `/tasks/validate/{id}`;
+export const urlLeaderboard = `${process.env.API_DOMAIN}leaderboard`;
+
+export const playStore = 'https://play.google.com/store/apps/details?id=com.leni2022&hl=en&gl=US';
+export const appStore = 'https://apps.apple.com/us/app/facebook/id284882215'

@@ -7,8 +7,23 @@
   display: block;
   overflow: hidden;
   * {
-    color: #000;
+    color: #737373;
     font-size: 0.9rem;
+  }
+  .titleHead {
+    position: relative;
+    .filter {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 10px;
+      top: 0;
+      .filterIcon {
+        width: 24px;
+        padding-bottom: 24px;
+        margin-right: 10px;
+      }
+    }
   }
   .title {
     font-size: 1.2rem;

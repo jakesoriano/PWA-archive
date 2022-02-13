@@ -93,6 +93,13 @@ export const initialStore = {
     date: null,
     completed: false
   },
+  leaderboard: {
+    fetching: false,
+    result: false,
+    data: null,
+    featured: null,
+    filter: {}
+  },
   // user
   authUser: null,
   deviceId: null,
@@ -103,6 +110,7 @@ export const initialStore = {
   popupModal: null,
   circleModal: null,
   alertShow: null,
+  filterShow: null,
   pageLoader: {
     display: false
   },
