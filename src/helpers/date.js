@@ -83,3 +83,30 @@ export const getDateDaysAway = (date) => {
     return date;
   }
 }
+
+export const getCountdown = (endDate) => {
+  let currentDate = new Date().getTime();
+  let targetDate = new Date(endDate).getTime()
+
+  let seconds = (targetDate - currentDate) / 1000;
+  let minutes = Math.floor(seconds / 60);
+  let hours = Math.floor(minutes / 60);
+  let days = Math.floor(hours / 24);
+  let finish = false;
+
+  if (targetDate <= currentDate) {
+    finish = true
+  }
+  // calculate net remaining time based on gross values
+  seconds = Math.floor(seconds - minutes * 60);
+  minutes = Math.floor(minutes - hours * 60);
+  hours = Math.floor(hours - days * 24);
+
+  return {
+    days: days < 10 ? '0' + days : days,
+    hours: hours < 10 ? '0' + hours : hours,
+    minutes: minutes < 10 ? '0' + minutes : minutes,
+    seconds: seconds < 10 ? '0' + seconds : seconds,
+    finish
+  };
+}
