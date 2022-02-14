@@ -2,12 +2,12 @@ import { store, updateStore } from '_unistore';
 import {
   xhr,
   urlAppConfig,
-  platform,
   messageModal,
   getTranslation,
   getConfigByKey,
   setCookieWithExpiration,
-  getCookie
+  getCookie,
+  replaceUrlPlaceholders
 } from '_helpers';
 import { nativeGetVersion } from '_platform/helpers';
 
@@ -30,7 +30,11 @@ export function fetchAppConfig () {
     }
   });
 
-  return xhr(urlAppConfig)
+  return xhr(replaceUrlPlaceholders(urlAppConfig), {
+    headers: {
+      Accept: '*'
+    }
+  })
     .then((res) => {
     
       try {
