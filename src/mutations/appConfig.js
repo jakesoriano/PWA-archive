@@ -30,11 +30,7 @@ export function fetchAppConfig () {
     }
   });
 
-  return xhr(replaceUrlPlaceholders(urlAppConfig), {
-    headers: {
-      Accept: '*'
-    }
-  })
+  return xhr(replaceUrlPlaceholders(urlAppConfig))
     .then((res) => {
     
       try {
