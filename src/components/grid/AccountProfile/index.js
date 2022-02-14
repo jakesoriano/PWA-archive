@@ -61,6 +61,9 @@ class AccountProfile extends Component {
 
 	onDownloadKit = (url) => {
 		window.open(url, '_blank');
+		this.setState({
+			showDropdown: false
+		});
 	};
 
 	gotoVideos = () => {
