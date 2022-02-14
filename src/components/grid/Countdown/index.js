@@ -37,7 +37,7 @@ class Countdown extends Component {
 		const result = getCountdown(getConfigByKey('votingDate'));
 		this.setState({
 			...result
-		}, () => {console.log(result);
+		}, () => {
 			this.timer = setTimeout(this.setCountdown, 1000);
 		})
 	};
@@ -50,19 +50,19 @@ class Countdown extends Component {
 					<div className={style.content}>
 						<div className={style.count}>
 							<span className={`extraBold`}>{days || '00'}</span>
-							<span className={`bold`}>{getTranslation('DAYS')}</span>
+							<span>{getTranslation('DAYS')}</span>
 						</div>
 						<div className={style.count}>
 							<span className={`extraBold`}>{hours || '00'}</span>
-							<span className={`bold`}>{getTranslation('HOURS')}</span>
+							<span>{getTranslation('HOURS')}</span>
 						</div>
 						<div className={style.count}>
 							<span className={`extraBold`}>{minutes || '00'}</span>
-							<span className={`bold`}>{getTranslation('MINUTES')}</span>
+							<span>{getTranslation('MINUTES')}</span>
 						</div>
 						<div className={style.count}>
 							<span className={`extraBold`}>{seconds || '00'}</span>
-							<span className={`bold`}>{getTranslation('SECONDS')}</span>
+							<span>{getTranslation('SECONDS')}</span>
 						</div>
 					</div>
 				</div>
