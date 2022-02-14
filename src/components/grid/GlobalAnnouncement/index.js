@@ -54,7 +54,8 @@ class GlobalAnnouncement extends Component {
 				We tell it as it is. Only the truth, KakamPink!\n\n
 				Shared via Kakampink App\n
 				Download now!\n
-				Android: ${getConfigByKey('playStore')}\n\n
+				Android: ${getConfigByKey('playStore')}\n
+				iOS: ${getConfigByKey('appStore')}\n\n
 				Article Title: ${item.title}\n
 				Ariticle Link: ${item.link || ''}\n
 				Use my invite code: ${this.props.authUser.profile.refCode}
