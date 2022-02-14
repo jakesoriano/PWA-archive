@@ -6,5 +6,6 @@
   "playStore": "https://play.google.com/store/apps/details?id=com.leni2022&hl=en&gl=US",
   "appStore": "https://apps.apple.com/app/leni-2022/id1607452732",
   "votingDate": "2022-05-09 00:00:01 +0800",
-  "appDownloads": "6012"
+  "appDownloads": "6012",
+  "otpInterval": 5
 }
