@@ -516,6 +516,8 @@ if (typeof window !== 'undefined') {
 
 	// native on resume
 	window.onResume = () => {
+		// fetch app config
+		fetchAppConfig();
 		const path = getCurrentUrl();
 		console.log('onResume', path);
 	};

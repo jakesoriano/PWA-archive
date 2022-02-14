@@ -1,5 +1,5 @@
 import { Component } from 'preact';
-import { getTranslation, displayPageLoader, showAlertBox } from '_helpers';
+import { getTranslation, displayPageLoader, showAlertBox, getConfigByKey } from '_helpers';
 import { ButtonDescription } from '_components/core';
 import style from './style.scss';
 
@@ -10,9 +10,13 @@ class OneTimePIN extends Component {
 		this.state = {
 			pin: null,
 			isResendCd: false,
-			seconds: 60,
+			seconds: parseInt(getConfigByKey('otpInterval') || 5) * 60,
 			inputFocus: false
 		};
+	};
+	
+	componentDidMount = () => {
+		this.setCountdown();
 	};
 
 	setCountdown = () => {
