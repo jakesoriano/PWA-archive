@@ -204,5 +204,7 @@
 	"NEW_UPDATE_TITLE": "New update available.",
 	"NEW_UPDATE_DESC": "You will have to update your app to the latest version to continue using",
 	"NEW_UPDATE_BTN": "Update",
-	"INVALID_REFCODE": "Invalid Referral Code"
+	"INVALID_REFCODE": "Invalid Referral Code",
+	"FEATURED_COMMUNITY": "Featured Community",
+	"SHOW_ALL": "Show all"
 }

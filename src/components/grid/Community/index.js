@@ -28,6 +28,11 @@ class Community extends Component {
     if (!communities.data.length) {
       fetchCommunities();
     }
+		updateStore({
+			customBack: () => {
+				route(`community`, true);
+			},
+		});
 	};
 
   componentDidUpdate = () => {
@@ -122,17 +127,6 @@ class Community extends Component {
 	render = ({ communities }) => {
 	  return (
 	    <div className={style.communityWrapper}>
-        <div className={style.search}>
-          <input
-            name="communitySearch"
-            placeholder="Search a Community"
-            onInput={this.handleSearchByName}
-          />
-          <ImageLoader
-            src={'assets/images/magnifying_icon.png'}
-            style={{container: style.searchIcon}}
-          />
-        </div>
         <div className={style.communityBody}>
           <p className={`${style.title} bold`}>{getTranslation('FOLLOW_COMMUNITIES')}</p>
           <div className={style.communities}>

@@ -44,6 +44,7 @@ export function filterCommunity(name, page, limit) {
             ...res.data.results
           ] : res.data.results,
           total: res.data.total,
+          featured: res.data && res.data.results ? res.data.results.filter((item, i) => i < 5) : communities.data.length ? communities.data.filter((item, i) => i < 5) : [],
           page: page || 1,
           fetching: false,
           result: true
@@ -97,6 +98,7 @@ export function fetchCommunities(page, limit) {
             ...res.data.results
           ] : res.data.results,
           total: res.data.total,
+          featured: communities.featured.length ? communities.featured : res.data.results.filter((item, i) => i < 5),
           page: page || 1,
           fetching: false,
           result: true
@@ -131,6 +133,13 @@ export function followCommunity (item) {
   communities = {
     ...communities,
     data: communities.data.map(i => {
+      if(i.id === item.id) {
+        i.followed = true;
+        i.followers = i.followers + 1;
+      }
+      return i;
+    }),
+    featured: communities.featured.map(i => {
       if(i.id === item.id) {
         i.followed = true;
         i.followers = i.followers + 1;
@@ -182,6 +191,13 @@ export function followCommunity (item) {
             }
             return i;
           }),
+          featured: communities.featured.map(i => {
+            if(i.id === item.id) {
+              i.followed = false;
+              i.followers = i.followers - 1;
+            }
+            return i;
+          }),
           fetching: false
         }
       });
@@ -205,6 +221,13 @@ export function unFollowCommunity (item) {
   communities = {
     ...communities,
     data: communities.data.map(i => {
+      if(i.id === item.id) {
+        i.followed = false;
+        i.followers = i.followers - 1;
+      }
+      return i;
+    }),
+    featured: communities.featured.map(i => {
       if(i.id === item.id) {
         i.followed = false;
         i.followers = i.followers - 1;
@@ -250,6 +273,13 @@ export function unFollowCommunity (item) {
         communities: {
           ...communities,
           data: communities.data.map(i => {
+            if(i.id === item.id) {
+              i.followed = true;
+              i.followers = i.followers + 1;
+            }
+            return i;
+          }),
+          featured: communities.featured.map(i => {
             if(i.id === item.id) {
               i.followed = true;
               i.followers = i.followers + 1;
