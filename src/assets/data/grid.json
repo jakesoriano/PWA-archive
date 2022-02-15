@@ -149,6 +149,59 @@
 	{
 		"styles": [
 			{
+				"selector": "#w1 > div:first-child > div > span",
+				"styles": "display: none;"
+			},
+			{
+				"selector": "#w1 > div:first-child",
+				"styles": "margin-top: 10px;"
+			}
+		],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY_ANNOUNCEMENTS",
+		"uri": "community-announcements",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "NewsAndEvents",
+				"props": {
+					"hiddenTabs": ["announcements", "events"]
+				}
+			}
+		]
+	},
+	{
+		"styles": [
+			{
+				"selector": "#w1 > div:first-child > div > span",
+				"styles": "text-transform: uppercase; text-align: left; border-radius: 10px; padding-left: 25px; display: none;"
+			},
+			{
+				"selector": "#w1 > div:first-child > div",
+				"styles": "background-color: #fff;"
+			},
+			{
+				"selector": "#w1 > div:first-child",
+				"styles": "background-color: #fff;"
+			}
+		],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY_EVENTS",
+		"uri": "community-events",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "NewsAndEvents",
+				"props": {
+					"hiddenTabs": ["announcements", "news"],
+					"tabTitle": {"events": "OTHER_EVENTS"}
+				}
+			}
+		]
+	},
+	{
+		"styles": [
+			{
 				"selector": "#w1 > div",
 				"styles": "border-bottom: 1px solid #f7dadf;border-radius: 10px 10px 0 0;"
 			},

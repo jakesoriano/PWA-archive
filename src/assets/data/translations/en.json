@@ -206,5 +206,9 @@
 	"NEW_UPDATE_BTN": "Update",
 	"INVALID_REFCODE": "Invalid Referral Code",
 	"FEATURED_COMMUNITY": "Featured Community",
-	"SHOW_ALL": "Show all"
+	"SHOW_ALL": "Show all",
+	"PAGE_COMMUNITY_EVENTS": "Community Events",
+	"PAGE_COMMUNITY_ANNOUNCEMENTS": "Community Announcements",
+	"OTHER_EVENTS": "Other Events",
+	"UPCOMING_EVENTS": "Upcoming Events"
 }

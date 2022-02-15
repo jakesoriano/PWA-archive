@@ -1,5 +1,9 @@
 @import '../../../style/variables.scss';
 .newsListWrap {
+  .noRecord {
+    text-align: center;
+    padding: 10px;
+  }
   .contentItem {
     display: grid;
     padding: 10px;

@@ -37,4 +37,5 @@ export { default as GlobalAnnouncement } from './GlobalAnnouncement';
 export { default as CommunitySearch } from './CommunitySearch';
 export { default as FeaturedCommunities } from './FeaturedCommunities';
 export { default as CommunityNavigation } from './CommunityNavigation';
+export { default as UpcomingEvents } from './UpcomingEvents';
 
