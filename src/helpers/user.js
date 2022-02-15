@@ -7,5 +7,5 @@ export function isUsingSocialLogin () {
 }
 
 export function formatRank(rank) {
-  return rank <= 0 ? '-' : formatNumber(rank, 2);
+  return (rank || 0) <= 0 ? '-' : formatNumber(rank, 2);
 }
