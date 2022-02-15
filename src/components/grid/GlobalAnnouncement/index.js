@@ -35,6 +35,7 @@ class GlobalAnnouncement extends Component {
 	}
 
 	componentDidMount = () => {
+		fetchAnnouncements();
 	};
 
 	componentDidUpdate = () => {
