@@ -3,16 +3,14 @@
   background-color: $white;
   width: 100%;
   position: absolute;
-  bottom: -100%;
   z-index: 10;
-  transition: all ease-in-out 0.3s;
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  animation-name: popin;
+  animation-duration: 0.2s;
+  bottom: 0;
   * {
     color: #737373;
-  }
-  &.show {
-    bottom: 0;
   }
   .header {
     text-align: center;
@@ -38,6 +36,8 @@
     border-radius: 10px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     z-index: 1;
+    max-height: 100vh;
+    overflow-y: scroll;
     &.show {
       left: 0;
     }
@@ -64,4 +64,9 @@
       }
     }
   }
+}
+
+@keyframes popin {
+  from {bottom: -100%;}
+  to {bottom: 0%;}
 }
