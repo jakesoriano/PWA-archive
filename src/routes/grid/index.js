@@ -353,7 +353,7 @@ class Grid extends Component {
 		try {
 			const props = { ...filterShow };
 			// eslint-disable-next-line react/jsx-props-no-spreading
-			return <CustomListSelection {...props} show={filterShow && true} />;
+			return <CustomListSelection {...props} show={true} />;
 		} catch (err) {
 			// eslint-disable-next-line no-console
 			console.error('Widget Component >> renderCircleModal >> Error:', err);
@@ -465,7 +465,7 @@ class Grid extends Component {
 				{componentModal && this.renderComponentModal()}
 				{popupModal && this.renderPopupModal()}
 				{circleModal && this.renderCircleModal()}
-				{this.renderFilter()}
+				{filterShow && this.renderFilter()}
 				{pageLoader.display && <LoaderRing fullpage />}
 
 				<BackToTop
