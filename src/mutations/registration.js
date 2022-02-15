@@ -53,7 +53,7 @@ export function validateMobile (mobile) {
   });
 }
 
-export function completeSignup (data) {console.error(123, data);
+export function completeSignup (data) {
   return new Promise((resolve) => {
     xhr(urlSignup, {
       method: 'POST',
@@ -62,19 +62,31 @@ export function completeSignup (data) {console.error(123, data);
       .then((res) => {
         if (res.success) {
           console.log(`SPA >> completeSignup successful`, res);
+          // updateStore({
+          //   signup: {
+          //     ...data,
+          //     registrationId: res.id,
+          //   }
+          // });
+          res = {
+            ...res,
+            points: res.points || 0,
+            rank: res.rank || 0,
+            isNewUser: true
+          }
           updateStore({
-            signup: {
-              ...data,
-              registrationId: res.id,
-            }
+            authUser: res,
+            customBack: null
           });
+          // set auth token in native
+          nativeSetAuthToken(res.token);
           resolve(res);
         } else {
           resolve(res);
         }
       })
       .catch((err) => {
-        resolve(res);
+        resolve(err);
         console.log(`SPA >> completeSignup failed`, err);
       });
   });
