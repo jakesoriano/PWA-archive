@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader, UserAvatar } from '_components/core';
 import { fetchUserPoints } from '_mutations';
-import { getTranslation, formatNumber } from '_helpers';
+import { getTranslation, formatNumber, displayName } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -27,7 +27,7 @@ class AccountProfile extends Component {
 					<div className={style.user}>
 						<UserAvatar /> 
 						<div className={style.nameMember}>
-							<p className={`bold ${style.name}`}>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
+							<p className={`bold ${style.name}`}>{displayName(authUser.profile)}</p>
 							<p className={style.members}>{`${formatNumber(authUser.members, 2) || 0} ${getTranslation('MEMBERS')}`}</p>
 						</div>
 					</div>

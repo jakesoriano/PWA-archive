@@ -1,18 +1,24 @@
 import { Component } from 'preact';
-import { getTranslation, displayPageLoader, showAlertBox } from '_helpers';
+import { getTranslation, displayPageLoader, showAlertBox, getConfigByKey } from '_helpers';
 import { ButtonDescription } from '_components/core';
 import style from './style.scss';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class OneTimePIN extends Component {
 	constructor(props) {
+		const interval = parseInt(getConfigByKey('otpInterval') || 5) * 60;
 		super(props);
 		this.state = {
 			pin: null,
 			isResendCd: false,
-			seconds: 60,
-			inputFocus: false
+			seconds: interval,
+			inputFocus: false,
+			interval,
 		};
+	};
+	
+	componentDidMount = () => {
+		this.setCountdown();
 	};
 
 	setCountdown = () => {
@@ -20,9 +26,9 @@ class OneTimePIN extends Component {
 		let timer;
 		if (seconds === 1) {
 			this.setState({
-				seconds: 60
+				seconds: this.state.interval
 			})
-			seconds = 60;
+			seconds = this.state.interval;
 		}
 		if (!timer) {
 			this.setState({
