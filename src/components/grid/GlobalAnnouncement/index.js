@@ -9,7 +9,7 @@ import {
 	dateNewsFormat
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
-import { ImageLoader, LoaderRing, GlobalAnnouncementsList } from '_components/core';
+import { ImageLoader, LoaderRing } from '_components/core';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -35,7 +35,6 @@ class GlobalAnnouncement extends Component {
 	}
 
 	componentDidMount = () => {
-		fetchAnnouncements();
 	};
 
 	componentDidUpdate = () => {

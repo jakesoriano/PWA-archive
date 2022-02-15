@@ -1,7 +1,8 @@
 import {
   fetchGrids,
   // fetchUserPoints,
-  fetchNews,
+  // fetchNews,
+  fetchAnnouncements,
   fetchEvents,
   fetchMembers,
   fetchInvited,
@@ -18,6 +19,7 @@ export function prefetch (hasUser) {
     fetchGrids(),
     // hasUser && fetchUserPoints(),
     // hasUser && fetchNews(),
+    hasUser && fetchAnnouncements(),
     hasUser && fetchEvents(),
     hasUser && fetchMembers(),
     hasUser && fetchInvited(),
