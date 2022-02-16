@@ -8,7 +8,8 @@ import {
 	formatNumber,
 	getConfigByKey,
 	circleModal,
-	formatRank
+	formatRank,
+	displayName
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 import { updateStore } from '_unistore';
@@ -134,7 +135,7 @@ class AccountProfile extends Component {
 							<div className={style.nameMember}>
 								<p
 									className={`bold ${style.name}`}
-								>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
+								>{displayName(authUser.profile)}</p>
 								<p className={`bold ${style.members}`}>{`${
 									formatNumber(authUser.members, 2) || 0
 								} ${getTranslation('MEMBERS')}`}</p>

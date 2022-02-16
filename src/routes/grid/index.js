@@ -383,13 +383,13 @@ class Grid extends Component {
 		const url = getCurrentUrl();
 		if (!authUser && data.auth && url !== '/') {
 			route('/', true);
-		} else if (
-			authUser &&
-			authUser.isNewUser &&
-			url !== '/registration-invite' &&
-			url !== '/home'
-		) {
-			route('/registration-invite', true);
+		// } else if (
+		// 	authUser &&
+		// 	authUser.isNewUser &&
+		// 	url !== '/registration-invite' &&
+		// 	url !== '/home'
+		// ) {
+		// 	route('/registration-invite', true);
 		} else if (
 			authUser &&
 			!authUser.isNewUser &&
