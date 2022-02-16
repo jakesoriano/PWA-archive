@@ -24,16 +24,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: check files
-        run: ls
-      - name: install dependencies
-        run: npm install
-      - name: build static files
-        run: npm run build:android && npm run build:ios
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install
+      - run: npm test
+      - run: npm run build:android
+      - run: npm run build:ios
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
