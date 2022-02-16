@@ -16,20 +16,70 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+stages:
+  - build
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - run: npm install
-      - run: npm run build:android
-      - run: npm run build:ios
+cache:
+  paths:
+    - node_modules/
+    - /usr/local/share/.cache/yarn/v2/
+
+.buildPipeLine:
+  before_script:
+    - npm config set registry http://registry.npmjs.org/
+    - npm install --production=false
+    - echo "APP_ENV_PROJECT=Kakampink" >> .env
+    - echo "APP_ENV_API_DOMAIN=$API_DOMAIN" >> .env
+    - echo "APP_ENV_CDN_DOMAIN=$CDN_DOMAIN" >> .env
+    - echo "APP_ENV_PLATFORM=$PLATFORM" >> .env
+    - echo "APP_ENV_PREFIX=$PREFIX" >> .env
+    - echo "APP_ENV_ENVIRONMENT=$ENVIRONMENT" >> .env
+    - echo "APP_ENV_STAGE=$CI_COMMIT_REF_NAME" >> .env
+    - echo "APP_ENV_BUILD_NO=1.0.$CI_JOB_ID" >> .env
+    - echo "APP_ENV_COOKIE_TIME_LIMIT=14" >> .env
+    - cat .env
+    - npm install
+    # - npm run pwa-config
+  script:
+    - rm -rf build
+    - npm run build:android
+    - npm run web-redirection
+  # after_script:
+
+build:
+  stage: build
+  only:
+    - develop
+  extends: .buildPipeLine
+  variables:
+    API_DOMAIN: https://n0k58tc0x4.execute-api.ap-southeast-1.amazonaws.com/develop/
+    CDN_DOMAIN: https://mobile-kkp.s3.ap-southeast-1.amazonaws.com/uploads/
+    PLATFORM: android
+    PREFIX: kkpd
+    ENVIRONMENT: DEV
+
+build:
+  stage: build
+  only:
+    - staging
+  extends: .buildPipeLine
+  variables:
+    API_DOMAIN: https://7oquizbc8g.execute-api.ap-southeast-1.amazonaws.com/staging/
+    CDN_DOMAIN: https://mobile-kkp.s3.ap-southeast-1.amazonaws.com/uploads/
+    PLATFORM: android
+    PREFIX: kkps
+    ENVIRONMENT: STG
+
+build:
+  stage: build
+  only:
+    - master
+  extends: .buildPipeLine
+  variables:
+    API_DOMAIN: /
+    PLATFORM: android
+    PREFIX: kkp
+    ENVIRONMENT: PROD
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
