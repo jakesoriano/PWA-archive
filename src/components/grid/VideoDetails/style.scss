@@ -10,15 +10,12 @@
     margin: 10px 0;
   }
   .heading {
-    color: #737373;
+    color: #737373 !important;
     text-transform: uppercase;
-    font-size: 1rem;
-    max-width: 150px;
+    font-size: 0.9rem;
   }
-  .avatar {
-    border-radius: 50%;
-    width: 70px;
-    padding-bottom: 70px;
-    margin-right: 20px;
+  .desc {
+    color: #737373 !important;
+    font-size: 0.8rem;
   }
 }
