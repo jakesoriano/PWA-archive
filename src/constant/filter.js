@@ -10,7 +10,7 @@ export const communitySort = [
     'label': 'Alphabetical A - Z',
     'value': 'asc',
     'params': {
-      'o': 'title',
+      'o': 'name',
       'o_istext': true,
       'sort': true
     }
@@ -19,7 +19,7 @@ export const communitySort = [
     'label': 'Alphabetical Z - A',
     'value': 'desc',
     'params': {
-      'o': 'title',
+      'o': 'name',
       'o_istext': true,
       'sort': false
     }

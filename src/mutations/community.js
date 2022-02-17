@@ -18,7 +18,7 @@ function getSortParams (sort) {
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export function filterCommunity(name, page, limit) {
+export function filterCommunity(name, sort, page, limit) {
   // curreny state
   const { communities } = store.getState();
 
@@ -41,7 +41,7 @@ export function filterCommunity(name, page, limit) {
     xhr(urlCommunity + '/search', {
       params: {
         // sort
-        ...getSortParams(),
+        ...getSortParams(sort),
         q: name || '', // query string
         p: page || 1, // page number
         s: limit || 9 // limit
@@ -117,6 +117,7 @@ export function fetchCommunities(sort, page, limit) {
           featured: !sort ? res.data.results[0] : communities.featured,
           page: page || 1,
           filter: '',
+          sort: '',
           fetching: false,
           result: true
         }

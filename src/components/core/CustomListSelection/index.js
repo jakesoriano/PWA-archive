@@ -30,6 +30,7 @@ class CustomListSelection extends Component {
 
 	onClickParent = (e) => {
 		const { data } = this.props;
+		console.log(this.props.selected)
 		let obj = data.reduce((o, i) => Object.assign(o, { [i.value]: i }), {});
 		let selected = obj[e.target.value];
 		if (selected && selected.children && selected.children.length) {

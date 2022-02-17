@@ -5,6 +5,7 @@ import { getTranslation, formatN } from '_helpers';
 import {
   fetchCommunities,
   fetchEventsByCommunityId,
+  fetchNewsByCommunity,
   filterCommunity,
   followCommunity,
   unFollowCommunity
@@ -19,7 +20,8 @@ class Community extends Component {
     super(props);
     this.state = {
       text: props.communities.filter || '',
-      moreFetching: false
+      moreFetching: false,
+      sort: ['']
     }
     this.timer = null;
   }
@@ -32,6 +34,10 @@ class Community extends Component {
 			customBack: () => {
 				route(`community`, true);
 			},
+      communities: {
+        ...communities,
+        filter: ''
+      }
 		});
 	};
 
@@ -51,9 +57,10 @@ class Community extends Component {
       });
       // fetch
       if (this.state.text) {
-        filterCommunity(this.state.text, this.props.communities.page + 1);
+        filterCommunity(this.state.text, this.props.communities.sort, this.props.communities.page + 1);
       } else {
-        fetchCommunities(this.props.communities.page + 1);
+        console.log(this.props.communities, this.state.text)
+        fetchCommunities(null, this.props.communities.page + 1);
       }
     }
   };
@@ -91,6 +98,7 @@ class Community extends Component {
       }
     });
     fetchEventsByCommunityId(item.id);
+    fetchNewsByCommunity(item.id);
     route(`community-details`);
   }
 

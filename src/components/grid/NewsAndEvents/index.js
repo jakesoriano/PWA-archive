@@ -74,9 +74,9 @@ class NewsAndEvents extends Component {
       });
       // fetch
       if (active === 'news') {
-        fetchNews(this.getSelectedTabContent().page + 1);
+        getCurrentUrl() === '/community-details' ? fetchNewsByCommunity(fetchNews(this.props.communityDetails.details.id, this.getSelectedTabContent().page + 1)) : fetchNews(this.getSelectedTabContent().page + 1);
       } else if (active === 'events') {
-        getCurrentUrl().includes('community') ? fetchEventsByCommunityId(this.props.communityDetails.details.id, this.getSelectedTabContent().page + 1) : fetchEvents(this.getSelectedTabContent().page + 1);
+        getCurrentUrl() === '/community-details' ? fetchEventsByCommunityId(this.props.communityDetails.details.id, this.getSelectedTabContent().page + 1) : fetchEvents(this.getSelectedTabContent().page + 1);
       } else {
         fetchAnnouncements(this.getSelectedTabContent().page + 1);
 			}
@@ -282,4 +282,4 @@ class NewsAndEvents extends Component {
 		return getCurrentUrl() === '/community-details' ? this.props[`c${this.state.active}`] : this.props[this.state.active]
 	}
 }
-export default connect(['news', 'events', 'announcements', 'authUser', 'cevents', 'communityDetails',])(NewsAndEvents);
+export default connect(['news', 'events', 'announcements', 'authUser', 'cevents', 'cnews', 'communityDetails',])(NewsAndEvents);

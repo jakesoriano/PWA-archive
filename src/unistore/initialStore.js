@@ -19,6 +19,13 @@ export const initialStore = {
     total: 0,
     page: 1
   },
+  cnews: {
+    fetching: false,
+    result: false,
+    data: [],
+    total: 0,
+    page: 1
+  },
   events: {
     fetching: false,
     result: false,
@@ -63,6 +70,7 @@ export const initialStore = {
     data: [],
     featured: null,
     filter: null,
+    sort: null,
     total: 0,
     page: 1
   },

@@ -1,21 +1,30 @@
 @import '../../../style/variables.scss';
-.search {
-  margin: 10px 15px;
-  max-width: 100%;
-  background-color: $details_bg;
-  border-radius: 50px;
-  padding: 10px 20px;
-  margin-bottom: 10px;
+.searchWrap {
   display: flex;
-  input {
-    background-color: transparent;
-    border: none;
-    color: $black;
-    font-size: 0.875rem;
+  margin: 10px 15px;
+  align-items: center;
+  .search {
     flex: 1;
+    max-width: 100%;
+    background-color: $details_bg;
+    border-radius: 50px;
+    padding: 10px 20px;
+    display: flex;
+    input {
+      background-color: transparent;
+      border: none;
+      color: $black;
+      font-size: 0.875rem;
+      flex: 1;
+    }
+    .searchIcon {
+      max-width: 35px;
+      padding-bottom: 35px;
+    }
   }
-  .searchIcon {
-    max-width: 35px;
+  .sortIcon {
+    width: 35px;
     padding-bottom: 35px;
+    margin-left: 10px;
   }
 }
