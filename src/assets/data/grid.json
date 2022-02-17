@@ -60,6 +60,12 @@
 				"component": "AccountProfile"
 			},
 			{
+				"component": "DownloadKit"
+			},
+			{
+				"component": "ReferralCode"
+			},
+			{
 				"component": "GlobalAnnouncement",
 				"props": {
 					"isDisplayFlex": true
