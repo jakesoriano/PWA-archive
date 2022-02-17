@@ -526,19 +526,19 @@ export function fetchCommunityAnnouncement(page, limit) {
   });
 }
 
-export function shareEventByLeader (item, parentId, parentType) {
-  let { events, communityDetails } = store.getState();
+export function shareEventByLeader (item) {
+  let { leaderCommunityEvents } = store.getState();
   const { authUser } = store.getState();
   
   // fetching
-  if(events.fetching || communityDetails.fetching) {
+  if(leaderCommunityEvents.fetching) {
     return;
   }
 
   // initial state
-  events = {
-    ...events,
-    data: events.data.map(i => {
+  leaderCommunityEvents = {
+    ...leaderCommunityEvents,
+    data: leaderCommunityEvents.data.map(i => {
       if(i.id === item.id) {
         i.shared = true;
       }
@@ -546,19 +546,7 @@ export function shareEventByLeader (item, parentId, parentType) {
     }),
     fetching: true
   };
-  communityDetails = {
-    ...communityDetails,
-    events: {
-      data: communityDetails.events.data.map(i => {
-        if(i.id === item.id) {
-          i.shared = true;
-        }
-        return i;
-      }),
-    },
-    fetching: true
-  };
-  updateStore({ events, communityDetails });
+  updateStore({ leaderCommunityEvents });
 
   return new Promise((resolve) => {
     xhr(urlShare, {
@@ -567,21 +555,14 @@ export function shareEventByLeader (item, parentId, parentType) {
         userId: authUser.profile._id,
         itemId: item.id,
         itemType: 'E',
-        parentId: parentId || 'X',
-        parentType: parentType || 'X'
+        parentId: item.communityId,
+        parentType: 'C'
       }
     })
     .then((res) => {
       updateStore({
-        events: {
-          ...events,
-          fetching: false
-        },
-        communityDetails: {
-          ...communityDetails,
-          events: {
-            ...communityDetails.events,
-          },
+        leaderCommunityEvents: {
+          ...leaderCommunityEvents,
           fetching: false
         }
       });
@@ -590,26 +571,14 @@ export function shareEventByLeader (item, parentId, parentType) {
     })
     .catch((err) => {
       updateStore({
-        events: {
-          ...events,
-          data: events.data.map(i => {
+        leaderCommunityEvents: {
+          ...leaderCommunityEvents,
+          data: leaderCommunityEvents.data.map(i => {
             if(i.id === item.id) {
               i.shared = false;
             }
             return i;
           }),
-          fetching: false
-        },
-        communityDetails: {
-          ...communityDetails,
-          events: {
-            data: communityDetails.events.data.map(i => {
-              if(i.id === item.id) {
-                i.shared = false;
-              }
-              return i;
-            }),
-          },
           fetching: false
         }
       });
@@ -618,3 +587,54 @@ export function shareEventByLeader (item, parentId, parentType) {
     });
   });
 }
+
+export function updateCommunityEvent (data, id) {
+  // current state
+  const { communityInfo } = store.getState();
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/events/${id}`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'PUT',
+      data: data.data
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> updateCommunityEvent Error`, res);
+          resolve(res);
+        } else {
+          console.log(`SPA >> updateCommunityEvent successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> updateCommunityEvent failed`, err);
+      });
+  });
+}
+
+export function updateCommunityNews (data, id) {
+  // current state
+  const { communityInfo } = store.getState();
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/news/${id}`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'PUT',
+      data: data.data
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> updateCommunityNews Error`, res);
+          resolve(res);
+        } else {
+          console.log(`SPA >> updateCommunityNews successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> updateCommunityNews failed`, err);
+      });
+  });
+}
+

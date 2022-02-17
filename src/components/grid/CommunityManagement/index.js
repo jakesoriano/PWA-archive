@@ -147,7 +147,7 @@ class CommunityManagement extends Component {
 		route(`/edit-post-content`);
 		updateStore({
 			leaderEditPost: {
-				type: 'event',
+				type: this.state.active,
 				id: data.id
 			}
 		}, true);
