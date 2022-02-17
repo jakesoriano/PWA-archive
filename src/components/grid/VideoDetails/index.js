@@ -5,7 +5,7 @@ import style from './style';
 class VideoDetails extends Component {
   render = ({videos}) => (
     <div className={style.videoDetailsWrap}>
-      <p class={`${style.heading}`}>{videos.selected.title}</p>
+      <p class={`bold ${style.heading}`}>{videos.selected.title}</p>
       <iframe width="100%" height="auto" frameborder="0"
         src={videos.selected.video}>
       </iframe>

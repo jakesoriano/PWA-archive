@@ -100,6 +100,19 @@ export const initialStore = {
     featured: null,
     filter: {}
   },
+  communityInfo: {
+    fetching: false,
+    result: false,
+    data: null
+  },
+  videos: {
+    fetching: false,
+    result: false,
+    data: [],
+    total: 0,
+    page: 1,
+    selected: null
+  },
   // user
   authUser: null,
   deviceId: null,
@@ -113,18 +126,5 @@ export const initialStore = {
   filterShow: null,
   pageLoader: {
     display: false
-  },
-  communityInfo: {
-    fetching: false,
-    result: false,
-    data: null
-  },
-  videos: {
-    fetching: false,
-    result: false,
-    data: [],
-    total: 0,
-    page: 1,
-    selected: null
   },
 };
