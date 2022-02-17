@@ -119,14 +119,14 @@ export const initialStore = {
     result: false,
     data: null
   },
-  communityEvents: {
+  leaderCommunityEvents: {
     fetching: false,
     result: false,
     data: [],
     total: 0,
     page: 1
   },
-  communityAnnouncements: {
+  leaderCommunityAnnouncements: {
     fetching: false,
     result: false,
     data: [],

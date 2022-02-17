@@ -5,7 +5,7 @@ import { LoaderRing } from '_components/core';
 import { FormGroup, FormInput, FormDropdown, ImageLoader, ButtonDescription } from '_components/core';
 import { getTranslation, getContentTypes, displayPageLoader, messageModal, uploadFile, showAlertBox } from '_helpers';
 import { updateStore } from '_unistore';
-import { route } from 'preact-router';
+import { getCurrentUrl, route, RouterProps, Route, Router } from 'preact-router';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -68,6 +68,60 @@ class PostContent extends Component {
 	}
 
 	componentDidMount = () => {
+
+		console.log('currentUrl', getCurrentUrl());
+		console.log('props', this.props.leaderEditPost)
+		console.log('leaderEvents', this.props.leaderCommunityEvents);
+		
+		if(this.props.leaderEditPost) {
+			const event = this.props.leaderCommunityEvents.data.find(e => e.id === this.props.leaderEditPost.id);
+			this.setState({
+				contentType: {
+					value: this.props.leaderEditPost.type === 'event' ? 'Event' : 'Announcement',
+					error: '',
+					message: '',
+					hasError: false
+				},
+				title: {
+					value: event.title,
+					error: '',
+					message: '',
+					hasError: false
+				},
+				desc: {
+					value: event.desc,
+					error: '',
+					message: '',
+					hasError: false
+				},
+				eventBy: {
+					value: event.by,
+					error: '',
+					message: '',
+					hasError: false
+				},
+				location: {
+					value: event.location,
+					error: '',
+					message: '',
+					hasError: false
+				},
+				date : {
+					value: new Date(event.date).toISOString().substr(0, 10),
+					error: '',
+					message: '',
+					hasError: false
+				},
+				attachment: {
+					file: event.image,
+					error: '',
+					message: '',
+					hasError: false
+				}
+			})
+			console.log('editpost', event);
+		}
+		
 		if(!this.props.communityInfo.data) {
 			getCommunityInfo()
 			.then((res) => {
@@ -540,7 +594,7 @@ class PostContent extends Component {
 		);
 	}
 
-	render = ({ authUser },{contentType, contentTypeOptions}) => {
+	render = ({ authUser },{contentType, contentTypeOptions, ...props}) => {
 		if (!authUser) {
 			return <LoaderRing fullpage />;
 		}
@@ -584,4 +638,4 @@ class PostContent extends Component {
 		);
 	};
 }
-export default connect(['authUser', 'communityInfo'])(PostContent);
+export default connect(['authUser', 'communityInfo', 'leaderEditPost', 'leaderCommunityEvents'])(PostContent);

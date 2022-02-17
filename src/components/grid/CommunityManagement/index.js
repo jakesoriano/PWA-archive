@@ -1,5 +1,6 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
+import { updateStore } from '_unistore';
 import { route } from 'preact-router';
 import {
 	fetchCommunityEvents,
@@ -141,6 +142,17 @@ class CommunityManagement extends Component {
 		}
 	};
 
+	onClickEdit = (data) => {
+		console.log('data edit', data);
+		route(`/edit-post-content`);
+		updateStore({
+			leaderEditPost: {
+				type: 'event',
+				id: data.id
+			}
+		}, true);
+	}
+
 	renderDetails = (data) => {
 		if (data) {
 			return (
@@ -183,7 +195,7 @@ class CommunityManagement extends Component {
 					/>
 					<div className={style.pShareButton}>
 						<a className={style.pShare} onClick={() => {
-							route('/edit-post-content');
+							this.onClickEdit(data);
 						}}>
 							<span className='extraBold'>{getTranslation('EDIT')}</span>
 						</a>
@@ -259,9 +271,9 @@ class CommunityManagement extends Component {
 	};
 
 	getSelectedTabContent = () => {
-		const activeTab = this.state.active === 'events' ? 'communityEvents' : 'communityAnnouncements';
+		const activeTab = this.state.active === 'events' ? 'leaderCommunityEvents' : 'leaderCommunityAnnouncements';
 		return this.props[activeTab];
 	}
  
 }
-export default connect(['communityEvents', 'communityAnnouncements', 'authUser', 'communityDetails',])(CommunityManagement);
+export default connect(['leaderCommunityEvents', 'leaderCommunityAnnouncements', 'authUser', 'communityDetails',])(CommunityManagement);

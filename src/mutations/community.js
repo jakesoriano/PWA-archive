@@ -397,17 +397,17 @@ export function getCommunityInfo () {
 
 export function fetchCommunityEvents(page, limit) {
   
-  const { communityInfo, communityEvents } = store.getState();
+  const { communityInfo, leaderCommunityEvents } = store.getState();
   
   // fetching
-  if(communityEvents.fetching) {
+  if(leaderCommunityEvents.fetching) {
     return;
   }
 
   // initial state
   updateStore({
-    communityEvents: {
-      ...communityEvents,
+    leaderCommunityEvents: {
+      ...leaderCommunityEvents,
       fetching: true,
       result: false
     }
@@ -423,9 +423,9 @@ export function fetchCommunityEvents(page, limit) {
     })
     .then((res) => {
       updateStore({
-        communityEvents: {
+        leaderCommunityEvents: {
           data: page && page > 1 ? [
-            ...communityEvents.data,
+            ...leaderCommunityEvents.data,
             ...res.data.results
           ] : res.data.results,
           total: res.data.total,
@@ -439,8 +439,8 @@ export function fetchCommunityEvents(page, limit) {
     })
     .catch((err) => {
       updateStore({
-        communityEvents: {
-          ...communityEvents,
+        leaderCommunityEvents: {
+          ...leaderCommunityEvents,
           fetching: false,
           result: false
         }
@@ -452,17 +452,17 @@ export function fetchCommunityEvents(page, limit) {
 }
 
 export function fetchCommunityAnnouncement(page, limit) {
-  const { communityInfo, communityAnnouncements } = store.getState();
+  const { communityInfo, leaderCommunityAnnouncements } = store.getState();
   
   // fetching
-  if(communityAnnouncements.fetching) {
+  if(leaderCommunityAnnouncements.fetching) {
     return;
   }
 
   // initial state
   updateStore({
-    communityAnnouncements: {
-      ...communityAnnouncements,
+    leaderCommunityAnnouncements: {
+      ...leaderCommunityAnnouncements,
       fetching: true,
       result: false
     }
@@ -478,9 +478,9 @@ export function fetchCommunityAnnouncement(page, limit) {
     })
     .then((res) => {
       updateStore({
-        communityAnnouncements: {
+        leaderCommunityAnnouncements: {
           data: page && page > 1 ? [
-            ...communityAnnouncements.data,
+            ...leaderCommunityAnnouncements.data,
             ...res.data.results
           ] : res.data.results,
           total: res.data.total,
@@ -494,13 +494,106 @@ export function fetchCommunityAnnouncement(page, limit) {
     })
     .catch((err) => {
       updateStore({
-        communityAnnouncements: {
-          ...communityAnnouncements,
+        leaderCommunityAnnouncements: {
+          ...leaderCommunityAnnouncements,
           fetching: false,
           result: false
         }
       });
       console.log(`SPA >> fetchCommunityAnnouncements Error`, err);
+      resolve(false);
+    });
+  });
+}
+
+export function shareEventByLeader (item, parentId, parentType) {
+  let { events, communityDetails } = store.getState();
+  const { authUser } = store.getState();
+  
+  // fetching
+  if(events.fetching || communityDetails.fetching) {
+    return;
+  }
+
+  // initial state
+  events = {
+    ...events,
+    data: events.data.map(i => {
+      if(i.id === item.id) {
+        i.shared = true;
+      }
+      return i;
+    }),
+    fetching: true
+  };
+  communityDetails = {
+    ...communityDetails,
+    events: {
+      data: communityDetails.events.data.map(i => {
+        if(i.id === item.id) {
+          i.shared = true;
+        }
+        return i;
+      }),
+    },
+    fetching: true
+  };
+  updateStore({ events, communityDetails });
+
+  return new Promise((resolve) => {
+    xhr(urlShare, {
+      method: 'POST',
+      data: {
+        userId: authUser.profile._id,
+        itemId: item.id,
+        itemType: 'E',
+        parentId: parentId || 'X',
+        parentType: parentType || 'X'
+      }
+    })
+    .then((res) => {
+      updateStore({
+        events: {
+          ...events,
+          fetching: false
+        },
+        communityDetails: {
+          ...communityDetails,
+          events: {
+            ...communityDetails.events,
+          },
+          fetching: false
+        }
+      });
+      console.log(`SPA >> shareEvents Success`, res);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        events: {
+          ...events,
+          data: events.data.map(i => {
+            if(i.id === item.id) {
+              i.shared = false;
+            }
+            return i;
+          }),
+          fetching: false
+        },
+        communityDetails: {
+          ...communityDetails,
+          events: {
+            data: communityDetails.events.data.map(i => {
+              if(i.id === item.id) {
+                i.shared = false;
+              }
+              return i;
+            }),
+          },
+          fetching: false
+        }
+      });
+      console.log(`SPA >> shareEvents Error`, err);
       resolve(false);
     });
   });
