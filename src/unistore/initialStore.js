@@ -61,8 +61,8 @@ export const initialStore = {
     fetching: false,
     result: false,
     data: [],
-    filter: '',
-    featured: [],
+    featured: null,
+    filter: null,
     total: 0,
     page: 1
   },

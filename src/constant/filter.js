@@ -1,0 +1,28 @@
+export const communitySort = [
+  {
+    'label': 'Popularity',
+    'value': 'popularity',
+    'params': {
+      'o': 'followers'
+    }
+  },
+  {
+    'label': 'Alphabetical A - Z',
+    'value': 'asc',
+    'params': {
+      'o': 'title',
+      'o_istext': true,
+      'sort': true
+    }
+  },
+  {
+    'label': 'Alphabetical Z - A',
+    'value': 'desc',
+    'params': {
+      'o': 'title',
+      'o_istext': true,
+      'sort': false
+    }
+  }
+]
+

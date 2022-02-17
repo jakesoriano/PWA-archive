@@ -1,4 +1,5 @@
 import { Component } from 'preact';
+import { connect } from 'unistore/preact';
 import { ImageLoader } from '_components/core'
 import { filterCommunity, fetchCommunities } from '_mutations';
 import style from './style';
@@ -19,9 +20,10 @@ class CommunitySearch extends Component {
     }, 500);
   }
 
-  render = () => (
+  render = ({communities}) => (
     <div className={style.search}>
       <input
+        value={communities.filter || ''}
         name="communitySearch"
         placeholder="Search a Community"
         onInput={this.handleSearchByName}
@@ -33,4 +35,4 @@ class CommunitySearch extends Component {
     </div>
   )
 }
-export default CommunitySearch
+export default connect(['communities'])(CommunitySearch);
