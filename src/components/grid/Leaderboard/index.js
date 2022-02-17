@@ -104,7 +104,7 @@ class Leaderboard extends Component {
 				</div>
 				{/* content */}
 				{leaderboard.data &&
-					leaderboard.data.length &&
+					leaderboard.data.length ?
 					leaderboard.data
 						.sort((a, b) => b.points - a.points)
 						.map((item, index) => (
@@ -132,7 +132,7 @@ class Leaderboard extends Component {
 									<p className={`light`}>{formatNumber(item.points) || 0}</p>
 								</div>
 							</div>
-						))}
+						)) : null}
 				{/* no record */}
 				{!leaderboard.data ||
 					(leaderboard.data.length <= 0 && (
