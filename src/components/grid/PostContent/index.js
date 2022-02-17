@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { getCommunityInfo, createCommunityEvent, createCommunityNews } from '_mutations';
+import { getCommunityInfo, createCommunityEvent, createCommunityNews, updateCommunityEvent, updateCommunityNews } from '_mutations';
 import { LoaderRing } from '_components/core';
 import { FormGroup, FormInput, FormDropdown, ImageLoader, ButtonDescription } from '_components/core';
 import { getTranslation, getContentTypes, displayPageLoader, messageModal, uploadFile, showAlertBox } from '_helpers';
@@ -33,12 +33,7 @@ class PostContent extends Component {
 				message: '',
 				hasError: false
 			},
-			link: {
-				value: '',
-				error: '',
-				message: '',
-				hasError: false
-			},
+			
 			location: {
 				value: '',
 				error: '',
@@ -46,6 +41,12 @@ class PostContent extends Component {
 				hasError: false
 			},
 			eventBy: {
+				value: '',
+				error: '',
+				message: '',
+				hasError: false
+			},
+				link: {
 				value: '',
 				error: '',
 				message: '',
@@ -68,58 +69,64 @@ class PostContent extends Component {
 	}
 
 	componentDidMount = () => {
-
-		console.log('currentUrl', getCurrentUrl());
-		console.log('props', this.props.leaderEditPost)
-		console.log('leaderEvents', this.props.leaderCommunityEvents);
 		
 		if(this.props.leaderEditPost) {
-			const event = this.props.leaderCommunityEvents.data.find(e => e.id === this.props.leaderEditPost.id);
+			let editData;
+			if(this.props.leaderEditPost.type === 'events') {
+				editData = this.props.leaderCommunityEvents.data.find(e => e.id === this.props.leaderEditPost.id);
+			} else {
+				editData = this.props.leaderCommunityAnnouncements.data.find(e => e.id === this.props.leaderEditPost.id);
+			}
 			this.setState({
 				contentType: {
-					value: this.props.leaderEditPost.type === 'event' ? 'Event' : 'Announcement',
+					value: this.props.leaderEditPost.type === 'events' ? 'Event' : 'Announcement',
 					error: '',
 					message: '',
 					hasError: false
 				},
 				title: {
-					value: event.title,
+					value: editData.title,
 					error: '',
 					message: '',
 					hasError: false
 				},
 				desc: {
-					value: event.desc,
+					value: editData.desc,
+					error: '',
+					message: '',
+					hasError: false
+				},
+				link: {
+					value: editData.link ? editData.link : '',
 					error: '',
 					message: '',
 					hasError: false
 				},
 				eventBy: {
-					value: event.by,
+					value: editData.by ? editData.by : '',
 					error: '',
 					message: '',
 					hasError: false
 				},
 				location: {
-					value: event.location,
+					value: editData.location ? editData.location : '',
 					error: '',
 					message: '',
 					hasError: false
 				},
 				date : {
-					value: new Date(event.date).toISOString().substr(0, 10),
+					value: editData.date ? new Date(editData.date).toISOString().substr(0, 10) : '',
 					error: '',
 					message: '',
 					hasError: false
 				},
 				attachment: {
-					file: event.image,
+					file: editData.image,
 					error: '',
 					message: '',
 					hasError: false
 				}
 			})
-			console.log('editpost', event);
 		}
 		
 		if(!this.props.communityInfo.data) {
@@ -235,6 +242,7 @@ class PostContent extends Component {
 
 	submitData  = (image) => {
 		if(this.state.contentType.value === 'Event') {
+			// CREATE COMMUNITY EVENT
 			const data = {
 				title: this.state.title.value,
 				image: image,
@@ -269,6 +277,7 @@ class PostContent extends Component {
 				displayPageLoader(false);
 			});
 		} else {
+			// CREATE COMMUNITY ANNOUNCEMENT
 			const data = {
 				title: this.state.title.value,
 				image: image,
@@ -277,7 +286,7 @@ class PostContent extends Component {
 			}
 			createCommunityNews({
 				data
-			}).then((res) => {
+			}, this.props.leaderEditPost.id).then((res) => {
 				displayPageLoader(false)
 				if(res && res.success) {
 					this.setState({
@@ -303,14 +312,18 @@ class PostContent extends Component {
 		
 	}
 
-	uploadImage = () => {
+	uploadImage = (isEdit) => {
 		displayPageLoader(true);
 		uploadFile({
 			file: this.state.attachment.file
 		})
 			.then((res) => {
 				if(res.success && res.data) {
-					this.submitData(res.data.image);
+					if(isEdit) {
+						this.submitEditData(res.data.image);
+					} else {
+						this.submitData(res.data.image);
+					}
 				} else {
 					displayPageLoader(false)
 					showAlertBox({
@@ -318,6 +331,74 @@ class PostContent extends Component {
 					});
 				}
 			});
+	}
+
+
+	submitEditData = (image) => {
+		if(this.props.leaderEditPost.type === 'events') {
+			// EDIT COMMUNITY EVENT
+			const data = {
+				title: this.state.title.value,
+				image: image,
+				date: this.state.date.value,
+				by: this.state.eventBy.value,
+				isOnline: true,
+				location: this.state.location.value,
+				desc: this.state.desc.value
+			}
+			updateCommunityEvent({ data }, this.props.leaderEditPost.id).then((res) => {
+				displayPageLoader(false)
+				if(res && res.success) {
+					this.setState({
+						...this.initialState
+					});
+					route(`/`);
+					showAlertBox({
+						message: 'POST_CONTENT_SUCCESS',
+						success: true
+					});
+				} else {
+					showAlertBox({
+						message: res.error.message || 'SOMETHING_WRONG'
+					});
+				}
+			}).catch((err) => {
+				showAlertBox({
+					message: err.message || 'SOMETHING_WRONG'
+				});
+				displayPageLoader(false);
+			});
+		} else {
+			// EDIT COMMUNITY ANNOUNCEMENT
+			const data = {
+				title: this.state.title.value,
+				image: image,
+				link: this.state.link.value,
+				desc: this.state.desc.value
+			}
+			updateCommunityNews({ data }, this.props.leaderEditPost.id).then((res) => {
+				displayPageLoader(false)
+				if(res && res.success) {
+					this.setState({
+						...this.initialState
+					});
+					route(`/`);
+					showAlertBox({
+						message: 'POST_CONTENT_SUCCESS',
+						success: true
+					});
+				} else {
+					showAlertBox({
+						message: res.error.message || 'SOMETHING_WRONG'
+					});
+				}
+			}).catch((err) => {
+				showAlertBox({
+					message: err.message || 'SOMETHING_WRONG'
+				});
+				displayPageLoader(false);
+			});
+		}
 	}
 
 	handleContinue = () => {
@@ -338,7 +419,16 @@ class PostContent extends Component {
 					this.onEventByChange(this.state.eventBy.value);
 					this.onAttachmentChange(this.state.attachment.file);
 				} else {
-					this.uploadImage();
+					if(this.props.leaderEditPost) {
+						// if image will be replaced
+						if (typeof this.state.attachment.file === 'string' || this.state.attachment.file instanceof String) {
+							this.submitEditData(this.state.attachment.file);
+						} else {
+							this.uploadImage(true);
+						}
+					} else {
+					this.uploadImage(false);
+					}
 				}
 			} else {
 				if(!this.state.title.value || 
@@ -350,7 +440,16 @@ class PostContent extends Component {
 					this.onLinkChange(this.state.link.value);
 					this.onAttachmentChange(this.state.attachment.file);
 				} else {
-					this.uploadImage();
+					if(this.props.leaderEditPost) {
+						// if image will be replaced
+						if (typeof this.state.attachment.file === 'string' || this.state.attachment.file instanceof String) {
+							this.submitEditData(this.state.attachment.file);
+						} else {
+							this.uploadImage(true);
+						}
+					} else {
+						this.uploadImage(false);
+					}
 				}
 			}
 		}
@@ -594,7 +693,7 @@ class PostContent extends Component {
 		);
 	}
 
-	render = ({ authUser },{contentType, contentTypeOptions, ...props}) => {
+	render = ({ authUser },{contentType, contentTypeOptions}) => {
 		if (!authUser) {
 			return <LoaderRing fullpage />;
 		}
@@ -638,4 +737,4 @@ class PostContent extends Component {
 		);
 	};
 }
-export default connect(['authUser', 'communityInfo', 'leaderEditPost', 'leaderCommunityEvents'])(PostContent);
+export default connect(['authUser', 'communityInfo', 'leaderEditPost', 'leaderCommunityEvents', 'leaderCommunityAnnouncements'])(PostContent);

@@ -6,6 +6,7 @@ import { connect } from 'unistore/preact';
 import { getTranslation, dateLastLoginFormat, isUsingSocialLogin } from '_helpers';
 import { ImageLoader } from '_components/core';
 import { logOut } from '_mutations';
+import { updateStore } from '_unistore';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -59,7 +60,13 @@ class SideBar extends Component {
 								{!communityInfo.data && (
 									<Link href={`/community-setup`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('SETUP_PAGE')}</Link>)
 								}
-								<Link href={`/post-content`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('POST_CONTENT')}</Link>
+								<Link href={`/post-content`} className={`${style.sMItem} ${style.subItem}`} 
+									onClick={(e) => {
+										this.onClickMenu();
+										updateStore({
+											leaderEditPost: null
+										});
+									}}>{getTranslation('POST_CONTENT')}</Link>
 								<Link href={`/manage-page`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('PAGE_MANAGE_PAGE')}</Link>
 							</div>
 						)}
