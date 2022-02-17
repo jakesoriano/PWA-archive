@@ -8,6 +8,14 @@ import {
   urlCommunityGetInfo,
   urlCommunityLeader
 } from '_helpers';
+import { communitySort } from '_constant';
+
+function getSortParams (sort) {
+  if (sort) {
+    return communitySort.find(i => i.value === sort).params;
+  }
+  return communitySort.find(i => i.value === 'popularity').params;
+}
 
 // eslint-disable-next-line import/prefer-default-export
 export function filterCommunity(name, page, limit) {
@@ -23,6 +31,7 @@ export function filterCommunity(name, page, limit) {
   updateStore({
     communities: {
       ...communities,
+      filter: name || '',
       fetching: true,
       result: false
     }
@@ -31,6 +40,8 @@ export function filterCommunity(name, page, limit) {
   return new Promise((resolve) => {
     xhr(urlCommunity + '/search', {
       params: {
+        // sort
+        ...getSortParams(),
         q: name || '', // query string
         p: page || 1, // page number
         s: limit || 9 // limit
@@ -39,13 +50,14 @@ export function filterCommunity(name, page, limit) {
     .then((res) => {
       updateStore({
         communities: {
+          ...communities,
           data: page && page > 1 ? [
             ...communities.data,
             ...res.data.results
           ] : res.data.results,
           total: res.data.total,
-          featured: res.data && res.data.results ? res.data.results.filter((item, i) => i < 5) : communities.data.length ? communities.data.filter((item, i) => i < 5) : [],
           page: page || 1,
+          filter: name || '',
           fetching: false,
           result: true
         }
@@ -65,7 +77,7 @@ export function filterCommunity(name, page, limit) {
   });
 }
 
-export function fetchCommunities(page, limit) {
+export function fetchCommunities(sort, page, limit) {
   // curreny state
   const { communities } = store.getState();
 
@@ -78,6 +90,7 @@ export function fetchCommunities(page, limit) {
   updateStore({
     communities: {
       ...communities,
+      filter: '',
       fetching: true,
       result: false
     }
@@ -86,6 +99,8 @@ export function fetchCommunities(page, limit) {
 	return new Promise((resolve) => {
 		xhr(urlCommunity, {
       params: {
+        // sort
+        ...getSortParams(),
         p: page || 1, // page number
         s: limit || 9 // limit
       }
@@ -93,13 +108,15 @@ export function fetchCommunities(page, limit) {
 		.then((res) => {
       updateStore({
         communities: {
+          ...communities,
           data: page && page > 1 ? [
             ...communities.data,
             ...res.data.results
           ] : res.data.results,
           total: res.data.total,
-          featured: communities.featured.length ? communities.featured : res.data.results.filter((item, i) => i < 5),
+          featured: !sort ? res.data.results[0] : communities.featured,
           page: page || 1,
+          filter: '',
           fetching: false,
           result: true
         }
@@ -133,13 +150,6 @@ export function followCommunity (item) {
   communities = {
     ...communities,
     data: communities.data.map(i => {
-      if(i.id === item.id) {
-        i.followed = true;
-        i.followers = i.followers + 1;
-      }
-      return i;
-    }),
-    featured: communities.featured.map(i => {
       if(i.id === item.id) {
         i.followed = true;
         i.followers = i.followers + 1;
@@ -191,13 +201,6 @@ export function followCommunity (item) {
             }
             return i;
           }),
-          featured: communities.featured.map(i => {
-            if(i.id === item.id) {
-              i.followed = false;
-              i.followers = i.followers - 1;
-            }
-            return i;
-          }),
           fetching: false
         }
       });
@@ -221,13 +224,6 @@ export function unFollowCommunity (item) {
   communities = {
     ...communities,
     data: communities.data.map(i => {
-      if(i.id === item.id) {
-        i.followed = false;
-        i.followers = i.followers - 1;
-      }
-      return i;
-    }),
-    featured: communities.featured.map(i => {
       if(i.id === item.id) {
         i.followed = false;
         i.followers = i.followers - 1;
@@ -273,13 +269,6 @@ export function unFollowCommunity (item) {
         communities: {
           ...communities,
           data: communities.data.map(i => {
-            if(i.id === item.id) {
-              i.followed = true;
-              i.followers = i.followers + 1;
-            }
-            return i;
-          }),
-          featured: communities.featured.map(i => {
             if(i.id === item.id) {
               i.followed = true;
               i.followers = i.followers + 1;

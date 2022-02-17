@@ -15,10 +15,10 @@ import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Community extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      text: '',
+      text: props.communities.filter || '',
       moreFetching: false
     }
     this.timer = null;
