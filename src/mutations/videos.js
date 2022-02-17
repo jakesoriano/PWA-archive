@@ -18,7 +18,6 @@ export function filterVideos(name, page, limit) {
   updateStore({
     videos: {
       ...videos,
-      selected: null,
       fetching: true,
       result: false
     }
@@ -29,7 +28,7 @@ export function filterVideos(name, page, limit) {
       params: {
         q: name || '', // query string
         p: page || 1, // page number
-        s: limit || 9 // limit
+        s: limit || 6 // limit
       }
     })
     .then((res) => {
@@ -41,7 +40,6 @@ export function filterVideos(name, page, limit) {
           ] : res.data.results,
           total: res.data.total,
           page: page || 1,
-          selected: null,
           fetching: false,
           result: true
         }
@@ -52,7 +50,6 @@ export function filterVideos(name, page, limit) {
       updateStore({
         videos: {
           ...videos,
-          selected: null,
           fetching: false,
           result: false
         }
@@ -75,7 +72,6 @@ export function fetchVideos(page, limit) {
   updateStore({
     videos: {
       ...videos,
-      selected: null,
       fetching: true,
       result: false
     }
@@ -85,19 +81,19 @@ export function fetchVideos(page, limit) {
 		xhr(urlVideos, {
       params: {
         p: page || 1, // page number
-        s: limit || 9 // limit
+        s: limit || 6 // limit
       }
     })
 		.then((res) => {
       updateStore({
         videos: {
+          ...videos,
           data: page && page > 1 ? [
             ...videos.data,
             ...res.data.results
           ] : res.data.results,
           total: res.data.total,
           page: page || 1,
-          selected: null,
           fetching: false,
           result: true
         }
@@ -108,7 +104,6 @@ export function fetchVideos(page, limit) {
       updateStore({
         videos: {
           ...videos,
-          selected: null,
           fetching: false,
           result: false
         }

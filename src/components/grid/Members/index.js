@@ -16,10 +16,10 @@ class Members extends Component {
 	renderUserTitle = (profile) => {
 		let user = profile.fname;
 		if (profile.region) {
-			user = user + `${user}, ${profile.region}.`;
+			user = user + `, ${profile.region}.`;
 		}
 		if (profile.municipality) {
-			user = user + `${user} ${profile.municipality}`
+			user = user + ` ${profile.municipality}`;
 		}
 		return user;
 	};
