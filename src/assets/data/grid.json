@@ -1,9 +1,17 @@
 [
 	{
-		"styles": [],
+		"styles": [
+			{
+				"selector": "#w1",
+				"styles": "position: absolute; top: 0px; z-index: 2; width: 100%;"
+			}
+		],
 		"pageTitle": "PAGE_LANDING",
 		"uri": "landing",
 		"contents": [
+			{
+				"component": "Countdown"
+			},
 			{
 				"component": "LandingPage"
 			}
@@ -45,6 +53,9 @@
 		"pageTitle": "PAGE_HOME",
 		"uri": "home",
 		"contents": [
+			{
+				"component": "Countdown"
+			},
 			{
 				"component": "AccountProfile"
 			},
