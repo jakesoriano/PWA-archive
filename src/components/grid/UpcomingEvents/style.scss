@@ -1,0 +1,60 @@
+@import '../../../style/variables.scss';
+.upcomingEventsWrap {
+  margin: 15px;
+  .noRecord {
+    text-align: center;
+    padding: 10px;
+  }
+  .header {
+    display: flex;
+    width: 100%;
+    background: $primary_layout;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 8px 25px;
+    span {
+      text-transform: uppercase;
+    }
+  }
+  .body {
+    padding: 5px 15px;
+    .title {
+      color: $primary_layout;
+      text-transform: uppercase;
+    }
+    .item {
+      display: flex;
+      margin-top: 8px;
+      &:not(:first-of-type) {
+        margin-top: 20px;
+      }
+      .box {
+        display: flex;
+        flex-direction: column;
+        background-color: $details_bg;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-start;
+        padding: 8px 25px;
+        border-radius: 10px;
+        margin-right: 10px;
+        * {
+          color: $primary_layout;
+        }
+        .day {
+          font-size: 1.3rem;
+          text-transform: uppercase;
+        }
+        .date {
+          font-size: 3.4rem;
+          line-height: 1;
+        }
+      }
+      .events {
+        * {
+          color: #737373;
+        }
+      }
+    }
+  }
+}

@@ -1,17 +1,9 @@
 [
 	{
-		"styles": [
-			{
-				"selector": "#w1",
-				"styles": "position: absolute; top: 0px; z-index: 2; width: 100%;"
-			}
-		],
+		"styles": [],
 		"pageTitle": "PAGE_LANDING",
 		"uri": "landing",
 		"contents": [
-			{
-				"component": "Countdown"
-			},
 			{
 				"component": "LandingPage"
 			}
@@ -53,9 +45,6 @@
 		"pageTitle": "PAGE_HOME",
 		"uri": "home",
 		"contents": [
-			{
-				"component": "Countdown"
-			},
 			{
 				"component": "AccountProfile"
 			},
@@ -184,15 +173,15 @@
 	{
 		"styles": [
 			{
-				"selector": "#w1 > div:first-child > div > span",
-				"styles": "text-transform: uppercase; text-align: left; border-radius: 10px; padding-left: 25px; display: none;"
+				"selector": "#w2 > div:first-child > div > span",
+				"styles": "text-transform: uppercase; text-align: left; border-radius: 10px; padding-left: 25px;"
 			},
 			{
-				"selector": "#w1 > div:first-child > div",
+				"selector": "#w2 > div:first-child > div",
 				"styles": "background-color: #fff;"
 			},
 			{
-				"selector": "#w1 > div:first-child",
+				"selector": "#w2 > div:first-child",
 				"styles": "background-color: #fff;"
 			}
 		],
@@ -201,6 +190,9 @@
 		"uri": "community-events",
 		"withBack": true,
 		"contents": [
+			{
+				"component": "UpcomingEvents"
+			},
 			{
 				"component": "NewsAndEvents",
 				"props": {
