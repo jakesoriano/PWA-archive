@@ -39,3 +39,6 @@ export { default as FeaturedCommunities } from './FeaturedCommunities';
 export { default as CommunityNavigation } from './CommunityNavigation';
 export { default as Countdown } from './Countdown';
 export { default as UpcomingEvents } from './UpcomingEvents';
+export { default as DownloadKit } from './DownloadKit';
+export { default as ReferralCode } from './ReferralCode';
+

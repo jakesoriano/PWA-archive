@@ -13,6 +13,7 @@ import { FormGroup, FormInput, FormDropdown, ImageLoader } from '_components/cor
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
+import copy from 'clipboard-copy';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class InviteForm extends Component {
@@ -208,7 +209,15 @@ class InviteForm extends Component {
 				hasError: false
 			}
 		})
-	}
+	};
+
+	copyText = (text) =>{
+		copy(text);
+		showAlertBox({
+			message: 'COPY_MSG_REFCODE',
+			success: true
+		});
+	};
 
 	render = ({ refCode, invited, onSendCallback }, { fname, lname, region, regionOptions, mobile }) => {
 
@@ -301,7 +310,17 @@ class InviteForm extends Component {
 					{/* Invite */}
 					<FormGroup label="INVITE">
 						<div className={style.invite}>
-							<span className={`bold`}>{refCode}</span>
+							<button className={style.codeWrap} onClick={() => {
+								this.copyText(refCode);
+							}}>
+								<span className={`extraBold ${style.code}`}>{refCode}</span>
+								<span>
+									<ImageLoader
+										src="assets/images/copy.png"
+										style={{ container: `${style.copyImg}` }}
+									/>
+								</span>
+							</button>
 							<div>
 								<a className={style.pShare}
 									onClick={() => {
