@@ -35,4 +35,6 @@ export { default as Videos } from './Videos';
 export { default as VideoDetails } from './VideoDetails';
 export { default as GlobalAnnouncement } from './GlobalAnnouncement';
 export { default as Countdown } from './Countdown';
+export { default as DownloadKit } from './DownloadKit';
+export { default as ReferralCode } from './ReferralCode';
 

@@ -354,7 +354,7 @@ class Signup extends Component {
 								'municipality': this.state.municipality.value,
 								'barangay': this.state.barangay.value,
 								'isRegisteredVoter': this.state.isRegisteredVoter.value === 'yes' ? true : false,
-								'parentRefCode': this.state.parentRefCode.value,
+								'parentRefCode': this.state.parentRefCode.value.length < 12 ? this.state.parentRefCode.value.toUpperCase() : this.state.parentRefCode.value,
 								'deviceId': this.props.deviceId,
 								'socType': this.props.signup.socType,
 								'socId': this.props.signup.socId,

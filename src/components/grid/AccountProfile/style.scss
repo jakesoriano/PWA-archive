@@ -8,7 +8,6 @@
     background: $details_bg;
     border-radius: 10px;
     padding: 10px 10px 0;
-    margin-bottom: 10px;
     .user {
       display: flex;
       width: 100%;
@@ -97,53 +96,6 @@
           }
         }
       }
-    }
-  }
-  .selectDropdown {
-    position: absolute;
-    width: calc(100% - 30px);
-    z-index: 2;
-    background: #F4F4F4;
-    .download {
-      background: none;
-    }
-    
-  }
-  .download {
-    padding: 0;
-    border: none;
-    display: flex;
-    background: $details_bg;
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    > div {
-      border-radius: 10px;
-      flex-grow: 1;
-      display: flex;
-      align-items: center;
-      padding: 8px 10px;
-      font-size: 0.9rem;
-      .iconDownload {
-        width: 30px;
-        padding-bottom: 30px;
-        display: inline-block;
-        margin: 0 10px 0 15px;
-      }
-      .dropdown {
-        width: 15px;
-        padding-bottom: 15px;
-        border-radius: 0;
-        position: absolute;
-        right: 30px;
-        &.active {
-          transform: rotate(180deg);
-          transition: all 0.3s ease;
-        }
-      }
-    }
-    > span {
-      padding: 11px;
     }
   }
 }

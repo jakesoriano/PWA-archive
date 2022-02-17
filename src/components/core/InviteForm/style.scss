@@ -8,6 +8,25 @@
   .invite, .mobileWrap {
     display: flex;
     align-items: center;
+    .codeWrap {
+      display: flex;
+      width: 100%;
+      text-align: left;
+      align-items: center;
+      background-color: #fff;
+      margin: 0 40px 0 0;
+      padding: 0;
+      border: none;
+      .code {
+        width: auto;
+        padding-right: 10px;
+        flex-grow: 0;
+      }
+      .copyImg {
+        width: 20px;
+        padding-bottom: 20px;
+      }
+    }
     .mobileInputWrap {
       flex-grow: 1;
       .mobile {
