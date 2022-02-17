@@ -40,7 +40,7 @@ class CommunitySearch extends Component {
 			data: communitySort,
 			onClickParent: (val) => this.onClickCallback(val),
 			onClickChild: (val) => this.onClickCallback(val),
-			selected: selected || null,
+			selected: selected || 'popularity',
 		};
 
 		// show popup options

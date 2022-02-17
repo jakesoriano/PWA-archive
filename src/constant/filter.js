@@ -3,7 +3,8 @@ export const communitySort = [
     'label': 'Popularity',
     'value': 'popularity',
     'params': {
-      'o': 'followers'
+      'o': 'followers',
+      'sort': false
     }
   },
   {

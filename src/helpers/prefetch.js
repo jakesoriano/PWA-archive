@@ -1,7 +1,7 @@
 import {
   fetchGrids,
   // fetchUserPoints,
-  // fetchNews,
+  fetchNews,
   fetchAnnouncements,
   fetchEvents,
   fetchMembers,
@@ -20,7 +20,7 @@ export function prefetch (hasUser) {
   return Promise.all([
     fetchGrids(),
     // hasUser && fetchUserPoints(),
-    // hasUser && fetchNews(),
+    hasUser && fetchNews(),
     hasUser && fetchAnnouncements(),
     hasUser && fetchEvents(),
     hasUser && fetchMembers(),

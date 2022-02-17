@@ -114,7 +114,7 @@ export function fetchCommunities(sort, page, limit) {
             ...res.data.results
           ] : res.data.results,
           total: res.data.total,
-          featured: !sort ? res.data.results[0] : communities.featured,
+          featured: !communities.featured ? res.data.results[0] : communities.featured,
           page: page || 1,
           filter: '',
           sort: '',
