@@ -193,6 +193,30 @@
 	{
 		"styles": [
 			{
+				"selector": "#w1 > div:first-child > div > span",
+				"styles": "display: none;"
+			},
+			{
+				"selector": "#w1 > div:first-child",
+				"styles": "margin-top: 10px;"
+			}
+		],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY_EVENTS",
+		"uri": "community-events",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "NewsAndEvents",
+				"props": {
+					"hiddenTabs": ["announcements", "news"]
+				}
+			}
+		]
+	},
+	{
+		"styles": [
+			{
 				"selector": "#w2 > div:first-child > div > span",
 				"styles": "text-transform: uppercase; text-align: left; border-radius: 10px; padding-left: 25px;"
 			},
@@ -207,7 +231,7 @@
 		],
 		"auth": true,
 		"pageTitle": "PAGE_COMMUNITY_EVENTS",
-		"uri": "community-events",
+		"uri": "community-events-v2",
 		"withBack": true,
 		"contents": [
 			{

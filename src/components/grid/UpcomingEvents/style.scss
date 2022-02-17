@@ -26,7 +26,7 @@
       display: flex;
       margin-top: 8px;
       &:not(:first-of-type) {
-        margin-top: 20px;
+        margin-top: 0;
       }
       .box {
         display: flex;
@@ -35,22 +35,24 @@
         align-items: center;
         justify-content: center;
         align-self: flex-start;
-        padding: 8px 25px;
+        padding: 8px 15px;
         border-radius: 10px;
-        margin-right: 10px;
+        margin-right: 5px;
+        margin-top: 10px;
         * {
           color: $primary_layout;
         }
         .day {
-          font-size: 1.3rem;
+          font-size: 1rem;
           text-transform: uppercase;
         }
         .date {
-          font-size: 3.4rem;
+          font-size: 2rem;
           line-height: 1;
         }
       }
       .events {
+        flex-grow: 1;
         * {
           color: #737373;
         }

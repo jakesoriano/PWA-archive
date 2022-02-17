@@ -74,13 +74,13 @@ class FeaturedCommunities extends Component {
   }
 
   render = ({communities, title, top, hideShowAll}) => {
-    if (communities.fetching && top > 1) {
-      return (
-        <div className={style.loaderCont}>
-          <LoaderRing styles={{container: style.loaderWrap}}/>
-        </div>
-      );
-    }
+    // if (communities.fetching && top > 1) {
+    //   return (
+    //     <div className={style.loaderCont}>
+    //       <LoaderRing styles={{container: style.loaderWrap}}/>
+    //     </div>
+    //   );
+    // }
 
     return (
       <div className={style.featuredCommunityWrap}>
