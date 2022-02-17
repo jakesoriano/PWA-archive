@@ -208,5 +208,9 @@
 	"NEW_UPDATE_BTN": "Update",
 	"INVALID_REFCODE": "Invalid Referral Code",
 	"EDIT": "EDIT",
-	"DELETE": "DELETE"
+	"DELETE": "DELETE",
+	"DELETE_SUCCESSFUL": "Post successfully deleted.",
+	"DELETE_POST": "Delete Post",
+	"DELETE_POST_CONFIRMATION": "Are you sure you want to delete",
+	"REPLACE_IMAGE": "REPLACE IMAGE"
 }

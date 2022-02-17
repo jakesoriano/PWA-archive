@@ -681,3 +681,51 @@ export function updateCommunityNews (data, id) {
   });
 }
 
+export function deleteCommunityEvents (id) {
+  // current state
+  const { communityInfo } = store.getState();
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/events/${id}`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'DELETE'
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> deleteCommunityEvents Error`, res);
+          resolve(res);
+        } else {
+          console.log(`SPA >> deleteCommunityEvents successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> deleteCommunityEvents failed`, err);
+      });
+  });
+}
+
+export function deleteCommunityNews (id) {
+  // current state
+  const { communityInfo } = store.getState();
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/news/${id}`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'DELETE'
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> deleteCommunityNews Error`, res);
+          resolve(res);
+        } else {
+          console.log(`SPA >> deleteCommunityNews successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> deleteCommunityNews failed`, err);
+      });
+  });
+}
+

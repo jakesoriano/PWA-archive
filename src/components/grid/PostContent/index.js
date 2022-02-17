@@ -286,7 +286,7 @@ class PostContent extends Component {
 			}
 			createCommunityNews({
 				data
-			}, this.props.leaderEditPost.id).then((res) => {
+			}).then((res) => {
 				displayPageLoader(false)
 				if(res && res.success) {
 					this.setState({
@@ -335,6 +335,7 @@ class PostContent extends Component {
 
 
 	submitEditData = (image) => {
+		displayPageLoader(true);
 		if(this.props.leaderEditPost.type === 'events') {
 			// EDIT COMMUNITY EVENT
 			const data = {
@@ -557,7 +558,8 @@ class PostContent extends Component {
 				<div className={style.infoWrap}>
 					<FormGroup label={getTranslation("IMAGE")}>
 						<div className={style.attachmentWrap}>
-							<div className={style.attachmentInputWrap}>								
+							<div className={`${style.attachmentInputWrap} 
+								${typeof this.state.attachment.file === 'string' || this.state.attachment.file instanceof String ? style.hideInput : ''}`}>								
 									<FormInput
 										id='inputAttachment'
 										className={style.attachment}
@@ -574,6 +576,12 @@ class PostContent extends Component {
 										error={this.state.attachment.error}
 										message={this.state.attachment.message} />
 							</div>
+							{this.props.leaderEditPost && (typeof this.state.attachment.file === 'string' || 
+								this.state.attachment.file instanceof String) && 
+								<ImageLoader
+									src={this.state.attachment.file}
+									style={{container: style.editImage}} />
+								}
 							<div>
 								<a className={style.pShare} 
 									onClick={() => {
@@ -582,7 +590,8 @@ class PostContent extends Component {
 								<ImageLoader
 											src="assets/images/attachment_icon_white.png"
 											style={{container: style.pIconShare}} />
-										<span>{getTranslation('ADD_IMAGE')}</span>
+										<span>{getTranslation(typeof this.state.attachment.file === 'string' || 
+										this.state.attachment.file instanceof String ? 'REPLACE_IMAGE':'ADD_IMAGE')}</span>
 								</a>
 							</div>
 						</div>

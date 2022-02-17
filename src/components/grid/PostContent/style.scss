@@ -19,6 +19,9 @@
       align-items: center;
       .attachmentInputWrap {
         flex-grow: 1;
+        &.hideInput {
+          display: none;
+        }
         .attachment {
           width: 95%;
         }
@@ -44,6 +47,10 @@
           font-size: 0.8rem;
           text-transform: uppercase;
         }
+      }
+      .editImage {
+        margin-right: 20px;
+        margin-top: 15px;
       }
     }
   }
