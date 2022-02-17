@@ -569,6 +569,68 @@ export function shareEventByLeader (item) {
   });
 }
 
+export function shareNewsByLeader (item) {
+  let { leaderCommunityAnnouncements } = store.getState();
+  const { authUser } = store.getState();
+  
+  // fetching
+  if(leaderCommunityAnnouncements.fetching) {
+    return;
+  }
+
+  // initial state
+  leaderCommunityAnnouncements = {
+    ...leaderCommunityAnnouncements,
+    data: leaderCommunityAnnouncements.data.map(i => {
+      if(i.id === item.id) {
+        i.shared = true;
+      }
+      return i;
+    }),
+    fetching: true
+  };
+  updateStore({ leaderCommunityAnnouncements });
+
+  return new Promise((resolve) => {
+    xhr(urlShare, {
+      method: 'POST',
+      data: {
+        userId: authUser.profile._id,
+        itemId: item.id,
+        itemType: 'A',
+        parentId: item.communityId,
+        parentType: 'C'
+      }
+    })
+    .then((res) => {
+      updateStore({
+        leaderCommunityAnnouncements: {
+          ...leaderCommunityAnnouncements,
+          fetching: false
+        }
+      });
+      console.log(`SPA >> shareNewsByLeader Success`, res);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        leaderCommunityAnnouncements: {
+          ...leaderCommunityAnnouncements,
+          data: leaderCommunityAnnouncements.data.map(i => {
+            if(i.id === item.id) {
+              i.shared = false;
+            }
+            return i;
+          }),
+          fetching: false
+        }
+      });
+      console.log(`SPA >> shareNewsByLeader Error`, err);
+      resolve(false);
+    });
+  });
+}
+
 export function updateCommunityEvent (data, id) {
   // current state
   const { communityInfo } = store.getState();

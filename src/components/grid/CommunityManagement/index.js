@@ -5,7 +5,7 @@ import { route } from 'preact-router';
 import {
 	fetchCommunityEvents,
 	fetchCommunityAnnouncement,
-	shareEventByLeader } from '_mutations';
+	shareNewsByLeader } from '_mutations';
 import {
 	getTranslation,
 	dateEventFormat,
@@ -119,7 +119,7 @@ class CommunityManagement extends Component {
 			`
 		});
 		if (!item.shared) {
-			shareEventByLeader(item);
+			shareNewsByLeader(item);
 		}
 	};
 
@@ -212,7 +212,7 @@ class CommunityManagement extends Component {
 	};
 
 	renderAnnouncements = (data) => {
-		return <AnnouncementsList data={data} authUser={this.props.authUser} onClickItemCallback={this.onClickItem} />
+		return <AnnouncementsList data={data} authUser={this.props.authUser} isManagePage={true} onClickItemCallback={this.onClickItem} />
 	};
 
 	renderEvents = (data) => {

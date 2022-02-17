@@ -1,35 +1,13 @@
 import { Component } from 'preact';
-import { shareEventByLeader, selectTag } from '_mutations';
+import { shareEventByLeader } from '_mutations';
 import { getTranslation, dateEventFormat } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 import { ImageLoader } from '_components/core';
 import { getCurrentUrl } from 'preact-router';
 import style from './style';
-const eventTags = [
-	'INTERESTED',
-	'GOING',
-	'NOT_INTERESTED'
-];
+
 class CommunityEvents extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      eventDropdown: null
-    }
-  }
-
-	
-
-	onClickInterested = (item) => {
-		this.setState({
-			eventDropdown: {
-				show: true,
-				id: item.id,
-				tagged: item.tagged
-			}
-		});
-	};
-
+ 
 	onShareEvent = (item) => {
 		nativeShare({
 			url: item.image,
