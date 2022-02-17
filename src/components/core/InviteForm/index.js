@@ -223,37 +223,37 @@ class InviteForm extends Component {
 
 	  return (
 			<div className={style.inviteWrap}>
-				<form className={style.form}>
-					{/* RefCode */}
-					<div className={style.refCode}>
-						<FormGroup label="INVITE_SOCIAL_MEDIA" >
-							<div className={style.invite}>
-								<button className={style.codeWrap} onClick={() => {
-									this.copyText(refCode);
-								}}>
-									<span className={`extraBold ${style.code}`}>{refCode}</span>
-									<span>
-										<ImageLoader
-											src="assets/images/copy.png"
-											style={{ container: `${style.copyImg}` }}
-										/>
-									</span>
-								</button>
-								<div>
-									<a className={style.pShare}
-										onClick={() => {
-											this.onShare()
-										}}
-									>
-										<ImageLoader
-												src="assets/images/share_icon_white.png"
-												style={{container: style.pIconShare}} />
-											<span>{getTranslation('SHARE')}</span>
-									</a>
-								</div>
+				{/* RefCode */}
+				<div className={style.refCode}>
+					<FormGroup label="INVITE_SOCIAL_MEDIA" >
+						<div className={style.invite}>
+							<button className={style.codeWrap} onClick={() => {
+								this.copyText(refCode);
+							}}>
+								<span className={`extraBold ${style.code}`}>{refCode}</span>
+								<span>
+									<ImageLoader
+										src="assets/images/copy.png"
+										style={{ container: `${style.copyImg}` }}
+									/>
+								</span>
+							</button>
+							<div>
+								<a className={style.pShare}
+									onClick={() => {
+										this.onShare()
+									}}
+								>
+									<ImageLoader
+											src="assets/images/share_icon_white.png"
+											style={{container: style.pIconShare}} />
+										<span>{getTranslation('SHARE')}</span>
+								</a>
 							</div>
-						</FormGroup>
-					</div>
+						</div>
+					</FormGroup>
+				</div>
+				<form className={style.form}>
 					<FormGroup label="NAME" hasError={fname.hasError || lname.hasError}>
 						<FormInput
 							className={style.name}
