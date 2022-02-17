@@ -270,7 +270,6 @@ export function selectTag(tag, item) {
 	) {
 		return;
 	}
-	console.log(tag);
 
 	// initial state
 	events = {
@@ -298,7 +297,6 @@ export function selectTag(tag, item) {
 		data: upevents.data.map((i) => {
 			if (i.id === item.id) {
 				i.tagged = tag;
-				console.log(i);
 			}
 			return i;
 		}),

@@ -32,7 +32,6 @@ class UpcomingEvents extends Component {
 		});
 	};
 	render = (props, state) => {
-		console.log(state.grouped);
 		return (
 			<div className={style.upcomingEventsWrap}>
 				<div className={style.header}>
