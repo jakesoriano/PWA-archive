@@ -14,6 +14,7 @@
     border-bottom: 1px solid $item_border;
     .avatar {
       width: 50px;
+      min-width: 50px;
       padding-bottom: 50px;
       border-radius: 80px;
     }

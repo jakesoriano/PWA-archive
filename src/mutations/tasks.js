@@ -8,7 +8,8 @@ export function fetchTasks () {
 
   // check data once a day only
   const currentDate = Date.now();
-  if (tasks.data && tasks.date && currentDate < tasks.date) {
+  // if (tasks.data && tasks.date && currentDate < tasks.date) {
+  if (tasks.fetching) {
     return;
   }
   
