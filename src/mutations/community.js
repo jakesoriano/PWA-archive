@@ -4,6 +4,7 @@ import {
 	urlCommunity,
 	urlUser,
   urlNews,
+  urlShare,
   urlCommunitySetup, 
   urlCommunityGetInfo,
   urlCommunityLeader

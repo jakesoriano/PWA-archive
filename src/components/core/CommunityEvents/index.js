@@ -1,5 +1,5 @@
 import { Component } from 'preact';
-import { shareEvent, selectTag } from '_mutations';
+import { shareEventByLeader, selectTag } from '_mutations';
 import { getTranslation, dateEventFormat } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 import { ImageLoader } from '_components/core';
@@ -18,12 +18,7 @@ class CommunityEvents extends Component {
     }
   }
 
-	onSelectEventTag = (tag, item) => {
-		selectTag(tag, item);
-		this.setState({
-			eventDropdown: null,
-		});
-	};
+	
 
 	onClickInterested = (item) => {
 		this.setState({
@@ -49,33 +44,10 @@ class CommunityEvents extends Component {
 			`
 		});
 		if (!item.shared) {
-			shareEvent(item);
+			shareEventByLeader(item);
 		}
 	};
 
-	renderEventsDropdown = (item, isLastItem) => {
-		const { eventDropdown } = this.state;
-		if (eventDropdown && eventDropdown.show && eventDropdown.id === item.id) {
-			return (
-				<div 
-					className={`${eventDropdown.tagged === 'INTERSTED'} ${style.selectEventDropdown} ${isLastItem ? style.lastItem : ''}`}>
-					{eventTags.map(tag => (
-						<a
-							className={eventDropdown.tagged === tag ? 'extraBold' : ''}
-							onClick={() => {
-								this.onSelectEventTag(tag, item)
-							}}>
-								<ImageLoader
-								src={ `assets/images/${tag}-${eventDropdown.tagged === tag ? 'pink' : 'dark'}.png`}
-								style={{container: style.likeButton}}/>
-								{getTranslation(tag)}
-						</a>
-					))}
-				</div>
-			);
-		}
-		return null;
-	};
 
   renderDom = (data) => {
     if (data && data.length) {
@@ -128,7 +100,6 @@ class CommunityEvents extends Component {
               style={{container: `extraBold ${style.likeButton}`}}/>
               {getTranslation('SHARE')}
             </a>
-            {this.renderEventsDropdown(i, (data.length - 1) === index)}
           </div>
         </div>
       ))

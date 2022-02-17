@@ -4,7 +4,8 @@ import { updateStore } from '_unistore';
 import { route } from 'preact-router';
 import {
 	fetchCommunityEvents,
-	fetchCommunityAnnouncement } from '_mutations';
+	fetchCommunityAnnouncement,
+	shareEventByLeader } from '_mutations';
 import {
 	getTranslation,
 	dateEventFormat,
@@ -118,7 +119,7 @@ class CommunityManagement extends Component {
 			`
 		});
 		if (!item.shared) {
-			shareEvent(item);
+			shareEventByLeader(item);
 		}
 	};
 
@@ -143,7 +144,6 @@ class CommunityManagement extends Component {
 	};
 
 	onClickEdit = (data) => {
-		console.log('data edit', data);
 		route(`/edit-post-content`);
 		updateStore({
 			leaderEditPost: {
