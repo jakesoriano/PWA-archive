@@ -60,6 +60,7 @@ class SideBar extends Component {
 									<Link href={`/community-setup`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('SETUP_PAGE')}</Link>)
 								}
 								<Link href={`/post-content`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('POST_CONTENT')}</Link>
+								<Link href={`/manage-page`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('PAGE_MANAGE_PAGE')}</Link>
 							</div>
 						)}
 						{!isUsingSocialLogin() && (

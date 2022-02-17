@@ -527,5 +527,29 @@
 				"component": "GlobalAnnouncement"
 			}
 		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_MANAGE_PAGE",
+		"uri": "manage-page",
+		"withBack": false,
+		"contents": [
+			{
+				"component": "CommunityManagement"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "EDIT_POST_CONTENT",
+		"uri": "edit-post-content",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "PostContent"
+			}
+		]
 	}
 ]

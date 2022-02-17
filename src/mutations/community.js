@@ -414,3 +414,207 @@ export function getCommunityInfo () {
    });
  });
 }
+
+export function fetchCommunityEvents(page, limit) {
+  
+  const { communityInfo, leaderCommunityEvents } = store.getState();
+  
+  // fetching
+  if(leaderCommunityEvents.fetching) {
+    return;
+  }
+
+  // initial state
+  updateStore({
+    leaderCommunityEvents: {
+      ...leaderCommunityEvents,
+      fetching: true,
+      result: false
+    }
+  });
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/events`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'GET',
+      params: {
+        p: page || 1, // page number
+        s: limit || 9 // limit
+      }
+    })
+    .then((res) => {
+      updateStore({
+        leaderCommunityEvents: {
+          data: page && page > 1 ? [
+            ...leaderCommunityEvents.data,
+            ...res.data.results
+          ] : res.data.results,
+          total: res.data.total,
+          page: page || 1,
+          fetching: false,
+          result: true
+        }
+      });
+      console.log(`SPA >> fetchCommunityEvents Success`, res);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        leaderCommunityEvents: {
+          ...leaderCommunityEvents,
+          fetching: false,
+          result: false
+        }
+      });
+      console.log(`SPA >> fetchCommunityEvents Error`, err);
+      resolve(false);
+    });
+  });
+}
+
+export function fetchCommunityAnnouncement(page, limit) {
+  const { communityInfo, leaderCommunityAnnouncements } = store.getState();
+  
+  // fetching
+  if(leaderCommunityAnnouncements.fetching) {
+    return;
+  }
+
+  // initial state
+  updateStore({
+    leaderCommunityAnnouncements: {
+      ...leaderCommunityAnnouncements,
+      fetching: true,
+      result: false
+    }
+  });
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/news`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'GET',
+      params: {
+        p: page || 1, // page number
+        s: limit || 9 // limit
+      }
+    })
+    .then((res) => {
+      updateStore({
+        leaderCommunityAnnouncements: {
+          data: page && page > 1 ? [
+            ...leaderCommunityAnnouncements.data,
+            ...res.data.results
+          ] : res.data.results,
+          total: res.data.total,
+          page: page || 1,
+          fetching: false,
+          result: true
+        }
+      });
+      console.log(`SPA >> fetchCommunityAnnouncements Success`, res.success);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        leaderCommunityAnnouncements: {
+          ...leaderCommunityAnnouncements,
+          fetching: false,
+          result: false
+        }
+      });
+      console.log(`SPA >> fetchCommunityAnnouncements Error`, err);
+      resolve(false);
+    });
+  });
+}
+
+export function shareEventByLeader (item, parentId, parentType) {
+  let { events, communityDetails } = store.getState();
+  const { authUser } = store.getState();
+  
+  // fetching
+  if(events.fetching || communityDetails.fetching) {
+    return;
+  }
+
+  // initial state
+  events = {
+    ...events,
+    data: events.data.map(i => {
+      if(i.id === item.id) {
+        i.shared = true;
+      }
+      return i;
+    }),
+    fetching: true
+  };
+  communityDetails = {
+    ...communityDetails,
+    events: {
+      data: communityDetails.events.data.map(i => {
+        if(i.id === item.id) {
+          i.shared = true;
+        }
+        return i;
+      }),
+    },
+    fetching: true
+  };
+  updateStore({ events, communityDetails });
+
+  return new Promise((resolve) => {
+    xhr(urlShare, {
+      method: 'POST',
+      data: {
+        userId: authUser.profile._id,
+        itemId: item.id,
+        itemType: 'E',
+        parentId: parentId || 'X',
+        parentType: parentType || 'X'
+      }
+    })
+    .then((res) => {
+      updateStore({
+        events: {
+          ...events,
+          fetching: false
+        },
+        communityDetails: {
+          ...communityDetails,
+          events: {
+            ...communityDetails.events,
+          },
+          fetching: false
+        }
+      });
+      console.log(`SPA >> shareEvents Success`, res);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        events: {
+          ...events,
+          data: events.data.map(i => {
+            if(i.id === item.id) {
+              i.shared = false;
+            }
+            return i;
+          }),
+          fetching: false
+        },
+        communityDetails: {
+          ...communityDetails,
+          events: {
+            data: communityDetails.events.data.map(i => {
+              if(i.id === item.id) {
+                i.shared = false;
+              }
+              return i;
+            }),
+          },
+          fetching: false
+        }
+      });
+      console.log(`SPA >> shareEvents Error`, err);
+      resolve(false);
+    });
+  });
+}

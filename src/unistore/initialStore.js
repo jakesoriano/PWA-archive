@@ -124,11 +124,6 @@ export const initialStore = {
     featured: null,
     filter: {}
   },
-  communityInfo: {
-    fetching: false,
-    result: false,
-    data: null
-  },
   videos: {
     fetching: false,
     result: false,
@@ -151,4 +146,31 @@ export const initialStore = {
   pageLoader: {
     display: false
   },
+  communityInfo: {
+    fetching: false,
+    result: false,
+    data: null
+  },
+  leaderCommunityEvents: {
+    fetching: false,
+    result: false,
+    data: [],
+    total: 0,
+    page: 1
+  },
+  leaderCommunityAnnouncements: {
+    fetching: false,
+    result: false,
+    data: [],
+    total: 0,
+    page: 1
+  },
+  videos: {
+    fetching: false,
+    result: false,
+    data: [],
+    total: 0,
+    page: 1,
+    selected: null
+  }
 };

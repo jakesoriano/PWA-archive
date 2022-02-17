@@ -14,6 +14,7 @@
 	"PAGE_CHANGE_PASS": "Change Password",
 	"PAGE_VIDEOS": "Training Videos",
 	"PAGE_GLOBAL_ANNOUNCEMENT": "Announcements",
+	"PAGE_MANAGE_PAGE": "Manage Page",
 	"MEMBERS": "Members",
 	"HERO_POINTS": "Hero Points",
 	"EARN_100P": "Earn 100 pts",
@@ -180,6 +181,7 @@
 	"MANAGE_COMMUNITY_PAGE": "Manage Community Page",
 	"SETUP_PAGE": "Setup page",
 	"POST_CONTENT": "Post Content",
+	"EDIT_POST_CONTENT": "Edit Content",
 	"COMMUNITY_SETUP_SUCCESS": "Community Page Setup Success",
 	"CONTENT_TYPE": "Content Type",
 	"CONTENT_TITLE": "Title",
@@ -221,5 +223,7 @@
 	"MOBILE_NUMBER_MSG": "This is our safe space, assigning a number for OTP helps us keep it TROLL-free.",
 	"REFERRAL_CODE_MSG": "Did someone invite you? You can use that invite code!",
 	"COPY_MSG_REFCODE": "Referral Code copied to clipboard.",
-	"INVITE_SOCIAL_MEDIA": "Invite via Social Media"
+	"INVITE_SOCIAL_MEDIA": "Invite via Social Media",
+	"EDIT": "EDIT",
+	"DELETE": "DELETE"
 }
