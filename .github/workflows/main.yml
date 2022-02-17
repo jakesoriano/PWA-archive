@@ -1,88 +1,36 @@
-# This is a basic workflow to help you get started with Actions
 
-name: prod_deploy
-
-# Controls when the workflow will run
+name: Github CI
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    push:
+      branches: [ main ]
+    pull_request:
+      branches: [ main ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-stages:
-  - build
+  deploy_prod:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - run: npm config set registry http://registry.npmjs.org/
+      - run: npm install --production=false
+      - run: echo "APP_ENV_PROJECT=Kakampink" >> .env
+      - run: echo "APP_ENV_API_DOMAIN=$API_DOMAIN" >> .env
+      - run: echo "APP_ENV_CDN_DOMAIN=$CDN_DOMAIN" >> .env
+      - run: echo "APP_ENV_PLATFORM=$PLATFORM" >> .env
+      - run: echo "APP_ENV_PREFIX=$PREFIX" >> .env
+      - run: echo "APP_ENV_ENVIRONMENT=$ENVIRONMENT" >> .env
+      - run: echo "APP_ENV_STAGE=$CI_COMMIT_REF_NAME" >> .env
+      - run: echo "APP_ENV_BUILD_NO=1.0.$CI_JOB_ID" >> .env
+      - run: echo "APP_ENV_COOKIE_TIME_LIMIT=14" >> .env
+      - run: cat .env
+      - run: npm install
+      - run: rm -rf build
+      - run: npm run build:android
+      - run: npm run web-redirection
 
-cache:
-  paths:
-    - node_modules/
-    - /usr/local/share/.cache/yarn/v2/
-
-.buildPipeLine:
-  before_script:
-    - npm config set registry http://registry.npmjs.org/
-    - npm install --production=false
-    - echo "APP_ENV_PROJECT=Kakampink" >> .env
-    - echo "APP_ENV_API_DOMAIN=$API_DOMAIN" >> .env
-    - echo "APP_ENV_CDN_DOMAIN=$CDN_DOMAIN" >> .env
-    - echo "APP_ENV_PLATFORM=$PLATFORM" >> .env
-    - echo "APP_ENV_PREFIX=$PREFIX" >> .env
-    - echo "APP_ENV_ENVIRONMENT=$ENVIRONMENT" >> .env
-    - echo "APP_ENV_STAGE=$CI_COMMIT_REF_NAME" >> .env
-    - echo "APP_ENV_BUILD_NO=1.0.$CI_JOB_ID" >> .env
-    - echo "APP_ENV_COOKIE_TIME_LIMIT=14" >> .env
-    - cat .env
-    - npm install
-    # - npm run pwa-config
-  script:
-    - rm -rf build
-    - npm run build:android
-    - npm run web-redirection
-  # after_script:
-
-build:
-  stage: build
-  only:
-    - develop
-  extends: .buildPipeLine
-  variables:
-    API_DOMAIN: https://n0k58tc0x4.execute-api.ap-southeast-1.amazonaws.com/develop/
-    CDN_DOMAIN: https://mobile-kkp.s3.ap-southeast-1.amazonaws.com/uploads/
-    PLATFORM: android
-    PREFIX: kkpd
-    ENVIRONMENT: DEV
-
-build:
-  stage: build
-  only:
-    - staging
-  extends: .buildPipeLine
-  variables:
-    API_DOMAIN: https://7oquizbc8g.execute-api.ap-southeast-1.amazonaws.com/staging/
-    CDN_DOMAIN: https://mobile-kkp.s3.ap-southeast-1.amazonaws.com/uploads/
-    PLATFORM: android
-    PREFIX: kkps
-    ENVIRONMENT: STG
-
-build:
-  stage: build
-  only:
-    - master
-  extends: .buildPipeLine
-  variables:
-    API_DOMAIN: /
-    PLATFORM: android
-    PREFIX: kkp
-    ENVIRONMENT: PROD
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
