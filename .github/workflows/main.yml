@@ -11,6 +11,12 @@ on:
 jobs:
   deploy_prod:
     runs-on: ubuntu-latest
+    env:
+      API_DOMAIN: https://7oquizbc8g.execute-api.ap-southeast-1.amazonaws.com/staging/
+      CDN_DOMAIN: https://mobile-kkp.s3.ap-southeast-1.amazonaws.com/uploads/
+      PLATFORM: android
+      PREFIX: kkps
+      ENVIRONMENT: STG
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 14
