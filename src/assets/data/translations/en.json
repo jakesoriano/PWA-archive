@@ -220,5 +220,6 @@
 	"NAME_MSG": "Don't be a stranger and we want to address you properly, please tell us about yourself.",
 	"MOBILE_NUMBER_MSG": "This is our safe space, assigning a number for OTP helps us keep it TROLL-free.",
 	"REFERRAL_CODE_MSG": "Did someone invite you? You can use that invite code!",
-	"COPY_MSG_REFCODE": "Referral Code copied to clipboard."
+	"COPY_MSG_REFCODE": "Referral Code copied to clipboard.",
+	"INVITE_SOCIAL_MEDIA": "Invite via Social Media"
 }

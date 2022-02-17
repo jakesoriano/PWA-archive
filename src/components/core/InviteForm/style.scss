@@ -1,19 +1,15 @@
 @import '../../../style/variables.scss';
-.form {
-  padding: 0px 5px 10px;
-  .name {
-    margin-left: 20px;
-    width: calc( 100% - 20px);
-  }
-  .invite, .mobileWrap {
-    display: flex;
-    align-items: center;
+.inviteWrap {
+  .refCode {
+    background-color: $details_bg;
+    margin: 10px 0;
+    border-radius: 10px;
     .codeWrap {
       display: flex;
       width: 100%;
       text-align: left;
       align-items: center;
-      background-color: #fff;
+      background-color: transparent;
       margin: 0 40px 0 0;
       padding: 0;
       border: none;
@@ -27,6 +23,15 @@
         padding-bottom: 20px;
       }
     }
+  }
+  padding: 0px 5px 10px;
+  .name {
+    margin-left: 20px;
+    width: calc( 100% - 20px);
+  }
+  .invite, .mobileWrap {
+    display: flex;
+    align-items: center;
     .mobileInputWrap {
       flex-grow: 1;
       .mobile {
