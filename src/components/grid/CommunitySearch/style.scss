@@ -1,0 +1,21 @@
+@import '../../../style/variables.scss';
+.search {
+  margin: 15px;
+  max-width: 100%;
+  background-color: $details_bg;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  display: flex;
+  input {
+    background-color: transparent;
+    border: none;
+    color: $black;
+    font-size: 0.875rem;
+    flex: 1;
+  }
+  .searchIcon {
+    max-width: 35px;
+    padding-bottom: 35px;
+  }
+}

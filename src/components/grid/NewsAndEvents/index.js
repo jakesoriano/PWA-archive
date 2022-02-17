@@ -237,14 +237,14 @@ class NewsAndEvents extends Component {
 		}
 	}
 
-	renderTabs = () => {
+	renderTabs = (tabTitle) => {
 		return this.state.tabs.map((i) => {
 			return (
 				<span 
 					className={`bold ${this.state.active === i ? style.activeTab : ''}`}
 					onClick={() => {
 						this.toggleTab(i);
-					}}>{getTranslation(i.toUpperCase())}</span>
+					}}>{(tabTitle && getTranslation(tabTitle[i])) || getTranslation(i.toUpperCase())}</span>
 			);
 		});
 	}
@@ -254,7 +254,7 @@ class NewsAndEvents extends Component {
 			<>
 				<div className={style.newsAndEvents}>
 					<div className={style.tabWrap}>
-						{state.active && this.renderTabs()}
+						{state.active && this.renderTabs(props.tabTitle)}
 					</div>
 					<div className={style.content}>
 						{/* data */}
@@ -279,16 +279,7 @@ class NewsAndEvents extends Component {
 	};
 
 	getSelectedTabContent = () => {
-		return getCurrentUrl().includes('community') ? this.props[`c${this.state.active}`] : this.props[this.state.active]
-	}
- 
-	fetchNews = () => {
-		if (getCurrentUrl().includes('community')) {
-			let { id } = this.props.communityDetails;
-			fetchNewsByCommunity(id)
-		} else {
-			fetchNews();
-		}
+		return getCurrentUrl() === '/community-details' ? this.props[`c${this.state.active}`] : this.props[this.state.active]
 	}
 }
 export default connect(['news', 'events', 'announcements', 'authUser', 'cevents', 'communityDetails',])(NewsAndEvents);

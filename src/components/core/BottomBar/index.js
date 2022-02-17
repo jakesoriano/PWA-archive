@@ -33,7 +33,7 @@ export default ({ page }) => (
     <Link class={style.menu} activeClassName={style.active} href="/community">
       <ImageLoader
         src={`assets/images/community_icon_${
-          page === 'community' ? 'active' : 'inactive'
+          page.indexOf('community') > -1 ? 'active' : 'inactive'
         }.png`}
         style={{ container: style.imgCont }}
       />

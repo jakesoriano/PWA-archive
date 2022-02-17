@@ -1,0 +1,22 @@
+@import '../../../style/variables.scss';
+.communityNavigationWrap {
+  padding: 15px 15px 0;
+  display: flex;
+  justify-content: space-between;
+  * {
+    color: #737373;
+    font-size: 0.7rem;
+  }
+  .navBox {
+    background-color: $details_bg;
+    width: 48%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 0;
+    .icon {
+      width: 65px;
+      padding-bottom: 65px;
+      margin: 0 auto 10px;
+    }
+  }
+}

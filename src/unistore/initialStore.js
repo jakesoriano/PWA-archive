@@ -26,6 +26,20 @@ export const initialStore = {
     total: 0,
     page: 1
   },
+	upevents: {
+		fetching: false,
+		result: false,
+		data: [],
+		total: 0,
+		page: 1,
+	},
+	oevents: {
+		fetching: false,
+		result: false,
+		data: [],
+		total: 0,
+		page: 1,
+	},
   announcements: {
     fetching: false,
     result: false,
@@ -47,6 +61,8 @@ export const initialStore = {
     fetching: false,
     result: false,
     data: [],
+    filter: '',
+    featured: [],
     total: 0,
     page: 1
   },

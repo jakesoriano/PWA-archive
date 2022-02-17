@@ -16,7 +16,7 @@
 				"component": "LandingPage"
 			}
 		]
-	},	
+	},
 	{
 		"styles": [],
 		"pageTitle": "PAGE_TERMS",
@@ -53,9 +53,6 @@
 		"pageTitle": "PAGE_HOME",
 		"uri": "home",
 		"contents": [
-			{
-				"component": "Countdown"
-			},
 			{
 				"component": "AccountProfile"
 			},
@@ -107,6 +104,42 @@
 		]
 	},
 	{
+		"styles": [
+			{
+				"selector": "#w2 > div:first-child",
+				"styles": "background: #f9e9e8; border-radius: none; padding-top: 10px"
+			},
+			{
+				"selector": "#w2 > div:first-child > div:first-of-type",
+				"styles": "margin-top: 0"
+			},
+			{
+				"selector": "#w2 > div:first-child > div:first-of-type > div:nth-of-type(3)",
+				"styles": "position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"
+			}
+		],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY",
+		"uri": "community-list",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "CommunitySearch"
+			},
+			{
+				"component": "FeaturedCommunities",
+				"props": {
+					"top": 1,
+					"title": "FEATURED_COMMUNITY",
+					"hideShowAll": true
+				}
+			},
+			{
+				"component": "Community"
+			}
+		]
+	},
+	{
 		"styles": [],
 		"auth": true,
 		"pageTitle": "PAGE_COMMUNITY",
@@ -114,7 +147,72 @@
 		"withBack": true,
 		"contents": [
 			{
-				"component": "Community"
+				"component": "CommunityNavigation"
+			},
+			{
+				"component": "CommunitySearch"
+			},
+			{
+				"component": "FeaturedCommunities",
+				"props": {
+					"top": 5
+				}
+			}
+		]
+	},
+	{
+		"styles": [
+			{
+				"selector": "#w1 > div:first-child > div > span",
+				"styles": "display: none;"
+			},
+			{
+				"selector": "#w1 > div:first-child",
+				"styles": "margin-top: 10px;"
+			}
+		],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY_ANNOUNCEMENTS",
+		"uri": "community-announcements",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "NewsAndEvents",
+				"props": {
+					"hiddenTabs": ["announcements", "events"]
+				}
+			}
+		]
+	},
+	{
+		"styles": [
+			{
+				"selector": "#w2 > div:first-child > div > span",
+				"styles": "text-transform: uppercase; text-align: left; border-radius: 10px; padding-left: 25px;"
+			},
+			{
+				"selector": "#w2 > div:first-child > div",
+				"styles": "background-color: #fff;"
+			},
+			{
+				"selector": "#w2 > div:first-child",
+				"styles": "background-color: #fff;"
+			}
+		],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY_EVENTS",
+		"uri": "community-events",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "UpcomingEvents"
+			},
+			{
+				"component": "NewsAndEvents",
+				"props": {
+					"hiddenTabs": ["announcements", "news"],
+					"tabTitle": {"events": "OTHER_EVENTS"}
+				}
 			}
 		]
 	},
