@@ -70,11 +70,17 @@
             font-size: 0.8em;
           }
         }
-        .code {
+        .code,
+        link {
           margin-top: 20px;
           color: #fff;
           display: block;
           font-size: 25px;
+        }
+        .link {
+          text-decoration: underline;
+          margin-top: 10px;
+          display: block;
         }
 			}
 		}

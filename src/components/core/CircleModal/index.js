@@ -4,7 +4,7 @@ import { ImageLoader } from '_components/core';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
-export default ({ headerIcon, title, content, code, callback }) => (
+export default ({ headerIcon, title, content, code, callback, link }) => (
   // eslint-disable-next-line react/jsx-no-bind
   <div id="modal" className={style.circleModal}>
     <div className={style.modalContentWrap}>
@@ -36,6 +36,9 @@ export default ({ headerIcon, title, content, code, callback }) => (
             <div className={style.desc}>{content}</div>
           </div>
           {code && <span className={`extraBold ${style.code}`}>{code}</span>}
+          {link && <a href={link.url} onClick={() => {
+            circleModal(null);
+          }} className={`extraBold ${style.link}`}>{link.text}</a>}
         </div>
       </div>
     </div>

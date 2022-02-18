@@ -1,5 +1,14 @@
 import { store, updateStore } from '_unistore';
-import { xhr, urlTasks, urlValidateTask } from '_helpers';
+import {
+  xhr,
+  urlTasks,
+  urlValidateTask,
+  circleModal,
+  getTranslation,
+  getConfigByKey,
+  setCookieWithExpiration,
+  getCookie
+} from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
 export function fetchTasks () {
@@ -34,6 +43,19 @@ export function fetchTasks () {
             completed: !Boolean(res.data.find(i => i.completed !== true))
           }
         });
+        // check if there is pending tasks
+        const cookieTask = parseInt(getCookie('pendingTask') || '0');
+        if (Boolean(res.data.find(i => i.completed !== true)) && !cookieTask) {
+          setCookieWithExpiration('pendingTask', 1, new Date(Date.now() + ((1000 * 60) * getConfigByKey('taskNotifInterval'))));
+          circleModal({
+            title: getTranslation('TASKS_NOTIF_TITLE'),
+            content: getTranslation('TASKS_NOTIF_CONTENT'),
+            link: {
+              url: '/task-center',
+              text: getTranslation('TASKS_NOTIF_LINK')
+            }
+          });
+        }
       } else {
         updateStore({
           tasks: {

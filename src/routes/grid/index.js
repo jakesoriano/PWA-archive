@@ -19,6 +19,7 @@ import {
 	fetchTranslation,
 	fetchAppConfig,
 	// fetchUserData
+	fetchTasks,
 } from '_mutations';
 import {
 	LoaderRing,
@@ -518,6 +519,9 @@ if (typeof window !== 'undefined') {
 	window.onResume = () => {
 		// fetch app config
 		fetchAppConfig();
+		// fetch tasks to trigger notification if there is pending
+		fetchTasks();
+		
 		const path = getCurrentUrl();
 		console.log('onResume', path);
 	};
