@@ -10,6 +10,32 @@ import {
   getCookie
 } from '_helpers';
 
+
+function taskNotification(data) {
+  try {
+    // check if there is pending tasks
+    let storeData = store.getState();
+    storeData = storeData.circleModal || null;
+    const cookieKey = 'pt';
+    const hasCookie = parseInt(getCookie(cookieKey) || '0');
+    const pendingTask = data.find(i => i.completed !== true);
+    if (pendingTask && !hasCookie && !storeData) {
+      const expDate = Date.now() + ((1000 * 60) * getConfigByKey('taskNotifInterval'));
+      setCookieWithExpiration(cookieKey, 1, expDate);
+      circleModal({
+        title: getTranslation('TASKS_NOTIF_TITLE'),
+        content: getTranslation('TASKS_NOTIF_CONTENT'),
+        link: {
+          url: '/task-center',
+          text: getTranslation('TASKS_NOTIF_LINK')
+        }
+      });
+    }
+  } catch(err) {
+    console.error('taskNotification', err);
+  }
+};
+
 // eslint-disable-next-line import/prefer-default-export
 export function fetchTasks () {
   // curreny state
@@ -43,19 +69,10 @@ export function fetchTasks () {
             completed: !Boolean(res.data.find(i => i.completed !== true))
           }
         });
-        // check if there is pending tasks
-        const cookieTask = parseInt(getCookie('pendingTask') || '0');
-        if (Boolean(res.data.find(i => i.completed !== true)) && !cookieTask) {
-          setCookieWithExpiration('pendingTask', 1, new Date(Date.now() + ((1000 * 60) * getConfigByKey('taskNotifInterval'))));
-          circleModal({
-            title: getTranslation('TASKS_NOTIF_TITLE'),
-            content: getTranslation('TASKS_NOTIF_CONTENT'),
-            link: {
-              url: '/task-center',
-              text: getTranslation('TASKS_NOTIF_LINK')
-            }
-          });
-        }
+        // task notification
+        setTimeout(() => {
+          taskNotification(res.data);
+        }, 200);
       } else {
         updateStore({
           tasks: {

@@ -521,7 +521,7 @@ if (typeof window !== 'undefined') {
 		fetchAppConfig();
 		// fetch tasks to trigger notification if there is pending
 		fetchTasks();
-		
+		// url
 		const path = getCurrentUrl();
 		console.log('onResume', path);
 	};
