@@ -144,12 +144,10 @@ class GlobalAnnouncement extends Component {
 								<div className={style.details} onClick={() => {
 									this.onClickItem(i);
 								}}>
-									<div className={style.imgContainer}>
-										<ImageLoader
-											src={i.image}
-											style={{container: style.detailImage, image: style.img}}
-										/>
-									</div>
+									<ImageLoader
+										src={i.image}
+										style={{container: style.detailImage, image: style.img}}
+									/>
 									<div className={`${style.detailContent} ${this.props.isDisplayFlex ? style.rows : ''}`}>
 										<div className={style.detailHead}>
 											<span className={`extraBold ${style.userName}`}>
