@@ -6,8 +6,7 @@ export const urlUserLogin = urlUser + `/login`;
 export const urlUserProfile = urlUser + `/profile`;
 export const urlUserPoints = `${process.env.API_DOMAIN}user/points`;
 export const urlRegistration = `${process.env.API_DOMAIN}registration`;
-export const urlValidateUsername =
-	urlRegistration + `/validate/username/{username}`;
+export const urlValidateUsername = urlRegistration + `/validate/username/{username}`;
 export const urlValidateMobile = urlRegistration + `/validate/mobile/{mobile}`;
 export const urlSignup = urlRegistration + `/signup`;
 export const urlRegister = urlRegistration + `/register`;
@@ -41,3 +40,4 @@ export const urlCommunityLeader = urlCommunity + `/leader`;
 export const urlValidateTask = urlUser + `/tasks/validate/{id}`;
 export const urlLeaderboard = `${process.env.API_DOMAIN}leaderboard`;
 export const urlVideos = urlUser + `/videos`;
+export const urlLeniPedia = `${process.env.API_DOMAIN}lenipedia`;

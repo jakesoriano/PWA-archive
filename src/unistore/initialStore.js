@@ -54,6 +54,15 @@ export const initialStore = {
     total: 0,
     page: 1
   },
+  lpannouncements: {
+    fetching: false,
+    result: false,
+    data: [],
+    filter: '',
+    total: 0,
+    page: 1,
+    selected: null
+  },
   members: {
     fetching: false,
     result: false,

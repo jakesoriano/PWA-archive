@@ -60,6 +60,9 @@
 				"component": "AccountProfile"
 			},
 			{
+				"component": "LenipediaSearch"
+			},
+			{
 				"component": "DownloadKit"
 			},
 			{
@@ -525,6 +528,32 @@
 		"contents": [
 			{
 				"component": "GlobalAnnouncement"
+			}
+		]
+	},
+	{
+		"styles": [
+			{
+				"selector": "#w1 > div",
+				"styles": "margin-top: 10px;"
+			}
+		],
+		"auth": true,
+		"pageTitle": "",
+		"uri": "lenipedia",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "LenipediaSearch",
+				"props": {
+					"heading": "KILALANIN_SI_LENI"
+				}
+			},
+			{
+				"component": "NewsAndEvents",
+				"props": {
+					"hiddenTabs": ["news", "events"]
+				}
 			}
 		]
 	}

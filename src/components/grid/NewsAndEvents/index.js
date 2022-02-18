@@ -5,7 +5,9 @@ import {
 	fetchNewsByCommunity,
 	fetchEventsByCommunityId,
 	fetchEvents,
-	fetchAnnouncements } from '_mutations';
+	fetchAnnouncements,
+	filterArticles,
+	fetchArticles } from '_mutations';
 import {
 	getTranslation,
 	dateEventFormat,
@@ -52,7 +54,11 @@ class NewsAndEvents extends Component {
 			} else if (i === 'news') {
 				fetchNews();
 			} else if (i === 'announcements') {
-				fetchAnnouncements();
+				if (getCurrentUrl() === '/lenipedia') {
+					this.props.lpannouncements.filter ? filterArticles(this.props.lpannouncements.filter) : fetchArticles();
+				} else {
+					fetchAnnouncements();
+				}
 			}
 		});
 	}
@@ -78,7 +84,11 @@ class NewsAndEvents extends Component {
       } else if (active === 'events') {
         getCurrentUrl() === '/community-details' ? fetchEventsByCommunityId(this.props.communityDetails.details.id, this.getSelectedTabContent().page + 1) : fetchEvents(this.getSelectedTabContent().page + 1);
       } else {
-        fetchAnnouncements(this.getSelectedTabContent().page + 1);
+        if (getCurrentUrl() === '/lenipedia') {
+					this.props.lpannouncements.filter ? filterArticles(this.props.lpannouncements.filter, this.getSelectedTabContent().page + 1) : fetchArticles(this.getSelectedTabContent().page + 1);
+				} else {
+					fetchAnnouncements(this.getSelectedTabContent().page + 1);
+				}
 			}
     }
   };
@@ -279,7 +289,13 @@ class NewsAndEvents extends Component {
 	};
 
 	getSelectedTabContent = () => {
-		return getCurrentUrl() === '/community-details' ? this.props[`c${this.state.active}`] : this.props[this.state.active]
+		if (getCurrentUrl() === '/community-details') {
+			return this.props[`c${this.state.active}`];
+		} else if (getCurrentUrl() === '/lenipedia') {
+			return this.props[`lp${this.state.active}`];
+		} else {
+			return this.props[this.state.active]
+		}
 	}
 }
-export default connect(['news', 'events', 'announcements', 'authUser', 'cevents', 'cnews', 'communityDetails',])(NewsAndEvents);
+export default connect(['news', 'events', 'announcements', 'lpannouncements', 'authUser', 'cevents', 'cnews', 'communityDetails',])(NewsAndEvents);
