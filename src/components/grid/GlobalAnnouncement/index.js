@@ -173,15 +173,18 @@ class GlobalAnnouncement extends Component {
 		);
 	};
 
-	render = ({announcements},{selectedItem}) => {
+	render = ({announcements, title},{selectedItem}) => {
 	  return (
 			<>
 				<div className={`${style.globalAnnouncement} ${!this.props.isDisplayFlex ? style.marginTop : ''}`}>
-					<div className={style.tabWrap}>
-						<span className={`bold ${style.activeTab}`}>
-							{getTranslation('ANNOUNCEMENTS')}
-						</span>
-					</div>
+					{/* Title */}
+					{title && (
+						<div className={style.tabWrap}>
+							<span className={`bold ${style.activeTab}`}>
+								{getTranslation('ANNOUNCEMENTS')}
+							</span>
+						</div>
+					)}
 					<div className={style.content}>
 						{this.renderAnnouncements()}
 						{/* show more - horizontal */}

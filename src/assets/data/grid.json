@@ -68,7 +68,8 @@
 			{
 				"component": "GlobalAnnouncement",
 				"props": {
-					"isDisplayFlex": true
+					"isDisplayFlex": true,
+					"title": "ANNOUNCEMENTS"
 				}
 			},
 			{
