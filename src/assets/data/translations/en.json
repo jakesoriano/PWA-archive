@@ -170,7 +170,7 @@
 	"TASK_INSTRUCTION": "Once you received the task, the deadline countdown starts. Complete ahead of time to get more Hero Points and Rewards!",
 	"TASK_POINTS": "Like VP FB Post for {POINTS}pts",
 	"TASK_DEADLINE": "Deadline: {DATE}",
-	"TASK_NOTE": "Note:  if the like button is not working. Please click the post image, message, share icon or this link to open the post via Facebook then hit \"Like\". Once done, click \"Done\" to earn points.",
+	"TASK_NOTE": "Note: if the like button is not working. Please click the post image, message, share icon or this link to open the post via Facebook then hit \"Like\". Once done, click \"Done\" to earn points.",
 	"TASK_COMPLETED": "All tasks completed! Come back again later to earn more points.",
 	"TASK_NODATA": "No Available task for today!",
 	"TASK_MSG_SUCCESS": "You have successfully completed the task.",

@@ -12,7 +12,8 @@ class TaskCenter extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			item: null
+			item: null,
+			isDisabled: true
 		};
 	};
 
@@ -25,6 +26,12 @@ class TaskCenter extends Component {
 		this.setData();
 	};
 
+	enableButton = () => {
+		this.setState({
+			isDisabled: false
+		});
+	}
+
 	setData = () => {
 		try {
 			if (!this.state.item && this.props.tasks.data) {
@@ -35,8 +42,8 @@ class TaskCenter extends Component {
 						}
             return result;
           }, null)
-				}, () => {
-					FB.XFBML.parse();
+				// }, () => {
+				// 	FB.XFBML.parse();
 				});
 			}
 		} catch (err) {}
@@ -70,8 +77,8 @@ class TaskCenter extends Component {
 									}
 									return result;
 								}, null)
-							}, () => {
-								FB.XFBML.parse();
+							// }, () => {
+							// 	FB.XFBML.parse();
 							});
 						} else if (status === 0) {
 							showAlertBox({
@@ -97,7 +104,7 @@ class TaskCenter extends Component {
 			})
 	};
 
-	render = ({ tasks }, { item }) => {
+	render = ({ tasks }, { item, isDisabled }) => {
 		
 		// no data available yet
 		if (!tasks.data || !item) {
@@ -137,16 +144,31 @@ class TaskCenter extends Component {
 					</div>
 
 					{/* FB Post */}
-					<div className={style.fbContainer}>
+					{/* <div className={style.fbContainer}>
 						<div class="fb-post" data-href={item.url}></div>
-					</div>
+					</div> */}
+
+					{/* Image */}
+					<a
+						href={item.url}
+						target='_blank'
+						className={style.imageWrap}
+						onClick={this.enableButton}>
+						<ImageLoader
+							src={item.image}
+							style={{container: style.featuredImage}}
+						/>
+					</a>
 
 					{/* Footer */}
 					<div className={style.footer}>
-						<a href={item.url}>{item.url}</a>
+						<a
+							href={item.url}
+							target='_blank'
+							onClick={this.enableButton}>{item.url}</a>
 						<p>{getTranslation('TASK_POINTS').replace('{POINTS}', item.points)}</p>
 						<p>{getTranslation('TASK_DEADLINE').replace('{DATE}', dateEventFormat(item.endDate))}</p>
-						<p>{getTranslation('TASK_NOTE')}</p>
+						<p>{item.instruction}</p>
 					</div>
 				</div>
 
@@ -154,6 +176,7 @@ class TaskCenter extends Component {
 	        <ButtonDescription
 	          onClickCallback={this.handleDone}
 	          text="DONE"
+						isDisabled={isDisabled}
 	        />
 	      </div>
 			</div>
