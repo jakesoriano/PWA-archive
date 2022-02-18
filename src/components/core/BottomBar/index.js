@@ -14,18 +14,18 @@ export default ({ page }) => (
         style={{ container: style.imgCont }}
       />
     </Link>
-    <Link class={style.menu} activeClassName={style.active} href="/invite">
+    <Link class={style.menu} activeClassName={style.active} href="/task-center">
       <ImageLoader
-        src={`assets/images/invite_icon_${
-          page === 'invite' ? 'active' : 'inactive'
+        src={`assets/images/tasks_${
+          page === 'task-center' ? 'active' : 'inactive'
         }.png`}
         style={{ container: style.imgCont }}
       />
     </Link>
-    <Link class={style.menu} activeClassName={style.active} href="/leaderboard">
+    <Link class={style.menu} activeClassName={style.active} href="/invite">
       <ImageLoader
-        src={`assets/images/members_icon_${
-          page === 'leaderboard' ? 'active' : 'inactive'
+        src={`assets/images/invite_icon_${
+          page === 'invite' ? 'active' : 'inactive'
         }.png`}
         style={{ container: style.imgCont }}
       />
@@ -38,10 +38,10 @@ export default ({ page }) => (
         style={{ container: style.imgCont }}
       />
     </Link>
-    <Link class={style.menu} activeClassName={style.active} href="/profile">
+    <Link class={style.menu} activeClassName={style.active} href="/leaderboard">
       <ImageLoader
-        src={`assets/images/myaccount_icon_${
-          page === 'profile' ? 'active' : 'inactive'
+        src={`assets/images/members_icon_${
+          page === 'leaderboard' ? 'active' : 'inactive'
         }.png`}
         style={{ container: style.imgCont }}
       />
