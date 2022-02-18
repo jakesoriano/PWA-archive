@@ -22,13 +22,14 @@ export function fetchLeaderboard (type, region, top) {
 
   return xhr(`${urlLeaderboard}?type=${type || 'global'}&top=${top || getConfigByKey('leaderboard', 'top')}${type === 'regional' && region ? '&region=' + region : ''}`)
     .then((res) => {
+      const data = res.data.filter(i => i);
       updateStore({
         leaderboard: {
           ...leaderboard,
           fetching: false,
           result: true,
-          data: res.data.filter(i => i),
-          featured: (!type ? res.data[0] : res.featured), // get top 1 from overall
+          data,
+          featured: (!type ? data[0] : leaderboard.featured), // get top 1 from overall
           filter: {
             type: type || 'global',
             region: region || ''
