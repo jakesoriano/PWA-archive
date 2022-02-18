@@ -2,6 +2,11 @@
 const cookieTimeLimit =
 	24 * 60 * 60 * parseInt(process.env.COOKIE_TIME_LIMIT) * 1000;
 
+function getMaxAge(epoc) {
+  const currentDate = Date.now();
+  return (epoc - currentDate) / 1000;
+}
+
 export function getDomain () {
   let domain = window.location.hostname.split('.');
   // local domain
@@ -36,17 +41,17 @@ export function getCookie (cname) {
 export function setCookie (cname, value, noEncode) {
   document.cookie = `${cname}=${
     noEncode ? value : window.encodeURIComponent(value)
-  }; domain=${getDomain()}; path=/; expires=${new Date(
+  }; path=/; max-age=${getMaxAge(
     Date.now() + cookieTimeLimit
-  ).toGMTString()}`;
+  )}`;
 }
 
 export function setCookieWithExpiration (cname, value, expDate, noEncode) {
   document.cookie = `${cname}=${
     noEncode ? value : window.encodeURIComponent(value)
-  }; domain=${getDomain()}; path=/; expires=${new Date(expDate).toGMTString()}`;
+  }; path=/; max-age=${getMaxAge(expDate)}`;
 }
 
 export function removeCookie (cname) {
-  document.cookie = `${cname}=; domain=${getDomain()}; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT`;
+  document.cookie = `${cname}=; path=/; max-age=0`;
 }
