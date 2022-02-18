@@ -536,6 +536,10 @@
 			{
 				"selector": "#w1 > div",
 				"styles": "margin-top: 10px;"
+			},
+			{
+				"selector": "#w2 > div:first-child > div > span",
+				"styles": "display: none;"
 			}
 		],
 		"auth": true,
