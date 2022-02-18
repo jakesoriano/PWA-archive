@@ -144,12 +144,10 @@ class GlobalAnnouncement extends Component {
 								<div className={style.details} onClick={() => {
 									this.onClickItem(i);
 								}}>
-									<div className={style.imgContainer}>
-										<ImageLoader
-											src={i.image}
-											style={{container: style.detailImage, image: style.img}}
-										/>
-									</div>
+									<ImageLoader
+										src={i.image}
+										style={{container: style.detailImage, image: style.img}}
+									/>
 									<div className={`${style.detailContent} ${this.props.isDisplayFlex ? style.rows : ''}`}>
 										<div className={style.detailHead}>
 											<span className={`extraBold ${style.userName}`}>
@@ -173,15 +171,18 @@ class GlobalAnnouncement extends Component {
 		);
 	};
 
-	render = ({announcements},{selectedItem}) => {
+	render = ({announcements, title},{selectedItem}) => {
 	  return (
 			<>
 				<div className={`${style.globalAnnouncement} ${!this.props.isDisplayFlex ? style.marginTop : ''}`}>
-					<div className={style.tabWrap}>
-						<span className={`bold ${style.activeTab}`}>
-							{getTranslation('ANNOUNCEMENTS')}
-						</span>
-					</div>
+					{/* Title */}
+					{title && (
+						<div className={style.tabWrap}>
+							<span className={`bold ${style.activeTab}`}>
+								{getTranslation('ANNOUNCEMENTS')}
+							</span>
+						</div>
+					)}
 					<div className={style.content}>
 						{this.renderAnnouncements()}
 						{/* show more - horizontal */}
