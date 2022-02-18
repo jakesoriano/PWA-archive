@@ -4,11 +4,17 @@ import { updateStore } from '_unistore';
 import { route } from 'preact-router';
 import {
 	fetchCommunityEvents,
-	fetchCommunityAnnouncement } from '_mutations';
+	fetchCommunityAnnouncement,
+	shareNewsByLeader,
+	deleteCommunityEvents,
+	deleteCommunityNews } from '_mutations';
 import {
 	getTranslation,
 	dateEventFormat,
-	getConfigByKey
+	getConfigByKey,
+	displayPageLoader,
+	showAlertBox,
+	promptModal
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 import { ImageLoader, LoaderRing, CommunityEvents, AnnouncementsList } from '_components/core';
@@ -118,7 +124,7 @@ class CommunityManagement extends Component {
 			`
 		});
 		if (!item.shared) {
-			shareEvent(item);
+			shareNewsByLeader(item);
 		}
 	};
 
@@ -143,7 +149,6 @@ class CommunityManagement extends Component {
 	};
 
 	onClickEdit = (data) => {
-		console.log('data edit', data);
 		route(`/edit-post-content`);
 		updateStore({
 			leaderEditPost: {
@@ -151,6 +156,67 @@ class CommunityManagement extends Component {
 				id: data.id
 			}
 		}, true);
+	}
+
+	onClickDelete = (item) => {
+		displayPageLoader(true);
+		this.setState({
+			selectedItem: null
+		});	
+		if(this.state.active === 'events') {
+			deleteCommunityEvents(item.id).then((res) => {
+				displayPageLoader(false);
+				if(res && res.success) {
+					updateStore({
+						leaderCommunityEvents: {
+							...this.props.leaderCommunityEvents,
+							data: this.props.leaderCommunityEvents.data.filter(e => e.id !== item.id),
+							total: this.props.leaderCommunityEvents.total - 1
+						}
+					});
+					showAlertBox({
+						message: 'DELETE_SUCCESSFUL',
+						success: true
+					});
+				} else {
+					showAlertBox({
+						message: res.errMessage || 'OOPS_SOMETHING_WRONG'
+					})
+				}
+			});		
+		} else {
+			deleteCommunityNews(item.id).then((res) => {
+				displayPageLoader(false);
+				if(res && res.success) {
+					updateStore({
+						leaderCommunityAnnouncements: {
+							...this.props.leaderCommunityAnnouncements,
+							data: this.props.leaderCommunityAnnouncements.data.filter(e => e.id !== item.id),
+							total: this.props.leaderCommunityAnnouncements.total - 1
+						}
+					});
+					showAlertBox({
+						message: 'DELETE_SUCCESSFUL',
+						success: true
+					});
+				} else {
+					showAlertBox({
+						message: res.errMessage || 'OOPS_SOMETHING_WRONG'
+					})
+				}
+			});
+		}
+	}
+
+	showDeleteConfirmation = (item) => {
+		promptModal({
+			title: getTranslation('DELETE_POST'),
+			message: `${getTranslation('DELETE_POST_CONFIRMATION')} [${item.title}] ?`,
+			cbOk: () => {
+				this.onClickDelete(item);
+				promptModal(null);
+			}
+		});
 	}
 
 	renderDetails = (data) => {
@@ -200,7 +266,7 @@ class CommunityManagement extends Component {
 							<span className='extraBold'>{getTranslation('EDIT')}</span>
 						</a>
 						<a className={style.pShare} onClick={() => {
-							console.log('delete');
+							this.showDeleteConfirmation(data);
 						}}>
 							<span className='extraBold'>{getTranslation('DELETE')}</span>
 						</a>
@@ -212,7 +278,7 @@ class CommunityManagement extends Component {
 	};
 
 	renderAnnouncements = (data) => {
-		return <AnnouncementsList data={data} authUser={this.props.authUser} onClickItemCallback={this.onClickItem} />
+		return <AnnouncementsList data={data} authUser={this.props.authUser} isManagePage={true} onClickItemCallback={this.onClickItem} />
 	};
 
 	renderEvents = (data) => {

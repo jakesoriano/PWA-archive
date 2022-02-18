@@ -225,5 +225,9 @@
 	"COPY_MSG_REFCODE": "Referral Code copied to clipboard.",
 	"INVITE_SOCIAL_MEDIA": "Invite via Social Media",
 	"EDIT": "EDIT",
-	"DELETE": "DELETE"
+	"DELETE": "DELETE",
+	"DELETE_SUCCESSFUL": "Post successfully deleted.",
+	"DELETE_POST": "Delete Post",
+	"DELETE_POST_CONFIRMATION": "Are you sure you want to delete",
+	"REPLACE_IMAGE": "REPLACE IMAGE"
 }

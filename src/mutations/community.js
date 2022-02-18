@@ -4,6 +4,7 @@ import {
 	urlCommunity,
 	urlUser,
   urlNews,
+  urlShare,
   urlCommunitySetup, 
   urlCommunityGetInfo,
   urlCommunityLeader
@@ -588,6 +589,68 @@ export function shareEventByLeader (item) {
   });
 }
 
+export function shareNewsByLeader (item) {
+  let { leaderCommunityAnnouncements } = store.getState();
+  const { authUser } = store.getState();
+  
+  // fetching
+  if(leaderCommunityAnnouncements.fetching) {
+    return;
+  }
+
+  // initial state
+  leaderCommunityAnnouncements = {
+    ...leaderCommunityAnnouncements,
+    data: leaderCommunityAnnouncements.data.map(i => {
+      if(i.id === item.id) {
+        i.shared = true;
+      }
+      return i;
+    }),
+    fetching: true
+  };
+  updateStore({ leaderCommunityAnnouncements });
+
+  return new Promise((resolve) => {
+    xhr(urlShare, {
+      method: 'POST',
+      data: {
+        userId: authUser.profile._id,
+        itemId: item.id,
+        itemType: 'A',
+        parentId: item.communityId,
+        parentType: 'C'
+      }
+    })
+    .then((res) => {
+      updateStore({
+        leaderCommunityAnnouncements: {
+          ...leaderCommunityAnnouncements,
+          fetching: false
+        }
+      });
+      console.log(`SPA >> shareNewsByLeader Success`, res);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        leaderCommunityAnnouncements: {
+          ...leaderCommunityAnnouncements,
+          data: leaderCommunityAnnouncements.data.map(i => {
+            if(i.id === item.id) {
+              i.shared = false;
+            }
+            return i;
+          }),
+          fetching: false
+        }
+      });
+      console.log(`SPA >> shareNewsByLeader Error`, err);
+      resolve(false);
+    });
+  });
+}
+
 export function updateCommunityEvent (data, id) {
   // current state
   const { communityInfo } = store.getState();
@@ -634,6 +697,54 @@ export function updateCommunityNews (data, id) {
       .catch((err) => {
         resolve(err);
         console.log(`SPA >> updateCommunityNews failed`, err);
+      });
+  });
+}
+
+export function deleteCommunityEvents (id) {
+  // current state
+  const { communityInfo } = store.getState();
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/events/${id}`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'DELETE'
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> deleteCommunityEvents Error`, res);
+          resolve(res);
+        } else {
+          console.log(`SPA >> deleteCommunityEvents successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> deleteCommunityEvents failed`, err);
+      });
+  });
+}
+
+export function deleteCommunityNews (id) {
+  // current state
+  const { communityInfo } = store.getState();
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/news/${id}`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'DELETE'
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> deleteCommunityNews Error`, res);
+          resolve(res);
+        } else {
+          console.log(`SPA >> deleteCommunityNews successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> deleteCommunityNews failed`, err);
       });
   });
 }
