@@ -203,6 +203,7 @@ class NewsAndEvents extends Component {
 						}
 					}}>
 						<ImageLoader
+								id={this.state.active === 'events' ? 'event-like' : 'announcement-like' }
 								src="assets/images/share_icon_white.png"
 								style={{container: style.pIconShare}} />
 							<span>{getTranslation('SHARE')}</span>
@@ -263,7 +264,8 @@ class NewsAndEvents extends Component {
 							: this.renderData(state.active) }
 						{/* show more */}
 						{state.active && this.getSelectedTabContent() && this.getSelectedTabContent().data.length < this.getSelectedTabContent().total && !this.getSelectedTabContent().fetching && (
-							<button className={style.showMore} onClick={this.handleShowMore}>
+							<button
+								className={style.showMore} onClick={this.handleShowMore}>
 								<span><span>&#8659;</span> {getTranslation('SHOW_MORE')}</span>
 							</button>
 						)}

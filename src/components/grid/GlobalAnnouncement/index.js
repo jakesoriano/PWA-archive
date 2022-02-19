@@ -115,7 +115,7 @@ class GlobalAnnouncement extends Component {
 							__html: data.desc
 						}}
 					/>
-					<a className={style.pShare} onClick={() => {
+					<a id="global-announcement-share" className={style.pShare} onClick={() => {
 						this.onShareAnnouncement(data);
 					}}>
 						<ImageLoader
@@ -141,7 +141,7 @@ class GlobalAnnouncement extends Component {
 					<div className={`${style.announcementWrap} ${this.props.isDisplayFlex ? style.rows : ''} ${style['i' + announcements_.length]}`}>
 						{announcements_.map((i) => (
 							<div className={style.item}>
-								<div id="global-annoucement-item" className={style.details} onClick={() => {
+								<div id="global-announcement-item" className={style.details} onClick={() => {
 									this.onClickItem(i);
 								}}>
 									<ImageLoader
@@ -191,7 +191,7 @@ class GlobalAnnouncement extends Component {
 						</p>}
 						{/* show more - vertical */}
 						{!this.props.isDisplayFlex && announcements.data.length < announcements.total && !announcements.fetching && (
-							<button id="global-annoucement-seeall" className={style.showMore} onClick={this.handleShowMore}>
+							<button id="global-announcement-seeall" className={style.showMore} onClick={this.handleShowMore}>
 								<span><span>&#8659;</span> {getTranslation('SHOW_MORE')}</span>
 							</button>
 						)}

@@ -63,6 +63,7 @@ class NewsList extends Component {
 					</a>
 					<div className={style.buttons}>
 						<a
+							id={'announcement-like'}
 							className={i.liked ? `extraBold ${style.buttonLikeActive}` : ''}
 							onClick={() => {
 								this.onLikeNews(i);
@@ -73,7 +74,7 @@ class NewsList extends Component {
 								{getTranslation('LIKE')}
 							</a>
 						<a
-							className={i.shared ? `extraBold ${style.buttonShareActive}` : ''}
+							className={`announcement-share ${i.shared ? `extraBold ${style.buttonShareActive}` : ''}`}
 							onClick={() => {
 								this.onShareNews(i);
 							}}>

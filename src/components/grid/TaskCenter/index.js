@@ -152,7 +152,7 @@ class TaskCenter extends Component {
 					<a
 						href={item.url}
 						target='_blank'
-						className={style.imageWrap}
+						className={`task-fblink ${style.imageWrap}`}
 						onClick={this.enableButton}>
 						<ImageLoader
 							src={item.image}
@@ -163,6 +163,7 @@ class TaskCenter extends Component {
 					{/* Footer */}
 					<div className={style.footer}>
 						<a
+							className="task-fblink"
 							href={item.url}
 							target='_blank'
 							onClick={this.enableButton}>{item.url}</a>
@@ -174,6 +175,7 @@ class TaskCenter extends Component {
 
 				<div className={style.buttonContainer}>
 	        <ButtonDescription
+						id="task-done"
 	          onClickCallback={this.handleDone}
 	          text="DONE"
 						isDisabled={isDisabled}

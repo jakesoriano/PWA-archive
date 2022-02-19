@@ -63,6 +63,7 @@ class FeaturedCommunities extends Component {
         </div>
         <div class={style.buttonContainer}>
           <ButtonDescription
+            id={item.followed ? 'community-unfollow' : 'community-follow'}
             onClickCallback={(e) => { this.handleFollow(item)}}
             text={getTranslation(item.followed ? 'UNFOLLOW' : 'FOLLOW')}
             buttonStyle={`${style.buttonStyle} ${item.followed ? style.followed : ''}`}

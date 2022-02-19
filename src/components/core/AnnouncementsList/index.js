@@ -58,6 +58,7 @@ class AnnouncementsList extends Component {
 					</a>
 					<div className={style.buttons}>
 						{!this.props.isManagePage && <a
+              id={`${this.props.dataType || 'announcement'}-like`}
 							className={i.liked ? `extraBold ${style.buttonLikeActive}` : ''}
 							onClick={() => {
 								this.onLikeAnnouncement(i);
@@ -68,7 +69,7 @@ class AnnouncementsList extends Component {
 								{getTranslation('LIKE')}
 							</a> }
 						<a
-							className={i.shared ? `extraBold ${style.buttonShareActive}` : ''}
+							className={`${this.props.dataType || 'announcement'}-share ${i.shared ? `extraBold ${style.buttonShareActive}` : ''}`}
 							onClick={() => {
 								this.onShareAnnouncement(i);
 							}}>

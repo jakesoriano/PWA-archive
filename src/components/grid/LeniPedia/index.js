@@ -42,7 +42,7 @@ class LeniPedia extends Component {
   render = (props, state) => {
     return (
       <div className={style.leniPediaWrap}>
-        <AnnouncementsList data={props.lpannouncements.data} onClickItemCallback={this.onClickItem} />
+        <AnnouncementsList dataType="lenipedia" data={props.lpannouncements.data} onClickItemCallback={this.onClickItem} />
         {
           props.lpannouncements.data.length < props.lpannouncements.total && !state.moreFetching && (
             <button className={style.showMore} onClick={this.handleShowMore}>

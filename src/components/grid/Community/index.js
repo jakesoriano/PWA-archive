@@ -119,6 +119,7 @@ class Community extends Component {
         }
         <div className={style.cardBody}>
           <ButtonDescription
+            id={item.followed ? 'community-unfollow' : 'community-follow'}
             onClickCallback={(e) => { this.handleFollow(item)}}
             text={getTranslation(item.followed ? 'UNFOLLOW' : 'FOLLOW')}
             bottomDescription={item.name}
