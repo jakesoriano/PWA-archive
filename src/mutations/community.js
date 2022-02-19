@@ -4,6 +4,7 @@ import {
 	urlCommunity,
 	urlUser,
   urlNews,
+  urlShare,
   urlCommunitySetup, 
   urlCommunityGetInfo,
   urlCommunityLeader
@@ -414,3 +415,337 @@ export function getCommunityInfo () {
    });
  });
 }
+
+export function fetchCommunityEvents(page, limit) {
+  
+  const { communityInfo, leaderCommunityEvents } = store.getState();
+  
+  // fetching
+  if(leaderCommunityEvents.fetching) {
+    return;
+  }
+
+  // initial state
+  updateStore({
+    leaderCommunityEvents: {
+      ...leaderCommunityEvents,
+      fetching: true,
+      result: false
+    }
+  });
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/events`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'GET',
+      params: {
+        p: page || 1, // page number
+        s: limit || 9 // limit
+      }
+    })
+    .then((res) => {
+      updateStore({
+        leaderCommunityEvents: {
+          data: page && page > 1 ? [
+            ...leaderCommunityEvents.data,
+            ...res.data.results
+          ] : res.data.results,
+          total: res.data.total,
+          page: page || 1,
+          fetching: false,
+          result: true
+        }
+      });
+      console.log(`SPA >> fetchCommunityEvents Success`, res);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        leaderCommunityEvents: {
+          ...leaderCommunityEvents,
+          fetching: false,
+          result: false
+        }
+      });
+      console.log(`SPA >> fetchCommunityEvents Error`, err);
+      resolve(false);
+    });
+  });
+}
+
+export function fetchCommunityAnnouncement(page, limit) {
+  const { communityInfo, leaderCommunityAnnouncements } = store.getState();
+  
+  // fetching
+  if(leaderCommunityAnnouncements.fetching) {
+    return;
+  }
+
+  // initial state
+  updateStore({
+    leaderCommunityAnnouncements: {
+      ...leaderCommunityAnnouncements,
+      fetching: true,
+      result: false
+    }
+  });
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/news`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'GET',
+      params: {
+        p: page || 1, // page number
+        s: limit || 9 // limit
+      }
+    })
+    .then((res) => {
+      updateStore({
+        leaderCommunityAnnouncements: {
+          data: page && page > 1 ? [
+            ...leaderCommunityAnnouncements.data,
+            ...res.data.results
+          ] : res.data.results,
+          total: res.data.total,
+          page: page || 1,
+          fetching: false,
+          result: true
+        }
+      });
+      console.log(`SPA >> fetchCommunityAnnouncements Success`, res.success);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        leaderCommunityAnnouncements: {
+          ...leaderCommunityAnnouncements,
+          fetching: false,
+          result: false
+        }
+      });
+      console.log(`SPA >> fetchCommunityAnnouncements Error`, err);
+      resolve(false);
+    });
+  });
+}
+
+export function shareEventByLeader (item) {
+  let { leaderCommunityEvents } = store.getState();
+  const { authUser } = store.getState();
+  
+  // fetching
+  if(leaderCommunityEvents.fetching) {
+    return;
+  }
+
+  // initial state
+  leaderCommunityEvents = {
+    ...leaderCommunityEvents,
+    data: leaderCommunityEvents.data.map(i => {
+      if(i.id === item.id) {
+        i.shared = true;
+      }
+      return i;
+    }),
+    fetching: true
+  };
+  updateStore({ leaderCommunityEvents });
+
+  return new Promise((resolve) => {
+    xhr(urlShare, {
+      method: 'POST',
+      data: {
+        userId: authUser.profile._id,
+        itemId: item.id,
+        itemType: 'E',
+        parentId: item.communityId,
+        parentType: 'C'
+      }
+    })
+    .then((res) => {
+      updateStore({
+        leaderCommunityEvents: {
+          ...leaderCommunityEvents,
+          fetching: false
+        }
+      });
+      console.log(`SPA >> shareEvents Success`, res);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        leaderCommunityEvents: {
+          ...leaderCommunityEvents,
+          data: leaderCommunityEvents.data.map(i => {
+            if(i.id === item.id) {
+              i.shared = false;
+            }
+            return i;
+          }),
+          fetching: false
+        }
+      });
+      console.log(`SPA >> shareEvents Error`, err);
+      resolve(false);
+    });
+  });
+}
+
+export function shareNewsByLeader (item) {
+  let { leaderCommunityAnnouncements } = store.getState();
+  const { authUser } = store.getState();
+  
+  // fetching
+  if(leaderCommunityAnnouncements.fetching) {
+    return;
+  }
+
+  // initial state
+  leaderCommunityAnnouncements = {
+    ...leaderCommunityAnnouncements,
+    data: leaderCommunityAnnouncements.data.map(i => {
+      if(i.id === item.id) {
+        i.shared = true;
+      }
+      return i;
+    }),
+    fetching: true
+  };
+  updateStore({ leaderCommunityAnnouncements });
+
+  return new Promise((resolve) => {
+    xhr(urlShare, {
+      method: 'POST',
+      data: {
+        userId: authUser.profile._id,
+        itemId: item.id,
+        itemType: 'A',
+        parentId: item.communityId,
+        parentType: 'C'
+      }
+    })
+    .then((res) => {
+      updateStore({
+        leaderCommunityAnnouncements: {
+          ...leaderCommunityAnnouncements,
+          fetching: false
+        }
+      });
+      console.log(`SPA >> shareNewsByLeader Success`, res);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        leaderCommunityAnnouncements: {
+          ...leaderCommunityAnnouncements,
+          data: leaderCommunityAnnouncements.data.map(i => {
+            if(i.id === item.id) {
+              i.shared = false;
+            }
+            return i;
+          }),
+          fetching: false
+        }
+      });
+      console.log(`SPA >> shareNewsByLeader Error`, err);
+      resolve(false);
+    });
+  });
+}
+
+export function updateCommunityEvent (data, id) {
+  // current state
+  const { communityInfo } = store.getState();
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/events/${id}`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'PUT',
+      data: data.data
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> updateCommunityEvent Error`, res);
+          resolve(res);
+        } else {
+          console.log(`SPA >> updateCommunityEvent successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> updateCommunityEvent failed`, err);
+      });
+  });
+}
+
+export function updateCommunityNews (data, id) {
+  // current state
+  const { communityInfo } = store.getState();
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/news/${id}`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'PUT',
+      data: data.data
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> updateCommunityNews Error`, res);
+          resolve(res);
+        } else {
+          console.log(`SPA >> updateCommunityNews successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> updateCommunityNews failed`, err);
+      });
+  });
+}
+
+export function deleteCommunityEvents (id) {
+  // current state
+  const { communityInfo } = store.getState();
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/events/${id}`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'DELETE'
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> deleteCommunityEvents Error`, res);
+          resolve(res);
+        } else {
+          console.log(`SPA >> deleteCommunityEvents successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> deleteCommunityEvents failed`, err);
+      });
+  });
+}
+
+export function deleteCommunityNews (id) {
+  // current state
+  const { communityInfo } = store.getState();
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/news/${id}`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'DELETE'
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> deleteCommunityNews Error`, res);
+          resolve(res);
+        } else {
+          console.log(`SPA >> deleteCommunityNews successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> deleteCommunityNews failed`, err);
+      });
+  });
+}
+

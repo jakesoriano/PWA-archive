@@ -345,7 +345,7 @@ class Signup extends Component {
 								...(this.props.signup || {}),
 								'fname': this.state.fname.value,
 								'mname': this.state.mname.value,
-								'lname': this.state.lname.value,
+								'lname': '', // this.state.lname.value,
 								// 'gender': this.state.gender.value,
 								'birthday': this.state.birthday.value,
 								'mobile': this.state.mobile.value,

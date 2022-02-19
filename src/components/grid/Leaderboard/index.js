@@ -10,7 +10,7 @@ import {
 	getDefaultAvatar,
 	showFilter,
 	getRegions,
-	getConfigByKey,
+	displayName,
 	displayPageLoader,
 } from '_helpers';
 // eslint-disable-next-line import/extensions
@@ -117,7 +117,7 @@ class Leaderboard extends Component {
 									<div>
 										<p
 											className={`light ${style.name}`}
-										>{`${item.profile.fname} ${item.profile.lname}`}</p>
+										>{displayName(item.profile)}</p>
 										<p className={`light ${style.members}`}>{`${
 											item.members
 										} ${getTranslation('MEMBERS')}`}</p>

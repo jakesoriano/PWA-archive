@@ -3,10 +3,7 @@ import { connect } from 'unistore/preact';
 import { getTranslation, getConfigByKey } from '_helpers';
 import { ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
-import {
-	likeShareAnnouncements,
-	removeLikeAnnouncements
-} from '_mutations';
+import { likeShareAnnouncements, removeLikeAnnouncements, shareNewsByLeader } from '_mutations';
 import style from './style';
 class AnnouncementsList extends Component {
   
@@ -30,7 +27,11 @@ class AnnouncementsList extends Component {
 			`
 		});
 		if (!item.shared) {
-			likeShareAnnouncements(item, 'shared');
+			if(this.props.isManagePage) {
+				shareNewsByLeader(item, 'A');
+			} else {
+				likeShareAnnouncements(item, 'shared');
+			}
 		}
 	};
 
@@ -56,7 +57,7 @@ class AnnouncementsList extends Component {
 						</div>
 					</a>
 					<div className={style.buttons}>
-						<a
+						{!this.props.isManagePage && <a
 							className={i.liked ? `extraBold ${style.buttonLikeActive}` : ''}
 							onClick={() => {
 								this.onLikeAnnouncement(i);
@@ -65,7 +66,7 @@ class AnnouncementsList extends Component {
 								src={!i.liked ? 'assets/images/fb-like-transparent.png' : 'assets/images/fb-like-transparent-dark.png'}
 								style={{container: style.likeButton}}/>
 								{getTranslation('LIKE')}
-							</a>
+							</a> }
 						<a
 							className={i.shared ? `extraBold ${style.buttonShareActive}` : ''}
 							onClick={() => {

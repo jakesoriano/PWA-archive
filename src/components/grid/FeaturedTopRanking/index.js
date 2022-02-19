@@ -1,10 +1,21 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { ImageLoader } from '_components/core';
-import { getTranslation } from '_helpers';
+import { getTranslation, getDefaultAvatar } from '_helpers';
 import style from './style';
 
 class FeaturedTopRanking extends Component {
+
+	renderUserTitle = (profile) => {
+		let user = profile.fname;
+		if (profile.region) {
+			user = user + `, ${profile.region}.`;
+		}
+		if (profile.municipality) {
+			user = user + ` ${profile.municipality}`;
+		}
+		return user;
+	};
 
   renderDom = (data) => {
     return data ? (
@@ -16,8 +27,7 @@ class FeaturedTopRanking extends Component {
         <div className={style.nameMember}>
           <div>
             <p className={`bold ${style.name}`}>
-              {`${data.profile.fname} ${data.profile.lname}, `}
-              {`${data.profile.region}, ${data.profile.municipality}`}
+              {this.renderUserTitle(data.profile)}
             </p>
             <p className={`bold ${style.members}`}>{`${data.members} ${getTranslation('MEMBERS')}`}</p>
           </div>
