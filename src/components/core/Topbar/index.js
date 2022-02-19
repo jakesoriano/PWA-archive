@@ -14,12 +14,12 @@ class Topbar extends Component {
 	  // eslint-disable-next-line react/destructuring-assignment
 	  return (
 	    <header id="topbar" className={style.topbar}>
-	      <div id="topbar_container" className={style.container}>
+	      <div id="tb-container" className={style.container}>
 					{/* Burger or Back */}
 					{!props.withBack ? (
 						<button
 							type="button"
-							id="topbar_burger"
+							id="tb-burger"
 							className={style.burger}
 							onClick={props.toggleSideBar}
 							aria-label="Toggle Sidebar"
@@ -32,7 +32,7 @@ class Topbar extends Component {
 					) : (
 						<button
 							type="button"
-							id="topbar_back"
+							id="tb-back"
 							className={style.btnBack}
 							onClick={(e) => {
 								e.stopPropagation();
@@ -55,12 +55,13 @@ class Topbar extends Component {
 						</button>
 					)}
 					{/* page title */}
-	        <h1 id="topbar_title" className={style.title}>
+	        <h1 id="tb-title" className={style.title}>
 	          {props.title && props.withBack ? getTranslation(props.title) : ''}
 	        </h1>
 					{/* notification */}
 					{!props.withBack && (
 						<Link
+							id="tb-notif"
 							class={style.notif}
 							activeClassName={style.active}
 							href="/notification"

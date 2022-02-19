@@ -102,7 +102,7 @@ class StoriesDashboard extends Component {
 								<div className={`${style.storiesWrap} ${style['i' + stories.data.length]}`}>
 									{stories.data.map((i) => (
 										<div className={style.storyItem}>
-											<div className={style.details} onClick={() => {
+											<div className={`story-item ${style.details}`} onClick={() => {
 												this.onClickStories(i)
 											}}>
 												<ImageLoader

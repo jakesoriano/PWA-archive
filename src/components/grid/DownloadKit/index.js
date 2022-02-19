@@ -41,7 +41,9 @@ class DownloadKit extends Component {
 		if (showDropdown) {
 			return (
 				<div className={style.selectDropdown}>
-					<a className={style.download} onClick={() => {
+					<a
+						id='download-campaign' 
+						className={style.download} onClick={() => {
 						this.onDownloadKit('http://bit.ly/LabanLeni22');
 					}}>
 						<div>
@@ -52,21 +54,27 @@ class DownloadKit extends Component {
 							<span>{getTranslation('DOWNLOAD_CAMPAIGN_KIT')}</span>
 						</div>
 					</a>
-					<a className={style.download} onClick={() => {
+					<a
+						id='download-conversion' 
+						className={style.download} onClick={() => {
 						this.onDownloadKit('http://bit.ly/bakitsileni');
 					}}>
 						<div>
 							<span>{getTranslation('DOWNLOAD_CONVERSTIONAL_KIT')}</span>
 						</div>
 					</a>
-					<a className={style.download} onClick={() => {
+					<a
+						id='download-volunteer' 
+						className={style.download} onClick={() => {
 						this.onDownloadKit('http://bit.ly/KKP_volunteer_toolkit');
 					}}>
 						<div>
 							<span>{getTranslation('DOWNLOAD_VOLUNTEER_KIT')}</span>
 						</div>
 					</a>
-					<a className={style.download} onClick={this.gotoVideos}>
+					<a
+						id='watch-tvideos' 
+						className={style.download} onClick={this.gotoVideos}>
 						<div>
 							{/* <ImageLoader
 								src="assets/images/icon_download.png"
@@ -83,7 +91,7 @@ class DownloadKit extends Component {
 	render = ({},{showDropdown}) => {
 		return (
 			<div className={style.downloadKit}>
-				<a className={style.download} onClick={this.clickDropdown}>
+				<a id="home-download-kit" className={style.download} onClick={this.clickDropdown}>
 					<div>
 						<ImageLoader
 							src="assets/images/icon_download.png"

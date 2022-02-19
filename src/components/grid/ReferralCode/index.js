@@ -29,7 +29,7 @@ class ReferralCode extends Component {
 		}
 
 		return (
-			<button className={style.referralCode} onClick={() => {
+			<button id="copy-referral-code" className={style.referralCode} onClick={() => {
 				this.copyText(authUser.profile.refCode);
 			}}>
 					<p className={`${style.text}`}>{getTranslation('REFERRAL_CODE')}:</p>

@@ -59,7 +59,7 @@ class LenipediaSearch extends Component {
           placeholder="PinkPedia"
           onInput={this.onFilterChange}
         />
-        <div onClick={this.handleSearch}>
+        <div id="lenipedia-search" onClick={this.handleSearch}>
           <ImageLoader
             src={'assets/images/magnifying_icon.png'}
             style={{container: style.searchIcon}}
