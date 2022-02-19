@@ -42,3 +42,4 @@ export { default as FeaturedCommunities } from './FeaturedCommunities';
 export { default as CommunityNavigation } from './CommunityNavigation';
 export { default as UpcomingEvents } from './UpcomingEvents';
 export { default as LenipediaSearch } from './LenipediaSearch';
+export { default as LeniPedia } from './LeniPedia';

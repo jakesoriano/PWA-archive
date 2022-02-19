@@ -5,9 +5,7 @@ import {
 	fetchNewsByCommunity,
 	fetchEventsByCommunityId,
 	fetchEvents,
-	fetchAnnouncements,
-	filterArticles,
-	fetchArticles } from '_mutations';
+	fetchAnnouncements } from '_mutations';
 import {
 	getTranslation,
 	dateEventFormat,
@@ -54,11 +52,7 @@ class NewsAndEvents extends Component {
 			} else if (i === 'news') {
 				fetchNews();
 			} else if (i === 'announcements') {
-				if (getCurrentUrl() === '/lenipedia') {
-					this.props.lpannouncements.filter ? filterArticles(this.props.lpannouncements.filter) : fetchArticles();
-				} else {
-					fetchAnnouncements();
-				}
+				fetchAnnouncements();
 			}
 		});
 	}
@@ -84,11 +78,7 @@ class NewsAndEvents extends Component {
       } else if (active === 'events') {
         getCurrentUrl() === '/community-details' ? fetchEventsByCommunityId(this.props.communityDetails.details.id, this.getSelectedTabContent().page + 1) : fetchEvents(this.getSelectedTabContent().page + 1);
       } else {
-        if (getCurrentUrl() === '/lenipedia') {
-					this.props.lpannouncements.filter ? filterArticles(this.props.lpannouncements.filter, this.getSelectedTabContent().page + 1) : fetchArticles(this.getSelectedTabContent().page + 1);
-				} else {
-					fetchAnnouncements(this.getSelectedTabContent().page + 1);
-				}
+				fetchAnnouncements(this.getSelectedTabContent().page + 1);
 			}
     }
   };
@@ -291,11 +281,9 @@ class NewsAndEvents extends Component {
 	getSelectedTabContent = () => {
 		if (getCurrentUrl() === '/community-details') {
 			return this.props[`c${this.state.active}`];
-		} else if (getCurrentUrl() === '/lenipedia') {
-			return this.props[`lp${this.state.active}`];
 		} else {
 			return this.props[this.state.active]
 		}
 	}
 }
-export default connect(['news', 'events', 'announcements', 'lpannouncements', 'authUser', 'cevents', 'cnews', 'communityDetails',])(NewsAndEvents);
+export default connect(['news', 'events', 'announcements', 'authUser', 'cevents', 'cnews', 'communityDetails',])(NewsAndEvents);

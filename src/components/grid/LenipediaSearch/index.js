@@ -3,7 +3,7 @@ import { getCurrentUrl, route } from 'preact-router';
 import { updateStore } from '_unistore';
 import { connect } from 'unistore/preact';
 import { ImageLoader } from '_components/core';
-import { fetchArticles, filterArticles } from '_mutations';
+import { fetchLenipedia, filterLenipedia } from '_mutations';
 import { getTranslation, displayPageLoader } from '_helpers';
 import style from './style';
 class LenipediaSearch extends Component {
@@ -32,12 +32,12 @@ class LenipediaSearch extends Component {
     if (getCurrentUrl() === '/lenipedia') {
       if (this.state.filter) {
         displayPageLoader(true);
-        filterArticles(this.state.filter).then(() => {
+        filterLenipedia(this.state.filter).then(() => {
           displayPageLoader(false);
         });
       } else {
         displayPageLoader(true);
-        fetchArticles().then(() => {
+        fetchLenipedia().then(() => {
           displayPageLoader(false);
         });
       }

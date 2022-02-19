@@ -1,7 +1,7 @@
 import { store, updateStore } from '_unistore';
 import { xhr, urlLeniPedia, urlLike, urlShare } from '_helpers';
 
-export function fetchArticles (page, limit) {
+export function fetchLenipedia (page, limit) {
 
   const { lpannouncements } = store.getState();
   
@@ -41,7 +41,7 @@ export function fetchArticles (page, limit) {
           result: true
         }
       });
-      console.log(`SPA >> fetchArticles Success`, res.success);
+      console.log(`SPA >> fetchLenipedia Success`, res.success);
       resolve(true);
     })
     .catch((err) => {
@@ -52,12 +52,12 @@ export function fetchArticles (page, limit) {
           result: false
         }
       });
-      console.log(`SPA >> fetchArticles Error`, err);
+      console.log(`SPA >> fetchLenipedia Error`, err);
       resolve(false);
     });
   });
 }
-export function filterArticles (filter, page, limit) {
+export function filterLenipedia (filter, page, limit) {
 
   const { lpannouncements } = store.getState();
   
@@ -98,7 +98,7 @@ export function filterArticles (filter, page, limit) {
           result: true
         }
       });
-      console.log(`SPA >> filterArticles Success`, res.success);
+      console.log(`SPA >> filterLenipedia Success`, res.success);
       resolve(true);
     })
     .catch((err) => {
@@ -109,12 +109,12 @@ export function filterArticles (filter, page, limit) {
           result: false
         }
       });
-      console.log(`SPA >> filterArticles Error`, err);
+      console.log(`SPA >> filterLenipedia Error`, err);
       resolve(false);
     });
   });
 }
-export function likeShareArticles (item, action, parentId, parentType) {
+export function likeShareLenipedia (item, action, parentId, parentType) {
   let { lpannouncements } = store.getState();
   const { authUser } = store.getState();
   const _url = action === 'liked' ? urlLike : urlShare
@@ -163,7 +163,7 @@ export function likeShareArticles (item, action, parentId, parentType) {
           fetching: false
         }
       });
-      console.log(`SPA >> likeShareArticles Success`, res);
+      console.log(`SPA >> likeShareLenipedia Success`, res);
       resolve(true);
     })
     .catch((err) => {
@@ -179,13 +179,13 @@ export function likeShareArticles (item, action, parentId, parentType) {
           fetching: false
         }
       });
-      console.log(`SPA >> likeShareArticles Error`, err);
+      console.log(`SPA >> likeShareLenipedia Error`, err);
       resolve(false);
     });
   });
 }
 
-export function removeLikeArticles (item, parentId, parentType) {
+export function removeLikeLenipedia (item, parentId, parentType) {
   let { lpannouncements } = store.getState();
   const { authUser } = store.getState();
   
@@ -231,7 +231,7 @@ export function removeLikeArticles (item, parentId, parentType) {
           fetching: false
         }
       });
-      console.log(`SPA >> removeLikeArticles Success`, res);
+      console.log(`SPA >> removeLikeLenipedia Success`, res);
       resolve(true);
     })
     .catch((err) => {
@@ -247,7 +247,7 @@ export function removeLikeArticles (item, parentId, parentType) {
           fetching: false
         }
       });
-      console.log(`SPA >> removeLikeArticles Error`, err);
+      console.log(`SPA >> removeLikeLenipedia Error`, err);
       resolve(false);
     });
   });
