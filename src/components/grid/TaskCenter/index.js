@@ -71,6 +71,7 @@ class TaskCenter extends Component {
 								success: true
 							});
 							this.setState({
+								isDisabled: true,
 								item: this.props.tasks.data.reduce((result, item) => {
 									if (!result || (!item.completed && result.completed)) {
 										return item;
