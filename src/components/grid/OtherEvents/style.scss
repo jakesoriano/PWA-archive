@@ -1,0 +1,51 @@
+@import '../../../style/variables.scss';
+.otherEventsEventsWrap {
+  margin: 15px;
+  .noRecord {
+    text-align: center;
+    padding: 10px;
+  }
+  .header {
+    display: flex;
+    width: 100%;
+    background: $primary_layout;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 8px 25px;
+    span {
+      text-transform: uppercase;
+    }
+  }
+  .body {
+    padding: 5px 15px;
+    * {
+      color: #737373;
+    }
+  }
+  .showMore {
+    text-align: right;
+    border: none;
+    background: none;
+    width: 100%;
+    padding: 10px;
+    span {
+      font-size: 0.7rem;
+      color: #737373;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      span {
+        color: #ff2cd7;
+      }
+    }
+  }
+  .loaderWrap {
+    display: block;
+    text-align: center;
+    > div div {
+      border: 4px solid #fff;
+      border-color: #ffb1bb transparent transparent transparent;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

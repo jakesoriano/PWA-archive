@@ -97,7 +97,7 @@ class FeaturedCommunities extends Component {
             <span className='bold'><span>&#8659;</span> {getTranslation('SHOW_ALL')}</span>
           </button>
         )}
-        { !this.props.communities.data.length && <p className={style.noRecord}>{getTranslation('NO_DATA')}</p> }
+        { !this.props.communities.data.length && this.props.communities.featured.length && <p className={style.noRecord}>{getTranslation('NO_DATA')}</p> }
       </div>
     )
   }

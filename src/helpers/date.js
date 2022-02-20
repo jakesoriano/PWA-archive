@@ -160,15 +160,6 @@ export const getMonthYear = (date) => {
 		return date;
 	}
 };
-export const convertEpochToDate = (epochTime) => {
-	try {
-		const d = new Date(0);
-		return new Date(d.setUTCSeconds(epochTime));
-	} catch (error) {
-		console.log('SPA >> Component dateEventFormat failed.', error);
-		return date;
-	}
-};
 export const getDayText = (date) => {
 	try {
 		const d = new Date(date);

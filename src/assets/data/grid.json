@@ -219,20 +219,7 @@
 		]
 	},
 	{
-		"styles": [
-			{
-				"selector": "#w2 > div:first-child > div > span",
-				"styles": "text-transform: uppercase; text-align: left; border-radius: 10px; padding-left: 25px;"
-			},
-			{
-				"selector": "#w2 > div:first-child > div",
-				"styles": "background-color: #fff;"
-			},
-			{
-				"selector": "#w2 > div:first-child",
-				"styles": "background-color: #fff;"
-			}
-		],
+		"styles": [],
 		"auth": true,
 		"pageTitle": "PAGE_COMMUNITY_EVENTS",
 		"uri": "community-events-v2",
@@ -242,11 +229,7 @@
 				"component": "UpcomingEvents"
 			},
 			{
-				"component": "NewsAndEvents",
-				"props": {
-					"hiddenTabs": ["announcements", "news"],
-					"tabTitle": {"events": "OTHER_EVENTS"}
-				}
+				"component": "OtherEvents"
 			}
 		]
 	},

@@ -13,7 +13,6 @@ export const urlRegister = urlRegistration + `/register`;
 export const urlResendOTP = urlRegistration + `/resend-otp`;
 export const urlNews = `${process.env.API_DOMAIN}news`;
 export const urlEvents = `${process.env.API_DOMAIN}events`;
-export const urlUpcomingEvents = `{PUBLIC_PATH}assets/data/upevents.json?_{_}`;
 export const urlMembers = `${process.env.API_DOMAIN}user/members`;
 export const urlInvited = `${process.env.API_DOMAIN}invitation`;
 export const urlLike = urlUser + `/like`;

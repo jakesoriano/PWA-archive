@@ -7,7 +7,7 @@ class CommunityNavigation extends Component {
   render = () => (
     <div className={style.communityNavigationWrap}>
       <div className={`${style.navBox} ${style.events}`}>
-        <div id="community-events" onClick={() => route('community-events')}>
+        <div id="community-events" onClick={() => route('community-events-v2')}>
           <ImageLoader
             src={'assets/icons/community_events_icon.png' || getDefaultAvatar()}
             style={{ container: style.icon }}
