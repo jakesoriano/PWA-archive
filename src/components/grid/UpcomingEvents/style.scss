@@ -18,6 +18,9 @@
   }
   .body {
     padding: 5px 15px;
+    * {
+      color: #737373;
+    }
     .title {
       color: $primary_layout;
       text-transform: uppercase;
@@ -53,9 +56,16 @@
       }
       .events {
         flex-grow: 1;
-        * {
-          color: #737373;
-        }
+      }
+    }
+    .loaderWrap {
+      display: block;
+      text-align: center;
+      > div div {
+        border: 4px solid #fff;
+        border-color: #ffb1bb transparent transparent transparent;
+        width: 30px;
+        height: 30px;
       }
     }
   }

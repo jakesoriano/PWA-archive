@@ -1,11 +1,10 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { EventsList } from '_components/core';
-import { fetchUpcomingEvents } from '_mutations';
+import { EventsList, LoaderRing } from '_components/core';
+import { fetchUpcomingOtherEvents } from '_mutations';
 import {
 	getTranslation,
 	getMonthYear,
-	convertEpochToDate,
 	getDayText,
 } from '_helpers';
 import style from './style';
@@ -14,13 +13,14 @@ class UpcomingEvents extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			grouped: [],
+			grouped: null,
+			moreFetching: false
 		};
 	}
 	componentDidMount = () => {
-		fetchUpcomingEvents().then(() => {
+		fetchUpcomingOtherEvents('current_month').then(() => {
 			const { data } = this.props.upevents;
-			let groupsByDate = data.reduce((arr, item) => {
+			let groupsByDate = data.sort((a, b) => new Date(b.date) - new Date(a.date)).reduce((arr, item) => {
 				// group data by date
 				arr[item.date] = arr[item.date] || [];
 				arr[item.date].push(item);
@@ -29,6 +29,7 @@ class UpcomingEvents extends Component {
 			this.setState({
 				grouped: groupsByDate,
 			});
+			fetchUpcomingOtherEvents('outside_current_month', 1, 6);
 		});
 	};
 	render = (props, state) => {
@@ -41,9 +42,9 @@ class UpcomingEvents extends Component {
 					<p className={`extraBold ${style.title}`}>
 						{getMonthYear(new Date())}
 					</p>
-					{Object.keys(state.grouped).length &&
+					{state.grouped && Object.keys(state.grouped).length &&
 						Object.keys(state.grouped).map((key) => {
-							const date = convertEpochToDate(key);
+							const date = new Date(state.grouped[key].filter((item) => key.toString() === item.date.toString())[0].date);
 							return (
 								<div className={style.item}>
 									<div className={style.box}>
@@ -60,7 +61,10 @@ class UpcomingEvents extends Component {
 								</div>
 							);
 						})}
-					{!Object.keys(state.grouped).length && (
+					{props.upevents.fetching && (
+						<LoaderRing styles={{container: style.loaderWrap}}/>
+					)}
+					{!props.upevents.fetching && state.grouped && !Object.keys(state.grouped).length && (
 						<p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
 					)}
 				</div>

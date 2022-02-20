@@ -1,5 +1,5 @@
 import { store, updateStore } from '_unistore';
-import { xhr, urlEvents, urlShare, urlTag, urlUpcomingEvents } from '_helpers';
+import { xhr, urlEvents, urlShare, urlTag } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
 export function fetchEvents(page, limit) {
@@ -56,50 +56,93 @@ export function fetchEvents(page, limit) {
 			});
 	});
 }
-export function fetchUpcomingEvents(page, limit) {
-	const { upevents } = store.getState();
+export function fetchUpcomingOtherEvents(view, page, limit) {
+	const { upevents, oevents } = store.getState();
 
 	// fetching
-	if (upevents.fetching) {
+	if (upevents.fetching || oevents.fetching) {
 		return;
 	}
 
 	// initial state
-	updateStore({
-		upevents: {
-			...upevents,
-			fetching: true,
-			result: false,
-		},
-	});
+	if (view === 'current_month') {
+		updateStore({
+			upevents: {
+				...upevents,
+				fetching: true,
+				result: false,
+			},
+		});
+	} else {
+		updateStore({
+			oevents: {
+				...oevents,
+				fetching: true,
+				result: false,
+			},
+		});
+	}
 
 	return new Promise((resolve) => {
-		xhr(urlUpcomingEvents)
+		xhr(`${urlEvents}/feed/followed`,{
+			method: 'GET',
+			params: {
+				s: limit || '50',
+				p: page || '1',
+				view: view
+			}
+		})
 			.then((res) => {
-				updateStore({
-					upevents: {
-						data:
-							page && page > 1
-								? [...upevents.data, ...res.data.results]
-								: res.data.results,
-						total: res.data.total,
-						page: page || 1,
-						fetching: false,
-						result: true,
-					},
-				});
-				console.log(`SPA >> fetchUpcomingEvents Success`, res.success);
+				console.log(res)
+				if (view === 'current_month') {
+					updateStore({
+						upevents: {
+							data:
+								page && page > 1
+									? [...upevents.data, ...res.data.results]
+									: res.data.results,
+							total: res.data.total,
+							page: page || 1,
+							fetching: false,
+							result: true,
+						},
+					});
+				} else {
+					updateStore({
+						oevents: {
+							data:
+								page && page > 1
+									? [...oevents.data, ...res.data.results]
+									: res.data.results,
+							total: res.data.total,
+							page: page || 1,
+							fetching: false,
+							result: true,
+						},
+					});
+					console.log(`SPA >> fetchUpcomingOtherEvents Success`, res.success);
+				}
 				resolve(res);
 			})
 			.catch((err) => {
-				updateStore({
-					upevents: {
-						...upevents,
-						fetching: false,
-						result: false,
-					},
-				});
-				console.log(`SPA >> fetchUpcomingEvents Error`, err);
+				if (view === 'current_month') {
+					updateStore({
+						upevents: {
+							...upevents,
+							fetching: false,
+							result: false,
+						},
+					});
+				} else {
+					updateStore({
+						oevents: {
+							...oevents,
+							fetching: false,
+							result: false,
+						},
+					});
+				}
+				console.log(`SPA >> fetchUpcomingOtherEvents Error`, err);
 				resolve(false);
 			});
 	});
