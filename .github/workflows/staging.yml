@@ -54,7 +54,7 @@ jobs:
       - name: Update App Version
         run: |
           curl --request GET \
-          --header 'admin-key: ${{ secrets.STG_ADMIN_KEY }}' \
+          --header 'admin-key: "${{ secrets.STG_ADMIN_KEY }}"' \
           --header 'content-type: application/json' \
           --url $API_DOMAIN/admin/appVersion/1.7.${{ github.run_number }}
       
