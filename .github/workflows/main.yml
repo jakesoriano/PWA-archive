@@ -40,9 +40,9 @@ jobs:
       - run: npm install
       - run: rm -rf build
       - run: npm run build-all
-      - run: aws configure set aws_access_key_id ${{ $AWS_KEY }}
-      - run: aws configure set aws_secret_access_key ${{ $AWS_SECRET }}
+      - run: aws configure set aws_access_key_id $AWS_KEY
+      - run: aws configure set aws_secret_access_key $AWS_SECRET
       - run: aws configure set default.region ap-northeast-1
-      - run: aws s3 sync ./build s3://{UAT_BUCKET} --acl public-read-write 
+      - run: aws s3 sync ./build s3://$UAT_BUCKET --acl public-read-write 
       - run: cd && rm -r .aws
 
