@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: 14
       - run: npm config set registry http://registry.npmjs.org/
-      - run: npm install --production=false
+      - run: npm install --production=true
       - run: echo "APP_ENV_PROJECT=Leni2022" >> .env
       - run: echo "APP_ENV_PLATFORM=$PLATFORM" >> .env
       - run: echo "APP_ENV_PREFIX=$PREFIX" >> .env
