@@ -14,7 +14,7 @@
     "dev": "preact watch",
     "lint": "eslint src",
     "test": "jest",
-    "build-all": "preact build --dest build/android --preload && preact build --dest build/ios --preload",
+    "build-all": "preact build --dest build/android --preload && preact build --dest build/ios --preload && preact build --dest build/web --preload",
     "web-redirection": "node jobs/web-redirection",
     "pwa-config": "node jobs/pwa-config.js"
   },

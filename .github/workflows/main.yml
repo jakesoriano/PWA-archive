@@ -39,7 +39,8 @@ jobs:
       - run: cat .env
       - run: npm install
       - run: rm -rf build
-      - run: npm run build-all
+      - run: npm run build:android
+      - run: npm run build:ios
       - run: aws configure set aws_access_key_id $AWS_KEY
       - run: aws configure set aws_secret_access_key $AWS_SECRET
       - run: aws configure set default.region ap-northeast-1
