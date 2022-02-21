@@ -31,8 +31,9 @@
     .announcementWindow {
       position: relative;
       width: 100%;
-      .announcementWrap {
-        &.rows {
+      &.rows {
+        overflow: scroll;
+        .announcementWrap {
           display: flex;
           width: 100%;
           &.i2 {
@@ -42,6 +43,8 @@
             width: 270%;
           }
         }
+      }
+      .announcementWrap {
         .item {
           width: 100%;
           padding: 10px 10px;
@@ -95,6 +98,7 @@
           }
           .detailDescription {
             font-size: 0.75rem;
+            word-break: break-word; 
             span {
               float: right;
               color:  $primary;
@@ -181,6 +185,7 @@
       .pTitle{
         font-size: 0.8rem;
         color: $primary_layout;
+        word-break: break-word; 
       }
       .pLink{
         font-size: 0.6rem;

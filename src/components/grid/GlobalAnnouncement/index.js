@@ -136,9 +136,9 @@ class GlobalAnnouncement extends Component {
 			announcements_ = announcements_.slice(0,displayLimit);
 		}
 		return (
-			<div className={style.announcementWindow}>
+			<div className={`${style.announcementWindow} ${this.props.isDisplayFlex ? style.rows : ''} `}>
 				{announcements_.length > 0 ? (
-					<div className={`${style.announcementWrap} ${this.props.isDisplayFlex ? style.rows : ''} ${style['i' + announcements_.length]}`}>
+					<div className={`${style.announcementWrap} ${style['i' + announcements_.length]}`}>
 						{announcements_.map((i) => (
 							<div className={style.item}>
 								<div id="global-announcement-item" className={style.details} onClick={() => {
