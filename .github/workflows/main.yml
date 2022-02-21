@@ -46,11 +46,11 @@ jobs:
       - run: echo $AWS_SECRET
       - run: echo $UAT_BUCKET
       - name: Configure AWS Credentials
-       uses: aws-actions/configure-aws-credentials@v1
-       with:
-         aws-access-key-id: ${{ secrets.AWS_KEY }}
-         aws-secret-access-key: ${{ secrets.AWS_SECRET }}
-         aws-region: us-east-1
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET }}
+          aws-region: us-east-1
       # - run: aws configure set aws_access_key_id $AWS_KEY
       # - run: aws configure set aws_secret_access_key $AWS_SECRET
       # - run: aws configure set default.region ap-northeast-1
