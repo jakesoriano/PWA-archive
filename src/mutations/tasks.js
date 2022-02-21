@@ -42,7 +42,7 @@ export function fetchTasks () {
   const { tasks } = store.getState();
 
   // check data once a day only
-  const currentDate = Date.now();
+  // const currentDate = Date.now();
   // if (tasks.data && tasks.date && currentDate < tasks.date) {
   if (tasks.fetching) {
     return;
@@ -82,6 +82,7 @@ export function fetchTasks () {
           }
         });
       }
+      return true;
     })
     .catch(() => {
       updateStore({
@@ -91,6 +92,7 @@ export function fetchTasks () {
           result: false
         }
       });
+      return false;
     });
 }
 
@@ -120,13 +122,13 @@ export function validateTask (id, token) {
               completed: !Boolean(newData.find(i => i.completed !== true))
             }
           });
-          resolve(1);
+          return 1;
         } else {
-          resolve(0);
+          return 0;
         }
       })
       .catch((err) => {
-        resolve(-1);
+        return -1;
       });
   });
 }

@@ -74,7 +74,6 @@ class SideBar extends Component {
 							<Link id="sm-settings" href={`/settings`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('SETTINGS')}</Link>
 						)}
 						<Link id="sm-wherehertolisten" href={`/contactus`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('WHERE_HERE_TO_LISTEN')}</Link>
-						<Link id="sm-tasks" href={`/task-center`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('TASK_CENTER')}</Link>
 						{/* <Link id="sm-myprofile" href="/home" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PROTECT_LENI')}</Link> */}
 						<Link id="sm-logout" href={`/`} className={style.sMItem} onClick={(e) => {
 							logOut();

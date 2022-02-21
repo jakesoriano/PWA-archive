@@ -129,7 +129,7 @@ class Grid extends Component {
 	};
 
 	componentDidMount = () => {
-		const { selectedLanguage, authUser } = this.props;
+		const { selectedLanguage } = this.props;
 		let langAlias = getLanguageAlias(
 			getQueryStringValue('lang') || getCookie('language')
 		);

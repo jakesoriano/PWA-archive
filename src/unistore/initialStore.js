@@ -133,14 +133,6 @@ export const initialStore = {
     featured: null,
     filter: {}
   },
-  videos: {
-    fetching: false,
-    result: false,
-    data: [],
-    total: 0,
-    page: 1,
-    selected: null
-  },
   // user
   authUser: null,
   deviceId: null,
