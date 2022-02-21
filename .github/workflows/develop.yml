@@ -9,7 +9,7 @@ on:
     workflow_dispatch:
 
 jobs:
-  deploy_dev:
+  deploy:
     runs-on: ubuntu-latest
     env:
       API_DOMAIN: https://n0k58tc0x4.execute-api.ap-southeast-1.amazonaws.com/develop/

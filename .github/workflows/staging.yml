@@ -9,7 +9,7 @@ on:
     workflow_dispatch:
 
 jobs:
-  deploy_stg:
+  deploy:
     runs-on: ubuntu-latest
     env:
       API_DOMAIN: https://7oquizbc8g.execute-api.ap-southeast-1.amazonaws.com/staging/

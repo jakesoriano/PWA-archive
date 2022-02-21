@@ -9,7 +9,7 @@ on:
     workflow_dispatch:
 
 jobs:
-  deploy_prod:
+  deploy:
     runs-on: ubuntu-latest
     env:
       API_DOMAIN: https://1vh9c7kivh.execute-api.ap-southeast-1.amazonaws.com/production/
