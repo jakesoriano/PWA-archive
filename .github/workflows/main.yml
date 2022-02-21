@@ -42,6 +42,9 @@ jobs:
       - run: rm -rf build
       - run: npm run build:android
       - run: npm run build:ios
+      - run: echo $AWS_KEY
+      - run: echo $AWS_SECRET
+      - run: echo $UAT_BUCKET
       - name: Configure AWS Credentials
        uses: aws-actions/configure-aws-credentials@v1
        with:
