@@ -1,22 +1,22 @@
 
-name: Staging
+name: Production
 on:
     push:
-      branches: [ staging ]
+      branches: [ master ]
     pull_request:
-      branches: [ staging ]
+      branches: [ master ]
 
     workflow_dispatch:
 
 jobs:
-  deploy_stg:
+  deploy_prod:
     runs-on: ubuntu-latest
     env:
-      API_DOMAIN: https://7oquizbc8g.execute-api.ap-southeast-1.amazonaws.com/staging/
-      CDN_DOMAIN: https://d2ecox8kjhkvbt.cloudfront.net/uploads/
+      API_DOMAIN: https://1vh9c7kivh.execute-api.ap-southeast-1.amazonaws.com/production/
+      CDN_DOMAIN: https://d2vjy6bhj0z1t0.cloudfront.net/uploads/
       PLATFORM: android
       PREFIX: kkp
-      ENVIRONMENT: STG
+      ENVIRONMENT: PROD
   
     steps:
       - uses: actions/checkout@v2
