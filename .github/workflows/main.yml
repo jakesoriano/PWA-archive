@@ -20,6 +20,7 @@ jobs:
   
     steps:
       - uses: actions/checkout@v2
+      
       - name: Use Node.js 14
         uses: actions/setup-node@v1
         with:
@@ -41,9 +42,16 @@ jobs:
       - run: rm -rf build
       - run: npm run build:android
       - run: npm run build:ios
-      - run: aws configure set aws_access_key_id $AWS_KEY
-      - run: aws configure set aws_secret_access_key $AWS_SECRET
-      - run: aws configure set default.region ap-northeast-1
-      - run: aws s3 sync ./build s3://$UAT_BUCKET --acl public-read-write 
+      - name: Configure AWS Credentials
+       uses: aws-actions/configure-aws-credentials@v1
+       with:
+         aws-access-key-id: ${{ secrets.AWS_KEY }}
+         aws-secret-access-key: ${{ secrets.AWS_SECRET }}
+         aws-region: us-east-1
+      # - run: aws configure set aws_access_key_id $AWS_KEY
+      # - run: aws configure set aws_secret_access_key $AWS_SECRET
+      # - run: aws configure set default.region ap-northeast-1
+      - name: Deploy to S3
+      - run: aws s3 sync ./build s3://${{ secrets.UAT_BUCKET }} --acl public-read-write 
       - run: cd && rm -r .aws
 
