@@ -24,6 +24,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14
+          cache: npm
       - run: npm config set registry http://registry.npmjs.org/
       - run: npm install --production=true
       - run: echo "APP_ENV_PROJECT=Leni2022" >> .env
