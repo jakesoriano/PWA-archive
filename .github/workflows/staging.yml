@@ -42,18 +42,27 @@ jobs:
       - run: rm -rf build
       - run: npm run build:android
       - run: npm run build:ios
+      
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET }}
           aws-region: us-east-1
-      - run: aws s3 sync ./build s3://${{ secrets.UAT_BUCKET }} --acl public-read-write 
+      - run: aws s3 sync ./build s3://${{ secrets.UAT_BUCKET }} --acl public-read-write
+      
+      - name: Update App Version
+        run: |
+          curl --request GET \
+          --header 'admin-key: ${{ secrets.STG_ADMIN_KEY }}' \
+          --header 'content-type: application/json' \
+          --url $API_DOMAIN/admin/appVersion/1.7.${{ github.run_number }}
+      
       - name: Invalidate CloudFront
         uses: chetan/invalidate-cloudfront-action@v2
         env:
           DISTRIBUTION: ${{ secrets.STG_DISTRIBUTION }}
-          PATHS: "/android/index.html /android/assets/* /ios/index.html /ios/assets/*"
+          PATHS: "/android/index.html /android/assets/* /ios/index.html /ios/assets/* /uploads/appConfig.json"
           AWS_REGION: "us-east-1"
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
