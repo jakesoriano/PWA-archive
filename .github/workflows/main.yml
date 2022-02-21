@@ -28,23 +28,23 @@ jobs:
           node-version: 14
 
       - name: Set .env
-        run: echo "APP_ENV_PROJECT=Leni2022" >> .env
-        run: echo "APP_ENV_PLATFORM=$PLATFORM" >> .env
-        run: echo "APP_ENV_PREFIX=$PREFIX" >> .env
-        run: echo "APP_ENV_PUBLIC_PATH=" >> .env
-        run: echo "APP_ENV_BUILD_NO=1.0.$CI_JOB_ID" >> .env
-        run: echo "APP_ENV_COOKIE_TIME_LIMIT=14" >> .env
-        run: echo "APP_ENV_API_DOMAIN=$API_DOMAIN" >> .env
-        run: echo "APP_ENV_CDN_DOMAIN=$CDN_DOMAIN" >> .env
-        run: echo "APP_ENV_ENVIRONMENT=$ENVIRONMENT" >> .env
-        run: echo "APP_ENV_STAGE=$CI_COMMIT_REF_NAME" >> .env
-        run: cat .env
+      - run: echo "APP_ENV_PROJECT=Leni2022" >> .env
+      - run: echo "APP_ENV_PLATFORM=$PLATFORM" >> .env
+      - run: echo "APP_ENV_PREFIX=$PREFIX" >> .env
+      - run: echo "APP_ENV_PUBLIC_PATH=" >> .env
+      - run: echo "APP_ENV_BUILD_NO=1.0.$CI_JOB_ID" >> .env
+      - run: echo "APP_ENV_COOKIE_TIME_LIMIT=14" >> .env
+      - run: echo "APP_ENV_API_DOMAIN=$API_DOMAIN" >> .env
+      - run: echo "APP_ENV_CDN_DOMAIN=$CDN_DOMAIN" >> .env
+      - run: echo "APP_ENV_ENVIRONMENT=$ENVIRONMENT" >> .env
+      - run: echo "APP_ENV_STAGE=$CI_COMMIT_REF_NAME" >> .env
+      - run: cat .env
 
       - name: Install dependencies
-        run: npm config set registry http://registry.npmjs.org/
-        run: npm install --production=false
+      - run: npm config set registry http://registry.npmjs.org/
+      - run: npm install --production=false
       
       - name: Build
-        run: rm -rf build
-        run: npm run build-all
+      - run: rm -rf build
+      - run: npm run build-all
 
