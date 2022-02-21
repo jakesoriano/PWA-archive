@@ -30,7 +30,7 @@ jobs:
       - run: echo "APP_ENV_PLATFORM=$PLATFORM" >> .env
       - run: echo "APP_ENV_PREFIX=$PREFIX" >> .env
       - run: echo "APP_ENV_PUBLIC_PATH=" >> .env
-      - run: echo "APP_ENV_BUILD_NO=1.0.$CI_JOB_ID" >> .env
+      - run: echo "APP_ENV_BUILD_NO=1.0.${{ steps.buildnumber.outputs.build_number }}" >> .env
       - run: echo "APP_ENV_COOKIE_TIME_LIMIT=14" >> .env
       - run: echo "APP_ENV_API_DOMAIN=$API_DOMAIN" >> .env
       - run: echo "APP_ENV_CDN_DOMAIN=$CDN_DOMAIN" >> .env
@@ -41,9 +41,6 @@ jobs:
       - run: rm -rf build
       - run: npm run build:android
       - run: npm run build:ios
-      - run: echo $AWS_KEY
-      - run: echo $AWS_SECRET
-      - run: echo $UAT_BUCKET
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -51,5 +48,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET }}
           aws-region: us-east-1
       - run: aws s3 sync ./build s3://${{ secrets.UAT_BUCKET }} --acl public-read-write 
-      - run: cd && rm -r .aws
 
