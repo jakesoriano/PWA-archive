@@ -1,0 +1,81 @@
+@import '../../../style/variables.scss';
+.contentContainer {
+	height: 100%;
+	width: 100%;
+}
+
+.contentOutside {
+	height: 100%;
+	width: 100%;
+	opacity: 0.5;
+	z-index: 4;
+	position: absolute;
+	top: 0;
+}
+
+.comsAndKit {
+	position: absolute;
+	bottom: -120%;
+	max-height: calc(100% - 10px);
+	overflow: scroll;
+	left: 0;
+	width: 100%;
+	z-index: 4;
+	text-align: left;
+	.communities {
+		width: 100%;
+		height: 100%;
+		background: rgb(255, 177, 187);
+		background: linear-gradient(180deg, #b32774 50%, #c1789f 100%);
+		.title {
+			margin: 0 15px 10px;
+		}
+		.community {
+			background: $primary_layout;
+			margin-bottom: 10px;
+			padding: 15px;
+			display: flex;
+			align-items: center;
+			&Content {
+				margin-left: 5px;
+				text-align: left;
+				font-size: 0.65rem;
+				h4 {
+					font-size: 1.2rem;
+					line-height: 18px;
+					margin: 0;
+					text-transform: uppercase;
+				}
+				p {
+					color: $gray;
+				}
+			}
+		}
+		.signUpBtn {
+			max-width: 300px;
+			margin: 20px auto 50px;
+		}
+	}
+	.landingImg {
+		width: 150px;
+		height: 100%;
+		overflow: hidden;
+		padding: 0;
+		border-radius: 50%;
+		img {
+			position: relative;
+		}
+	}
+	.kitImage {
+		width: 100%;
+		height: auto;
+		padding: 0 15px;
+		img {
+			position: relative;
+		}
+	}
+}
+.comsAndKit.toggled {
+	top: 0;
+	margin-top: 90px;
+}
