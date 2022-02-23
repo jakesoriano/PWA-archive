@@ -542,7 +542,7 @@ class PostContent extends Component {
 							className={style.date}
 							style={{error: style.date}}
 							value={this.state.date.value}
-							type="date"
+							type="datetime-local"
 							onBlur={(e) => {
 								this.onDateChange(e.target.value)
 							}}
