@@ -19,17 +19,21 @@ function taskNotification(data) {
     const cookieKey = 'pt';
     const hasCookie = parseInt(getCookie(cookieKey) || '0');
     const pendingTask = data.find(i => i.completed !== true);
-    if (pendingTask && !hasCookie && !storeData) {
+    if (pendingTask && !hasCookie) {
       const expDate = Date.now() + ((1000 * 60) * getConfigByKey('taskNotifInterval'));
       setCookieWithExpiration(cookieKey, 1, expDate);
-      circleModal({
+      const data = {
         title: getTranslation('TASKS_NOTIF_TITLE'),
         content: getTranslation('TASKS_NOTIF_CONTENT'),
         link: {
           url: '/task-center',
           text: getTranslation('TASKS_NOTIF_LINK')
         }
-      });
+      };
+      circleModal(storeData ? {
+        ...storeData,
+        next: data
+      } : data);
     }
   } catch(err) {
     console.error('taskNotification', err);

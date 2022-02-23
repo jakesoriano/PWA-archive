@@ -18,6 +18,10 @@ class LenipediaSearch extends Component {
     this.timer = setTimeout(() => {
       this.setState({
         filter: e.target.value
+      }, () => {
+        if (getCurrentUrl() === '/lenipedia') {
+          this.handleSearch();
+        }
       })
     }, 500);
   }

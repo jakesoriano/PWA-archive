@@ -5,7 +5,7 @@ import { Link } from 'preact-router/match';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
-export default ({ headerIcon, title, content, code, callback, link }) => (
+export default ({ headerIcon, title, content, code, callback, link, next }) => (
   // eslint-disable-next-line react/jsx-no-bind
   <div id="modal" className={style.circleModal}>
     <div className={style.modalContentWrap}>
@@ -23,6 +23,11 @@ export default ({ headerIcon, title, content, code, callback, link }) => (
           {/* x button */}
           <button className="cancel" onClick={() => {
             circleModal(null);
+            if (next) {
+              setTimeout(() => {
+                circleModal(next);
+              }, 300);
+            }
             if (callback) {
               callback();
             }
@@ -39,6 +44,11 @@ export default ({ headerIcon, title, content, code, callback, link }) => (
           {code && <span className={`extraBold ${style.code}`}>{code}</span>}
           {link && <Link href={link.url} onClick={() => {
             circleModal(null);
+            if (next) {
+              setTimeout(() => {
+                circleModal(next);
+              }, 300);
+            }
           }} className={`extraBold ${style.link}`}>{link.text}</Link>}
         </div>
       </div>
