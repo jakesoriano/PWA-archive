@@ -10,7 +10,7 @@ import {
 } from '_components/core';
 import { getTranslation } from '_helpers';
 import { fetchAppLandingConfig } from '../../../mutations/appLandingConfig';
-import CommunitiesAndKit from '../CommunitiesAndKit';
+import CommunitiesAndKit from '../../core/CommunitiesAndKit';
 import supportIcon from '../../../assets/icons/support_icon.png';
 import style from './style';
 
