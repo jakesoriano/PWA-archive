@@ -7,6 +7,7 @@ import {
 	Login,
 } from '_components/core';
 import { getTranslation } from '_helpers';
+import supportIcon from '../../../assets/icons/support_icon.png';
 import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -56,6 +57,14 @@ class LandingPage extends Component {
 								text={getTranslation('SIGNUP_BUTTON')}
 								bottomDescription=""
 							/>
+              <a
+                className={style.supportIcon}
+                href="https://m.me/leni2022app"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={supportIcon} alt="support icon" />
+              </a>
 						</div>
 					</div>
 				</div>

@@ -1,38 +1,59 @@
 @import '../../../style/variables.scss';
 .landingPage {
-    text-align: center;
-    width: 100%;
-    height: 100%;
-	background: rgb(255,177,187);
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	background: rgb(255, 177, 187);
 	background: linear-gradient(180deg, #b32774 0%, #c1789f 100%);
-    .contentWrap {
-        position: relative;
-        height: 100vh;
-        .leniLogo {
-            width: 100%;
-            overflow: auto;
-            .landingImg {
-                width: calc(100% - 30px);
-                margin: 130px auto 0;
-                height: auto;
-                overflow: hidden;
-                max-width: 450px;
-                padding: 0;
-                background: transparent;
-                border-radius: 50%;
-                border: 20px solid $secondary;
-                img {
-                    position: relative;
-                }
-            }
-        }
-        .signInUpBtnWrap {
-            max-width: 300px;
-            margin: 50px auto 0;
-            overflow: auto;
-            p {
-                margin: 10% 0 0px;
-            }
-        }
-    }
+	.contentWrap {
+		position: relative;
+		height: 100vh;
+		.leniLogo {
+			width: 100%;
+			overflow: auto;
+			.landingImg {
+				width: calc(100% - 30px);
+				margin: 130px auto 0;
+				height: auto;
+				overflow: hidden;
+				max-width: 450px;
+				padding: 0;
+				background: transparent;
+				border-radius: 50%;
+				border: 20px solid $secondary;
+				img {
+					position: relative;
+				}
+			}
+		}
+		.signInUpBtnWrap {
+			max-width: 300px;
+			margin: 50px auto 0;
+			overflow: auto;
+			p {
+				margin: 10% 0 0px;
+			}
+			.supportIcon {
+				position: absolute;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				z-index: 1;
+				right: 10px;
+				top: 175px;
+				border-radius: 50px;
+				padding: 0;
+				width: 60px;
+				height: 60px;
+				background-color: #ffffff;
+				-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+				-moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+				box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+				img {
+					height: 60%;
+					width: auto;
+				}
+			}
+		}
+	}
 }
