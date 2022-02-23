@@ -18,3 +18,4 @@ export * from './category';
 export * from './user';
 export * from './contentTypes';
 export * from './file';
+export * from './storage';
