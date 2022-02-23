@@ -62,6 +62,7 @@
     "preact": "^10.5.13",
     "preact-render-to-string": "^5.1.19",
     "preact-router": "^3.2.1",
+    "react-responsive-carousel": "^3.2.22",
     "unistore": "^3.5.2"
   },
   "jest": {

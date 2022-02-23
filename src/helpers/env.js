@@ -39,4 +39,5 @@ export const urlCommunityLeader = urlCommunity + `/leader`;
 export const urlValidateTask = urlUser + `/tasks/validate/{id}`;
 export const urlLeaderboard = `${process.env.API_DOMAIN}leaderboard`;
 export const urlVideos = urlUser + `/videos`;
+export const urlAppLandingConfig = `https://mobile-kkp-staging.s3.ap-southeast-1.amazonaws.com/uploads/appLandingConfig.json`;
 export const urlLeniPedia = `${process.env.API_DOMAIN}lenipedia`;

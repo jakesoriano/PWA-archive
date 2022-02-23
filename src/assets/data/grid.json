@@ -39,6 +39,29 @@
 	},
 	{
 		"styles": [],
+		"pageTitle": "PAGE_DATA_PRIVACY",
+		"uri": "landing-data-privacy",
+		"contents": [
+			{
+				"component": "DataPrivacy",
+				"props": {
+					"fromLandingPage": true
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"pageTitle": "KAYA_NATIN",
+		"uri": "about-kaya-natin",
+		"contents": [
+			{
+				"component": "AboutKayaNatin"
+			}
+		]
+	},
+	{
+		"styles": [],
 		"pageTitle": "PAGE_SIGNUP",
 		"uri": "signup",
 		"contents": [
