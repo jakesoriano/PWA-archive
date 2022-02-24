@@ -92,6 +92,7 @@ class TaskCenter extends Component {
 						}
 					})
 					.catch(err => {
+						displayPageLoader(false);
 						showAlertBox({
 							message: getTranslation('SOMETHING_WRONG')
 						});

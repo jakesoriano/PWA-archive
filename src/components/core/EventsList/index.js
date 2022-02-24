@@ -27,7 +27,7 @@ class EventsList extends Component {
 
 	onClickInterested = (item) => {
 		this.setState({
-			eventDropdown: null,
+      eventDropdown: null,
 		}, () => {
       this.setState({
         eventDropdown: {
@@ -65,7 +65,7 @@ class EventsList extends Component {
 					className={`${eventDropdown.tagged === 'INTERSTED'} ${style.selectEventDropdown} ${isLastItem ? style.lastItem : ''}`}>
 					{eventTags.map(tag => (
 						<a
-							className={`event-tag-${tag.toLocaleLowerCase().replace(/_/g, '-')} ${eventDropdown.tagged === tag ? 'extraBold' : ''}`}
+              className={`event-tag-${tag.toLocaleLowerCase().replace(/_/g, '-')} ${eventDropdown.tagged === tag ? 'extraBold' : ''}`}
 							onClick={() => {
 								this.onSelectEventTag(tag, item)
 							}}>
