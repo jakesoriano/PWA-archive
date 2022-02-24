@@ -46,3 +46,4 @@ export { default as LenipediaSearch } from './LenipediaSearch';
 export { default as LeniPedia } from './LeniPedia';
 export { default as CommunityManagement } from './CommunityManagement';
 export { default as OtherEvents } from './OtherEvents';
+export { default as EditProfile } from './EditProfile';
