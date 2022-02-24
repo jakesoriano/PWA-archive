@@ -37,7 +37,10 @@ class Articles extends Component {
 							</a> }
 						<a
 							className={`${this.props.dataType || 'article'}-share ${i.shared ? `extraBold ${style.buttonShareActive}` : ''}`}
-							onClick={() => { this.props.onShareCallback(i) }}>
+							onClick={(e) => {
+								e.stopPropagation();
+								this.props.onShareCallback(i);
+							}}>
 								<ImageLoader
 								src={!i.shared ? 'assets/images/share_icon_lite.png' : 'assets/images/share_icon_dark.png'}
 								style={{container: style.likeButton}}/>
