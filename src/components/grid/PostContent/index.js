@@ -15,6 +15,10 @@ class PostContent extends Component {
 		super(props);
 		this.initialState = {
 			contentTypeOptions: getContentTypes(),
+			isOnlineOptions: [
+				{value: 'yes', text: 'YES'},
+				{value: 'no', text: 'NO'}
+			],
 			contentType: {
 				value: 'Event',
 				error: '',
@@ -48,6 +52,12 @@ class PostContent extends Component {
 			},
 				link: {
 				value: '',
+				error: '',
+				message: '',
+				hasError: false
+			},
+			isOnline: {
+				value: 'yes',
 				error: '',
 				message: '',
 				hasError: false
@@ -104,6 +114,12 @@ class PostContent extends Component {
 				},
 				eventBy: {
 					value: editData.by ? editData.by : '',
+					error: '',
+					message: '',
+					hasError: false
+				},
+				isOnline: {
+					value: editData.isOnline ? 'yes' : 'no',
 					error: '',
 					message: '',
 					hasError: false
@@ -240,6 +256,17 @@ class PostContent extends Component {
 		});
 	};
 
+	onIsOnlineChange = (value) => {
+		this.setState({
+			isOnline: {
+				...this.state.isOnline,
+				value: value,
+				hasError: !Boolean(value),
+				error: !Boolean(value) ? 'REQUIRED' : ''
+			}
+		});
+	};
+
 	submitData  = (image) => {
 		if(this.state.contentType.value === 'Event') {
 			// CREATE COMMUNITY EVENT
@@ -248,7 +275,7 @@ class PostContent extends Component {
 				image: image,
 				date: this.state.date.value,
 				by: this.state.eventBy.value,
-				isOnline: true,
+				isOnline: this.state.isOnline.value === 'yes' ? true : false,
 				location: this.state.location.value,
 				desc: this.state.desc.value
 			}
@@ -343,7 +370,7 @@ class PostContent extends Component {
 				image: image,
 				date: this.state.date.value,
 				by: this.state.eventBy.value,
-				isOnline: true,
+				isOnline: this.state.isOnline.value === 'yes' ? true : false,
 				location: this.state.location.value,
 				desc: this.state.desc.value
 			}
@@ -516,7 +543,26 @@ class PostContent extends Component {
 							message={this.state.eventBy.message} />
 					</FormGroup>
 				</div>
-
+				<div className={style.infoWrap}>
+					<FormGroup label={getTranslation("IS_ONLINE")}>
+						<FormDropdown
+							className={style.isOnline}
+							value={this.state.isOnline.value}
+							options={this.state.isOnlineOptions}
+							getValue={option => option.value}
+							getText={option => option.text}
+							onBlur={(e) => {
+								this.onIsOnlineChange(e.target.value)
+							}}
+							onChange={(e) => {
+								this.onIsOnlineChange(e.target.value)
+							}}
+							hasError={this.state.isOnline.hasError}
+							error={this.state.isOnline.error}
+							message={this.state.isOnline.message}
+							/>
+					</FormGroup>
+				</div>
 				<div className={style.infoWrap}>
 					<FormGroup label={getTranslation("CONTENT_LOCATION")}>
 						<FormInput
