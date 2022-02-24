@@ -27,12 +27,16 @@ class EventsList extends Component {
 
 	onClickInterested = (item) => {
 		this.setState({
-			eventDropdown: {
-				show: true,
-				id: item.id,
-				tagged: item.tagged
-			}
-		});
+			eventDropdown: null,
+		}, () => {
+      this.setState({
+        eventDropdown: {
+          show: true,
+          id: item.id,
+          tagged: item.tagged
+        }
+      });
+    });
 	};
 
 	onShareEvent = (item) => {
@@ -61,7 +65,7 @@ class EventsList extends Component {
 					className={`${eventDropdown.tagged === 'INTERSTED'} ${style.selectEventDropdown} ${isLastItem ? style.lastItem : ''}`}>
 					{eventTags.map(tag => (
 						<a
-							className={eventDropdown.tagged === tag ? 'extraBold' : ''}
+							className={`event-tag-${tag.toLocaleLowerCase().replace(/_/g, '-')} ${eventDropdown.tagged === tag ? 'extraBold' : ''}`}
 							onClick={() => {
 								this.onSelectEventTag(tag, item)
 							}}>
@@ -112,7 +116,7 @@ class EventsList extends Component {
           </a>
           <div className={style.buttons}>
             <a
-              className={i.tagged ? `extraBold ${style.buttonLikeActive}` : ''}
+              className={`event-tag-options ${i.tagged ? `extraBold ${style.buttonLikeActive}` : ''}`}
               id={i.id}
               onClick={() => {
                 this.onClickInterested(i);
