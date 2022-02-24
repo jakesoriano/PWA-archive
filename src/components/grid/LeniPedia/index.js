@@ -92,7 +92,10 @@ class LeniPedia extends Component {
 							__html: data.desc
 						}}
 					/>
-					<a className={`${style.pShare} ${this.props.dataType || 'article'}-share`} onClick={this.onShare(data)}>
+					<a className={`${style.pShare} ${this.props.dataType || 'article'}-share`} onClick={(e) => {
+            e.stopPropagation();
+            this.onShare(data);
+          }}>
 						<ImageLoader
 								id='leni-share'
 								src="assets/images/share_icon_white.png"
