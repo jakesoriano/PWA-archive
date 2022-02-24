@@ -562,5 +562,17 @@
 				"component": "PostContent"
 			}
 		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"withBack": true,
+		"pageTitle": "PAGE_UPDATE_PROFILE",
+		"uri": "update-profile",
+		"contents": [
+			{
+				"component": "EditProfile"
+			}
+		]
 	}
 ]

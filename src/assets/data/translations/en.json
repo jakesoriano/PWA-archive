@@ -4,7 +4,7 @@
 	"PAGE_INVITE": "Invite",
 	"PAGE_LEADERBOARD": "Leaderboard",
 	"PAGE_COMMUNITY": "Community",
-	"PAGE_PROFILE": "Profile",
+	"PAGE_PROFILE": "My Profile",
 	"PAGE_NOTIFICATION": "Notifications",
 	"PAGE_TERMS": "Terms and Conditions",
 	"PAGE_OTP": "One-Time PIN",
@@ -15,6 +15,7 @@
 	"PAGE_VIDEOS": "Training Videos",
 	"PAGE_GLOBAL_ANNOUNCEMENT": "Announcements",
 	"PAGE_MANAGE_PAGE": "Manage Page",
+	"PAGE_UPDATE_PROFILE": "Update Profile",
 	"MEMBERS": "Members",
 	"HERO_POINTS": "Hero Points",
 	"EARN_100P": "Earn 100 pts",
@@ -236,5 +237,7 @@
 	"DELETE_POST_CONFIRMATION": "Are you sure you want to delete",
 	"REPLACE_IMAGE": "REPLACE IMAGE",
 	"MY_PROFILE": "My Profile",
+	"UPDATE_PROFILE": "Update Profile",
+	"UPDATE_PROFILE_SUCCESS": "Profile updated successfully",
 	"PINK_PEDIA": "PinkPedia"
 }
