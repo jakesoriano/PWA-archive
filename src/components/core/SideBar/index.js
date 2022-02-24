@@ -6,6 +6,7 @@ import { connect } from 'unistore/preact';
 import { getTranslation, dateLastLoginFormat, isUsingSocialLogin } from '_helpers';
 import { ImageLoader } from '_components/core';
 import { logOut } from '_mutations';
+import { updateStore } from '_unistore';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -49,26 +50,32 @@ class SideBar extends Component {
 						</div>
 					</div>
 					<div className={style.sMenu}>
+						<Link id="sm-myprofile" href={`/profile`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('MY_PROFILE')}</Link>
 						{(!authUser.profile.roles || authUser.profile.roles !== '100') && (
-							<Link href={`/account-profile`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('ACCOUNT_PROFILE')}</Link>
+							<Link id="sm-accountprofile" href={`/account-profile`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('ACCOUNT_PROFILE')}</Link>
 						)}
-
 						{(authUser.profile.roles && authUser.profile.roles === '100') && ( 
 							<div>
-								<Link className={style.sMItem}>{getTranslation('MANAGE_COMMUNITY_PAGE')}</Link>
+								<a className={style.sMItem}>{getTranslation('MANAGE_COMMUNITY_PAGE')}</a>
 								{!communityInfo.data && (
-									<Link href={`/community-setup`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('SETUP_PAGE')}</Link>)
+									<Link id="sm-setuppage" href={`/community-setup`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('SETUP_PAGE')}</Link>)
 								}
-								<Link href={`/post-content`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('POST_CONTENT')}</Link>
+								<Link id="sm-postcontent" href={`/post-content`} className={`${style.sMItem} ${style.subItem}`} 
+									onClick={(e) => {
+										this.onClickMenu();
+										updateStore({
+											leaderEditPost: null
+										});
+									}}>{getTranslation('POST_CONTENT')}</Link>
+								<Link id="sm-managepage" href={`/manage-page`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('PAGE_MANAGE_PAGE')}</Link>
 							</div>
 						)}
 						{!isUsingSocialLogin() && (
-							<Link href={`/settings`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('SETTINGS')}</Link>
+							<Link id="sm-settings" href={`/settings`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('SETTINGS')}</Link>
 						)}
-						<Link href={`/contactus`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('WHERE_HERE_TO_LISTEN')}</Link>
-						<Link href={`/task-center`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('TASK_CENTER')}</Link>
-						{/* <Link href="/home" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PROTECT_LENI')}</Link> */}
-						<Link href={`/`} className={style.sMItem} onClick={(e) => {
+						<Link id="sm-wherehertolisten" href={`/contactus`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('WHERE_HERE_TO_LISTEN')}</Link>
+						{/* <Link id="sm-myprofile" href="/home" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PROTECT_LENI')}</Link> */}
+						<Link id="sm-logout" href={`/`} className={style.sMItem} onClick={(e) => {
 							logOut();
 							this.onClickMenu(e);
 						}}>{getTranslation('LOGOUT')}</Link>

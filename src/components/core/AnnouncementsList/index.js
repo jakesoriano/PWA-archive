@@ -1,17 +1,14 @@
 import { Component } from 'preact';
+import { connect } from 'unistore/preact';
 import { getTranslation, getConfigByKey } from '_helpers';
 import { ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
-import { likeShareAnnouncements, removeLikeAnnouncements } from '_mutations';
+import { likeShareAnnouncements, removeLikeAnnouncements, shareNewsByLeader } from '_mutations';
 import style from './style';
 class AnnouncementsList extends Component {
   
 	onLikeAnnouncement = (item) => {
-		if (!item.liked) {
-			likeShareAnnouncements(item, 'liked');
-		} else {
-			removeLikeAnnouncements(item);
-		}
+		!item.liked ? likeShareAnnouncements(item, 'liked') : removeLikeAnnouncements(item);
 	};
 
 	onShareAnnouncement = (item) => {
@@ -30,7 +27,11 @@ class AnnouncementsList extends Component {
 			`
 		});
 		if (!item.shared) {
-			likeShareAnnouncements(item, 'shared');
+			if(this.props.isManagePage) {
+				shareNewsByLeader(item, 'A');
+			} else {
+				likeShareAnnouncements(item, 'shared');
+			}
 		}
 	};
 
@@ -56,7 +57,8 @@ class AnnouncementsList extends Component {
 						</div>
 					</a>
 					<div className={style.buttons}>
-						<a
+						{!this.props.isManagePage && <a
+              id={`${this.props.dataType || 'announcement'}-like`}
 							className={i.liked ? `extraBold ${style.buttonLikeActive}` : ''}
 							onClick={() => {
 								this.onLikeAnnouncement(i);
@@ -65,9 +67,9 @@ class AnnouncementsList extends Component {
 								src={!i.liked ? 'assets/images/fb-like-transparent.png' : 'assets/images/fb-like-transparent-dark.png'}
 								style={{container: style.likeButton}}/>
 								{getTranslation('LIKE')}
-							</a>
+							</a> }
 						<a
-							className={i.shared ? `extraBold ${style.buttonShareActive}` : ''}
+							className={`${this.props.dataType || 'announcement'}-share ${i.shared ? `extraBold ${style.buttonShareActive}` : ''}`}
 							onClick={() => {
 								this.onShareAnnouncement(i);
 							}}>
@@ -81,7 +83,7 @@ class AnnouncementsList extends Component {
 		}
 		return <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
   }
-  render = ({data}) => {
+  render = ({data, authUser}) => {
     return (
       <div className={style.announcementsListWrap}>
         {this.renderDom(data)}
@@ -89,4 +91,4 @@ class AnnouncementsList extends Component {
     )
   }
 }
-export default AnnouncementsList;
+export default connect(['authUser'])(AnnouncementsList);

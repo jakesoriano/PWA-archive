@@ -26,13 +26,14 @@
   .content {
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
 
     .announcementWindow {
       position: relative;
       width: 100%;
-      overflow-x: scroll;
-      .announcementWrap {
-        &.rows {
+      &.rows {
+        overflow: scroll;
+        .announcementWrap {
           display: flex;
           width: 100%;
           &.i2 {
@@ -42,6 +43,8 @@
             width: 270%;
           }
         }
+      }
+      .announcementWrap {
         .item {
           width: 100%;
           padding: 10px 10px;
@@ -59,31 +62,26 @@
       }
     }
     .details {
-      display: flex;
-      color: #737373;
-      height: 100%;
       position: relative;
       background: #878080;
-      .imgContainer{
-        position: absolute;
+      color: #737373;
+
+      .detailImage {
         width: 100%;
-        height: 100%;
-        overflow: hidden;
-        .detailImage {
-          width: 100%;
-          padding-bottom: 60%;
-        }
+        padding-bottom: 175px;
         .img {
+          width: 100%;
           top: 50%;
           transform: translateY(-50%);
         }
       }
       
       .detailContent {
-        flex: 1;
-        margin-top: 65px;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
         z-index: 1;
-        background: rgba(43,45,50,0.5);
+        background: rgba(43,45,50,0.7);
         border-radius: 10px 10px 0 0;
         padding: 10px;
         &.rows{
@@ -100,6 +98,7 @@
           }
           .detailDescription {
             font-size: 0.75rem;
+            word-break: break-word; 
             span {
               float: right;
               color:  $primary;
@@ -186,6 +185,7 @@
       .pTitle{
         font-size: 0.8rem;
         color: $primary_layout;
+        word-break: break-word; 
       }
       .pLink{
         font-size: 0.6rem;

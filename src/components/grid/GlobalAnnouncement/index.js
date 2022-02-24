@@ -115,7 +115,7 @@ class GlobalAnnouncement extends Component {
 							__html: data.desc
 						}}
 					/>
-					<a className={style.pShare} onClick={() => {
+					<a id="global-announcement-share" className={style.pShare} onClick={() => {
 						this.onShareAnnouncement(data);
 					}}>
 						<ImageLoader
@@ -136,20 +136,18 @@ class GlobalAnnouncement extends Component {
 			announcements_ = announcements_.slice(0,displayLimit);
 		}
 		return (
-			<div className={style.announcementWindow}>
+			<div className={`${style.announcementWindow} ${this.props.isDisplayFlex ? style.rows : ''} `}>
 				{announcements_.length > 0 ? (
-					<div className={`${style.announcementWrap} ${this.props.isDisplayFlex ? style.rows : ''} ${style['i' + announcements_.length]}`}>
+					<div className={`${style.announcementWrap} ${style['i' + announcements_.length]}`}>
 						{announcements_.map((i) => (
 							<div className={style.item}>
-								<div className={style.details} onClick={() => {
+								<div id="global-announcement-item" className={style.details} onClick={() => {
 									this.onClickItem(i);
 								}}>
-									<div className={style.imgContainer}>
-										<ImageLoader
-											src={i.image}
-											style={{container: style.detailImage, image: style.img}}
-										/>
-									</div>
+									<ImageLoader
+										src={i.image}
+										style={{container: style.detailImage, image: style.img}}
+									/>
 									<div className={`${style.detailContent} ${this.props.isDisplayFlex ? style.rows : ''}`}>
 										<div className={style.detailHead}>
 											<span className={`extraBold ${style.userName}`}>
@@ -173,15 +171,18 @@ class GlobalAnnouncement extends Component {
 		);
 	};
 
-	render = ({announcements},{selectedItem}) => {
+	render = ({announcements, title},{selectedItem}) => {
 	  return (
 			<>
 				<div className={`${style.globalAnnouncement} ${!this.props.isDisplayFlex ? style.marginTop : ''}`}>
-					<div className={style.tabWrap}>
-						<span className={`bold ${style.activeTab}`}>
-							{getTranslation('ANNOUNCEMENTS')}
-						</span>
-					</div>
+					{/* Title */}
+					{title && (
+						<div className={style.tabWrap}>
+							<span className={`bold ${style.activeTab}`}>
+								{getTranslation('ANNOUNCEMENTS')}
+							</span>
+						</div>
+					)}
 					<div className={style.content}>
 						{this.renderAnnouncements()}
 						{/* show more - horizontal */}
@@ -190,7 +191,7 @@ class GlobalAnnouncement extends Component {
 						</p>}
 						{/* show more - vertical */}
 						{!this.props.isDisplayFlex && announcements.data.length < announcements.total && !announcements.fetching && (
-							<button className={style.showMore} onClick={this.handleShowMore}>
+							<button id="global-announcement-seeall" className={style.showMore} onClick={this.handleShowMore}>
 								<span><span>&#8659;</span> {getTranslation('SHOW_MORE')}</span>
 							</button>
 						)}

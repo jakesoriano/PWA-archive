@@ -5,6 +5,7 @@ import { ImageLoader } from '_components/core';
 import { fetchStories } from '_mutations';
 import {
 	getTranslation,
+	removeTags
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
@@ -22,18 +23,6 @@ class StoriesDashboard extends Component {
 	componentDidMount = () => {
 		fetchStories();
 	};
-
-	removeTags(str) {
-    if ((str===null) || (str===''))
-        return false;
-    else
-        str = str.toString();
-          
-    // Regular expression to identify HTML tags in 
-    // the input string. Replacing the identified 
-    // HTML tag with a null string.
-    return str.replace( /(<([^>]+)>)/ig, '');
-}
 
 	onClickStories = (data) => {
 		this.setState({
@@ -113,7 +102,7 @@ class StoriesDashboard extends Component {
 								<div className={`${style.storiesWrap} ${style['i' + stories.data.length]}`}>
 									{stories.data.map((i) => (
 										<div className={style.storyItem}>
-											<div className={style.details} onClick={() => {
+											<div className={`story-item ${style.details}`} onClick={() => {
 												this.onClickStories(i)
 											}}>
 												<ImageLoader
@@ -126,7 +115,7 @@ class StoriesDashboard extends Component {
 													</div>
 													<div className={style.detailBody}>
 														<p className={`${style.detailTitle}`}>{i.title}</p>
-														<p className={style.detailDescription}>{this.removeTags(i.message || '').substr(0, 100)} ...
+														<p className={style.detailDescription}>{removeTags(i.message || '').substr(0, 100)} ...
 															<span className='bold'> {`${i.message.length > 100 ? `${getTranslation('READ_ALL')}`: ''}`}</span>
 														</p>
 													</div>

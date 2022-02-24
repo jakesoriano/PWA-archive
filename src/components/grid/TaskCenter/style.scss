@@ -65,6 +65,17 @@
     margin-bottom: 10px;
     overflow: scroll;
   }
+  .imageWrap {
+    padding: 0;
+    .featuredImage {
+      width: 100%;
+      height: auto;
+      padding-bottom: 15px;
+      img {
+        position: relative;
+      }
+    }
+  }
   .footer {
     p {
       margin: 5px 15px;

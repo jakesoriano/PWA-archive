@@ -29,6 +29,7 @@
       font-size: 0.75rem;
       &.title {
         text-transform: uppercase;
+        margin: 5px 0;
       }
     }
     .videos {
@@ -36,7 +37,7 @@
       flex-wrap: wrap;
       margin: 0 -5px;
       .videosCard {
-        width: 30%;
+        width: calc(50% - 10px);
         margin: 20px 5px;
         .imgCont {
           width: 100%;

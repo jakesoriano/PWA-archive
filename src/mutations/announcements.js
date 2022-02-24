@@ -106,7 +106,7 @@ export function likeShareAnnouncements (item, action) {
           fetching: false
         }
       });
-      console.log(`SPA >> likeAnnoucements Success`, res);
+      console.log(`SPA >> likeAnnouncements Success`, res);
       resolve(true);
     })
     .catch((err) => {

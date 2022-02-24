@@ -1,5 +1,44 @@
 import { store, updateStore } from '_unistore';
-import { xhr, urlTasks, urlValidateTask } from '_helpers';
+import {
+  xhr,
+  urlTasks,
+  urlValidateTask,
+  circleModal,
+  getTranslation,
+  getConfigByKey,
+  setItemWithExpiry,
+  getItemWithExpiry
+} from '_helpers';
+
+
+function taskNotification(data) {
+  try {
+    // check if there is pending tasks
+    let storeData = store.getState();
+    storeData = storeData.circleModal || null;
+    const cookieKey = 'pt';
+    const hasCookie = parseInt(getItemWithExpiry(cookieKey) || '0');
+    const pendingTask = data.find(i => i.completed !== true);
+    if (pendingTask && !hasCookie) {
+      const expDate = Date.now() + ((1000 * 60) * getConfigByKey('taskNotifInterval'));
+      setItemWithExpiry(cookieKey, 1, expDate);
+      const data = {
+        title: getTranslation('TASKS_NOTIF_TITLE'),
+        content: getTranslation('TASKS_NOTIF_CONTENT'),
+        link: {
+          url: '/task-center',
+          text: getTranslation('TASKS_NOTIF_LINK')
+        }
+      };
+      circleModal(storeData ? {
+        ...storeData,
+        next: data
+      } : data);
+    }
+  } catch(err) {
+    console.error('taskNotification', err);
+  }
+};
 
 // eslint-disable-next-line import/prefer-default-export
 export function fetchTasks () {
@@ -7,8 +46,9 @@ export function fetchTasks () {
   const { tasks } = store.getState();
 
   // check data once a day only
-  const currentDate = Date.now();
-  if (tasks.data && tasks.date && currentDate < tasks.date) {
+  // const currentDate = Date.now();
+  // if (tasks.data && tasks.date && currentDate < tasks.date) {
+  if (tasks.fetching) {
     return;
   }
   
@@ -33,6 +73,10 @@ export function fetchTasks () {
             completed: !Boolean(res.data.find(i => i.completed !== true))
           }
         });
+        // task notification
+        setTimeout(() => {
+          taskNotification(res.data);
+        }, 200);
       } else {
         updateStore({
           tasks: {
@@ -42,6 +86,7 @@ export function fetchTasks () {
           }
         });
       }
+      return true;
     })
     .catch(() => {
       updateStore({
@@ -51,6 +96,7 @@ export function fetchTasks () {
           result: false
         }
       });
+      return false;
     });
 }
 
@@ -80,13 +126,13 @@ export function validateTask (id, token) {
               completed: !Boolean(newData.find(i => i.completed !== true))
             }
           });
-          resolve(1);
+          return 1;
         } else {
-          resolve(0);
+          return 0;
         }
       })
       .catch((err) => {
-        resolve(-1);
+        return -1;
       });
   });
 }

@@ -13,6 +13,7 @@ import { FormGroup, FormInput, FormDropdown, ImageLoader } from '_components/cor
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
+import copy from 'clipboard-copy';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class InviteForm extends Component {
@@ -208,12 +209,50 @@ class InviteForm extends Component {
 				hasError: false
 			}
 		})
-	}
+	};
+
+	copyText = (text) =>{
+		copy(text);
+		showAlertBox({
+			message: 'COPY_MSG_REFCODE',
+			success: true
+		});
+	};
 
 	render = ({ refCode, invited, onSendCallback }, { fname, lname, region, regionOptions, mobile }) => {
 
 	  return (
 			<div className={style.inviteWrap}>
+				{/* RefCode */}
+				<div className={style.refCode}>
+					<FormGroup label="INVITE_SOCIAL_MEDIA" >
+						<div className={style.invite}>
+							<button className={style.codeWrap} onClick={() => {
+								this.copyText(refCode);
+							}}>
+								<span className={`extraBold ${style.code}`}>{refCode}</span>
+								<span>
+									<ImageLoader
+										src="assets/images/copy.png"
+										style={{ container: `${style.copyImg}` }}
+									/>
+								</span>
+							</button>
+							<div>
+								<a className={style.pShare}
+									onClick={() => {
+										this.onShare()
+									}}
+								>
+									<ImageLoader
+											src="assets/images/share_icon_white.png"
+											style={{container: style.pIconShare}} />
+										<span>{getTranslation('SHARE')}</span>
+								</a>
+							</div>
+						</div>
+					</FormGroup>
+				</div>
 				<form className={style.form}>
 					<FormGroup label="NAME" hasError={fname.hasError || lname.hasError}>
 						<FormInput
@@ -294,24 +333,6 @@ class InviteForm extends Component {
 											src="assets/images/send_icon_white.png"
 											style={{container: style.pIconShare}} />
 										<span>{getTranslation('SEND')}</span>
-								</a>
-							</div>
-						</div>
-					</FormGroup>
-					{/* Invite */}
-					<FormGroup label="INVITE">
-						<div className={style.invite}>
-							<span className={`bold`}>{refCode}</span>
-							<div>
-								<a className={style.pShare}
-									onClick={() => {
-										this.onShare()
-									}}
-								>
-									<ImageLoader
-											src="assets/images/share_icon_white.png"
-											style={{container: style.pIconShare}} />
-										<span>{getTranslation('SHARE')}</span>
 								</a>
 							</div>
 						</div>

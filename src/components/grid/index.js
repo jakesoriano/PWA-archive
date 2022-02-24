@@ -35,4 +35,13 @@ export { default as Videos } from './Videos';
 export { default as VideoDetails } from './VideoDetails';
 export { default as GlobalAnnouncement } from './GlobalAnnouncement';
 export { default as Countdown } from './Countdown';
-
+export { default as DownloadKit } from './DownloadKit';
+export { default as ReferralCode } from './ReferralCode';
+export { default as CommunitySearch } from './CommunitySearch';
+export { default as FeaturedCommunities } from './FeaturedCommunities';
+export { default as CommunityNavigation } from './CommunityNavigation';
+export { default as UpcomingEvents } from './UpcomingEvents';
+export { default as LenipediaSearch } from './LenipediaSearch';
+export { default as LeniPedia } from './LeniPedia';
+export { default as CommunityManagement } from './CommunityManagement';
+export { default as OtherEvents } from './OtherEvents';

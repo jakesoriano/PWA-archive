@@ -42,7 +42,7 @@ class Signup extends Component {
 			fname: {
 				value: props.signup ? props.signup.fname : '',
 				error: '',
-				message: '',
+				message: 'NAME_MSG',
 				hasError: false,
 			},
 			mname: {
@@ -72,7 +72,7 @@ class Signup extends Component {
 			mobile: {
 				value: props.signup ? props.signup.mobile : '',
 				error: '',
-				message: '',
+				message: 'MOBILE_NUMBER_MSG',
 				hasError: false,
 			},
 			region: {
@@ -111,7 +111,7 @@ class Signup extends Component {
 						? props.signup.parentRefCode
 						: '',
 				error: '',
-				message: '',
+				message: 'REFERRAL_CODE_MSG',
 				hasError: false,
 			},
 		};
@@ -309,28 +309,28 @@ class Signup extends Component {
 	handleContinue = () => {
 		if (
 			!this.state.fname.value ||
-			!this.state.mname.value ||
-			!this.state.lname.value ||
-			!this.state.gender.value ||
-			!this.state.birthday.value ||
-			!this.state.mobile.value ||
-			!this.state.region.value ||
-			!this.state.province.value ||
-			!this.state.municipality.value ||
-			!this.state.barangay.value ||
-			!this.state.isRegisteredVoter.value
-			// || !this.state.parentRefCode.value
+			// !this.state.mname.value ||
+			// !this.state.lname.value ||
+			// !this.state.gender.value ||
+			// !this.state.birthday.value ||
+			!this.state.mobile.value
+			// !this.state.region.value ||
+			// !this.state.province.value ||
+			// !this.state.municipality.value ||
+			// !this.state.barangay.value ||
+			// !this.state.isRegisteredVoter.value ||
+			// !this.state.parentRefCode.value
 		) {
 			this.onFnameChange(this.state.fname.value);
-			this.onMnameChange(this.state.mname.value);
-			this.onLnameChange(this.state.lname.value);
-			this.onGenderChange(this.state.gender.value);
-			this.onDobChange(this.state.birthday.value);
+			// this.onMnameChange(this.state.mname.value);
+			// this.onLnameChange(this.state.lname.value);
+			// this.onGenderChange(this.state.gender.value);
+			// this.onDobChange(this.state.birthday.value);
 			this.onMobileChange(this.state.mobile.value);
-			this.onRegionChange(this.state.region.value);
-			this.onProvinceChange(this.state.province.value);
-			this.onMunicipalityChange(this.state.municipality.value);
-			this.onBarangayChange(this.state.barangay.value);
+			// this.onRegionChange(this.state.region.value);
+			// this.onProvinceChange(this.state.province.value);
+			// this.onMunicipalityChange(this.state.municipality.value);
+			// this.onBarangayChange(this.state.barangay.value);
 			this.onVoterChange(this.state.isRegisteredVoter.value);
 			// this.onParentRefCodeChange(this.state.parentRefCode.value);
 		} else {
@@ -345,8 +345,8 @@ class Signup extends Component {
 								...(this.props.signup || {}),
 								'fname': this.state.fname.value,
 								'mname': this.state.mname.value,
-								'lname': this.state.lname.value,
-								'gender': this.state.gender.value,
+								'lname': '', // this.state.lname.value,
+								// 'gender': this.state.gender.value,
 								'birthday': this.state.birthday.value,
 								'mobile': this.state.mobile.value,
 								'region': this.state.region.value,
@@ -354,7 +354,7 @@ class Signup extends Component {
 								'municipality': this.state.municipality.value,
 								'barangay': this.state.barangay.value,
 								'isRegisteredVoter': this.state.isRegisteredVoter.value === 'yes' ? true : false,
-								'parentRefCode': this.state.parentRefCode.value,
+								'parentRefCode': this.state.parentRefCode.value.length < 12 ? this.state.parentRefCode.value.toUpperCase() : this.state.parentRefCode.value,
 								'deviceId': this.props.deviceId,
 								'socType': this.props.signup.socType,
 								'socId': this.props.signup.socId,
@@ -366,7 +366,8 @@ class Signup extends Component {
 								.then((res) => {
 									displayPageLoader(false);
 									if (res.success) {
-										route(`/${this.props.parent}/registration-otp`);
+										// route(`/${this.props.parent}/registration-otp`);
+										route(`/${this.props.parent}/home`);
 									} else {
 										showAlertBox({
 											message: res.error || 'SOMETHING_WRONG'
@@ -419,6 +420,7 @@ class Signup extends Component {
 		return (
 			<div className={style.signupWrap}>
 				<form className={style.form}>
+{/* 					
 					<FormGroup
 						label="NAME"
 						hasError={fname.hasError || mname.hasError || lname.hasError}
@@ -515,6 +517,22 @@ class Signup extends Component {
 							error={birthday.error}
 							message={birthday.message}
 						/>
+					</FormGroup> */}
+
+					<FormGroup label="NAME" hasError={fname.hasError}>
+						<FormInput
+							value={fname.value}
+							type="text"
+							onBlur={(e) => {
+								this.onFnameChange(e.target.value);
+							}}
+							onInput={(e) => {
+								this.onFnameChange(e.target.value);
+							}}
+							hasError={fname.hasError}
+							error={fname.error}
+							message={fname.message}
+						/>
 					</FormGroup>
 
 					<FormGroup label="MOBILE_NUMBER" hasError={mobile.hasError}>
@@ -534,7 +552,7 @@ class Signup extends Component {
 							message={mobile.message}
 						/>
 					</FormGroup>
-
+{/* 
 					<FormGroup label="REGION" hasError={region.hasError}>
 						<FormDropdown
 							className={style.region}
@@ -639,7 +657,7 @@ class Signup extends Component {
 								}}
 							/>
 						</div>
-					</FormGroup>
+					</FormGroup> */}
 
 					<FormGroup label="REFERRAL_CODE" hasError={parentRefCode.hasError}>
 						<FormInput

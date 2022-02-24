@@ -8,7 +8,8 @@ import {
 	formatNumber,
 	getConfigByKey,
 	circleModal,
-	formatRank
+	formatRank,
+	displayName
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 import { updateStore } from '_unistore';
@@ -20,9 +21,6 @@ import style from './style';
 class AccountProfile extends Component {
 	constructor(props) {
     super(props);
-    this.state = {
-      showDropdown: false
-    }
   }
 
 	componentDidMount = () => {
@@ -58,23 +56,6 @@ class AccountProfile extends Component {
 			`,
 		});
 	};
-
-	onDownloadKit = (url) => {
-		window.open(url, '_blank');
-		this.setState({
-			showDropdown: false
-		});
-	};
-
-	gotoVideos = () => {
-		route(`/videos`);
-	}
-
-	clickDropdown = () => {
-		this.setState({
-			showDropdown: !this.state.showDropdown
-		});
-	}
 
 	renderDropdown = () => {
 		const { showDropdown } = this.state;
@@ -134,7 +115,7 @@ class AccountProfile extends Component {
 							<div className={style.nameMember}>
 								<p
 									className={`bold ${style.name}`}
-								>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
+								>{displayName(authUser.profile)}</p>
 								<p className={`bold ${style.members}`}>{`${
 									formatNumber(authUser.members, 2) || 0
 								} ${getTranslation('MEMBERS')}`}</p>
@@ -177,20 +158,6 @@ class AccountProfile extends Component {
 						</div>
 					</div>
 				</div>
-				<a className={style.download} onClick={this.clickDropdown}>
-					<div>
-						<ImageLoader
-							src="assets/images/icon_download.png"
-							style={{ container: style.iconDownload }}
-						/>
-						<span>{getTranslation('GET_KIT')}</span>
-						<ImageLoader
-							src="assets/images/downarrow.png"
-							style={{ container: `${style.dropdown} ${showDropdown ? style.active : ''}` }}
-						/>
-					</div>
-				</a>
-				{this.renderDropdown()}
 			</div>
 		);
 	};

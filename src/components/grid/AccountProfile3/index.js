@@ -8,7 +8,7 @@ import {
 import {
 	getTranslation,
 	formatNumber,
-	getDefaultAvatar,
+	displayName,
 	formatRank
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
@@ -48,7 +48,7 @@ class AccountProfile extends Component {
 							<UserAvatar /> 
 						</div>
 						<div className={style.nameMember}>
-							<p className={`bold ${style.name}`}>{`${authUser.profile.fname} ${authUser.profile.lname}`}</p>
+							<p className={`bold ${style.name}`}>{displayName(authUser.profile)}</p>
 							<div className={style.heroRankingContainer}>
 								<p className={`bold`}>{getTranslation('RANKING')}</p>
 								<div className={style.heroRanking}>

@@ -74,11 +74,11 @@ class NewsAndEvents extends Component {
       });
       // fetch
       if (active === 'news') {
-        fetchNews(this.getSelectedTabContent().page + 1);
+        getCurrentUrl() === '/community-details' ? fetchNewsByCommunity(fetchNews(this.props.communityDetails.details.id, this.getSelectedTabContent().page + 1)) : fetchNews(this.getSelectedTabContent().page + 1);
       } else if (active === 'events') {
-        getCurrentUrl().includes('community') ? fetchEventsByCommunityId(this.props.communityDetails.details.id, this.getSelectedTabContent().page + 1) : fetchEvents(this.getSelectedTabContent().page + 1);
+        getCurrentUrl() === '/community-details' ? fetchEventsByCommunityId(this.props.communityDetails.details.id, this.getSelectedTabContent().page + 1) : fetchEvents(this.getSelectedTabContent().page + 1);
       } else {
-        fetchAnnouncements(this.getSelectedTabContent().page + 1);
+				fetchAnnouncements(this.getSelectedTabContent().page + 1);
 			}
     }
   };
@@ -203,6 +203,7 @@ class NewsAndEvents extends Component {
 						}
 					}}>
 						<ImageLoader
+								id={this.state.active === 'events' ? 'event-like' : 'announcement-like' }
 								src="assets/images/share_icon_white.png"
 								style={{container: style.pIconShare}} />
 							<span>{getTranslation('SHARE')}</span>
@@ -237,14 +238,14 @@ class NewsAndEvents extends Component {
 		}
 	}
 
-	renderTabs = () => {
+	renderTabs = (tabTitle) => {
 		return this.state.tabs.map((i) => {
 			return (
 				<span 
 					className={`bold ${this.state.active === i ? style.activeTab : ''}`}
 					onClick={() => {
 						this.toggleTab(i);
-					}}>{getTranslation(i.toUpperCase())}</span>
+					}}>{(tabTitle && getTranslation(tabTitle[i])) || getTranslation(i.toUpperCase())}</span>
 			);
 		});
 	}
@@ -254,7 +255,7 @@ class NewsAndEvents extends Component {
 			<>
 				<div className={style.newsAndEvents}>
 					<div className={style.tabWrap}>
-						{state.active && this.renderTabs()}
+						{state.active && this.renderTabs(props.tabTitle)}
 					</div>
 					<div className={style.content}>
 						{/* data */}
@@ -263,7 +264,8 @@ class NewsAndEvents extends Component {
 							: this.renderData(state.active) }
 						{/* show more */}
 						{state.active && this.getSelectedTabContent() && this.getSelectedTabContent().data.length < this.getSelectedTabContent().total && !this.getSelectedTabContent().fetching && (
-							<button className={style.showMore} onClick={this.handleShowMore}>
+							<button
+								className={style.showMore} onClick={this.handleShowMore}>
 								<span><span>&#8659;</span> {getTranslation('SHOW_MORE')}</span>
 							</button>
 						)}
@@ -279,16 +281,11 @@ class NewsAndEvents extends Component {
 	};
 
 	getSelectedTabContent = () => {
-		return getCurrentUrl().includes('community') ? this.props[`c${this.state.active}`] : this.props[this.state.active]
-	}
- 
-	fetchNews = () => {
-		if (getCurrentUrl().includes('community')) {
-			let { id } = this.props.communityDetails;
-			fetchNewsByCommunity(id)
+		if (getCurrentUrl() === '/community-details') {
+			return this.props[`c${this.state.active}`];
 		} else {
-			fetchNews();
+			return this.props[this.state.active]
 		}
 	}
 }
-export default connect(['news', 'events', 'announcements', 'authUser', 'cevents', 'communityDetails',])(NewsAndEvents);
+export default connect(['news', 'events', 'announcements', 'authUser', 'cevents', 'cnews', 'communityDetails',])(NewsAndEvents);

@@ -5,6 +5,7 @@ import { getTranslation, formatN } from '_helpers';
 import {
   fetchCommunities,
   fetchEventsByCommunityId,
+  fetchNewsByCommunity,
   filterCommunity,
   followCommunity,
   unFollowCommunity
@@ -15,11 +16,12 @@ import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Community extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      text: '',
-      moreFetching: false
+      text: props.communities.filter || '',
+      moreFetching: false,
+      sort: ['']
     }
     this.timer = null;
   }
@@ -28,6 +30,15 @@ class Community extends Component {
     if (!communities.data.length) {
       fetchCommunities();
     }
+		updateStore({
+			customBack: () => {
+				route(`community`, true);
+			},
+      communities: {
+        ...communities,
+        filter: ''
+      }
+		});
 	};
 
   componentDidUpdate = () => {
@@ -46,9 +57,10 @@ class Community extends Component {
       });
       // fetch
       if (this.state.text) {
-        filterCommunity(this.state.text, this.props.communities.page + 1);
+        filterCommunity(this.state.text, this.props.communities.sort, this.props.communities.page + 1);
       } else {
-        fetchCommunities(this.props.communities.page + 1);
+        console.log(this.props.communities, this.state.text)
+        fetchCommunities(null, this.props.communities.page + 1);
       }
     }
   };
@@ -86,6 +98,7 @@ class Community extends Component {
       }
     });
     fetchEventsByCommunityId(item.id);
+    fetchNewsByCommunity(item.id);
     route(`community-details`);
   }
 
@@ -106,6 +119,7 @@ class Community extends Component {
         }
         <div className={style.cardBody}>
           <ButtonDescription
+            id={item.followed ? 'community-unfollow' : 'community-follow'}
             onClickCallback={(e) => { this.handleFollow(item)}}
             text={getTranslation(item.followed ? 'UNFOLLOW' : 'FOLLOW')}
             bottomDescription={item.name}
@@ -122,17 +136,6 @@ class Community extends Component {
 	render = ({ communities }) => {
 	  return (
 	    <div className={style.communityWrapper}>
-        <div className={style.search}>
-          <input
-            name="communitySearch"
-            placeholder="Search a Community"
-            onInput={this.handleSearchByName}
-          />
-          <ImageLoader
-            src={'assets/images/magnifying_icon.png'}
-            style={{container: style.searchIcon}}
-          />
-        </div>
         <div className={style.communityBody}>
           <p className={`${style.title} bold`}>{getTranslation('FOLLOW_COMMUNITIES')}</p>
           <div className={style.communities}>

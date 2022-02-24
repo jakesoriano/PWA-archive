@@ -1,5 +1,29 @@
 @import '../../../style/variables.scss';
-.form {
+.inviteWrap {
+  .refCode {
+    background-color: $details_bg;
+    margin: 10px 0;
+    border-radius: 10px;
+    .codeWrap {
+      display: flex;
+      width: 100%;
+      text-align: left;
+      align-items: center;
+      background-color: transparent;
+      margin: 0 40px 0 0;
+      padding: 0;
+      border: none;
+      .code {
+        width: auto;
+        padding-right: 10px;
+        flex-grow: 0;
+      }
+      .copyImg {
+        width: 20px;
+        padding-bottom: 20px;
+      }
+    }
+  }
   padding: 0px 5px 10px;
   .name {
     margin-left: 20px;

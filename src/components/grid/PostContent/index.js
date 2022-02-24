@@ -1,11 +1,11 @@
 import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { getCommunityInfo, createCommunityEvent, createCommunityNews } from '_mutations';
+import { getCommunityInfo, createCommunityEvent, createCommunityNews, updateCommunityEvent, updateCommunityNews } from '_mutations';
 import { LoaderRing } from '_components/core';
 import { FormGroup, FormInput, FormDropdown, ImageLoader, ButtonDescription } from '_components/core';
 import { getTranslation, getContentTypes, displayPageLoader, messageModal, uploadFile, showAlertBox } from '_helpers';
 import { updateStore } from '_unistore';
-import { route } from 'preact-router';
+import { getCurrentUrl, route, RouterProps, Route, Router } from 'preact-router';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -33,12 +33,7 @@ class PostContent extends Component {
 				message: '',
 				hasError: false
 			},
-			link: {
-				value: '',
-				error: '',
-				message: '',
-				hasError: false
-			},
+			
 			location: {
 				value: '',
 				error: '',
@@ -46,6 +41,12 @@ class PostContent extends Component {
 				hasError: false
 			},
 			eventBy: {
+				value: '',
+				error: '',
+				message: '',
+				hasError: false
+			},
+				link: {
 				value: '',
 				error: '',
 				message: '',
@@ -68,6 +69,66 @@ class PostContent extends Component {
 	}
 
 	componentDidMount = () => {
+		
+		if(this.props.leaderEditPost) {
+			let editData;
+			if(this.props.leaderEditPost.type === 'events') {
+				editData = this.props.leaderCommunityEvents.data.find(e => e.id === this.props.leaderEditPost.id);
+			} else {
+				editData = this.props.leaderCommunityAnnouncements.data.find(e => e.id === this.props.leaderEditPost.id);
+			}
+			this.setState({
+				contentType: {
+					value: this.props.leaderEditPost.type === 'events' ? 'Event' : 'Announcement',
+					error: '',
+					message: '',
+					hasError: false
+				},
+				title: {
+					value: editData.title,
+					error: '',
+					message: '',
+					hasError: false
+				},
+				desc: {
+					value: editData.desc,
+					error: '',
+					message: '',
+					hasError: false
+				},
+				link: {
+					value: editData.link ? editData.link : '',
+					error: '',
+					message: '',
+					hasError: false
+				},
+				eventBy: {
+					value: editData.by ? editData.by : '',
+					error: '',
+					message: '',
+					hasError: false
+				},
+				location: {
+					value: editData.location ? editData.location : '',
+					error: '',
+					message: '',
+					hasError: false
+				},
+				date : {
+					value: editData.date ? new Date(editData.date).toISOString().substr(0, 10) : '',
+					error: '',
+					message: '',
+					hasError: false
+				},
+				attachment: {
+					file: editData.image,
+					error: '',
+					message: '',
+					hasError: false
+				}
+			})
+		}
+		
 		if(!this.props.communityInfo.data) {
 			getCommunityInfo()
 			.then((res) => {
@@ -181,6 +242,7 @@ class PostContent extends Component {
 
 	submitData  = (image) => {
 		if(this.state.contentType.value === 'Event') {
+			// CREATE COMMUNITY EVENT
 			const data = {
 				title: this.state.title.value,
 				image: image,
@@ -215,6 +277,7 @@ class PostContent extends Component {
 				displayPageLoader(false);
 			});
 		} else {
+			// CREATE COMMUNITY ANNOUNCEMENT
 			const data = {
 				title: this.state.title.value,
 				image: image,
@@ -249,14 +312,18 @@ class PostContent extends Component {
 		
 	}
 
-	uploadImage = () => {
+	uploadImage = (isEdit) => {
 		displayPageLoader(true);
 		uploadFile({
 			file: this.state.attachment.file
 		})
 			.then((res) => {
 				if(res.success && res.data) {
-					this.submitData(res.data.image);
+					if(isEdit) {
+						this.submitEditData(res.data.image);
+					} else {
+						this.submitData(res.data.image);
+					}
 				} else {
 					displayPageLoader(false)
 					showAlertBox({
@@ -264,6 +331,75 @@ class PostContent extends Component {
 					});
 				}
 			});
+	}
+
+
+	submitEditData = (image) => {
+		displayPageLoader(true);
+		if(this.props.leaderEditPost.type === 'events') {
+			// EDIT COMMUNITY EVENT
+			const data = {
+				title: this.state.title.value,
+				image: image,
+				date: this.state.date.value,
+				by: this.state.eventBy.value,
+				isOnline: true,
+				location: this.state.location.value,
+				desc: this.state.desc.value
+			}
+			updateCommunityEvent({ data }, this.props.leaderEditPost.id).then((res) => {
+				displayPageLoader(false)
+				if(res && res.success) {
+					this.setState({
+						...this.initialState
+					});
+					route(`/`);
+					showAlertBox({
+						message: 'POST_CONTENT_SUCCESS',
+						success: true
+					});
+				} else {
+					showAlertBox({
+						message: res.error.message || 'SOMETHING_WRONG'
+					});
+				}
+			}).catch((err) => {
+				showAlertBox({
+					message: err.message || 'SOMETHING_WRONG'
+				});
+				displayPageLoader(false);
+			});
+		} else {
+			// EDIT COMMUNITY ANNOUNCEMENT
+			const data = {
+				title: this.state.title.value,
+				image: image,
+				link: this.state.link.value,
+				desc: this.state.desc.value
+			}
+			updateCommunityNews({ data }, this.props.leaderEditPost.id).then((res) => {
+				displayPageLoader(false)
+				if(res && res.success) {
+					this.setState({
+						...this.initialState
+					});
+					route(`/`);
+					showAlertBox({
+						message: 'POST_CONTENT_SUCCESS',
+						success: true
+					});
+				} else {
+					showAlertBox({
+						message: res.error.message || 'SOMETHING_WRONG'
+					});
+				}
+			}).catch((err) => {
+				showAlertBox({
+					message: err.message || 'SOMETHING_WRONG'
+				});
+				displayPageLoader(false);
+			});
+		}
 	}
 
 	handleContinue = () => {
@@ -284,7 +420,16 @@ class PostContent extends Component {
 					this.onEventByChange(this.state.eventBy.value);
 					this.onAttachmentChange(this.state.attachment.file);
 				} else {
-					this.uploadImage();
+					if(this.props.leaderEditPost) {
+						// if image will be replaced
+						if (typeof this.state.attachment.file === 'string' || this.state.attachment.file instanceof String) {
+							this.submitEditData(this.state.attachment.file);
+						} else {
+							this.uploadImage(true);
+						}
+					} else {
+					this.uploadImage(false);
+					}
 				}
 			} else {
 				if(!this.state.title.value || 
@@ -296,7 +441,16 @@ class PostContent extends Component {
 					this.onLinkChange(this.state.link.value);
 					this.onAttachmentChange(this.state.attachment.file);
 				} else {
-					this.uploadImage();
+					if(this.props.leaderEditPost) {
+						// if image will be replaced
+						if (typeof this.state.attachment.file === 'string' || this.state.attachment.file instanceof String) {
+							this.submitEditData(this.state.attachment.file);
+						} else {
+							this.uploadImage(true);
+						}
+					} else {
+						this.uploadImage(false);
+					}
 				}
 			}
 		}
@@ -388,7 +542,7 @@ class PostContent extends Component {
 							className={style.date}
 							style={{error: style.date}}
 							value={this.state.date.value}
-							type="date"
+							type="datetime-local"
 							onBlur={(e) => {
 								this.onDateChange(e.target.value)
 							}}
@@ -404,7 +558,9 @@ class PostContent extends Component {
 				<div className={style.infoWrap}>
 					<FormGroup label={getTranslation("IMAGE")}>
 						<div className={style.attachmentWrap}>
-							<div className={style.attachmentInputWrap}>								
+							<div className={`${style.attachmentInputWrap} 
+								${typeof this.state.attachment.file === 'string' || 
+								this.state.attachment.file instanceof String ? style.hideInput : ''}`}>								
 									<FormInput
 										id='inputAttachment'
 										className={style.attachment}
@@ -421,15 +577,22 @@ class PostContent extends Component {
 										error={this.state.attachment.error}
 										message={this.state.attachment.message} />
 							</div>
-							<div>
+							{this.props.leaderEditPost && (typeof this.state.attachment.file === 'string' || 
+								this.state.attachment.file instanceof String) && 
+								<ImageLoader
+									src={this.state.attachment.file}
+									style={{container: style.editImage}} />
+								}
+							<div className={style.uploadBtnWrap}>
 								<a className={style.pShare} 
 									onClick={() => {
 										document.getElementById('inputAttachment').click()
 									}}>
-								<ImageLoader
-											src="assets/images/attachment_icon_white.png"
-											style={{container: style.pIconShare}} />
-										<span>{getTranslation('ADD_IMAGE')}</span>
+									<ImageLoader
+										src="assets/images/attachment_icon_white.png"
+										style={{container: style.pIconShare}} />
+										<span>{getTranslation(typeof this.state.attachment.file === 'string' || 
+										this.state.attachment.file instanceof String ? 'REPLACE_IMAGE':'ADD_IMAGE')}</span>
 								</a>
 							</div>
 						</div>
@@ -504,7 +667,9 @@ class PostContent extends Component {
 				<div className={style.infoWrap}>
 					<FormGroup label={getTranslation("IMAGE")}>
 						<div className={style.attachmentWrap}>
-							<div className={style.attachmentInputWrap}>								
+							<div className={`${style.attachmentInputWrap} 
+								${typeof this.state.attachment.file === 'string' || 
+								this.state.attachment.file instanceof String ? style.hideInput : ''}`}>							
 									<FormInput
 										id='inputAttachment'
 										className={style.attachment}
@@ -521,15 +686,22 @@ class PostContent extends Component {
 										error={this.state.attachment.error}
 										message={this.state.attachment.message} />
 							</div>
-							<div>
+							{this.props.leaderEditPost && (typeof this.state.attachment.file === 'string' || 
+								this.state.attachment.file instanceof String) && 
+								<ImageLoader
+									src={this.state.attachment.file}
+									style={{container: style.editImage}} />
+								}
+							<div className={style.uploadBtnWrap}>
 								<a className={style.pShare} 
 									onClick={() => {
 										document.getElementById('inputAttachment').click()
 									}}>
-								<ImageLoader
-											src="assets/images/attachment_icon_white.png"
-											style={{container: style.pIconShare}} />
-										<span>{getTranslation('ADD_IMAGE')}</span>
+									<ImageLoader
+										src="assets/images/attachment_icon_white.png"
+										style={{container: style.pIconShare}} />
+										<span>{getTranslation(typeof this.state.attachment.file === 'string' || 
+										this.state.attachment.file instanceof String ? 'REPLACE_IMAGE':'ADD_IMAGE')}</span>
 								</a>
 							</div>
 						</div>
@@ -584,4 +756,4 @@ class PostContent extends Component {
 		);
 	};
 }
-export default connect(['authUser', 'communityInfo'])(PostContent);
+export default connect(['authUser', 'communityInfo', 'leaderEditPost', 'leaderCommunityEvents', 'leaderCommunityAnnouncements'])(PostContent);

@@ -19,6 +19,13 @@ export const initialStore = {
     total: 0,
     page: 1
   },
+  cnews: {
+    fetching: false,
+    result: false,
+    data: [],
+    total: 0,
+    page: 1
+  },
   events: {
     fetching: false,
     result: false,
@@ -26,12 +33,35 @@ export const initialStore = {
     total: 0,
     page: 1
   },
+	upevents: {
+		fetching: false,
+		result: false,
+		data: [],
+		total: 0,
+		page: 1,
+	},
+	oevents: {
+		fetching: false,
+		result: false,
+		data: [],
+		total: 0,
+		page: 1,
+	},
   announcements: {
     fetching: false,
     result: false,
     data: [],
     total: 0,
     page: 1
+  },
+  lpannouncements: {
+    fetching: false,
+    result: false,
+    data: [],
+    filter: '',
+    total: 0,
+    page: 1,
+    selected: null
   },
   members: {
     fetching: false,
@@ -47,6 +77,9 @@ export const initialStore = {
     fetching: false,
     result: false,
     data: [],
+    featured: null,
+    filter: null,
+    sort: null,
     total: 0,
     page: 1
   },
@@ -119,6 +152,20 @@ export const initialStore = {
     result: false,
     data: null
   },
+  leaderCommunityEvents: {
+    fetching: false,
+    result: false,
+    data: [],
+    total: 0,
+    page: 1
+  },
+  leaderCommunityAnnouncements: {
+    fetching: false,
+    result: false,
+    data: [],
+    total: 0,
+    page: 1
+  },
   videos: {
     fetching: false,
     result: false,
@@ -126,5 +173,5 @@ export const initialStore = {
     total: 0,
     page: 1,
     selected: null
-  },
+  }
 };

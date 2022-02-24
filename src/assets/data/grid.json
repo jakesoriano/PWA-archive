@@ -16,7 +16,7 @@
 				"component": "LandingPage"
 			}
 		]
-	},	
+	},
 	{
 		"styles": [],
 		"pageTitle": "PAGE_TERMS",
@@ -60,9 +60,19 @@
 				"component": "AccountProfile"
 			},
 			{
+				"component": "LenipediaSearch"
+			},
+			{
+				"component": "DownloadKit"
+			},
+			{
+				"component": "ReferralCode"
+			},
+			{
 				"component": "GlobalAnnouncement",
 				"props": {
-					"isDisplayFlex": true
+					"isDisplayFlex": true,
+					"title": "ANNOUNCEMENTS"
 				}
 			},
 			{
@@ -101,6 +111,45 @@
 		]
 	},
 	{
+		"styles": [
+			{
+				"selector": "#w2 > div:first-child",
+				"styles": "background: #f9e9e8; border-radius: none; padding-top: 10px"
+			},
+			{
+				"selector": "#w2 > div:first-child > div:first-of-type",
+				"styles": "margin-top: 0"
+			},
+			{
+				"selector": "#w2 > div:first-child > div:first-of-type > div:nth-of-type(3)",
+				"styles": "position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"
+			}
+		],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY",
+		"uri": "community-list",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "CommunitySearch",
+				"props": {
+					"showSort": true
+				}
+			},
+			{
+				"component": "FeaturedCommunities",
+				"props": {
+					"top": 1,
+					"title": "FEATURED_COMMUNITY",
+					"hideShowAll": true
+				}
+			},
+			{
+				"component": "Community"
+			}
+		]
+	},
+	{
 		"styles": [],
 		"auth": true,
 		"pageTitle": "PAGE_COMMUNITY",
@@ -108,7 +157,79 @@
 		"withBack": true,
 		"contents": [
 			{
-				"component": "Community"
+				"component": "CommunityNavigation"
+			},
+			{
+				"component": "CommunitySearch"
+			},
+			{
+				"component": "FeaturedCommunities",
+				"props": {
+					"top": 5
+				}
+			}
+		]
+	},
+	{
+		"styles": [
+			{
+				"selector": "#w1 > div:first-child > div > span",
+				"styles": "display: none;"
+			},
+			{
+				"selector": "#w1 > div:first-child",
+				"styles": "margin-top: 10px;"
+			}
+		],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY_ANNOUNCEMENTS",
+		"uri": "community-announcements",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "NewsAndEvents",
+				"props": {
+					"hiddenTabs": ["announcements", "events"]
+				}
+			}
+		]
+	},
+	{
+		"styles": [
+			{
+				"selector": "#w1 > div:first-child > div > span",
+				"styles": "display: none;"
+			},
+			{
+				"selector": "#w1 > div:first-child",
+				"styles": "margin-top: 10px;"
+			}
+		],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY_EVENTS",
+		"uri": "community-events",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "NewsAndEvents",
+				"props": {
+					"hiddenTabs": ["announcements", "news"]
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY_EVENTS",
+		"uri": "community-events-v2",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "UpcomingEvents"
+			},
+			{
+				"component": "OtherEvents"
 			}
 		]
 	},
@@ -119,12 +240,8 @@
 				"styles": "border-bottom: 1px solid #f7dadf;border-radius: 10px 10px 0 0;"
 			},
 			{
-				"selector": "#w2 > div:first-child > div > span",
-				"styles": "display: none;"
-			},
-			{
 				"selector": "#w2 > div",
-				"styles": "border-radius: 0 0 10px 10px;"
+				"styles": "border-radius: 0 0 10px 10px; margin-top: 15px;"
 			}
 		],
 		"auth": true,
@@ -138,7 +255,8 @@
 			{
 				"component": "NewsAndEvents",
 				"props": {
-					"hiddenTabs": ["news", "announcements"]
+					"hiddenTabs": ["announcements"],
+					"tabTitle": {"news": "ANNOUNCEMENTS"}
 				}
 			}
 		]
@@ -394,6 +512,54 @@
 		"contents": [
 			{
 				"component": "GlobalAnnouncement"
+			}
+		]
+	},
+	{
+		"styles": [
+			{
+				"selector": "#w1 > div",
+				"styles": "margin-top: 10px;"
+			},
+			{
+				"selector": "#w2 > div:first-child > div > span",
+				"styles": "display: none;"
+			}
+		],
+		"auth": true,
+		"pageTitle": "PinkPedia",
+		"uri": "lenipedia",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "LenipediaSearch"
+			},
+			{
+				"component": "LeniPedia"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_MANAGE_PAGE",
+		"uri": "manage-page",
+		"withBack": false,
+		"contents": [
+			{
+				"component": "CommunityManagement"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "EDIT_POST_CONTENT",
+		"uri": "edit-post-content",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "PostContent"
 			}
 		]
 	}

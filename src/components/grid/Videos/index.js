@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
 import { store, updateStore } from '_unistore';
-import { getTranslation } from '_helpers';
+import { getTranslation, removeTags } from '_helpers';
 import {
   fetchVideos,
   filterVideos,
@@ -21,10 +21,7 @@ class Videos extends Component {
     this.timer = null;
   }
 	componentDidMount = () => {
-    const { videos } = this.props;
-    if (!videos.data.length) {
-      fetchVideos();
-    }
+    fetchVideos();
 	};
 
   componentDidUpdate = () => {
@@ -91,10 +88,10 @@ class Videos extends Component {
             lazy
           />
         </div>}
-        <p className={style.title}>{item.title}</p>
-        <p className={style.desc}>{item.desc}</p>
+        <p className={`bold ${style.title}`} onClick={() => { this.gotoVideo(item) }}>{item.title}</p>
+        <p className={style.desc} onClick={() => { this.gotoVideo(item) }}>{removeTags(item.desc).substr(0, 100)}...</p>
       </div>
-      ))
+    ))
   }
 
 	render = ({ videos }) => {

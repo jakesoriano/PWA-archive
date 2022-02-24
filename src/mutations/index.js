@@ -17,3 +17,4 @@ export * from './announcements';
 export * from './leaderboard';
 export * from './appConfig';
 export * from './videos';
+export * from './lenipedia';

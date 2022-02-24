@@ -197,17 +197,17 @@ export function removeLikeNews (item, parentId, parentType) {
 }
 
 export function fetchNewsByCommunity (communityId, page, limit) {
-  const { news, communityDetails } = store.getState();
+  const { cnews } = store.getState();
   
   // fetching
-  if(news.fetching) {
+  if(cnews.fetching) {
     return;
   }
 
   // initial state
   updateStore({
-    news: {
-      ...news,
+    cnews: {
+      ...cnews,
       fetching: true,
       result: false
     }
@@ -224,32 +224,29 @@ export function fetchNewsByCommunity (communityId, page, limit) {
     .then((res) => {
       const { communityDetails } = store.getState();
       updateStore({
-        communityDetails: {
-          ...communityDetails,
-          news: {
-            data: page && page > 1 ? [
-              ...news.data,
-              ...res.data
-            ] : res.data,
-            total: res.data.total,
-            page: page || 1,
-            fetching: false,
-            result: true
-          }
+        cnews: {
+          data: page && page > 1 ? [
+            ...cnews.data,
+            ...res.data
+          ] : res.data,
+          total: res.data.total,
+          page: page || 1,
+          fetching: false,
+          result: true
         }
       });
-      console.log(`SPA >> fetchNews Success`, res.success);
+      console.log(`SPA >> fetchNewsByCommunity Success`, res.success);
       resolve(true);
     })
     .catch((err) => {
       updateStore({
-        news: {
-          ...news,
+        cnews: {
+          ...cnews,
           fetching: false,
           result: false
         }
       });
-      console.log(`SPA >> fetchNews Error`, err);
+      console.log(`SPA >> fetchNewsByCommunity Error`, err);
       resolve(false);
     });
   });

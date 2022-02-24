@@ -127,7 +127,7 @@ class EventsList extends Component {
                 style={{container: style.likeButton}}/>
             </a>
             <a
-              className={i.shared ? style.buttonShareActive : ''}
+              className={`event-share ${i.shared ? style.buttonShareActive : ''}`}
               onClick={() => {
                 this.onShareEvent(i);
               }}>

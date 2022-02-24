@@ -19,6 +19,7 @@ import {
 	fetchTranslation,
 	fetchAppConfig,
 	// fetchUserData
+	fetchTasks,
 } from '_mutations';
 import {
 	LoaderRing,
@@ -128,7 +129,7 @@ class Grid extends Component {
 	};
 
 	componentDidMount = () => {
-		const { selectedLanguage, authUser } = this.props;
+		const { selectedLanguage } = this.props;
 		let langAlias = getLanguageAlias(
 			getQueryStringValue('lang') || getCookie('language')
 		);
@@ -383,13 +384,13 @@ class Grid extends Component {
 		const url = getCurrentUrl();
 		if (!authUser && data.auth && url !== '/') {
 			route('/', true);
-		} else if (
-			authUser &&
-			authUser.isNewUser &&
-			url !== '/registration-invite' &&
-			url !== '/home'
-		) {
-			route('/registration-invite', true);
+		// } else if (
+		// 	authUser &&
+		// 	authUser.isNewUser &&
+		// 	url !== '/registration-invite' &&
+		// 	url !== '/home'
+		// ) {
+		// 	route('/registration-invite', true);
 		} else if (
 			authUser &&
 			!authUser.isNewUser &&
@@ -518,6 +519,9 @@ if (typeof window !== 'undefined') {
 	window.onResume = () => {
 		// fetch app config
 		fetchAppConfig();
+		// fetch tasks to trigger notification if there is pending
+		fetchTasks();
+		// url
 		const path = getCurrentUrl();
 		console.log('onResume', path);
 	};
