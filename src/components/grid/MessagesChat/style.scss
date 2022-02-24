@@ -1,0 +1,79 @@
+@import '../../../style/variables.scss';
+.chatWrap {
+    padding: 15px;
+    * {
+        color: #737373;
+    }
+    .head {
+        display: flex;
+        .listingImg {
+            margin-right: 15px;
+        }
+        .details {
+            .button {
+                background-color: $primary_layout;
+                padding: 5px 15px;
+                margin-top: 5px;
+                color: $white;
+                display: inline-block;
+                border-radius: 8px;
+            }
+        }
+    }
+    .body {
+        padding: 30px 0;
+        .communityDetails {
+            display: flex;
+            align-items: center;
+            .communityImg {
+                border-radius: 50%;
+                margin-right: 15px;
+            }
+            .name {
+                font-size: 20px;
+            }
+        }
+        .chat {
+            .chatBubble {
+                padding: 10px;
+                border-radius: 20px;
+                max-width: 80%;
+                margin-bottom: 2px;
+            }
+            .self {
+                background-color: $primary_layout;
+                color: $white;
+                float: right;
+                border-bottom-right-radius: 5px;
+                + .self {
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+                + .other {
+                    margin-top: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+                &:last-of-type {
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 20px;
+                }
+            }
+            .other {
+                background-color: $gray;
+                float: left;
+                border-bottom-left-radius: 5px;
+                + .other {
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+                + .self {
+                    margin-top: 5px;
+                }
+                &:last-of-type {
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 20px;
+                }
+            }
+        }
+    }
+}

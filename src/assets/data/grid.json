@@ -562,5 +562,29 @@
 				"component": "PostContent"
 			}
 		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "MESSAGES",
+		"uri": "messages",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "MessagesPage"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "MESSAGES",
+		"uri": "messages-chat",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "MessagesChat"
+			}
+		]
 	}
 ]

@@ -1,0 +1,24 @@
+{
+    "data": {
+        "results": [
+            {
+                "id": 1,
+                "user": {
+                    "name": "Engineers For Leni",
+                    "image": "asd"
+                },
+                "unread": true,
+                "chat": "Sure, please send me your information"
+            },
+            {
+                "id": 2,
+                "user": {
+                    "name": "Jake",
+                    "image": "asd"
+                },
+                "unread": false,
+                "chat": "Sure, please send me your information"
+            }
+        ]
+    }
+}
