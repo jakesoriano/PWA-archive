@@ -7,7 +7,8 @@ import {
   urlShare,
   urlCommunitySetup, 
   urlCommunityGetInfo,
-  urlCommunityLeader
+  urlCommunityLeader,
+  urlCommunityVolunteer
 } from '_helpers';
 import { communitySort } from '_constant';
 
@@ -749,3 +750,49 @@ export function deleteCommunityNews (id) {
   });
 }
 
+export function fetchCommunityVolunteers () {
+  //
+  const { communityVolunteers } = store.getState();
+  
+  // fetching
+  if(communityVolunteers.fetching) {
+    return;
+  }
+
+  // initial state
+  updateStore({
+    communityVolunteers: {
+      ...communityVolunteers,
+      fetching: true,
+      result: false
+    }
+  });
+  const url = `${urlCommunityVolunteer}`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'GET',
+    })
+    .then((res) => {
+      updateStore({
+        communityVolunteers: {
+          data: res,
+          fetching: false,
+          result: true
+        }
+      });
+      console.log(`SPA >> fetchCommunityVolunteers Success`, res, communityVolunteers);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        communityVolunteers: {
+          ...communityVolunteers,
+          fetching: false,
+          result: false
+        }
+      });
+      console.log(`SPA >> fetchCommunityVolunteers Error`, err);
+      resolve(false);
+    });
+  });
+}

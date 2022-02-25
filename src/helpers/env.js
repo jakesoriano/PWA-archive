@@ -41,3 +41,4 @@ export const urlLeaderboard = `${process.env.API_DOMAIN}leaderboard`;
 export const urlVideos = urlUser + `/videos`;
 export const urlAppLandingConfig = `https://mobile-kkp-staging.s3.ap-southeast-1.amazonaws.com/uploads/appLandingConfig.json`;
 export const urlLeniPedia = `${process.env.API_DOMAIN}lenipedia`;
+export const urlCommunityVolunteer = `{PUBLIC_PATH}assets/data/community.json?_{_}`;
