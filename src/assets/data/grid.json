@@ -234,6 +234,30 @@
 		]
 	},
 	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY_EVENTS",
+		"uri": "community-volunteer",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "CommunityVolunteer"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY_EVENTS",
+		"uri": "community-crowdsourcing",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "UpcomingEvents"
+			}
+		]
+	},
+	{
 		"styles": [
 			{
 				"selector": "#w1 > div",
