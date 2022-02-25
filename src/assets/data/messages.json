@@ -3,21 +3,78 @@
         "results": [
             {
                 "id": 1,
-                "user": {
-                    "name": "Engineers For Leni",
-                    "image": "asd"
+                "userId": "01FV2HBRAR8Z5FJP45P84Z0GGB",
+                "community": {
+                    "name": "Engineers For Leniw",
+                    "image": "asd.jpg"
+                },
+                "listing": {
+                    "needs": "Content Writer",
+                    "municipality": "BALANGA CITY",
+                    "province": "BATAAN",
+                    "barangay": "CABOG-CABOG",
+                    "date": 1646352000000
                 },
                 "unread": true,
-                "chat": "Sure, please send me your information"
-            },
-            {
-                "id": 2,
-                "user": {
-                    "name": "Jake",
-                    "image": "asd"
-                },
-                "unread": false,
-                "chat": "Sure, please send me your information"
+                "status": "pending",
+                "chat": [
+                    {
+                        "type": "self",
+                        "text": "Hi I want to be a volunteer for your caravan."
+                    },
+                    {
+                        "type": "self",
+                        "text": "Hi I want to be a volunteer for your caravan."
+                    },
+                    {
+                        "type": "other",
+                        "text": "Sure. Can you give me your information"
+                    },
+                    {
+                        "type": "other",
+                        "text": "Hi I want to be a volunteer for your caravan."
+                    },
+                    {
+                        "type": "self",
+                        "text": "Hi I want to be a volunteer for your caravan."
+                    },
+                    {
+                        "type": "self",
+                        "text": "Hi I want to be a volunteer for your caravan."
+                    },
+                    {
+                        "type": "self",
+                        "text": "Hi I want to be a volunteer for your caravan."
+                    },
+                    {
+                        "type": "self",
+                        "text": "Hi I want to be a volunteer for your caravan."
+                    },
+                    {
+                        "type": "self",
+                        "text": "Hi I want to be a volunteer for your caravan."
+                    },
+                    {
+                        "type": "self",
+                        "text": "Hi I want to be a volunteer for your caravan."
+                    },
+                    {
+                        "type": "self",
+                        "text": "Hi I want to be a volunteer for your caravan."
+                    },
+                    {
+                        "type": "self",
+                        "text": "Hi I want to be a volunteer for your caravan."
+                    },
+                    {
+                        "type": "self",
+                        "text": "Hi I want to be a volunteer for your caravan."
+                    },
+                    {
+                        "type": "self",
+                        "text": "Hi I want to be a volunteer for your caravan."
+                    }
+                ]
             }
         ]
     }

@@ -16,7 +16,6 @@ export function fetchMessages () {
   
     return xhr(urlMessages)
       .then((res) => {
-        console.log(res, 'wew');
         updateStore({
           messages: {
             data: res.data.results,
