@@ -47,3 +47,4 @@ export { default as CommunityManagement } from './CommunityManagement';
 export { default as OtherEvents } from './OtherEvents';
 export { default as MessagesPage } from './MessagesPage';
 export { default as MessagesChat } from './MessagesChat';
+export { default as EditProfile } from './EditProfile';

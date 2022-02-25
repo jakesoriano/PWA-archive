@@ -4,7 +4,7 @@
 	"PAGE_INVITE": "Invite",
 	"PAGE_LEADERBOARD": "Leaderboard",
 	"PAGE_COMMUNITY": "Community",
-	"PAGE_PROFILE": "Profile",
+	"PAGE_PROFILE": "My Profile",
 	"PAGE_NOTIFICATION": "Notifications",
 	"PAGE_TERMS": "Terms and Conditions",
 	"PAGE_OTP": "One-Time PIN",
@@ -15,6 +15,7 @@
 	"PAGE_VIDEOS": "Training Videos",
 	"PAGE_GLOBAL_ANNOUNCEMENT": "Announcements",
 	"PAGE_MANAGE_PAGE": "Manage Page",
+	"PAGE_UPDATE_PROFILE": "Update Profile",
 	"MEMBERS": "Members",
 	"HERO_POINTS": "Hero Points",
 	"EARN_100P": "Earn 100 pts",
@@ -30,6 +31,7 @@
 	"NOT_INTERESTED": "Not Interested",
 	"GOING": "Going",
 	"EVENT_BY": "Event By",
+	"IS_ONLINE": "Is Online",
 	"ONLINE_EVENT": "Online Event",
 	"ONSITE_EVENT": "Onsite Event",
 	"HI_NAME": "Hi {NAME}!",
@@ -239,5 +241,7 @@
 	"MESSAGES": "Messages",
 	"MARK_AS_VOLUNTEER": "Mark as Volunteer",
 	"MARKED_AS_VOLUNTEER": "You were marked as a Volunteer by Engineers for Leni! Mark the date, Kakampink!",
-	"OPT_OUT": "Opt Out"
+	"OPT_OUT": "Opt Out",
+	"UPDATE_PROFILE": "Update Profile",
+	"UPDATE_PROFILE_SUCCESS": "Profile updated successfully",
 }

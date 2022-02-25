@@ -14,7 +14,7 @@ export default (props) => (
       <input {... {
         ...props,
         className: `${style.formInput} ${props.className || ''} ${props.hasError ? style.error : ''}`
-      }} />
+      }} disabled={props.disabled ? props.disabled : false}/>
     }
     
     {['checkbox', 'radio'].indexOf(props.type) > -1 && props.label && <label for={props.id}>{getTranslation(props.label)}</label>}
