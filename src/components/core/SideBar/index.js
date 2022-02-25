@@ -68,6 +68,9 @@ class SideBar extends Component {
 										});
 									}}>{getTranslation('POST_CONTENT')}</Link>
 								<Link id="sm-managepage" href={`/manage-page`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>{getTranslation('PAGE_MANAGE_PAGE')}</Link>
+								<Link id="sm-managepage" href={`/post-volunteer-announcement`} className={`${style.sMItem} ${style.subItem}`} onClick={this.onClickMenu}>
+									<div>{getTranslation('POST_VOLUNTEER_ANNOUNCEMENT')}</div>
+								</Link>
 							</div>
 						)}
 						{!isUsingSocialLogin() && (
