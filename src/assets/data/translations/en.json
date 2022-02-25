@@ -249,5 +249,14 @@
 	"VIEW": "VIEW",
 	"UPDATE_PROFILE": "Update Profile",
 	"UPDATE_PROFILE_SUCCESS": "Profile updated successfully",
-	"PINK_PEDIA": "PinkPedia"
+	"PINK_PEDIA": "PinkPedia",
+	"COMMUNITY_VOLUNTEER": "Volunteer",
+	"COMMUNITY_CROWDSOURCING": "Crowdsourcing",
+	"COMMUNITY_BE_A_VOLUNTEER": "Be a volunteer! Let's accomplish more with our KakamPink Communities",
+	"COMMUNITY_VOLUNTEER_TITLE": "Community Volunteer",
+	"COMING_SOON": "Coming Soon",
+	"UPDATE_YOUR_PROFILE": "Update Your Profile",
+	"UPDATE_YOUR_PROFILE_BODY": "KakamPink, kumpletuhin mo na yung account profile so you can use this app feature.",
+	"UPDATE_YOUR_PROFILE_LINK": "Click here para makumpleto yung profile mo.",
+	"KAKAMPINKS": "KakamPinks"
 }
