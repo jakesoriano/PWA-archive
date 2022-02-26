@@ -775,7 +775,7 @@ export function postVolunteerAnnouncement (data) {
   });
 }
 
-export function fetchCommunityVolunteers (page, limit) {
+export function fetchCommunityVolunteers (name, page, limit) {
   //
   const { communityVolunteers } = store.getState();
   
@@ -788,6 +788,7 @@ export function fetchCommunityVolunteers (page, limit) {
   updateStore({
     communityVolunteers: {
       ...communityVolunteers,
+      filter: name || '',
       fetching: true,
       result: false
     }
@@ -797,12 +798,12 @@ export function fetchCommunityVolunteers (page, limit) {
     xhr(url, {
       method: 'GET',
       params: {
+        q: name || '',
         p: page || 1, // page number
         s: limit || 9 // limit
       }
     })
     .then((res) => {
-      console.log(1234, communityVolunteers.data, res.data.results)
       updateStore({
         communityVolunteers: {
           data: page && page > 1 ? [
