@@ -2,17 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'unistore/preact';
 import { ImageLoader } from '_components/core';
 import { fetchCommunityVolunteers } from '_mutations';
-import { getTranslation, isUserUpdatedProfile } from '_helpers';
+import { getTranslation, isUserUpdatedProfile, dateNewsFormat } from '_helpers';
 import style from './style';
 import { route } from 'preact-router';
-import { format } from 'date-fns';
 import { LoaderRing } from '_components/core';
 
 class CommunityVolunteer extends Component {
 	constructor(props) {
 		super(props);
 		this.initialState = {
-			search: '',
+			search: this.props?.communityVolunteers?.filter || '',
 			data: [],
 		};
 		this.state = this.initialState;
@@ -20,7 +19,7 @@ class CommunityVolunteer extends Component {
 
 	componentDidMount = () => {
 		// fetch community volunteers
-		fetchCommunityVolunteers();
+		fetchCommunityVolunteers(this?.state?.search);
 
 		this.setState({
 			data: this?.props?.communityVolunteers?.data,
@@ -28,10 +27,11 @@ class CommunityVolunteer extends Component {
 		});
 	};
 
-	componentDidUpdate = (prevProps) => {
+	componentDidUpdate = (prevProps, prevState) => {
 		if (
 			prevProps?.communityVolunteers?.data !==
-			this.props.communityVolunteers?.data
+				this.props.communityVolunteers?.data ||
+			prevState?.search !== this.state.search
 		) {
 			this.setState({
 				data: this?.props?.communityVolunteers?.data,
@@ -41,39 +41,41 @@ class CommunityVolunteer extends Component {
 	};
 
 	handleSearchByTitle = (e) => {
-		this.setState({
-			search: e.target.value,
-		});
+		clearTimeout(this.timer);
+		this.timer = setTimeout(() => {
+			fetchCommunityVolunteers(e.target.value || '');
+			this.setState({
+				search: e.target.value,
+			});
+		}, 500);
 	};
 
 	handleShowMore = () => {
 		if (!this.state.moreFetching) {
-			console.log('fetching');
 			// flag
 			this.setState({
 				moreFetching: true,
 			});
 			// fetch
-			fetchCommunityVolunteers(this?.props?.communityVolunteers?.page + 1);
+			fetchCommunityVolunteers(
+				this.state?.search,
+				this?.props?.communityVolunteers?.page + 1
+			);
 		}
 	};
 
 	render() {
 		// filtering community data
-		const communityData = this.state?.data?.filter((data) => {
+		const filteredData = this.state?.data?.sort((a,b) => b?.postedDate - a?.postedDate)
+		const communityData = filteredData.filter((data) => {
 			const communityToLower = data?.community?.name?.toLowerCase();
-			return communityToLower?.includes(this?.state?.search?.toLowerCase());
+			return communityToLower?.includes(
+				this?.state?.search?.toLowerCase()
+			);
 		});
 
 		if (!isUserUpdatedProfile()) {
 			route('community');
-		}
-
-		if (
-			this?.props?.communityVolunteers?.fetching &&
-			!this.state.moreFetching
-		) {
-			return <LoaderRing fullpage />;
 		}
 
 		return (
@@ -144,10 +146,9 @@ class CommunityVolunteer extends Component {
 											{data?.community?.name}
 										</p>
 										<p>{data?.needs}</p>
-										<p>{format(data?.date, 'PPP')}</p>
-
+										<p>{dateNewsFormat(data?.date)}</p>
 										<p>
-											{data?.barangay} {data?.municipality} {data?.province}
+										{data?.province}, {data?.barangay} {data?.municipality} 
 										</p>
 										<p>
 											{data?.noOfVolunteers} {getTranslation('KAKAMPINKS')}
@@ -157,14 +158,17 @@ class CommunityVolunteer extends Component {
 							);
 						})}
 
-						{this.state?.data.length <
-							this.props.communityVolunteers?.total && !this?.props?.communityVolunteers?.fetching && (
-							<button className={style.showMore} onClick={this.handleShowMore}>
-								<span>
-									<span>&#8659;</span> {getTranslation('SHOW_MORE')}
-								</span>
-							</button>
-						)}
+						{this.state?.data.length < this.props.communityVolunteers?.total &&
+							!this?.props?.communityVolunteers?.fetching && (
+								<button
+									className={style.showMore}
+									onClick={this.handleShowMore}
+								>
+									<span>
+										<span>&#8659;</span> {getTranslation('SHOW_MORE')}
+									</span>
+								</button>
+							)}
 
 						{this.state.moreFetching && (
 							<LoaderRing styles={{ container: style.loaderWrap }} />
