@@ -187,6 +187,11 @@ export const initialStore = {
     page: 1,
     selected: null
   },
+  mChat: {
+    fetching: false,
+    result: false,
+    data: {}
+  },
   communityVolunteers: {
     fetching: false,
     result: false,

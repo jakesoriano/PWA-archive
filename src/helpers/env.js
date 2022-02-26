@@ -1,7 +1,6 @@
 export const urlTranslation = `{PUBLIC_PATH}assets/data/translations/{langAlias}.json?_{_}`;
 export const urlGrid = `{PUBLIC_PATH}assets/data/grid.json?_{_}`;
 export const urlAppConfig = `{CDN_DOMAIN}appConfig.json?_{_}`;
-export const urlMessages = `{PUBLIC_PATH}assets/data/messages.json?_{_}`;
 export const urlUser = `${process.env.API_DOMAIN}user`;
 export const urlUserLogin = urlUser + `/login`;
 export const urlUserProfile = urlUser + `/profile`;
@@ -42,4 +41,5 @@ export const urlLeaderboard = `${process.env.API_DOMAIN}leaderboard`;
 export const urlVideos = urlUser + `/videos`;
 export const urlAppLandingConfig = `https://mobile-kkp-staging.s3.ap-southeast-1.amazonaws.com/uploads/appLandingConfig.json`;
 export const urlLeniPedia = `${process.env.API_DOMAIN}lenipedia`;
+export const urlMessages = `${urlCommunity}/listings/msgfeed`;
 export const urlCommunityVolunteer = `${process.env.API_DOMAIN}community/listings/search`
