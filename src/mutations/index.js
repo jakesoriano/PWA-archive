@@ -18,4 +18,3 @@ export * from './leaderboard';
 export * from './appConfig';
 export * from './videos';
 export * from './lenipedia';
-export * from './messages';
