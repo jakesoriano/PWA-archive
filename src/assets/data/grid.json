@@ -645,5 +645,17 @@
 				"component": "EditProfile"
 			}
 		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"withBack": true,
+		"pageTitle": "PAGE_VOLUNTEER_ANNOUNCEMENT",
+		"uri": "post-volunteer-announcement",
+		"contents": [
+			{
+				"component": "PostVolunteerAnnouncement"
+			}
+		]
 	}
 ]
