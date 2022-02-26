@@ -39,6 +39,29 @@
 	},
 	{
 		"styles": [],
+		"pageTitle": "PAGE_DATA_PRIVACY",
+		"uri": "landing-data-privacy",
+		"contents": [
+			{
+				"component": "DataPrivacy",
+				"props": {
+					"fromLandingPage": true
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"pageTitle": "KAYA_NATIN",
+		"uri": "about-kaya-natin",
+		"contents": [
+			{
+				"component": "AboutKayaNatin"
+			}
+		]
+	},
+	{
+		"styles": [],
 		"pageTitle": "PAGE_SIGNUP",
 		"uri": "signup",
 		"contents": [
@@ -230,6 +253,30 @@
 			},
 			{
 				"component": "OtherEvents"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY_EVENTS",
+		"uri": "community-volunteer",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "CommunityVolunteer"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY_EVENTS",
+		"uri": "community-crowdsourcing",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "UpcomingEvents"
 			}
 		]
 	},
@@ -596,6 +643,18 @@
 		"contents": [
 			{
 				"component": "EditProfile"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"withBack": true,
+		"pageTitle": "PAGE_VOLUNTEER_ANNOUNCEMENT",
+		"uri": "post-volunteer-announcement",
+		"contents": [
+			{
+				"component": "PostVolunteerAnnouncement"
 			}
 		]
 	}

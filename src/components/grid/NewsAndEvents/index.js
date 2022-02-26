@@ -157,32 +157,33 @@ class NewsAndEvents extends Component {
 		if (data) {
 			return (
 				<div className={style.pWrap}>
-					<a className={`${style.pClose}`} onClick={() => {
-						this.setState({
-							selectedItem: null
-						});
-					}}>
-						<ImageLoader
-							src="assets/images/closebutton.png"
-							style={{container: style.closeBtn}}
-						/>
-					</a>
-					<div className={`${style.pHeader} ${this.state.active === 'events' ? style.pHeaderEvents : ''}`}>
+					<div className={style.topHeader}>
+						<p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
+						<a className={`${style.pClose}`} onClick={() => {
+							this.setState({
+								selectedItem: null
+							});
+						}}>
+							<ImageLoader
+								src="assets/images/closebutton.png"
+								style={{container: style.closeBtn}}
+							/>
+						</a>
+					</div>
+					<div className={`${style.pHeader} ${style.pHeaderEvents}`}>
 						<ImageLoader
 								src={data.image}
 								style={{container: style.pImage}}
 								lazy />
 						{(this.state.active === 'news' || this.state.active === 'announcements') ? (
-							<div className={style.pNews}>
-								<p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
+							<div className={style.pEvents}>
 								<a className={style.pLink} href={data.link}>{data.link}</a>
 							</div>
 						) : (
 							<div className={style.pEvents}>
-								<p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
 								<p className={`${style.pDate}`}>
-									{`${getTranslation('WHEN')}: ${dateEventFormat(data.date)}`} <br />
-									{`${getTranslation('WHERE')}: ${data.location}`}
+									<span>{getTranslation('WHEN')}:</span> {dateEventFormat(data.date)} <br />
+									<span>{getTranslation('WHERE')}:</span> {data.location} <br />
 								</p>
 							</div>
 						)}

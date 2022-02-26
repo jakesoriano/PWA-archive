@@ -170,11 +170,11 @@ class InitialSignup extends Component {
               this.props.toggleSignupForm();
               updateStore({
                 signup: {
-                  username: data.email,
-                  password: data.id,
+                  username: (data.email || '').toString(),
+                  password: (data.id || '').toString(),
                   fname: data.fname,
                   lname: data.lname,
-                  socId: data.id,
+                  socId: (data.id || '').toString(),
                   socType: type
                 }
               });

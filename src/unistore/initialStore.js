@@ -119,6 +119,11 @@ export const initialStore = {
     result: false,
     data: {}
   },
+  appLandingConfig: {
+    fetching: false,
+    result: false,
+    data: {}
+  },
   tasks: {
     fetching: false,
     result: false,
@@ -186,5 +191,10 @@ export const initialStore = {
     fetching: false,
     result: false,
     data: {}
+  },
+  communityVolunteers: {
+    fetching: false,
+    result: false,
+    data: [],
   }
 };
