@@ -777,7 +777,6 @@ export function fetchCommunityVolunteers (page, limit) {
       }
     })
     .then((res) => {
-      console.log(1234, communityVolunteers.data, res.data.results)
       updateStore({
         communityVolunteers: {
           data: page && page > 1 ? [
