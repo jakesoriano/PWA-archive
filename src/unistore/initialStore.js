@@ -179,8 +179,6 @@ export const initialStore = {
     page: 1,
     selected: null
   },
-<<<<<<< HEAD
-=======
   messages: {
     fetching: false,
     result: false,
@@ -189,7 +187,6 @@ export const initialStore = {
     page: 1,
     selected: null
   },
->>>>>>> develop
   communityVolunteers: {
     fetching: false,
     result: false,
