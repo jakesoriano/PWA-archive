@@ -23,8 +23,21 @@ class CommunityVolunteer extends Component {
 		fetchCommunityVolunteers();
 
 		this.setState({
-			data: this?.props?.communityVolunteers,
+			data: this?.props?.communityVolunteers?.data,
+			moreFetching: false,
 		});
+	};
+
+	componentDidUpdate = (prevProps) => {
+		if (
+			prevProps?.communityVolunteers?.data !==
+			this.props.communityVolunteers?.data
+		) {
+			this.setState({
+				data: this?.props?.communityVolunteers?.data,
+				moreFetching: false,
+			});
+		}
 	};
 
 	handleSearchByTitle = (e) => {
@@ -33,17 +46,33 @@ class CommunityVolunteer extends Component {
 		});
 	};
 
+	handleShowMore = () => {
+		if (!this.state.moreFetching) {
+			console.log('fetching');
+			// flag
+			this.setState({
+				moreFetching: true,
+			});
+			// fetch
+			fetchCommunityVolunteers(this?.props?.communityVolunteers?.page + 1);
+		}
+	};
+
 	render() {
 		// filtering community data
-		const communityData = this.state?.data?.data?.filter((data) => {
-			return data?.title?.includes(this?.state?.search);
+		const communityData = this.state?.data?.filter((data) => {
+			const communityToLower = data?.community?.name?.toLowerCase();
+			return communityToLower?.includes(this?.state?.search?.toLowerCase());
 		});
 
 		if (!isUserUpdatedProfile()) {
 			route('community');
 		}
 
-		if (this?.props?.communityVolunteers?.fetching) {
+		if (
+			this?.props?.communityVolunteers?.fetching &&
+			!this.state.moreFetching
+		) {
 			return <LoaderRing fullpage />;
 		}
 
@@ -103,7 +132,7 @@ class CommunityVolunteer extends Component {
 									{/* Icon */}
 									<div className={style.avatar}>
 										<ImageLoader
-											src={data?.img}
+											src={data?.community?.image}
 											style={{ container: style.icon }}
 											lazy
 										/>
@@ -111,17 +140,35 @@ class CommunityVolunteer extends Component {
 
 									{/* Information */}
 									<div className={style.details}>
-										<p className={style.communityTitle}>{data?.title}</p>
-										<p>{data?.community}</p>
-										<p>{format(new Date(data?.when), 'PPP')}</p>
-										<p>{data?.location}</p>
+										<p className={style.communityTitle}>
+											{data?.community?.name}
+										</p>
+										<p>{data?.needs}</p>
+										<p>{format(data?.date, 'PPP')}</p>
+
 										<p>
-											{data?.noOfMembers} {getTranslation('KAKAMPINKS')}
+											{data?.barangay} {data?.municipality} {data?.province}
+										</p>
+										<p>
+											{data?.noOfVolunteers} {getTranslation('KAKAMPINKS')}
 										</p>
 									</div>
 								</div>
 							);
 						})}
+
+						{this.state?.data.length <
+							this.props.communityVolunteers?.total && !this?.props?.communityVolunteers?.fetching && (
+							<button className={style.showMore} onClick={this.handleShowMore}>
+								<span>
+									<span>&#8659;</span> {getTranslation('SHOW_MORE')}
+								</span>
+							</button>
+						)}
+
+						{this.state.moreFetching && (
+							<LoaderRing styles={{ container: style.loaderWrap }} />
+						)}
 					</div>
 				</div>
 			</div>
