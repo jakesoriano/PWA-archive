@@ -613,6 +613,30 @@
 	{
 		"styles": [],
 		"auth": true,
+		"pageTitle": "MESSAGES",
+		"uri": "messages",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "MessagesPage"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "MESSAGES",
+		"uri": "messages-chat",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "MessagesChat"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
 		"withBack": true,
 		"pageTitle": "PAGE_UPDATE_PROFILE",
 		"uri": "update-profile",

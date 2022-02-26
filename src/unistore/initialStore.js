@@ -179,6 +179,17 @@ export const initialStore = {
     page: 1,
     selected: null
   },
+<<<<<<< HEAD
+=======
+  messages: {
+    fetching: false,
+    result: false,
+    data: [],
+    total: 0,
+    page: 1,
+    selected: null
+  },
+>>>>>>> develop
   communityVolunteers: {
     fetching: false,
     result: false,
