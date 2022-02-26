@@ -750,7 +750,7 @@ export function deleteCommunityNews (id) {
   });
 }
 
-export function fetchCommunityVolunteers () {
+export function fetchCommunityVolunteers (name, page, limit) {
   //
   const { communityVolunteers } = store.getState();
   
@@ -763,6 +763,7 @@ export function fetchCommunityVolunteers () {
   updateStore({
     communityVolunteers: {
       ...communityVolunteers,
+      filter: name || '',
       fetching: true,
       result: false
     }
@@ -771,11 +772,21 @@ export function fetchCommunityVolunteers () {
   return new Promise((resolve) => {
     xhr(url, {
       method: 'GET',
+      params: {
+        q: name || '',
+        p: page || 1, // page number
+        s: limit || 9 // limit
+      }
     })
     .then((res) => {
       updateStore({
         communityVolunteers: {
-          data: res,
+          data: page && page > 1 ? [
+            ...communityVolunteers.data,
+            ...res.data.results
+          ] : res.data.results,
+          page: page || 1,
+          total: res.data.total,
           fetching: false,
           result: true
         }
