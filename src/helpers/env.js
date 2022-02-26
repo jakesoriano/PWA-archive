@@ -40,3 +40,4 @@ export const urlValidateTask = urlUser + `/tasks/validate/{id}`;
 export const urlLeaderboard = `${process.env.API_DOMAIN}leaderboard`;
 export const urlVideos = urlUser + `/videos`;
 export const urlLeniPedia = `${process.env.API_DOMAIN}lenipedia`;
+export const urlCommunityVolunteer = `{PUBLIC_PATH}assets/data/community.json?_{_}`;
