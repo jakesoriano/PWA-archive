@@ -66,23 +66,25 @@ class LeniPedia extends Component {
 		if (data) {
 			return (
 				<div className={style.pWrap}>
-					<a className={`${style.pClose}`} onClick={() => {
-						this.setState({
-							selectedItem: null
-						});
-					}}>
-						<ImageLoader
-							src="assets/images/closebutton.png"
-							style={{container: style.closeBtn}}
-						/>
-					</a>
+          <div className={style.topHeader}>
+            <p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
+            <a className={`${style.pClose}`} onClick={() => {
+              this.setState({
+                selectedItem: null
+              });
+            }}>
+              <ImageLoader
+                src="assets/images/closebutton.png"
+                style={{container: style.closeBtn}}
+              />
+            </a>
+          </div>
 					<div className={`${style.pHeader}`}>
 						<ImageLoader
 								src={data.image}
 								style={{container: style.pImage}}
 								lazy />
             <div className={style.pNews}>
-              <p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
               <a className={style.pLink} href={data.link}>{data.link}</a>
             </div>
 					</div>
