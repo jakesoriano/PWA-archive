@@ -46,4 +46,5 @@ export { default as LeniPedia } from './LeniPedia';
 export { default as CommunityManagement } from './CommunityManagement';
 export { default as OtherEvents } from './OtherEvents';
 export { default as EditProfile } from './EditProfile';
+export { default as PostVolunteerAnnouncement } from './PostVolunteerAnnouncement';
 export { default as CommunityVolunteer } from './CommunityVolunteer';

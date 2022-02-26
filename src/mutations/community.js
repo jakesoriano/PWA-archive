@@ -750,6 +750,30 @@ export function deleteCommunityNews (id) {
   });
 }
 
+export function postVolunteerAnnouncement (data) {
+  // current state
+  const { communityInfo } = store.getState();
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/listings`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'POST',
+      data: data
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> postVolunteerAnnouncement Error`, res);
+          resolve(res);
+        } else {
+          console.log(`SPA >> postVolunteerAnnouncement successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> postVolunteerAnnouncement failed`, err);
+      });
+  });
+}
 export function fetchCommunityVolunteers () {
   //
   const { communityVolunteers } = store.getState();
