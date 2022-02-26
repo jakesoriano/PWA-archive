@@ -181,5 +181,10 @@ export const initialStore = {
     total: 0,
     page: 1,
     selected: null
+  },
+  mChat: {
+    fetching: false,
+    result: false,
+    data: {}
   }
 };

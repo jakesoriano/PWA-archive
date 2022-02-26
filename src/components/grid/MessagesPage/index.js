@@ -7,11 +7,15 @@ import { store, updateStore } from '_unistore';
 import style from './style';
 class MessagesPage extends Component {
   viewMessage = (index) => {
-    let { messages } = store.getState();
+    let { messages, mChat } = store.getState();
     updateStore({
       messages: {
         ...messages,
         selected: index
+      },
+      mChat: {
+        ...mChat,
+        data: []
       }
     });
     route('messages-chat');
@@ -19,7 +23,7 @@ class MessagesPage extends Component {
   componentDidMount = () => {
     fetchMessages();
   };
-  render = ({messages}) => (
+  render = ({messages, authUser}) => (
     <div className={style.messagesWrap}>
       {
         messages.data.map((item, i) => (
@@ -30,8 +34,10 @@ class MessagesPage extends Component {
               lazy
             />
             <div className={`${style.details} ${item.unread ? style.unread : ''}`}>
-              <p className={`extraBold ${style.name}`}>{item.community.name}</p>
-              <p className={style.text}>{item.chat[0].text}</p>
+              <p className={`extraBold ${style.name}`}>
+                {authUser.profile._id === item.user1 ? item.community.name : `${item.profile.fname} ${item.profile.lname}`}
+              </p>
+              <p className={style.text}>{item.latestMessage}</p>
             </div>
           </div>
         ))
@@ -39,4 +45,4 @@ class MessagesPage extends Component {
     </div>
   )
 }
-export default connect(['messages'])(MessagesPage);
+export default connect(['messages', 'authUser'])(MessagesPage);
