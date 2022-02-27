@@ -9,6 +9,7 @@ import {
     getConfigByKey
 } from '_helpers';
 import {
+    fetchMessages,
     fetchMessagesFeed,
     sendMessage,
     fetchLatestMessage,
@@ -125,7 +126,8 @@ class MessagesChat extends Component {
         }
     };
     componentDidMount = () => {
-        let { mChat } = this.props;
+        let { mChat, messages } = this.props;
+        let sMessage = messages.data.find((i) => i.listingId === this.state.listingId);
         updateStore({
             mChat: {
                 ...mChat,
@@ -138,7 +140,7 @@ class MessagesChat extends Component {
         this.setLatestFeedChecker();
         fetchVolunteerStatus(
             this.state.feedId,
-            this.props.authUser.profile._id
+            sMessage.user2
         ).then((res) => {
             if (res) {
                 this.setState({
