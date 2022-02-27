@@ -13,7 +13,8 @@ import {
   fetchTasks,
   fetchLeaderboard,
   fetchVideos,
-  fetchMessages
+  fetchMessages,
+  fetchCommunityVolunteers
 } from '_mutations';
 
 // eslint-disable-next-line import/prefer-default-export
@@ -32,7 +33,8 @@ export function prefetch (hasUser) {
     hasUser && fetchTasks(),
     hasUser && fetchLeaderboard(),
     hasUser && fetchVideos(),
-    hasUser && fetchMessages()
+    hasUser && fetchMessages(),,
+    hasUser && fetchCommunityVolunteers()
   ]).then(() => {
     hasUser && generateNotifications();
   });
