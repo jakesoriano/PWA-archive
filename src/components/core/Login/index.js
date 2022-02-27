@@ -144,8 +144,8 @@ class Login extends Component {
         if(res.success) {
           // submit data
           this.onLogin({
-            username: res.data.email,
-            password: res.data.id
+            username: (res.data.email || '').toString(),
+            password: (res.data.id || '').toString()
           }, true, 'ACCOUNT_NOT_FOUND');
         } else if (res.error !== 'SIGN_IN_CANCELLED') {
           showAlertBox({
