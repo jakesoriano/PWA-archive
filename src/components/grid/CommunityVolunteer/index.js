@@ -5,7 +5,6 @@ import { fetchCommunityVolunteers } from '_mutations';
 import { getTranslation, isUserUpdatedProfile, dateNewsFormat } from '_helpers';
 import style from './style';
 import { route } from 'preact-router';
-import { store, updateStore } from '_unistore';
 import { LoaderRing } from '_components/core';
 
 class CommunityVolunteer extends Component {
@@ -50,7 +49,10 @@ class CommunityVolunteer extends Component {
 			});
 		}, 500);
 	};
-	
+
+	isOwnData = (data) => {
+		return data?.userId === this.props.authUser?.profile?._id;
+	};	
 
 	handleShowMore = () => {
 		if (!this.state.moreFetching) {
@@ -67,14 +69,11 @@ class CommunityVolunteer extends Component {
 	};
 
 	onListingClicked = (data) => {
-		let { messages } = store.getState();
-		updateStore({
-			messages: {
-				...messages,
-				selected: data
-			}
-		})
-		route(`messages-chat?id=${data?.id}`)
+		if(this.isOwnData(data)) {
+			route(`messages`);
+		} else {
+			route(`messages-chat?id=${data?.userId},${this.props.authUser?.profile?._id}`);
+		}
 	}
 
 	render() {
@@ -141,7 +140,7 @@ class CommunityVolunteer extends Component {
 						{communityData?.map((data) => {
 							return (
 								<div
-									className={style.card}
+									className={`${style.card} ${this.isOwnData(data) ? style.ownData : ''}`}
 									onClick={() => { this.onListingClicked(data) }}
 								>
 									{/* Icon */}
@@ -193,4 +192,4 @@ class CommunityVolunteer extends Component {
 	}
 }
 
-export default connect(['communityVolunteers'])(CommunityVolunteer);
+export default connect(['communityVolunteers', 'authUser'])(CommunityVolunteer);

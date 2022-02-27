@@ -59,6 +59,8 @@
         display: flex;
         align-items: center;
         border-bottom: 1px solid #E41E93;
+        &.ownData {
+        }
         .avatar {
           width: 80px;
           height: 80px;
