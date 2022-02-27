@@ -125,7 +125,8 @@ class MessagesChat extends Component {
         }
     };
     componentDidMount = () => {
-        let { mChat } = this.props;
+        let { mChat, messages } = this.props;
+        let sMessage = messages.data.find((i) => i.listingId === this.state.listingId);
         updateStore({
             mChat: {
                 ...mChat,
@@ -138,7 +139,7 @@ class MessagesChat extends Component {
         this.setLatestFeedChecker();
         fetchVolunteerStatus(
             this.state.feedId,
-            this.props.authUser.profile._id
+            sMessage.user2
         ).then((res) => {
             if (res) {
                 this.setState({
@@ -166,7 +167,7 @@ class MessagesChat extends Component {
             return null;
         }
         return (
-            <div className={`${style.chatWrap} ${sMessage && sMessage?.user1 === authUser.profile._id && !vStatus ? style.hasMarVolunterButton : ''}`}>
+            <div className={`${style.chatWrap} ${sMessage && sMessage?.user1 === authUser?.profile._id && !vStatus ? style.hasMarVolunterButton : ''}`}>
                 <div className={style.head}>
                     <ImageLoader
                         src={sListing?.community?.image || sListing?.listing.community.image}
