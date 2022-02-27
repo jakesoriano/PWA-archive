@@ -28,7 +28,7 @@ class MessagesPage extends Component {
             />
             <div className={`${style.details} ${item.unread ? style.unread : ''}`}>
               <p className={`extraBold ${style.name}`}>
-                {authUser.profile._id === item.user1 ? item.community.name : `${item.profile.fname} ${item.profile.lname}`}
+                {item.community.name}
               </p>
               <p className={style.text}>{item.latestMessage}</p>
             </div>
