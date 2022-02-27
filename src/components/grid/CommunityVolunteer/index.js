@@ -50,6 +50,10 @@ class CommunityVolunteer extends Component {
 		}, 500);
 	};
 
+	isOwnData = (data) => {
+		return data?.userId === this.props.authUser?.profile?._id;
+	};	
+
 	handleShowMore = () => {
 		if (!this.state.moreFetching) {
 			// flag
@@ -63,6 +67,14 @@ class CommunityVolunteer extends Component {
 			);
 		}
 	};
+
+	onListingClicked = (data) => {
+		if(this.isOwnData(data)) {
+			route(`messages`);
+		} else {
+			route(`${this.props.page}/messages-chat?feedId=${this.props.authUser?.profile?._id},${data?.userId}&listingId=${data.id}`);
+		}
+	}
 
 	render() {
 		// filtering community data
@@ -128,8 +140,8 @@ class CommunityVolunteer extends Component {
 						{communityData?.map((data) => {
 							return (
 								<div
-									className={style.card}
-									onClick={() => route(`message-chat/${data?.id}`)}
+									className={`${style.card} ${this.isOwnData(data) ? style.ownData : ''}`}
+									onClick={() => { this.onListingClicked(data) }}
 								>
 									{/* Icon */}
 									<div className={style.avatar}>
@@ -180,4 +192,4 @@ class CommunityVolunteer extends Component {
 	}
 }
 
-export default connect(['communityVolunteers'])(CommunityVolunteer);
+export default connect(['communityVolunteers', 'authUser'])(CommunityVolunteer);

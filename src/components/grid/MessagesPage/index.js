@@ -6,19 +6,12 @@ import { route } from 'preact-router';
 import { store, updateStore } from '_unistore';
 import style from './style';
 class MessagesPage extends Component {
-  viewMessage = (index) => {
-    let { messages, mChat } = store.getState();
-    updateStore({
-      messages: {
-        ...messages,
-        selected: index
-      },
-      mChat: {
-        ...mChat,
-        data: []
-      }
-    });
-    route('messages-chat');
+  constructor(props) {
+    super(props)
+  };
+  
+  viewMessage = (feedId, listingId) => {
+    route(`${this.props.page}/messages-chat?feedId=${feedId}&listingId=${listingId}`);
   };
   componentDidMount = () => {
     fetchMessages();
@@ -27,7 +20,7 @@ class MessagesPage extends Component {
     <div className={style.messagesWrap}>
       {
         messages.data.map((item, i) => (
-          <div className={style.item} onClick={() => this.viewMessage(i)}>
+          <div className={style.item} onClick={() => this.viewMessage(item.feedId, item.listingId)}>
             <ImageLoader
               src={item.community.image}
               style={{container: style.image}}
