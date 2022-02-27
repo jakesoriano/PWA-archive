@@ -40,7 +40,6 @@ export function fetchMessages (page, limit) {
       });
 }
 export function fetchMessagesFeed (feedId) {
-  console.error(feedId, 'wew')
     // curreny state
     const { mChat } = store.getState();
   
