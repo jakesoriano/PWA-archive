@@ -121,17 +121,14 @@ class MessagesChat extends Component {
         }
     };
     componentDidMount = () => {
-        console.log(this.props.authUser)
         fetchMessagesFeed(this.state.feedId).then(() => {
             this.scrollToBottom();
-            console.error(1);
         });
         this.setLatestFeedChecker();
         fetchVolunteerStatus(
             this.state.feedId,
             this.props.authUser.profile._id
         ).then((res) => {
-            console.error(2, res);
             if (res) {
                 this.setState({
                     vStatus: res.data?.volunteer
