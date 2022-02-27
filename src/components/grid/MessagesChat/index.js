@@ -16,7 +16,7 @@ import style from './style';
 class MessagesChat extends Component {
     constructor(props) {
         super(props);
-        let interval = null;
+        this.interval = null;
         this.state = {
             newMessage: '',
             selected: {},
@@ -52,22 +52,24 @@ class MessagesChat extends Component {
                 listingId: sListing.id,
                 message: this.state.newMessage
             }
-            sendMessage(data, feedId).then(() => {
-                updateStore({
-                    mChat: {
-                        ...mChat,
-                        data: {
-                            ...mChat.data,
-                            messages: mChat.data.messages.map((item, i) => {
-                                if (i === mChat.data.messages.length - 1) {
-                                    item.id = res.data.msgId
-                                }
-                                return item;
-                            })
+            sendMessage(data, mChat.data?.messages ? feedId : null).then((res) => {
+                if (res.success) {
+                    updateStore({
+                        mChat: {
+                            ...mChat,
+                            data: {
+                                ...mChat.data,
+                                messages: mChat.data?.messages.map((item, i) => {
+                                    if (i === mChat.data?.messages.length - 1) {
+                                        item.id = res.data.msgId
+                                    }
+                                    return item;
+                                })
+                            }
                         }
-                    }
-                });
-                this.scrollToBottom();
+                    });
+                    this.scrollToBottom();
+                }
             });
         }
     };
@@ -99,7 +101,7 @@ class MessagesChat extends Component {
             url = window.location.href,
             feedId = url.split('feedId=')[1].split('&')[0];
         if (mChat.data?.messages.length) {
-            this.interval = window.setInterval(() => {
+            this.interval = setTimeout(() => {
                 fetchLatestMessage(feedId).then(res => {
                     let latestMsg = mChat.data.messages[mChat.data.messages.length - 1];
                     if (res.data.latestMessageId !== latestMsg.id) {
@@ -107,7 +109,8 @@ class MessagesChat extends Component {
                             this.scrollToBottom();
                         });
                     }
-                })
+                });
+                this.setLatestFeedChecker();
             }, 5000);
             this.setState({
                 checkerSet: true
@@ -153,12 +156,12 @@ class MessagesChat extends Component {
             <div className={style.chatWrap}>
             <div className={style.head}>
                 <ImageLoader
-                    src={sListing?.community?.image || sListing.listing.community.image}
+                    src={sListing?.community?.image || sListing?.listing.community.image}
                     style={{container: style.listingImg}}
                     lazy
                 />
                 <div className={style.details}>
-                    <p className='extraBold'>{sListing?.community?.name || sListing.listing.community.name}</p>
+                    <p className='extraBold'>{sListing?.community?.name || sListing?.listing.community.name}</p>
                     <p>{sListing?.needs || sListing?.listing?.needs}</p>
                     <p>{dateNewsFormat(sListing?.date || sListing?.listing?.date)}</p>
                     <p>{sListing?.province || sListing?.listing?.province}, {sListing?.municipality || sListing?.listing?.municipality}, {sListing?.barangay || sListing?.listing?.barangay}</p>
