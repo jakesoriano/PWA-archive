@@ -120,8 +120,8 @@ class MessagesChat extends Component {
             });
         }
     };
-    componentDidlMount = () => {
-        console.error(123);
+    componentDidMount = () => {
+        console.log(this.props.authUser)
         fetchMessagesFeed(this.state.feedId).then(() => {
             this.scrollToBottom();
             console.error(1);
