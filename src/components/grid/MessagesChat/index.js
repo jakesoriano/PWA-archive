@@ -5,10 +5,10 @@ import { updateStore } from '_unistore';
 import {
     getTranslation,
     dateNewsFormat,
-    getQueryStringValue
+    getQueryStringValue,
+    getConfigByKey
 } from '_helpers';
 import {
-    fetchMessages,
     fetchMessagesFeed,
     sendMessage,
     fetchLatestMessage,
@@ -21,7 +21,7 @@ class MessagesChat extends Component {
     constructor(props) {
         super(props);
         this.timer = null;
-        this.pollInterval = 1000;
+        this.pollInterval = (getConfigByKey('messagePollInterval') || 5)* 1000; // default 5 seconds
         this.state = {
             newMessage: '',
             selected: {},
