@@ -1,9 +1,8 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
 import { ImageLoader } from '_components/core';
-import { getTranslation, isUserUpdatedProfile } from '_helpers';
+import { getTranslation, isUserUpdatedProfile, circleModal } from '_helpers';
 import { connect } from 'unistore/preact';
-import { updateStore } from '_unistore';
 import style from './style';
 class CommunityNavigation extends Component {
 
@@ -12,17 +11,16 @@ class CommunityNavigation extends Component {
 			{/* Community Volunteer */}
 			<div className={`${style.navBox} ${style.events}`}
 					id="community-volunteer"
-					onClick={() => {
+					onClick={(e) => {
+						e.stopPropagation();
 						// this will display a popup to update profile first
 						if(!isUserUpdatedProfile()) {
-							updateStore({
-								circleModal: {
-									title: getTranslation('UPDATE_YOUR_PROFILE'),
-									content: getTranslation('UPDATE_YOUR_PROFILE_BODY'),
-									link: {
-										url: '/profile',
-										text: getTranslation('UPDATE_YOUR_PROFILE_LINK'),
-									},
+							circleModal({
+								title: getTranslation('UPDATE_YOUR_PROFILE'),
+								content: getTranslation('UPDATE_YOUR_PROFILE_BODY'),
+								link: {
+									url: '/profile',
+									text: getTranslation('UPDATE_YOUR_PROFILE_LINK'),
 								},
 							});
 						} else {
