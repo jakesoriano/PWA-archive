@@ -75,11 +75,8 @@ class CommunityNavigation extends Component {
 			</div>
 
 			{/* Community Announcements */}
-			<div
-				id="community-announcements"
-				className={`${style.navBox} ${style.announcements}`}
-			>
-				<div onClick={() => route('community-announcements')}>
+			<div className={`${style.navBox} ${style.announcements}`} >
+				<div id="community-announcements" onClick={() => route('community-announcements')}>
 					<ImageLoader
 						src={
 							'assets/icons/community_announcements_icon.png' ||
