@@ -31,6 +31,11 @@
             }
         }
     }
+    &.hasMarVolunterButton {
+        .body {
+            height: calc(100vh - (56px + 137px + 68px));
+        }
+    }
     .body {
         padding: 15px;
         height: calc(100vh - (56px + 118px + 68px));

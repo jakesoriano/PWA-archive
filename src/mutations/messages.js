@@ -118,7 +118,6 @@ export function fetchLatestMessage (feedId) {
   });
 }
 export function fetchVolunteerStatus (feedId, userId) {
-  console.error(feedId, userId)
   return new Promise((resolve) => {
     xhr(`${urlMessages}/${feedId}/volunteer/${userId}`)
     .then((res) => {

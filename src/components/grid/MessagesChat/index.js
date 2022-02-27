@@ -157,7 +157,7 @@ class MessagesChat extends Component {
             return null;
         }
         return (
-            <div className={style.chatWrap}>
+            <div className={`${style.chatWrap} ${sMessage && sMessage?.user1 === authUser.profile._id && !vStatus ? style.hasMarVolunterButton : ''}`}>
                 <div className={style.head}>
                     <ImageLoader
                         src={sListing?.community?.image || sListing?.listing.community.image}
