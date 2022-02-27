@@ -9,7 +9,6 @@ import {
     getConfigByKey
 } from '_helpers';
 import {
-    fetchMessages,
     fetchMessagesFeed,
     sendMessage,
     fetchLatestMessage,
