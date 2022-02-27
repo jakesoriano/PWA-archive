@@ -10,8 +10,7 @@ class CommunityNavigation extends Component {
 	render = () => (
 		<div className={style.communityNavigationWrap}>
 			{/* Community Volunteer */}
-			<div className={`${style.navBox} ${style.events}`}>
-				<div
+			<div className={`${style.navBox} ${style.events}`}
 					id="community-volunteer"
 					onClick={() => {
 						// this will display a popup to update profile first
@@ -31,6 +30,7 @@ class CommunityNavigation extends Component {
 						}
 					}}
 				>
+				<div>
 					<ImageLoader
 						src={'assets/icons/community_volunteer.png' || getDefaultAvatar()}
 						style={{ container: style.icon }}
@@ -43,11 +43,11 @@ class CommunityNavigation extends Component {
 			</div>
 
 			{/* Community CrowdSourcing */}
-			<div className={`${style.navBox} ${style.events}`}>
-				<div
-					id="community-crowdsourcing"
-					// onClick={() => route('community-crowdsourcing')}
-				>
+			<div className={`${style.navBox} ${style.events}`}
+				id="community-crowdsourcing"
+				// onClick={() => route('community-crowdsourcing')}
+			>
+				<div>
 					<ImageLoader
 						src={'assets/icons/community_crowdsourcing.png' || getDefaultAvatar()}
 						style={{ container: style.icon }}
@@ -61,8 +61,10 @@ class CommunityNavigation extends Component {
 			</div>
 
 			{/* Community Events */}
-			<div className={`${style.navBox} ${style.events}`}>
-				<div id="community-events" onClick={() => route('community-events-v2')}>
+			<div className={`${style.navBox} ${style.events}`}
+				id="community-events" 
+				onClick={() => route('community-events-v2')}>
+				<div>
 					<ImageLoader
 						src={'assets/icons/community_events_icon.png' || getDefaultAvatar()}
 						style={{ container: style.icon }}
@@ -75,8 +77,10 @@ class CommunityNavigation extends Component {
 			</div>
 
 			{/* Community Announcements */}
-			<div className={`${style.navBox} ${style.announcements}`} >
-				<div id="community-announcements" onClick={() => route('community-announcements')}>
+			<div className={`${style.navBox} ${style.announcements}`} 
+				id="community-announcements"
+				onClick={() => route('community-announcements')}>
+				<div>
 					<ImageLoader
 						src={
 							'assets/icons/community_announcements_icon.png' ||
