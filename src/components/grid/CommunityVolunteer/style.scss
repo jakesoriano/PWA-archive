@@ -46,7 +46,7 @@
     margin: 20px;
     .title {
       padding-bottom: 10px;
-      border-bottom: 1px solid #E41E93;
+      border-bottom: 1px solid $item_border;
       p {
         color: $black;
         font-weight: 900;
@@ -58,7 +58,8 @@
       .card {
         display: flex;
         align-items: center;
-        border-bottom: 1px solid #E41E93;
+        border-bottom: 1px solid $item_border;
+        padding: 5px 0;
         &.ownData {
         }
         .avatar {
