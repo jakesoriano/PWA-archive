@@ -9,6 +9,7 @@ import {
     getConfigByKey
 } from '_helpers';
 import {
+    fetchMessages,
     fetchMessagesFeed,
     sendMessage,
     fetchLatestMessage,
@@ -137,16 +138,18 @@ class MessagesChat extends Component {
             this.scrollToBottom();
         });
         this.setLatestFeedChecker();
-        fetchVolunteerStatus(
-            this.state.feedId,
-            sMessage.user2
-        ).then((res) => {
-            if (res) {
-                this.setState({
-                    vStatus: res.data?.volunteer
-                })
-            }
-        })
+        if (sMessage) {
+            fetchVolunteerStatus(
+                this.state.feedId,
+                sMessage.user2
+            ).then((res) => {
+                if (res) {
+                    this.setState({
+                        vStatus: res.data?.volunteer
+                    })
+                }
+            });   
+        }
     };
     componentWillUnmount = () => {
         clearTimeout(this.timer);
