@@ -72,6 +72,10 @@ class MessagesChat extends Component {
                             }
                         }
                     });
+                    fetchMessagesFeed(this.state.feedId);
+                    this.setState({
+                        newMessage: ''
+                    })
                     this.scrollToBottom();
                 }
             });
@@ -102,7 +106,7 @@ class MessagesChat extends Component {
     };
     setLatestFeedChecker = () => {
         let { mChat } = this.props;
-        if (mChat.data?.messages.length) {
+        if (mChat.data?.messages?.length) {
             clearTimeout(this.timer);
             this.timer = setTimeout(() => {
                 fetchLatestMessage(this.state.feedId).then(res => {
@@ -121,6 +125,13 @@ class MessagesChat extends Component {
         }
     };
     componentDidMount = () => {
+        let { mChat } = this.props;
+        updateStore({
+            mChat: {
+                ...mChat,
+                data: {}
+            }
+        });
         fetchMessagesFeed(this.state.feedId).then(() => {
             this.scrollToBottom();
         });
@@ -138,6 +149,7 @@ class MessagesChat extends Component {
     };
     componentWillUnmount = () => {
         clearTimeout(this.timer);
+        fetchMessages();
     };
     componentDidUpdate = () => {
         this.scrollToBottom();
@@ -201,18 +213,21 @@ class MessagesChat extends Component {
                         }
                     </div>
                 </div>
-                <div className={style.footer}>
-                    <input
-                        type="text"
-                        className={style.sendInput}
-                        onInput={this.onInput}
-                        value={this.state.newMessage}
-                    />
-                    <a
-                        className={style.button}
-                        onClick={this.handleSend}
-                    >{getTranslation('SEND')}</a>
-                </div>
+                {
+                    !vStatus &&
+                    <div className={style.footer}>
+                        <input
+                            type="text"
+                            className={style.sendInput}
+                            onInput={this.onInput}
+                            value={this.state.newMessage}
+                        />
+                        <a
+                            className={style.button}
+                            onClick={this.handleSend}
+                        >{getTranslation('SEND')}</a>
+                    </div>
+                }
                 {
                     sMessage?.user2 === authUser.profile._id && vStatus && <div className={style.optOut}>
                         <p className='bold'>{getTranslation('MARKED_AS_VOLUNTEER')}</p>
