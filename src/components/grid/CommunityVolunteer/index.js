@@ -72,7 +72,7 @@ class CommunityVolunteer extends Component {
 		if(this.isOwnData(data)) {
 			route(`messages`);
 		} else {
-			route(`${this.props.page}/messages-chat?feedId=${data?.userId},${this.props.authUser?.profile?._id}&listingId=${data.id}`);
+			route(`${this.props.page}/messages-chat?feedId=${this.props.authUser?.profile?._id},${data?.userId}&listingId=${data.id}`);
 		}
 	}
 

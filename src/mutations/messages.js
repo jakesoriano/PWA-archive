@@ -40,6 +40,7 @@ export function fetchMessages (page, limit) {
       });
 }
 export function fetchMessagesFeed (feedId) {
+  console.log(feedId, 'wew')
     // curreny state
     const { mChat } = store.getState();
   
@@ -62,6 +63,7 @@ export function fetchMessagesFeed (feedId) {
             result: true
           }
         });
+        console.log(`SPA >> fetchMessagesFeed successful`, res);
       })
       .catch(() => {
         updateStore({
@@ -151,11 +153,11 @@ export function optOutAsVolunteer (feedId, userId) {
   })
     .then((res) => {
       if (res) {
-        console.log(`SPA >> markAsVolunteer successful`, res);
+        console.log(`SPA >> optOutAsVolunteer successful`, res);
         resolve(res)
       }
     }).catch((err) => {
-      console.log(`SPA >> markAsVolunteer failed`, err);
+      console.log(`SPA >> optOutAsVolunteer failed`, err);
     });
   });
 }

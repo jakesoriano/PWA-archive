@@ -26,9 +26,13 @@ class MessagesChat extends Component {
     };
     handleSend = (e) => {
         if (this.state.newMessage) {
-            let { mChat, authUser } = this.props,
-                messages = mChat.data.messages || [],
-                data = {};
+            let { mChat, authUser, communityVolunteers } = this.props,
+                messages = mChat.data?.messages || [],
+                data = {},
+                url = window.location.href,
+                listingId = url.split('listingId=')[1],
+                feedId = url.split('feedId=')[1].split('&')[0],
+                sListing = communityVolunteers.data.filter((item) => item.id === listingId)[0];
             messages.push({
                 userId: authUser.profile._id,
                 message: this.state.newMessage
@@ -44,11 +48,11 @@ class MessagesChat extends Component {
                 }
             });
             data = {
-                communityId: mChat.data.listing ? mChat.data.listing.community.id : this.state.selected.communityId,
-                listingId: mChat.data.listing ? mChat.data.listing.id : this.state.selected.id,
+                communityId: sListing.communityId,
+                listingId: sListing.id,
                 message: this.state.newMessage
             }
-            sendMessage(data, this.state.selected.feedId).then(() => {
+            sendMessage(data, feedId).then(() => {
                 updateStore({
                     mChat: {
                         ...mChat,
@@ -91,51 +95,38 @@ class MessagesChat extends Component {
         })
     };
     setLatestFeedChecker = () => {
-        this.interval = window.setInterval(() => {
-            fetchLatestMessage(this.state.selected.feedId).then(res => {
-                let { mChat } = this.props;
-                let latestMsg = mChat.data.messages[mChat.data.messages.length - 1];
-                if (res.data.latestMessageId !== latestMsg.id) {
-                    fetchMessagesFeed(this.state.selected.feedId).then(() => {
-                        this.scrollToBottom();
-                    });
-                }
-            })
-        }, 5000);
-        this.setState({
-            checkerSet: true
-        });
+        let { mChat } = this.props,
+            url = window.location.href,
+            feedId = url.split('feedId=')[1].split('&')[0];
+        if (mChat.data?.messages.length) {
+            this.interval = window.setInterval(() => {
+                fetchLatestMessage(feedId).then(res => {
+                    let latestMsg = mChat.data.messages[mChat.data.messages.length - 1];
+                    if (res.data.latestMessageId !== latestMsg.id) {
+                        fetchMessagesFeed(feedId).then(() => {
+                            this.scrollToBottom();
+                        });
+                    }
+                })
+            }, 5000);
+            this.setState({
+                checkerSet: true
+            });
+        }
     };
     componentWillMount = () => {
         let url = window.location.href,
-            selected = {},
-            { mChat } = this.props;
-        updateStore({
-            mChat: {
-                ...mChat,
-                data: {}
-            }
-        })
-        if (!url.includes('?id')) {
-            selected = this.props.messages.data[this.props.messages.selected];
-        } else {
-            selected = this.props.messages.selected
-        }
-        this.setState({
-            selected: selected
-        }, () => {
-            if (this.state.selected.feedId) {
-                console.log('wew')
-                fetchMessagesFeed(this.state.selected.feedId).then(() => {
-                    this.scrollToBottom();
-                });
-                this.setLatestFeedChecker();
-                fetchVolunteerStatus(this.state.selected.feedId, this.state.selected.user2).then((res) => {
-                    if (res) {
-                        this.setState({
-                            vStatus: res.data.volunteer
-                        })
-                    }
+            feedId = url.split('feedId=')[1].split('&')[0],
+            user2 = feedId.split(',')[1];
+        fetchMessagesFeed(feedId).then(() => {
+            this.scrollToBottom();
+        });
+        this.setLatestFeedChecker();
+        fetchVolunteerStatus(feedId, user2).then((res) => {
+            if (res) {
+                console.log(res, 'wews')
+                this.setState({
+                    vStatus: res.data?.volunteer
                 })
             }
         })
@@ -153,27 +144,31 @@ class MessagesChat extends Component {
         let chatEl = document.querySelector('.chat');
         chatEl.scrollTop = chatEl.scrollHeight - chatEl.clientHeight;
     };
-    render = ({authUser, mChat}, {selected, vStatus}) => {
-        let s = !Object.keys(mChat.data).length ? selected : mChat.data.listing;
-        console.log(s, 'wew ', selected)
+    render = ({authUser, mChat, communityVolunteers, messages}, {selected, vStatus}) => {
+        let url = window.location.href,
+            listingId = url.split('listingId=')[1],
+            sListing = communityVolunteers.data.filter((item) => item.id === listingId)[0] || mChat.data,
+            sMessage = messages.data.filter((item) => item.listingId === listingId)[0];
         return (
             <div className={style.chatWrap}>
             <div className={style.head}>
                 <ImageLoader
-                    src={s?.community.image}
+                    src={sListing?.community?.image || sListing.listing.community.image}
                     style={{container: style.listingImg}}
                     lazy
                 />
                 <div className={style.details}>
-                    <p className='extraBold'>{s?.community.name}</p>
-                    <p>{s?.needs}</p>
-                    <p>{mChat.data.length && dateNewsFormat(s.date)}</p>
-                    <p>{s?.province}, {s?.municipality}, {s?.barangay}</p>
+                    <p className='extraBold'>{sListing?.community?.name || sListing.listing.community.name}</p>
+                    <p>{sListing?.needs || sListing?.listing?.needs}</p>
+                    <p>{dateNewsFormat(sListing?.date || sListing?.listing?.date)}</p>
+                    <p>{sListing?.province || sListing?.listing?.province}, {sListing?.municipality || sListing?.listing?.municipality}, {sListing?.barangay || sListing?.listing?.barangay}</p>
                     {
-                        selected?.user1 === authUser.profile._id && !vStatus &&
+                        sMessage && sMessage?.user1 === authUser.profile._id && !vStatus &&
                         <a
                             className={style.button}
-                            onClick={() => { this.onMarkClicked(selected.communityId, selected.listingId, selected.user2) }}
+                            onClick={() => {
+                                this.onMarkClicked(sMessage?.communityId, sMessage?.listingId, sMessage?.user2)
+                            }}
                         >
                             {getTranslation('MARK_AS_VOLUNTEER')}
                         </a>
@@ -183,7 +178,7 @@ class MessagesChat extends Component {
             <div className={style.body}>
                 <div className={`chat ${style.chat}`}>
                     {
-                      mChat.data.messages && mChat.data.messages.map((m) => {
+                      mChat.data?.messages && mChat.data?.messages.map((m) => {
                           return (
                             <div
                                 className={
@@ -215,11 +210,11 @@ class MessagesChat extends Component {
                 >{getTranslation('SEND')}</a>
             </div>
             {
-                selected.user2 === authUser.profile._id && vStatus && <div className={style.optOut}>
+                sMessage?.user1 === authUser.profile._id && vStatus && <div className={style.optOut}>
                     <p className='bold'>{getTranslation('MARKED_AS_VOLUNTEER')}</p>
                     <a
                         className={`bold ${style.button}`}
-                        onClick={() => { this.onOptOutClicked(selected.feedId, selected.user2) }}
+                        onClick={() => { this.onOptOutClicked(sMessage?.feedId, sMessage?.user2) }}
                     >
                         {getTranslation('OPT_OUT')}
                     </a>
@@ -229,4 +224,4 @@ class MessagesChat extends Component {
         )
     }
 }
-export default connect(['authUser', 'messages', 'mChat'])(MessagesChat);
+export default connect(['authUser', 'messages', 'mChat', 'communityVolunteers'])(MessagesChat);
