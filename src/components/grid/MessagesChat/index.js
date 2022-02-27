@@ -210,7 +210,7 @@ class MessagesChat extends Component {
                 >{getTranslation('SEND')}</a>
             </div>
             {
-                sMessage?.user1 === authUser.profile._id && vStatus && <div className={style.optOut}>
+                sMessage?.user2 === authUser.profile._id && vStatus && <div className={style.optOut}>
                     <p className='bold'>{getTranslation('MARKED_AS_VOLUNTEER')}</p>
                     <a
                         className={`bold ${style.button}`}
