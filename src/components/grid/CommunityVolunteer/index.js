@@ -5,6 +5,7 @@ import { fetchCommunityVolunteers } from '_mutations';
 import { getTranslation, isUserUpdatedProfile, dateNewsFormat } from '_helpers';
 import style from './style';
 import { route } from 'preact-router';
+import { store, updateStore } from '_unistore';
 import { LoaderRing } from '_components/core';
 
 class CommunityVolunteer extends Component {
@@ -49,6 +50,7 @@ class CommunityVolunteer extends Component {
 			});
 		}, 500);
 	};
+	
 
 	handleShowMore = () => {
 		if (!this.state.moreFetching) {
@@ -63,6 +65,17 @@ class CommunityVolunteer extends Component {
 			);
 		}
 	};
+
+	onListingClicked = (data) => {
+		let { messages } = store.getState();
+		updateStore({
+			messages: {
+				...messages,
+				selected: data
+			}
+		})
+		route(`messages-chat?id=${data?.id}`)
+	}
 
 	render() {
 		// filtering community data
@@ -129,7 +142,7 @@ class CommunityVolunteer extends Component {
 							return (
 								<div
 									className={style.card}
-									onClick={() => route(`message-chat/${data?.id}`)}
+									onClick={() => { this.onListingClicked(data) }}
 								>
 									{/* Icon */}
 									<div className={style.avatar}>

@@ -40,4 +40,5 @@ export const urlValidateTask = urlUser + `/tasks/validate/{id}`;
 export const urlLeaderboard = `${process.env.API_DOMAIN}leaderboard`;
 export const urlVideos = urlUser + `/videos`;
 export const urlLeniPedia = `${process.env.API_DOMAIN}lenipedia`;
-export const urlCommunityVolunteer = `${process.env.API_DOMAIN}community/listings/search`
+export const urlCommunityVolunteer = `${process.env.API_DOMAIN}community/listings/search`;
+export const urlMessages = `${urlCommunity}/listings/msgfeed`;

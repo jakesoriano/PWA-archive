@@ -48,3 +48,5 @@ export { default as OtherEvents } from './OtherEvents';
 export { default as EditProfile } from './EditProfile';
 export { default as PostVolunteerAnnouncement } from './PostVolunteerAnnouncement';
 export { default as CommunityVolunteer } from './CommunityVolunteer';
+export { default as MessagesPage } from './MessagesPage';
+export { default as MessagesChat } from './MessagesChat';
