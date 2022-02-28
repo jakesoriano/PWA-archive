@@ -169,7 +169,6 @@ class MessagesChat extends Component {
         let chatEl = document.querySelector('.chat');
         if (chatEl) {
             chatEl.scrollTop = chatEl.scrollHeight - chatEl.clientHeight;
-            console.log(chatEl.scrollHeight, chatEl.clientHeight)
         }
     };
     render = ({authUser, mChat, communityVolunteers, messages}, {vStatus}) => {
