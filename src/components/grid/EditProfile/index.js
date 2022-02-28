@@ -450,10 +450,11 @@ class EditProfile extends Component {
 					</FormGroup>
 
 					<FormGroup label="MOBILE_NUMBER">
-						<FormInput
+						{/* <FormInput
 							value={mobile.value}
 							disabled={true}
-						/>
+						/> */}
+						<p className={style.displayOnly}>{mobile.value}</p>
 					</FormGroup>
 
 					<FormGroup label="REGION" hasError={region.hasError}>
