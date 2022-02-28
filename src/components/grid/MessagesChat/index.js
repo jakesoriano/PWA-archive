@@ -175,12 +175,12 @@ class MessagesChat extends Component {
             <div className={`${style.chatWrap} ${sMessage && sMessage?.user1 === authUser?.profile._id && !vStatus ? style.hasMarVolunterButton : ''}`}>
                 <div className={style.head}>
                     <ImageLoader
-                        src={sListing?.community?.image || sListing?.listing.community.image}
+                        src={sListing?.community?.image || sListing?.listing?.community?.image}
                         style={{container: style.listingImg}}
                         lazy
                     />
                     <div className={style.details}>
-                        <p className={style.detailsTitle}>{sListing?.community?.name || sListing?.listing.community.name}</p>
+                        <p className={style.detailsTitle}>{sListing?.community?.name || sListing?.listing?.community?.name}</p>
                         <p>{sListing?.needs || sListing?.listing?.needs}</p>
                         <p>{dateNewsFormat(sListing?.date || sListing?.listing?.date)}</p>
                         <p>{sListing?.province || sListing?.listing?.province}, {sListing?.municipality || sListing?.listing?.municipality}, {sListing?.barangay || sListing?.listing?.barangay}</p>
