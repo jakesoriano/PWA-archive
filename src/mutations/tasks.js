@@ -6,8 +6,8 @@ import {
   circleModal,
   getTranslation,
   getConfigByKey,
-  setCookieWithExpiration,
-  getCookie
+  setItemWithExpiry,
+  getItemWithExpiry
 } from '_helpers';
 
 
@@ -17,11 +17,11 @@ function taskNotification(data) {
     let storeData = store.getState();
     storeData = storeData.circleModal || null;
     const cookieKey = 'pt';
-    const hasCookie = parseInt(getCookie(cookieKey) || '0');
+    const hasCookie = parseInt(getItemWithExpiry(cookieKey) || '0');
     const pendingTask = data.find(i => i.completed !== true);
     if (pendingTask && !hasCookie) {
       const expDate = Date.now() + ((1000 * 60) * getConfigByKey('taskNotifInterval'));
-      setCookieWithExpiration(cookieKey, 1, expDate);
+      setItemWithExpiry(cookieKey, 1, expDate);
       const data = {
         title: getTranslation('TASKS_NOTIF_TITLE'),
         content: getTranslation('TASKS_NOTIF_CONTENT'),
@@ -126,13 +126,13 @@ export function validateTask (id, token) {
               completed: !Boolean(newData.find(i => i.completed !== true))
             }
           });
-          return 1;
+          resolve(1);
         } else {
-          return 0;
+          resolve(0);
         }
       })
       .catch((err) => {
-        return -1;
+        resolve(-1);
       });
   });
 }

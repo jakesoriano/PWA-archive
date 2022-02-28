@@ -68,6 +68,10 @@
 			font-size: .9rem;
 			font-family: 'OpenSans-Regular', arial, sans-serif;
 			padding: 8px 0;
+			div {
+				max-width: 70%;
+				display: inline-block;
+			}
 		}
 	}
 }

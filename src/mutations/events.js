@@ -207,11 +207,16 @@ export function fetchEventsByCommunityId(id, page, limit) {
 }
 
 export function shareEvent(item, parentId, parentType) {
-	let { events, communityDetails } = store.getState();
+	let { events, cevents, upevents, oevents } = store.getState();
 	const { authUser } = store.getState();
 
 	// fetching
-	if (events.fetching || communityDetails.fetching) {
+	if (
+		events.fetching ||
+		cevents.fetching ||
+		upevents.fetching ||
+		oevents.fetching
+	) {
 		return;
 	}
 
@@ -226,19 +231,37 @@ export function shareEvent(item, parentId, parentType) {
 		}),
 		fetching: true,
 	};
-	communityDetails = {
-		...communityDetails,
-		events: {
-			data: communityDetails.events.data.map((i) => {
-				if (i.id === item.id) {
-					i.shared = true;
-				}
-				return i;
-			}),
-		},
+	cevents = {
+		...cevents,
+		data: cevents.data.map((i) => {
+			if (i.id === item.id) {
+				i.shared = true;
+			}
+			return i;
+		}),
 		fetching: true,
 	};
-	updateStore({ events, communityDetails });
+	upevents = {
+		...upevents,
+		data: upevents.data.map((i) => {
+			if (i.id === item.id) {
+				i.shared = true;
+			}
+			return i;
+		}),
+		fetching: true,
+	};
+	oevents = {
+		...oevents,
+		data: oevents.data.map((i) => {
+			if (i.id === item.id) {
+				i.shared = true;
+			}
+			return i;
+		}),
+		fetching: true,
+	};
+	updateStore({ events, cevents, upevents, oevents });
 
 	return new Promise((resolve) => {
 		xhr(urlShare, {
@@ -257,11 +280,16 @@ export function shareEvent(item, parentId, parentType) {
 						...events,
 						fetching: false,
 					},
-					communityDetails: {
-						...communityDetails,
-						events: {
-							...communityDetails.events,
-						},
+					cevents: {
+						...cevents,
+						fetching: false,
+					},
+					upevents: {
+						...upevents,
+						fetching: false,
+					},
+					oevents: {
+						...oevents,
 						fetching: false,
 					},
 				});
@@ -280,16 +308,34 @@ export function shareEvent(item, parentId, parentType) {
 						}),
 						fetching: false,
 					},
-					communityDetails: {
-						...communityDetails,
-						events: {
-							data: communityDetails.events.data.map((i) => {
-								if (i.id === item.id) {
-									i.shared = false;
-								}
-								return i;
-							}),
-						},
+					cevents: {
+						...cevents,
+						data: cevents.data.map((i) => {
+							if (i.id === item.id) {
+								i.shared = false;
+							}
+							return i;
+						}),
+						fetching: false,
+					},
+					upevents: {
+						...upevents,
+						data: upevents.data.map((i) => {
+							if (i.id === item.id) {
+								i.shared = false;
+							}
+							return i;
+						}),
+						fetching: false,
+					},
+					oevents: {
+						...oevents,
+						data: oevents.data.map((i) => {
+							if (i.id === item.id) {
+								i.shared = false;
+							}
+							return i;
+						}),
 						fetching: false,
 					},
 				});
