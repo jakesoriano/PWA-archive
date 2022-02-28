@@ -165,7 +165,7 @@ class MessagesChat extends Component {
         }
     };
     render = ({authUser, mChat, communityVolunteers, messages}, {vStatus}) => {
-        let sListing = communityVolunteers.data.find((i) => i.id === this.state.listingId) || mChat.data;
+        let sListing = communityVolunteers.data.find((i) => i.id === this.state.listingId) || mChat.data?.listing;
         let sMessage = messages.data.find((i) => i.listingId === this.state.listingId);
         
         if (!sListing ) {
