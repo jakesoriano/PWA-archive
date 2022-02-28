@@ -37,5 +37,13 @@
     input:disabled {
       color: #aaa;
     }
+    .displayOnly {
+      border: none;
+      border-radius: 0;
+      padding: 10px 0;
+      display: block;
+      width: 100%;
+      background: transparent;
+    }
   }
 }
