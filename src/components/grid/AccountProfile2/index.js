@@ -48,13 +48,13 @@ class AccountProfile extends Component {
 									style={{container: style.iconInvite}} />
 							</div>
 						</Link>
-						<Link className={style.invite}>
+						{/* <Link className={style.invite}>
 							<div>
 								<ImageLoader
 									src="assets/images/chat_icon.png"
 									style={{container: style.iconChat}} />
 							</div>
-						</Link>
+						</Link> */}
 					</div>
 	      </div>
 				
