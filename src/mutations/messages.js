@@ -28,6 +28,7 @@ export function fetchMessages (page, limit) {
             result: true
           }
         });
+        return true;
       })
       .catch(() => {
         updateStore({
@@ -37,10 +38,10 @@ export function fetchMessages (page, limit) {
             result: false
           }
         });
+        return false;
       });
 }
 export function fetchMessagesFeed (feedId) {
-  console.log(feedId, 'wew')
     // curreny state
     const { mChat } = store.getState();
   
@@ -64,6 +65,7 @@ export function fetchMessagesFeed (feedId) {
           }
         });
         console.log(`SPA >> fetchMessagesFeed successful`, res);
+        resolve(true);
       })
       .catch(() => {
         updateStore({
@@ -73,6 +75,7 @@ export function fetchMessagesFeed (feedId) {
             result: false
           }
         });
+        resolve(false);
       });
     });
 }
@@ -87,8 +90,10 @@ export function sendMessage (data, feedId) {
           console.log(`SPA >> sendMessage successful`, res);
           resolve(res)
         }
+        resolve(null);
       }).catch((err) => {
         console.log(`SPA >> sendMessage failed`, err);
+        resolve(null);
       });
     });
 }
@@ -110,8 +115,10 @@ export function fetchLatestMessage (feedId) {
         console.log(`SPA >> fetchLatestMessage successful`, res);
         resolve(res);
       }
+      resolve(null);
     }).catch((err) => {
       console.log(`SPA >> fetchLatestMessage failed`, err);
+      resolve(null);
     });
   });
 }
@@ -123,8 +130,10 @@ export function fetchVolunteerStatus (feedId, userId) {
         console.log(`SPA >> fetchVolunteerStatus successful`, res);
         resolve(res);
       }
+      resolve(null);
     }).catch((err) => {
       console.log(`SPA >> fetchVolunteerStatus failed`, err);
+      resolve(null);
     });
   });
 }
@@ -141,8 +150,10 @@ export function markAsVolunteer (communityId, listingId, userId) {
         console.log(`SPA >> markAsVolunteer successful`, res);
         resolve(res)
       }
+      resolve(null);
     }).catch((err) => {
       console.log(`SPA >> markAsVolunteer failed`, err);
+      resolve(null);
     });
   });
 }
@@ -156,8 +167,10 @@ export function optOutAsVolunteer (feedId, userId) {
         console.log(`SPA >> optOutAsVolunteer successful`, res);
         resolve(res)
       }
+      resolve(null);
     }).catch((err) => {
       console.log(`SPA >> optOutAsVolunteer failed`, err);
+      resolve(null);
     });
   });
 }
