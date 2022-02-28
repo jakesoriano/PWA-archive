@@ -160,7 +160,9 @@ class MessagesChat extends Component {
     };
     scrollToBottom = () => {
         let chatEl = document.querySelector('.chat');
-        chatEl.scrollTop = chatEl.scrollHeight - chatEl.clientHeight;
+        if (chatEl) {
+            chatEl.scrollTop = chatEl.scrollHeight - chatEl.clientHeight;
+        }
     };
     render = ({authUser, mChat, communityVolunteers, messages}, {vStatus}) => {
         let sListing = communityVolunteers.data.find((i) => i.id === this.state.listingId) || mChat.data;
