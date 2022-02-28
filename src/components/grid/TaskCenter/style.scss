@@ -22,7 +22,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
     border-bottom: 1px solid #ddd;
     .taskCount {
       color: #af0061;
@@ -38,10 +37,8 @@
     .steps {
       width: 100%;
       display: flex;
-      
       margin: 0;
-      padding: 15px 0;
-  
+      padding: 15px 0 0;
       button {
         border: none;
         background-color: transparent;
@@ -79,6 +76,7 @@
       }
     }
     .taskTitle {
+      margin-top: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
