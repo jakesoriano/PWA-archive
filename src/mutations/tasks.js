@@ -123,13 +123,13 @@ export function validateTask (id) {
               completed: !Boolean(newData.find(i => i.completed !== true))
             }
           });
-          return 1;
+          resolve(1);
         } else {
-          return 0;
+          resolve(0);
         }
       })
       .catch((err) => {
-        return -1;
+        resolve(-1);
       });
   });
 }

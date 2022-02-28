@@ -1,4 +1,4 @@
-export function setItemWithExpiry (key, value, ttl) {console.error(key, value, ttl)
+export function setItemWithExpiry (key, value, ttl) {
   const item = {
     value: value,
     expiry: ttl
