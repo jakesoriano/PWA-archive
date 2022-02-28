@@ -63,16 +63,9 @@
         &.ownData {
         }
         .avatar {
-          width: 80px;
-          height: 80px;
-          padding-bottom: 50px;
-          border-radius: 80px;
-          margin: 10px;
-          padding-top: 8px;
           .icon {
-            width: 65px;
-            padding-bottom: 65px;
-            margin: 0 auto 10px;
+            border-radius: 50%;
+            margin-right: 15px;
           }
         }
         .details {
