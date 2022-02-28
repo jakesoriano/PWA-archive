@@ -150,7 +150,7 @@ class TaskCenter extends Component {
 						<div className={style.taskTitle}>
 							<p
 								dangerouslySetInnerHTML={{
-									__html: tasks?.data[this.taskCompletedCount()]?.title,
+									__html: tasks?.data[this.taskCompletedCount()]?.title || '',
 								}}
 							/>
 						</div>
