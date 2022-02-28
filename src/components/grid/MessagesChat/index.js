@@ -151,6 +151,13 @@ class MessagesChat extends Component {
             });   
         }
     };
+    onHandleScroll = (e) => {
+        let el = e.target,
+            { mChat } = this.props;
+        if (!el.scrollTop && mChat.data?.lastIndex) {
+            fetchMessagesFeed(this.state.feedId, mChat.data?.lastIndex);
+        }
+    }
     componentWillUnmount = () => {
         clearTimeout(this.timer);
         fetchMessages();
@@ -165,7 +172,7 @@ class MessagesChat extends Component {
         }
     };
     render = ({authUser, mChat, communityVolunteers, messages}, {vStatus}) => {
-        let sListing = communityVolunteers.data.find((i) => i.id === this.state.listingId) || mChat.data;
+        let sListing = communityVolunteers.data.find((i) => i.id === this.state.listingId) || mChat.data?.listing;
         let sMessage = messages.data.find((i) => i.listingId === this.state.listingId);
         
         if (!sListing ) {
@@ -197,7 +204,7 @@ class MessagesChat extends Component {
                         }
                     </div>
                 </div>
-                <div className={style.body}>
+                <div className={style.body} onScroll={this.onHandleScroll}>
                     <div className={`chat ${style.chat}`}>
                         {
                         mChat.data?.messages && mChat.data?.messages.map((m) => {
