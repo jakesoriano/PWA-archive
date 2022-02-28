@@ -162,9 +162,6 @@ class MessagesChat extends Component {
         clearTimeout(this.timer);
         fetchMessages();
     };
-    componentDidUpdate = () => {
-        this.scrollToBottom();
-    };
     scrollToBottom = () => {
         let chatEl = document.querySelector('.chat');
         if (chatEl) {
