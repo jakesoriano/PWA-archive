@@ -56,7 +56,7 @@ class PostVolunteerAnnouncement extends Component {
 				hasError: false,
 			},
 			volunteers: {
-				value: '',
+				value: '0',
 				error: '',
 				message: getTranslation('NEEDS_MSG'),
 				hasError: false,
@@ -175,8 +175,8 @@ class PostVolunteerAnnouncement extends Component {
 			volunteers: {
 				...this.state.volunteers,
 				value: value,
-				hasError: !Boolean(value),
-				error: !Boolean(value) ? 'REQUIRED' : '',
+				// hasError: !Boolean(value),
+				// error: !Boolean(value) ? 'REQUIRED' : '',
 			},
 		});
 	};
@@ -216,7 +216,7 @@ class PostVolunteerAnnouncement extends Component {
 			!this.state.province.value ||
 			!this.state.municipality.value ||
 			!this.state.barangay.value ||
-			!this.state.volunteers.value ||
+			// !this.state.volunteers.value ||
 			!this.state.needs.value ||
 			(this.state.needs.value === 'Others not specified' && !this.state.otherNeeds.value)
 		) {
@@ -225,7 +225,7 @@ class PostVolunteerAnnouncement extends Component {
 			this.onProvinceChange(this.state.province.value);
 			this.onMunicipalityChange(this.state.municipality.value);
 			this.onBarangayChange(this.state.barangay.value);
-			this.onVolunteersChange(this.state.volunteers.value);
+			// this.onVolunteersChange(this.state.volunteers.value);
 			this.onNeedsChange(this.state.needs.value);
 			if(this.state.needs.value === 'Others not specified') {
 				this.onOtherNeedsChange(this.state.otherNeeds.value);
@@ -237,7 +237,7 @@ class PostVolunteerAnnouncement extends Component {
 				'province': this.state.province.value,
 				'municipality': this.state.municipality.value,
 				'barangay': this.state.barangay.value,
-				'noOfVolunteers': parseInt(this.state.volunteers.value),
+				'noOfVolunteers': parseInt(this.state.volunteers.value || '0'),
 				'needs': this.state.needs.value !== 'Others not specified' ? this.state.needs.value : this.state.otherNeeds.value
 			};
 			displayPageLoader(true);
@@ -414,7 +414,7 @@ class PostVolunteerAnnouncement extends Component {
 								/>
 							))}
 						</div>
-						<FormInput
+						{/* <FormInput
 							value={otherNeeds.value}
 							type="text"
 							onBlur={(e) => {
@@ -427,7 +427,7 @@ class PostVolunteerAnnouncement extends Component {
 							hasError={otherNeeds.hasError}
 							error={otherNeeds.error}
 							message={otherNeeds.message}
-						/>
+						/> */}
 					</FormGroup>
 
 					<ButtonDescription
