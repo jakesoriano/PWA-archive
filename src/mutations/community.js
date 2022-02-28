@@ -7,7 +7,8 @@ import {
   urlShare,
   urlCommunitySetup, 
   urlCommunityGetInfo,
-  urlCommunityLeader
+  urlCommunityLeader,
+  urlCommunityVolunteer
 } from '_helpers';
 import { communitySort } from '_constant';
 
@@ -749,3 +750,85 @@ export function deleteCommunityNews (id) {
   });
 }
 
+export function postVolunteerAnnouncement (data) {
+  // current state
+  const { communityInfo } = store.getState();
+  const url = `${urlCommunityLeader}/${communityInfo.data._id}/listings`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'POST',
+      data: data
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> postVolunteerAnnouncement Error`, res);
+          resolve(res);
+        } else {
+          console.log(`SPA >> postVolunteerAnnouncement successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> postVolunteerAnnouncement failed`, err);
+      });
+  });
+}
+
+export function fetchCommunityVolunteers (name, page, limit) {
+  //
+  const { communityVolunteers } = store.getState();
+  
+  // fetching
+  if(communityVolunteers.fetching) {
+    return;
+  }
+
+  // initial state
+  updateStore({
+    communityVolunteers: {
+      ...communityVolunteers,
+      filter: name || '',
+      fetching: true,
+      result: false
+    }
+  });
+  const url = `${urlCommunityVolunteer}`;
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'GET',
+      params: {
+        q: name || '',
+        p: page || 1, // page number
+        s: limit || 9 // limit
+      }
+    })
+    .then((res) => {
+      updateStore({
+        communityVolunteers: {
+          data: page && page > 1 ? [
+            ...communityVolunteers.data,
+            ...res.data.results
+          ] : res.data.results,
+          page: page || 1,
+          total: res.data.total,
+          fetching: false,
+          result: true
+        }
+      });
+      console.log(`SPA >> fetchCommunityVolunteers Success`, res, communityVolunteers);
+      resolve(true);
+    })
+    .catch((err) => {
+      updateStore({
+        communityVolunteers: {
+          ...communityVolunteers,
+          fetching: false,
+          result: false
+        }
+      });
+      console.log(`SPA >> fetchCommunityVolunteers Error`, err);
+      resolve(false);
+    });
+  });
+}

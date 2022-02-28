@@ -1,0 +1,97 @@
+[
+	{
+		"id": 1,
+		"title": "Community Sample 1",
+		"community": "Caravan Party List",
+		"createdAt": "2022-02-22T00:00:00.000Z",
+		"when": "2022-02-25T00:00:00.000Z",
+		"location": "Metro Manila, Batasan Hills",
+    "noOfMembers": 6,
+		"img": "https://mobile-kkp.s3.ap-southeast-1.amazonaws.com/uploads/community.jpg"
+	},
+	{
+		"id": 2,
+		"title": "Community Sample 2",
+		"community": "Caravan Party List 2",
+		"createdAt": "2022-02-22T00:00:00.000Z",
+		"when": "2022-02-25T00:00:00.000Z",
+		"location": "Metro Manila, Batasan Hills 2",
+    "noOfMembers": 10,
+		"img": "https://mobile-kkp.s3.ap-southeast-1.amazonaws.com/uploads/community.jpg"
+	},
+	{
+		"id": 3,
+		"title": "Community Sample 2",
+		"community": "Caravan Party List 2",
+		"createdAt": "2022-02-22T00:00:00.000Z",
+		"when": "2022-02-25T00:00:00.000Z",
+		"location": "Metro Manila, Batasan Hills 2",
+    "noOfMembers": 62,
+		"img": "https://mobile-kkp.s3.ap-southeast-1.amazonaws.com/uploads/community.jpg"
+	},
+	{
+		"id": 4,
+		"title": "Community Sample 2",
+		"community": "Caravan Party List 2",
+		"createdAt": "2022-02-22T00:00:00.000Z",
+		"when": "2022-02-25T00:00:00.000Z",
+		"location": "Metro Manila, Batasan Hills 2",
+    "noOfMembers": 6156,
+		"img": "https://mobile-kkp.s3.ap-southeast-1.amazonaws.com/uploads/community.jpg"
+	},
+	{
+		"id": 5,
+		"title": "Community Sample 2",
+		"community": "Caravan Party List 2",
+		"createdAt": "2022-02-22T00:00:00.000Z",
+		"when": "2022-02-25T00:00:00.000Z",
+		"location": "Metro Manila, Batasan Hills 2",
+    "noOfMembers": 0,
+		"img": "https://mobile-kkp.s3.ap-southeast-1.amazonaws.com/uploads/community.jpg"
+	},
+	{
+		"id": 6,
+		"title": "Community Sample 2",
+		"community": "Caravan Party List 2",
+		"createdAt": "2022-02-22T00:00:00.000Z",
+		"when": "2022-02-25T00:00:00.000Z",
+		"location": "Metro Manila, Batasan Hills 2",
+    "noOfMembers": 500,
+		"img": "https://mobile-kkp.s3.ap-southeast-1.amazonaws.com/uploads/community.jpg"
+	},
+	{
+		"id": 7,
+		"title": "Community Sample 2",
+		"community": "Caravan Party List 2",
+		"createdAt": "2022-02-22T00:00:00.000Z",
+		"when": "2022-02-25T00:00:00.000Z",
+		"location": "Metro Manila, Batasan Hills 2",
+    "noOfMembers": 2
+	},
+	{
+		"id": 8,
+		"title": "Community Sample 2",
+		"community": "Caravan Party List 2",
+		"createdAt": "2022-02-22T00:00:00.000Z",
+		"when": "2022-02-25T00:00:00.000Z",
+		"location": "Metro Manila, Batasan Hills 2",
+    "noOfMembers": 65
+	},
+	{
+		"id": 9,
+		"title": "Community Sample 2",
+		"community": "Caravan Party List 2",
+		"createdAt": "2022-02-22T00:00:00.000Z",
+		"when": "2022-02-25T00:00:00.000Z",
+		"location": "Metro Manila, Batasan Hills 2",
+    "noOfMembers": 621
+	},
+	{
+		"id": 10,
+		"title": "Community Sample 2",
+		"community": "Caravan Party List 2",
+		"createdAt": "2022-02-22T00:00:00.000Z",
+		"when": "2022-02-25T00:00:00.000Z",
+		"location": "Metro Manila, Batasan Hills 2"
+	}
+]

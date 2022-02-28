@@ -19,3 +19,4 @@ export * from './user';
 export * from './contentTypes';
 export * from './file';
 export * from './storage';
+export * from './profile';

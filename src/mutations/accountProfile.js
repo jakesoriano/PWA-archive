@@ -1,5 +1,5 @@
 import { updateStore, store } from '_unistore';
-import { xhr, urlCommunityInviteCode } from '_helpers';
+import { xhr, urlCommunityInviteCode, urlUserProfile } from '_helpers';
 import { nativeSetAuthToken } from '_platform/helpers';
 
 export function useCode (data) {
@@ -37,6 +37,52 @@ export function useCode (data) {
       .catch((err) => {
         resolve(false);
         console.log(`SPA >> Community Invite Code failed`, err);
+      });
+  });
+}
+
+export function updateProfile (data) {
+  return new Promise((resolve) => {
+    xhr(urlUserProfile, {
+      method: 'PATCH',
+      data
+    })
+      .then((res) => {
+        if (res && res.success) {
+          // eslint-disable-next-line
+          const { authUser } = store.getState();
+          updateStore({
+            authUser: {
+              ...authUser,
+              profile: {
+                ...authUser.profile,
+                fname: res.profile.fname,
+                mname: res.profile.mname,
+                lname: res.profile.lname,
+                gender: res.profile.gender,
+                birthday: res.profile.birthday,
+                mobile: res.profile.mobile,
+                region: res.profile.region,
+                province: res.profile.province,
+                municipality: res.profile.municipality,
+                barangay: res.profile.barangay,
+                isRegisteredVoter: res.profile.isRegisteredVoter,
+              }
+            }
+          });
+          console.log(`SPA >> updateProfile successful`, res);
+        }
+        resolve(res);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line
+				console.log(`SPA >> updateProfile Error`, err);
+        resolve({
+          success: false,
+          error: {
+            message: 'SOMETHING_WRONG'
+          }
+        });
       });
   });
 }

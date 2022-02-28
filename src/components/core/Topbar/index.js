@@ -39,6 +39,8 @@ class Topbar extends Component {
 								try {
 									if (this.props.route && this.props.route.url && this.props.route.url.indexOf('community-') > -1) {
 										this.props.route.router.props.history.goBack();
+									} else  if (this.props.route && this.props.route.url && this.props.route.url.indexOf('messages') > -1) {
+										this.props.route.router.props.history.goBack();
 									} else {
 										props.onBack();
 									}

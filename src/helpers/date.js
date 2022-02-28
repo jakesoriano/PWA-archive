@@ -25,10 +25,12 @@ const days = [
 	'Saturday',
 ];
 
+const gmtHours = ((1000 * 60 * 60) * 8) // - 8 hours
+
 export const dateEventFormat = (date) => {
 	const { selectedLanguage } = store.getState();
 	try {
-		const d = new Date(date);
+		const d = new Date(new Date(date).getTime() - gmtHours);  
 		let month = d.getMonth();
 		let day = d.getDate();
 		day = day < 10 ? `0${day}` : day;

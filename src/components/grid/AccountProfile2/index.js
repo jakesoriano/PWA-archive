@@ -36,14 +36,25 @@ class AccountProfile extends Component {
 							<span className={`extraBold ${style.points}`}>{formatNumber(authUser.points, 2) || 0}</span>
 							<span className={`bold ${style.textPoints}`}>{getTranslation('HERO_POINTS')}</span>
 						</p>
+						<Link id="update-profile" className={style.updateProfile} href={`/${this.props.parent}/update-profile`}>
+							<div>
+								<span className='bold'>{getTranslation('UPDATE_PROFILE')}</span>
+							</div>
+						</Link>
 						<Link className={style.invite} href="/invite">
 							<div>
 								<ImageLoader
 									src="assets/images/invite_icon.png"
 									style={{container: style.iconInvite}} />
-								<span>{getTranslation('INVITE_MORE')}</span>
 							</div>
 						</Link>
+						{/* <Link className={style.invite}>
+							<div>
+								<ImageLoader
+									src="assets/images/chat_icon.png"
+									style={{container: style.iconChat}} />
+							</div>
+						</Link> */}
 					</div>
 	      </div>
 				

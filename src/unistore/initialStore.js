@@ -173,5 +173,23 @@ export const initialStore = {
     total: 0,
     page: 1,
     selected: null
+  },
+  communityVolunteers: {
+    fetching: false,
+    result: false,
+    data: [],
+  },
+  messages: {
+    fetching: false,
+    result: false,
+    data: [],
+    total: 0,
+    page: 1,
+    selected: null
+  },
+  mChat: {
+    fetching: false,
+    result: false,
+    data: {}
   }
 };
