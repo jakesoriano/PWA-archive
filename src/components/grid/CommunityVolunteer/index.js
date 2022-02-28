@@ -163,9 +163,9 @@ class CommunityVolunteer extends Component {
 										<p>
 										{data?.province}, {data?.barangay} {data?.municipality} 
 										</p>
-										<p>
+										{/* <p>
 											{data?.noOfVolunteers} {getTranslation('KAKAMPINKS')}
-										</p>
+										</p> */}
 									</div>
 								</div>
 							);
