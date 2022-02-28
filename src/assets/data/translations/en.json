@@ -235,5 +235,11 @@
 	"DELETE_POST_CONFIRMATION": "Are you sure you want to delete",
 	"REPLACE_IMAGE": "REPLACE IMAGE",
 	"MY_PROFILE": "My Profile",
-	"PINK_PEDIA": "PinkPedia"
+	"PINK_PEDIA": "PinkPedia",
+	"TASK": "Task",
+	"TASKS": "Tasks",
+	"COMPLETED": "Completed",
+	"SALAMAT_KAKAMPINK_TASK": "Maraming Salamat, KakamPink",
+	"BALIK_TASK": "Bumalin Para sa mga susunod na tasks",
+	"TOTAL_COMPLETED": "Total Task Completed"
 }

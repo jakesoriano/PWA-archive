@@ -100,13 +100,10 @@ export function fetchTasks () {
     });
 }
 
-export function validateTask (id, token) {
+export function validateTask (id) {
   return new Promise((resolve) => {
     xhr(urlValidateTask.replace('{id}', id), {
-      method: 'POST',
-      data: {
-        token
-      }
+      method: 'POST'
     })
       .then((res) => {
         if (res.success) {
