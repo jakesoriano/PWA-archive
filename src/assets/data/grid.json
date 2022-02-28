@@ -236,7 +236,7 @@
 	{
 		"styles": [],
 		"auth": true,
-		"pageTitle": "PAGE_COMMUNITY_EVENTS",
+		"pageTitle": "COMMUNITY_VOLUNTEER_TITLE",
 		"uri": "community-volunteer",
 		"withBack": true,
 		"contents": [

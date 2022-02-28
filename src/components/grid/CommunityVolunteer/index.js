@@ -72,7 +72,8 @@ class CommunityVolunteer extends Component {
 		if(this.isOwnData(data)) {
 			route(`messages`);
 		} else {
-			route(`${this.props.page}/messages-chat?feedId=${data?.userId}:${this.props.authUser?.profile?._id}:${data?.id}&listingId=${data.id}`);
+			let feedId = [data?.userId, this.props.authUser?.profile?._id, data?.id].sort().join(':');
+			route(`${this.props.page}/messages-chat?feedId=${feedId}&listingId=${data.id}`);
 		}
 	}
 
@@ -162,9 +163,9 @@ class CommunityVolunteer extends Component {
 										<p>
 										{data?.province}, {data?.barangay} {data?.municipality} 
 										</p>
-										<p>
+										{/* <p>
 											{data?.noOfVolunteers} {getTranslation('KAKAMPINKS')}
-										</p>
+										</p> */}
 									</div>
 								</div>
 							);

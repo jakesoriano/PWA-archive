@@ -6,7 +6,8 @@ import {
     getTranslation,
     dateNewsFormat,
     getQueryStringValue,
-    getConfigByKey
+    getConfigByKey,
+    displayPageLoader
 } from '_helpers';
 import {
     fetchMessages,
@@ -107,12 +108,12 @@ class MessagesChat extends Component {
     };
     setLatestFeedChecker = () => {
         let { mChat } = this.props;
-        if (mChat.data?.messages?.length) {
+        if (this.state.feedId && mChat.data?.messages?.length) {
             clearTimeout(this.timer);
             this.timer = setTimeout(() => {
                 fetchLatestMessage(this.state.feedId).then(res => {
                     let latestMsg = mChat.data.messages[mChat.data.messages.length - 1];
-                    if (res.data.latestMessageId !== latestMsg.id) {
+                    if (res.data && res.data.latestMessageId !== latestMsg.id) {
                         fetchMessagesFeed(this.state.feedId).then(() => {
                             this.scrollToBottom();
                         });
@@ -134,8 +135,10 @@ class MessagesChat extends Component {
                 data: {}
             }
         });
+        displayPageLoader(true);
         fetchMessagesFeed(this.state.feedId).then(() => {
             this.scrollToBottom();
+            displayPageLoader(false);
         });
         this.setLatestFeedChecker();
         if (sMessage) {
@@ -161,9 +164,6 @@ class MessagesChat extends Component {
     componentWillUnmount = () => {
         clearTimeout(this.timer);
         fetchMessages();
-    };
-    componentDidUpdate = () => {
-        this.scrollToBottom();
     };
     scrollToBottom = () => {
         let chatEl = document.querySelector('.chat');
