@@ -151,6 +151,13 @@ class MessagesChat extends Component {
             });   
         }
     };
+    onHandleScroll = (e) => {
+        let el = e.target,
+            { mChat } = this.props;
+        if (!el.scrollTop && mChat.data?.lastIndex) {
+            fetchMessagesFeed(this.state.feedId, mChat.data?.lastIndex);
+        }
+    }
     componentWillUnmount = () => {
         clearTimeout(this.timer);
         fetchMessages();
@@ -197,7 +204,7 @@ class MessagesChat extends Component {
                         }
                     </div>
                 </div>
-                <div className={style.body}>
+                <div className={style.body} onScroll={this.onHandleScroll}>
                     <div className={`chat ${style.chat}`}>
                         {
                         mChat.data?.messages && mChat.data?.messages.map((m) => {
