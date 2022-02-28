@@ -56,10 +56,45 @@ class TaskCenter extends Component {
 
 	handleDone = () => {
 		try {
-			validateTask(this.state.item.id);
-			showAlertBox({
-				message: getTranslation('TASK_MSG_SUCCESS'),
-				success: true,
+			validateTask(this.state.item.id)
+			.then((status) => {
+				/**
+				 * 1 = success
+				 * 0 = not liked
+				 * -1 = server error
+				 */
+				displayPageLoader(false);
+				if (status === 1) {
+					showAlertBox({
+						message: getTranslation('TASK_MSG_SUCCESS'),
+						success: true
+					});
+					this.setState({
+						isDisabled: true,
+						item: this.props.tasks.data.reduce((result, item) => {
+							if (!result || (!item.completed && result.completed)) {
+								return item;
+							}
+							return result;
+						}, null)
+					// }, () => {
+					// 	FB.XFBML.parse();
+					});
+				} else if (status === 0) {
+					showAlertBox({
+						message: getTranslation('TASK_MSG_FAIL')
+					});
+				} else {
+					showAlertBox({
+						message: getTranslation('SOMETHING_WRONG')
+					});
+				}
+			})
+			.catch(err => {
+				displayPageLoader(false);
+				showAlertBox({
+					message: getTranslation('SOMETHING_WRONG')
+				});
 			});
 		} catch (error) {
 			showAlertBox({
