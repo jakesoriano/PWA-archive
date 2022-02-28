@@ -169,6 +169,7 @@ class MessagesChat extends Component {
         let chatEl = document.querySelector('.chat');
         if (chatEl) {
             chatEl.scrollTop = chatEl.scrollHeight - chatEl.clientHeight;
+            console.log(chatEl.scrollHeight, chatEl.clientHeight)
         }
     };
     render = ({authUser, mChat, communityVolunteers, messages}, {vStatus}) => {
@@ -204,8 +205,8 @@ class MessagesChat extends Component {
                         }
                     </div>
                 </div>
-                <div className={style.body} onScroll={this.onHandleScroll}>
-                    <div className={`chat ${style.chat}`}>
+                <div className={`chat ${style.body}`} onScroll={this.onHandleScroll}>
+                    <div className={style.chat}>
                         {
                         mChat.data?.messages && mChat.data?.messages.map((m) => {
                             return (
