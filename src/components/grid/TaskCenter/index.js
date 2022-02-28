@@ -57,45 +57,45 @@ class TaskCenter extends Component {
 	handleDone = () => {
 		try {
 			validateTask(this.state.item.id)
-			.then((status) => {
-				/**
-				 * 1 = success
-				 * 0 = not liked
-				 * -1 = server error
-				 */
-				displayPageLoader(false);
-				if (status === 1) {
+				.then((status) => {
+					/**
+					 * 1 = success
+					 * 0 = not liked
+					 * -1 = server error
+					 */
+					displayPageLoader(false);
+					if (status === 1) {
+						showAlertBox({
+							message: getTranslation('TASK_MSG_SUCCESS'),
+							success: true,
+						});
+						this.setState({
+							isDisabled: true,
+							item: this.props.tasks.data.reduce((result, item) => {
+								if (!result || (!item.completed && result.completed)) {
+									return item;
+								}
+								return result;
+							}, null),
+							// }, () => {
+							// 	FB.XFBML.parse();
+						});
+					} else if (status === 0) {
+						showAlertBox({
+							message: getTranslation('TASK_MSG_FAIL'),
+						});
+					} else {
+						showAlertBox({
+							message: getTranslation('SOMETHING_WRONG'),
+						});
+					}
+				})
+				.catch((err) => {
+					displayPageLoader(false);
 					showAlertBox({
-						message: getTranslation('TASK_MSG_SUCCESS'),
-						success: true
+						message: getTranslation('SOMETHING_WRONG'),
 					});
-					this.setState({
-						isDisabled: true,
-						item: this.props.tasks.data.reduce((result, item) => {
-							if (!result || (!item.completed && result.completed)) {
-								return item;
-							}
-							return result;
-						}, null)
-					// }, () => {
-					// 	FB.XFBML.parse();
-					});
-				} else if (status === 0) {
-					showAlertBox({
-						message: getTranslation('TASK_MSG_FAIL')
-					});
-				} else {
-					showAlertBox({
-						message: getTranslation('SOMETHING_WRONG')
-					});
-				}
-			})
-			.catch(err => {
-				displayPageLoader(false);
-				showAlertBox({
-					message: getTranslation('SOMETHING_WRONG')
 				});
-			});
 		} catch (error) {
 			showAlertBox({
 				message: getTranslation('SOMETHING_WRONG'),
@@ -122,7 +122,7 @@ class TaskCenter extends Component {
 		}
 
 		// tasks completed
-		if (tasks.completed) {
+		if (!tasks.completed) {
 			return (
 				<div className={style.taskCenterWrapper}>
 					<div className={style.taskContainerCompleted}>
@@ -182,13 +182,15 @@ class TaskCenter extends Component {
 								);
 							})}
 						</div>
-						<div className={style.taskTitle}>
-							<p
-								dangerouslySetInnerHTML={{
-									__html: tasks?.data[this.taskCompletedCount()]?.title || '',
-								}}
-							/>
-						</div>
+						{tasks?.data[this.taskCompletedCount()]?.title && (
+							<div className={style.taskTitle}>
+								<p
+									dangerouslySetInnerHTML={{
+										__html: tasks?.data[this.taskCompletedCount()]?.title || '',
+									}}
+								/>
+							</div>
+						)}
 
 						{/* FB Post */}
 						{/* <div className={style.fbContainer}>
