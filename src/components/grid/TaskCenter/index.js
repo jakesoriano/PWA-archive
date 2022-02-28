@@ -122,7 +122,7 @@ class TaskCenter extends Component {
 		}
 
 		// tasks completed
-		if (!tasks.completed) {
+		if (tasks.completed) {
 			return (
 				<div className={style.taskCenterWrapper}>
 					<div className={style.taskContainerCompleted}>
