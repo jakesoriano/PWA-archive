@@ -7,10 +7,10 @@ import {
 	ButtonDescription,
 	InitialSignup,
 	Login,
+	CommunitiesAndKit
 } from '_components/core';
 import { getTranslation } from '_helpers';
-import { fetchAppLandingConfig } from '../../../mutations/appLandingConfig';
-import CommunitiesAndKit from '../../core/CommunitiesAndKit';
+import { fetchAppLandingConfig } from '_mutations';
 import supportIcon from '../../../assets/icons/support_icon.png';
 import style from './style';
 
@@ -20,12 +20,12 @@ class LandingPage extends Component {
 		super(props);
 		this.state = {
 			showLoginForm: false,
-      showInitialSignupForm: false,
-      showCommunitiesAndKit: false,
+			showInitialSignupForm: false,
+			showCommunitiesAndKit: false,
 		};
 	}
 
-  componentDidMount = () => {
+	componentDidMount = () => {
 		fetchAppLandingConfig();
 	};
 
@@ -44,7 +44,7 @@ class LandingPage extends Component {
 		this.setState({ showCommunitiesAndKit: !showCommunitiesAndKit });
 	};
   
-  showPrivacyPolicy = () => {
+	showPrivacyPolicy = () => {
 		route(`/${this.props.parent}/landing-data-privacy`);
 	};
 
@@ -52,8 +52,8 @@ class LandingPage extends Component {
 		route(`/${this.props.parent}/about-kaya-natin`);
 	};
 
-  render = ({ appLandingConfig }) => {
-    const data = appLandingConfig.data;
+	render = ({ appLandingConfig }) => {
+		const data = appLandingConfig.data;
 		return (
 			<div className={style.landingPage}>
 				<div>
