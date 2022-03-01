@@ -152,7 +152,7 @@ class TaskCenter extends Component {
 			<div className={style.taskCenterWrapper}>
 				<div className={style.header}>
 					<div className={style.taskContainer}>
-						<p>{getTranslation('TASK_INSTRUCTION')}</p>
+						{/* <p>{getTranslation('TASK_INSTRUCTION')}</p> */}
 						<div className={style.taskCompleted}>
 							<p className={style.taskCount}>{this.taskCompletedCount()}</p>
 							<p className={style.taskComplete}>
