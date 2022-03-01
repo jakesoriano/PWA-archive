@@ -16,7 +16,7 @@
 .comsAndKit {
 	position: absolute;
 	bottom: -120%;
-	max-height: calc(100% - 10px);
+	max-height: calc(100% - 90px);
 	overflow: scroll;
 	left: 0;
 	width: 100%;
@@ -25,40 +25,65 @@
 	.communities {
 		width: 100%;
 		height: 100%;
-		background: rgb(255, 177, 187);
-		background: linear-gradient(180deg, #b32774 50%, #c1789f 100%);
+		background: $white;
+		overflow: scroll;
+		&Content {
+			background: #f2f2f2;
+			padding: 15px;
+			margin-bottom: 15px;
+		}
 		.title {
-			margin: 0 15px 10px;
+			margin: 0 15px 10px 0;
+			font-size: 0.75rem;
+			color: $blue_text;
 		}
 		.community {
-			background: $primary_layout;
-			margin-bottom: 10px;
-			padding: 15px;
+			margin-bottom: 15px;
 			display: flex;
 			align-items: center;
 			&Content {
-				margin-left: 5px;
+				margin-left: 8px;
 				text-align: left;
-				font-size: 0.65rem;
+				font-size: 0.75rem;
 				h4 {
-					font-size: 1.2rem;
+					color: $pink_text;
+					font-size: 1.35rem;
 					line-height: 18px;
 					margin: 0;
 					text-transform: uppercase;
 				}
 				p {
-					color: $gray;
+					color: black;
+				}
+				.date {
+					text-transform: uppercase;
 				}
 			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		.kitContent {
+			padding: 0 15px;
 		}
 		.signUpBtn {
 			max-width: 300px;
 			margin: 20px auto 50px;
+			.privacyPolicy {
+				margin-top: 10px;
+				font-size: 0.7rem;
+				color: $gray_text;
+				text-align: center;
+				a {
+					color: $gray_text;
+				}
+			}
 		}
 	}
 	.landingImg {
-		width: 150px;
-		height: 100%;
+		width: 85px;
+		min-width: 85px;
+		height: 82px;
 		overflow: hidden;
 		padding: 0;
 		border-radius: 50%;
@@ -69,7 +94,7 @@
 	.kitImage {
 		width: 100%;
 		height: auto;
-		padding: 0 15px;
+		padding-bottom: 50px;
 		img {
 			position: relative;
 		}
@@ -78,4 +103,26 @@
 .comsAndKit.toggled {
 	top: 0;
 	margin-top: 90px;
+}
+
+.customCarousel {
+	:global(.carousel .control-dots) {
+		margin: 0;
+		:global(.dot) {
+			box-shadow: none;
+			border: 1px $gray_text solid;
+			margin: 0 5px;
+			width: 12px;
+			height: 12px;
+		}
+	}
+}
+
+.customButton {
+	:global(.carousel .control-dots) {
+		:global(.selected) {
+			background-color: $pink_button;
+			border: none;
+		}
+	}
 }
