@@ -1,8 +1,8 @@
 @import '../../../style/variables.scss';
 .countdownWrap {
 	display: flex;
-	width: calc(100% - 30px);
-	margin: 10px 15px 0;
+	padding: 10px 15px;
+	background: $white;
 	.countdown {
 		background-color: #ce0f68;
 		border-radius: 10px;
