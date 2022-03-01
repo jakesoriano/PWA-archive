@@ -234,6 +234,30 @@
 		]
 	},
 	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "COMMUNITY_VOLUNTEER_TITLE",
+		"uri": "community-volunteer",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "CommunityVolunteer"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_COMMUNITY_EVENTS",
+		"uri": "community-crowdsourcing",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "UpcomingEvents"
+			}
+		]
+	},
+	{
 		"styles": [
 			{
 				"selector": "#w1 > div",
@@ -560,6 +584,54 @@
 		"contents": [
 			{
 				"component": "PostContent"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"withBack": true,
+		"pageTitle": "PAGE_UPDATE_PROFILE",
+		"uri": "update-profile",
+		"contents": [
+			{
+				"component": "EditProfile"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"withBack": true,
+		"pageTitle": "PAGE_VOLUNTEER_ANNOUNCEMENT",
+		"uri": "post-volunteer-announcement",
+		"contents": [
+			{
+				"component": "PostVolunteerAnnouncement"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "MESSAGES",
+		"uri": "messages",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "MessagesPage"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "MESSAGES",
+		"uri": "messages-chat",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "MessagesChat"
 			}
 		]
 	}

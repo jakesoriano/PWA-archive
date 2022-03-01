@@ -92,7 +92,7 @@ class FeaturedCommunities extends Component {
         {top > 1 && communities.data
           .filter((item, i) => i < (top || 5))
           .map((item) => this.renderItem(item))}
-        {!hideShowAll && communities.data.length < communities.total && !communities.fetching && (
+        {!hideShowAll && communities.data && communities.data.length < communities.total && !communities.fetching && (
           <button className={style.showMore} onClick={this.handleShowAll}>
             <span className='bold'><span>&#8659;</span> {getTranslation('SHOW_ALL')}</span>
           </button>
