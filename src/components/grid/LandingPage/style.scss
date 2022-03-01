@@ -3,40 +3,48 @@
 	text-align: center;
 	width: 100%;
 	height: 100%;
-	background: rgb(255, 177, 187);
-	background: linear-gradient(180deg, #b32774 50%, #c1789f 100%);
+	background: $white;
 	.contentWrap {
 		position: relative;
 		height: 100vh;
 		overflow: scroll;
+		padding-bottom: 25px;
 		.headline {
 			width: 100%;
 			overflow: auto;
 			padding: 90px 0 10px;
 			.announcements {
-				background: $primary_layout;
-				margin-bottom: 10px;
+				background: #f2f2f2;
 				padding: 15px;
 				display: flex;
 				align-items: center;
 				&Content {
-					margin-left: 5px;
+					margin-left: 8px;
 					text-align: left;
-					font-size: 0.65rem;
+					font-size: 0.75rem;
 					h4 {
-						font-size: 1.2rem;
+						color: #ce0f68;
+						font-size: 1.35rem;
 						line-height: 18px;
 						margin: 0;
 						text-transform: uppercase;
 					}
 					p {
-						color: $gray;
+						color: black;
+						&:first-child {
+							color: #031684;
+							margin-bottom: 5px;
+						}
+					}
+					.date {
+						text-transform: uppercase;
 					}
 				}
 			}
 			.landingImg {
-				width: 150px;
-				height: 100%;
+				width: 85px;
+				min-width: 85px;
+				height: 82px;
 				overflow: hidden;
 				padding: 0;
 				border-radius: 50%;
@@ -45,7 +53,7 @@
 				}
 			}
 			.heroPoints {
-				background: $primary_layout;
+				background: #f2f2f2;
 				margin-bottom: 10px;
 				padding: 15px;
 				display: flex;
@@ -58,15 +66,19 @@
 					border-radius: 50%;
 				}
 				&Content {
-					margin-left: 10px;
+					margin-left: 8px;
 					text-align: left;
-					font-size: 0.6rem;
+					p {
+						font-size: 0.75rem;
+						color: #031684;
+						margin-bottom: 5px;
+					}
 					h4 {
-						font-size: 1rem;
+						font-size: 1.35rem;
 						line-height: 18px;
 						margin: 0;
 						text-transform: uppercase;
-						color: $item_border;
+						color: #ce0f68;
 					}
 				}
 			}
@@ -74,8 +86,8 @@
 		.partners {
 			padding: 0 15px;
 			p {
-				color: #e799b7;
-				font-size: 0.6rem;
+				color: #031684;
+				font-size: 0.65rem;
 			}
 			.partnerImages {
 				margin: 20px 0;
@@ -105,17 +117,21 @@
 			overflow: auto;
 			p {
 				margin: 10% 0 0px;
+				color: black;
+				a {
+					color: #ce0f68;
+				}
 			}
 			.buttonStyle {
-				background-color: #b73076;
-				color: $gray;
+				background-color: #ec0186;
+				color: $white;
 			}
 			.privacyPolicy {
 				margin-top: 10px;
 				font-size: 0.7rem;
-				color: $light_pink;
+				color: #737373;
 				a {
-					color: $light_pink;
+					color: #737373;
 				}
 			}
 			.supportIcon {
