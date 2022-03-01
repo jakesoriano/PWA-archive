@@ -219,9 +219,6 @@ class TaskCenter extends Component {
 								{item.url}
 							</a>
 							<p>
-								{getTranslation('TASK_POINTS').replace('{POINTS}', item.points)}
-							</p>
-							<p>
 								{getTranslation('TASK_DEADLINE').replace(
 									'{DATE}',
 									dateEventFormat(item.endDate)
