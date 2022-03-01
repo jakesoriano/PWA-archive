@@ -14,7 +14,7 @@
 			overflow: auto;
 			padding: 90px 0 10px;
 			.announcements {
-				background: #f2f2f2;
+				background: $gray_bg;
 				padding: 15px;
 				display: flex;
 				align-items: center;
@@ -23,7 +23,7 @@
 					text-align: left;
 					font-size: 0.75rem;
 					h4 {
-						color: #ce0f68;
+						color: $pink_text;
 						font-size: 1.35rem;
 						line-height: 18px;
 						margin: 0;
@@ -32,7 +32,7 @@
 					p {
 						color: black;
 						&:first-child {
-							color: #031684;
+							color: $blue_text;
 							margin-bottom: 5px;
 						}
 					}
@@ -53,7 +53,7 @@
 				}
 			}
 			.heroPoints {
-				background: #f2f2f2;
+				background: $gray_bg;
 				margin-bottom: 10px;
 				padding: 15px;
 				display: flex;
@@ -70,7 +70,7 @@
 					text-align: left;
 					p {
 						font-size: 0.75rem;
-						color: #031684;
+						color: $blue_text;
 						margin-bottom: 5px;
 					}
 					h4 {
@@ -78,7 +78,7 @@
 						line-height: 18px;
 						margin: 0;
 						text-transform: uppercase;
-						color: #ce0f68;
+						color: $pink_text;
 					}
 				}
 			}
@@ -86,7 +86,7 @@
 		.partners {
 			padding: 0 15px;
 			p {
-				color: #031684;
+				color: $blue_text;
 				font-size: 0.65rem;
 			}
 			.partnerImages {
@@ -119,19 +119,19 @@
 				margin: 10% 0 0px;
 				color: black;
 				a {
-					color: #ce0f68;
+					color: $pink_text;
 				}
 			}
 			.buttonStyle {
-				background-color: #ec0186;
+				background-color: $pink_button;
 				color: $white;
 			}
 			.privacyPolicy {
 				margin-top: 10px;
 				font-size: 0.7rem;
-				color: #737373;
+				color: $gray_text;
 				a {
-					color: #737373;
+					color: $gray_text;
 				}
 			}
 			.supportIcon {
