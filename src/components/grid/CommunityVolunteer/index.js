@@ -79,7 +79,7 @@ class CommunityVolunteer extends Component {
 
 	render() {
 		// filtering community data
-		const filteredData = this.state?.data?.sort((a,b) => b?.postedDate - a?.postedDate)
+		const filteredData = this.state?.data?.sort((a,b) => b?.date - a?.date)
 		const communityData = filteredData.filter((data) => {
 			const communityToLower = data?.community?.name?.toLowerCase();
 			return communityToLower?.includes(

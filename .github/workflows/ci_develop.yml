@@ -1,0 +1,42 @@
+
+name: PR Develop
+on:
+  pull_request:
+    branches:
+      - develop
+
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      API_DOMAIN: https://n0k58tc0x4.execute-api.ap-southeast-1.amazonaws.com/develop/
+      CDN_DOMAIN: https://mobile-kkp-develop.s3.ap-southeast-1.amazonaws.com/uploads/
+      PLATFORM: android
+      PREFIX: kkp
+      ENVIRONMENT: DEV
+  
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          cache: npm
+      - run: npm config set registry http://registry.npmjs.org/
+      - run: npm install --production=false
+      - run: echo "APP_ENV_PROJECT=Leni2022" >> .env
+      - run: echo "APP_ENV_PLATFORM=$PLATFORM" >> .env
+      - run: echo "APP_ENV_PREFIX=$PREFIX" >> .env
+      - run: echo "APP_ENV_PUBLIC_PATH=" >> .env
+      - run: echo "APP_ENV_BUILD_NO=1.7.${{ github.run_number }}" >> .env
+      - run: echo "APP_ENV_COOKIE_TIME_LIMIT=14" >> .env
+      - run: echo "APP_ENV_API_DOMAIN=$API_DOMAIN" >> .env
+      - run: echo "APP_ENV_CDN_DOMAIN=$CDN_DOMAIN" >> .env
+      - run: echo "APP_ENV_ENVIRONMENT=$ENVIRONMENT" >> .env
+      - run: echo "APP_ENV_STAGE=$CI_COMMIT_REF_NAME" >> .env
+      - run: cat .env
+      - run: npm install
+      # - run: npm run test
+
