@@ -30,7 +30,7 @@ jobs:
       - run: echo "APP_ENV_PLATFORM=$PLATFORM" >> .env
       - run: echo "APP_ENV_PREFIX=$PREFIX" >> .env
       - run: echo "APP_ENV_PUBLIC_PATH=" >> .env
-      - run: echo "APP_ENV_BUILD_NO=1.7.${{ github.run_number }}" >> .env
+      - run: echo "APP_ENV_BUILD_NO=1.8.${{ github.run_number }}" >> .env
       - run: echo "APP_ENV_COOKIE_TIME_LIMIT=14" >> .env
       - run: echo "APP_ENV_API_DOMAIN=$API_DOMAIN" >> .env
       - run: echo "APP_ENV_CDN_DOMAIN=$CDN_DOMAIN" >> .env
