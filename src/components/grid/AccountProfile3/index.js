@@ -62,7 +62,7 @@ class AccountProfile extends Component {
 									</div>
 								</div>
 							</div>
-							<p className={`extraBold ${style.heroPoints}`}>{`${formatNumber(authUser.points, 2) || 0} ${getTranslation('HERO_POINTS')} `}</p>
+							<p className={`extraBold ${style.heroPoints}`}>{`${authUser.points === 0 ? '-' : formatNumber(authUser.points, 2) || 0} ${getTranslation('HERO_POINTS')} `}</p>
 						</div>
 						<a onClick={() => {
 							this.onShare();

@@ -11,7 +11,9 @@ import {
 	getMunicipality,
 	getBarangay,
 	displayPageLoader,
-	showAlertBox
+	showAlertBox,
+	isUserUpdatedProfile,
+	circleModal
 } from '_helpers';
 import {
 	FormGroup,
@@ -123,9 +125,7 @@ class EditProfile extends Component {
 		this.setState({
 			mname: {
 				...this.state.mname,
-				value: value,
-				hasError: !Boolean(value),
-				error: !Boolean(value) ? 'REQUIRED' : '',
+				value: value
 			},
 		});
 	};
@@ -271,7 +271,6 @@ class EditProfile extends Component {
 	handleContinue = () => {
 		if (
 			!this.state.fname.value ||
-			!this.state.mname.value ||
 			!this.state.lname.value ||
 			!this.state.gender.value ||
 			!this.state.birthday.value ||
@@ -282,7 +281,6 @@ class EditProfile extends Component {
 			!this.state.isRegisteredVoter.value
 		) {
 			this.onFnameChange(this.state.fname.value);
-			this.onMnameChange(this.state.mname.value);
 			this.onLnameChange(this.state.lname.value);
 			this.onGenderChange(this.state.gender.value);
 			this.onDobChange(this.state.birthday.value);
@@ -305,16 +303,24 @@ class EditProfile extends Component {
 				'isRegisteredVoter': this.state.isRegisteredVoter.value === 'yes' ? true : false,
 			};
 			displayPageLoader(true);
+			const isUpdatedProfile = isUserUpdatedProfile();
 			updateProfile(userData)
 				.then((res) => {
 					displayPageLoader(false);
 					if (res.success) {
 						// route(`/${this.props.parent}/registration-otp`);
 						route(`/${this.props.parent}`);
-						showAlertBox({
-							message: 'UPDATE_PROFILE_SUCCESS',
-							success: true
-						});
+						if(!isUpdatedProfile) {
+							circleModal({
+								title: getTranslation('UPDATE_PROFILE_SUCCESS'),
+								content: getTranslation('NEWLY_UPDATED_PROFILE')
+							});
+						} else {
+							showAlertBox({
+								message: 'UPDATE_PROFILE_SUCCESS',
+								success: true
+							});
+						}
 					} else {
 						showAlertBox({
 							message: res.error || 'SOMETHING_WRONG',

@@ -28,25 +28,28 @@ class Members extends Component {
 	  if (!members.result) {
 	    return <LoaderRing fullpage />;
 	  }
-
-	  return (
-	    <dv className={style.membersWrap}>
-				{members.data.map(item => (
-					<div className={style.item}>
-						<ImageLoader 
-							src={item.image || getDefaultAvatar()}
-							style={{container: style.avatar}}
-							lazy />
-						<div className={style.nameMember}>
-							<div>
-								<p className={`light ${style.name}`}>{this.renderUserTitle(item.profile)}</p>
-								<p className={`light ${style.members}`}>{`${formatNumber(item.members, 2) || 0} ${getTranslation('MEMBERS')}`}</p>
+		if (members.data && members.data.length) {
+			return (
+				<div className={style.membersWrap}>
+					{members.data.map(item => (
+						<div className={style.item}>
+							<ImageLoader 
+								src={item.image || getDefaultAvatar()}
+								style={{container: style.avatar}}
+								lazy />
+							<div className={style.nameMember}>
+								<div>
+									<p className={`light ${style.name}`}>{this.renderUserTitle(item.profile)}</p>
+									<p className={`light ${style.members}`}>{`${formatNumber(item.members, 2) || 0} ${getTranslation('MEMBERS')}`}</p>
+								</div>
 							</div>
 						</div>
-					</div>
-				))}
-			</dv>
-	  );
+					))}
+				</div>
+			);
+		} else {
+			return <div className={style.membersWrap}><p className={style.noRecord}>{getTranslation('NO_MEMBERS')}</p></div>
+		}
 	};
 }
 export default connect(['members'])(Members);
