@@ -283,7 +283,11 @@ class InitialSignup extends Component {
           </div>
           <div className={style.formFieldWrap}>
             <form className={style.form}>
-            <FormGroup label="Username" hasError={username.hasError}>
+            <FormGroup 
+              label="Username" 
+              hasError={username.hasError}
+              className={style.formGroup}
+            >
               <FormInput
               value={username.value}
               type="text"
@@ -296,9 +300,14 @@ class InitialSignup extends Component {
               hasError={username.hasError}
               error={username.error}
               message={username.message}
+              className={style.formInput}
               />
             </FormGroup>
-            <FormGroup label="Password" hasError={password.hasError}>
+            <FormGroup 
+              label="Password" 
+              hasError={password.hasError}
+              className={style.formGroup}
+            >
               <FormInput
               value={password.value}
               type="password"
@@ -311,11 +320,13 @@ class InitialSignup extends Component {
               hasError={password.hasError}
               error={password.error}
               message={password.message}
+              className={style.formInput}
               />
             </FormGroup>
             <FormGroup
               label="Confirm Password"
               hasError={confirm_password.hasError}
+              className={style.formGroup}
             >
               <FormInput
               value={confirm_password.value}
@@ -329,6 +340,7 @@ class InitialSignup extends Component {
               hasError={confirm_password.hasError}
               error={confirm_password.error}
               message={confirm_password.message}
+              className={style.formInput}
               />
             </FormGroup>
             <div className={style.buttonWrap}>
@@ -336,6 +348,7 @@ class InitialSignup extends Component {
               onClickCallback={this.onClickSubmit}
               text={getTranslation('SIGNUP_CONTINUE')}
               bottomDescription=""
+              buttonStyle={`${style.buttonStyle}`}
               />
               <div onClick={toggleSignupForm}>
                 <p className={style.backButton}> {getTranslation('BACK')} </p>

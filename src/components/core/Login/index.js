@@ -241,7 +241,11 @@ class Login extends Component {
           </div>
           <div className={style.formFieldWrap}>
             <form className={style.form}>
-              <FormGroup label="USERNAME" hasError={username.hasError}>
+              <FormGroup 
+                label="USERNAME" 
+                hasError={username.hasError}
+                className={style.formGroup}
+              >
                 <FormInput
                   className={style.fields}
                   style={{ error: style.fields }}
@@ -256,9 +260,14 @@ class Login extends Component {
                   hasError={username.hasError}
                   error={username.error}
                   message={username.message}
+                  className={style.formInput}
                 />
               </FormGroup>
-              <FormGroup label="PASSWORD" hasError={password.hasError}>
+              <FormGroup 
+                label="PASSWORD" 
+                hasError={password.hasError}
+                className={style.formGroup}
+              >
                 <FormInput
                   className={style.fields}
                   style={{ error: style.fields }}
@@ -273,6 +282,7 @@ class Login extends Component {
                   hasError={password.hasError}
                   error={password.error}
                   message={password.message}
+                  className={style.formInput}
                 />
               </FormGroup>
               <div className={style.buttonWrap}>
@@ -283,6 +293,7 @@ class Login extends Component {
                   }}
                   text={getTranslation('LOGIN_SUBMIT')}
                   bottomDescription=""
+                  buttonStyle={`${style.buttonStyle}`}
                 />
                 <p
                   className={`bold ${style.forgotUserPass}`}

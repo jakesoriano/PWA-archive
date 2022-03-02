@@ -36,6 +36,16 @@
 		width: 100%;
 		padding: 15px;
 		color: #737373;
+		.formGroup > label {
+			font-family: 'OpenSans-Regular', arial, sans-serif;
+			font-style: italic;
+			padding-bottom: 5px;
+			color: #282828;
+		}
+		.formInput {
+			border: 1px solid #d3d3d3;
+			padding: 10px;
+		}
 		p,
 		a,
 		span {
@@ -58,6 +68,11 @@
 				border-bottom: 1px solid;
 				width: fit-content;
 				opacity: 0.7;
+			}
+			.buttonStyle {
+				font-size: 1.3rem;
+				background-color: $pink_button;
+				padding: 15px 0;
 			}
 		}
 		.appleLogo {
