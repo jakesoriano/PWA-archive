@@ -41,7 +41,7 @@ export function fetchMessages (page, limit) {
         return false;
       });
 }
-export function fetchMessagesFeed (feedId) {
+export function fetchMessagesFeed (feedId, i) {
     // curreny state
     const { mChat } = store.getState();
   
@@ -55,11 +55,19 @@ export function fetchMessagesFeed (feedId) {
     });
   
     return new Promise((resolve) => {
-      xhr(`${urlMessages}/${feedId}`)
+      xhr(`${urlMessages}/${feedId}`, {
+        params: {
+          i: i || ''
+        }
+      })
       .then((res) => {
         updateStore({
           mChat: {
-            data: res.data,
+            data: i ? {
+              ...mChat.data,
+              lastIndex: res.data?.lastIndex,
+              messages: res.data?.messages.concat(mChat.data?.messages)
+            } : res.data,
             fetching: false,
             result: true
           }

@@ -72,13 +72,14 @@ class CommunityVolunteer extends Component {
 		if(this.isOwnData(data)) {
 			route(`messages`);
 		} else {
-			route(`${this.props.page}/messages-chat?feedId=${data?.userId}:${this.props.authUser?.profile?._id}:${data?.id}&listingId=${data.id}`);
+			let feedId = [data?.userId, this.props.authUser?.profile?._id, data?.id].sort().join(':');
+			route(`${this.props.page}/messages-chat?feedId=${feedId}&listingId=${data.id}`);
 		}
 	}
 
 	render() {
 		// filtering community data
-		const filteredData = this.state?.data?.sort((a,b) => b?.postedDate - a?.postedDate)
+		const filteredData = this.state?.data?.sort((a,b) => b?.date - a?.date)
 		const communityData = filteredData.filter((data) => {
 			const communityToLower = data?.community?.name?.toLowerCase();
 			return communityToLower?.includes(
@@ -162,9 +163,9 @@ class CommunityVolunteer extends Component {
 										<p>
 										{data?.province}, {data?.barangay} {data?.municipality} 
 										</p>
-										<p>
+										{/* <p>
 											{data?.noOfVolunteers} {getTranslation('KAKAMPINKS')}
-										</p>
+										</p> */}
 									</div>
 								</div>
 							);

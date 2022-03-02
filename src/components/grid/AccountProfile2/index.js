@@ -33,7 +33,7 @@ class AccountProfile extends Component {
 					</div>
 					<div className={style.pointsNbuttons}>
 						<p className={style.heroPoints}>
-							<span className={`extraBold ${style.points}`}>{formatNumber(authUser.points, 2) || 0}</span>
+							<span className={`extraBold ${style.points}`}>{authUser.points === 0 ? '-' : formatNumber(authUser.points, 2) || 0}</span>
 							<span className={`bold ${style.textPoints}`}>{getTranslation('HERO_POINTS')}</span>
 						</p>
 						<Link id="update-profile" className={style.updateProfile} href={`/${this.props.parent}/update-profile`}>
@@ -48,13 +48,13 @@ class AccountProfile extends Component {
 									style={{container: style.iconInvite}} />
 							</div>
 						</Link>
-						<Link className={style.invite}>
+						{/* <Link className={style.invite}>
 							<div>
 								<ImageLoader
 									src="assets/images/chat_icon.png"
 									style={{container: style.iconChat}} />
 							</div>
-						</Link>
+						</Link> */}
 					</div>
 	      </div>
 				

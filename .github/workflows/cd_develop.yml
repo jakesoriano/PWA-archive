@@ -1,8 +1,9 @@
 
-name: Staging
+name: Develop
 on:
-  pull_request:
-    branches: [ staging ]
+  push:
+    branches:
+      - develop
 
   workflow_dispatch:
 
@@ -10,11 +11,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      API_DOMAIN: https://7oquizbc8g.execute-api.ap-southeast-1.amazonaws.com/staging/
-      CDN_DOMAIN: https://d2ecox8kjhkvbt.cloudfront.net/uploads/
+      API_DOMAIN: https://n0k58tc0x4.execute-api.ap-southeast-1.amazonaws.com/develop/
+      CDN_DOMAIN: https://mobile-kkp-develop.s3.ap-southeast-1.amazonaws.com/uploads/
       PLATFORM: android
       PREFIX: kkp
-      ENVIRONMENT: STG
+      ENVIRONMENT: DEV
   
     steps:
       - uses: actions/checkout@v2
@@ -24,12 +25,12 @@ jobs:
           node-version: 14
           cache: npm
       - run: npm config set registry http://registry.npmjs.org/
-      - run: npm install --production=true
+      - run: npm install --production=false
       - run: echo "APP_ENV_PROJECT=Leni2022" >> .env
       - run: echo "APP_ENV_PLATFORM=$PLATFORM" >> .env
       - run: echo "APP_ENV_PREFIX=$PREFIX" >> .env
       - run: echo "APP_ENV_PUBLIC_PATH=" >> .env
-      - run: echo "APP_ENV_BUILD_NO=1.7.${{ github.run_number }}" >> .env
+      - run: echo "APP_ENV_BUILD_NO=1.8.${{ github.run_number }}" >> .env
       - run: echo "APP_ENV_COOKIE_TIME_LIMIT=14" >> .env
       - run: echo "APP_ENV_API_DOMAIN=$API_DOMAIN" >> .env
       - run: echo "APP_ENV_CDN_DOMAIN=$CDN_DOMAIN" >> .env
@@ -46,22 +47,13 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET }}
-          aws-region: ap-southeast-1
-      - run: aws s3 sync ./build s3://${{ secrets.STG_BUCKET }} --acl public-read-write
+          aws-region: us-east-1
+      - run: aws s3 sync ./build s3://${{ secrets.UAT_BUCKET }} --acl public-read-write
       
       - name: Update App Version
         run: |
           curl --request GET \
-          --header 'admin-key: ${{ secrets.STG_ADMIN_KEY }}' \
+          --header 'admin-key: ${{ secrets.UAT_ADMIN_KEY }}' \
           --header 'content-type: application/json' \
           --url $API_DOMAIN/admin/appVersion/1.7.${{ github.run_number }}
-      
-      - name: Invalidate CloudFront
-        uses: chetan/invalidate-cloudfront-action@v2
-        env:
-          DISTRIBUTION: ${{ secrets.STG_DISTRIBUTION }}
-          PATHS: "/android/index.html /android/assets/* /ios/index.html /ios/assets/* /uploads/appConfig.json"
-          AWS_REGION: "ap-southeast-1"
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
 
