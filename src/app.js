@@ -10,21 +10,21 @@ import { LoaderRing } from '_components/core';
 import Grid from '_routes/grid';
 
 export default class App extends Component {
-	constructor (props) {
-		super(props);
-		this.state = {
-		restore: null
-		};
-	}
+  constructor (props) {
+    super(props);
+    this.state = {
+      restore: null
+    };
+  }
 
 	componentWillMount = () => {};
-	
+
 	componentDidMount = () => {
-		restoreData().then((res) => {
-			this.setState({
-			restore: res
-			});
-		});
+	  restoreData().then((res) => {
+	    this.setState({
+	      restore: res
+	    });
+	  });
 	};
 
 	/** Gets fired when the route changes.
@@ -38,7 +38,7 @@ export default class App extends Component {
 	};
 
 	renderStyle = () => {
-		return `
+	  return `
 			@font-face {
 				font-family: 'OpenSans-ExtraBold';
 				src: url('assets/fonts/OpenSans-ExtraBold.ttf?${process.env.BUILD_NO}') format('woff');
@@ -83,23 +83,24 @@ export default class App extends Component {
 	};
 
 	render () {
-		// eslint-disable-next-line react/destructuring-assignment
-		if (this.state.restore === null) {
-			return <LoaderRing fullpage />;
-		}
-		return (
-			// eslint-disable-next-line react/jsx-fragmentsxs
-			<>
-				<main id="app">
-					<Provider store={store}>
-						<Router history={createHashHistory()} onChange={this.handleRoute}>
-							<Grid path="/" page="landing" />
-							<Grid path="/:page/:popup?" />
-						</Router>
-					</Provider>
-				</main>
-				<style type="text/css">{this.renderStyle()}</style>
-			</>
-		);
+	  // eslint-disable-next-line react/destructuring-assignment
+	  if (this.state.restore === null) {
+	    return <LoaderRing fullpage />;
+	  }
+
+	  return (
+	  // eslint-disable-next-line react/jsx-fragments
+	    <>
+	      <main id="app">
+	        <Provider store={store}>
+	          <Router history={createHashHistory()} onChange={this.handleRoute}>
+	            <Grid path="/" page="landing" />
+	            <Grid path="/:page/:popup?" />
+	          </Router>
+	        </Provider>
+	      </main>
+	      <style type="text/css">{this.renderStyle()}</style>
+	    </>
+	  );
 	}
 }
