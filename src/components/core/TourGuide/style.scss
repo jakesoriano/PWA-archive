@@ -1,0 +1,25 @@
+@import '../../../style/variables.scss';
+.tourWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  z-index: 2;
+  .tourContent {
+    position: relative;
+    height: 100%;
+    display: flex;
+    left: 0;
+    transition: left 0.3s ease-in-out;
+    .item {
+      width: 100%;
+      height: 100%;
+      > div {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
