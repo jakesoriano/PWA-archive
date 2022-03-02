@@ -104,6 +104,7 @@ class CommunitiesAndKit extends Component {
 								onClickCallback={this.toggleSignupForm}   
 								text={getTranslation('SIGNUP_BUTTON')}
 								bottomDescription=""
+								buttonStyle={`${style.buttonStyle}`}
 							/>
 							<div onClick={toggleCommunitiesAndKit}>
 								<p className={style.backButton}> {getTranslation('BACK')} </p>
