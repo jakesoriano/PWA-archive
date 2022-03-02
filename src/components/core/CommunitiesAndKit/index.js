@@ -35,14 +35,6 @@ class CommunitiesAndKit extends Component {
 		this.setState({ showInitialSignupForm: !showInitialSignupForm });
 	};
 
-	// showPrivacyPolicy = () => {
-	// 	route(`/${this.props.parent}/landing-data-privacy`);
-	// };
-
-	// showKayaNatin = () => {
-	// 	route(`/${this.props.parent}/about-kaya-natin`);
-	// };
-
 	render = ({ toggleCommunitiesAndKit, isOpen, appLandingConfig }) => {
 		const data = appLandingConfig.data;
 		return (
@@ -116,10 +108,6 @@ class CommunitiesAndKit extends Component {
 							<div onClick={toggleCommunitiesAndKit}>
 								<p className={style.backButton}> {getTranslation('BACK')} </p>
 							</div>
-							{/* <div className={style.privacyPolicy}>
-								<a onClick={() => { this.showPrivacyPolicy() }}> {getTranslation('PRIVACY_POLICY')} </a> |
-								<a onClick={() => { this.showKayaNatin() }}> {getTranslation('KAYA_NATIN')} </a>
-							</div> */}
 						</div>
 					</div>
 				</div>
