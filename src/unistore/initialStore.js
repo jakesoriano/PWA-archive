@@ -144,6 +144,7 @@ export const initialStore = {
   circleModal: null,
   alertShow: null,
   filterShow: null,
+  tourGuide: null,
   pageLoader: {
     display: false
   },
