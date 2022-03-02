@@ -424,13 +424,13 @@ class Grid extends Component {
 						<div
 							className={`${style.grid} ${rightSideBar ? style.pageOpac : ''} ${
 								data && data.auth ? '' : style.noUser
-							}`}
+							} ${data.hideBottomBar ? style.noBottomBar : ''}`}
 							id={`page-${this.getPageName()}`}
 							type="grid_content"
 						>
 							{renderGrid(this.getPageName(), this.getPageName(), data)}
 						</div>
-						{data && data.auth && <BottomBar page={this.getPageName()} />}
+						{data && data.auth && !data.hideBottomBar && <BottomBar page={this.getPageName()} />}
 					</div>
 					{/* Popup Page */}
 					{popup && (

@@ -51,7 +51,7 @@
 		"styles": [],
 		"auth": true,
 		"pageTitle": "PAGE_HOME",
-		"uri": "home",
+		"uri": "home-archive",
 		"contents": [
 			{
 				"component": "Countdown"
@@ -77,6 +77,24 @@
 			},
 			{
 				"component": "StoriesDashboard"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_HOME",
+		"uri": "home",
+		"hideBottomBar": true,
+		"contents": [
+			{
+				"component": "HighlightFeatures"
+			},
+			{
+				"component": "HomeNews"
+			},
+			{
+				"component": "AccountProfileEnhanced"
 			}
 		]
 	},
@@ -530,7 +548,7 @@
 	{
 		"styles": [],
 		"auth": true,
-		"pageTitle": "PAGE_GLOBAL_ANNOUNCEMENT",
+		"pageTitle": "NEWS",
 		"uri": "global-announcements",
 		"withBack": true,
 		"contents": [
