@@ -31,3 +31,4 @@ export { default as CustomListSelection } from './CustomListSelection';
 export { default as CommunityEvents } from './CommunityEvents';
 export { default as Articles } from './Articles';
 export { default as CommunitiesAndKit } from './CommunitiesAndKit';
+export { default as NewLandingPage } from './NewLandingPage';

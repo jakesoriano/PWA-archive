@@ -5,11 +5,11 @@ import {
 	ButtonDescription,
 	InitialSignup,
 	Login,
+	NewLandingPage,
 } from '_components/core';
 import { getTranslation } from '_helpers';
 import style from './style';
 import { fetchAppLandingConfig } from '_mutations';
-import { NewLandingPage } from '..';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class LandingPage extends Component {
@@ -39,7 +39,7 @@ class LandingPage extends Component {
 		const data = appLandingConfig.data;
 		return (
 			<>
-				{!data.length ? 
+				{data.length ? 
 					<div className={style.landingPage}>
 						<div>
 							<div className={style.contentWrap}>

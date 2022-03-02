@@ -45,15 +45,15 @@ class NewLandingPage extends Component {
 	};
   
 	showPrivacyPolicy = () => {
-		route(`/${this.props.parent}/landing-data-privacy`);
+		route(`/landing/landing-data-privacy`);
 	};
 
 	showKayaNatin = () => {
-		route(`/${this.props.parent}/about-kaya-natin`);
+		route(`/landing/about-kaya-natin`);
 	};
 
 	render = ({ appLandingConfig }) => {
-		const data = appLandingConfig.data;
+		const data = appLandingConfig?.data;
 		return (
 			<div className={style.landingPage}>
 				<div>
@@ -61,33 +61,33 @@ class NewLandingPage extends Component {
 						<div className={style.headline}>
 							<div className={style.announcements}>
 								<ImageLoader
-									src={data.headline1.image}
+									src={data?.headline1?.image}
 									style={{ container: style.landingImg }}
 									lazy
 								/>
 								<div className={style.announcementsContent}>
 									<p className={`bold`}> {getTranslation('HEADLINE')} </p>
-									<h4 className={`extraBold`}> {data.headline1.title} </h4>
-									<p className={`bold ${style.date}`}> {data.headline1.date ? data.headline1.date : null} </p>
-									<p> {data.headline1.body}{data.headline1.body.length > 98 ? "..." : ""} </p>
+									<h4 className={`extraBold`}> {data?.headline1?.title} </h4>
+									<p className={`bold ${style.date}`}> {data?.headline1?.date} </p>
+									<p> {data?.headline1?.body}{data?.headline1?.body.length > 98 ? "..." : ""} </p>
 								</div>
 							</div>
 							<div className={style.heroPoints}>
 								<ImageLoader
-									src={data.headline2.image}
+									src={data?.headline2?.image}
 									style={{ container: style.heroPointsTotal }}
 									lazy
 								/>
 								<div className={style.heroPointsContent}>
 								<p className={`bold`}> {getTranslation('HERO_MSG')} </p>
-								<h4 className={`extraBold`}> {data.headline2.title} </h4>
+								<h4 className={`extraBold`}> {data?.headline2?.title} </h4>
 							</div>
 						</div>
 					</div>
 					<div className={style.partners}>
 						<p> {getTranslation('TRUSTED_BY')} </p>
-						<div className={`${style.partnerImages} ${data.trusted_by.length > 3 ? style.partnerImagesScroll : ""}`}>
-							{data.trusted_by.map(function(image, i){
+						<div className={`${style.partnerImages} ${data?.trusted_by?.length > 3 ? style.partnerImagesScroll : ""}`}>
+							{data?.trusted_by?.map(function(image, i){
 								return (
 									<img
 									src={image}

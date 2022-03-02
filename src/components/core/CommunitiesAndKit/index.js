@@ -52,26 +52,26 @@ class CommunitiesAndKit extends Component {
 							<p className={`bold ${style.title}`}> {getTranslation('COMMUNITIES')} </p>
 							<div className={style.community}>
 								<ImageLoader
-									src={data.event1.image}
+									src={data?.event1?.image}
 									style={{ container: style.landingImg }}
 									lazy
 								/>
 								<div className={style.communityContent}>
-									<h4 className={`extraBold`}> {data.event1.title} </h4>
-									<p className={`bold ${style.date}`}> {data.event1.date ? data.event1.date : null} </p>
-									<p> {data.event1.body}{data.event1.body.length > 98 ? "..." : ""} </p>
+									<h4 className={`extraBold`}> {data?.event1?.title} </h4>
+									<p className={`bold ${style.date}`}> {data?.event1?.date} </p>
+									<p> {data?.event1?.body}{data?.event1?.body.length > 98 ? "..." : ""} </p>
 								</div>
 							</div>
 							<div className={style.community}>
 								<ImageLoader
-									src={data.event2.image}
+									src={data?.event2?.image}
 									style={{ container: style.landingImg }}
 									lazy
 								/>
 								<div className={style.communityContent}>
-									<h4 className={`extraBold`}> {data.event2.title} </h4>
-									<p className={`bold ${style.date}`}> {data.event2.date ? data.event2.date : null} </p>
-									<p> {data.event2.body}{data.event2.body.length > 98 ? "..." : ""} </p>
+									<h4 className={`extraBold`}> {data?.event2?.title} </h4>
+									<p className={`bold ${style.date}`}> {data?.event2?.date} </p>
+									<p> {data?.event2?.body}{data?.event2?.body.length > 98 ? "..." : ""} </p>
 								</div>
 							</div>
 						</div>
