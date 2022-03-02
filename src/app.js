@@ -5,13 +5,11 @@ import { createHashHistory } from 'history';
 import { Provider } from 'unistore/preact';
 import { store, restoreData } from '_unistore';
 import { LoaderRing } from '_components/core';
-import { fetchAppLandingConfig } from '_mutations';
-import { connect } from 'unistore/preact';
 
 // Code-splitting is automated for routes
 import Grid from '_routes/grid';
 
-class App extends Component {
+export default class App extends Component {
 	constructor (props) {
 		super(props);
 		this.state = {
@@ -22,7 +20,6 @@ class App extends Component {
 	componentWillMount = () => {};
 	
 	componentDidMount = () => {
-		fetchAppLandingConfig();
 		restoreData().then((res) => {
 			this.setState({
 			restore: res
@@ -85,24 +82,18 @@ class App extends Component {
 		`;
 	};
 
-	render ({ appLandingConfig }) {
+	render () {
 		// eslint-disable-next-line react/destructuring-assignment
 		if (this.state.restore === null) {
 			return <LoaderRing fullpage />;
 		}
-		// console.log("sarsa app.js ", appLandingConfig);
-		// console.log("sarsa app.js fetch ", fetchAppLandingConfig());
 		return (
 			// eslint-disable-next-line react/jsx-fragmentsxs
 			<>
 				<main id="app">
 					<Provider store={store}>
 						<Router history={createHashHistory()} onChange={this.handleRoute}>
-							{ appLandingConfig ?
-								<Grid path="/" page="new-landing" />
-							:
-								<Grid path="/" page="landing" />
-							}
+							<Grid path="/" page="landing" />
 							<Grid path="/:page/:popup?" />
 						</Router>
 					</Provider>
@@ -112,5 +103,3 @@ class App extends Component {
 		);
 	}
 }
-
-export default connect(['appLandingConfig'])(App);
