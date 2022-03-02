@@ -94,7 +94,8 @@ export default class App extends Component {
 	      <main id="app">
 	        <Provider store={store}>
 	          <Router history={createHashHistory()} onChange={this.handleRoute}>
-	            <Grid path="/" page="landing" />
+	            {/* <Grid path="/" page="landing" /> */}
+	            <Grid path="/" page="new-landing" />
 	            <Grid path="/:page/:popup?" />
 	          </Router>
 	        </Provider>

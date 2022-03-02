@@ -13,7 +13,7 @@ body {
 	overflow: hidden;
 	// background: rgb(255,177,187);
 	// background: linear-gradient(180deg, #b32774 0%, #c1789f 100%);
-	background: #FFF;
+	background: #fff;
 
 	.clickable {
 		cursor: pointer;
@@ -61,16 +61,23 @@ p {
 a,
 button,
 .clickable {
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+	outline: none;
 }
 
 #page-landing {
 	overflow: hidden;
 }
+#page-new-landing {
+	overflow: hidden;
+}
 .popup-contactus {
 	background: linear-gradient(
-		180deg, #f3d6d9 0%, #ffb1bb 15%, #ff2cd7 100%) !important;
+		180deg,
+		#f3d6d9 0%,
+		#ffb1bb 15%,
+		#ff2cd7 100%
+	) !important;
 	// height: calc(100% - 60px) !important;
 }

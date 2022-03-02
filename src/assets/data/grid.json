@@ -18,6 +18,24 @@
 		]
 	},
 	{
+		"styles": [
+			{
+				"selector": "#w1",
+				"styles": "position: absolute; top: 0px; z-index: 2; width: 100%;"
+			}
+		],
+		"pageTitle": "PAGE_LANDING",
+		"uri": "new-landing",
+		"contents": [
+			{
+				"component": "Countdown"
+			},
+			{
+				"component": "NewLandingPage"
+			}
+		]
+	},
+	{
 		"styles": [],
 		"pageTitle": "PAGE_TERMS",
 		"uri": "terms",
