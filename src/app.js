@@ -11,7 +11,7 @@ import { connect } from 'unistore/preact';
 // Code-splitting is automated for routes
 import Grid from '_routes/grid';
 
-export default class App extends Component {
+class App extends Component {
 	constructor (props) {
 		super(props);
 		this.state = {
@@ -19,13 +19,10 @@ export default class App extends Component {
 		};
 	}
 
+	componentWillMount = () => {};
+	
 	componentDidMount = () => {
 		fetchAppLandingConfig();
-	};
-
-	componentWillMount = () => {};
-
-	componentDidMount = () => {
 		restoreData().then((res) => {
 			this.setState({
 			restore: res
@@ -93,8 +90,8 @@ export default class App extends Component {
 		if (this.state.restore === null) {
 			return <LoaderRing fullpage />;
 		}
-		console.log("sarsa app.js ", appLandingConfig);
-		console.log("sarsa app.js fetch ", fetchAppLandingConfig());
+		// console.log("sarsa app.js ", appLandingConfig);
+		// console.log("sarsa app.js fetch ", fetchAppLandingConfig());
 		return (
 			// eslint-disable-next-line react/jsx-fragmentsxs
 			<>
@@ -116,4 +113,4 @@ export default class App extends Component {
 	}
 }
 
-connect(['appLandingConfig'])(App);
+export default connect(['appLandingConfig'])(App);
