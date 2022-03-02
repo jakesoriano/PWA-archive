@@ -276,8 +276,9 @@ class InitialSignup extends Component {
 	      >
 	        {/* Initial Signup Contents Here */}
           <div className={style.formTitle}>
-            <p className={`${style.formTitle}`}>
-            {getTranslation('JOIN_US')}
+            <p className={`extraBold ${style.formTitle}`}>
+              {getTranslation('WELCOME')} <span className={`extraBold`}>{getTranslation('KAKAMPINK')}</span> <br/>
+              {getTranslation('JOIN_US')}
             </p>
           </div>
           <div className={style.formFieldWrap}>

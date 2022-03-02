@@ -1,14 +1,17 @@
 .formGroup {
-  display: grid;
-  padding: 10px;
-  * {
-    font-size: 0.8rem;
-    color: #737373;
-  }
-  > label {
-    font-family: 'OpenSans-Bold', arial, sans-serif;
-  }
-  .error {
-    color: red;
-  }
+	display: grid;
+	padding: 10px 10px 25px;
+	* {
+		font-size: 0.8rem;
+		color: #737373;
+	}
+	> label {
+		font-family: 'OpenSans', arial, sans-serif;
+		font-style: italic;
+		padding-bottom: 5px;
+		color: #282828;
+	}
+	.error {
+		color: red;
+	}
 }
