@@ -5,26 +5,32 @@ import { createHashHistory } from 'history';
 import { Provider } from 'unistore/preact';
 import { store, restoreData } from '_unistore';
 import { LoaderRing } from '_components/core';
+import { fetchAppLandingConfig } from '_mutations';
+import { connect } from 'unistore/preact';
 
 // Code-splitting is automated for routes
 import Grid from '_routes/grid';
 
 export default class App extends Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      restore: null
-    };
-  }
+	constructor (props) {
+		super(props);
+		this.state = {
+		restore: null
+		};
+	}
+
+	componentDidMount = () => {
+		fetchAppLandingConfig();
+	};
 
 	componentWillMount = () => {};
 
 	componentDidMount = () => {
-	  restoreData().then((res) => {
-	    this.setState({
-	      restore: res
-	    });
-	  });
+		restoreData().then((res) => {
+			this.setState({
+			restore: res
+			});
+		});
 	};
 
 	/** Gets fired when the route changes.
@@ -38,7 +44,7 @@ export default class App extends Component {
 	};
 
 	renderStyle = () => {
-	  return `
+		return `
 			@font-face {
 				font-family: 'OpenSans-ExtraBold';
 				src: url('assets/fonts/OpenSans-ExtraBold.ttf?${process.env.BUILD_NO}') format('woff');
@@ -82,26 +88,32 @@ export default class App extends Component {
 		`;
 	};
 
-	render () {
-	  // eslint-disable-next-line react/destructuring-assignment
-	  if (this.state.restore === null) {
-	    return <LoaderRing fullpage />;
-	  }
-
-	  return (
-	  // eslint-disable-next-line react/jsx-fragments
-	    <>
-	      <main id="app">
-	        <Provider store={store}>
-	          <Router history={createHashHistory()} onChange={this.handleRoute}>
-	            {/* <Grid path="/" page="landing" /> */}
-	            <Grid path="/" page="new-landing" />
-	            <Grid path="/:page/:popup?" />
-	          </Router>
-	        </Provider>
-	      </main>
-	      <style type="text/css">{this.renderStyle()}</style>
-	    </>
-	  );
+	render ({ appLandingConfig }) {
+		// eslint-disable-next-line react/destructuring-assignment
+		if (this.state.restore === null) {
+			return <LoaderRing fullpage />;
+		}
+		console.log("sarsa app.js ", appLandingConfig);
+		console.log("sarsa app.js fetch ", fetchAppLandingConfig());
+		return (
+			// eslint-disable-next-line react/jsx-fragmentsxs
+			<>
+				<main id="app">
+					<Provider store={store}>
+						<Router history={createHashHistory()} onChange={this.handleRoute}>
+							{ appLandingConfig ?
+								<Grid path="/" page="new-landing" />
+							:
+								<Grid path="/" page="landing" />
+							}
+							<Grid path="/:page/:popup?" />
+						</Router>
+					</Provider>
+				</main>
+				<style type="text/css">{this.renderStyle()}</style>
+			</>
+		);
 	}
 }
+
+connect(['appLandingConfig'])(App);
