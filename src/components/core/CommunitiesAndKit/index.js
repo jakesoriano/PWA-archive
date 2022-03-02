@@ -11,7 +11,7 @@ import {
 } from '_components/core';
 // eslint-disable-next-line import/extensions
 import style from './style';
-import { fetchAppLandingConfig } from '../../../mutations/appLandingConfig';
+import { fetchAppLandingConfig } from '_mutations';
 
 // carousel
 import { Carousel } from 'react-responsive-carousel';
@@ -113,6 +113,9 @@ class CommunitiesAndKit extends Component {
 								text={getTranslation('SIGNUP_BUTTON')}
 								bottomDescription=""
 							/>
+							<div onClick={toggleCommunitiesAndKit}>
+								<p className={style.backButton}> {getTranslation('BACK')} </p>
+							</div>
 							{/* <div className={style.privacyPolicy}>
 								<a onClick={() => { this.showPrivacyPolicy() }}> {getTranslation('PRIVACY_POLICY')} </a> |
 								<a onClick={() => { this.showKayaNatin() }}> {getTranslation('KAYA_NATIN')} </a>

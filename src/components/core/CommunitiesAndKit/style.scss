@@ -78,6 +78,12 @@
 					color: $gray_text;
 				}
 			}
+			.backButton {
+				margin: 20px auto 10px;
+				border-bottom: 1px solid;
+				width: fit-content;
+				color: #737373;
+			}
 		}
 	}
 	.landingImg {

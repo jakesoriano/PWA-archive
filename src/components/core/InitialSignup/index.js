@@ -337,6 +337,9 @@ class InitialSignup extends Component {
               text={getTranslation('SIGNUP_CONTINUE')}
               bottomDescription=""
               />
+              <div onClick={toggleSignupForm}>
+                <p className={style.backButton}> {getTranslation('BACK')} </p>
+              </div>
             </div>
             </form>
               

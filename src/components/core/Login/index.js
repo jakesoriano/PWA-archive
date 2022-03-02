@@ -297,6 +297,9 @@ class Login extends Component {
                         className={style.sMItem}
                         onClick={this.onClickForgotUserPass}>{getTranslation('PASSWORD')}</Link>
                 </p>
+                <div onClick={toggleLoginForm}>
+                  <p className={style.backButton}> {getTranslation('BACK')} </p>
+                </div>
               </div>
               
               {/* Social Media */}

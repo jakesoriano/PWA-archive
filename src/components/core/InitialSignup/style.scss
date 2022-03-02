@@ -13,21 +13,25 @@
 	}
 
 	.signup {
-		border-radius: 15px 15px 0 0;
+		background: white;
 		position: absolute;
-		bottom: -120%;
-		max-height: calc(100% - 10px);
-    overflow: scroll;
+		// bottom: -120%;
+		// max-height: calc(100% - 10px);
+		overflow: scroll;
 		left: 0;
 		width: 100%;
+		height: 100%;
 		z-index: 4;
 		text-align: left;
 		.formTitle {
-			background-color: $primary_layout;
-			color: #fff;
-			border-radius: 15px 15px 0 0;
-			padding: 12px 10px 10px;
-			font-size: 21px;
+			background-color: $gray_bg;
+			text-align: center;
+			color: $black_text;
+			padding: 10px;
+			font-size: 25px;
+			span {
+				color: $pink_text;
+			}
 		}
 		.formFieldWrap {
 			background-color: #fff;
@@ -37,17 +41,23 @@
 			> label {
 				font-family: 'OpenSans-Regular', arial, sans-serif;
 			}
-			p, a {
+			p,
+			a {
 				color: #737373;
 				text-align: center;
 			}
 			.buttonWrap {
-				padding: 10px;
+				padding: 10px 10px 40px;
 				text-align: center;
 				.forgotUserPass {
 					display: block;
 					margin: 15px;
 					font-weight: bold;
+				}
+				.backButton {
+					margin: 20px auto 10px;
+					border-bottom: 1px solid;
+					width: fit-content;
 				}
 			}
 			.appleLogo {
@@ -56,6 +66,9 @@
 				}
 			}
 			.socialMedia {
+				border-top: 1px solid $gray_bg;
+				padding-top: 30px;
+				margin: 0 10px;
 				text-align: center;
 				ul {
 					display: inline-flex;
@@ -70,14 +83,13 @@
 						}
 					}
 				}
-				
 			}
 		}
 		transition: all 0.2s linear;
 	}
 
 	.signup.toggled {
-		bottom: 0;
+		top: 0;
 		transition: all 0.2s linear;
 	}
 }

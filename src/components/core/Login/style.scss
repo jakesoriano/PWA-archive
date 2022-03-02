@@ -14,35 +14,36 @@
 }
 
 .login {
-	border-radius: 15px 15px 0 0;
+	background: white;
 	position: absolute;
-	bottom: -120%;
-	max-height: calc(100% - 10px);
 	overflow: scroll;
-	left: 0;
 	width: 100%;
+	height: 100%;
 	z-index: 4;
 	text-align: left;
 	.formTitle {
-		background-color: $primary_layout;
-		color: #fff;
-		border-radius: 15px 15px 0 0;
-		padding: 12px 10px 10px;
-		font-size: 21px;
+		background-color: $gray_bg;
+		text-align: center;
+		color: $black_text;
+		padding: 10px;
+		font-size: 25px;
+		span {
+			color: $pink_text;
+		}
 	}
 	.formFieldWrap {
 		background-color: #fff;
 		width: 100%;
 		padding: 15px;
 		color: #737373;
-		> label {
-		}
-		p, a, span {
+		p,
+		a,
+		span {
 			color: #737373;
 			text-align: center;
 		}
 		.buttonWrap {
-			padding: 10px;
+			padding: 10px 10px 40px;
 			text-align: center;
 			.forgotUserPass {
 				display: block;
@@ -52,6 +53,11 @@
 					font-family: 'OpenSans-Regular', arial, sans-serif;
 				}
 			}
+			.backButton {
+				margin: 0 auto 10px;
+				border-bottom: 1px solid;
+				width: fit-content;
+			}
 		}
 		.appleLogo {
 			img {
@@ -59,6 +65,9 @@
 			}
 		}
 		.socialMedia {
+			border-top: 1px solid $gray_bg;
+			padding-top: 30px;
+			margin: 0 10px;
 			text-align: center;
 			ul {
 				display: inline-flex;
@@ -73,12 +82,11 @@
 					}
 				}
 			}
-			
 		}
 	}
 	transition: all 0.2s linear;
 }
 .login.toggled {
-	bottom: 0;
+	top: 0;
 	transition: all 0.1s linear;
 }
