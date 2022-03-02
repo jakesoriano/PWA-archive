@@ -1,0 +1,80 @@
+@import '../../../style/variables.scss';
+.accountProfile {
+  padding: 20px 15px;
+  background-color: $light_gray;
+  display: flex;
+  * {
+    color: #737373;
+  }
+  .profile {
+    padding-right: 10px;
+    .user {
+      display: flex;
+      width: 100%;
+      position: relative;
+      .avatar {
+        border: none;
+        overflow: hidden;
+        width: 70px;
+        padding-bottom: 70px;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+      .profileInfo {
+        flex: 1;
+        padding: 0 10px 0 0;
+      }
+      .nameMember {
+        flex-grow: 1;
+        .name {
+          font-size: 1.2rem;
+          color: $primary;
+          text-transform: uppercase;
+        }
+      }
+    }
+    .pointsRank {
+      display: flex;
+      .heroPoints {
+        .points {
+          font-size: 1.3rem;
+        }
+        .textPoints {
+          font-size: 0.75rem;
+        }
+        .invite {
+          * {
+            font-size: 0.75rem;
+          }
+        }
+        .refCode {
+          font-size: 1rem;
+          display: flex;
+          .copy {
+            width: 20px;
+            padding-bottom: 20px;
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+  }
+  .cta {
+    .button {
+      display: block;
+      border-radius: 6px;
+      text-align: center;
+      padding: 6px 10px;
+      width: 100%;
+      &.report {
+        background-color: $primary;
+        color: $white;
+      }
+      &.update {
+        margin-top: 10px;
+        background-color: $white;
+        border: 1px solid $blue;
+      }
+    }
+  }
+}

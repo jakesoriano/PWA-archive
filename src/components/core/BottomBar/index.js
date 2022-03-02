@@ -5,7 +5,7 @@ import { ImageLoader } from '_components/core';
 import style from './style';
 
 export default ({ page }) => (
-  <div className={style.bottomBar}>
+  page !== 'home' && <div className={style.bottomBar}>
     <Link id="tab-home" class={style.menu} activeClassName={style.active} href="/home">
       <ImageLoader
         src={`assets/images/home_icon_${
