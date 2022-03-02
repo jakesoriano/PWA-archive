@@ -6,7 +6,7 @@ import { nativeShare } from '_platform/helpers';
 import { likeShareAnnouncements } from '_mutations';
 import { dateNewsFormat, getTranslation, getConfigByKey } from '_helpers';
 import style from './style';
-class PinkNews extends Component {
+class HomeNews extends Component {
     constructor (props) {
         super(props);
         this.state = {
@@ -120,4 +120,4 @@ class PinkNews extends Component {
         </div>
     )
 }
-export default connect(['authUser', 'announcements'])(PinkNews);
+export default connect(['authUser', 'announcements'])(HomeNews);

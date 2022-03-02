@@ -74,7 +74,7 @@ class AccountProfile extends Component {
 					<div className={style.user}>
 						<UserAvatar
 							allowUpdate={true}
-							style={{avatar: style.avatar}}
+							styles={{avatar: style.avatar}}
 						/>
 						<div className={style.profileInfo}>
 							<div className={style.nameMember}>
@@ -84,22 +84,24 @@ class AccountProfile extends Component {
 							</div>
 							<div className={style.pointsRank}>
 								<div className={style.heroPoints}>
-									<span className={`bold ${style.points}`}>
-										{authUser.points === 0 ? '-' : formatNumber(authUser.points, 2) || 0}
-									</span>
-									&nbsp;
-									<span className={`bold ${style.textPoints}`}>
-										{getTranslation('HERO_POINTS')}
-									</span>
+									<p>
+										<span className={`bold ${style.points}`}>
+											{authUser.points === 0 ? '-' : formatNumber(authUser.points, 2) || 0}
+										</span>
+										&nbsp;
+										<span className={`bold ${style.textPoints}`}>
+											{getTranslation('HERO_POINTS')}
+										</span>
+									</p>
 									<p className={style.invite}>
 										<span className='bold'>{getTranslation('INVITE_OTHERS_USING')}:</span>
-									</p>
-									<p className={`bold ${style.refCode}`} onClick={() => this.copyText(authUser?.profile?.refCode)}>
-										{authUser?.profile?.refCode}
-										<ImageLoader
-											src={'assets/icons/icon_copy_blue.png'}
-											style={{container: style.copy}}
-										/>
+										<div className={`${style.refCode}`} onClick={() => this.copyText(authUser?.profile?.refCode)}>
+											<span className={`bold`}>{authUser?.profile?.refCode}</span>
+											<ImageLoader
+												src={'assets/icons/icon_copy_blue.png'}
+												style={{container: style.copy}}
+											/>
+										</div>
 									</p>
 								</div>
 							</div>

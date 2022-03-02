@@ -1,17 +1,19 @@
 @import '../../../style/variables.scss';
 .hfWrap {
-    padding: 20px 15px;
+    margin-top: 20px;
+    padding: 10px 10px;
     background-color: $light_gray;
     .body {
         display: flex;
         flex-wrap: wrap;
         .item {
-            padding: 10px 15px;
-            margin-top: 10px;
+            width: calc(50% - 10px);
             background-color: $white;
-            flex: 1;
-            &:nth-child(odd):not(:last-of-type) {
-                margin-right: 10px; 
+            margin: 5px;
+            display: flex;
+            flex-direction: column;
+            > p {
+                flex-grow: 1;
             }
             .imageContainer {
                 width: 100px;
@@ -48,6 +50,7 @@
                 padding: 10px 0;
                 margin-top: 10px;
                 border-radius: 6px;
+                font-size: 0.9rem;
             }
         }
     }

@@ -1,6 +1,6 @@
 @import '../../../style/variables.scss';
 .accountProfile {
-  padding: 20px 15px;
+  padding: 15px;
   background-color: $light_gray;
   display: flex;
   * {
@@ -8,6 +8,7 @@
   }
   .profile {
     padding-right: 10px;
+    flex-grow: 1;
     .user {
       display: flex;
       width: 100%;
@@ -15,8 +16,8 @@
       .avatar {
         border: none;
         overflow: hidden;
-        width: 70px;
-        padding-bottom: 70px;
+        width: 50px;
+        padding-bottom: 50px;
         margin-right: 10px;
         border-radius: 50%;
       }
@@ -27,33 +28,48 @@
       .nameMember {
         flex-grow: 1;
         .name {
-          font-size: 1.2rem;
+          font-size: 1rem;
           color: $primary;
           text-transform: uppercase;
         }
       }
     }
     .pointsRank {
-      display: flex;
+      width: 100%;
       .heroPoints {
-        .points {
-          font-size: 1.3rem;
-        }
-        .textPoints {
-          font-size: 0.75rem;
-        }
-        .invite {
-          * {
-            font-size: 0.75rem;
+        p {
+          display: block;
+          span{
+            display: inline-block;
           }
         }
-        .refCode {
-          font-size: 1rem;
+        .points {
+          font-size: 0.9rem;
+        }
+        .textPoints {
+          font-size: 0.6rem;
+        }
+        .invite {
           display: flex;
-          .copy {
-            width: 20px;
-            padding-bottom: 20px;
-            margin-left: 8px;
+          align-items: center;
+          flex-wrap: wrap;
+          * {
+            font-size: 0.6rem;
+          }
+          > span {
+            margin-right: 5px;
+          }
+          .refCode {
+            display: flex;
+            align-items: center;
+            span {
+              font-size: 0.8rem;
+            }
+            .copy {
+              width: 14px;
+              padding-bottom: 14px;
+              margin-left: 8px;
+            }
           }
         }
       }
@@ -66,6 +82,7 @@
       text-align: center;
       padding: 6px 10px;
       width: 100%;
+      font-size: 0.7rem;
       &.report {
         background-color: $primary;
         color: $white;

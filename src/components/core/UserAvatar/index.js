@@ -71,12 +71,12 @@ class UserAvatar extends Component {
     });
 	};
 
-  render = (props, { attachment }) => (
+  render = ({ authUser, allowUpdate, styles }, { attachment }) => (
     <div className={style.userAvatarWrap}>
       <label for="inputAttachment">
         <ImageLoader
-          src={props.authUser.profile.image || getDefaultAvatar()}
-          style={{ container: props.style?.avatar || style.avatar, image: style.img }}
+          src={authUser.profile.image || getDefaultAvatar()}
+          style={{ container: styles?.avatar || style.avatar, image: style.img }}
           lazy
         />
         </label>
@@ -88,7 +88,7 @@ class UserAvatar extends Component {
             value={attachment.file}
             type="file"
             accept="image/*"
-            disabled={!props.allowUpdate}
+            disabled={!allowUpdate}
             onBlur={(e) => {
               this.onAttachmentChange(e.target.files[0])
             }}

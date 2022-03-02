@@ -1,22 +1,25 @@
 @import '../../../style/variables.scss';
 .pnWrap {
-    padding: 20px 15px;
     * {
         color: #737373;
+        font-size: 0.9rem;
     }
     .news {
+        margin-top: 10px;
+        padding: 15px;
+        background-color: $light_gray;
         .item {
             clear: both;
         }
         * {
-            font-size: 14px;
+            font-size: 0.7rem;
         }
         .title {
             color: $blue;
-            font-size: 16px;
+            font-size: 0.9rem;
         }
         .date {
-            margin-bottom: 5px;
+            margin-bottom: 15px;
         }
         .title, .description {
             display: -webkit-box;
@@ -34,14 +37,14 @@
     .nav {
         display: flex;
         justify-content: space-between;
-        margin-top: 25px;
+        margin: 15px 10px;
         .item {
             display: flex;
             align-items: center;
             .navImgContainer {
-                width: 40px;
-                padding-bottom: 40px;
-                margin-right: 10px;
+                width: 20px;
+                padding-bottom: 12%;
+                margin-right: 5px;
             }
         }
     }

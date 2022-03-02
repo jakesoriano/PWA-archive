@@ -85,12 +85,13 @@
 		"auth": true,
 		"pageTitle": "PAGE_HOME",
 		"uri": "home",
+		"hideBottomBar": true,
 		"contents": [
 			{
 				"component": "HighlightFeatures"
 			},
 			{
-				"component": "PinkNews"
+				"component": "HomeNews"
 			},
 			{
 				"component": "AccountProfileEnhanced"
