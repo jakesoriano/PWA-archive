@@ -50,6 +50,8 @@
 				border-radius: 50%;
 				img {
 					position: relative;
+					height: 100%;
+					object-fit: cover;
 				}
 			}
 			.heroPoints {
@@ -64,6 +66,10 @@
 					padding: 0;
 					overflow: hidden;
 					border-radius: 50%;
+					img {
+						height: 100%;
+						object-fit: cover;
+					}
 				}
 				&Content {
 					margin-left: 8px;
@@ -100,6 +106,7 @@
 						width: 88px;
 						height: 88px;
 						margin-right: 55px;
+						object-fit: cover;
 					}
 					.landingImg:last-child {
 						margin-right: 0;
@@ -108,6 +115,7 @@
 				.landingImg {
 					width: 88px;
 					height: 88px;
+					object-fit: cover;
 				}
 			}
 		}
