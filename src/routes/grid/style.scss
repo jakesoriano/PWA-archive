@@ -17,6 +17,9 @@
 			&.noBottomBar {
 				height: 100%;
 			}
+			&.noTopBar {
+				padding-top: 0;
+			}
 		}
 		.noUser {
 			height: 100%;

@@ -81,7 +81,7 @@ class HomeNews extends Component {
 		}
 		return null;
 	};
-    render = ({announcements}, {selectedItem}) => (
+    render = ({announcements, page}, {selectedItem}) => (
         <div className={style.pnWrap}>
             <div className={style.news}>
                 {
@@ -89,7 +89,7 @@ class HomeNews extends Component {
                         <p className={`extraBold ${style.title}`}>{announcements?.data[0]?.title}</p>
                         <p className={style.date}>{dateNewsFormat(announcements?.data[0]?.postedDate)}</p>
                         <p className={style.description}>{`${removeTags(announcements?.data[0]?.desc).substr(0, 120)}...`}</p>
-                        <a className={`extraBold ${style.button}`} onClick={() => this.onShowPopup(announcements?.data[0])}>{getTranslation('VIEW')}</a>
+                        <a id={`${page}-view-news`}className={`extraBold ${style.button}`} onClick={() => this.onShowPopup(announcements?.data[0])}>{getTranslation('VIEW')}</a>
                     </div>
                 }
                 {
@@ -103,7 +103,7 @@ class HomeNews extends Component {
                         style={{container: style.navImgContainer}}
                         lazy
                     />
-                    <a className={`extraBold ${style.name}`}>
+                    <a id={`${page}-pinkpedia`} className={`extraBold ${style.name}`}>
                         {`${getTranslation('SEARCH')} ${getTranslation('PINK_PEDIA')}`}
                     </a>
                 </div>
@@ -113,7 +113,7 @@ class HomeNews extends Component {
                         style={{container: style.navImgContainer}}
                         lazy
                     />
-                    <a className={`extraBold ${style.name}`}>{getTranslation('SEE_ALL_NEWS')}</a>
+                    <a id={`${page}-see-all-news`} className={`extraBold ${style.name}`}>{getTranslation('SEE_ALL_NEWS')}</a>
                 </div>
             </div>
             {selectedItem && this.renderDetails(selectedItem)}

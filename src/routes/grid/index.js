@@ -408,7 +408,7 @@ class Grid extends Component {
 				<div className={style.mainContent}>
 					{/* Content Wrap */}
 					<div className={style.contentWrap}>
-						{data && data.auth && (
+						{data && data.auth && !data.hideTopBar &&(
 							<Topbar
 								title={data.pageTitle || ''}
 								page={this.getPageName()}
@@ -423,7 +423,8 @@ class Grid extends Component {
 						<div
 							className={`${style.grid} ${rightSideBar ? style.pageOpac : ''} ${
 								data && data.auth ? '' : style.noUser
-							} ${data.hideBottomBar ? style.noBottomBar : ''}`}
+							} ${data.hideBottomBar ? style.noBottomBar : ''}
+							${data.hideTopBar ? style.noTopBar : ''}`}
 							id={`page-${this.getPageName()}`}
 							type="grid_content"
 						>

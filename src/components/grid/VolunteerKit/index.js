@@ -22,7 +22,9 @@ class VolunteerKit extends Component {
                 <div className={style.body}>
                     {data.map(item => {
                         return (
-                            <a onClick={(e) => {
+                            <a 
+                                id={item.icon}
+                                onClick={(e) => {
                                 e.stopPropagation();
                                 this.handleClick(item.link);
                             }} className={style.item}>
