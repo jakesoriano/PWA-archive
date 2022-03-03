@@ -70,11 +70,11 @@ class HomeFeatures extends Component {
         return null;
     }
     
-    render = ({members, tasks}, {activeGuide}) => (
+    render = ({members, tasks, page}, {activeGuide}) => (
         <div className={style.hfWrap}>
             <div className={style.body}>
                 {/* Invite */}
-                <a onClick={(e) => {
+                <a id={`${page}-invite`} onClick={(e) => {
                     e.stopPropagation();
                     this.onClickItem('/invite');
                 }} className={`${style.item} ${this.isItemActiveGuide(1) ? style.activeGuide : ''}`}>
@@ -92,7 +92,7 @@ class HomeFeatures extends Component {
                 </a>
 
                 {/* Tasks */}
-                <a onClick={(e) => {
+                <a id={`${page}-tasks`} onClick={(e) => {
                     e.stopPropagation();
                     this.onClickItem('/task-center');
                 }} className={`${style.item} ${this.isItemActiveGuide(2) ? style.activeGuide : ''}`}>
@@ -110,7 +110,7 @@ class HomeFeatures extends Component {
                 </a>
                 
                 {/* Volunteer Kit */}
-                <a onClick={(e) => {
+                <a id={`${page}-vol-kit`} onClick={(e) => {
                     e.stopPropagation();
                     this.onClickItem('/volunteer-kits');
                 }} className={`${style.item} ${this.isItemActiveGuide(3) ? style.activeGuide : ''}`}>
@@ -128,7 +128,7 @@ class HomeFeatures extends Component {
                 </a>
 
                 {/* Community */}
-                <a onClick={(e) => {
+                <a id={`${page}-community`} onClick={(e) => {
                     e.stopPropagation();
                     this.onClickItem('/community');
                 }} className={`${style.item} ${this.isItemActiveGuide(4) ? style.activeGuide : ''}`}>

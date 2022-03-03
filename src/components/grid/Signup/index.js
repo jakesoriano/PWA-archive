@@ -367,7 +367,8 @@ class Signup extends Component {
 									displayPageLoader(false);
 									if (res.success) {
 										// route(`/${this.props.parent}/registration-otp`);
-										route(`/${this.props.parent}/home`);
+										// route(`/${this.props.parent}/home`);
+										route(`/signup-success`);
 									} else {
 										showAlertBox({
 											message: res.error || 'SOMETHING_WRONG'

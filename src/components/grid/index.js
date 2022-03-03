@@ -53,4 +53,5 @@ export { default as MessagesChat } from './MessagesChat';
 export { default as HomeFeatures } from './HomeFeatures';
 export { default as HomeNews } from './HomeNews';
 export { default as AccountProfileEnhanced } from './AccountProfileEnhanced';
+export { default as SignupSuccess } from './SignupSuccess';
 export { default as VolunteerKit } from './VolunteerKit';

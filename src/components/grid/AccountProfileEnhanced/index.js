@@ -6,6 +6,7 @@ import {
 	getTranslation,
 	formatNumber,
 	getConfigByKey,
+	circleModal,
 	displayName,
 	showAlertBox
 } from '_helpers';
@@ -63,7 +64,7 @@ class AccountProfile extends Component {
 		});
 	};
 
-	render = ({ authUser }) => {
+	render = ({ authUser, page }) => {
 		if (!authUser) {
 			return <LoaderRing fullpage />;
 		}
@@ -95,7 +96,7 @@ class AccountProfile extends Component {
 									</p>
 									<p className={style.invite}>
 										<span className='bold'>{getTranslation('INVITE_OTHERS_USING')}:</span>
-										<div className={`${style.refCode}`} onClick={() => this.copyText(authUser?.profile?.refCode)}>
+										<div id={`copy-referral-code`} className={`${style.refCode}`} onClick={() => this.copyText(authUser?.profile?.refCode)}>
 											<span className={`bold`}>{authUser?.profile?.refCode}</span>
 											<ImageLoader
 												src={'assets/icons/icon_copy_blue.png'}
@@ -110,10 +111,12 @@ class AccountProfile extends Component {
 				</div>
 				<div className={style.cta}>
 					<a
+						id={`${page}-report`}
 						className={`bold ${style.button} ${style.report}`}
 						onClick={() => route('contactus')}
 					>{getTranslation('REPORT')}</a>
 					<a
+						id={`${page}-update-profile`}
 						className={`bold ${style.button} ${style.update}`}
 						onClick={() => route('update-profile')}
 					>{getTranslation('UPDATE_PROFILE')}</a>

@@ -708,5 +708,18 @@
 				}
 			}
 		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "",
+		"uri": "signup-success",
+		"hideTopBar": true,
+		"hideBottomBar": true,
+		"contents": [
+			{
+				"component": "SignupSuccess"
+			}
+		]
 	}
 ]
