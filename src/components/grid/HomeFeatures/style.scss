@@ -1,0 +1,109 @@
+@import '../../../style/variables.scss';
+.hfWrap {
+    padding: 30px 10px 10px;
+    background-color: $light_gray;
+    .body {
+        display: flex;
+        flex-wrap: wrap;
+        .item {
+            width: calc(50% - 10px);
+            background-color: $white;
+            margin: 5px;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 5px 5px;
+            position: relative;
+            &.activeGuide {
+                z-index: 3;
+            }
+            &:nth-child(even) {
+                .tooltip {
+                    right: 0;
+                    left: auto;
+                    .arrow {
+                        right: 20%;
+                        left: auto;
+                    }
+                    .title {
+                        color: $primary;
+                    }
+                    .desc {
+                        background-color: $primary;
+                    }
+                }
+            }
+            .tooltip {
+                background-color: $white;
+                position: absolute;
+                top: calc(100% + 10px);
+                width: 120%;
+                border-radius: 10px;
+                left: 0;
+                .arrow {
+                    border: 20px solid transparent;
+                    border-left-width: 10px;
+                    border-right-width: 10px;
+                    border-bottom-color:#FFF;
+                    position: absolute;
+                    width: 20px;
+                    left: 20%;
+                    top: -40px;
+                }
+                .title {
+                    color: $blue;
+                    padding: 10px;
+                    font-size: 1.2rem;
+                    text-align: center;
+                }
+                .desc {
+                    background-color: $blue;
+                    color: $white;
+                    padding: 10px;
+                    font-size: 0.8rem;
+                    border-radius: 0 0 10px 10px;
+                }
+            }
+            > p {
+                flex-grow: 1;
+            }
+            .iconWrap {
+                width: 100px;
+                height: 100px;
+                background-color: $light_gray;
+                border-radius: 50%;
+                margin: 0 auto;
+                padding: 10px;
+                .imageContainer {
+                    width: 50px;
+                    padding-bottom: 50px;
+                    margin: 15px auto;
+                }
+            }
+            .description {
+                color: #737373;
+                text-align: center;
+                font-size: 10px;
+            }
+            .button {
+                background-color: $primary;
+                display: block;
+                text-align: center;
+                width: 100%;
+                padding: 10px 0;
+                margin-top: 10px;
+                border-radius: 6px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 2;
+    }
+}

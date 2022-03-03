@@ -367,7 +367,8 @@ class Signup extends Component {
 									displayPageLoader(false);
 									if (res.success) {
 										// route(`/${this.props.parent}/registration-otp`);
-										route(`/${this.props.parent}/home`);
+										// route(`/${this.props.parent}/home`);
+										route(`/signup-success`);
 									} else {
 										showAlertBox({
 											message: res.error || 'SOMETHING_WRONG'
@@ -519,7 +520,7 @@ class Signup extends Component {
 						/>
 					</FormGroup> */}
 
-					<FormGroup label="NAME" hasError={fname.hasError}>
+					<FormGroup label="NAME" hasError={fname.hasError} className={style.formGroup}>
 						<FormInput
 							value={fname.value}
 							type="text"
@@ -532,10 +533,11 @@ class Signup extends Component {
 							hasError={fname.hasError}
 							error={fname.error}
 							message={fname.message}
+							className={style.formInput}
 						/>
 					</FormGroup>
 
-					<FormGroup label="MOBILE_NUMBER" hasError={mobile.hasError}>
+					<FormGroup label="MOBILE_NUMBER" hasError={mobile.hasError} className={style.formGroup}>
 						<FormInput
 							value={mobile.value}
 							type="number"
@@ -550,6 +552,7 @@ class Signup extends Component {
 							hasError={mobile.hasError}
 							error={mobile.error}
 							message={mobile.message}
+							className={style.formInput}
 						/>
 					</FormGroup>
 {/* 
@@ -659,7 +662,7 @@ class Signup extends Component {
 						</div>
 					</FormGroup> */}
 
-					<FormGroup label="REFERRAL_CODE" hasError={parentRefCode.hasError}>
+					<FormGroup label="REFERRAL_CODE" hasError={parentRefCode.hasError} className={style.formGroup}>
 						<FormInput
 							value={parentRefCode.value}
 							type="text"
@@ -672,6 +675,7 @@ class Signup extends Component {
 							hasError={parentRefCode.hasError}
 							error={parentRefCode.error}
 							message={parentRefCode.message}
+							className={style.formInput}
 						/>
 					</FormGroup>
 
@@ -679,6 +683,7 @@ class Signup extends Component {
 						onClickCallback={this.handleContinue}
 						text="CONTINUE"
 						isDisabled={this.state.isReading}
+						buttonStyle={`${style.buttonStyle}`}
 					/>
 				</form>
 			</div>

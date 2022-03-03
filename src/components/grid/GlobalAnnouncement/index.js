@@ -6,7 +6,8 @@ import {
 import {
 	getTranslation,
 	getConfigByKey,
-	dateNewsFormat
+	dateNewsFormat,
+	removeTags
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 import { ImageLoader, LoaderRing } from '_components/core';
@@ -22,17 +23,6 @@ class GlobalAnnouncement extends Component {
 			moreFetching: false
 		}
 	};
-
-	removeTags(str) {
-    if ((str===null) || (str===''))
-        return false;
-    else
-        str = str.toString(); 
-    // Regular expression to identify HTML tags in 
-    // the input string. Replacing the identified 
-    // HTML tag with a null string.
-    return str.replace( /(<([^>]+)>)/ig, '');
-	}
 
 	componentDidMount = () => {
 		fetchAnnouncements();
@@ -151,13 +141,13 @@ class GlobalAnnouncement extends Component {
 									<div className={`${style.detailContent} ${this.props.isDisplayFlex ? style.rows : ''}`}>
 										<div className={style.detailHead}>
 											<span className={`extraBold ${style.userName}`}>
-												{`${i.title.length > 30 ? `${this.removeTags(i.title || '').substr(0, 30)}...` :  i.title }`}
+												{`${i.title.length > 30 ? `${removeTags(i.title || '').substr(0, 30)}...` :  i.title }`}
 											</span>
 										</div>
 										<div className={style.detailBody}>
 											<p className={`${style.detailTitle}`}>
 												{dateNewsFormat(i.postedDate)}</p>
-											<p className={style.detailDescription}>{this.removeTags(i.desc || '').substr(0, 100)}...
+											<p className={style.detailDescription}>{removeTags(i.desc || '').substr(0, 100)}...
 												<span className='extraBold'> {`${i.desc.length > 100 ? `${getTranslation('READ_ALL')}`: ''}`}</span>
 											</p>
 										</div>

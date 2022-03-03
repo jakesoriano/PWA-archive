@@ -1,38 +1,43 @@
 @import '../../../style/variables.scss';
 .landingPage {
-    text-align: center;
-    width: 100%;
-    height: 100%;
-	background: rgb(255,177,187);
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	background: rgb(255, 177, 187);
 	background: linear-gradient(180deg, #b32774 0%, #c1789f 100%);
-    .contentWrap {
-        position: relative;
-        height: 100vh;
-        .leniLogo {
-            width: 100%;
-            overflow: auto;
-            .landingImg {
-                width: calc(100% - 30px);
-                margin: 130px auto 0;
-                height: auto;
-                overflow: hidden;
-                max-width: 450px;
-                padding: 0;
-                background: transparent;
-                border-radius: 50%;
-                border: 20px solid $secondary;
-                img {
-                    position: relative;
-                }
-            }
-        }
-        .signInUpBtnWrap {
-            max-width: 300px;
-            margin: 50px auto 0;
-            overflow: auto;
-            p {
-                margin: 10% 0 0px;
-            }
-        }
-    }
+	.contentWrap {
+		position: relative;
+		height: 100vh;
+		.leniLogo {
+			width: 100%;
+			overflow: auto;
+			.landingImg {
+				width: calc(100% - 30px);
+				margin: 130px auto 0;
+				height: auto;
+				overflow: hidden;
+				max-width: 450px;
+				padding: 0;
+				background: transparent;
+				border-radius: 50%;
+				border: 20px solid $secondary;
+				img {
+					position: relative;
+				}
+			}
+		}
+		.signInUpBtnWrap {
+			max-width: 300px;
+			margin: 50px auto 0;
+			overflow: auto;
+			p {
+				margin: 10% 0 0px;
+			}
+			.buttonStyle {
+				font-size: 1.3rem;
+				background-color: $pink_button;
+				padding: 15px 0;
+			}
+		}
+	}
 }

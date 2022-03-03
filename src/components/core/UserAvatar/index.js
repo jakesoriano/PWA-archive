@@ -71,12 +71,12 @@ class UserAvatar extends Component {
     });
 	};
 
-  render = ({ authUser, allowUpdate }, { attachment }) => (
+  render = ({ authUser, allowUpdate, styles }, { attachment }) => (
     <div className={style.userAvatarWrap}>
       <label for="inputAttachment">
         <ImageLoader
           src={authUser.profile.image || getDefaultAvatar()}
-          style={{ container: style.avatar, image: style.img }}
+          style={{ container: styles?.avatar || style.avatar, image: style.img }}
           lazy
         />
         </label>

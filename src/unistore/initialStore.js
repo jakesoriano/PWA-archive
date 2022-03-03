@@ -119,6 +119,11 @@ export const initialStore = {
     result: false,
     data: {}
   },
+  appLandingConfig: {
+    fetching: false,
+    result: false,
+    data: {}
+  },
   tasks: {
     fetching: false,
     result: false,
@@ -144,6 +149,7 @@ export const initialStore = {
   circleModal: null,
   alertShow: null,
   filterShow: null,
+  tourGuide: null,
   pageLoader: {
     display: false
   },

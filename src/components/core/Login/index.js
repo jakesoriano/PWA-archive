@@ -234,13 +234,18 @@ class Login extends Component {
 	      >
 	        {/* Login Contents Here */}
           <div className={style.formTitle}>
-            <p className={`${style.formTitle}`}>
+            <p className={`extraBold ${style.formTitle}`}>
+              {getTranslation('WELCOME')} <span className={`extraBold`}>{getTranslation('KAKAMPINK')}</span> <br/>
               {getTranslation('JOIN_US')}
             </p>
           </div>
           <div className={style.formFieldWrap}>
             <form className={style.form}>
-              <FormGroup label="USERNAME" hasError={username.hasError}>
+              <FormGroup 
+                label="USERNAME" 
+                hasError={username.hasError}
+                className={style.formGroup}
+              >
                 <FormInput
                   className={style.fields}
                   style={{ error: style.fields }}
@@ -255,9 +260,14 @@ class Login extends Component {
                   hasError={username.hasError}
                   error={username.error}
                   message={username.message}
+                  className={style.formInput}
                 />
               </FormGroup>
-              <FormGroup label="PASSWORD" hasError={password.hasError}>
+              <FormGroup 
+                label="PASSWORD" 
+                hasError={password.hasError}
+                className={style.formGroup}
+              >
                 <FormInput
                   className={style.fields}
                   style={{ error: style.fields }}
@@ -272,6 +282,7 @@ class Login extends Component {
                   hasError={password.hasError}
                   error={password.error}
                   message={password.message}
+                  className={style.formInput}
                 />
               </FormGroup>
               <div className={style.buttonWrap}>
@@ -282,6 +293,7 @@ class Login extends Component {
                   }}
                   text={getTranslation('LOGIN_SUBMIT')}
                   bottomDescription=""
+                  buttonStyle={`${style.buttonStyle}`}
                 />
                 <p
                   className={`bold ${style.forgotUserPass}`}
@@ -296,6 +308,9 @@ class Login extends Component {
                         className={style.sMItem}
                         onClick={this.onClickForgotUserPass}>{getTranslation('PASSWORD')}</Link>
                 </p>
+                <div onClick={toggleLoginForm}>
+                  <p className={style.backButton}> {getTranslation('BACK')} </p>
+                </div>
               </div>
               
               {/* Social Media */}

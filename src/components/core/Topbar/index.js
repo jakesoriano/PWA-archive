@@ -41,6 +41,8 @@ class Topbar extends Component {
 										this.props.route.router.props.history.goBack();
 									} else  if (this.props.route && this.props.route.url && this.props.route.url.indexOf('messages') > -1) {
 										this.props.route.router.props.history.goBack();
+									} else  if (this.props.route && this.props.route.url && this.props.route.url === '/videos') {
+										this.props.route.router.props.history.goBack();
 									} else {
 										props.onBack();
 									}
