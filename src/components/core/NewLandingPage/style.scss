@@ -62,6 +62,7 @@
 				align-items: center;
 				&Total {
 					width: 85px;
+					min-width: 85px;
 					height: 82px;
 					padding: 0;
 					overflow: hidden;
@@ -78,6 +79,11 @@
 						font-size: 0.75rem;
 						color: $blue_text;
 						margin-bottom: 5px;
+						color: black;
+						&:first-child {
+							color: $blue_text;
+							margin-bottom: 5px;
+						}
 					}
 					h4 {
 						font-size: 1.35rem;
