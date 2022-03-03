@@ -39,7 +39,7 @@ class LandingPage extends Component {
 		const data = appLandingConfig.data;
 		return (
 			<>
-				{!data.length ? 
+				{!data?.headline1 ? 
 					<div className={style.landingPage}>
 						<div>
 							<div className={style.contentWrap}>
