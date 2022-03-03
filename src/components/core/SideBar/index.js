@@ -3,7 +3,12 @@
 import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
-import { getTranslation, dateLastLoginFormat, isUsingSocialLogin } from '_helpers';
+import {
+	getTranslation,
+	dateLastLoginFormat,
+	isUsingSocialLogin,
+	showTourGuide
+} from '_helpers';
 import { ImageLoader } from '_components/core';
 import { logOut } from '_mutations';
 import { updateStore } from '_unistore';
@@ -77,6 +82,10 @@ class SideBar extends Component {
 							<Link id="sm-settings" href={`/settings`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('SETTINGS')}</Link>
 						)}
 						<Link id="sm-wherehertolisten" href={`/contactus`} className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('WHERE_HERE_TO_LISTEN')}</Link>
+						<Link id="sm-tour-guide" href={`/home`} className={style.sMItem} onClick={(e) => {
+							this.onClickMenu();
+							showTourGuide(true);
+						}}>{getTranslation('TOUR_GUIDE')}</Link>
 						{/* <Link id="sm-myprofile" href="/home" className={style.sMItem} onClick={this.onClickMenu}>{getTranslation('PROTECT_LENI')}</Link> */}
 						<Link id="sm-logout" href={`/`} className={style.sMItem} onClick={(e) => {
 							logOut();

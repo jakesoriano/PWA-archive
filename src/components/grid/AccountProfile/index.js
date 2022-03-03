@@ -123,7 +123,7 @@ class AccountProfile extends Component {
 							<div className={style.pointsRank}>
 								<div className={style.heroPoints}>
 									<p className={`extraBold ${style.points}`}>
-										{formatNumber(authUser.points, 2) || 0}
+										{authUser.points === 0 ? '-' : formatNumber(authUser.points, 2) || 0}
 									</p>
 									<p className={`bold ${style.textPoints}`}>
 										{getTranslation('HERO_POINTS')}

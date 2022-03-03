@@ -47,3 +47,9 @@ export function showFilter (data) {
     filterShow: data
   });
 }
+
+export function showTourGuide (val) {
+  store.setState({
+    tourGuide: val
+  });
+}
