@@ -54,7 +54,6 @@ class NewLandingPage extends Component {
 
 	render = ({ appLandingConfig }) => {
 		const data = appLandingConfig?.data;
-		console.log("sarsa ", data);
 		return (
 			<div className={style.landingPage}>
 				<div>
