@@ -67,6 +67,14 @@
 	}
 	.buttonContainer {
 		padding: 0 15px;
+		position: relative;
+		bottom: 30px;
+		background: white;
+		.buttonStyle {
+			font-size: 1.3rem;
+			background-color: $pink_button;
+			padding: 15px 0;
+		}
 	}
 	.landingTermsContent {
 		max-height: calc(100vh);
