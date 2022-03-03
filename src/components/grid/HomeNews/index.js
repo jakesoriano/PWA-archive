@@ -4,7 +4,7 @@ import { connect } from 'unistore/preact';
 import { ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 import { likeShareAnnouncements } from '_mutations';
-import { dateNewsFormat, getTranslation, getConfigByKey } from '_helpers';
+import { dateNewsFormat, getTranslation, getConfigByKey, removeTags } from '_helpers';
 import style from './style';
 class HomeNews extends Component {
     constructor (props) {
@@ -88,7 +88,7 @@ class HomeNews extends Component {
                     announcements?.data?.length && <div className={style.item}>
                         <p className={`extraBold ${style.title}`}>{announcements?.data[0]?.title}</p>
                         <p className={style.date}>{dateNewsFormat(announcements?.data[0]?.postedDate)}</p>
-                        <p className={style.description}>{announcements?.data[0]?.desc}</p>
+                        <p className={style.description}>{`${removeTags(announcements?.data[0]?.desc).substr(0, 120)}...`}</p>
                         <a className={`extraBold ${style.button}`} onClick={() => this.onShowPopup(announcements?.data[0])}>{getTranslation('VIEW')}</a>
                     </div>
                 }

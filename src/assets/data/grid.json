@@ -111,7 +111,7 @@
 		"hideBottomBar": true,
 		"contents": [
 			{
-				"component": "HighlightFeatures"
+				"component": "HomeFeatures"
 			},
 			{
 				"component": "HomeNews"
