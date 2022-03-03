@@ -249,6 +249,7 @@ class DataPrivacy extends Component {
 						!this.state.accepted3 ||
 						!this.state.accepted4
 					}
+					buttonStyle={`${style.buttonStyle}`}
 				/>
 			}
 	      </div>

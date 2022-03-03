@@ -4,7 +4,7 @@ import { connect } from 'unistore/preact';
 import { ImageLoader } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 import { likeShareAnnouncements } from '_mutations';
-import { dateNewsFormat, getTranslation, getConfigByKey } from '_helpers';
+import { dateNewsFormat, getTranslation, getConfigByKey, removeTags } from '_helpers';
 import style from './style';
 class HomeNews extends Component {
     constructor (props) {
@@ -81,15 +81,15 @@ class HomeNews extends Component {
 		}
 		return null;
 	};
-    render = ({announcements}, {selectedItem}) => (
+    render = ({announcements, page}, {selectedItem}) => (
         <div className={style.pnWrap}>
             <div className={style.news}>
                 {
                     announcements?.data?.length && <div className={style.item}>
                         <p className={`extraBold ${style.title}`}>{announcements?.data[0]?.title}</p>
                         <p className={style.date}>{dateNewsFormat(announcements?.data[0]?.postedDate)}</p>
-                        <p className={style.description}>{announcements?.data[0]?.desc}</p>
-                        <a className={`extraBold ${style.button}`} onClick={() => this.onShowPopup(announcements?.data[0])}>{getTranslation('VIEW')}</a>
+                        <p className={style.description}>{`${removeTags(announcements?.data[0]?.desc).substr(0, 120)}...`}</p>
+                        <a id={`${page}-view-news`}className={`extraBold ${style.button}`} onClick={() => this.onShowPopup(announcements?.data[0])}>{getTranslation('VIEW')}</a>
                     </div>
                 }
                 {
@@ -103,7 +103,7 @@ class HomeNews extends Component {
                         style={{container: style.navImgContainer}}
                         lazy
                     />
-                    <a className={`extraBold ${style.name}`}>
+                    <a id={`${page}-pinkpedia`} className={`extraBold ${style.name}`}>
                         {`${getTranslation('SEARCH')} ${getTranslation('PINK_PEDIA')}`}
                     </a>
                 </div>
@@ -113,7 +113,7 @@ class HomeNews extends Component {
                         style={{container: style.navImgContainer}}
                         lazy
                     />
-                    <a className={`extraBold ${style.name}`}>{getTranslation('SEE_ALL_NEWS')}</a>
+                    <a id={`${page}-see-all-news`} className={`extraBold ${style.name}`}>{getTranslation('SEE_ALL_NEWS')}</a>
                 </div>
             </div>
             {selectedItem && this.renderDetails(selectedItem)}

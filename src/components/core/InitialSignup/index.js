@@ -76,7 +76,7 @@ class InitialSignup extends Component {
                   socId: ''
                 }
               });
-              route(`/${this.props.parent}/data-privacy`);
+              route(`/landing/data-privacy`);
             } else {
               this.setState({
                 username: {
