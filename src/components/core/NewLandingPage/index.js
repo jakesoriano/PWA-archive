@@ -54,6 +54,7 @@ class NewLandingPage extends Component {
 
 	render = ({ appLandingConfig }) => {
 		const data = appLandingConfig?.data;
+		console.log("sarsa ", data);
 		return (
 			<div className={style.landingPage}>
 				<div>
@@ -82,7 +83,7 @@ class NewLandingPage extends Component {
 									<p className={`bold`}> {data?.headline2?.headline} </p>
 									<h4 className={`extraBold`}> {data?.headline2?.title} </h4>
 									<p className={`bold ${style.date}`}> {data?.headline2?.date} </p>
-									<p> {data?.headline1?.body}{data?.headline2?.body.length > 98 ? "..." : ""} </p>
+									<p> {data?.headline2?.body}{data?.headline2?.body.length > 98 ? "..." : ""} </p>
 								</div>
 							</div>
 						</div>
