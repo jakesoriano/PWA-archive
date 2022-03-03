@@ -101,6 +101,8 @@
 		border-radius: 50%;
 		img {
 			position: relative;
+			height: 100%;
+			object-fit: cover;
 		}
 	}
 	.kitImage {
