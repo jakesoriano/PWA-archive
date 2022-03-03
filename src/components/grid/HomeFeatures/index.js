@@ -1,5 +1,5 @@
 import { Component } from 'preact';
-import { Link } from 'preact-router';
+import { route, Link } from 'preact-router';
 import { connect } from 'unistore/preact';
 import { ImageLoader } from '_components/core';
 import { getTranslation } from '_helpers';
