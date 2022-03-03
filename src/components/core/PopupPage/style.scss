@@ -18,32 +18,31 @@
 		left: 0;
 	}
 	.backImg {
-		width: 20px;
-		padding-bottom: 20px;
+		width: 25px;
+		padding-bottom: 25px;
+		transform: rotate(90deg);
 	}
 	.header {
 		width: 100%;
-		padding: 11px 10px;
-		background-color: $primary_layout;
-    display: flex;
-    align-items: center;
-		height: 56px;
+		padding: 25px 10px 20px;
+		background-color: $gray_bg;
+		display: flex;
+		align-items: center;
 		button {
 			display: inline-block;
 			padding: 0 10px 0 10px;
 			color: $white;
 			font-size: 1.7rem;
 			background: transparent;
-			border: none
+			border: none;
 		}
 		h3 {
 			display: inline-block;
-			font-size: 1.2rem;
-			max-width: 250px;
+			font-size: 1.4rem;
 			text-overflow: ellipsis;
 			overflow: hidden;
 			white-space: nowrap;
-			color: $white;
+			color: $pink_text;
 			font-weight: 400;
 			margin: 0;
 			padding: 0;
@@ -52,8 +51,8 @@
 	.body {
 		height: calc(100% - 56px);
 		overflow-y: scroll;
-    * {
-      color: $black;
-    }
+		* {
+			color: $black;
+		}
 	}
 }

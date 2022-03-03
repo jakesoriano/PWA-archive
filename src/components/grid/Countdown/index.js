@@ -49,26 +49,29 @@ class Countdown extends Component {
 					<p className={`extraBold ${style.title}`}>{getTranslation('COUNTDOWN_TITLE')}</p>
 					<div className={style.content}>
 						<div className={style.count}>
-							<span className={`extraBold`}>{days || '00'}</span>
+							<span>{days || '00'}</span>
 							<span>{getTranslation('DAYS')}</span>
 						</div>
+						<span> : </span>
 						<div className={style.count}>
-							<span className={`extraBold`}>{hours || '00'}</span>
+							<span>{hours || '00'}</span>
 							<span>{getTranslation('HOURS')}</span>
 						</div>
+						<span> : </span>
 						<div className={style.count}>
-							<span className={`extraBold`}>{minutes || '00'}</span>
+							<span>{minutes || '00'}</span>
 							<span>{getTranslation('MINUTES')}</span>
 						</div>
+						<span> : </span>
 						<div className={style.count}>
-							<span className={`extraBold`}>{seconds || '00'}</span>
+							<span>{seconds || '00'}</span>
 							<span>{getTranslation('SECONDS')}</span>
 						</div>
 					</div>
 				</div>
-				<div className={style.countdown}>
+				<div className={`${style.countdown} ${style.countdownAppDownload}`}>
 					<p className={`extraBold ${style.title}`}>{getTranslation('APP_DOWNLOADS')}</p>
-					<span className={`extraBold ${style.appDownload}`}>{formatNumber(getConfigByKey('appDownloads'), 0)}</span>
+					<span className={style.appDownload}>{formatNumber(getConfigByKey('appDownloads'), 0)}</span>
 				</div>
 			</div>
 		);
