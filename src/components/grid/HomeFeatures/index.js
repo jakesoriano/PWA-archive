@@ -2,9 +2,53 @@ import { Component } from 'preact';
 import { route, Link } from 'preact-router';
 import { connect } from 'unistore/preact';
 import { ImageLoader } from '_components/core';
-import { getTranslation } from '_helpers';
+import { getTranslation, showTourGuide } from '_helpers';
 import style from './style';
 class HomeFeatures extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            activeGuide: 0
+        }
+    };
+
+    componentDidMount = () => {
+        this.checkTourGuide();
+    };
+
+    componentDidUpdate = () => {
+        this.checkTourGuide();
+    };
+
+    checkTourGuide = () => {
+        if (this.state.activeGuide === 0 && this.props.tourGuide) {
+            this.setState({
+                activeGuide: 1
+            });
+        }
+    }
+
+    isItemActiveGuide = (item) => {
+        return Boolean(this.state.activeGuide === item);
+    };
+
+    onNextGuide = () => {
+        this.setState({
+            activeGuide: this.state.activeGuide === 4 ? 0 : this.state.activeGuide + 1
+        });
+        if (this.state.activeGuide === 4) {
+            showTourGuide(null);
+        }
+    };
+    
+    onClickItem = (url) => {
+        if (this.state.activeGuide <= 0) {
+            route(url);
+        } else {
+            this.onNextGuide();
+        }
+    }
+
 	taskCompletedCount = () => {
 		const count = this.props?.tasks?.data?.reduce(
 			(counter, { completed }) => (completed ? (counter += 1) : counter),
@@ -12,11 +56,28 @@ class HomeFeatures extends Component {
 		);
 		return count;
 	};
-    render = ({members, tasks}) => (
+    
+    renderTooltip = (item,) => {
+        if (this.isItemActiveGuide(item)) {
+            return (
+                <div className={style.tooltip}>
+                    <span className={style.arrow}></span>
+                    <p className={`bold ${style.title}`}>{getTranslation(`TOUR_GUIDE${item}_TITLE`)}</p>
+                    <p className={style.desc}>{getTranslation(`TOUR_GUIDE${item}_DESC`)}</p>
+                </div>
+            )
+        }
+        return null;
+    }
+    
+    render = ({members, tasks}, {activeGuide}) => (
         <div className={style.hfWrap}>
             <div className={style.body}>
                 {/* Invite */}
-                <Link href='/invite' className={style.item}>
+                <a onClick={(e) => {
+                    e.stopPropagation();
+                    this.onClickItem('/invite');
+                }} className={`${style.item} ${this.isItemActiveGuide(1) ? style.activeGuide : ''}`}>
                     <div className={style.iconWrap}>
                         <ImageLoader
                             src={'assets/images/image_members.png'}
@@ -26,9 +87,15 @@ class HomeFeatures extends Component {
                     </div>
                     <p className={style.description}>{`${members?.data?.length} ${members?.data?.length === 1 ? getTranslation('MEMBER') : getTranslation('MEMBERS')}`}</p>
                     <a className={`bold ${style.button}`}>{getTranslation('INVITE_OTHERS')}</a>
-                </Link>
+                    {/* tooltip */}
+                    {this.renderTooltip(1)}
+                </a>
+
                 {/* Tasks */}
-                <Link href='/task-center' className={style.item}>
+                <a onClick={(e) => {
+                    e.stopPropagation();
+                    this.onClickItem('/task-center');
+                }} className={`${style.item} ${this.isItemActiveGuide(2) ? style.activeGuide : ''}`}>
                     <div className={style.iconWrap}>
                         <ImageLoader
                             src={'assets/images/image_tasks.png'}
@@ -38,9 +105,15 @@ class HomeFeatures extends Component {
                     </div>
                     <p className={`${style.description} lowercase`}>{`${tasks.data ? this.taskCompletedCount() + '/' + tasks?.data?.length : 0} ${getTranslation('COMPLETED')}`}</p>
                     <a className={`bold ${style.button}`}>{getTranslation('DAILY_TASKS')}</a>
-                </Link>
+                    {/* tooltip */}
+                    {this.renderTooltip(2)}
+                </a>
+                
                 {/* Volunteer Kit */}
-                <Link href='/volunteer-kits' className={style.item}>
+                <a onClick={(e) => {
+                    e.stopPropagation();
+                    this.onClickItem('/volunteer-kits');
+                }} className={`${style.item} ${this.isItemActiveGuide(3) ? style.activeGuide : ''}`}>
                     <div className={style.iconWrap}>
                         <ImageLoader
                             src={'assets/images/image_kits.png'}
@@ -50,9 +123,15 @@ class HomeFeatures extends Component {
                     </div>
                     <p className={style.description}>{getTranslation('HF_VOLUNTEER_DESC')}</p>
                     <a className={`bold ${style.button}`}>{getTranslation('VOLUNTEER_KIT')}</a>
-                </Link>
+                    {/* tooltip */}
+                    {this.renderTooltip(3)}
+                </a>
+
                 {/* Community */}
-                <Link href='/community' className={style.item}>
+                <a onClick={(e) => {
+                    e.stopPropagation();
+                    this.onClickItem('/community');
+                }} className={`${style.item} ${this.isItemActiveGuide(4) ? style.activeGuide : ''}`}>
                     <div className={style.iconWrap}>
                         <ImageLoader
                             src={'assets/images/image_communities.png'}
@@ -63,9 +142,15 @@ class HomeFeatures extends Component {
                     <p className={style.description}>
                         {getTranslation('HF_COMMUNITY_DESC')}</p>
                     <a className={`bold ${style.button}`}>{getTranslation('JOIN_COMMUNITIES')}</a>
-                </Link>
+                    {/* tooltip */}
+                    {this.renderTooltip(4)}
+                </a>
             </div>
+            {activeGuide > 0 && <div className={style.overlay} onClick={(e) => {
+                e.stopPropagation();
+                this.onNextGuide();
+            }}></div>}
         </div>
     );
 }
-export default connect(['members', 'tasks'])(HomeFeatures);
+export default connect(['members', 'tasks', 'tourGuide'])(HomeFeatures);

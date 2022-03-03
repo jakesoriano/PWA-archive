@@ -34,8 +34,7 @@ import {
 	AlertBox,
 	PopupModal,
 	CircleModal,
-	CustomListSelection,
-	TourGuide
+	CustomListSelection
 } from '_components/core';
 import {
 	nativeWebReady,
@@ -469,7 +468,6 @@ class Grid extends Component {
 				{popupModal && this.renderPopupModal()}
 				{circleModal && this.renderCircleModal()}
 				{filterShow && this.renderFilter()}
-				{tourGuide && <TourGuide />}
 				{pageLoader.display && <LoaderRing fullpage />}
 
 				<BackToTop
