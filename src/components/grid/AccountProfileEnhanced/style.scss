@@ -1,0 +1,97 @@
+@import '../../../style/variables.scss';
+.accountProfile {
+  padding: 15px;
+  background-color: $light_gray;
+  display: flex;
+  * {
+    color: #737373;
+  }
+  .profile {
+    padding-right: 10px;
+    flex-grow: 1;
+    .user {
+      display: flex;
+      width: 100%;
+      position: relative;
+      .avatar {
+        border: none;
+        overflow: hidden;
+        width: 50px;
+        padding-bottom: 50px;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+      .profileInfo {
+        flex: 1;
+        padding: 0 10px 0 0;
+      }
+      .nameMember {
+        flex-grow: 1;
+        .name {
+          font-size: 1rem;
+          color: $primary;
+          text-transform: uppercase;
+        }
+      }
+    }
+    .pointsRank {
+      width: 100%;
+      .heroPoints {
+        p {
+          display: block;
+          span{
+            display: inline-block;
+          }
+        }
+        .points {
+          font-size: 0.9rem;
+        }
+        .textPoints {
+          font-size: 0.6rem;
+        }
+        .invite {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          * {
+            font-size: 0.6rem;
+          }
+          > span {
+            margin-right: 5px;
+          }
+          .refCode {
+            display: flex;
+            align-items: center;
+            span {
+              font-size: 0.8rem;
+            }
+            .copy {
+              width: 14px;
+              padding-bottom: 14px;
+              margin-left: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .cta {
+    .button {
+      display: block;
+      border-radius: 6px;
+      text-align: center;
+      padding: 6px 10px;
+      width: 100%;
+      font-size: 0.7rem;
+      &.report {
+        background-color: $primary;
+        color: $white;
+      }
+      &.update {
+        margin-top: 10px;
+        background-color: $white;
+        border: 1px solid $blue;
+      }
+    }
+  }
+}

@@ -14,6 +14,9 @@
 			width: 100%;
 			overflow: scroll;
 			padding-top: 56px;
+			&.noBottomBar {
+				height: 100%;
+			}
 		}
 		.noUser {
 			height: 100%;

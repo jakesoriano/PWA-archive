@@ -279,5 +279,17 @@
 	"MARKED_AS_VOLUNTEER": "You were marked as a Volunteer by Engineers for Leni! Mark the date, Kakampink!",
 	"OPT_OUT": "Opt Out",
 	"NEWLY_UPDATED_PROFILE": "Maraming salamat Kakampink for updating your profile! You now have full access to the different features of the app. Meron ka pang 100 Hero points for completing your profile!",
-	"NO_MEMBERS": "Mag-imbita ng mga KakamPink upang makita sila dito."
+	"NO_MEMBERS": "Mag-imbita ng mga KakamPink upang makita sila dito.",
+	"MEMBER": "Member",
+	"INVITE_OTHERS": "Invite Others",
+	"DAILY_TASKS": "Daily Tasks",
+	"VOLUNTEER_KIT": "Volunteer Kit",
+	"JOIN_COMMUNITIES": "Join Communities",
+	"HF_VOLUNTEER_DESC": "KakamPink, have you seen our latest training videos?",
+	"HF_COMMUNITY_DESC": "New communities, checkout their events and announcements",
+	"SEARCH": "Search",
+	"SEE_ALL_NEWS": "See All News",
+	"INVITE_OTHERS_USING": "Invite others using",
+	"REPORT": "Report",
+	"TOUR_GUIDE": "Tour Guide"
 }
