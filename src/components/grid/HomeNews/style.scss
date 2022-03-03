@@ -53,7 +53,7 @@
         top: 66px;
         left: 10px;
         width: calc(100% - 20px);
-        height: calc(100% - 136px);
+        height: calc(100% - 76px);
         background: $details_bg;
         border-radius: 10px;
         z-index: 2;
@@ -89,11 +89,13 @@
                 display: inline-block;
                 width: 100%;
                 margin-top: 10px;
+                overflow-wrap: break-word;
             }
         }
         }
         .pContent {
             font-size: 0.8rem;
+            overflow-wrap: break-word;
             br {
                 content: '';
                 display: block;
