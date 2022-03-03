@@ -45,10 +45,10 @@ class PopupPage extends Component {
 				>
 					<ImageLoader
 						style={{ container: style.backImg }}
-						src="assets/images/backbutton.png"
+						src="assets/images/downarrow.png"
 					/>
 				</button>
-				<h3>{getTranslation(title)}</h3>
+				<h3 className={`extraBold`}>{getTranslation(title)}</h3>
 			</div>
 			<div className={style.body}>{children}</div>
 		</div>
