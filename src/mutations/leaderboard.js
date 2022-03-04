@@ -7,7 +7,7 @@ export function fetchLeaderboard (type, region, top) {
   const { leaderboard } = store.getState();
 
   // fetching
-  if(leaderboard.fetching) {
+  if (leaderboard.fetching) {
     return;
   }
 

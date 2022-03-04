@@ -8,7 +8,7 @@ export function fetchStories () {
   const { authUser } = store.getState();
 
   // fetching
-  if(stories.fetching) {
+  if (stories.fetching) {
     return;
   }
   
@@ -25,27 +25,27 @@ export function fetchStories () {
     xhr(urlFetchStories, {
       method: 'GET',
     })
-    .then((res) => {
-      updateStore({
-        stories: {
-          data: res.data,
-          fetching: false,
-          result: true
-        }
+      .then((res) => {
+        updateStore({
+          stories: {
+            data: res.data,
+            fetching: false,
+            result: true
+          }
+        });
+        console.log(`SPA >> fetchStories Success`, res.success);
+        resolve(true);
+      })
+      .catch((err) => {
+        updateStore({
+          stories: {
+            ...stories,
+            fetching: false,
+            result: false
+          }
+        });
+        console.log(`SPA >> fetchStories Error`, err);
+        resolve(false);
       });
-      console.log(`SPA >> fetchStories Success`, res.success);
-      resolve(true);
-    })
-    .catch((err) => {
-      updateStore({
-        stories: {
-          ...stories,
-          fetching: false,
-          result: false
-        }
-      });
-      console.log(`SPA >> fetchStories Error`, err);
-      resolve(false);
-    });
   });
 }

@@ -38,5 +38,5 @@ jobs:
       - run: echo "APP_ENV_STAGE=$CI_COMMIT_REF_NAME" >> .env
       - run: cat .env
       - run: npm install
-      # - run: npm run test
+      - run: npm run lint
 

@@ -49,7 +49,9 @@ class FeaturedCommunities extends Component {
   renderItem = (item) => {
     return (
       <div className={style.communityDetailsWrap}>
-        <div onClick={() => { this.visitCommunity(item) }}>
+        <div onClick={() => {
+          this.visitCommunity(item) 
+        }}>
           <ImageLoader
             src={item.image || getDefaultAvatar()}
             style={{ container: style.avatar }}
@@ -64,7 +66,9 @@ class FeaturedCommunities extends Component {
         <div class={style.buttonContainer}>
           <ButtonDescription
             id={item.followed ? 'community-unfollow' : 'community-follow'}
-            onClickCallback={(e) => { this.handleFollow(item)}}
+            onClickCallback={(e) => {
+              this.handleFollow(item) 
+            }}
             text={getTranslation(item.followed ? 'UNFOLLOW' : 'FOLLOW')}
             buttonStyle={`${style.buttonStyle} ${item.followed ? style.followed : ''}`}
             active={item.followed}
@@ -74,7 +78,7 @@ class FeaturedCommunities extends Component {
     );
   }
 
-  render = ({communities, title, top, hideShowAll}) => {
+  render = ({ communities, title, top, hideShowAll }) => {
     // if (communities.fetching && top > 1) {
     //   return (
     //     <div className={style.loaderCont}>

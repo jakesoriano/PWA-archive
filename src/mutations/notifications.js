@@ -6,7 +6,6 @@ export function generateNotifications () {
   let { lastDateNotified, lastDatePointsNotified } = notifications;
 
   if (!lastDateNotified || dateWithinDays(lastDateNotified, -1)) {
-
     const { members, events } = store.getState();
 
     // prep new data
@@ -18,7 +17,6 @@ export function generateNotifications () {
     ].sort((a, b) => a.date - b.date);
 
     if (newData.length) {
-
       // set isRead 
       let isNotificationsChanged = JSON.stringify(notifications.data) === JSON.stringify(newData);
 
@@ -41,7 +39,6 @@ export function generateNotifications () {
 const generatePointsNotification = (members, lastDatePointsNotified) => {
   // check day if a Sunday before adding to notifications
   if (members && members.length) {
-
     if (!lastDatePointsNotified || dateWithinDays(lastDatePointsNotified, -7)) {
       lastDatePointsNotified = new Date();
     }

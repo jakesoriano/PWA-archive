@@ -9,68 +9,67 @@ import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Settings extends Component {
-	constructor(props){
-		super(props);
-		this.state = {
-			isTouchIdEnable: false
-		}
-	};
+  constructor(props) {
+    super(props);
+    this.state = {
+      isTouchIdEnable: false
+    }
+  }
 
 	componentDidMount = () => {
-		nativeStatusTouchID().then(val => {
-			this.setState({
-				isTouchIdEnable: Boolean(val === true)
-			});
-		});
+	  nativeStatusTouchID().then(val => {
+	    this.setState({
+	      isTouchIdEnable: Boolean(val === true)
+	    });
+	  });
 	}
 	
 	onTouchIdChange = () => {
-		nativeToggleTouchID(!this.state.isTouchIdEnable)
-			.then(res => {
-				if (res) {
-					// update state
-					this.setState({
-						isTouchIdEnable: !this.state.isTouchIdEnable
-					});
-				} else {
-					showAlertBox({
-						message: 'SOMETHING_WRONG'
-					});
-				}
-			});
+	  nativeToggleTouchID(!this.state.isTouchIdEnable)
+	    .then(res => {
+	      if (res) {
+	        // update state
+	        this.setState({
+	          isTouchIdEnable: !this.state.isTouchIdEnable
+	        });
+	      } else {
+	        showAlertBox({
+	          message: 'SOMETHING_WRONG'
+	        });
+	      }
+	    });
 	};
 	
 	onClickChangePass = () => {
-		route(`/${this.props.parent}/change-password`);
+	  route(`/${this.props.parent}/change-password`);
 	};
 
 	render = ({ authUser }, {}) => {
-
-		if (!authUser) {
-			return null;
-		}
+	  if (!authUser) {
+	    return null;
+	  }
 
 	  return (
-			<div className={style.settingsWrap}>
-				<button 
-					onClick={() => {
-						this.onClickChangePass();
-					}}>
-						<span>{getTranslation('PAGE_CHANGE_PASS')}</span>
-				</button>
-				<button>
-					<span>{getTranslation(platform.os === 'ios' ? 'ENABLE_FACEID' : 'ENABLE_TOUCHID')}</span>
-					<div className={style.inputWrap}>
-						<ToggleInput
-							onClickCallback={() => {
-								this.onTouchIdChange()
-							}}
-							isChecked={this.state.isTouchIdEnable}
-							>	
-						</ToggleInput>
-					</div>
-				</button>
-			</div>
+	    <div className={style.settingsWrap}>
+	      <button 
+	        onClick={() => {
+	          this.onClickChangePass();
+	        }}>
+	        <span>{getTranslation('PAGE_CHANGE_PASS')}</span>
+	      </button>
+	      <button>
+	        <span>{getTranslation(platform.os === 'ios' ? 'ENABLE_FACEID' : 'ENABLE_TOUCHID')}</span>
+	        <div className={style.inputWrap}>
+	          <ToggleInput
+	            onClickCallback={() => {
+	              this.onTouchIdChange()
+	            }}
+	            isChecked={this.state.isTouchIdEnable}
+	          >	
+	          </ToggleInput>
+	        </div>
+	      </button>
+	    </div>
 	  );
 	};
 }

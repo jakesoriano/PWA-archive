@@ -37,7 +37,7 @@ class Login extends Component {
         hasError: false
       }
     };
-  };
+  }
 
   componentDidUpdate = (prevProps) => {
     if (this.props.isOpen && prevProps.isOpen !== this.props.isOpen) {
@@ -57,37 +57,37 @@ class Login extends Component {
     displayPageLoader(true);
 	    login(payload)
 	      .then((res) => {
-          displayPageLoader(false);
-          /**
+        displayPageLoader(false);
+        /**
            * 1. login success
            * 2. login require otp
            * 3. login fail
            */
-          if (res === true) {
-            if (!isAuto) {
-              nativeSetCredential(payload);
-            }
-            route('/home', true);
-          } else if (res.otp) {
-            updateStore({
-              loginInfo: {
-                username: payload.username,
-                password: payload.password,
-                mobile: res.mobile,
-                isAuto
-              }
-            }, true);
-            this.props.toggleLoginForm();
-            route(`/landing/login-otp`);
-          } else {
-            showAlertBox({
-              message: errMessage || 'INVALID_USER_PASS',
-              noTopBar: true
-            });
+        if (res === true) {
+          if (!isAuto) {
+            nativeSetCredential(payload);
           }
+          route('/home', true);
+        } else if (res.otp) {
+          updateStore({
+            loginInfo: {
+              username: payload.username,
+              password: payload.password,
+              mobile: res.mobile,
+              isAuto
+            }
+          }, true);
+          this.props.toggleLoginForm();
+          route(`/landing/login-otp`);
+        } else {
+          showAlertBox({
+            message: errMessage || 'INVALID_USER_PASS',
+            noTopBar: true
+          });
+        }
 	      })
 	      .catch((err) => {
-          displayPageLoader(false);
+        displayPageLoader(false);
 	      });
   }
 
@@ -96,15 +96,15 @@ class Login extends Component {
 	    this.onUsernameChange(this.state.username.value);
 	    this.onPasswordChange(this.state.password.value);
 	  } else {
-      this.onLogin({
-        username: this.state.username.value,
-        password: this.state.password.value
+	    this.onLogin({
+	      username: this.state.username.value,
+	      password: this.state.password.value
 	    });
 	  }
 	};
 
 	onClickForgotUserPass = () => {
-    this.props.toggleLoginForm();
+	  this.props.toggleLoginForm();
 	};
 
 	onUsernameChange = (value) => {
@@ -141,7 +141,7 @@ class Login extends Component {
       )
     )
       .then(res => {
-        if(res.success) {
+        if (res.success) {
           // submit data
           this.onLogin({
             username: (res.data.email || '').toString(),
@@ -174,8 +174,8 @@ class Login extends Component {
         <ul>
           <li>
             <a onClick={() => {
-                this.onClickSocial('F');
-              }}>
+              this.onClickSocial('F');
+            }}>
               <ImageLoader
                 src="assets/images/fb_icon.png"
                 style={{ container: style.socMedIcons }}
@@ -184,8 +184,8 @@ class Login extends Component {
           </li>
           <li>
             <a onClick={() => {
-                this.onClickSocial('T');
-              }}>
+              this.onClickSocial('T');
+            }}>
               <ImageLoader
                 src="assets/images/twitter_icon.png"
                 style={{ container: style.socMedIcons }}
@@ -194,8 +194,8 @@ class Login extends Component {
           </li>
           <li>
             <a onClick={() => {
-                this.onClickSocial('G');
-              }}>
+              this.onClickSocial('G');
+            }}>
               <ImageLoader
                 src="assets/images/google_icon.png"
                 style={{ container: style.socMedIcons }}
@@ -233,90 +233,92 @@ class Login extends Component {
 	        className={isOpen ? `${style.login} ${style.toggled}` : style.login}
 	      >
 	        {/* Login Contents Here */}
-          <div className={style.formTitle}>
-            <p className={`extraBold ${style.formTitle}`}>
-              {getTranslation('WELCOME')} <span className={`extraBold`}>{getTranslation('KAKAMPINK')}</span> <br/>
-              {getTranslation('JOIN_US')}
-            </p>
-          </div>
-          <div className={style.formFieldWrap}>
-            <form className={style.form}>
-              <FormGroup 
-                label="USERNAME" 
-                hasError={username.hasError}
-                className={style.formGroup}
-              >
-                <FormInput
-                  className={style.fields}
-                  style={{ error: style.fields }}
-                  value={username.value}
-                  type="text"
-                  onBlur={(e) => {
-                    this.onUsernameChange(e.target.value);
-                  }}
-                  onInput={(e) => {
-                    this.onUsernameChange(e.target.value);
-                  }}
-                  hasError={username.hasError}
-                  error={username.error}
-                  message={username.message}
-                  className={style.formInput}
-                />
-              </FormGroup>
-              <FormGroup 
-                label="PASSWORD" 
-                hasError={password.hasError}
-                className={style.formGroup}
-              >
-                <FormInput
-                  className={style.fields}
-                  style={{ error: style.fields }}
-                  value={password.value}
-                  type="password"
-                  onBlur={(e) => {
-                    this.onPasswordChange(e.target.value);
-                  }}
-                  onInput={(e) => {
-                    this.onPasswordChange(e.target.value);
-                  }}
-                  hasError={password.hasError}
-                  error={password.error}
-                  message={password.message}
-                  className={style.formInput}
-                />
-              </FormGroup>
-              <div className={style.buttonWrap}>
-                <ButtonDescription
-                  onClickCallback={(e) => {
-                    e.stopPropagation();
-                    this.onClickSubmit()
-                  }}
-                  text={getTranslation('LOGIN_SUBMIT')}
-                  bottomDescription=""
-                  buttonStyle={`${style.buttonStyle}`}
-                />
-                <p
-                  className={`bold ${style.forgotUserPass}`}
-                  // onClick={this.onClickForgotUserPass}
-                >
-                  {getTranslation('FORGOT')}&nbsp;
-                    <Link class={`bold`} href={`/landing/enter-mobile-un`} 
-                        className={style.sMItem}
-                        onClick={this.onClickForgotUserPass}>{getTranslation('USERNAME')}</Link>
+	        <div className={style.formTitle}>
+	          <p className={`extraBold ${style.formTitle}`}>
+	            {getTranslation('WELCOME')} <span className={`extraBold`}>{getTranslation('KAKAMPINK')}</span> <br />
+	            {getTranslation('JOIN_US')}
+	          </p>
+	        </div>
+	        <div className={style.formFieldWrap}>
+	          <form className={style.form}>
+	            <FormGroup 
+	              label="USERNAME" 
+	              hasError={username.hasError}
+	              className={style.formGroup}
+	            >
+	              <FormInput
+	                className={style.fields}
+	                style={{ error: style.fields }}
+	                value={username.value}
+	                type="text"
+	                onBlur={(e) => {
+	                  this.onUsernameChange(e.target.value);
+	                }}
+	                onInput={(e) => {
+	                  this.onUsernameChange(e.target.value);
+	                }}
+	                hasError={username.hasError}
+	                error={username.error}
+	                message={username.message}
+	                className={style.formInput}
+	              />
+	            </FormGroup>
+	            <FormGroup 
+	              label="PASSWORD" 
+	              hasError={password.hasError}
+	              className={style.formGroup}
+	            >
+	              <FormInput
+	                className={style.fields}
+	                style={{ error: style.fields }}
+	                value={password.value}
+	                type="password"
+	                onBlur={(e) => {
+	                  this.onPasswordChange(e.target.value);
+	                }}
+	                onInput={(e) => {
+	                  this.onPasswordChange(e.target.value);
+	                }}
+	                hasError={password.hasError}
+	                error={password.error}
+	                message={password.message}
+	                className={style.formInput}
+	              />
+	            </FormGroup>
+	            <div className={style.buttonWrap}>
+	              <ButtonDescription
+	                onClickCallback={(e) => {
+	                  e.stopPropagation();
+	                  this.onClickSubmit()
+	                }}
+	                text={getTranslation('LOGIN_SUBMIT')}
+	                bottomDescription=""
+	                buttonStyle={`${style.buttonStyle}`}
+	              />
+	              <p
+	                className={`bold ${style.forgotUserPass}`}
+	                // onClick={this.onClickForgotUserPass}
+	              >
+	                {getTranslation('FORGOT')}&nbsp;
+	                <Link class={`bold`}
+	                  href={`/landing/enter-mobile-un`} 
+	                  className={style.sMItem}
+	                  onClick={this.onClickForgotUserPass}>{getTranslation('USERNAME')}</Link>
                   &nbsp;<span>{getTranslation('OR')}</span>&nbsp;
-                    <Link class={`bold`} href={`/landing/enter-mobile-pw`} 
-                        className={style.sMItem}
-                        onClick={this.onClickForgotUserPass}>{getTranslation('PASSWORD')}</Link>
-                </p>
-                <div onClick={toggleLoginForm}>
-                  <p className={style.backButton}> {getTranslation('BACK')} </p>
-                </div>
-              </div>
+	                <Link class={`bold`}
+	                  href={`/landing/enter-mobile-pw`} 
+	                  className={style.sMItem}
+	                  onClick={this.onClickForgotUserPass}>{getTranslation('PASSWORD')}</Link>
+	              </p>
+	              <div onClick={toggleLoginForm}>
+	                <p className={style.backButton}> {getTranslation('BACK')} </p>
+	              </div>
+	            </div>
               
-              {/* Social Media */}
-              {this.renderSocialMedia()}
-            </form>
-          </div>
+	            {/* Social Media */}
+	            {this.renderSocialMedia()}
+	          </form>
+	        </div>
 	      </div>
 	    </div>
 	  );

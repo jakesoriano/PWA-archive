@@ -53,7 +53,7 @@ export function nativeGetDeviceId (callback) {
 export function nativeShare (data) {
   // eslint-disable-next-line no-console
   console.log('SPA >> nativeShare();');
-	callNative({
+  callNative({
     action: 'share',
     data: {
       ...data,
@@ -65,7 +65,7 @@ export function nativeShare (data) {
 export function nativeExitApp () {
   // eslint-disable-next-line no-console
   console.log('SPA >> nativeExitApp();');
-	callNative({
+  callNative({
     action: 'exitApp'
   });
 }

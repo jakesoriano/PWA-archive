@@ -5,16 +5,15 @@ import { getTranslation, getDefaultAvatar } from '_helpers';
 import style from './style';
 
 class FeaturedTopRanking extends Component {
-
 	renderUserTitle = (profile) => {
-		let user = profile.fname;
-		if (profile.region) {
-			user = user + `, ${profile.region}.`;
-		}
-		if (profile.municipality) {
-			user = user + ` ${profile.municipality}`;
-		}
-		return user;
+	  let user = profile.fname;
+	  if (profile.region) {
+	    user += `, ${profile.region}.`;
+	  }
+	  if (profile.municipality) {
+	    user += ` ${profile.municipality}`;
+	  }
+	  return user;
 	};
 
   renderDom = (data) => {
@@ -22,7 +21,7 @@ class FeaturedTopRanking extends Component {
       <div className={style.featured}>
         <ImageLoader 
           src={data.profile.image || getDefaultAvatar()}
-          style={{container: style.avatar}}
+          style={{ container: style.avatar }}
         />
         <div className={style.nameMember}>
           <div>
@@ -36,7 +35,7 @@ class FeaturedTopRanking extends Component {
     ) : <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
   };
 
-  render = ({leaderboard}) => {
+  render = ({ leaderboard }) => {
     if (!leaderboard.featured) {
       return null
     }
@@ -47,6 +46,6 @@ class FeaturedTopRanking extends Component {
       </div>
     ) 
   };
-};
+}
 
 export default connect(['leaderboard'])(FeaturedTopRanking);

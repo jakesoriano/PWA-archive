@@ -10,46 +10,45 @@ import style from './style';
 // eslint-disable-next-line react/prefer-stateless-function
 class Members extends Component {
 	componentDidMount = () => {
-		fetchMembers();
+	  fetchMembers();
 	};
 
 	renderUserTitle = (profile) => {
-		let user = profile.fname;
-		if (profile.region) {
-			user = user + `, ${profile.region}.`;
-		}
-		if (profile.municipality) {
-			user = user + ` ${profile.municipality}`;
-		}
-		return user;
+	  let user = profile.fname;
+	  if (profile.region) {
+	    user += `, ${profile.region}.`;
+	  }
+	  if (profile.municipality) {
+	    user += ` ${profile.municipality}`;
+	  }
+	  return user;
 	};
 
 	render = ({ members }) => {
 	  if (!members.result) {
 	    return <LoaderRing fullpage />;
 	  }
-		if (members.data && members.data.length) {
-			return (
-				<div className={style.membersWrap}>
-					{members.data.map(item => (
-						<div className={style.item}>
-							<ImageLoader 
-								src={item.image || getDefaultAvatar()}
-								style={{container: style.avatar}}
-								lazy />
-							<div className={style.nameMember}>
-								<div>
-									<p className={`light ${style.name}`}>{this.renderUserTitle(item.profile)}</p>
-									<p className={`light ${style.members}`}>{`${formatNumber(item.members, 2) || 0} ${getTranslation('MEMBERS')}`}</p>
-								</div>
-							</div>
-						</div>
-					))}
-				</div>
-			);
-		} else {
-			return <div className={style.membersWrap}><p className={style.noRecord}>{getTranslation('NO_MEMBERS')}</p></div>
-		}
+	  if (members.data && members.data.length) {
+	    return (
+	      <div className={style.membersWrap}>
+	        {members.data.map(item => (
+	          <div className={style.item}>
+	            <ImageLoader 
+	              src={item.image || getDefaultAvatar()}
+	              style={{ container: style.avatar }}
+	              lazy />
+	            <div className={style.nameMember}>
+	              <div>
+	                <p className={`light ${style.name}`}>{this.renderUserTitle(item.profile)}</p>
+	                <p className={`light ${style.members}`}>{`${formatNumber(item.members, 2) || 0} ${getTranslation('MEMBERS')}`}</p>
+	              </div>
+	            </div>
+	          </div>
+	        ))}
+	      </div>
+	    );
+	  } 
+	  return <div className={style.membersWrap}><p className={style.noRecord}>{getTranslation('NO_MEMBERS')}</p></div>
 	};
 }
 export default connect(['members'])(Members);

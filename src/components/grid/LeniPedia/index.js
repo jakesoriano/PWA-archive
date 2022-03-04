@@ -14,9 +14,9 @@ class LeniPedia extends Component {
     }
   }
 	onClickItem = (data) => {
-		this.setState({
-			selectedItem: data
-		});
+	  this.setState({
+	    selectedItem: data
+	  });
 	};
   handleShowMore = () => {
     if (!this.state.moreFetching) {
@@ -27,10 +27,10 @@ class LeniPedia extends Component {
     }
   };
   onShare = (item) => {
-		nativeShare({
-			url: item.image,
-			title: item.title,
-			message: `\n\n
+    nativeShare({
+      url: item.image,
+      title: item.title,
+      message: `\n\n
 				We tell it as it is. Only the truth, KakamPink!\n\n
 				Shared via Kakampink App\n
 				Download now!\n
@@ -40,10 +40,10 @@ class LeniPedia extends Component {
 				Ariticle Link: ${item.link || ''}\n
 				Use my invite code: ${this.props.authUser.profile.refCode}
 			`
-		});
-		if (!item.shared) {
+    });
+    if (!item.shared) {
       likeShareLenipedia(item, 'shared');
-		}
+    }
   };
   onLike = (item) => {
     !item.liked ? likeShareLenipedia(item, 'liked') : removeLikeLenipedia(item);
@@ -63,50 +63,52 @@ class LeniPedia extends Component {
     }
   }
   renderDetails = (data) => {
-		if (data) {
-			return (
-				<div className={style.pWrap}>
-					<a className={`${style.pClose}`} onClick={() => {
-						this.setState({
-							selectedItem: null
-						});
-					}}>
-						<ImageLoader
-							src="assets/images/closebutton.png"
-							style={{container: style.closeBtn}}
-						/>
-					</a>
-					<div className={`${style.pHeader}`}>
-						<ImageLoader
-								src={data.image}
-								style={{container: style.pImage}}
-								lazy />
+    if (data) {
+      return (
+        <div className={style.pWrap}>
+          <a className={`${style.pClose}`}
+            onClick={() => {
+              this.setState({
+                selectedItem: null
+              });
+            }}>
+            <ImageLoader
+              src="assets/images/closebutton.png"
+              style={{ container: style.closeBtn }}
+            />
+          </a>
+          <div className={`${style.pHeader}`}>
+            <ImageLoader
+              src={data.image}
+              style={{ container: style.pImage }}
+              lazy />
             <div className={style.pNews}>
               <p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
               <a className={style.pLink} href={data.link}>{data.link}</a>
             </div>
-					</div>
-					<p
-						className={style.pContent}
-						dangerouslySetInnerHTML={{
-							__html: data.desc
-						}}
-					/>
-					<a className={`${style.pShare} ${this.props.dataType || 'article'}-share`} onClick={(e) => {
-            e.stopPropagation();
-            this.onShare(data);
-          }}>
-						<ImageLoader
-								id='leni-share'
-								src="assets/images/share_icon_white.png"
-								style={{container: style.pIconShare}} />
-							<span>{getTranslation('SHARE')}</span>
-					</a>
-				</div>
-			)
-		}
-		return null;
-	};
+          </div>
+          <p
+            className={style.pContent}
+            dangerouslySetInnerHTML={{
+              __html: data.desc
+            }}
+          />
+          <a className={`${style.pShare} ${this.props.dataType || 'article'}-share`}
+            onClick={(e) => {
+              e.stopPropagation();
+              this.onShare(data);
+            }}>
+            <ImageLoader
+              id='leni-share'
+              src="assets/images/share_icon_white.png"
+              style={{ container: style.pIconShare }} />
+            <span>{getTranslation('SHARE')}</span>
+          </a>
+        </div>
+      )
+    }
+    return null;
+  };
   render = (props, state) => {
     return (
       <>
@@ -127,7 +129,7 @@ class LeniPedia extends Component {
           }
           {
             state.moreFetching && (
-              <LoaderRing styles={{container: style.loaderWrap}}/>
+              <LoaderRing styles={{ container: style.loaderWrap }} />
             )
           }
         </div>

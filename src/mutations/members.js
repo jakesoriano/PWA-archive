@@ -7,7 +7,7 @@ export function fetchMembers () {
   const { members } = store.getState();
 
   // fetching
-  if(members.fetching) {
+  if (members.fetching) {
     return;
   }
 

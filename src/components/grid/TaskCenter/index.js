@@ -206,7 +206,7 @@ class TaskCenter extends Component {
 							target="_blank"
 							className={`task-fblink ${style.imageWrap}`}
 							onClick={this.enableButton}
-							rel="noreferrer"
+							rel="noopener noreferrer"
 						>
 							<ImageLoader
 								src={item.image}
@@ -220,7 +220,7 @@ class TaskCenter extends Component {
 								href={item.url}
 								target="_blank"
 								onClick={this.enableButton}
-								rel="noreferrer"
+								rel="noopener noreferrer"
 							>
 								{item.url}
 							</a>

@@ -6,7 +6,6 @@ import { getTranslation } from '_helpers';
 import style from './style';
 
 class CommunityDetails extends Component {
-
   handleFollow = (item) => {
     if (item.followed) {
       unFollowCommunity(item);
@@ -15,7 +14,7 @@ class CommunityDetails extends Component {
     }
   };
 
-  render = ({communityDetails}) => (
+  render = ({ communityDetails }) => (
     <div className={style.communityDetailsWrap}>
       <ImageLoader
         src={communityDetails.details.image || getDefaultAvatar()}
@@ -25,7 +24,9 @@ class CommunityDetails extends Component {
       <p class={`${style.heading} extraBold`}>{communityDetails.details.name}</p>
       <div class={style.buttonContainer}>
         <ButtonDescription
-          onClickCallback={(e) => { this.handleFollow(communityDetails.details)}}
+          onClickCallback={(e) => {
+            this.handleFollow(communityDetails.details) 
+          }}
           text={getTranslation(communityDetails.details.followed ? 'UNFOLLOW' : 'FOLLOW')}
           buttonStyle={`${style.buttonStyle} ${communityDetails.details.followed ? style.followed : ''}`}
           active={communityDetails.details.followed}

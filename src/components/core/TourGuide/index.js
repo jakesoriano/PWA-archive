@@ -15,7 +15,7 @@ class TourGuide extends Component {
         `{CDN_DOMAIN}tour/4.png`,
       ]
     }
-  };
+  }
 
   handleClick = (e) => {
     e.stopPropagation();
@@ -30,14 +30,14 @@ class TourGuide extends Component {
     }
   };
 
-  render = ({}, {item, data}) => {
+  render = ({}, { item, data }) => {
     return (
       <div className={style.tourWrap}>
         <div className={style.tourContent} style={`width: ${data.length * 100}%; left: -${item * 100}%`}>
           {data.map((url) => {
             return (
               <div className={style.item} onClick={this.handleClick}>
-                  <ImageLoader src={url} clasName={{container: style.imgWrap}}/>
+                <ImageLoader src={url} clasName={{ container: style.imgWrap }} />
               </div>
             );
           })}

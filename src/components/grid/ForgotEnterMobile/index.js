@@ -26,11 +26,11 @@ class ForgotEnterMobile extends Component {
         settings: 'username'
       })
     }
-		updateStore({
-			customBack: () => {
-				route(`/${this.props.parent}/`, true);
-			},
-		});
+    updateStore({
+      customBack: () => {
+        route(`/${this.props.parent}/`, true);
+      },
+    });
   }
 
   handleContinue = () => {
@@ -43,20 +43,18 @@ class ForgotEnterMobile extends Component {
       displayPageLoader(false);
       if (res.success) {
         route(`/${this.props.parent}/forgot-otp`);
+      } else if (res.error === 'MOBILE_NOT_FOUND') {
+        showAlertBox({
+          message: res.error
+        });
+      } else if (res.error === 'MOBILE_NOT_ALLOWED') {
+        showAlertBox({
+          message: res.error
+        });
       } else {
-        if (res.error === 'MOBILE_NOT_FOUND') {
-          showAlertBox({
-						message: res.error
-          });
-        } else if (res.error === 'MOBILE_NOT_ALLOWED') {
-          showAlertBox({
-						message: res.error
-          });
-        } else {
-          showAlertBox({
-						message: 'SOMETHING_WRONG'
-          });
-        }
+        showAlertBox({
+          message: 'SOMETHING_WRONG'
+        });
       }
     })
   }
@@ -80,14 +78,14 @@ class ForgotEnterMobile extends Component {
           />
           <p class={style.inputSubtext}>{getTranslation('ENTER_11_DIGIT_MOBILE')}</p>
         </div>
-				<div className={style.buttonContainer}>
-					<ButtonDescription
-						onClickCallback={this.handleContinue}
-						text="Continue"
-						isDisabled={
-							this.state.mobile ? this.state.mobile.length < 11 : !this.state.mobile
-						}
-					/>
+        <div className={style.buttonContainer}>
+          <ButtonDescription
+            onClickCallback={this.handleContinue}
+            text="Continue"
+            isDisabled={
+              this.state.mobile ? this.state.mobile.length < 11 : !this.state.mobile
+            }
+          />
         </div>
       </div>
     )

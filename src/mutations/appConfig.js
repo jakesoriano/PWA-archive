@@ -32,7 +32,6 @@ export function fetchAppConfig () {
 
   return xhr(replaceUrlPlaceholders(urlAppConfig))
     .then((res) => {
-    
       try {
         // check if has new pwa version
         const currentBuild = parseInt(process.env.BUILD_NO.replace(/\./gim, ''));
@@ -75,7 +74,7 @@ export function fetchAppConfig () {
             });
           }
         });
-      } catch(err){}
+      } catch (err) {}
 
       // update config
       updateStore({

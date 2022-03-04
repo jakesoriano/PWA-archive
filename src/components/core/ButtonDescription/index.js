@@ -8,7 +8,7 @@ class ButtonDescription extends Component {
 	  return (
 	    <div className={style.buttonDescWrapper}>
 	      <button
-					id={id || ''}
+	        id={id || ''}
 	        type="button"
 	        className={`bold ${style.button} ${buttonStyle} ${active ? style.active : ''}`}
 	        disabled={isDisabled}

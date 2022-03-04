@@ -17,10 +17,10 @@ class Notification extends Component {
   }
 
 	onShare = (item) => {
-		nativeShare({
-			title: item.title,
-			message: item.description
-		});
+	  nativeShare({
+	    title: item.title,
+	    message: item.description
+	  });
 	};
 
   renderNotifications = () => {

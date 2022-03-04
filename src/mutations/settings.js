@@ -10,18 +10,18 @@ import {
 export function forgotCredentials (type, data) {
   let url = '';
   switch (type.toLowerCase()) {
-    case 'sendotp':
-      url = urlForgotSendOTP;
-      break;
-    case 'validateotp':
-      url = urlForgotValidateOTP;
-      break;
-    case 'changepw':
-      url = urlForgotPassword;
-      break;
-    case 'changeun':
-      url = urlForgotUsername;
-      break;
+  case 'sendotp':
+    url = urlForgotSendOTP;
+    break;
+  case 'validateotp':
+    url = urlForgotValidateOTP;
+    break;
+  case 'changepw':
+    url = urlForgotPassword;
+    break;
+  case 'changeun':
+    url = urlForgotUsername;
+    break;
   }
   return new Promise((resolve) => {
     xhr(url, {

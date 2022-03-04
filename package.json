@@ -13,6 +13,7 @@
     "serve": "preact build && sirv build --cors --single",
     "dev": "preact watch",
     "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
     "test": "jest",
     "build-all": "preact build --dest build/android --preload && preact build --dest build/ios --preload && preact build --dest build/web --preload",
     "web-redirection": "node jobs/web-redirection",
@@ -80,7 +81,7 @@
   "lint-staged": {
     "*.js": [
       "prettier --write",
-      "eslint src/ --fix"
+      "eslint --fix src"
     ]
   }
 }

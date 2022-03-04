@@ -9,6 +9,21 @@
 	top: 0;
 	left: 0;
 	z-index: 2;
+	&.withBack {
+		background-color: $gray_bg;
+		.container {
+			.title {
+				color: $pink_text;
+			}
+			.btnBack,
+			.burger,
+			.notif {
+				.backImg {
+					transform: rotate(90deg);
+				}
+			}
+		}
+	}
 	.container {
 		width: 100%;
 		position: relative;

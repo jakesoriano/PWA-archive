@@ -15,7 +15,6 @@ import {
 } from '_platform/helpers';
 
 export function logOut (callback) {
-
   const {
     news,
     events,

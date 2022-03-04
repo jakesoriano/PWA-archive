@@ -8,7 +8,7 @@ export function fetchAppLandingConfig () {
   const { appLandingConfig } = store.getState();
 
   // fetching
-  if(appLandingConfig.fetching) {
+  if (appLandingConfig.fetching) {
     return true;
   }
   
@@ -22,23 +22,23 @@ export function fetchAppLandingConfig () {
   });
 
   return xhr(urlAppLandingConfig)
-  .then((res) => { 
+    .then((res) => { 
     // update config
-    updateStore({
-      appLandingConfig: {
-        data: res,
-        fetching: false,
-        result: true
-      }
+      updateStore({
+        appLandingConfig: {
+          data: res,
+          fetching: false,
+          result: true
+        }
+      });
+    })
+    .catch(() => {
+      updateStore({
+        appLandingConfig: {
+          ...appLandingConfig,
+          fetching: false,
+          result: false
+        }
+      });
     });
-  })
-  .catch(() => {
-    updateStore({
-      appLandingConfig: {
-        ...appLandingConfig,
-        fetching: false,
-        result: false
-      }
-    });
-  });
 }

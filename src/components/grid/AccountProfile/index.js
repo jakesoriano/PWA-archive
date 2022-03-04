@@ -4,12 +4,12 @@ import { connect } from 'unistore/preact';
 import { route } from 'preact-router';
 import { LoaderRing, ImageLoader, UserAvatar } from '_components/core';
 import {
-	getTranslation,
-	formatNumber,
-	getConfigByKey,
-	circleModal,
-	formatRank,
-	displayName
+  getTranslation,
+  formatNumber,
+  getConfigByKey,
+  circleModal,
+  formatRank,
+  displayName
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 import { updateStore } from '_unistore';
@@ -19,34 +19,34 @@ import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class AccountProfile extends Component {
-	constructor(props) {
+  constructor(props) {
     super(props);
   }
 
 	componentDidMount = () => {
-		const { authUser } = this.props;
-		if (authUser) {
-			fetchUserPoints();
-			if (authUser.hasOwnProperty('isNewUser') && authUser.isNewUser) {
-				circleModal({
-					title: getTranslation('ITS_OFFICIAL'),
-					content: getTranslation('YOURE_KAKAMPINK'),
-					code: authUser.profile.refCode
-				});
-				updateStore({
-					authUser: {
-						...authUser,
-						isNewUser: false,
-					},
-				});
-			}
-		}
+	  const { authUser } = this.props;
+	  if (authUser) {
+	    fetchUserPoints();
+	    if (authUser.hasOwnProperty('isNewUser') && authUser.isNewUser) {
+	      circleModal({
+	        title: getTranslation('ITS_OFFICIAL'),
+	        content: getTranslation('YOURE_KAKAMPINK'),
+	        code: authUser.profile.refCode
+	      });
+	      updateStore({
+	        authUser: {
+	          ...authUser,
+	          isNewUser: false,
+	        },
+	      });
+	    }
+	  }
 	};
 
 	onShare = () => {
-		nativeShare({
-			title: `Be a Hero`,
-			message: `\n
+	  nativeShare({
+	    title: `Be a Hero`,
+	    message: `\n
 				I've earned ${this.props.authUser.points} Hero Points!\n
 				Download the KakamPink App!\n\n
 				Android: ${getConfigByKey('playStore')}\n
@@ -54,112 +54,115 @@ class AccountProfile extends Component {
 				Use my invite code: ${this.props.authUser.profile.refCode}\n\n
 				#LetLeniLead
 			`,
-		});
+	  });
 	};
 
 	renderDropdown = () => {
-		const { showDropdown } = this.state;
-		if (showDropdown) {
-			return (
-				<div className={style.selectDropdown}>
-					<a className={style.download} onClick={() => {
-						this.onDownloadKit('http://bit.ly/LabanLeni22');
-					}}>
-						<div>
-							{/* <ImageLoader
+	  const { showDropdown } = this.state;
+	  if (showDropdown) {
+	    return (
+	      <div className={style.selectDropdown}>
+	        <a className={style.download}
+	          onClick={() => {
+	            this.onDownloadKit('http://bit.ly/LabanLeni22');
+	          }}>
+	          <div>
+	            {/* <ImageLoader
 								src="assets/images/icon_download.png"
 								style={{ container: style.iconDownload }}
 							/> */}
-							<span>{getTranslation('DOWNLOAD_CAMPAIGN_KIT')}</span>
-						</div>
-					</a>
-					<a className={style.download} onClick={() => {
-						this.onDownloadKit('http://bit.ly/bakitsileni');
-					}}>
-						<div>
-							<span>{getTranslation('DOWNLOAD_CONVERSTIONAL_KIT')}</span>
-						</div>
-					</a>
-					<a className={style.download} onClick={() => {
-						this.onDownloadKit('http://bit.ly/KKP_volunteer_toolkit');
-					}}>
-						<div>
-							<span>{getTranslation('DOWNLOAD_VOLUNTEER_KIT')}</span>
-						</div>
-					</a>
-					<a className={style.download} onClick={this.gotoVideos}>
-						<div>
-							{/* <ImageLoader
+	            <span>{getTranslation('DOWNLOAD_CAMPAIGN_KIT')}</span>
+	          </div>
+	        </a>
+	        <a className={style.download}
+	          onClick={() => {
+	            this.onDownloadKit('http://bit.ly/bakitsileni');
+	          }}>
+	          <div>
+	            <span>{getTranslation('DOWNLOAD_CONVERSTIONAL_KIT')}</span>
+	          </div>
+	        </a>
+	        <a className={style.download}
+	          onClick={() => {
+	            this.onDownloadKit('http://bit.ly/KKP_volunteer_toolkit');
+	          }}>
+	          <div>
+	            <span>{getTranslation('DOWNLOAD_VOLUNTEER_KIT')}</span>
+	          </div>
+	        </a>
+	        <a className={style.download} onClick={this.gotoVideos}>
+	          <div>
+	            {/* <ImageLoader
 								src="assets/images/icon_download.png"
 								style={{ container: style.iconDownload }}
 							/> */}
-							<span>{getTranslation('WATCH_VIDEOS')}</span>
-						</div>
-					</a>
-				</div>
-			);
-		}
+	            <span>{getTranslation('WATCH_VIDEOS')}</span>
+	          </div>
+	        </a>
+	      </div>
+	    );
+	  }
 	}
 
-	render = ({ authUser },{showDropdown}) => {
-		if (!authUser) {
-			return <LoaderRing fullpage />;
-		}
+	render = ({ authUser },{ showDropdown }) => {
+	  if (!authUser) {
+	    return <LoaderRing fullpage />;
+	  }
 
-		return (
-			<div className={style.accountProfile}>
-				<div className={style.profile}>
-					<div className={style.user}>
-						<UserAvatar allowUpdate={true} />
-						<div className={style.profileInfo}>
-							<div className={style.nameMember}>
-								<p
-									className={`bold ${style.name}`}
-								>{displayName(authUser.profile)}</p>
-								<p className={`bold ${style.members}`}>{`${
+	  return (
+	    <div className={style.accountProfile}>
+	      <div className={style.profile}>
+	        <div className={style.user}>
+	          <UserAvatar allowUpdate />
+	          <div className={style.profileInfo}>
+	            <div className={style.nameMember}>
+	              <p
+	                className={`bold ${style.name}`}
+	              >{displayName(authUser.profile)}</p>
+	              <p className={`bold ${style.members}`}>{`${
 									formatNumber(authUser.members, 2) || 0
 								} ${getTranslation('MEMBERS')}`}</p>
-							</div>
-							<div className={style.pointsRank}>
-								<div className={style.heroPoints}>
-									<p className={`extraBold ${style.points}`}>
-										{authUser.points === 0 ? '-' : formatNumber(authUser.points, 2) || 0}
-									</p>
-									<p className={`bold ${style.textPoints}`}>
-										{getTranslation('HERO_POINTS')}
-									</p>
-								</div>
-								<div className={style.heroRankingContainer}>
-									<p className={`bold`}>{getTranslation('RANKING')}</p>
-									<div className={style.heroRanking}>
-										<div className={style.rankBox}>
-											<p class={`extraBold ${style.rankPoints}`}>{formatRank(authUser.rank.regional)}</p>
-											<p class={style.rankPointsText}>{getTranslation('REGIONAL')}</p>
-										</div>
-										<div className={style.rankBox}>
-											<p class={`extraBold ${style.rankPoints}`}>{formatRank(authUser.rank.overall)}</p>
-											<p class={style.rankPointsText}>{getTranslation('OVERALL')}</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class={style.shareContainer}>
-							<a
-								onClick={() => {
-									this.onShare();
-								}}
-							>
-								<ImageLoader
-									src="assets/images/share_icon.png"
-									style={{ container: style.share }}
-								/>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		);
+	            </div>
+	            <div className={style.pointsRank}>
+	              <div className={style.heroPoints}>
+	                <p className={`extraBold ${style.points}`}>
+	                  {authUser.points === 0 ? '-' : formatNumber(authUser.points, 2) || 0}
+	                </p>
+	                <p className={`bold ${style.textPoints}`}>
+	                  {getTranslation('HERO_POINTS')}
+	                </p>
+	              </div>
+	              <div className={style.heroRankingContainer}>
+	                <p className={`bold`}>{getTranslation('RANKING')}</p>
+	                <div className={style.heroRanking}>
+	                  <div className={style.rankBox}>
+	                    <p class={`extraBold ${style.rankPoints}`}>{formatRank(authUser.rank.regional)}</p>
+	                    <p class={style.rankPointsText}>{getTranslation('REGIONAL')}</p>
+	                  </div>
+	                  <div className={style.rankBox}>
+	                    <p class={`extraBold ${style.rankPoints}`}>{formatRank(authUser.rank.overall)}</p>
+	                    <p class={style.rankPointsText}>{getTranslation('OVERALL')}</p>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	          <div class={style.shareContainer}>
+	            <a
+	              onClick={() => {
+	                this.onShare();
+	              }}
+	            >
+	              <ImageLoader
+	                src="assets/images/share_icon.png"
+	                style={{ container: style.share }}
+	              />
+	            </a>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  );
 	};
 }
 export default connect(['authUser'])(AccountProfile);

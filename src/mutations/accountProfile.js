@@ -14,7 +14,7 @@ export function useCode (data) {
           console.log(`SPA >> Community Invite Code Error`, res);
           resolve(false);
         } else {
-          if(res.token) {
+          if (res.token) {
             const token =  JSON.parse(atob(res.token.split('.')[1]));
             const { authUser } = store.getState();
             updateStore({
