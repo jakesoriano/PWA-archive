@@ -1,0 +1,95 @@
+@import '../../../style/variables.scss';
+.hashtag {
+  background: #f2f2f2;
+  h1 {
+    margin: 0 0 5px 0;
+    text-align: center;
+    padding: 20px 0;
+    color: #231f20;
+    span {
+      color: $primary;
+    }
+  }
+}
+.introWrap {
+  background: #fff;
+  padding: 10px 10px 10px;
+  * {
+    color: #231f20;
+    font-size: 0.9rem;
+  }
+  .banner {
+    width: 100%;
+    padding-bottom: 220px;
+    border-radius: 15px;
+    .img {
+      transform: translateY(-70px);
+    }
+  }
+  .infoWrap {
+    margin: 30px 0;
+    text-align: center;
+    .referralCode {
+      padding: 10px 15px 10px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      .text {
+        text-align: left;
+      }
+      .code {
+        text-align: left;
+        padding: 0 10px;
+        display: flex;
+        color: #ce0f69;
+      }
+      .copyImg {
+        width: 20px;
+        padding-bottom: 20px;
+        margin-left: 10px;
+      }
+    }
+    a {
+      text-decoration: underline;
+      span {
+        color: #737373;
+      }
+    } 
+  }
+  .navCards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    .item {
+      width: calc(50% - 10px);
+      border: 2px solid #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      p {
+        padding: 20px 5px;
+        text-align: center;
+        justify-content: center;
+        flex-grow: 1
+      }
+      #signup-success-updateprofile {
+        display: block;
+      }
+      button {
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        background-color: $primary;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 10px;
+      }
+    }
+  }
+  .skipBtn {
+    background-color: $primary !important;
+    margin-bottom: 30px;
+  }
+}

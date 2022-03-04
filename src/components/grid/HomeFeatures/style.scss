@@ -1,7 +1,6 @@
 @import '../../../style/variables.scss';
 .hfWrap {
-    margin-top: 20px;
-    padding: 10px 10px;
+    padding: 30px 10px 10px;
     background-color: $light_gray;
     .body {
         display: flex;
@@ -12,7 +11,58 @@
             margin: 5px;
             display: flex;
             flex-direction: column;
-            padding: 5px 5px 0 5px;
+            padding: 10px 5px 5px;
+            position: relative;
+            &.activeGuide {
+                z-index: 3;
+            }
+            &:nth-child(even) {
+                .tooltip {
+                    right: 0;
+                    left: auto;
+                    .arrow {
+                        right: 20%;
+                        left: auto;
+                    }
+                    .title {
+                        color: $primary;
+                    }
+                    .desc {
+                        background-color: $primary;
+                    }
+                }
+            }
+            .tooltip {
+                background-color: $white;
+                position: absolute;
+                top: calc(100% + 10px);
+                width: 120%;
+                border-radius: 10px;
+                left: 0;
+                .arrow {
+                    border: 20px solid transparent;
+                    border-left-width: 10px;
+                    border-right-width: 10px;
+                    border-bottom-color:#FFF;
+                    position: absolute;
+                    width: 20px;
+                    left: 20%;
+                    top: -40px;
+                }
+                .title {
+                    color: $blue;
+                    padding: 10px;
+                    font-size: 1.2rem;
+                    text-align: center;
+                }
+                .desc {
+                    background-color: $blue;
+                    color: $white;
+                    padding: 10px;
+                    font-size: 0.8rem;
+                    border-radius: 0 0 10px 10px;
+                }
+            }
             > p {
                 flex-grow: 1;
             }
@@ -24,9 +74,9 @@
                 margin: 0 auto;
                 padding: 10px;
                 .imageContainer {
-                    width: 70px;
-                    padding-bottom: 67px;
-                    margin: 5px auto 10px;
+                    width: 50px;
+                    padding-bottom: 50px;
+                    margin: 15px auto;
                 }
             }
             .description {
@@ -45,5 +95,15 @@
                 font-size: 0.9rem;
             }
         }
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 2;
     }
 }

@@ -39,6 +39,29 @@
 	},
 	{
 		"styles": [],
+		"pageTitle": "PAGE_DATA_PRIVACY",
+		"uri": "landing-data-privacy",
+		"contents": [
+			{
+				"component": "DataPrivacy",
+				"props": {
+					"fromLandingPage": true
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"pageTitle": "KAYA_NATIN",
+		"uri": "about-kaya-natin",
+		"contents": [
+			{
+				"component": "AboutKayaNatin"
+			}
+		]
+	},
+	{
+		"styles": [],
 		"pageTitle": "PAGE_SIGNUP",
 		"uri": "signup",
 		"contents": [
@@ -650,6 +673,75 @@
 		"contents": [
 			{
 				"component": "MessagesChat"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "VOLUNTEER_KIT",
+		"uri": "volunteer-kits",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "VolunteerKit",
+				"props": {
+					"data": [
+						{
+							"title":  "Social Media Content Posting",
+							"link": "https://www.notion.so/7e00a0c241be44e689a141a81fb717ff?v=29eb8910e2824153922e47662ae12e69",
+							"icon": "v_social"
+						},
+						{
+							"title":  "Conversation Kit",
+							"link": "https://drive.google.com/drive/u/7/folders/1JHUaCdAzO_otkum8zVv9mfFWs49osqOP",
+							"icon": "v_convert"
+						},
+						{
+							"title":  "Training Kit",
+							"link": "https://drive.google.com/drive/u/7/folders/1u_U-O5ent84xXL_EehnL5-KwRom4xcWb",
+							"icon": "v_train"
+						},
+						{
+							"title":  "Volunteer Kit",
+							"link": "https://drive.google.com/drive/u/7/folders/1muk04qDXgZL3zKbZq7Y_vW0pSyQFP4hM",
+							"icon": "v_vol"
+						},
+						{
+							"title":  "Training Videos",
+							"link": "/videos",
+							"icon": "v_social"
+						},
+						{
+							"title":  "Printables",
+							"link": "https://www.notion.so/fee52cca14ab498484b1dbf27d786cc0?v=8e11d88debea4937b349d2bf93ac0af1",
+							"icon": "v_print"
+						},
+						{
+							"title":  "Wearables",
+							"link": "https://www.notion.so/1074a65797de4b7fb3e5116c78a9f4b9?v=ac72cfaab55f43ddb765a6355598c922",
+							"icon": "v_wear"
+						},
+						{
+							"title":  "Other Resources",
+							"link": "https://www.notion.so/defe97ec7a63432caec70211484118cb?v=961ee67435b34cba8796d0bfe0742380",
+							"icon": "v_other"
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "",
+		"uri": "signup-success",
+		"hideTopBar": true,
+		"hideBottomBar": true,
+		"contents": [
+			{
+				"component": "SignupSuccess"
 			}
 		]
 	}

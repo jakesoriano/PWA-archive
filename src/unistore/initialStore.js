@@ -119,6 +119,11 @@ export const initialStore = {
     result: false,
     data: {}
   },
+  appLandingConfig: {
+    fetching: false,
+    result: false,
+    data: {}
+  },
   tasks: {
     fetching: false,
     result: false,
