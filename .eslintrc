@@ -12,28 +12,66 @@
   ],
   "rules": {
     "no-nested-ternary": 0,
+    "comma-dongle": 0,
     "react/jsx-indent-props": 0,
+    "lines-between-class-members": 0,
+    "no-unused-state": 0,
+    "react/no-unused-state": 0,
+    "react/jsx-fragments": 0,
+    "react/button-has-type": 0,
+    "react/no-danger": 0,
     "react/jsx-key": 0,
     "react/destructuring-assignment": 0,
+    "react/jsx-first-prop-new-line": 0,
     "react/jsx-no-bind": 0,
     "react/prop-types": 0,
     "react/display-name": 0,
+    "react/jsx-curly-brace-presence": 0,
+    "react/prefer-stateless-function": 0,
+    "react/self-closing-comp": 0,
+    "react/jsx-closing-tag-location": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-closing-bracket-location": 0,
+    "react/no-did-update-set-state": 0,
+    "react/no-unknown-property": 0,
+    "react/no-access-state-in-setstate": 0,
+    "consistent-return": 0,
+    "no-use-before-define": 0,
+    "no-unused-expressions": 0,
+    "no-prototype-builtins": 0,
+    "array-callback-return": 0,
+    "react/no-unescaped-entities": 0,
+    "no-useless-constructor": 0,
+    "prefer-promise-reject-errors": 0,
+    "import/prefer-default-export": 0,
+    "react/no-did-mount-set-state": 0,
+    "react/jsx-no-duplicate-props": 0,
+    "func-names": 0,
     "react/jsx-filename-extension": [
       1,
       {
         "extensions": [".js"]
       }
     ],
+    "prefer-const": 0,
+    "prefer-template": 0,
+    "no-param-reassign": 0,
+    "import/extensions": 0,
 		"import/no-unresolved": "off",
-		"indent": ["error", 2],
+		"indent": ["error", 2, {
+      "ignoredNodes": ["TemplateLiteral"]
+    }],
     "react/jsx-indent": "off",
     "no-extend-native": 0,
     "no-restricted-globals": 0,
-    "no-unused-vars": "error",
+    "no-unused-vars": 0,
     "no-floating-decimal": "error",
     "no-constant-condition": "error",
-    "no-trailing-spaces": "error",
+    "no-trailing-spaces": 0,
     "no-throw-literal": 0,
+    "import/order": 0,
+    "import/newline-after-import": 0,
+    "prefer-destructuring": 0,
     "no-duplicate-imports": [
       "error",
       {
@@ -42,21 +80,23 @@
     ],
     "no-plusplus": 0,
     "no-debugger": "warn",
-    "no-console": "warn",
     "no-alert": "warn",
-    "no-undef": "error",
+    "class-methods-use-this": 0,
+    "no-undef": 0,
+    "no-sparse-arrays": 0,
     "no-cond-assign": [
       "error",
       "always"
     ],
-    "no-extra-boolean-cast": "error",
+    "no-extra-boolean-cast": 0,
     "no-inner-declarations": "error",
+    "react-hooks/rules-of-hooks": 0,
     "no-lone-blocks": "error",
-    "no-mixed-spaces-and-tabs": "error",
-    "no-return-assign": "error",
+    "no-mixed-spaces-and-tabs": 0,
+    "no-return-assign": "off",
     "no-self-assign": "error",
     "no-self-compare": "error",
-    "no-unneeded-ternary": "error",
+    "no-unneeded-ternary": 0,
     "no-unmodified-loop-condition": "error",
     "no-unreachable": "error",
     "no-unsafe-negation": "error",
@@ -68,8 +108,16 @@
       "error",
       "never"
     ],
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/iframe-has-title": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/label-has-associated-control": 0,
     "default-case": 0,
     "valid-typeof": "error",
+    "object-shorthand": 0,
+    "no-console": 0,
     "rest-spread-spacing": [
       "error",
       "never"
@@ -78,26 +126,14 @@
       "error",
       "inside"
     ],
-    "semi": [
-      "error",
-      "always"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "jsx-quotes": [
-      "error",
-      "prefer-double"
-    ],
+    "semi": 0,
+    "quotes": 0,
+    "jsx-quotes": 0,
     "prefer-spread": [
       "error"
     ],
     "use-isnan": "error",
-    "template-curly-spacing": [
-      "error",
-      "never"
-    ],
+    "template-curly-spacing": 0,
     "spaced-comment": [
       "error",
       "always"
@@ -117,17 +153,14 @@
         "nonwords": false
       }
     ],
-    "space-before-function-paren": [
-      "error",
-      {
-        "anonymous": "always",
-        "named": "always",
-        "asyncArrow": "always"
-      }
-    ],
+    "no-useless-escape": 0,
+    "space-before-function-paren": 0,
     "new-cap": "error",
+    "eqeqeq": 0,
+    "no-underscore-dangle": 0,
+    "radix": 0,
     "new-parens": "error",
-    "camelcase": "error",
+    "camelcase": 0,
     "eol-last": [
       "error",
       "always"
@@ -140,21 +173,15 @@
       "error",
       "property"
     ],
-    "comma-dangle": [
-      "error",
-      "never"
-    ],
+    "comma-dangle": 0,
     "comma-style": [
       "error",
       "last"
     ],
-    "comma-spacing": [
-      "error",
-      {
-        "before": false,
-        "after": true
-      }
-    ],
+    "comma-spacing": 0,
+    "react/sort-comp": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/no-array-index-key": 0,
     "block-spacing": [
       "error",
       "always"
@@ -164,7 +191,7 @@
       "1tbs"
     ],
     "curly": "error",
-    "handle-callback-err": "error",
+    "handle-callback-err": 0,
     "array-bracket-spacing": [
       "error",
       "never"
