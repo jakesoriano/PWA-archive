@@ -111,6 +111,9 @@
 		"hideBottomBar": true,
 		"contents": [
 			{
+				"component": "Countdown"
+			},
+			{
 				"component": "HomeFeatures"
 			},
 			{
