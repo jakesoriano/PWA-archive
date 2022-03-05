@@ -9,7 +9,7 @@ import {
   getBarangay,
   displayPageLoader,
   showAlertBox,
-  circleModal
+  circleModal,
 } from '_helpers';
 import {
   FormGroup,
@@ -76,7 +76,7 @@ class PostVolunteerAnnouncement extends Component {
       regionOptions: getRegions(),
       provinceOptions: null,
       municipalityOptions: null,
-      barangayOptions: null
+      barangayOptions: null,
     };
     this.state = this.initialState;
   }
@@ -191,10 +191,11 @@ class PostVolunteerAnnouncement extends Component {
 	    },
 	    otherNeeds: {
 	      ...this.state.otherNeeds,
-	      value: value !== 'Others not specified' ? '' : this.state.otherNeeds.value,
+	      value:
+					value !== 'Others not specified' ? '' : this.state.otherNeeds.value,
 	      hasError: false,
 	      error: false,
-	    }
+	    },
 	  });
 	};
 
@@ -218,7 +219,8 @@ class PostVolunteerAnnouncement extends Component {
 			!this.state.barangay.value ||
 			// !this.state.volunteers.value ||
 			!this.state.needs.value ||
-			(this.state.needs.value === 'Others not specified' && !this.state.otherNeeds.value)
+			(this.state.needs.value === 'Others not specified' &&
+				!this.state.otherNeeds.value)
 	  ) {
 	    this.onDateChange(this.state.date.value);
 	    this.onRegionChange(this.state.region.value);
@@ -238,7 +240,10 @@ class PostVolunteerAnnouncement extends Component {
 	      municipality: this.state.municipality.value,
 	      barangay: this.state.barangay.value,
 	      noOfVolunteers: parseInt(this.state.volunteers.value || '0'),
-	      needs: this.state.needs.value !== 'Others not specified' ? this.state.needs.value : this.state.otherNeeds.value
+	      needs:
+					this.state.needs.value !== 'Others not specified'
+					  ? this.state.needs.value
+					  : this.state.otherNeeds.value,
 	    };
 	    displayPageLoader(true);
 	    postVolunteerAnnouncement(userData)
@@ -246,15 +251,15 @@ class PostVolunteerAnnouncement extends Component {
 	        displayPageLoader(false);
 	        if (res.success) {
 	          this.setState({
-	            ...this.initialState
+	            ...this.initialState,
 	          });
 	          circleModal({
 	            title: getTranslation('VOLUNTEER_ANNOUNCEMENT_SUCCESS'),
 	            content: getTranslation('VOLUNTEER_ANNOUNCEMENT_MSG'),
 	            link: {
 	              url: '/community-volunteer',
-	              text: getTranslation('GOTO_VOLUNTEER_PAGE')
-	            }
+	              text: getTranslation('GOTO_VOLUNTEER_PAGE'),
+	            },
 	          });
 	        } else {
 	          showAlertBox({
@@ -284,13 +289,12 @@ class PostVolunteerAnnouncement extends Component {
 	    provinceOptions,
 	    municipalityOptions,
 	    barangayOptions,
-	    needsOptions
+	    needsOptions,
 	  }
 	) => {
 	  return (
 	    <div className={style.volunteerAnnouncementWrap}>
 	      <form className={style.form}>
-					
 	        <FormGroup label="CONTENT_DATE" hasError={date.hasError}>
 	          <FormInput
 	            value={date.value}
@@ -317,7 +321,7 @@ class PostVolunteerAnnouncement extends Component {
 	            onBlur={(e) => {
 	              this.onRegionChange(e.target.value);
 	            }}
-	            onIonChangenput={(e) => {
+	            onChange={(e) => {
 	              this.onRegionChange(e.target.value);
 	            }}
 	            hasError={region.hasError}
@@ -336,7 +340,7 @@ class PostVolunteerAnnouncement extends Component {
 	            onBlur={(e) => {
 	              this.onProvinceChange(e.target.value);
 	            }}
-	            onIonChangenput={(e) => {
+	            onChange={(e) => {
 	              this.onProvinceChange(e.target.value);
 	            }}
 	            hasError={province.hasError}
@@ -355,7 +359,7 @@ class PostVolunteerAnnouncement extends Component {
 	            onBlur={(e) => {
 	              this.onMunicipalityChange(e.target.value);
 	            }}
-	            onIonChangenput={(e) => {
+	            onChange={(e) => {
 	              this.onMunicipalityChange(e.target.value);
 	            }}
 	            hasError={municipality.hasError}
@@ -374,7 +378,7 @@ class PostVolunteerAnnouncement extends Component {
 	            onBlur={(e) => {
 	              this.onBarangayChange(e.target.value);
 	            }}
-	            onIonChangenput={(e) => {
+	            onChange={(e) => {
 	              this.onBarangayChange(e.target.value);
 	            }}
 	            hasError={barangay.hasError}
@@ -401,7 +405,7 @@ class PostVolunteerAnnouncement extends Component {
 
 	        <FormGroup label="NEEDS" hasError={needs.hasError}>
 	          <div className={style.radioWrap}>
-	            {needsOptions.map(i => (
+	            {needsOptions.map((i) => (
 	              <FormInput
 	                type="radio"
 	                label={i.value}

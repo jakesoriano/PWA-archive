@@ -490,7 +490,7 @@ class EditProfile extends Component {
 	            onBlur={(e) => {
 	              this.onRegionChange(e.target.value);
 	            }}
-	            onIonChangenput={(e) => {
+	            onChange={(e) => {
 	              this.onRegionChange(e.target.value);
 	            }}
 	            hasError={region.hasError}
@@ -510,7 +510,7 @@ class EditProfile extends Component {
 	              onBlur={(e) => {
 	                this.onProvinceChange(e.target.value);
 	              }}
-	              onIonChangenput={(e) => {
+	              onChange={(e) => {
 	                this.onProvinceChange(e.target.value);
 	              }}
 	              hasError={province.hasError}
@@ -531,7 +531,7 @@ class EditProfile extends Component {
 	              onBlur={(e) => {
 	                this.onMunicipalityChange(e.target.value);
 	              }}
-	              onIonChangenput={(e) => {
+	              onChange={(e) => {
 	                this.onMunicipalityChange(e.target.value);
 	              }}
 	              hasError={municipality.hasError}
@@ -552,7 +552,7 @@ class EditProfile extends Component {
 	              onBlur={(e) => {
 	                this.onBarangayChange(e.target.value);
 	              }}
-	              onIonChangenput={(e) => {
+	              onChange={(e) => {
 	                this.onBarangayChange(e.target.value);
 	              }}
 	              hasError={barangay.hasError}

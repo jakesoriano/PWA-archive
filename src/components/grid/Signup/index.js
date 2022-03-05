@@ -11,7 +11,7 @@ import {
   getMunicipality,
   getBarangay,
   displayPageLoader,
-  showAlertBox
+  showAlertBox,
 } from '_helpers';
 import {
   FormGroup,
@@ -100,7 +100,10 @@ class Signup extends Component {
         hasError: false,
       },
       isRegisteredVoter: {
-        value: props.signup && props.signup.isRegisteredVoter === false ? 'no' : 'yes',
+        value:
+					props.signup && props.signup.isRegisteredVoter === false
+					  ? 'no'
+					  : 'yes',
         error: '',
         message: '',
         hasError: false,
@@ -169,17 +172,20 @@ class Signup extends Component {
 	};
 
 	onDobChange = (value) => {
-	  this.setState({
-	    birthday: {
-	      ...this.state.birthday,
-	      value: value,
-	      hasError: !Boolean(value),
-	      error: !Boolean(value) ? 'REQUIRED' : '',
+	  this.setState(
+	    {
+	      birthday: {
+	        ...this.state.birthday,
+	        value: value,
+	        hasError: !Boolean(value),
+	        error: !Boolean(value) ? 'REQUIRED' : '',
+	      },
 	    },
-	  }, () =>  {
-	    // ios workaround
-	    this.validateDob(value);
-	  });
+	    () => {
+	      // ios workaround
+	      this.validateDob(value);
+	    }
+	  );
 	};
 
 	onMobileChange = (value) => {
@@ -301,8 +307,8 @@ class Signup extends Component {
 	        value: value,
 	        hasError: true,
 	        error: getTranslation('ERRMSG_DOB'),
-	      }
-	    })
+	      },
+	    });
 	  }
 	};
 
@@ -353,13 +359,17 @@ class Signup extends Component {
 	              province: this.state.province.value,
 	              municipality: this.state.municipality.value,
 	              barangay: this.state.barangay.value,
-	              isRegisteredVoter: this.state.isRegisteredVoter.value === 'yes' ? true : false,
-	              parentRefCode: this.state.parentRefCode.value.length < 12 ? this.state.parentRefCode.value.toUpperCase() : this.state.parentRefCode.value,
+	              isRegisteredVoter:
+									this.state.isRegisteredVoter.value === 'yes' ? true : false,
+	              parentRefCode:
+									this.state.parentRefCode.value.length < 12
+									  ? this.state.parentRefCode.value.toUpperCase()
+									  : this.state.parentRefCode.value,
 	              deviceId: this.props.deviceId,
 	              socType: this.props.signup.socType,
 	              socId: this.props.signup.socId,
 	              image: '',
-	              industry: ''
+	              industry: '',
 	            };
 	            displayPageLoader(true);
 	            completeSignup(userData)
@@ -371,7 +381,7 @@ class Signup extends Component {
 	                  route(`/signup-success`);
 	                } else {
 	                  showAlertBox({
-	                    message: res.error || 'SOMETHING_WRONG'
+	                    message: res.error || 'SOMETHING_WRONG',
 	                  });
 	                }
 	              })
@@ -390,7 +400,7 @@ class Signup extends Component {
 	        }
 	      } else {
 	        showAlertBox({
-	          message: 'SOMETHING_WRONG'
+	          message: 'SOMETHING_WRONG',
 	        });
 	      }
 	    });
@@ -520,7 +530,11 @@ class Signup extends Component {
 						/>
 					</FormGroup> */}
 
-	        <FormGroup label="NAME" hasError={fname.hasError} className={style.formGroup}>
+	        <FormGroup
+	          label="NAME"
+	          hasError={fname.hasError}
+	          className={style.formGroup}
+	        >
 	          <FormInput
 	            value={fname.value}
 	            type="text"
@@ -537,7 +551,11 @@ class Signup extends Component {
 	          />
 	        </FormGroup>
 
-	        <FormGroup label="MOBILE_NUMBER" hasError={mobile.hasError} className={style.formGroup}>
+	        <FormGroup
+	          label="MOBILE_NUMBER"
+	          hasError={mobile.hasError}
+	          className={style.formGroup}
+	        >
 	          <FormInput
 	            value={mobile.value}
 	            type="number"
@@ -566,7 +584,7 @@ class Signup extends Component {
 							onBlur={(e) => {
 								this.onRegionChange(e.target.value);
 							}}
-							onIonChangenput={(e) => {
+							onChange={(e) => {
 								this.onRegionChange(e.target.value);
 							}}
 							hasError={region.hasError}
@@ -585,7 +603,7 @@ class Signup extends Component {
 							onBlur={(e) => {
 								this.onProvinceChange(e.target.value);
 							}}
-							onIonChangenput={(e) => {
+							onChange={(e) => {
 								this.onProvinceChange(e.target.value);
 							}}
 							hasError={province.hasError}
@@ -604,7 +622,7 @@ class Signup extends Component {
 							onBlur={(e) => {
 								this.onMunicipalityChange(e.target.value);
 							}}
-							onIonChangenput={(e) => {
+							onChange={(e) => {
 								this.onMunicipalityChange(e.target.value);
 							}}
 							hasError={municipality.hasError}
@@ -623,7 +641,7 @@ class Signup extends Component {
 							onBlur={(e) => {
 								this.onBarangayChange(e.target.value);
 							}}
-							onIonChangenput={(e) => {
+							onChange={(e) => {
 								this.onBarangayChange(e.target.value);
 							}}
 							hasError={barangay.hasError}
@@ -662,7 +680,11 @@ class Signup extends Component {
 						</div>
 					</FormGroup> */}
 
-	        <FormGroup label="REFERRAL_CODE" hasError={parentRefCode.hasError} className={style.formGroup}>
+	        <FormGroup
+	          label="REFERRAL_CODE"
+	          hasError={parentRefCode.hasError}
+	          className={style.formGroup}
+	        >
 	          <FormInput
 	            value={parentRefCode.value}
 	            type="text"
