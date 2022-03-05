@@ -265,6 +265,9 @@ class EditProfile extends Component {
 	  const spliteValue = (value || '').split('-');
 	  if (
 	    maxDate < selectedDate ||
+			Boolean(
+			  new Date(value).toString().toLowerCase().indexOf('invalid') > -1
+			) ||
 			!(spliteValue[0] && spliteValue[0].length === 4) ||
 			!(
 			  spliteValue[1] &&
