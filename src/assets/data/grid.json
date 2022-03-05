@@ -132,7 +132,16 @@
 		"withBack": true,
 		"contents": [
 			{
-				"component": "Invite"
+				"component": "InviteHeader"
+			},
+			{
+				"component": "InvitedCount"
+			},
+			{
+				"component": "TextAndButtonCard"
+			},
+			{
+				"component": "TopGlobalAndComment"
 			}
 		]
 	},

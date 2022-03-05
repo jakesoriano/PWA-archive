@@ -13,3 +13,7 @@ export function getConfigByKey (key, subKey) {
 export function getDefaultAvatar() {
   return 'assets/images/avatar.png';
 }
+
+export function getShoutoutMessage(name) {
+  return (<p className={`bold`}>Shoutout to <span className={`bold`}>{name}</span>! Number 1 KakamPink inviter! Galing!</p>);
+}

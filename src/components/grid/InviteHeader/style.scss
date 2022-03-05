@@ -1,0 +1,48 @@
+@import '../../../style/variables.scss';
+.inviteHeaderWrap {
+  margin-bottom: 15px;
+  text-align: center;
+  * {
+      color: #231f20;
+      font-size: 0.9rem;
+    }
+  .referralCode {
+    padding: 5px 15px 10px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+    .text {
+      text-align: left;
+    }
+    .code {
+      text-align: left;
+      display: flex;
+      color: #ce0f69;
+      padding-left: 10px;
+    }
+    .copyImg {
+      width: 20px;
+      padding-bottom: 20px;
+      margin-left: 10px;
+    }
+  }
+  button {
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: $primary;
+    align-items: center;
+    background: $gray_bg;
+    .img {
+        width: 35px;
+        padding-bottom: 35px;
+        margin-right: 20px;
+    }
+  }
+}

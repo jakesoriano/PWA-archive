@@ -1,7 +1,7 @@
 {
 	"PAGE_LANDING": "Landing Page",
 	"PAGE_HOME": "Home",
-	"PAGE_INVITE": "Invite",
+	"PAGE_INVITE": "Invite Others",
 	"PAGE_LEADERBOARD": "Leaderboard",
 	"PAGE_COMMUNITY": "Community",
 	"PAGE_PROFILE": "My Profile",
@@ -307,5 +307,14 @@
 	"GET_100PTS": "Get 100 points!",
 	"RECRUIT": "Mag-recruit",
 	"RECRUIT_MSG": "tayo! 100 points for each!",
-	"IPANALO_NA10": "#ipanaloNa"
+	"IPANALO_NA10": "#ipanaloNa",
+	"LEADERBOARD_CARD_MSG": "Brag, maging proud na KakamPink. May surprise na nagaantay mula sa mga kapwa KakamPink natin.",
+	"LEADERBOARD_CARD_BTN": "Maging parte ng Leaderboard",
+	"DISCORD_CARD_MSG": "Nahihirapan ka ba kumausap ng mahal sa buhay tungkol kay Leni?",
+	"DISCORD_CARD_BTN": "Sumali sa Discord Group",
+	"INVITE_RECRUIT_MSG": "Mag recruite tayo! 100 points for each!",
+	"TOTAL_INVITED": "Total Invited",
+	"TOTAL_POINTS": "Total Points",
+	"FEATURED": "Featured",
+	"NO_INVITE": "Make your first invite today!"
 }
