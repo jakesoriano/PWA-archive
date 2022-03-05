@@ -594,7 +594,7 @@ class EditProfile extends Component {
 
 	        <ButtonDescription
 	          onClickCallback={this.handleContinue}
-	          text="CONTINUE"
+	          text="SAVE_PROFILE"
 	          isDisabled={this.state.isReading}
 	          id="update-profile-submit"
 	        />

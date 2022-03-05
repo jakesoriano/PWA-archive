@@ -74,6 +74,7 @@
       border: 1px solid transparent;
       border-radius: 2px;
       background-color: $primary;
+      min-width: 116px;
       &.followed {
         background-color: $white;
         border-color: $blue;
