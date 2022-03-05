@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'unistore/preact';
-import { ImageLoader , LoaderRing } from '_components/core';
+import { ImageLoader, LoaderRing } from '_components/core';
 import { fetchCommunityVolunteers } from '_mutations';
 import { getTranslation, isUserUpdatedProfile, dateNewsFormat } from '_helpers';
 import style from './style';
@@ -51,7 +51,7 @@ class CommunityVolunteer extends Component {
 
 	isOwnData = (data) => {
 	  return data?.userId === this.props.authUser?.profile?._id;
-	};	
+	};
 
 	handleShowMore = () => {
 	  if (!this.state.moreFetching) {
@@ -71,19 +71,21 @@ class CommunityVolunteer extends Component {
 	  if (this.isOwnData(data)) {
 	    route(`messages`);
 	  } else {
-	    let feedId = [data?.userId, this.props.authUser?.profile?._id, data?.id].sort().join(':');
-	    route(`${this.props.page}/messages-chat?feedId=${feedId}&listingId=${data.id}`);
+	    let feedId = [data?.userId, this.props.authUser?.profile?._id, data?.id]
+	      .sort()
+	      .join(':');
+	    route(
+				`${this.props.page}/messages-chat?feedId=${feedId}&listingId=${data.id}`
+	    );
 	  }
-	}
+	};
 
 	render() {
 	  // filtering community data
-	  const filteredData = this.state?.data?.sort((a,b) => b?.date - a?.date)
+	  const filteredData = this.state?.data?.sort((a, b) => b?.date - a?.date);
 	  const communityData = filteredData.filter((data) => {
 	    const communityToLower = data?.community?.name?.toLowerCase();
-	    return communityToLower?.includes(
-				this?.state?.search?.toLowerCase()
-			);
+	    return communityToLower?.includes(this?.state?.search?.toLowerCase());
 	  });
 
 	  if (!isUserUpdatedProfile()) {
@@ -97,9 +99,11 @@ class CommunityVolunteer extends Component {
 	      <div className={style.volunteer}>
 	        {/* Be a Volunteer */}
 	        <div className={style.title}>
-	          <p className='extraBold'>
-				  <span className='extraBold'>{getTranslation('COMMUNITY_BE_A_VOLUNTEER')}</span>
-				  &nbsp;{getTranslation('ACCOMPLISH_MORE')}
+	          <p className="extraBold">
+	            <span className="extraBold">
+	              {getTranslation('COMMUNITY_BE_A_VOLUNTEER')}
+	            </span>
+							&nbsp;{getTranslation('ACCOMPLISH_MORE')}
 	          </p>
 	        </div>
 
@@ -135,7 +139,9 @@ class CommunityVolunteer extends Component {
 	      <div className={style.communityVolunteerListing}>
 	        {/* Title */}
 	        <div className={style.title}>
-	          <p className='extraBold'>{getTranslation('COMMUNITY_VOLUNTEER_TITLE')}</p>
+	          <p className="extraBold">
+	            {getTranslation('COMMUNITY_VOLUNTEER_TITLE')}
+	          </p>
 	        </div>
 
 	        {/* List */}
@@ -143,9 +149,11 @@ class CommunityVolunteer extends Component {
 	          {communityData?.map((data) => {
 	            return (
 	              <div
-	                className={`${style.card} ${this.isOwnData(data) ? style.ownData : ''}`}
+	                className={`${style.card} ${
+										this.isOwnData(data) ? style.ownData : ''
+									}`}
 	                onClick={() => {
-	                  this.onListingClicked(data) 
+	                  this.onListingClicked(data);
 	                }}
 	              >
 	                {/* Icon */}
@@ -165,7 +173,7 @@ class CommunityVolunteer extends Component {
 	                  <p>{data?.needs}</p>
 	                  <p>{dateNewsFormat(data?.date)}</p>
 	                  <p>
-	                    {data?.province}, {data?.barangay} {data?.municipality} 
+	                    {data?.province}, {data?.barangay} {data?.municipality}
 	                  </p>
 	                  {/* <p>
 											{data?.noOfVolunteers} {getTranslation('KAKAMPINKS')}

@@ -262,12 +262,18 @@ class EditProfile extends Component {
 	validateDob = (value) => {
 	  const maxDate = new Date(getMaxDOBDate()).getTime();
 	  const selectedDate = new Date(value).getTime();
-	  const spliteValue =  (value || '').split('-');
+	  const spliteValue = (value || '').split('-');
 	  if (
-	    maxDate < selectedDate || 
-			!(spliteValue[0] && spliteValue[0].length === 4) || 
-			!(spliteValue[1] && (spliteValue[1].length === 1 || spliteValue[1].length === 2)) || 
-			!(spliteValue[2] && (spliteValue[2].length === 1 || spliteValue[1].length === 2))
+	    maxDate < selectedDate ||
+			!(spliteValue[0] && spliteValue[0].length === 4) ||
+			!(
+			  spliteValue[1] &&
+				(spliteValue[1].length === 1 || spliteValue[1].length === 2)
+			) ||
+			!(
+			  spliteValue[2] &&
+				(spliteValue[2].length === 1 || spliteValue[1].length === 2)
+			)
 	  ) {
 	    this.setState({
 	      birthday: {
@@ -285,7 +291,8 @@ class EditProfile extends Component {
 	    !this.state.fname.value ||
 			!this.state.lname.value ||
 			!this.state.gender.value ||
-			(!this.state.birthday.value || this.state.birthday.error) ||
+			!this.state.birthday.value ||
+			this.state.birthday.error ||
 			!this.state.region.value ||
 			!this.state.province.value ||
 			!this.state.municipality.value ||
@@ -369,10 +376,7 @@ class EditProfile extends Component {
 	  return (
 	    <div className={style.profileWrap}>
 	      <form className={style.form}>
-	        <FormGroup
-	          label="First Name"
-	          hasError={fname.hasError}
-	        >
+	        <FormGroup label="First Name" hasError={fname.hasError}>
 	          <FormInput
 	            className={style.name}
 	            style={{ error: style.name }}
@@ -390,10 +394,7 @@ class EditProfile extends Component {
 	            message={fname.message}
 	          />
 	        </FormGroup>
-	        <FormGroup
-	          label="Middle Name"
-	          hasError={mname.hasError}
-	        >
+	        <FormGroup label="Middle Name" hasError={mname.hasError}>
 	          <FormInput
 	            className={style.name}
 	            style={{ error: style.name }}
@@ -411,10 +412,7 @@ class EditProfile extends Component {
 	            message={mname.message}
 	          />
 	        </FormGroup>
-	        <FormGroup
-	          label="Last Name"
-	          hasError={lname.hasError}
-	        >
+	        <FormGroup label="Last Name" hasError={lname.hasError}>
 	          <FormInput
 	            className={style.name}
 	            style={{ error: style.name }}
@@ -501,62 +499,68 @@ class EditProfile extends Component {
 	          />
 	        </FormGroup>
 
-	        <FormGroup label="PROVINCE" hasError={province.hasError}>
-	          <FormDropdown
-	            className={style.province}
-	            value={province.value}
-	            options={provinceOptions}
-	            getValue={(option) => option.value}
-	            getText={(option) => option.text}
-	            onBlur={(e) => {
-	              this.onProvinceChange(e.target.value);
-	            }}
-	            onIonChangenput={(e) => {
-	              this.onProvinceChange(e.target.value);
-	            }}
-	            hasError={province.hasError}
-	            error={province.error}
-	            message={province.message}
-	          />
-	        </FormGroup>
+	        {provinceOptions && provinceOptions.length && (
+	          <FormGroup label="PROVINCE" hasError={province.hasError}>
+	            <FormDropdown
+	              className={style.province}
+	              value={province.value}
+	              options={provinceOptions}
+	              getValue={(option) => option.value}
+	              getText={(option) => option.text}
+	              onBlur={(e) => {
+	                this.onProvinceChange(e.target.value);
+	              }}
+	              onIonChangenput={(e) => {
+	                this.onProvinceChange(e.target.value);
+	              }}
+	              hasError={province.hasError}
+	              error={province.error}
+	              message={province.message}
+	            />
+	          </FormGroup>
+	        )}
 
-	        <FormGroup label="MUNICIPALITY" hasError={municipality.hasError}>
-	          <FormDropdown
-	            className={style.municipality}
-	            value={municipality.value}
-	            options={municipalityOptions}
-	            getValue={(option) => option.value}
-	            getText={(option) => option.text}
-	            onBlur={(e) => {
-	              this.onMunicipalityChange(e.target.value);
-	            }}
-	            onIonChangenput={(e) => {
-	              this.onMunicipalityChange(e.target.value);
-	            }}
-	            hasError={municipality.hasError}
-	            error={municipality.error}
-	            message={municipality.message}
-	          />
-	        </FormGroup>
+	        {municipalityOptions && municipalityOptions.length && (
+	          <FormGroup label="MUNICIPALITY" hasError={municipality.hasError}>
+	            <FormDropdown
+	              className={style.municipality}
+	              value={municipality.value}
+	              options={municipalityOptions}
+	              getValue={(option) => option.value}
+	              getText={(option) => option.text}
+	              onBlur={(e) => {
+	                this.onMunicipalityChange(e.target.value);
+	              }}
+	              onIonChangenput={(e) => {
+	                this.onMunicipalityChange(e.target.value);
+	              }}
+	              hasError={municipality.hasError}
+	              error={municipality.error}
+	              message={municipality.message}
+	            />
+	          </FormGroup>
+	        )}
 
-	        <FormGroup label="BARANGAY" hasError={barangay.hasError}>
-	          <FormDropdown
-	            className={style.barangay}
-	            value={barangay.value}
-	            options={barangayOptions}
-	            getValue={(option) => option.value}
-	            getText={(option) => option.text}
-	            onBlur={(e) => {
-	              this.onBarangayChange(e.target.value);
-	            }}
-	            onIonChangenput={(e) => {
-	              this.onBarangayChange(e.target.value);
-	            }}
-	            hasError={barangay.hasError}
-	            error={barangay.error}
-	            message={barangay.message}
-	          />
-	        </FormGroup>
+	        {barangayOptions && barangayOptions.length && (
+	          <FormGroup label="BARANGAY" hasError={barangay.hasError}>
+	            <FormDropdown
+	              className={style.barangay}
+	              value={barangay.value}
+	              options={barangayOptions}
+	              getValue={(option) => option.value}
+	              getText={(option) => option.text}
+	              onBlur={(e) => {
+	                this.onBarangayChange(e.target.value);
+	              }}
+	              onIonChangenput={(e) => {
+	                this.onBarangayChange(e.target.value);
+	              }}
+	              hasError={barangay.hasError}
+	              error={barangay.error}
+	              message={barangay.message}
+	            />
+	          </FormGroup>
+	        )}
 
 	        <FormGroup
 	          label="REGISTERED_VOTER"
