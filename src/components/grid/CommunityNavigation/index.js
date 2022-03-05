@@ -35,7 +35,7 @@ class CommunityNavigation extends Component {
 	    >
 	      <div>
 	        <ImageLoader
-	          src={'assets/icons/community_volunteer.png' || getDefaultAvatar()}
+	          src={'assets/images/community_volunteer_blue.png' || getDefaultAvatar()}
 	          style={{ container: style.icon }}
 	          lazy
 	        />
@@ -54,7 +54,7 @@ class CommunityNavigation extends Component {
 	      <div>
 	        <ImageLoader
 	          src={
-	            'assets/icons/community_crowdsourcing.png' || getDefaultAvatar()
+	            'assets/images/community_crowdsourcing_blue.png' || getDefaultAvatar()
 	          }
 	          style={{ container: style.icon }}
 	          lazy
@@ -74,7 +74,7 @@ class CommunityNavigation extends Component {
 	    >
 	      <div>
 	        <ImageLoader
-	          src={'assets/icons/community_events_icon.png' || getDefaultAvatar()}
+	          src={'assets/images/community_events_blue.png' || getDefaultAvatar()}
 	          style={{ container: style.icon }}
 	          lazy
 	        />
@@ -93,7 +93,7 @@ class CommunityNavigation extends Component {
 	      <div>
 	        <ImageLoader
 	          src={
-	            'assets/icons/community_announcements_icon.png' ||
+	            'assets/images/community_announcements_blue.png' ||
 							getDefaultAvatar()
 	          }
 	          style={{ container: style.icon }}

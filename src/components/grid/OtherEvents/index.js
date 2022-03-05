@@ -62,7 +62,8 @@ nativeShare
 	renderDetails = (data) => {
 	  if (data) {
 	    return (
-	      <div className={style.pWrap}>
+	      <div>
+	        <div className={style.backDrop}></div>
 	        <a className={`${style.pClose}`}
 	          onClick={() => {
 	            this.setState({
@@ -70,39 +71,41 @@ nativeShare
 	            });
 	          }}>
 	          <ImageLoader
-	            src="assets/images/closebutton.png"
+	            src="assets/images/icon_close_white.png"
 	            style={{ container: style.closeBtn }}
 	          />
 	        </a>
-	        <div className={`${style.pHeader} ${style.pHeaderEvents}`}>
-	          <ImageLoader
-	            src={data.image}
-	            style={{ container: style.pImage }}
-	            lazy />
-	          <div className={style.pEvents}>
+	        <div className={style.pWrap}>
+	          <div className={`${style.pHeader} ${style.pHeaderEvents}`}>
 	            <p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
-	            <p className={`${style.pDate}`}>
-	              {`${getTranslation('WHEN')}: ${dateEventFormat(data.date)}`} <br />
-	              {`${getTranslation('WHERE')}: ${data.location}`}
-	            </p>
+	            <ImageLoader
+	              src={data.image}
+	              style={{ container: style.pImage }}
+	              lazy />
+	            <div className={style.pEvents}>
+	              <p className={`${style.pDate}`}>
+	                {`${getTranslation('WHEN')}: ${dateEventFormat(data.date)}`} <br />
+	                {`${getTranslation('WHERE')}: ${data.location}`}
+	              </p>
+	            </div>
 	          </div>
+	          <p
+	            className={style.pContent}
+	            dangerouslySetInnerHTML={{
+	              __html: data.desc
+	            }}
+	          />
+	          <a className={style.pShare}
+	            onClick={() => {
+	              this.onShareEvent(this.state.selectedItem);
+	            }}>
+	            <ImageLoader
+	              id={'event-like'}
+	              src="assets/images/share_icon_white.png"
+	              style={{ container: style.pIconShare }} />
+	            <span>{getTranslation('SHARE')}</span>
+	          </a>
 	        </div>
-	        <p
-	          className={style.pContent}
-	          dangerouslySetInnerHTML={{
-	            __html: data.desc
-	          }}
-	        />
-	        <a className={style.pShare}
-	          onClick={() => {
-	            this.onShareEvent(this.state.selectedItem);
-	          }}>
-	          <ImageLoader
-	            id={'event-like'}
-	            src="assets/images/share_icon_white.png"
-	            style={{ container: style.pIconShare }} />
-	          <span>{getTranslation('SHARE')}</span>
-	        </a>
 	      </div>
 	    )
 	  }

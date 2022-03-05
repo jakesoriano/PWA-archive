@@ -262,7 +262,13 @@ class EditProfile extends Component {
 	validateDob = (value) => {
 	  const maxDate = new Date(getMaxDOBDate()).getTime();
 	  const selectedDate = new Date(value).getTime();
-	  if (maxDate < selectedDate) {
+	  const spliteValue =  (value || '').split('-');
+	  if (
+	    maxDate < selectedDate || 
+			!(spliteValue[0] && spliteValue[0].length === 4) || 
+			!(spliteValue[1] && (spliteValue[1].length === 1 || spliteValue[1].length === 2)) || 
+			!(spliteValue[2] && (spliteValue[2].length === 1 || spliteValue[1].length === 2))
+	  ) {
 	    this.setState({
 	      birthday: {
 	        ...this.state.birthday,
@@ -279,7 +285,7 @@ class EditProfile extends Component {
 	    !this.state.fname.value ||
 			!this.state.lname.value ||
 			!this.state.gender.value ||
-			!this.state.birthday.value ||
+			(!this.state.birthday.value || this.state.birthday.error) ||
 			!this.state.region.value ||
 			!this.state.province.value ||
 			!this.state.municipality.value ||
@@ -364,8 +370,8 @@ class EditProfile extends Component {
 	    <div className={style.profileWrap}>
 	      <form className={style.form}>
 	        <FormGroup
-	          label="NAME"
-	          hasError={fname.hasError || mname.hasError || lname.hasError}
+	          label="First Name"
+	          hasError={fname.hasError}
 	        >
 	          <FormInput
 	            className={style.name}
@@ -383,6 +389,11 @@ class EditProfile extends Component {
 	            error={fname.error}
 	            message={fname.message}
 	          />
+	        </FormGroup>
+	        <FormGroup
+	          label="Middle Name"
+	          hasError={mname.hasError}
+	        >
 	          <FormInput
 	            className={style.name}
 	            style={{ error: style.name }}
@@ -399,6 +410,11 @@ class EditProfile extends Component {
 	            error={mname.error}
 	            message={mname.message}
 	          />
+	        </FormGroup>
+	        <FormGroup
+	          label="Last Name"
+	          hasError={lname.hasError}
+	        >
 	          <FormInput
 	            className={style.name}
 	            style={{ error: style.name }}
@@ -417,7 +433,7 @@ class EditProfile extends Component {
 	          />
 	        </FormGroup>
 
-	        <FormGroup label="GENDER" hasError={gender.hasError}>
+	        <FormGroup label="Gender" hasError={gender.hasError}>
 	          <div className={style.radioWrap}>
 	            <FormInput
 	              name="male"
@@ -447,13 +463,10 @@ class EditProfile extends Component {
 	        <FormGroup label="DATE_OF_BIRTH" hasError={birthday.hasError}>
 	          <FormInput
 	            value={birthday.value}
-	            type="date"
+	            type="custom-date"
 	            max={getMaxDOBDate()}
-	            onBlur={(e) => {
-	              this.onDobChange(e.target.value);
-	            }}
-	            onInput={(e) => {
-	              this.onDobChange(e.target.value);
+	            onInput={(date) => {
+	              this.onDobChange(date);
 	            }}
 	            hasError={birthday.hasError}
 	            error={birthday.error}

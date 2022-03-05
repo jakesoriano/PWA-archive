@@ -67,7 +67,7 @@ class LenipediaSearch extends Component {
         />
         <div id="lenipedia-search" onClick={this.handleSearch}>
           <ImageLoader
-            src={'assets/images/magnifying_icon.png'}
+            src={'assets/icons/icon_search_blue.png'}
             style={{ container: style.searchIcon }}
           />
         </div>

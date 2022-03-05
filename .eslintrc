@@ -58,7 +58,7 @@
     "no-param-reassign": 0,
     "import/extensions": 0,
 		"import/no-unresolved": "off",
-		"indent": ["error", 2, {
+		"indent": ["warn", 2, {
       "ignoredNodes": ["TemplateLiteral"]
     }],
     "react/jsx-indent": "off",

@@ -156,7 +156,8 @@ class NewsAndEvents extends Component {
 	renderDetails = (data) => {
 	  if (data) {
 	    return (
-	      <div className={style.pWrap}>
+	      <div>
+	        <div className={style.backDrop}></div>
 	        <a className={`${style.pClose}`}
 	          onClick={() => {
 	            this.setState({
@@ -164,52 +165,56 @@ class NewsAndEvents extends Component {
 	            });
 	          }}>
 	          <ImageLoader
-	            src="assets/images/closebutton.png"
+	            src="assets/images/icon_close_white.png"
 	            style={{ container: style.closeBtn }}
 	          />
 	        </a>
-	        <div className={`${style.pHeader} ${this.state.active === 'events' ? style.pHeaderEvents : ''}`}>
-	          <ImageLoader
-	            src={data.image}
-	            style={{ container: style.pImage }}
-	            lazy />
-	          {(this.state.active === 'news' || this.state.active === 'announcements') ? (
+	        <div className={style.pWrap}>
+	          <div className={`${style.pHeader} ${this.state.active === 'events' ? style.pHeaderEvents : ''}`}>
 	            <div className={style.pNews}>
 	              <p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
+	            </div>
+	            <ImageLoader
+	              src={data.image}
+	              style={{ container: style.pImage }}
+	              lazy />
+					
+	            <p className={style.source}>
+	              {getTranslation('SOURCE')}: <br />
 	              <a className={style.pLink} href={data.link}>{data.link}</a>
-	            </div>
-	          ) : (
-	            <div className={style.pEvents}>
-	              <p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
-	              <p className={`${style.pDate}`}>
-	                {`${getTranslation('WHEN')}: ${dateEventFormat(data.date)}`} <br />
-	                {`${getTranslation('WHERE')}: ${data.location}`}
-	              </p>
-	            </div>
-	          )}
+	            </p>
+	            {(this.state.active === 'events') && (
+	              <div className={style.pEvents}>
+	                <p className={`${style.pDate}`}>
+	                  {`${getTranslation('WHEN')}: ${dateEventFormat(data.date)}`} <br />
+	                  {`${getTranslation('WHERE')}: ${data.location}`}
+	                </p>
+	              </div>
+	            )}
+	          </div>
+	          <p
+	            className={style.pContent}
+	            dangerouslySetInnerHTML={{
+	              __html: data.desc
+	            }}
+	          />
+	          <a className={style.pShare}
+	            onClick={() => {
+	              if (this.state.active == 'news') {
+	                this.onShareNews(this.state.selectedItem);
+	              } else if (this.state.active == 'events') {
+	                this.onShareEvent(this.state.selectedItem);
+	              } else if (this.state.active == 'announcements') {
+	                this.onShareAnnouncement(this.state.selectedItem);
+	              }
+	            }}>
+	            <ImageLoader
+	              id={this.state.active === 'events' ? 'event-like' : 'announcement-like'}
+	              src="assets/images/share_icon_white.png"
+	              style={{ container: style.pIconShare }} />
+	            <span>{getTranslation('SHARE')}</span>
+	          </a>
 	        </div>
-	        <p
-	          className={style.pContent}
-	          dangerouslySetInnerHTML={{
-	            __html: data.desc
-	          }}
-	        />
-	        <a className={style.pShare}
-	          onClick={() => {
-	            if (this.state.active == 'news') {
-	              this.onShareNews(this.state.selectedItem);
-	            } else if (this.state.active == 'events') {
-	              this.onShareEvent(this.state.selectedItem);
-	            } else if (this.state.active == 'announcements') {
-	              this.onShareAnnouncement(this.state.selectedItem);
-	            }
-	          }}>
-	          <ImageLoader
-	            id={this.state.active === 'events' ? 'event-like' : 'announcement-like'}
-	            src="assets/images/share_icon_white.png"
-	            style={{ container: style.pIconShare }} />
-	          <span>{getTranslation('SHARE')}</span>
-	        </a>
 	      </div>
 	    )
 	  }

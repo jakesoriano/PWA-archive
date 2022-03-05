@@ -1,6 +1,5 @@
 @import '../../../style/variables.scss';
 .newsAndEvents {
-  background: $details_bg;
   margin: 0 15px 15px;
   border-radius: 10px;
   * {
@@ -9,18 +8,17 @@
   .tabWrap {
     display: flex;
     width: 100%;
-    background: #c1bbbb;
+    background: $primary_layout;
     border-radius: 10px 10px 0 0;
     overflow: hidden;
     span {
       flex-grow: 1;
       text-align: center;
-      color: #737373;
+      color: #fff;
       border-radius: 10px 10px 0 0;
       padding: 8px 10px;
       &.activeTab {
-        color: #fff;
-        background: $primary_layout;
+        background: $black;
       }
     }
   }
@@ -59,13 +57,29 @@
     }
   }
 }
+.backDrop {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+}
+.pClose {
+  position: absolute;
+  right: 5px;
+  top: -20px;
+  .closeBtn {
+    width: 30px;
+    height: 30px;
+  }
+}
 .pWrap {
   position: fixed;
-  top: 66px;
+  top: 100px;
   left: 10px;
   width: calc(100% - 20px);
-  height: calc(100% - 136px);
-  background: $details_bg;
+  height: calc(100% - 180px);
+  background: #fff;
   border-radius: 10px;
   z-index: 2;
   padding: 40px 10px 10px;
@@ -73,44 +87,26 @@
   * {
     color: #000;
   }
-  .pClose {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    .closeBtn {
-      width: 27px;
-      height: 27px;
-    }
-  }
   .pHeader {
     display: flex;
+    flex-direction: column;
     .pImage {
-      padding-bottom: 150px;
-      width: 120px;
+      padding-bottom: 56%;
+      width: 100%;
+      margin: 15px 0;
     }
     .pNews {
-      width: calc(100% - 120px);
-      padding-left: 15px;
       .pTitle{
-        font-size: 0.8rem;
+        font-size: 1.2rem;
         color: $primary_layout;
-      }
-      .pLink{
-        font-size: 0.6rem;
-        display: inline-block;
-        width: 100%;
-        margin-top: 10px;
+        text-align: center;
       }
     }
   }
   .pHeaderEvents {
     display: grid;
     text-align: center;
-    .pImage {
-      padding-bottom: 56%;
-      width: 100%;
-      margin: 0 auto 10px;
-    }
+    padding: 0 10px;
     .pEvents {
       * {
         font-size: 0.8rem;
@@ -126,8 +122,16 @@
       }
     }
   }
+  .source {
+    font-size: 0.875rem;
+    .pLink{
+      font-size: 0.6rem;
+    }
+  }
   .pContent {
     font-size: 0.8rem;
+    padding: 0 10px;
+    margin: 10px 0;
     br {
       display: block;
       content: "";
@@ -139,9 +143,11 @@
     display: flex;
     width: 100px;
     margin: 0 auto;
-    padding: 5px 10px;
+    padding: 10px 20px;
     width: max-content;
     margin-top: 20px;
+    border-radius: 6px;
+
     .pIconShare {
       padding-bottom: 18px;
       width: 18px;
@@ -149,8 +155,7 @@
     }
     span {
       color: #fff;
-      font-size: 0.8rem;
-      text-transform: uppercase;
+      font-size: 1rem;
     }
   }
 }

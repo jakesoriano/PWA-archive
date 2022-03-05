@@ -46,7 +46,7 @@ class FeaturedCommunities extends Component {
     route(`community-details`);
   }
 
-  renderItem = (item) => {
+  renderItem = (item, isFeatured) => {
     return (
       <div className={style.communityDetailsWrap}>
         <div onClick={() => {
@@ -61,19 +61,21 @@ class FeaturedCommunities extends Component {
         <div className={style.content}>
           <p class={`${style.heading} extraBold`}>{item.name}</p>
           <p className={style.followers}>{formatN(item.followers, 2) || 0} kakam-PINK</p>
-          {item.desc && <p className={style.desc}>{item.desc}</p>}
+          {item.desc && !isFeatured && <p className={style.desc}>{item.desc}</p>}
         </div>
-        <div class={style.buttonContainer}>
-          <ButtonDescription
-            id={item.followed ? 'community-unfollow' : 'community-follow'}
-            onClickCallback={(e) => {
-              this.handleFollow(item) 
-            }}
-            text={getTranslation(item.followed ? 'UNFOLLOW' : 'FOLLOW')}
-            buttonStyle={`${style.buttonStyle} ${item.followed ? style.followed : ''}`}
-            active={item.followed}
-          />
-        </div>
+        {!isFeatured && (
+          <div class={style.buttonContainer}>
+            <ButtonDescription
+              id={item.followed ? 'community-unfollow' : 'community-follow'}
+              onClickCallback={(e) => {
+                this.handleFollow(item) 
+              }}
+              text={getTranslation(item.followed ? 'UNFOLLOW' : 'FOLLOW')}
+              buttonStyle={`${style.buttonStyle} ${item.followed ? style.followed : ''}`}
+              active={item.followed}
+            />
+          </div>
+        )}
       </div> 
     );
   }
@@ -88,10 +90,10 @@ class FeaturedCommunities extends Component {
     // }
 
     return (
-      <div className={style.featuredCommunityWrap}>
+      <div className={`${style.featuredCommunityWrap} ${top === 1 ? style.isFeatured : ''}`}>
         {title && <p className={`bold ${style.title}`}>{getTranslation(title)}</p>}
         {/* featured item */}
-        {top === 1 && this.renderItem(communities.featured)}
+        {top === 1 && this.renderItem(communities.featured, true)}
         {/* items */}
         {top > 1 && communities.data
           .filter((item, i) => i < (top || 5))

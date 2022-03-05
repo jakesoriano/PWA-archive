@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { ImageLoader } from '_components/core';
-import { getTranslation, getDefaultAvatar, getShoutoutMessage } from '_helpers';
+import { getTranslation, getDefaultAvatar, getShoutoutMessage, displayName } from '_helpers';
 import style from './style';
 class TopGlobalAndComment extends Component {
   render = ({ leaderboard }) => {
@@ -19,11 +19,8 @@ class TopGlobalAndComment extends Component {
           <div className={style.topLeader}>
             <div>
               <p>{`${getTranslation('PAGE_LEADERBOARD')}:`}</p>
-              <p>{getTranslation('FEATURED')}</p>
-              <p>{getTranslation('KAKAMPINK')}</p>
-              <p>
-                <span>{leaderboard.featured.profile.fname}</span> <span>{leaderboard.featured.profile.lname}</span>
-              </p>
+              <p className='extraBold'>{`${getTranslation('FEATURED')} ${getTranslation('KAKAMPINK')}`}</p>
+              <p className='extraBold'>{displayName(leaderboard.featured.profile)}</p>
             </div>
           </div>
         </div>
@@ -35,7 +32,11 @@ class TopGlobalAndComment extends Component {
               style={{ container: style.dialog }}
               lazy
             />
-            {getShoutoutMessage(`${leaderboard.featured.profile.fname} ${leaderboard.featured.profile.lname}`)}
+            <p
+              dangerouslySetInnerHTML={{
+                __html: 'Shoutout to <span className={`bold`}>{name}</span>! Number 1 KakamPink inviter! Galing!'.replace('{name}', displayName(leaderboard.featured.profile))
+              }}
+            />
           </div>
           <ImageLoader 
             src={getDefaultAvatar()}

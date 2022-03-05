@@ -78,7 +78,8 @@ class GlobalAnnouncement extends Component {
 	renderDetails = (data) => {
 	  if (data) {
 	    return (
-	      <div className={style.pWrap}>
+	      <div>
+	        <div className={style.backDrop}></div>
 	        <a className={`${style.pClose}`}
 	          onClick={() => {
 	            this.setState({
@@ -86,36 +87,39 @@ class GlobalAnnouncement extends Component {
 	            });
 	          }}>
 	          <ImageLoader
-	            src="assets/images/closebutton.png"
+	            src="assets/images/icon_close_white.png"
 	            style={{ container: style.closeBtn }}
 	          />
 	        </a>
-	        <div className={`${style.pHeader} ${this.state.active === 'events' ? style.pHeaderEvents : ''}`}>
-	          <ImageLoader
-	            src={data.image}
-	            style={{ container: style.pImage }}
-	            lazy />
-	          <div className={style.pNews}>
-	            <p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
-	            <a className={style.pLink} href={data.link}>{data.link}</a>
+	        <div className={style.pWrap}>
+	          <div className={`${style.pHeader}`}>
+	            <div className={style.pNews}>
+	              <p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
+	            </div>
+	            <div className={`${style.pHeader} ${this.state.active === 'events' ? style.pHeaderEvents : ''}`}>
+	              <ImageLoader
+	                src={data.image}
+	                style={{ container: style.pImage }}
+	                lazy />
+	            </div>
+	            <p
+	              className={style.pContent}
+	              dangerouslySetInnerHTML={{
+	                __html: data.desc
+	              }}
+	            />
+	            <a id="global-announcement-share"
+	              className={style.pShare}
+	              onClick={() => {
+	                this.onShareAnnouncement(data);
+	              }}>
+	              <ImageLoader
+	                src="assets/images/share_icon_white.png"
+	                style={{ container: style.pIconShare }} />
+	              <span>{getTranslation('SHARE')}</span>
+	            </a>
 	          </div>
 	        </div>
-	        <p
-	          className={style.pContent}
-	          dangerouslySetInnerHTML={{
-	            __html: data.desc
-	          }}
-	        />
-	        <a id="global-announcement-share"
-	          className={style.pShare}
-	          onClick={() => {
-	            this.onShareAnnouncement(data);
-	          }}>
-	          <ImageLoader
-	            src="assets/images/share_icon_white.png"
-	            style={{ container: style.pIconShare }} />
-	          <span>{getTranslation('SHARE')}</span>
-	        </a>
 	      </div>
 	    )
 	  }
@@ -153,7 +157,7 @@ class GlobalAnnouncement extends Component {
 	                    <p className={`${style.detailTitle}`}>
 	                      {dateNewsFormat(i.postedDate)}</p>
 	                    <p className={style.detailDescription}>{removeTags(i.desc || '').substr(0, 100)}...
-	                      <span className='extraBold'> {`${i.desc.length > 100 ? `${getTranslation('READ_ALL')}`: ''}`}</span>
+	                      <span className='extraBold'> {`${i.desc.length > 100 ? `${getTranslation('VIEW')}`: ''}`}</span>
 	                    </p>
 	                  </div>
 	                </div>

@@ -85,7 +85,7 @@
 	"PASSWORD": "Password",
 	"OR": "or",
 	"SOCIAL_MEDIA": "Sign in using your social media accounts",
-	"FOLLOW_COMMUNITIES": "Follow Kakam-PINK Communities",
+	"FOLLOW_COMMUNITIES": "Follow Kakam-PINK Communities in Philippines",
 	"MINIMUM_CHARACTERS": "Minimum of 8 Characters.",
 	"SPECIAL_CHARACTERS": "Do not use special characters",
 	"PASSWORD_UNMATCH": "Passwords do not match",
@@ -267,7 +267,8 @@
 	"NEEDS_MSG": "If retained to 0, means no limit of volunteers",
 	"COMMUNITY_VOLUNTEER": "Volunteer",
 	"COMMUNITY_CROWDSOURCING": "Crowdsourcing",
-	"COMMUNITY_BE_A_VOLUNTEER": "Be a volunteer! Let's accomplish more with our KakamPink Communities.",
+	"COMMUNITY_BE_A_VOLUNTEER": "Be a volunteer!",
+	"ACCOMPLISH_MORE": "Let's accomplish more with our KakamPink Communities.",
 	"COMMUNITY_VOLUNTEER_TITLE": "Community Volunteer",
 	"COMING_SOON": "Coming Soon",
 	"UPDATE_YOUR_PROFILE": "Update Your Profile",
@@ -308,6 +309,8 @@
 	"RECRUIT": "Mag-recruit",
 	"RECRUIT_MSG": "tayo! 100 points for each!",
 	"IPANALO_NA10": "#ipanaloNa",
+	"NARRATE_CONERN": "Narrate your conern",
+	"RESULTS": "Results",
 	"LEADERBOARD_CARD_MSG": "Brag, maging proud na KakamPink. May surprise na nagaantay mula sa mga kapwa KakamPink natin.",
 	"LEADERBOARD_CARD_BTN": "Maging parte ng Leaderboard",
 	"DISCORD_CARD_MSG": "Nahihirapan ka ba kumausap ng mahal sa buhay tungkol kay Leni?",
@@ -316,5 +319,6 @@
 	"TOTAL_INVITED": "Total Invited",
 	"TOTAL_POINTS": "Total Points",
 	"FEATURED": "Featured",
-	"NO_INVITE": "Make your first invite today!"
+	"NO_INVITE": "Make your first invite today!",
+	"NARRATE_CONCERN": "Narrate your concern"
 }

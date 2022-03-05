@@ -97,14 +97,17 @@ class CommunityVolunteer extends Component {
 	      <div className={style.volunteer}>
 	        {/* Be a Volunteer */}
 	        <div className={style.title}>
-	          <p>{getTranslation('COMMUNITY_BE_A_VOLUNTEER')}</p>
+	          <p className='extraBold'>
+				  <span className='extraBold'>{getTranslation('COMMUNITY_BE_A_VOLUNTEER')}</span>
+				  &nbsp;{getTranslation('ACCOMPLISH_MORE')}
+	          </p>
 	        </div>
 
 	        {/* Message And Saved Listings */}
 	        <div className={style.actionContainer}>
 	          <div className={style.button} onClick={() => route('messages')}>
 	            <ImageLoader
-	              src="assets/images/message_icon.png"
+	              src="assets/images/icon_message_blue.png"
 	              style={{ container: style.iconDownload }}
 	            />
 	            <p>Messages</p>
@@ -122,7 +125,7 @@ class CommunityVolunteer extends Component {
 	            onInput={this.handleSearchByTitle}
 	          />
 	          <ImageLoader
-	            src={'assets/images/magnifying_icon.png'}
+	            src={'assets/icons/icon_search_blue.png'}
 	            style={{ container: style.searchIcon }}
 	          />
 	        </div>
@@ -132,7 +135,7 @@ class CommunityVolunteer extends Component {
 	      <div className={style.communityVolunteerListing}>
 	        {/* Title */}
 	        <div className={style.title}>
-	          <p>{getTranslation('COMMUNITY_VOLUNTEER_TITLE')}</p>
+	          <p className='extraBold'>{getTranslation('COMMUNITY_VOLUNTEER_TITLE')}</p>
 	        </div>
 
 	        {/* List */}

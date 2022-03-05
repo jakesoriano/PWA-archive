@@ -162,7 +162,11 @@ class ContactUs extends Component {
 	  return (
 	    <div className={style.contactUs}>
 	      <div className={style.infoWrap}>
-	        <FormGroup label={getTranslation("CATEGORY")} hasError={category.hasError}>
+	        <FormGroup
+	          label={getTranslation("CATEGORY")}
+	          hasError={category.hasError}
+	          className={style.formGroup}
+	        >
 	          <FormDropdown
 	            label=""
 	            className={style.category}
@@ -181,7 +185,10 @@ class ContactUs extends Component {
 	            message={category.message}
 							 />
 	        </FormGroup>
-	        <FormGroup label={getTranslation("SUBJECT")}>
+	        <FormGroup
+	          label={getTranslation("SUBJECT")}
+	          className={style.formGroup}
+	        >
 	          <FormInput
 	            className={style.subject}
 	            style={{ error: style.subject }}
@@ -197,10 +204,7 @@ class ContactUs extends Component {
 	            error={subject.error}
 	            message={subject.message} />
 	        </FormGroup>
-	      </div>
-
-	      <div className={style.infoWrap}>
-	        <FormGroup>
+	        <FormGroup label={getTranslation('NARRATE_CONCERN')} className={style.formGroup}>
 	          <FormInput
 	            className={style.message}
 	            style={{ error: style.message }}
@@ -217,16 +221,24 @@ class ContactUs extends Component {
 	            error={message.error}
 	            message={message.message} />
 	        </FormGroup>
-	      </div>
-
-	      <div className={style.infoWrap}>
-	        <FormGroup label={getTranslation("ATTACHMENT")}>
+			
+	        <FormGroup className={style.formGroup}>
 	          <div className={style.attachmentWrap}>
-	            <div className={style.attachmentInputWrap}>								
+	            <div className={style.attachmentInputWrap}>
+	              {
+	                !attachment.file && (
+	                  <span className={style.attLabel}>
+	                    {getTranslation('ATTACHMENT')}
+	                    <ImageLoader
+	                      src="assets/images/icon_attachment_blue.png"
+	                      style={{ container: style.attIcon }} />
+	                  </span>
+	                )
+	              }							
 	              <FormInput
 	                id='inputAttachment'
 	                className={style.attachment}
-	                style={{ error: style.attachment }}
+	                style={{ error: style.attachment, dummy: attachment.file ? style.dummyInput : style.hidden }}
 	                value={attachment.file}
 	                type="file"
 	                onBlur={(e) => {
@@ -244,9 +256,6 @@ class ContactUs extends Component {
 	                onClick={() => {
 	                  document.getElementById('inputAttachment').click()
 	                }}>
-	                <ImageLoader
-	                  src="assets/images/attachment_icon_white.png"
-	                  style={{ container: style.pIconShare }} />
 	                <span>{getTranslation('ADD_FILE')}</span>
 	              </a>
 	            </div>

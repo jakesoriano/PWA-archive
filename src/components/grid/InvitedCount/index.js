@@ -3,14 +3,14 @@ import { connect } from 'unistore/preact';
 import { getTranslation } from '_helpers';
 import style from './style';
 class InvitedCount extends Component {
-  render = ({ authUser, invited }) => (
+  render = ({ authUser, members }) => (
     <div className={style.invitedCountWrap}>
-      {invited.data.length > 0 &&
+      {members.data.length > 0 &&
       (
         <>
           <div className={style.countCard}>
             <p className={`extraBold ${style.text}`}>{getTranslation('TOTAL_INVITED')} </p>
-            <p className={`extraBold ${style.count}`}>{invited.data.length} </p>
+            <p className={`extraBold ${style.count}`}>{members.data.length} </p>
           </div>
           <div className={style.countCard}>
             <p className={`extraBold ${style.text}`}>{getTranslation('TOTAL_POINTS')} </p>
@@ -18,8 +18,8 @@ class InvitedCount extends Component {
           </div>
         </>
       )}
-      {!invited.data.length && <p className={`extraBold ${style.noInvite}`}>{getTranslation('NO_INVITE')} </p>}
+      {!members.data.length && <p className={`extraBold ${style.noInvite}`}>{getTranslation('NO_INVITE')} </p>}
     </div>
   );
 }
-export default connect(['authUser','invited'])(InvitedCount);
+export default connect(['authUser','members'])(InvitedCount);

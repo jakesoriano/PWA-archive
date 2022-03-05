@@ -25,10 +25,10 @@ class FeaturedTopRanking extends Component {
         />
         <div className={style.nameMember}>
           <div>
-            <p className={`bold ${style.name}`}>
+            <p className={`${style.name}`}>
               {this.renderUserTitle(data.profile)}
             </p>
-            <p className={`bold ${style.members}`}>{`${data.members} ${getTranslation('MEMBERS')}`}</p>
+            <p className={`${style.members}`}>{`${data.members} ${getTranslation('MEMBERS')}`}</p>
           </div>
         </div>
       </div>

@@ -1,12 +1,8 @@
-
+@import '../../../style/variables.scss';
 .profileWrap {
   background: #fff;
   .form {
     padding: 0px 10px 10px;
-    .name {
-      margin-left: 20px;
-      width: calc( 100% - 20px);
-    }
     .radioWrap {
       display: flex;
       width: 50%;
@@ -26,11 +22,11 @@
           height: 14px;
           margin-right: 5px;
           border-radius: 50%;
-          border: 2px solid #DA8289;
           position: relative;
+          border: 1px solid $gray;
         }
         input[type="radio"]:checked + *::before {
-          background: radial-gradient(#DA8289 0%, #DA8289 40%, transparent 50%, transparent);
+          background: $primary;
         }
       }
     }

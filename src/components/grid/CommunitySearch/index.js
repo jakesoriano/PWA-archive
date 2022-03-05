@@ -77,7 +77,7 @@ class CommunitySearch extends Component {
           onInput={this.handleSearchByName}
         />
         <ImageLoader
-          src={'assets/images/magnifying_icon.png'}
+          src={'assets/icons/icon_search_blue.png'}
           style={{ container: style.searchIcon }}
         />
       </div>

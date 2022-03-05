@@ -39,7 +39,7 @@ export default class AlertBox extends Component {
 	  }
     
 	  return (
-	    <div className={`${style.alertBox} ${style[this.state.alertClass]} ${noTopBar ? style.noUser : ''}`}>
+	    <div className={`${style.alertBox} ${style[this.state.alertClass]} ${noTopBar ? style.noUser : style.noUser}`}>
 	      <span className={`${style.alertIcon} ${(success ? style.success : style.error)}`}>
 	        <ImageLoader
 	          src={`assets/images/${success ? 'success' : 'error' }.png`}

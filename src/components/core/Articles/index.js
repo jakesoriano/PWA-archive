@@ -12,12 +12,8 @@ class Articles extends Component {
             onClick={() => {
               this.props.onClickItemCallback(i);
             }}>
-            <ImageLoader
-              src={i.image}
-              style={{ container: style.detailImage }}
-              lazy />
             <div className={style.detailContent}>
-              <span className={`bold ${style.detailTitle}`}>{getTranslation(i.title)}</span>
+              <span className={`extraBold ${style.detailTitle}`}>{getTranslation(i.title)}</span>
               {i.likeCount || i.shareCount ? (
                 <div className={style.detailCount}>
                   {i.likeCount ? <span>{`${i.likeCount} ${getTranslation('LIKES')}`}</span> : ''}

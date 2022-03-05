@@ -140,14 +140,22 @@ class CustomListSelection extends Component {
 						      name="filter"
 						      className={style.hideCheck}
 						    ></FormInput>
-						    <ImageLoader
-						      src="assets/images/GOING-dark.png"
-						      style={{
-						        container: `${style.iconCheck} ${
-											props.selected === item.value ? style.active : ''
-										}`,
-						      }}
-						    />
+						    {
+						      props.selected !== item.value && (
+						        <ImageLoader
+						          src="assets/images/icon_check_gray.png"
+						          style={{ container: style.iconCheck }}
+						        />
+						      )
+						    }
+						    {
+						      props.selected === item.value && (
+						        <ImageLoader
+						          src="assets/images/icon_check_pink.png"
+						          style={{ container: style.iconCheck }}
+						        />
+						      )
+						    }
 						  </div>
 						))}
 	      </FormGroup>

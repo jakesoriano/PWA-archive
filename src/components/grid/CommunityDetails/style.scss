@@ -1,11 +1,9 @@
 @import '../../../style/variables.scss';
 .communityDetailsWrap {
   display: flex;
-  background-color: $details_bg;
-  padding: 15px;
+  padding: 0 15px;
   margin: 15px 15px 0;
   align-items: center;
-  border-radius: 15px;
   flex: 1;
   flex-direction: row;
   .heading {
@@ -27,8 +25,13 @@
     padding: 3px 30px;
     font-size: 0.75rem;
     border-radius: 2px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background-color: $primary;
     &.followed {
-      background-color: $primary_layout;
+      background-color: $white;
+      border-color: $blue;
+      color: $black_text;
     }
   }
 }
