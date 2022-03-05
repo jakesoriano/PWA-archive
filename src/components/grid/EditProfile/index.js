@@ -499,7 +499,7 @@ class EditProfile extends Component {
 	          />
 	        </FormGroup>
 
-	        {provinceOptions && provinceOptions.length && (
+	        {provinceOptions && provinceOptions.length ? (
 	          <FormGroup label="PROVINCE" hasError={province.hasError}>
 	            <FormDropdown
 	              className={style.province}
@@ -518,9 +518,9 @@ class EditProfile extends Component {
 	              message={province.message}
 	            />
 	          </FormGroup>
-	        )}
+	        ) : null}
 
-	        {municipalityOptions && municipalityOptions.length && (
+	        {municipalityOptions && municipalityOptions.length ? (
 	          <FormGroup label="MUNICIPALITY" hasError={municipality.hasError}>
 	            <FormDropdown
 	              className={style.municipality}
@@ -539,9 +539,9 @@ class EditProfile extends Component {
 	              message={municipality.message}
 	            />
 	          </FormGroup>
-	        )}
+	        ) : null}
 
-	        {barangayOptions && barangayOptions.length && (
+	        {barangayOptions && barangayOptions.length ? (
 	          <FormGroup label="BARANGAY" hasError={barangay.hasError}>
 	            <FormDropdown
 	              className={style.barangay}
@@ -560,7 +560,7 @@ class EditProfile extends Component {
 	              message={barangay.message}
 	            />
 	          </FormGroup>
-	        )}
+	        ) : null}
 
 	        <FormGroup
 	          label="REGISTERED_VOTER"
