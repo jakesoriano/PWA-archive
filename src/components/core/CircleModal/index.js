@@ -13,7 +13,7 @@ export default ({ headerIcon, title, content, code, callback, link, next }) => (
         {/* Icon */}
         {headerIcon && (
           <div className={style.modalIcon}>
-            <ImageLoader src={headerIcon} lazy style={{container: style.imgCont}}/>
+            <ImageLoader src={headerIcon} lazy style={{ container: style.imgCont }} />
           </div>
         )}
         {/* header */}
@@ -21,18 +21,20 @@ export default ({ headerIcon, title, content, code, callback, link, next }) => (
           {/* text */}
           <h3 className="bold">{title}</h3>
           {/* x button */}
-          <button className="cancel" onClick={() => {
-            circleModal(null);
-            if (next) {
-              setTimeout(() => {
-                circleModal(next);
-              }, 300);
-            }
-            if (callback) {
-              callback();
-            }
-          }}
-          type="button" aria-label="Cancel">
+          <button className="cancel"
+            onClick={() => {
+              circleModal(null);
+              if (next) {
+                setTimeout(() => {
+                  circleModal(next);
+                }, 300);
+              }
+              if (callback) {
+                callback();
+              }
+            }}
+            type="button"
+            aria-label="Cancel">
 						x
           </button>
         </div>
@@ -42,14 +44,18 @@ export default ({ headerIcon, title, content, code, callback, link, next }) => (
             <div className={style.desc}>{content}</div>
           </div>
           {code && <span className={`extraBold ${style.code}`}>{code}</span>}
-          {link && <Link href={link.url} onClick={() => {
-            circleModal(null);
-            if (next) {
-              setTimeout(() => {
-                circleModal(next);
-              }, 300);
-            }
-          }} className={`extraBold ${style.link}`}>{link.text}</Link>}
+          {link && (
+            <Link href={link.url}
+              onClick={() => {
+                circleModal(null);
+                if (next) {
+                  setTimeout(() => {
+                    circleModal(next);
+                  }, 300);
+                }
+              }}
+              className={`extraBold ${style.link}`}>{link.text}</Link>
+          )}
         </div>
       </div>
     </div>

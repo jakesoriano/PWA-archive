@@ -14,8 +14,10 @@
 }
 
 .sideBar {
-	color: white;
-	background-color: $primary_layout;
+	* {
+		color: $black_text
+	}
+	background-color: $gray;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -48,10 +50,10 @@
     align-content: center;
 		.sName {
 			font-size: 1rem;
+			color: $pink_text;
 		}
 		.sLogin {
 			font-size: 0.6rem;
-			color: #e3dfdf;
 		}
 	}
 }
@@ -61,7 +63,7 @@
 	.sMItem {
 		display: block;
 		padding: 10px 0;
-		border-bottom: 2px solid #fff;
+		border-bottom: 1px solid rgba(242, 242, 242, 0.5); 
 		font-family: 'OpenSans-Bold', arial, sans-serif;
 		&.subItem {
 			text-align: right;

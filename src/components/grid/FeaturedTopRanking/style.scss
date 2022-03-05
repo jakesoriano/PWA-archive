@@ -1,14 +1,15 @@
 @import '../../../style/variables.scss';
 .featuredTopWrap {
-  background: $details_bg;
-  border-radius: 10px;
+  background: $primary_layout;
   margin: 10px 15px 0;
   padding: 10px;
   display: block;
   overflow: hidden;
+  * {
+    color: $white;
+  }
   .heading {
     text-transform: uppercase;
-    color: $primary;
     font-size: 15px;
   }
   .featured {
@@ -26,11 +27,7 @@
       flex-grow: 1;
       width: calc(100% - 190px);
       .name {
-        color: #737373;
         text-transform: capitalize;
-      }
-      .members {
-        color: #737373;
       }
     }
     .rank,

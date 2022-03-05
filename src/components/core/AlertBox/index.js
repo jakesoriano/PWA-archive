@@ -15,39 +15,39 @@ export default class AlertBox extends Component {
   }
 
 	componentDidMount = () => {
-    this.isMounted = true;
-    setTimeout(() => {
-      // slide out / hide
-      if (this.isMounted) {
-        this.setState({
-          alertClass: ''
-        });
-      }
-      // remove data
-      setTimeout(() => {
-        showAlertBox(null);
-      }, 200);
-    }, 5000);
+	  this.isMounted = true;
+	  setTimeout(() => {
+	    // slide out / hide
+	    if (this.isMounted) {
+	      this.setState({
+	        alertClass: ''
+	      });
+	    }
+	    // remove data
+	    setTimeout(() => {
+	      showAlertBox(null);
+	    }, 200);
+	  }, 5000);
 	};
 
   componentWillUnmount = () => {
     this.isMounted = false;
   }
 	render = ({ success, message, noTopBar }) => {
-    if (!message) {
-      return null;
-    }
+	  if (!message) {
+	    return null;
+	  }
     
-    return (
-      <div className={`${style.alertBox} ${style[this.state.alertClass]} ${noTopBar ? style.noUser : ''}`}>
-        <span className={`${style.alertIcon} ${(success ? style.success : style.error)}`}>
-        <ImageLoader
-          src={`assets/images/${success ? 'success' : 'error' }.png`}
-          style={{ container: style.ico }}
-        />
-         </span>
-        <span className={style.alertText}>{getTranslation(message)}</span>
-      </div>
-    );
-  };
+	  return (
+	    <div className={`${style.alertBox} ${style[this.state.alertClass]} ${noTopBar ? style.noUser : style.noUser}`}>
+	      <span className={`${style.alertIcon} ${(success ? style.success : style.error)}`}>
+	        <ImageLoader
+	          src={`assets/images/${success ? 'success' : 'error' }.png`}
+	          style={{ container: style.ico }}
+	        />
+	      </span>
+	      <span className={style.alertText}>{getTranslation(message)}</span>
+	    </div>
+	  );
+	};
 }

@@ -7,7 +7,7 @@ export function fetchInvited () {
   const { invited } = store.getState();
 
   // fetching
-  if(invited.fetching) {
+  if (invited.fetching) {
     return;
   }
   
@@ -24,28 +24,28 @@ export function fetchInvited () {
     xhr(urlInvited, {
       method: 'GET',
     })
-    .then((res) => {
-      updateStore({
-        invited: {
-          data: res.data,
-          fetching: false,
-          result: true
-        }
+      .then((res) => {
+        updateStore({
+          invited: {
+            data: res.data,
+            fetching: false,
+            result: true
+          }
+        });
+        console.log(`SPA >> fetchInvitations Success`, res.success);
+        resolve(true);
+      })
+      .catch((err) => {
+        updateStore({
+          invited: {
+            ...invited,
+            fetching: false,
+            result: false
+          }
+        });
+        console.log(`SPA >> fetchInvitations Error`, err);
+        resolve(false);
       });
-      console.log(`SPA >> fetchInvitations Success`, res.success);
-      resolve(true);
-    })
-    .catch((err) => {
-      updateStore({
-        invited: {
-          ...invited,
-          fetching: false,
-          result: false
-        }
-      });
-      console.log(`SPA >> fetchInvitations Error`, err);
-      resolve(false);
-    });
   });
 }
 
@@ -59,7 +59,7 @@ export function newInvite (data) {
         if (!res.success) {
           console.log(`SPA >> newInvite Error`, res);
           showAlertBox({
-						message: 'SOMETHING_WRONG'
+            message: 'SOMETHING_WRONG'
           })
           resolve(true);
         } else {

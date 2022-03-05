@@ -1,10 +1,8 @@
 .inputWrap {
 	.formInput,
 	.dummyInput {
-		border: none;
-		border-radius: 0;
-		border-bottom: 1px solid #737373;
-		padding: 10px 0;
+		border: 1px solid #d3d3d3;
+		padding: 10px;
 		display: block;
 		width: 100%;
 		background: transparent;
@@ -45,5 +43,15 @@
 	}
 	input[type='file'] {
 		display: none;
+	}
+	.customDate {
+		display: flex;
+		input {
+			width: 80px;
+			&:not(:first-of-type) {
+				margin-left: 10px;
+				width: 40px;
+			}
+		}
 	}
 }

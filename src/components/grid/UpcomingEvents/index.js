@@ -1,3 +1,7 @@
+/* eslint-disable react/jsx-curly-brace-presence */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable indent */
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { EventsList, LoaderRing, ImageLoader } from '_components/core';
@@ -6,7 +10,7 @@ import {
 	getTranslation,
 	getMonthYear,
 	getDayText,
-	dateEventFormat
+	dateEventFormat,
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 import style from './style';
@@ -17,18 +21,20 @@ class UpcomingEvents extends Component {
 		this.state = {
 			grouped: null,
 			moreFetching: false,
-			selectedItem: null
+			selectedItem: null,
 		};
 	}
 	componentDidMount = () => {
 		fetchUpcomingOtherEvents('current_month').then(() => {
 			const { data } = this.props.upevents;
-			let groupsByDate = data.sort((a, b) => new Date(b.date) - new Date(a.date)).reduce((arr, item) => {
-				// group data by date
-				arr[item.date] = arr[item.date] || [];
-				arr[item.date].push(item);
-				return arr;
-			}, Object.create(null));
+			let groupsByDate = data
+				.sort((a, b) => new Date(b.date) - new Date(a.date))
+				.reduce((arr, item) => {
+					// group data by date
+					arr[item.date] = arr[item.date] || [];
+					arr[item.date].push(item);
+					return arr;
+				}, Object.create(null));
 			this.setState({
 				grouped: groupsByDate,
 			});
@@ -38,7 +44,7 @@ class UpcomingEvents extends Component {
 
 	onClickItem = (data) => {
 		this.setState({
-			selectedItem: data
+			selectedItem: data,
 		});
 	};
 
@@ -53,7 +59,7 @@ class UpcomingEvents extends Component {
 				${item.link ? 'Event Link: ' + item.link : ''}\n\n
 				${getTranslation(item.isOnline ? 'ONLINE_EVENT' : 'ONSITE_EVENT')}:\n
 				Event Location: ${item.location}
-			`
+			`,
 		});
 		if (!item.shared) {
 			shareEvent(item);
@@ -63,47 +69,59 @@ class UpcomingEvents extends Component {
 	renderDetails = (data) => {
 		if (data) {
 			return (
-				<div className={style.pWrap}>
-					<a className={`${style.pClose}`} onClick={() => {
-						this.setState({
+				<div>
+					<div className={style.backDrop}></div>
+						<a className={`${style.pClose}`}
+						onClick={() => {
+							this.setState({
 							selectedItem: null
-						});
-					}}>
+							});
+						}}>
 						<ImageLoader
-							src="assets/images/closebutton.png"
-							style={{container: style.closeBtn}}
+							src="assets/images/icon_close_white.png"
+							style={{ container: style.closeBtn }}
 						/>
 					</a>
-					<div className={`${style.pHeader} ${style.pHeaderEvents}`}>
-						<ImageLoader
-								src={data.image}
-								style={{container: style.pImage}}
-								lazy />
-						<div className={style.pEvents}>
-							<p className={`bold ${style.pTitle}`}>{getTranslation(data.title)}</p>
-							<p className={`${style.pDate}`}>
-								{`${getTranslation('WHEN')}: ${dateEventFormat(data.date)}`} <br />
-								{`${getTranslation('WHERE')}: ${data.location}`}
+					<div className={style.pWrap}>
+						<div className={`${style.pHeader} ${style.pHeaderEvents}`}>
+							<p className={`bold ${style.pTitle}`}>
+								{getTranslation(data.title)}
 							</p>
+							<ImageLoader
+								src={data.image}
+								style={{ container: style.pImage }}
+								lazy
+							/>
+							<div className={style.pEvents}>
+								<p className={`${style.pDate}`}>
+									{`${getTranslation('WHEN')}: ${dateEventFormat(data.date)}`}{' '}
+									<br />
+									{`${getTranslation('WHERE')}: ${data.location}`}
+								</p>
+							</div>
 						</div>
-					</div>
-					<p
-						className={style.pContent}
-						dangerouslySetInnerHTML={{
-							__html: data.desc
-						}}
-					/>
-					<a className={style.pShare} onClick={() => {
-						this.onShareEvent(this.state.selectedItem);
-					}}>
-						<ImageLoader
+						<p
+							className={style.pContent}
+							dangerouslySetInnerHTML={{
+								__html: data.desc,
+							}}
+						/>
+						<a
+							className={style.pShare}
+							onClick={() => {
+								this.onShareEvent(this.state.selectedItem);
+							}}
+						>
+							<ImageLoader
 								id={'event-like'}
 								src="assets/images/share_icon_white.png"
-								style={{container: style.pIconShare}} />
+								style={{ container: style.pIconShare }}
+							/>
 							<span>{getTranslation('SHARE')}</span>
-					</a>
+						</a>
+					</div>
 				</div>
-			)
+			);
 		}
 		return null;
 	};
@@ -118,9 +136,14 @@ class UpcomingEvents extends Component {
 					<p className={`extraBold ${style.title}`}>
 						{getMonthYear(new Date())}
 					</p>
-					{state.grouped && Object.keys(state.grouped).length &&
+					{state.grouped &&
+						Object.keys(state.grouped).length &&
 						Object.keys(state.grouped).map((key) => {
-							const date = new Date(state.grouped[key].filter((item) => key.toString() === item.date.toString())[0].date);
+							const date = new Date(
+								state.grouped[key].filter(
+									(item) => key.toString() === item.date.toString()
+								)[0].date
+							);
 							return (
 								<div className={style.item}>
 									<div className={style.box}>
@@ -132,17 +155,22 @@ class UpcomingEvents extends Component {
 										</span>
 									</div>
 									<div className={style.events}>
-										<EventsList data={state.grouped[key]} onClickItemCallback={this.onClickItem} />
+										<EventsList
+											data={state.grouped[key]}
+											onClickItemCallback={this.onClickItem}
+										/>
 									</div>
 								</div>
 							);
 						})}
 					{props.upevents.fetching && (
-						<LoaderRing styles={{container: style.loaderWrap}}/>
+						<LoaderRing styles={{ container: style.loaderWrap }} />
 					)}
-					{!props.upevents.fetching && state.grouped && !Object.keys(state.grouped).length && (
-						<p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
-					)}
+					{!props.upevents.fetching &&
+						state.grouped &&
+						!Object.keys(state.grouped).length && (
+							<p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
+						)}
 				</div>
 				{state.selectedItem && this.renderDetails(state.selectedItem)}
 			</div>

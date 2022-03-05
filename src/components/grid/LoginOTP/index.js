@@ -12,91 +12,89 @@ import {
 
 // eslint-disable-next-line react/prefer-stateless-function
 class LoginOTP extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			pin: null,
-			isOTPInvalid: false,
-			isResendCd: false,
-			seconds: 60,
-			inputFocus: false,
-			isUsernameSet: false
-		};
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      pin: null,
+      isOTPInvalid: false,
+      isResendCd: false,
+      seconds: 60,
+      inputFocus: false,
+      isUsernameSet: false
+    };
+  }
 
 	componentDidMount = () => {
-		updateStore({
-			customBack: () => {
-				route(`/`, true);
-			},
-		});
+	  updateStore({
+	    customBack: () => {
+	      route(`/`, true);
+	    },
+	  });
 	};
 	handleContinue = (pin) => {
-		const { isOTPInvalid } = this.state;
-		const {
-			isAuto,
-			username,
-			password
-		} = this.props.loginInfo;
-		const data = {
-			otp: pin,
-			username: username,
-		};
-		displayPageLoader(true);
-		loginOTP(data).then((res) => {
-			if (res) {
-				if (!isAuto) {
-					nativeSetCredential({username, password});
-				}
-				route(`/home`, true);
-			} else {
-				if (!isOTPInvalid) {
-					showAlertBox({
-						message: 'OTP_INVALID'
-					});
-					this.setState({
-						isOTPInvalid: true,
-					});
-					setTimeout(() => {
-						this.setState({
-							isOTPInvalid: false,
-						});
-					}, 5300);
-				}
-			}
-			displayPageLoader(false);
-		});
+	  const { isOTPInvalid } = this.state;
+	  const {
+	    isAuto,
+	    username,
+	    password
+	  } = this.props.loginInfo;
+	  const data = {
+	    otp: pin,
+	    username: username,
+	  };
+	  displayPageLoader(true);
+	  loginOTP(data).then((res) => {
+	    if (res) {
+	      if (!isAuto) {
+	        nativeSetCredential({ username, password });
+	      }
+	      route(`/home`, true);
+	    } else if (!isOTPInvalid) {
+	      showAlertBox({
+	        message: 'OTP_INVALID'
+	      });
+	      this.setState({
+	        isOTPInvalid: true,
+	      });
+	      setTimeout(() => {
+	        this.setState({
+	          isOTPInvalid: false,
+	        });
+	      }, 5300);
+	    }
+	    displayPageLoader(false);
+	  });
 	};
 
 	resetOTP = () => {
-		let data = {
-			username: this.props.loginInfo.username,
-			password: this.props.loginInfo.password,
-			deviceId: this.props.loginInfo.deviceId
-		};
-		return login(data)
-			.then((res) => {
-				return {
-					success: res.otp
-				}
-			})
-			.catch((err) => {
-				return {
-					success: false
-				}
-			});;
+	  let data = {
+	    username: this.props.loginInfo.username,
+	    password: this.props.loginInfo.password,
+	    deviceId: this.props.loginInfo.deviceId
+	  };
+	  return login(data)
+	    .then((res) => {
+	      return {
+	        success: res.otp
+	      }
+	    })
+	    .catch((err) => {
+	      return {
+	        success: false
+	      }
+	    });
 	};
 
-	render = ({loginInfo},{}) => {
-		return (
-			<div className={style.loginOtpWrapper}>
-				<OneTimePIN
-					mobile={(loginInfo && loginInfo.mobile) || ''}
-					onClickCallback={this.handleContinue}
-					onResendCallback={this.resetOTP}
-				/>
-			</div>
-		);
+	render = ({ loginInfo },{}) => {
+	  return (
+	    <div className={style.loginOtpWrapper}>
+	      <OneTimePIN
+	        mobile={(loginInfo && loginInfo.mobile) || ''}
+	        onClickCallback={this.handleContinue}
+	        onResendCallback={this.resetOTP}
+	      />
+	    </div>
+	  );
 	};
 }
 export default connect(['loginInfo'])(LoginOTP);

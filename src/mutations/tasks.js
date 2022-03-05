@@ -35,10 +35,10 @@ function taskNotification(data) {
         next: data
       } : data);
     }
-  } catch(err) {
+  } catch (err) {
     console.error('taskNotification', err);
   }
-};
+}
 
 // eslint-disable-next-line import/prefer-default-export
 export function fetchTasks () {

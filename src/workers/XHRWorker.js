@@ -28,7 +28,7 @@ self.onmessage = (ev) => {
       // eslint-disable-next-line no-nested-ternary
       'Content-Type': 'application/json',
       ...(jwtToken && url.indexOf('.json') <= -1 ? {
-        'Authorization': 'Bearer ' + jwtToken,
+        Authorization: 'Bearer ' + jwtToken,
       } : {})
     };
   }

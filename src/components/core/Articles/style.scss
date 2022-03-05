@@ -24,13 +24,9 @@
     }
     .details {
       display: flex;
-      .detailImage {
-        width: 90px;
-        flex-grow: 1;
-        margin-right: 5px;
-      }
       .detailTitle {
         font-size: 1rem;
+        color: $primary_layout;
       }
       .detailContent {
         display: grid;

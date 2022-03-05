@@ -1,5 +1,7 @@
+/* eslint-disable handle-callback-err */
+/* eslint-disable react/no-unused-state */
+/* eslint-disable indent */
 import { Component } from 'preact';
-import { updateStore } from '_unistore';
 import {
 	getTranslation,
 	dateEventFormat,
@@ -9,7 +11,6 @@ import {
 import { connect } from 'unistore/preact';
 import { ImageLoader, ButtonDescription } from '_components/core';
 import { fetchTasks, validateTask } from '_mutations';
-import { nativeSigninFacebook } from '_platform/helpers';
 import style from './style.scss';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -90,6 +91,7 @@ class TaskCenter extends Component {
 						});
 					}
 				})
+				// eslint-disable-next-line no-unused-vars
 				.catch((err) => {
 					displayPageLoader(false);
 					showAlertBox({
@@ -105,6 +107,7 @@ class TaskCenter extends Component {
 
 	taskCompletedCount = () => {
 		const count = this.props?.tasks?.data?.reduce(
+			// eslint-disable-next-line no-param-reassign
 			(counter, { completed }) => (completed ? (counter += 1) : counter),
 			0
 		);
@@ -139,6 +142,7 @@ class TaskCenter extends Component {
 							<div>
 								<p>{getTranslation('TOTAL_COMPLETED')}</p>
 								<p className={style.taskCount}>
+									{/* eslint-disable-next-line react/jsx-one-expression-per-line */}
 									{tasks?.data?.length}/{tasks?.data?.length}
 								</p>
 							</div>
@@ -202,6 +206,7 @@ class TaskCenter extends Component {
 							target="_blank"
 							className={`task-fblink ${style.imageWrap}`}
 							onClick={this.enableButton}
+							rel="noopener noreferrer"
 						>
 							<ImageLoader
 								src={item.image}
@@ -215,6 +220,7 @@ class TaskCenter extends Component {
 								href={item.url}
 								target="_blank"
 								onClick={this.enableButton}
+								rel="noopener noreferrer"
 							>
 								{item.url}
 							</a>

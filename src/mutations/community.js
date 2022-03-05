@@ -1,8 +1,8 @@
 import { updateStore, store } from '_unistore';
 import {
-	xhr,
-	urlCommunity,
-	urlUser,
+  xhr,
+  urlCommunity,
+  urlUser,
   urlNews,
   urlShare,
   urlCommunitySetup, 
@@ -25,7 +25,7 @@ export function filterCommunity(name, sort, page, limit) {
   const { communities } = store.getState();
 
   // fetching
-  if(communities.fetching) {
+  if (communities.fetching) {
     return;
   }
 
@@ -49,33 +49,33 @@ export function filterCommunity(name, sort, page, limit) {
         s: limit || 9 // limit
       }
     })
-    .then((res) => {
-      updateStore({
-        communities: {
-          ...communities,
-          data: page && page > 1 ? [
-            ...communities.data,
-            ...res.data.results
-          ] : res.data.results,
-          total: res.data.total,
-          page: page || 1,
-          filter: name || '',
-          fetching: false,
-          result: true
-        }
+      .then((res) => {
+        updateStore({
+          communities: {
+            ...communities,
+            data: page && page > 1 ? [
+              ...communities.data,
+              ...res.data.results
+            ] : res.data.results,
+            total: res.data.total,
+            page: page || 1,
+            filter: name || '',
+            fetching: false,
+            result: true
+          }
+        });
+        resolve(true);
+      })
+      .catch((err) => {
+        updateStore({
+          communities: {
+            ...communities,
+            fetching: false,
+            result: false
+          }
+        });
+        resolve(false);
       });
-      resolve(true);
-    })
-    .catch((err) => {
-      updateStore({
-        communities: {
-          ...communities,
-          fetching: false,
-          result: false
-        }
-      });
-      resolve(false);
-    });
   });
 }
 
@@ -84,7 +84,7 @@ export function fetchCommunities(sort, page, limit) {
   const { communities } = store.getState();
 
   // fetching
-  if(communities.fetching) {
+  if (communities.fetching) {
     return;
   }
 
@@ -98,8 +98,8 @@ export function fetchCommunities(sort, page, limit) {
     }
   });
 
-	return new Promise((resolve) => {
-		xhr(urlCommunity, {
+  return new Promise((resolve) => {
+    xhr(urlCommunity, {
       params: {
         // sort
         ...getSortParams(),
@@ -107,36 +107,36 @@ export function fetchCommunities(sort, page, limit) {
         s: limit || 9 // limit
       }
     })
-		.then((res) => {
-      updateStore({
-        communities: {
-          ...communities,
-          data: page && page > 1 ? [
-            ...communities.data,
-            ...res.data.results
-          ] : res.data.results,
-          total: res.data.total,
-          featured: !communities.featured ? res.data.results[0] : communities.featured,
-          page: page || 1,
-          filter: '',
-          sort: '',
-          fetching: false,
-          result: true
-        }
+      .then((res) => {
+        updateStore({
+          communities: {
+            ...communities,
+            data: page && page > 1 ? [
+              ...communities.data,
+              ...res.data.results
+            ] : res.data.results,
+            total: res.data.total,
+            featured: !communities.featured ? res.data.results[0] : communities.featured,
+            page: page || 1,
+            filter: '',
+            sort: '',
+            fetching: false,
+            result: true
+          }
+        });
+        resolve(true);
+      })
+      .catch((err) => {
+        updateStore({
+          communities: {
+            ...communities,
+            fetching: false,
+            result: false
+          }
+        });
+        resolve(false);
       });
-			resolve(true);
-		})
-		.catch((err) => {
-      updateStore({
-        communities: {
-          ...communities,
-          fetching: false,
-          result: false
-        }
-      });
-			resolve(false);
-		});
-	});
+  });
 }
 
 export function followCommunity (item) {
@@ -145,7 +145,7 @@ export function followCommunity (item) {
   const { authUser } = store.getState();
 
   // fetching
-  if(communities.fetching) {
+  if (communities.fetching) {
     return;
   }
   
@@ -153,9 +153,9 @@ export function followCommunity (item) {
   communities = {
     ...communities,
     data: communities.data.map(i => {
-      if(i.id === item.id) {
+      if (i.id === item.id) {
         i.followed = true;
-        i.followers = i.followers + 1;
+        i.followers += 1;
       }
       return i;
     }),
@@ -172,44 +172,44 @@ export function followCommunity (item) {
         itemType: 'C' 
       }
     })
-    .then((res) => {
-      updateStore({
-        communities: {
-          ...communities,
-          fetching: false
-        }
-      });
-      if (communityDetails.hasOwnProperty('details')) {
+      .then((res) => {
         updateStore({
-          communityDetails: {
-            ...communityDetails,
-            details: {
-              ...communityDetails.details,
-              followed: true
-            }
+          communities: {
+            ...communities,
+            fetching: false
           }
-        })
-      }
-      console.log(`SPA >> followCommunity Success`, res);
-      resolve(true);
-    })
-    .catch((err) => {
-      updateStore({
-        communities: {
-          ...communities,
-          data: communities.data.map(i => {
-            if(i.id === item.id) {
-              i.followed = false;
-              i.followers = i.followers - 1;
+        });
+        if (communityDetails.hasOwnProperty('details')) {
+          updateStore({
+            communityDetails: {
+              ...communityDetails,
+              details: {
+                ...communityDetails.details,
+                followed: true
+              }
             }
-            return i;
-          }),
-          fetching: false
+          })
         }
+        console.log(`SPA >> followCommunity Success`, res);
+        resolve(true);
+      })
+      .catch((err) => {
+        updateStore({
+          communities: {
+            ...communities,
+            data: communities.data.map(i => {
+              if (i.id === item.id) {
+                i.followed = false;
+                i.followers -= 1;
+              }
+              return i;
+            }),
+            fetching: false
+          }
+        });
+        console.log(`SPA >> followCommunity Error`, err);
+        resolve(false);
       });
-      console.log(`SPA >> followCommunity Error`, err);
-      resolve(false);
-    });
   });
 }
 
@@ -219,7 +219,7 @@ export function unFollowCommunity (item) {
   const { authUser } = store.getState();
 
   // fetching
-  if(communities.fetching) {
+  if (communities.fetching) {
     return;
   }
 
@@ -227,9 +227,9 @@ export function unFollowCommunity (item) {
   communities = {
     ...communities,
     data: communities.data.map(i => {
-      if(i.id === item.id) {
+      if (i.id === item.id) {
         i.followed = false;
-        i.followers = i.followers - 1;
+        i.followers -= 1;
       }
       return i;
     }),
@@ -246,44 +246,44 @@ export function unFollowCommunity (item) {
         itemType: 'C' 
       }
     })
-    .then((res) => {
-      updateStore({
-        communities: {
-          ...communities,
-          fetching: false
-        }
-      });
-      if (communityDetails.hasOwnProperty('details')) {
+      .then((res) => {
         updateStore({
-          communityDetails: {
-            ...communityDetails,
-            details: {
-              ...communityDetails.details,
-              followed: false
-            }
+          communities: {
+            ...communities,
+            fetching: false
           }
-        })
-      }
-      console.log(`SPA >> unFollowCommunity Success`, res);
-      resolve(true);
-    })
-    .catch((err) => {
-      updateStore({
-        communities: {
-          ...communities,
-          data: communities.data.map(i => {
-            if(i.id === item.id) {
-              i.followed = true;
-              i.followers = i.followers + 1;
+        });
+        if (communityDetails.hasOwnProperty('details')) {
+          updateStore({
+            communityDetails: {
+              ...communityDetails,
+              details: {
+                ...communityDetails.details,
+                followed: false
+              }
             }
-            return i;
-          }),
-          fetching: false
+          })
         }
+        console.log(`SPA >> unFollowCommunity Success`, res);
+        resolve(true);
+      })
+      .catch((err) => {
+        updateStore({
+          communities: {
+            ...communities,
+            data: communities.data.map(i => {
+              if (i.id === item.id) {
+                i.followed = true;
+                i.followers += 1;
+              }
+              return i;
+            }),
+            fetching: false
+          }
+        });
+        console.log(`SPA >> unFollowCommunity Error`, err);
+        resolve(false);
       });
-      console.log(`SPA >> unFollowCommunity Error`, err);
-      resolve(false);
-    });
   });
 }
 
@@ -363,66 +363,65 @@ export function createCommunityNews (data) {
 }
 
 export function getCommunityInfo () {
- // curreny state
- const { communityInfo } = store.getState();
+  // curreny state
+  const { communityInfo } = store.getState();
 
- // fetching
- if(communityInfo.fetching) {
-   return;
- }
+  // fetching
+  if (communityInfo.fetching) {
+    return;
+  }
 
- // initial state
- updateStore({
-   communityInfo: {
-     ...communityInfo,
-     fetching: true,
-     result: false
-   }
- });
+  // initial state
+  updateStore({
+    communityInfo: {
+      ...communityInfo,
+      fetching: true,
+      result: false
+    }
+  });
  
- return new Promise((resolve) => {
-   xhr(urlCommunityGetInfo, {
-   }).then((res) => {
-     if(res.success) {
-      updateStore({
-        communityInfo: {
-          data: res.data,
-          fetching: false,
-          result: true
-        }
+  return new Promise((resolve) => {
+    xhr(urlCommunityGetInfo, {
+    }).then((res) => {
+      if (res.success) {
+        updateStore({
+          communityInfo: {
+            data: res.data,
+            fetching: false,
+            result: true
+          }
+        });
+        resolve(true);
+      } else {
+        updateStore({
+          communityInfo: {
+            data: null,
+            fetching: false,
+            result: false
+          }
+        });
+        resolve(false);
+      }
+    })
+      .catch((err) => {
+        updateStore({
+          communityInfo: {
+            ...communityInfo,
+            data: null,
+            fetching: false,
+            result: false
+          }
+        });
+        resolve(false);
       });
-      resolve(true);
-     } else {
-      updateStore({
-        communityInfo: {
-          data: null,
-          fetching: false,
-          result: false
-        }
-      });
-      resolve(false);
-     }
-   })
-   .catch((err) => {
-     updateStore({
-       communityInfo: {
-         ...communityInfo,
-         data: null,
-         fetching: false,
-         result: false
-       }
-     });
-     resolve(false);
-   });
- });
+  });
 }
 
 export function fetchCommunityEvents(page, limit) {
-  
   const { communityInfo, leaderCommunityEvents } = store.getState();
   
   // fetching
-  if(leaderCommunityEvents.fetching) {
+  if (leaderCommunityEvents.fetching) {
     return;
   }
 
@@ -443,33 +442,33 @@ export function fetchCommunityEvents(page, limit) {
         s: limit || 9 // limit
       }
     })
-    .then((res) => {
-      updateStore({
-        leaderCommunityEvents: {
-          data: page && page > 1 ? [
-            ...leaderCommunityEvents.data,
-            ...res.data.results
-          ] : res.data.results,
-          total: res.data.total,
-          page: page || 1,
-          fetching: false,
-          result: true
-        }
+      .then((res) => {
+        updateStore({
+          leaderCommunityEvents: {
+            data: page && page > 1 ? [
+              ...leaderCommunityEvents.data,
+              ...res.data.results
+            ] : res.data.results,
+            total: res.data.total,
+            page: page || 1,
+            fetching: false,
+            result: true
+          }
+        });
+        console.log(`SPA >> fetchCommunityEvents Success`, res);
+        resolve(true);
+      })
+      .catch((err) => {
+        updateStore({
+          leaderCommunityEvents: {
+            ...leaderCommunityEvents,
+            fetching: false,
+            result: false
+          }
+        });
+        console.log(`SPA >> fetchCommunityEvents Error`, err);
+        resolve(false);
       });
-      console.log(`SPA >> fetchCommunityEvents Success`, res);
-      resolve(true);
-    })
-    .catch((err) => {
-      updateStore({
-        leaderCommunityEvents: {
-          ...leaderCommunityEvents,
-          fetching: false,
-          result: false
-        }
-      });
-      console.log(`SPA >> fetchCommunityEvents Error`, err);
-      resolve(false);
-    });
   });
 }
 
@@ -477,7 +476,7 @@ export function fetchCommunityAnnouncement(page, limit) {
   const { communityInfo, leaderCommunityAnnouncements } = store.getState();
   
   // fetching
-  if(leaderCommunityAnnouncements.fetching) {
+  if (leaderCommunityAnnouncements.fetching) {
     return;
   }
 
@@ -498,33 +497,33 @@ export function fetchCommunityAnnouncement(page, limit) {
         s: limit || 9 // limit
       }
     })
-    .then((res) => {
-      updateStore({
-        leaderCommunityAnnouncements: {
-          data: page && page > 1 ? [
-            ...leaderCommunityAnnouncements.data,
-            ...res.data.results
-          ] : res.data.results,
-          total: res.data.total,
-          page: page || 1,
-          fetching: false,
-          result: true
-        }
+      .then((res) => {
+        updateStore({
+          leaderCommunityAnnouncements: {
+            data: page && page > 1 ? [
+              ...leaderCommunityAnnouncements.data,
+              ...res.data.results
+            ] : res.data.results,
+            total: res.data.total,
+            page: page || 1,
+            fetching: false,
+            result: true
+          }
+        });
+        console.log(`SPA >> fetchCommunityAnnouncements Success`, res.success);
+        resolve(true);
+      })
+      .catch((err) => {
+        updateStore({
+          leaderCommunityAnnouncements: {
+            ...leaderCommunityAnnouncements,
+            fetching: false,
+            result: false
+          }
+        });
+        console.log(`SPA >> fetchCommunityAnnouncements Error`, err);
+        resolve(false);
       });
-      console.log(`SPA >> fetchCommunityAnnouncements Success`, res.success);
-      resolve(true);
-    })
-    .catch((err) => {
-      updateStore({
-        leaderCommunityAnnouncements: {
-          ...leaderCommunityAnnouncements,
-          fetching: false,
-          result: false
-        }
-      });
-      console.log(`SPA >> fetchCommunityAnnouncements Error`, err);
-      resolve(false);
-    });
   });
 }
 
@@ -533,7 +532,7 @@ export function shareEventByLeader (item) {
   const { authUser } = store.getState();
   
   // fetching
-  if(leaderCommunityEvents.fetching) {
+  if (leaderCommunityEvents.fetching) {
     return;
   }
 
@@ -541,7 +540,7 @@ export function shareEventByLeader (item) {
   leaderCommunityEvents = {
     ...leaderCommunityEvents,
     data: leaderCommunityEvents.data.map(i => {
-      if(i.id === item.id) {
+      if (i.id === item.id) {
         i.shared = true;
       }
       return i;
@@ -561,32 +560,32 @@ export function shareEventByLeader (item) {
         parentType: 'C'
       }
     })
-    .then((res) => {
-      updateStore({
-        leaderCommunityEvents: {
-          ...leaderCommunityEvents,
-          fetching: false
-        }
+      .then((res) => {
+        updateStore({
+          leaderCommunityEvents: {
+            ...leaderCommunityEvents,
+            fetching: false
+          }
+        });
+        console.log(`SPA >> shareEvents Success`, res);
+        resolve(true);
+      })
+      .catch((err) => {
+        updateStore({
+          leaderCommunityEvents: {
+            ...leaderCommunityEvents,
+            data: leaderCommunityEvents.data.map(i => {
+              if (i.id === item.id) {
+                i.shared = false;
+              }
+              return i;
+            }),
+            fetching: false
+          }
+        });
+        console.log(`SPA >> shareEvents Error`, err);
+        resolve(false);
       });
-      console.log(`SPA >> shareEvents Success`, res);
-      resolve(true);
-    })
-    .catch((err) => {
-      updateStore({
-        leaderCommunityEvents: {
-          ...leaderCommunityEvents,
-          data: leaderCommunityEvents.data.map(i => {
-            if(i.id === item.id) {
-              i.shared = false;
-            }
-            return i;
-          }),
-          fetching: false
-        }
-      });
-      console.log(`SPA >> shareEvents Error`, err);
-      resolve(false);
-    });
   });
 }
 
@@ -595,7 +594,7 @@ export function shareNewsByLeader (item) {
   const { authUser } = store.getState();
   
   // fetching
-  if(leaderCommunityAnnouncements.fetching) {
+  if (leaderCommunityAnnouncements.fetching) {
     return;
   }
 
@@ -603,7 +602,7 @@ export function shareNewsByLeader (item) {
   leaderCommunityAnnouncements = {
     ...leaderCommunityAnnouncements,
     data: leaderCommunityAnnouncements.data.map(i => {
-      if(i.id === item.id) {
+      if (i.id === item.id) {
         i.shared = true;
       }
       return i;
@@ -623,32 +622,32 @@ export function shareNewsByLeader (item) {
         parentType: 'C'
       }
     })
-    .then((res) => {
-      updateStore({
-        leaderCommunityAnnouncements: {
-          ...leaderCommunityAnnouncements,
-          fetching: false
-        }
+      .then((res) => {
+        updateStore({
+          leaderCommunityAnnouncements: {
+            ...leaderCommunityAnnouncements,
+            fetching: false
+          }
+        });
+        console.log(`SPA >> shareNewsByLeader Success`, res);
+        resolve(true);
+      })
+      .catch((err) => {
+        updateStore({
+          leaderCommunityAnnouncements: {
+            ...leaderCommunityAnnouncements,
+            data: leaderCommunityAnnouncements.data.map(i => {
+              if (i.id === item.id) {
+                i.shared = false;
+              }
+              return i;
+            }),
+            fetching: false
+          }
+        });
+        console.log(`SPA >> shareNewsByLeader Error`, err);
+        resolve(false);
       });
-      console.log(`SPA >> shareNewsByLeader Success`, res);
-      resolve(true);
-    })
-    .catch((err) => {
-      updateStore({
-        leaderCommunityAnnouncements: {
-          ...leaderCommunityAnnouncements,
-          data: leaderCommunityAnnouncements.data.map(i => {
-            if(i.id === item.id) {
-              i.shared = false;
-            }
-            return i;
-          }),
-          fetching: false
-        }
-      });
-      console.log(`SPA >> shareNewsByLeader Error`, err);
-      resolve(false);
-    });
   });
 }
 
@@ -780,7 +779,7 @@ export function fetchCommunityVolunteers (name, page, limit) {
   const { communityVolunteers } = store.getState();
   
   // fetching
-  if(communityVolunteers.fetching) {
+  if (communityVolunteers.fetching) {
     return;
   }
 
@@ -803,32 +802,32 @@ export function fetchCommunityVolunteers (name, page, limit) {
         s: limit || 9 // limit
       }
     })
-    .then((res) => {
-      updateStore({
-        communityVolunteers: {
-          data: page && page > 1 ? [
-            ...communityVolunteers.data,
-            ...res.data.results
-          ] : res.data.results,
-          page: page || 1,
-          total: res.data.total,
-          fetching: false,
-          result: true
-        }
+      .then((res) => {
+        updateStore({
+          communityVolunteers: {
+            data: page && page > 1 ? [
+              ...communityVolunteers.data,
+              ...res.data.results
+            ] : res.data.results,
+            page: page || 1,
+            total: res.data.total,
+            fetching: false,
+            result: true
+          }
+        });
+        console.log(`SPA >> fetchCommunityVolunteers Success`, res, communityVolunteers);
+        resolve(true);
+      })
+      .catch((err) => {
+        updateStore({
+          communityVolunteers: {
+            ...communityVolunteers,
+            fetching: false,
+            result: false
+          }
+        });
+        console.log(`SPA >> fetchCommunityVolunteers Error`, err);
+        resolve(false);
       });
-      console.log(`SPA >> fetchCommunityVolunteers Success`, res, communityVolunteers);
-      resolve(true);
-    })
-    .catch((err) => {
-      updateStore({
-        communityVolunteers: {
-          ...communityVolunteers,
-          fetching: false,
-          result: false
-        }
-      });
-      console.log(`SPA >> fetchCommunityVolunteers Error`, err);
-      resolve(false);
-    });
   });
 }

@@ -1,11 +1,11 @@
 export const data = [
   {
-    "r": "NCR",
-    "p": {
+    r: "NCR",
+    p: {
       "NATIONAL CAPITAL REGION - FOURTH DISTRICT": {
-        "m": {
+        m: {
           "CITY OF LAS PIÑAS": {
-            "b": [
+            b: [
               "ALMANZA DOS",
               "ALMANZA UNO",
               "B. F. INTERNATIONAL VILLAGE",
@@ -29,7 +29,7 @@ export const data = [
             ]
           },
           "CITY OF MAKATI": {
-            "b": [
+            b: [
               "BANGKAL",
               "BEL-AIR",
               "CARMONA",
@@ -66,7 +66,7 @@ export const data = [
             ]
           },
           "CITY OF MUNTINLUPA": {
-            "b": [
+            b: [
               "ALABANG",
               "BAYANAN",
               "BULI",
@@ -79,7 +79,7 @@ export const data = [
             ]
           },
           "CITY OF PARAÑAQUE": {
-            "b": [
+            b: [
               "B. F. HOMES",
               "BACLARAN",
               "DON BOSCO",
@@ -99,7 +99,7 @@ export const data = [
             ]
           },
           "PASAY CITY": {
-            "b": [
+            b: [
               "BARANGAY 1",
               "BARANGAY 2",
               "BARANGAY 3",
@@ -306,9 +306,9 @@ export const data = [
         }
       },
       "NATIONAL CAPITAL REGION - MANILA": {
-        "m": {
-          "BINONDO": {
-            "b": [
+        m: {
+          BINONDO: {
+            b: [
               "BARANGAY 287",
               "BARANGAY 288",
               "BARANGAY 289",
@@ -321,8 +321,8 @@ export const data = [
               "BARANGAY 296"
             ]
           },
-          "ERMITA": {
-            "b": [
+          ERMITA: {
+            b: [
               "BARANGAY 659",
               "BARANGAY 659-A",
               "BARANGAY 660",
@@ -338,8 +338,8 @@ export const data = [
               "BARANGAY 670"
             ]
           },
-          "INTRAMUROS": {
-            "b": [
+          INTRAMUROS: {
+            b: [
               "BARANGAY 654",
               "BARANGAY 655",
               "BARANGAY 656",
@@ -347,8 +347,8 @@ export const data = [
               "BARANGAY 658"
             ]
           },
-          "MALATE": {
-            "b": [
+          MALATE: {
+            b: [
               "BARANGAY 688",
               "BARANGAY 689",
               "BARANGAY 690",
@@ -408,8 +408,8 @@ export const data = [
               "BARANGAY 744"
             ]
           },
-          "PACO": {
-            "b": [
+          PACO: {
+            b: [
               "BARANGAY 662",
               "BARANGAY 664-A",
               "BARANGAY 671",
@@ -455,8 +455,8 @@ export const data = [
               "BARANGAY 832"
             ]
           },
-          "PANDACAN": {
-            "b": [
+          PANDACAN: {
+            b: [
               "BARANGAY 833",
               "BARANGAY 834",
               "BARANGAY 835",
@@ -498,7 +498,7 @@ export const data = [
             ]
           },
           "PORT AREA": {
-            "b": [
+            b: [
               "BARANGAY 649",
               "BARANGAY 650",
               "BARANGAY 651",
@@ -506,8 +506,8 @@ export const data = [
               "BARANGAY 653"
             ]
           },
-          "QUIAPO": {
-            "b": [
+          QUIAPO: {
+            b: [
               "BARANGAY 306",
               "BARANGAY 307",
               "BARANGAY 308",
@@ -526,8 +526,8 @@ export const data = [
               "BARANGAY 394"
             ]
           },
-          "SAMPALOC": {
-            "b": [
+          SAMPALOC: {
+            b: [
               "BARANGAY 395",
               "BARANGAY 396",
               "BARANGAY 397",
@@ -774,7 +774,7 @@ export const data = [
             ]
           },
           "SAN MIGUEL": {
-            "b": [
+            b: [
               "BARANGAY 637",
               "BARANGAY 638",
               "BARANGAY 639",
@@ -790,7 +790,7 @@ export const data = [
             ]
           },
           "SAN NICOLAS": {
-            "b": [
+            b: [
               "BARANGAY 268",
               "BARANGAY 269",
               "BARANGAY 270",
@@ -809,7 +809,7 @@ export const data = [
             ]
           },
           "SANTA ANA": {
-            "b": [
+            b: [
               "BARANGAY 745",
               "BARANGAY 746",
               "BARANGAY 747",
@@ -912,7 +912,7 @@ export const data = [
             ]
           },
           "SANTA CRUZ": {
-            "b": [
+            b: [
               "BARANGAY 297",
               "BARANGAY 298",
               "BARANGAY 299",
@@ -997,8 +997,8 @@ export const data = [
               "BARANGAY 382"
             ]
           },
-          "TONDO": {
-            "b": [
+          TONDO: {
+            b: [
               "BARANGAY 1",
               "BARANGAY 2",
               "BARANGAY 3",
@@ -1262,9 +1262,9 @@ export const data = [
         }
       },
       "NATIONAL CAPITAL REGION - SECOND DISTRICT": {
-        "m": {
+        m: {
           "CITY OF MANDALUYONG": {
-            "b": [
+            b: [
               "ADDITION HILLS",
               "BAGONG SILANG",
               "BARANGKA DRIVE",
@@ -1295,7 +1295,7 @@ export const data = [
             ]
           },
           "CITY OF MARIKINA": {
-            "b": [
+            b: [
               "BARANGKA",
               "CALUMPANG",
               "CONCEPCION DOS",
@@ -1315,7 +1315,7 @@ export const data = [
             ]
           },
           "CITY OF PASIG": {
-            "b": [
+            b: [
               "BAGONG ILOG",
               "BAGONG KATIPUNAN",
               "BAMBANG",
@@ -1349,7 +1349,7 @@ export const data = [
             ]
           },
           "QUEZON CITY": {
-            "b": [
+            b: [
               "ALICIA",
               "AMIHAN",
               "APOLONIO SAMSON",
@@ -1495,7 +1495,7 @@ export const data = [
             ]
           },
           "SAN JUAN CITY": {
-            "b": [
+            b: [
               "ADDITION HILLS",
               "BALONG-BATO",
               "BATIS",
@@ -1522,9 +1522,9 @@ export const data = [
         }
       },
       "NATIONAL CAPITAL REGION - THIRD DISTRICT": {
-        "m": {
+        m: {
           "CALOOCAN CITY": {
-            "b": [
+            b: [
               "BARANGAY 1",
               "BARANGAY 2",
               "BARANGAY 3",
@@ -1716,7 +1716,7 @@ export const data = [
             ]
           },
           "CITY OF VALENZUELA": {
-            "b": [
+            b: [
               "ARKONG BATO",
               "BAGBAGUIN",
               "BALANGKAS",
@@ -1753,7 +1753,7 @@ export const data = [
             ]
           },
           "MALABON CITY": {
-            "b": [
+            b: [
               "ACACIA",
               "BARITAN",
               "BAYAN-BAYANAN",
@@ -1778,7 +1778,7 @@ export const data = [
             ]
           },
           "NAVOTAS CITY": {
-            "b": [
+            b: [
               "BAGUMBAYAN NORTH",
               "BAGUMBAYAN SOUTH",
               "BANGCULASI",
@@ -1802,9 +1802,9 @@ export const data = [
         }
       },
       "TAGUIG - PATEROS": {
-        "m": {
-          "PATEROS": {
-            "b": [
+        m: {
+          PATEROS: {
+            b: [
               "AGUHO",
               "MAGTANGGOL",
               "MARTIRES DEL 96",
@@ -1817,8 +1817,8 @@ export const data = [
               "TABACALERA"
             ]
           },
-          "TAGUIG": {
-            "b": [
+          TAGUIG: {
+            b: [
               "BAGUMBAYAN",
               "BAMBANG",
               "CALZADA",
@@ -1854,17 +1854,17 @@ export const data = [
     }
   },
   {
-    "r": "REGION I",
-    "p": {
+    r: "REGION I",
+    p: {
       "ILOCOS NORTE": {
-        "m": {
-          "ADAMS": {
-            "b": [
+        m: {
+          ADAMS: {
+            b: [
               "ADAMS (POB.)"
             ]
           },
-          "BACARRA": {
-            "b": [
+          BACARRA: {
+            b: [
               "BANI",
               "BUYON",
               "CABARUAN",
@@ -1910,8 +1910,8 @@ export const data = [
               "TUBBURAN"
             ]
           },
-          "BADOC": {
-            "b": [
+          BADOC: {
+            b: [
               "ALAY-NANGBABAAN (ALAY 15-B)",
               "ALOGOOG",
               "AR-ARUSIP",
@@ -1945,8 +1945,8 @@ export const data = [
               "TUROD"
             ]
           },
-          "BANGUI": {
-            "b": [
+          BANGUI: {
+            b: [
               "ABACA",
               "BACSIL",
               "BANBAN",
@@ -1964,7 +1964,7 @@ export const data = [
             ]
           },
           "BANNA (ESPIRITU)": {
-            "b": [
+            b: [
               "BALIOEG",
               "BANGSAR",
               "BARBARANGAY",
@@ -1988,7 +1988,7 @@ export const data = [
             ]
           },
           "BATAC CITY": {
-            "b": [
+            b: [
               "ABLAN POB. (LABUCAO)",
               "ACOSTA POB. (ILOILO)",
               "AGLIPAY (POB.)",
@@ -2034,8 +2034,8 @@ export const data = [
               "VALDEZ POB. (CAOAYAN)"
             ]
           },
-          "BURGOS": {
-            "b": [
+          BURGOS: {
+            b: [
               "ABLAN SARAT",
               "AGAGA",
               "BAYOG",
@@ -2049,15 +2049,15 @@ export const data = [
               "TANAP"
             ]
           },
-          "CARASI": {
-            "b": [
+          CARASI: {
+            b: [
               "ANGSET",
               "BARBAQUESO (POB.)",
               "VIRBIRA"
             ]
           },
-          "CURRIMAO": {
-            "b": [
+          CURRIMAO: {
+            b: [
               "ANGGAPANG NORTE",
               "ANGGAPANG SUR",
               "BIMMANGA",
@@ -2083,8 +2083,8 @@ export const data = [
               "VICTORIA"
             ]
           },
-          "DINGRAS": {
-            "b": [
+          DINGRAS: {
+            b: [
               "ALBANO (POB.)",
               "BACSIL",
               "BAGUT",
@@ -2118,8 +2118,8 @@ export const data = [
               "VER (NAGLAYAAN)"
             ]
           },
-          "DUMALNEG": {
-            "b": [
+          DUMALNEG: {
+            b: [
               "CABARITAN",
               "KALAW",
               "QUIBEL",
@@ -2127,7 +2127,7 @@ export const data = [
             ]
           },
           "LAOAG CITY": {
-            "b": [
+            b: [
               "BGY. NO. 1, SAN LORENZO (POB.)",
               "BGY. NO. 2, SANTA JOAQUINA (POB.)",
               "BGY. NO. 3, NSTRA. SRA. DEL ROSARIO (POB.)",
@@ -2210,8 +2210,8 @@ export const data = [
               "BRY. NO. 48-A, CABUNGAAN NORTH"
             ]
           },
-          "MARCOS": {
-            "b": [
+          MARCOS: {
+            b: [
               "CACAFEAN",
               "DAQUIOAG",
               "ELIZABETH (CULAO)",
@@ -2228,7 +2228,7 @@ export const data = [
             ]
           },
           "NUEVA ERA": {
-            "b": [
+            b: [
               "ACNAM",
               "BARANGOBONG",
               "BARIKIR",
@@ -2242,8 +2242,8 @@ export const data = [
               "UGUIS"
             ]
           },
-          "PAGUDPUD": {
-            "b": [
+          PAGUDPUD: {
+            b: [
               "AGGASI",
               "BADUANG",
               "BALAOI",
@@ -2262,8 +2262,8 @@ export const data = [
               "TARRAG"
             ]
           },
-          "PAOAY": {
-            "b": [
+          PAOAY: {
+            b: [
               "BACSIL",
               "CABAGOAN",
               "CABANGARAN",
@@ -2297,8 +2297,8 @@ export const data = [
               "VERONICA"
             ]
           },
-          "PASUQUIN": {
-            "b": [
+          PASUQUIN: {
+            b: [
               "BATULI",
               "BINSANG",
               "CARUAN",
@@ -2334,8 +2334,8 @@ export const data = [
               "TADAO"
             ]
           },
-          "PIDDIG": {
-            "b": [
+          PIDDIG: {
+            b: [
               "AB-ABUT",
               "ABUCAY",
               "ANAO (POB.)",
@@ -2361,8 +2361,8 @@ export const data = [
               "TONOTON"
             ]
           },
-          "PINILI": {
-            "b": [
+          PINILI: {
+            b: [
               "AGLIPAY",
               "APATUT-LUBONG",
               "BADIO",
@@ -2391,7 +2391,7 @@ export const data = [
             ]
           },
           "SAN NICOLAS": {
-            "b": [
+            b: [
               "SAN AGUSTIN",
               "SAN BALTAZAR (POB.)",
               "SAN BARTOLOME (POB.)",
@@ -2418,8 +2418,8 @@ export const data = [
               "SANTA MONICA (NAGREBCAN)"
             ]
           },
-          "SARRAT": {
-            "b": [
+          SARRAT: {
+            b: [
               "SAN AGUSTIN (POB.)",
               "SAN ANDRES",
               "SAN ANTONIO",
@@ -2446,8 +2446,8 @@ export const data = [
               "SANTO TOMAS"
             ]
           },
-          "SOLSONA": {
-            "b": [
+          SOLSONA: {
+            b: [
               "AGUITAP",
               "BAGBAG",
               "BAGBAGO",
@@ -2472,8 +2472,8 @@ export const data = [
               "TALUGTOG"
             ]
           },
-          "VINTAR": {
-            "b": [
+          VINTAR: {
+            b: [
               "ABKIR",
               "ALEJO MALASIG",
               "ALSEM",
@@ -2512,9 +2512,9 @@ export const data = [
         }
       },
       "ILOCOS SUR": {
-        "m": {
-          "ALILEM": {
-            "b": [
+        m: {
+          ALILEM: {
+            b: [
               "ALILEM DAYA (POB.)",
               "AMILONGAN",
               "ANAAO",
@@ -2526,8 +2526,8 @@ export const data = [
               "KIAT"
             ]
           },
-          "BANAYOYO": {
-            "b": [
+          BANAYOYO: {
+            b: [
               "BAGBAGOTOT",
               "BANBANAAL",
               "BISANGOL",
@@ -2544,8 +2544,8 @@ export const data = [
               "POBLACION"
             ]
           },
-          "BANTAY": {
-            "b": [
+          BANTAY: {
+            b: [
               "AGGAY",
               "AN-ANNAM",
               "BALALENG",
@@ -2582,8 +2582,8 @@ export const data = [
               "TAY-AC"
             ]
           },
-          "BURGOS": {
-            "b": [
+          BURGOS: {
+            b: [
               "AMBUGAT",
               "BALUGANG",
               "BANGBANGAR",
@@ -2612,8 +2612,8 @@ export const data = [
               "TALIAO"
             ]
           },
-          "CABUGAO": {
-            "b": [
+          CABUGAO: {
+            b: [
               "ALINAAY",
               "ARAGAN",
               "ARNAP",
@@ -2650,7 +2650,7 @@ export const data = [
             ]
           },
           "CANDON CITY": {
-            "b": [
+            b: [
               "ALLANGIGAN PRIMERO",
               "ALLANGIGAN SEGUNDO",
               "AMGUID",
@@ -2695,8 +2695,8 @@ export const data = [
               "VILLARICA"
             ]
           },
-          "CAOAYAN": {
-            "b": [
+          CAOAYAN: {
+            b: [
               "ANONANG MAYOR",
               "ANONANG MENOR",
               "BAGGOC",
@@ -2716,8 +2716,8 @@ export const data = [
               "VILLAMAR"
             ]
           },
-          "CERVANTES": {
-            "b": [
+          CERVANTES: {
+            b: [
               "ALULING",
               "COMILLAS NORTH",
               "COMILLAS SOUTH",
@@ -2733,8 +2733,8 @@ export const data = [
               "SAN LUIS"
             ]
           },
-          "GALIMUYOD": {
-            "b": [
+          GALIMUYOD: {
+            b: [
               "ABAYA",
               "BARACBAC",
               "BIDBIDAY",
@@ -2762,7 +2762,7 @@ export const data = [
             ]
           },
           "GREGORIO DEL PILAR (CONCEPCION)": {
-            "b": [
+            b: [
               "ALFONSO (TANGAOAN)",
               "BUSSOT",
               "CONCEPCION",
@@ -2772,8 +2772,8 @@ export const data = [
               "POBLACION SUR"
             ]
           },
-          "LIDLIDDA": {
-            "b": [
+          LIDLIDDA: {
+            b: [
               "BANUCAL",
               "BEQUI-WALIN",
               "BUGUI",
@@ -2787,8 +2787,8 @@ export const data = [
               "TAY-AC"
             ]
           },
-          "MAGSINGAL": {
-            "b": [
+          MAGSINGAL: {
+            b: [
               "ALANGAN",
               "BACAR",
               "BARBARIT",
@@ -2821,8 +2821,8 @@ export const data = [
               "SARSARACAT"
             ]
           },
-          "NAGBUKEL": {
-            "b": [
+          NAGBUKEL: {
+            b: [
               "BALAWEG",
               "BANDRIL",
               "BANTUGO",
@@ -2837,8 +2837,8 @@ export const data = [
               "TALEB"
             ]
           },
-          "NARVACAN": {
-            "b": [
+          NARVACAN: {
+            b: [
               "ABUOR",
               "AMBULOGAN",
               "AQUIB",
@@ -2876,7 +2876,7 @@ export const data = [
             ]
           },
           "QUIRINO (ANGKAKI)": {
-            "b": [
+            b: [
               "BANOEN",
               "CAYUS",
               "LAMAG (TUBTUBA)",
@@ -2889,7 +2889,7 @@ export const data = [
             ]
           },
           "SALCEDO (BAUGEN)": {
-            "b": [
+            b: [
               "ATABAY",
               "BALIDBID",
               "BALUARTE",
@@ -2914,7 +2914,7 @@ export const data = [
             ]
           },
           "SAN EMILIO": {
-            "b": [
+            b: [
               "CABAROAN (POB.)",
               "KALUMSING",
               "LANCUAS",
@@ -2926,7 +2926,7 @@ export const data = [
             ]
           },
           "SAN ESTEBAN": {
-            "b": [
+            b: [
               "ANSAD",
               "APATOT",
               "BATERIA",
@@ -2940,7 +2940,7 @@ export const data = [
             ]
           },
           "SAN ILDEFONSO": {
-            "b": [
+            b: [
               "ARNAP",
               "BAHET",
               "BELEN",
@@ -2959,7 +2959,7 @@ export const data = [
             ]
           },
           "SAN JUAN (LAPOG)": {
-            "b": [
+            b: [
               "ASILANG",
               "BACSIL",
               "BALIW",
@@ -2995,7 +2995,7 @@ export const data = [
             ]
           },
           "SAN VICENTE": {
-            "b": [
+            b: [
               "BANTAOAY",
               "BAYUBAY NORTE",
               "BAYUBAY SUR",
@@ -3005,8 +3005,8 @@ export const data = [
               "SAN SEBASTIAN"
             ]
           },
-          "SANTA": {
-            "b": [
+          SANTA: {
+            b: [
               "AMPANDULA",
               "BANAOANG",
               "BASUG",
@@ -3036,7 +3036,7 @@ export const data = [
             ]
           },
           "SANTA CATALINA": {
-            "b": [
+            b: [
               "CABAROAN",
               "CABITTAOGAN",
               "CABULOAN",
@@ -3049,7 +3049,7 @@ export const data = [
             ]
           },
           "SANTA CRUZ": {
-            "b": [
+            b: [
               "AMARAO",
               "BABAYOAN",
               "BACSAYAN",
@@ -3102,7 +3102,7 @@ export const data = [
             ]
           },
           "SANTA LUCIA": {
-            "b": [
+            b: [
               "ALINCAOEG",
               "ANGKILENG",
               "ARANGIN",
@@ -3142,7 +3142,7 @@ export const data = [
             ]
           },
           "SANTA MARIA": {
-            "b": [
+            b: [
               "AG-AGRAO",
               "AMPUAGAN",
               "BABALLASIOAN",
@@ -3178,8 +3178,8 @@ export const data = [
               "TINAAN"
             ]
           },
-          "SANTIAGO": {
-            "b": [
+          SANTIAGO: {
+            b: [
               "AL-ALUDIG",
               "AMBUCAO",
               "BAYBAYABAS",
@@ -3207,7 +3207,7 @@ export const data = [
             ]
           },
           "SANTO DOMINGO": {
-            "b": [
+            b: [
               "BINALAYANGAN",
               "BINONGAN",
               "BOROBOR",
@@ -3246,8 +3246,8 @@ export const data = [
               "VACUNERO"
             ]
           },
-          "SIGAY": {
-            "b": [
+          SIGAY: {
+            b: [
               "ABACCAN",
               "MABILEG",
               "MATALLUCOD",
@@ -3257,8 +3257,8 @@ export const data = [
               "SANTO ROSARIO"
             ]
           },
-          "SINAIT": {
-            "b": [
+          SINAIT: {
+            b: [
               "AGUING",
               "BALIW",
               "BALLAIGUI (POB.)",
@@ -3305,8 +3305,8 @@ export const data = [
               "ZAPAT"
             ]
           },
-          "SUGPON": {
-            "b": [
+          SUGPON: {
+            b: [
               "BALBALAYANG (POB.)",
               "BANGA",
               "CAOAYAN",
@@ -3315,8 +3315,8 @@ export const data = [
               "PANGOTAN"
             ]
           },
-          "SUYO": {
-            "b": [
+          SUYO: {
+            b: [
               "BARINGCUCURONG",
               "CABUGAO",
               "MAN-ATONG",
@@ -3327,8 +3327,8 @@ export const data = [
               "USO"
             ]
           },
-          "TAGUDIN": {
-            "b": [
+          TAGUDIN: {
+            b: [
               "AG-AGUMAN",
               "AMBALAYAT",
               "BARACBAC",
@@ -3375,7 +3375,7 @@ export const data = [
             ]
           },
           "VIGAN CITY": {
-            "b": [
+            b: [
               "AYUSAN NORTE",
               "AYUSAN SUR",
               "BARANGAY I (POB.)",
@@ -3420,9 +3420,9 @@ export const data = [
         }
       },
       "LA UNION": {
-        "m": {
-          "AGOO": {
-            "b": [
+        m: {
+          AGOO: {
+            b: [
               "AMBITACAY",
               "BALAWARTE",
               "CAPAS",
@@ -3474,8 +3474,8 @@ export const data = [
               "SANTA RITA WEST"
             ]
           },
-          "ARINGAY": {
-            "b": [
+          ARINGAY: {
+            b: [
               "ALASKA",
               "BASCA",
               "DULAO",
@@ -3502,8 +3502,8 @@ export const data = [
               "SANTO ROSARIO WEST"
             ]
           },
-          "BACNOTAN": {
-            "b": [
+          BACNOTAN: {
+            b: [
               "AGTIPAL",
               "AROSIP",
               "BACQUI",
@@ -3553,8 +3553,8 @@ export const data = [
               "ZARAGOSA"
             ]
           },
-          "BAGULIN": {
-            "b": [
+          BAGULIN: {
+            b: [
               "ALIBANGSAY",
               "BAAY",
               "CAMBALY",
@@ -3567,8 +3567,8 @@ export const data = [
               "WALLAYAN"
             ]
           },
-          "BALAOAN": {
-            "b": [
+          BALAOAN: {
+            b: [
               "ALMIEDA",
               "ANTONINO",
               "APATUT",
@@ -3607,8 +3607,8 @@ export const data = [
               "TALLIPUGO"
             ]
           },
-          "BANGAR": {
-            "b": [
+          BANGAR: {
+            b: [
               "AGDEPPA",
               "ALZATE",
               "BANGAOILAN EAST",
@@ -3644,8 +3644,8 @@ export const data = [
               "UBBOG"
             ]
           },
-          "BAUANG": {
-            "b": [
+          BAUANG: {
+            b: [
               "ACAO",
               "BACCUIT NORTE",
               "BACCUIT SUR",
@@ -3687,8 +3687,8 @@ export const data = [
               "URAYONG"
             ]
           },
-          "BURGOS": {
-            "b": [
+          BURGOS: {
+            b: [
               "AGPAY",
               "BILIS",
               "CAOAYAN",
@@ -3703,8 +3703,8 @@ export const data = [
               "UPPER TUMAPOC"
             ]
           },
-          "CABA": {
-            "b": [
+          CABA: {
+            b: [
               "BAUTISTA",
               "GANA",
               "JUAN CARTAS",
@@ -3725,7 +3725,7 @@ export const data = [
             ]
           },
           "CITY OF SAN FERNANDO": {
-            "b": [
+            b: [
               "ABUT",
               "APALENG",
               "BACSIL",
@@ -3787,8 +3787,8 @@ export const data = [
               "TANQUIGAN"
             ]
           },
-          "LUNA": {
-            "b": [
+          LUNA: {
+            b: [
               "ALCALA (POB.)",
               "AYAOAN",
               "BARANGOBONG",
@@ -3831,8 +3831,8 @@ export const data = [
               "VICTORIA (POB.)"
             ]
           },
-          "NAGUILIAN": {
-            "b": [
+          NAGUILIAN: {
+            b: [
               "AGUIOAS",
               "AL-ALINAO NORTE",
               "AL-ALINAO SUR",
@@ -3872,8 +3872,8 @@ export const data = [
               "TUDDINGAN"
             ]
           },
-          "PUGO": {
-            "b": [
+          PUGO: {
+            b: [
               "AMBALITE",
               "AMBANGONAN",
               "CARES",
@@ -3890,8 +3890,8 @@ export const data = [
               "TAVORA PROPER"
             ]
           },
-          "ROSARIO": {
-            "b": [
+          ROSARIO: {
+            b: [
               "ALIPANG",
               "AMBANGONAN",
               "AMLANG",
@@ -3928,7 +3928,7 @@ export const data = [
             ]
           },
           "SAN GABRIEL": {
-            "b": [
+            b: [
               "AMONTOC",
               "APAYAO",
               "BALBALAYANG",
@@ -3947,7 +3947,7 @@ export const data = [
             ]
           },
           "SAN JUAN": {
-            "b": [
+            b: [
               "ALLANGIGAN",
               "ALUDAID",
               "BACSAYAN",
@@ -3992,7 +3992,7 @@ export const data = [
             ]
           },
           "SANTO TOMAS": {
-            "b": [
+            b: [
               "AMBITACAY",
               "BAIL",
               "BALAOC",
@@ -4019,8 +4019,8 @@ export const data = [
               "UBAGAN"
             ]
           },
-          "SANTOL": {
-            "b": [
+          SANTOL: {
+            b: [
               "CORROOY",
               "LETTAC NORTE",
               "LETTAC SUR",
@@ -4034,8 +4034,8 @@ export const data = [
               "TUBADAY"
             ]
           },
-          "SUDIPEN": {
-            "b": [
+          SUDIPEN: {
+            b: [
               "BIGBIGA",
               "BULALAAN",
               "CASTRO",
@@ -4055,8 +4055,8 @@ export const data = [
               "UP-UPLAS"
             ]
           },
-          "TUBAO": {
-            "b": [
+          TUBAO: {
+            b: [
               "AMALLAPAY",
               "ANDUYAN",
               "CAOIGUE",
@@ -4079,10 +4079,10 @@ export const data = [
           }
         }
       },
-      "PANGASINAN": {
-        "m": {
-          "AGNO": {
-            "b": [
+      PANGASINAN: {
+        m: {
+          AGNO: {
+            b: [
               "ALLABON",
               "ALOLENG",
               "BANGAN-ODA",
@@ -4102,8 +4102,8 @@ export const data = [
               "VIGA"
             ]
           },
-          "AGUILAR": {
-            "b": [
+          AGUILAR: {
+            b: [
               "BAYAOAS",
               "BAYBAY",
               "BOCACLIW",
@@ -4123,7 +4123,7 @@ export const data = [
             ]
           },
           "ALAMINOS CITY": {
-            "b": [
+            b: [
               "ALOS",
               "AMANDIEGO",
               "AMANGBANGAN",
@@ -4165,8 +4165,8 @@ export const data = [
               "VICTORIA"
             ]
           },
-          "ALCALA": {
-            "b": [
+          ALCALA: {
+            b: [
               "ANULID",
               "ATAINAN",
               "BERSAMIN",
@@ -4190,8 +4190,8 @@ export const data = [
               "VACANTE"
             ]
           },
-          "ANDA": {
-            "b": [
+          ANDA: {
+            b: [
               "AWAG",
               "AWILE",
               "BATIARAO",
@@ -4212,8 +4212,8 @@ export const data = [
               "TORITORI"
             ]
           },
-          "ASINGAN": {
-            "b": [
+          ASINGAN: {
+            b: [
               "ARISTON ESTE",
               "ARISTON WESTE",
               "BANTOG",
@@ -4237,8 +4237,8 @@ export const data = [
               "TOBOY"
             ]
           },
-          "BALUNGAO": {
-            "b": [
+          BALUNGAO: {
+            b: [
               "ANGAYAN NORTE",
               "ANGAYAN SUR",
               "CAPULAAN",
@@ -4261,8 +4261,8 @@ export const data = [
               "SAN RAYMUNDO"
             ]
           },
-          "BANI": {
-            "b": [
+          BANI: {
+            b: [
               "AMBABAAY",
               "APORAO",
               "ARWAS",
@@ -4292,8 +4292,8 @@ export const data = [
               "TUGUI NORTE"
             ]
           },
-          "BASISTA": {
-            "b": [
+          BASISTA: {
+            b: [
               "ANAMBONGAN",
               "BAYOYONG",
               "CABELDATAN",
@@ -4309,8 +4309,8 @@ export const data = [
               "POBLACION"
             ]
           },
-          "BAUTISTA": {
-            "b": [
+          BAUTISTA: {
+            b: [
               "ARTACHO",
               "BALUYOT",
               "CABUAAN",
@@ -4331,8 +4331,8 @@ export const data = [
               "VILLANUEVA"
             ]
           },
-          "BAYAMBANG": {
-            "b": [
+          BAYAMBANG: {
+            b: [
               "ALINGGAN",
               "AMAMPEREZ",
               "AMANCOSILING NORTE",
@@ -4412,8 +4412,8 @@ export const data = [
               "ZONE VII (POB.)"
             ]
           },
-          "BINALONAN": {
-            "b": [
+          BINALONAN: {
+            b: [
               "BALANGOBONG",
               "BUED",
               "BUGAYONG",
@@ -4440,8 +4440,8 @@ export const data = [
               "VACANTE"
             ]
           },
-          "BINMALEY": {
-            "b": [
+          BINMALEY: {
+            b: [
               "AMANCORO",
               "BALAGAN",
               "BALOGO",
@@ -4477,8 +4477,8 @@ export const data = [
               "TOMBOR"
             ]
           },
-          "BOLINAO": {
-            "b": [
+          BOLINAO: {
+            b: [
               "ARNEDO",
               "BALINGASAY",
               "BINABALIAN",
@@ -4511,8 +4511,8 @@ export const data = [
               "ZARAGOZA"
             ]
           },
-          "BUGALLON": {
-            "b": [
+          BUGALLON: {
+            b: [
               "ANGARIAN",
               "ASINAN",
               "BACABAC",
@@ -4539,8 +4539,8 @@ export const data = [
               "UMANDAY"
             ]
           },
-          "BURGOS": {
-            "b": [
+          BURGOS: {
+            b: [
               "ANAPAO (BUR ANAPAC)",
               "CACAYASEN",
               "CONCORDIA",
@@ -4557,8 +4557,8 @@ export const data = [
               "TAMBACAN"
             ]
           },
-          "CALASIAO": {
-            "b": [
+          CALASIAO: {
+            b: [
               "AMBONAO",
               "AMBUETEL",
               "BANAOANG",
@@ -4586,7 +4586,7 @@ export const data = [
             ]
           },
           "DAGUPAN CITY": {
-            "b": [
+            b: [
               "BACAYAO NORTE",
               "BACAYAO SUR",
               "BARANGAY I (T. BUGALLON)",
@@ -4620,8 +4620,8 @@ export const data = [
               "TEBENG"
             ]
           },
-          "DASOL": {
-            "b": [
+          DASOL: {
+            b: [
               "ALILAO",
               "AMALBALAN",
               "BOBONOT",
@@ -4642,8 +4642,8 @@ export const data = [
               "VIGA"
             ]
           },
-          "INFANTA": {
-            "b": [
+          INFANTA: {
+            b: [
               "BABUYAN",
               "BAMBAN",
               "BATANG",
@@ -4659,8 +4659,8 @@ export const data = [
               "POTOL"
             ]
           },
-          "LABRADOR": {
-            "b": [
+          LABRADOR: {
+            b: [
               "BOLO",
               "BONGALON",
               "DULIG",
@@ -4673,8 +4673,8 @@ export const data = [
               "UYONG"
             ]
           },
-          "LAOAC": {
-            "b": [
+          LAOAC: {
+            b: [
               "ANIS",
               "BALLIGI",
               "BANUAR",
@@ -4699,8 +4699,8 @@ export const data = [
               "YATYAT"
             ]
           },
-          "LINGAYEN": {
-            "b": [
+          LINGAYEN: {
+            b: [
               "ALIWEKWEK",
               "BAAY",
               "BALANGOBONG",
@@ -4735,8 +4735,8 @@ export const data = [
               "WAWA"
             ]
           },
-          "MABINI": {
-            "b": [
+          MABINI: {
+            b: [
               "BACNIT",
               "BARLO",
               "CAABIANGAAN",
@@ -4755,8 +4755,8 @@ export const data = [
               "VILLACORTA"
             ]
           },
-          "MALASIQUI": {
-            "b": [
+          MALASIQUI: {
+            b: [
               "ABONAGAN",
               "AGDAO",
               "ALACAN",
@@ -4832,8 +4832,8 @@ export const data = [
               "WAREY"
             ]
           },
-          "MANAOAG": {
-            "b": [
+          MANAOAG: {
+            b: [
               "BABASIT",
               "BAGUINAY",
               "BARITAO",
@@ -4862,8 +4862,8 @@ export const data = [
               "TEBUEL"
             ]
           },
-          "MANGALDAN": {
-            "b": [
+          MANGALDAN: {
+            b: [
               "ALITAYA",
               "AMANSABINA",
               "ANOLID",
@@ -4896,8 +4896,8 @@ export const data = [
               "TEBAG"
             ]
           },
-          "MANGATAREM": {
-            "b": [
+          MANGATAREM: {
+            b: [
               "ANDANGIN",
               "ARELLANO STREET (POB.)",
               "BANTAY",
@@ -4982,8 +4982,8 @@ export const data = [
               "ZAMORA (POB.)"
             ]
           },
-          "MAPANDAN": {
-            "b": [
+          MAPANDAN: {
+            b: [
               "AMANOAOAC",
               "APAYA",
               "ASERDA",
@@ -5001,8 +5001,8 @@ export const data = [
               "TORRES"
             ]
           },
-          "NATIVIDAD": {
-            "b": [
+          NATIVIDAD: {
+            b: [
               "BARANGOBONG",
               "BATCHELOR EAST",
               "BATCHELOR WEST",
@@ -5023,8 +5023,8 @@ export const data = [
               "SILAG"
             ]
           },
-          "POZORRUBIO": {
-            "b": [
+          POZORRUBIO: {
+            b: [
               "ALIPANGPANG",
               "AMAGBAGAN",
               "BALACAG",
@@ -5061,8 +5061,8 @@ export const data = [
               "VILLEGAS"
             ]
           },
-          "ROSALES": {
-            "b": [
+          ROSALES: {
+            b: [
               "ACOP",
               "BAKITBAKIT",
               "BALINGCANAWAY",
@@ -5103,7 +5103,7 @@ export const data = [
             ]
           },
           "SAN CARLOS CITY": {
-            "b": [
+            b: [
               "ABANON",
               "AGDAO",
               "ANANDO",
@@ -5193,7 +5193,7 @@ export const data = [
             ]
           },
           "SAN FABIAN": {
-            "b": [
+            b: [
               "ALACAN",
               "AMBALANGAN-DALIN",
               "ANGIO",
@@ -5231,7 +5231,7 @@ export const data = [
             ]
           },
           "SAN JACINTO": {
-            "b": [
+            b: [
               "AWAI",
               "BAGONG PAG-ASA (POBLACION EAST)",
               "BOLO",
@@ -5254,7 +5254,7 @@ export const data = [
             ]
           },
           "SAN MANUEL": {
-            "b": [
+            b: [
               "CABACARAAN",
               "CABARITAN",
               "FLORES",
@@ -5272,7 +5272,7 @@ export const data = [
             ]
           },
           "SAN NICOLAS": {
-            "b": [
+            b: [
               "BENSICAN",
               "CABITNONGAN",
               "CABOLOAN",
@@ -5309,7 +5309,7 @@ export const data = [
             ]
           },
           "SAN QUINTIN": {
-            "b": [
+            b: [
               "ALAC",
               "BALIGAYAN",
               "BANTOG",
@@ -5334,7 +5334,7 @@ export const data = [
             ]
           },
           "SANTA BARBARA": {
-            "b": [
+            b: [
               "ALIBAGO",
               "BALINGUEO",
               "BANAOANG",
@@ -5367,7 +5367,7 @@ export const data = [
             ]
           },
           "SANTA MARIA": {
-            "b": [
+            b: [
               "BAL-LOY",
               "BANTOG",
               "CABOLUAN",
@@ -5394,7 +5394,7 @@ export const data = [
             ]
           },
           "SANTO TOMAS": {
-            "b": [
+            b: [
               "LA LUNA",
               "POBLACION EAST",
               "POBLACION WEST",
@@ -5407,8 +5407,8 @@ export const data = [
               "SANTO NIÑO"
             ]
           },
-          "SISON": {
-            "b": [
+          SISON: {
+            b: [
               "AGAT",
               "ALIBENG",
               "AMAGBAGAN",
@@ -5439,8 +5439,8 @@ export const data = [
               "TARA-TARA"
             ]
           },
-          "SUAL": {
-            "b": [
+          SUAL: {
+            b: [
               "BAQUIOEN",
               "BAYBAY NORTE",
               "BAYBAY SUR",
@@ -5462,8 +5462,8 @@ export const data = [
               "VICTORIA"
             ]
           },
-          "TAYUG": {
-            "b": [
+          TAYUG: {
+            b: [
               "AGNO",
               "AMISTAD",
               "BARANGAY A (POB.)",
@@ -5487,8 +5487,8 @@ export const data = [
               "ZAMORA"
             ]
           },
-          "UMINGAN": {
-            "b": [
+          UMINGAN: {
+            b: [
               "ABOT MOLINA",
               "ALO-O",
               "AMARONAN",
@@ -5549,8 +5549,8 @@ export const data = [
               "TANGGAL SAWANG"
             ]
           },
-          "URBIZTONDO": {
-            "b": [
+          URBIZTONDO: {
+            b: [
               "ANGATEL",
               "BALANGAY",
               "BATANGCAOA",
@@ -5575,7 +5575,7 @@ export const data = [
             ]
           },
           "URDANETA CITY": {
-            "b": [
+            b: [
               "ANONAS",
               "BACTAD EAST",
               "BAYAOAS",
@@ -5612,8 +5612,8 @@ export const data = [
               "TULONG"
             ]
           },
-          "VILLASIS": {
-            "b": [
+          VILLASIS: {
+            b: [
               "AMAMPEREZ",
               "BACAG",
               "BARANGOBONG",
@@ -5642,12 +5642,12 @@ export const data = [
     }
   },
   {
-    "r": "REGION II",
-    "p": {
-      "BATANES": {
-        "m": {
-          "BASCO": {
-            "b": [
+    r: "REGION II",
+    p: {
+      BATANES: {
+        m: {
+          BASCO: {
+            b: [
               "CHANARIAN",
               "IHUBOK I (KAYCHANARIANAN)",
               "IHUBOK II (KAYVALUGANAN)",
@@ -5656,8 +5656,8 @@ export const data = [
               "SAN JOAQUIN"
             ]
           },
-          "ITBAYAT": {
-            "b": [
+          ITBAYAT: {
+            b: [
               "RAELE",
               "SAN RAFAEL (IDIANG)",
               "SANTA LUCIA (KAUHAUHASAN)",
@@ -5665,24 +5665,24 @@ export const data = [
               "SANTA ROSA (KAYNATUAN)"
             ]
           },
-          "IVANA": {
-            "b": [
+          IVANA: {
+            b: [
               "RADIWAN",
               "SALAGAO",
               "SAN VICENTE (IGANG)",
               "TUHEL (POB.)"
             ]
           },
-          "MAHATAO": {
-            "b": [
+          MAHATAO: {
+            b: [
               "HANIB",
               "KAUMBAKAN",
               "PANATAYAN",
               "UVOY (POB.)"
             ]
           },
-          "SABTANG": {
-            "b": [
+          SABTANG: {
+            b: [
               "CHAVAYAN",
               "MALAKDANG (POB.)",
               "NAKANMUAN",
@@ -5691,8 +5691,8 @@ export const data = [
               "SUMNANGA"
             ]
           },
-          "UYUGAN": {
-            "b": [
+          UYUGAN: {
+            b: [
               "IMNAJBU",
               "ITBUD",
               "KAYUGANAN (POB.)",
@@ -5701,10 +5701,10 @@ export const data = [
           }
         }
       },
-      "CAGAYAN": {
-        "m": {
-          "ABULUG": {
-            "b": [
+      CAGAYAN: {
+        m: {
+          ABULUG: {
+            b: [
               "ALINUNU",
               "BAGU",
               "BANGUIAN",
@@ -5727,8 +5727,8 @@ export const data = [
               "SIRIT"
             ]
           },
-          "ALCALA": {
-            "b": [
+          ALCALA: {
+            b: [
               "ABBEG",
               "AFUSING BATO",
               "AFUSING DAGA",
@@ -5756,8 +5756,8 @@ export const data = [
               "TUPANG"
             ]
           },
-          "ALLACAPAN": {
-            "b": [
+          ALLACAPAN: {
+            b: [
               "BESSANG",
               "BINOBONGAN",
               "BULO",
@@ -5787,8 +5787,8 @@ export const data = [
               "UTAN"
             ]
           },
-          "AMULUNG": {
-            "b": [
+          AMULUNG: {
+            b: [
               "ABOLO",
               "AGGUIRIT",
               "ALITUNGTUNG",
@@ -5838,8 +5838,8 @@ export const data = [
               "UNAG"
             ]
           },
-          "APARRI": {
-            "b": [
+          APARRI: {
+            b: [
               "BACKILING",
               "BANGAG",
               "BINALAN",
@@ -5884,8 +5884,8 @@ export const data = [
               "ZINARAG"
             ]
           },
-          "BAGGAO": {
-            "b": [
+          BAGGAO: {
+            b: [
               "ADAOAG",
               "AGAMAN (PROPER)",
               "AGAMAN NORTE",
@@ -5936,8 +5936,8 @@ export const data = [
               "TUNGEL"
             ]
           },
-          "BALLESTEROS": {
-            "b": [
+          BALLESTEROS: {
+            b: [
               "AMMUBUAN",
               "BARAN",
               "CABARITAN EAST",
@@ -5959,8 +5959,8 @@ export const data = [
               "ZITANGA"
             ]
           },
-          "BUGUEY": {
-            "b": [
+          BUGUEY: {
+            b: [
               "ALUCAO WESTE (SAN LORENZO*)",
               "ANTIPORDA",
               "BALLANG",
@@ -5993,8 +5993,8 @@ export const data = [
               "VILLA LEONORA"
             ]
           },
-          "CALAYAN": {
-            "b": [
+          CALAYAN: {
+            b: [
               "BABUYAN CLARO",
               "BALATUBAT",
               "CABUDADAN",
@@ -6009,8 +6009,8 @@ export const data = [
               "POBLACION"
             ]
           },
-          "CAMALANIUGAN": {
-            "b": [
+          CAMALANIUGAN: {
+            b: [
               "ABAGAO",
               "AFUNAN CABAYU",
               "AGUSI",
@@ -6041,8 +6041,8 @@ export const data = [
               "ZIMINILA"
             ]
           },
-          "CLAVERIA": {
-            "b": [
+          CLAVERIA: {
+            b: [
               "ALIMOAN",
               "BACSAY CATARAOAN NORTE",
               "BACSAY CATARAOAN SUR",
@@ -6086,8 +6086,8 @@ export const data = [
               "UNION"
             ]
           },
-          "ENRILE": {
-            "b": [
+          ENRILE: {
+            b: [
               "ALIBAGO (VILLA MARIA)",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -6112,8 +6112,8 @@ export const data = [
               "SAN ANTONIO"
             ]
           },
-          "GATTARAN": {
-            "b": [
+          GATTARAN: {
+            b: [
               "ABRA",
               "AGUIGUICAN",
               "BANGATAN NGAGAN",
@@ -6166,8 +6166,8 @@ export const data = [
               "TUBUNGAN WESTE"
             ]
           },
-          "GONZAGA": {
-            "b": [
+          GONZAGA: {
+            b: [
               "AMUNITAN",
               "BATANGAN",
               "BAUA",
@@ -6195,8 +6195,8 @@ export const data = [
               "TAPEL"
             ]
           },
-          "IGUIG": {
-            "b": [
+          IGUIG: {
+            b: [
               "AJAT (POB.)",
               "ATULU",
               "BACULUD",
@@ -6223,7 +6223,7 @@ export const data = [
             ]
           },
           "LAL-LO": {
-            "b": [
+            b: [
               "ABAGAO",
               "ALAGUIA",
               "BAGUMBAYAN",
@@ -6261,8 +6261,8 @@ export const data = [
               "TUCALANA"
             ]
           },
-          "LASAM": {
-            "b": [
+          LASAM: {
+            b: [
               "AGGUNETAN",
               "ALANNAY",
               "BATTALAN",
@@ -6295,8 +6295,8 @@ export const data = [
               "VIGA"
             ]
           },
-          "PAMPLONA": {
-            "b": [
+          PAMPLONA: {
+            b: [
               "ABANQUERUAN",
               "ALLASITAN",
               "BAGU",
@@ -6317,8 +6317,8 @@ export const data = [
               "TUPANNA"
             ]
           },
-          "PEÑABLANCA": {
-            "b": [
+          PEÑABLANCA: {
+            b: [
               "AGGUGADDAN",
               "ALIMANAO",
               "BALIUAG",
@@ -6345,8 +6345,8 @@ export const data = [
               "SISIM"
             ]
           },
-          "PIAT": {
-            "b": [
+          PIAT: {
+            b: [
               "APAYAO",
               "AQUIB",
               "BAUNG",
@@ -6367,8 +6367,8 @@ export const data = [
               "WARAT"
             ]
           },
-          "RIZAL": {
-            "b": [
+          RIZAL: {
+            b: [
               "ANAGGUAN",
               "ANUNGU",
               "ANURTURU",
@@ -6401,7 +6401,7 @@ export const data = [
             ]
           },
           "SANCHEZ-MIRA": {
-            "b": [
+            b: [
               "BANGAN",
               "CALLUNGAN",
               "CENTRO I (POB.)",
@@ -6423,7 +6423,7 @@ export const data = [
             ]
           },
           "SANTA ANA": {
-            "b": [
+            b: [
               "BATU-PARADA",
               "CASAGAN",
               "CASAMBALANGAN (PORT IRENE)",
@@ -6443,7 +6443,7 @@ export const data = [
             ]
           },
           "SANTA PRAXEDES": {
-            "b": [
+            b: [
               "CADONGDONGAN",
               "CAPACUAN",
               "CENTRO I (POB.)",
@@ -6457,7 +6457,7 @@ export const data = [
             ]
           },
           "SANTA TERESITA": {
-            "b": [
+            b: [
               "ALUCAO",
               "ARIDAWEN",
               "BUYUN",
@@ -6474,7 +6474,7 @@ export const data = [
             ]
           },
           "SANTO NIÑO (FAIRE)": {
-            "b": [
+            b: [
               "ABARIONGAN RUAR",
               "ABARIONGAN UNEG",
               "BALAGAN",
@@ -6508,8 +6508,8 @@ export const data = [
               "VIRGINIA"
             ]
           },
-          "SOLANA": {
-            "b": [
+          SOLANA: {
+            b: [
               "ANDARAYAN NORTH",
               "ANDARAYAN SOUTH",
               "BANGAG",
@@ -6550,8 +6550,8 @@ export const data = [
               "UBONG"
             ]
           },
-          "TUAO": {
-            "b": [
+          TUAO: {
+            b: [
               "ACCUSILIAN",
               "ALABIAO",
               "ALABUG",
@@ -6587,7 +6587,7 @@ export const data = [
             ]
           },
           "TUGUEGARAO CITY": {
-            "b": [
+            b: [
               "ANNAFUNAN EAST",
               "ANNAFUNAN WEST",
               "ATULAYAN NORTE",
@@ -6641,10 +6641,10 @@ export const data = [
           }
         }
       },
-      "ISABELA": {
-        "m": {
-          "ALICIA": {
-            "b": [
+      ISABELA: {
+        m: {
+          ALICIA: {
+            b: [
               "AMISTAD",
               "ANTONINO (POB.)",
               "APANAY",
@@ -6681,8 +6681,8 @@ export const data = [
               "ZAMORA"
             ]
           },
-          "ANGADANAN": {
-            "b": [
+          ANGADANAN: {
+            b: [
               "ALLANGIGAN",
               "ANIOG",
               "BANIKET",
@@ -6744,8 +6744,8 @@ export const data = [
               "VILLA DOMINGO"
             ]
           },
-          "AURORA": {
-            "b": [
+          AURORA: {
+            b: [
               "APIAT",
               "BAGNOS",
               "BAGONG TANZA",
@@ -6782,7 +6782,7 @@ export const data = [
             ]
           },
           "BENITO SOLIVEN": {
-            "b": [
+            b: [
               "ANDABUEN",
               "ARA",
               "BALLIAO",
@@ -6814,8 +6814,8 @@ export const data = [
               "YEBAN SUR"
             ]
           },
-          "BURGOS": {
-            "b": [
+          BURGOS: {
+            b: [
               "BACNOR EAST",
               "BACNOR WEST",
               "CALIGUIAN (POB.)",
@@ -6832,8 +6832,8 @@ export const data = [
               "SAN ROQUE"
             ]
           },
-          "CABAGAN": {
-            "b": [
+          CABAGAN: {
+            b: [
               "AGGUB",
               "ANAO",
               "ANGANCASILIAN",
@@ -6862,8 +6862,8 @@ export const data = [
               "UNION"
             ]
           },
-          "CABATUAN": {
-            "b": [
+          CABATUAN: {
+            b: [
               "CALAOCAN",
               "CANAN",
               "CENTRO (POB.)",
@@ -6889,7 +6889,7 @@ export const data = [
             ]
           },
           "CAUAYAN CITY": {
-            "b": [
+            b: [
               "ALICAOCAO",
               "ALINAM",
               "AMOBOCAN",
@@ -6958,7 +6958,7 @@ export const data = [
             ]
           },
           "CITY OF SANTIAGO": {
-            "b": [
+            b: [
               "ABRA",
               "AMBALATUNGAN",
               "BALINTOCATOC",
@@ -6998,8 +6998,8 @@ export const data = [
               "VILLASIS"
             ]
           },
-          "CORDON": {
-            "b": [
+          CORDON: {
+            b: [
               "AGUINALDO (RIZALUNA ESTE)",
               "ANONANG (BALITOC*)",
               "CALIMATUROD",
@@ -7029,7 +7029,7 @@ export const data = [
             ]
           },
           "DELFIN ALBANO (MAGSAYSAY)": {
-            "b": [
+            b: [
               "AGA",
               "ANDARAYAN",
               "ANEG",
@@ -7061,8 +7061,8 @@ export const data = [
               "VISITACION"
             ]
           },
-          "DINAPIGUE": {
-            "b": [
+          DINAPIGUE: {
+            b: [
               "AYOD",
               "BUCAL NORTE",
               "BUCAL SUR",
@@ -7071,8 +7071,8 @@ export const data = [
               "DIMALUADE"
             ]
           },
-          "DIVILACAN": {
-            "b": [
+          DIVILACAN: {
+            b: [
               "BICOBIAN",
               "DIBULOS",
               "DICAMBANGAN",
@@ -7087,8 +7087,8 @@ export const data = [
               "SAPINIT"
             ]
           },
-          "ECHAGUE": {
-            "b": [
+          ECHAGUE: {
+            b: [
               "ANGOLUAN",
               "ANNAFUNAN",
               "ARABIAT",
@@ -7155,8 +7155,8 @@ export const data = [
               "VILLA VICTORIA"
             ]
           },
-          "GAMU": {
-            "b": [
+          GAMU: {
+            b: [
               "BARCOLAN",
               "BUENAVISTA",
               "DAMMAO",
@@ -7176,7 +7176,7 @@ export const data = [
             ]
           },
           "ILAGAN CITY": {
-            "b": [
+            b: [
               "AGGASIAN",
               "ALIBAGU",
               "ALLINGUIGAN 1ST",
@@ -7270,8 +7270,8 @@ export const data = [
               "VILLA IMELDA (MAPLAS)"
             ]
           },
-          "JONES": {
-            "b": [
+          JONES: {
+            b: [
               "ABULAN",
               "ADDALAM",
               "ARUBUB",
@@ -7316,8 +7316,8 @@ export const data = [
               "VILLA BELLO"
             ]
           },
-          "LUNA": {
-            "b": [
+          LUNA: {
+            b: [
               "BUSTAMANTE",
               "CENTRO 1 (POB.)",
               "CENTRO 2 (POB.)",
@@ -7339,8 +7339,8 @@ export const data = [
               "UNION KALINGA"
             ]
           },
-          "MACONACON": {
-            "b": [
+          MACONACON: {
+            b: [
               "APLAYA",
               "CANADAM",
               "DIANA",
@@ -7353,8 +7353,8 @@ export const data = [
               "SANTA MARINA (DIANGGO)"
             ]
           },
-          "MALLIG": {
-            "b": [
+          MALLIG: {
+            b: [
               "BINMONTON",
               "CASILI",
               "CENTRO I (POB.)",
@@ -7375,8 +7375,8 @@ export const data = [
               "VICTORIA"
             ]
           },
-          "NAGUILIAN": {
-            "b": [
+          NAGUILIAN: {
+            b: [
               "AGUINALDO",
               "BAGONG SIKAT",
               "BURGOS",
@@ -7404,8 +7404,8 @@ export const data = [
               "VILLA PAZ"
             ]
           },
-          "PALANAN": {
-            "b": [
+          PALANAN: {
+            b: [
               "ALOMANAY",
               "BISAG",
               "CULASI",
@@ -7425,8 +7425,8 @@ export const data = [
               "VILLA ROBLES"
             ]
           },
-          "QUEZON": {
-            "b": [
+          QUEZON: {
+            b: [
               "ABUT",
               "ALUNAN (POB.)",
               "ARELLANO (POB.)",
@@ -7444,8 +7444,8 @@ export const data = [
               "TUROD"
             ]
           },
-          "QUIRINO": {
-            "b": [
+          QUIRINO: {
+            b: [
               "BINARZANG",
               "CABARUAN",
               "CAMAAL",
@@ -7469,8 +7469,8 @@ export const data = [
               "VINTAR"
             ]
           },
-          "RAMON": {
-            "b": [
+          RAMON: {
+            b: [
               "AMBATALI",
               "BANTUG",
               "BUGALLON NORTE",
@@ -7493,7 +7493,7 @@ export const data = [
             ]
           },
           "REINA MERCEDES": {
-            "b": [
+            b: [
               "BANQUERO",
               "BINARSANG",
               "CUTOG GRANDE",
@@ -7516,8 +7516,8 @@ export const data = [
               "VILLADOR"
             ]
           },
-          "ROXAS": {
-            "b": [
+          ROXAS: {
+            b: [
               "ANAO",
               "BANTUG (POB.)",
               "DOÑA CONCHA",
@@ -7547,7 +7547,7 @@ export const data = [
             ]
           },
           "SAN AGUSTIN": {
-            "b": [
+            b: [
               "BAUTISTA",
               "CALAOCAN",
               "DABUBU GRANDE",
@@ -7574,7 +7574,7 @@ export const data = [
             ]
           },
           "SAN GUILLERMO": {
-            "b": [
+            b: [
               "ANONANG",
               "ARINGAY",
               "BURGOS",
@@ -7604,7 +7604,7 @@ export const data = [
             ]
           },
           "SAN ISIDRO": {
-            "b": [
+            b: [
               "CAMARAG",
               "CEBU",
               "GOMEZ",
@@ -7621,7 +7621,7 @@ export const data = [
             ]
           },
           "SAN MANUEL": {
-            "b": [
+            b: [
               "AGLIAM",
               "BABANUANG",
               "CABARITAN",
@@ -7644,7 +7644,7 @@ export const data = [
             ]
           },
           "SAN MARIANO": {
-            "b": [
+            b: [
               "ALIBADABAD",
               "BALAGAN",
               "BINATUG",
@@ -7684,7 +7684,7 @@ export const data = [
             ]
           },
           "SAN MATEO": {
-            "b": [
+            b: [
               "BACAREÑA",
               "BAGONG SIKAT",
               "BARANGAY I (POB.)",
@@ -7721,7 +7721,7 @@ export const data = [
             ]
           },
           "SAN PABLO": {
-            "b": [
+            b: [
               "ANNANUMAN",
               "AUITAN",
               "BALLACAYU",
@@ -7742,7 +7742,7 @@ export const data = [
             ]
           },
           "SANTA MARIA": {
-            "b": [
+            b: [
               "BANGAD",
               "BUENAVISTA",
               "CALAMAGUI EAST",
@@ -7766,7 +7766,7 @@ export const data = [
             ]
           },
           "SANTO TOMAS": {
-            "b": [
+            b: [
               "AMMUGAUAN",
               "ANTAGAN",
               "BAGABAG",
@@ -7796,8 +7796,8 @@ export const data = [
               "UAUANG-TULIAO"
             ]
           },
-          "TUMAUINI": {
-            "b": [
+          TUMAUINI: {
+            b: [
               "ANNAFUNAN",
               "ANTAGAN I",
               "ANTAGAN II",
@@ -7849,9 +7849,9 @@ export const data = [
         }
       },
       "NUEVA VIZCAYA": {
-        "m": {
+        m: {
           "ALFONSO CASTANEDA": {
-            "b": [
+            b: [
               "ABUYO",
               "CAUAYAN",
               "GALINTUJA",
@@ -7860,8 +7860,8 @@ export const data = [
               "PELAWAY"
             ]
           },
-          "AMBAGUIO": {
-            "b": [
+          AMBAGUIO: {
+            b: [
               "AMMUEG",
               "CAMANDAG",
               "DULLI",
@@ -7872,8 +7872,8 @@ export const data = [
               "TIBLAC"
             ]
           },
-          "ARITAO": {
-            "b": [
+          ARITAO: {
+            b: [
               "ANAYO",
               "BAAN",
               "BALITE",
@@ -7898,8 +7898,8 @@ export const data = [
               "YAWAY"
             ]
           },
-          "BAGABAG": {
-            "b": [
+          BAGABAG: {
+            b: [
               "BAKIR",
               "BARETBET",
               "CAREB",
@@ -7919,8 +7919,8 @@ export const data = [
               "VILLAROS"
             ]
           },
-          "BAMBANG": {
-            "b": [
+          BAMBANG: {
+            b: [
               "ABIAN",
               "ABINGANAN",
               "ALIAGA",
@@ -7948,8 +7948,8 @@ export const data = [
               "SANTO DOMINGO WEST"
             ]
           },
-          "BAYOMBONG": {
-            "b": [
+          BAYOMBONG: {
+            b: [
               "BANSING",
               "BONFAL EAST",
               "BONFAL PROPER",
@@ -7977,8 +7977,8 @@ export const data = [
               "VISTA ALEGRE (B. BARINGIN)"
             ]
           },
-          "DIADI": {
-            "b": [
+          DIADI: {
+            b: [
               "AMPAKLING",
               "ARWAS",
               "BALETE",
@@ -8001,7 +8001,7 @@ export const data = [
             ]
           },
           "DUPAX DEL NORTE": {
-            "b": [
+            b: [
               "BELANCE",
               "BINNUANGAN",
               "BITNONG",
@@ -8020,7 +8020,7 @@ export const data = [
             ]
           },
           "DUPAX DEL SUR": {
-            "b": [
+            b: [
               "ABACA",
               "BAGUMBAYAN",
               "BALSAIN",
@@ -8042,8 +8042,8 @@ export const data = [
               "TALBEK"
             ]
           },
-          "KASIBU": {
-            "b": [
+          KASIBU: {
+            b: [
               "ALIMIT",
               "ALLOY",
               "ANTUTOT",
@@ -8076,8 +8076,8 @@ export const data = [
               "WATWAT"
             ]
           },
-          "KAYAPA": {
-            "b": [
+          KAYAPA: {
+            b: [
               "ACACIA",
               "ALANG-SALACSAC",
               "AMILONG LABENG",
@@ -8110,8 +8110,8 @@ export const data = [
               "TUBONGAN"
             ]
           },
-          "QUEZON": {
-            "b": [
+          QUEZON: {
+            b: [
               "AURORA",
               "BARESBES",
               "BONIFACIO",
@@ -8127,7 +8127,7 @@ export const data = [
             ]
           },
           "SANTA FE": {
-            "b": [
+            b: [
               "ATBU",
               "BACNENG",
               "BALETE",
@@ -8146,8 +8146,8 @@ export const data = [
               "VILLA FLORES"
             ]
           },
-          "SOLANO": {
-            "b": [
+          SOLANO: {
+            b: [
               "AGGUB",
               "BAGAHABAG",
               "BANGAAN",
@@ -8172,8 +8172,8 @@ export const data = [
               "WACAL"
             ]
           },
-          "VILLAVERDE": {
-            "b": [
+          VILLAVERDE: {
+            b: [
               "BINTAWAN NORTE",
               "BINTAWAN SUR",
               "CABULUAN",
@@ -8187,10 +8187,10 @@ export const data = [
           }
         }
       },
-      "QUIRINO": {
-        "m": {
-          "AGLIPAY": {
-            "b": [
+      QUIRINO: {
+        m: {
+          AGLIPAY: {
+            b: [
               "ALICIA",
               "CABUGAO",
               "DAGUPAN",
@@ -8218,8 +8218,8 @@ export const data = [
               "VILLA VENTURA"
             ]
           },
-          "CABARROGUIS": {
-            "b": [
+          CABARROGUIS: {
+            b: [
               "BANUAR",
               "BURGOS",
               "CALAOCAN",
@@ -8239,8 +8239,8 @@ export const data = [
               "ZAMORA"
             ]
           },
-          "DIFFUN": {
-            "b": [
+          DIFFUN: {
+            b: [
               "AKLAN VILLAGE",
               "ANDRES BONIFACIO (POB.)",
               "AURORA EAST (POB.)",
@@ -8276,8 +8276,8 @@ export const data = [
               "VILLA PASCUA"
             ]
           },
-          "MADDELA": {
-            "b": [
+          MADDELA: {
+            b: [
               "ABBAG",
               "BALLIGUI",
               "BUENAVISTA",
@@ -8312,8 +8312,8 @@ export const data = [
               "YSMAEL"
             ]
           },
-          "NAGTIPUNAN": {
-            "b": [
+          NAGTIPUNAN: {
+            b: [
               "ANAK",
               "ASAKLAT",
               "DIPANTAN",
@@ -8332,8 +8332,8 @@ export const data = [
               "WASID"
             ]
           },
-          "SAGUDAY": {
-            "b": [
+          SAGUDAY: {
+            b: [
               "CARDENAS",
               "DIBUL",
               "GAMIS",
@@ -8350,12 +8350,12 @@ export const data = [
     }
   },
   {
-    "r": "REGION III",
-    "p": {
-      "AURORA": {
-        "m": {
-          "BALER": {
-            "b": [
+    r: "REGION III",
+    p: {
+      AURORA: {
+        m: {
+          BALER: {
+            b: [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BARANGAY III (POB.)",
@@ -8371,8 +8371,8 @@ export const data = [
               "ZABALI"
             ]
           },
-          "CASIGURAN": {
-            "b": [
+          CASIGURAN: {
+            b: [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BARANGAY 3 (POB.)",
@@ -8399,8 +8399,8 @@ export const data = [
               "TINIB"
             ]
           },
-          "DILASAG": {
-            "b": [
+          DILASAG: {
+            b: [
               "DIAGYAN",
               "DICABASAN",
               "DILAGUIDI",
@@ -8414,8 +8414,8 @@ export const data = [
               "URA"
             ]
           },
-          "DINALUNGAN": {
-            "b": [
+          DINALUNGAN: {
+            b: [
               "ABULEG",
               "DIBARAYBAY",
               "DITAWINI",
@@ -8427,8 +8427,8 @@ export const data = [
               "ZONE II (POB.)"
             ]
           },
-          "DINGALAN": {
-            "b": [
+          DINGALAN: {
+            b: [
               "APLAYA",
               "BUTAS NA BATO",
               "CABOG (MATAWE)",
@@ -8442,8 +8442,8 @@ export const data = [
               "UMIRAY (MALAMIG)"
             ]
           },
-          "DIPACULAO": {
-            "b": [
+          DIPACULAO: {
+            b: [
               "BAYABAS",
               "BORLONGAN",
               "BUENAVISTA",
@@ -8472,7 +8472,7 @@ export const data = [
             ]
           },
           "MARIA AURORA": {
-            "b": [
+            b: [
               "ALCALA",
               "BAGTU",
               "BANGCO",
@@ -8516,7 +8516,7 @@ export const data = [
             ]
           },
           "SAN LUIS": {
-            "b": [
+            b: [
               "BACONG",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -8539,10 +8539,10 @@ export const data = [
           }
         }
       },
-      "BATAAN": {
-        "m": {
-          "ABUCAY": {
-            "b": [
+      BATAAN: {
+        m: {
+          ABUCAY: {
+            b: [
               "BANGKAL",
               "CALAYLAYAN (POB.)",
               "CAPITANGAN",
@@ -8554,8 +8554,8 @@ export const data = [
               "WAWA (POB.)"
             ]
           },
-          "BAGAC": {
-            "b": [
+          BAGAC: {
+            b: [
               "ATILANO L. RICARDO",
               "BAGUMBAYAN (POB.)",
               "BANAWANG",
@@ -8573,7 +8573,7 @@ export const data = [
             ]
           },
           "BALANGA CITY": {
-            "b": [
+            b: [
               "BAGONG SILANG",
               "BAGUMBAYAN",
               "CABOG-CABOG",
@@ -8601,8 +8601,8 @@ export const data = [
               "TUYO"
             ]
           },
-          "DINALUPIHAN": {
-            "b": [
+          DINALUPIHAN: {
+            b: [
               "AQUINO",
               "BANGAL",
               "BAYAN-BAYANAN",
@@ -8651,8 +8651,8 @@ export const data = [
               "ZAMORA (POB.)"
             ]
           },
-          "HERMOSA": {
-            "b": [
+          HERMOSA: {
+            b: [
               "A. RIVERA (POB.)",
               "ALMACEN",
               "BACONG",
@@ -8678,8 +8678,8 @@ export const data = [
               "TIPO"
             ]
           },
-          "LIMAY": {
-            "b": [
+          LIMAY: {
+            b: [
               "ALANGAN",
               "DUALE",
               "KITANG 2 AND LUZ",
@@ -8694,8 +8694,8 @@ export const data = [
               "WAWA"
             ]
           },
-          "MARIVELES": {
-            "b": [
+          MARIVELES: {
+            b: [
               "ALAS-ASIN",
               "ALION",
               "BALON-ANITO",
@@ -8716,8 +8716,8 @@ export const data = [
               "TOWNSITE"
             ]
           },
-          "MORONG": {
-            "b": [
+          MORONG: {
+            b: [
               "BINARITAN",
               "MABAYO",
               "NAGBALAYONG",
@@ -8725,8 +8725,8 @@ export const data = [
               "SABANG"
             ]
           },
-          "ORANI": {
-            "b": [
+          ORANI: {
+            b: [
               "APOLLO",
               "BAGONG PARAISO (POB.)",
               "BALUT (POB.)",
@@ -8758,8 +8758,8 @@ export const data = [
               "WAWA (POB.)"
             ]
           },
-          "ORION": {
-            "b": [
+          ORION: {
+            b: [
               "ARELLANO (POB.)",
               "BAGUMBAYAN (POB.)",
               "BALAGTAS (POB.)",
@@ -8785,8 +8785,8 @@ export const data = [
               "WAWA (POB.)"
             ]
           },
-          "PILAR": {
-            "b": [
+          PILAR: {
+            b: [
               "ALA-ULI",
               "BAGUMBAYAN",
               "BALUT I",
@@ -8808,8 +8808,8 @@ export const data = [
               "WAWA"
             ]
           },
-          "SAMAL": {
-            "b": [
+          SAMAL: {
+            b: [
               "EAST CALAGUIMAN (POB.)",
               "EAST DAANG BAGO (POB.)",
               "GUGO",
@@ -8828,10 +8828,10 @@ export const data = [
           }
         }
       },
-      "BULACAN": {
-        "m": {
-          "ANGAT": {
-            "b": [
+      BULACAN: {
+        m: {
+          ANGAT: {
+            b: [
               "BANABAN",
               "BAYBAY",
               "BINAGBAG",
@@ -8851,7 +8851,7 @@ export const data = [
             ]
           },
           "BALAGTAS (BIGAA)": {
-            "b": [
+            b: [
               "BOROL 1ST",
               "BOROL 2ND",
               "DALIG",
@@ -8863,8 +8863,8 @@ export const data = [
               "WAWA (POB.)"
             ]
           },
-          "BALIUAG": {
-            "b": [
+          BALIUAG: {
+            b: [
               "BAGONG NAYON",
               "BARANGCA",
               "CALANTIPAY",
@@ -8894,8 +8894,8 @@ export const data = [
               "VIRGEN DELAS FLORES"
             ]
           },
-          "BOCAUE": {
-            "b": [
+          BOCAUE: {
+            b: [
               "ANTIPONA",
               "BAGUMBAYAN",
               "BAMBANG",
@@ -8917,8 +8917,8 @@ export const data = [
               "WAKAS"
             ]
           },
-          "BULACAN": {
-            "b": [
+          BULACAN: {
+            b: [
               "BAGUMBAYAN",
               "BALUBAD",
               "BAMBANG",
@@ -8935,8 +8935,8 @@ export const data = [
               "TIBIG"
             ]
           },
-          "BUSTOS": {
-            "b": [
+          BUSTOS: {
+            b: [
               "BONGA MAYOR",
               "BONGA MENOR",
               "BUISAN",
@@ -8953,8 +8953,8 @@ export const data = [
               "TIBAGAN"
             ]
           },
-          "CALUMPIT": {
-            "b": [
+          CALUMPIT: {
+            b: [
               "BALITE",
               "BALUNGAO",
               "BUGUION",
@@ -8987,7 +8987,7 @@ export const data = [
             ]
           },
           "DOÑA REMEDIOS TRINIDAD": {
-            "b": [
+            b: [
               "BAYABAS",
               "CAMACHILE",
               "CAMACHIN",
@@ -8998,8 +8998,8 @@ export const data = [
               "TALBAK"
             ]
           },
-          "GUIGUINTO": {
-            "b": [
+          GUIGUINTO: {
+            b: [
               "CUTCUT",
               "DAUNGAN",
               "ILANG-ILANG",
@@ -9016,8 +9016,8 @@ export const data = [
               "TUKTUKAN"
             ]
           },
-          "HAGONOY": {
-            "b": [
+          HAGONOY: {
+            b: [
               "ABULALAS",
               "CARILLO",
               "IBA",
@@ -9047,7 +9047,7 @@ export const data = [
             ]
           },
           "MALOLOS CITY": {
-            "b": [
+            b: [
               "ANILAO",
               "ATLAG",
               "BABATNIN",
@@ -9101,8 +9101,8 @@ export const data = [
               "TIKAY"
             ]
           },
-          "MARILAO": {
-            "b": [
+          MARILAO: {
+            b: [
               "ABANGAN NORTE",
               "ABANGAN SUR",
               "IBAYO",
@@ -9122,7 +9122,7 @@ export const data = [
             ]
           },
           "MEYCAUAYAN CITY": {
-            "b": [
+            b: [
               "BAGBAGUIN",
               "BAHAY PARE",
               "BANCAL",
@@ -9151,8 +9151,8 @@ export const data = [
               "ZAMORA"
             ]
           },
-          "NORZAGARAY": {
-            "b": [
+          NORZAGARAY: {
+            b: [
               "BANGKAL",
               "BARAKA",
               "BIGTE",
@@ -9168,8 +9168,8 @@ export const data = [
               "TIGBE"
             ]
           },
-          "OBANDO": {
-            "b": [
+          OBANDO: {
+            b: [
               "BINUANGAN",
               "CATANGHALAN",
               "HULO",
@@ -9183,8 +9183,8 @@ export const data = [
               "TAWIRAN"
             ]
           },
-          "PANDI": {
-            "b": [
+          PANDI: {
+            b: [
               "BAGBAGUIN",
               "BAGONG BARRIO",
               "BAKA-BAKAHAN",
@@ -9209,8 +9209,8 @@ export const data = [
               "SILING MATANDA"
             ]
           },
-          "PAOMBONG": {
-            "b": [
+          PAOMBONG: {
+            b: [
               "BINAKOD",
               "KAPITANGAN",
               "MALUMOT",
@@ -9227,8 +9227,8 @@ export const data = [
               "SANTO ROSARIO"
             ]
           },
-          "PLARIDEL": {
-            "b": [
+          PLARIDEL: {
+            b: [
               "AGNAYA",
               "BAGONG SILANG",
               "BANGA I",
@@ -9250,8 +9250,8 @@ export const data = [
               "TABANG"
             ]
           },
-          "PULILAN": {
-            "b": [
+          PULILAN: {
+            b: [
               "BALATONG A",
               "BALATONG B",
               "CUTCOT",
@@ -9274,7 +9274,7 @@ export const data = [
             ]
           },
           "SAN ILDEFONSO": {
-            "b": [
+            b: [
               "AKLE",
               "ALAGAO",
               "ANYATAM",
@@ -9314,7 +9314,7 @@ export const data = [
             ]
           },
           "SAN JOSE DEL MONTE CITY": {
-            "b": [
+            b: [
               "ASSUMPTION",
               "BAGONG BUHAY",
               "BAGONG BUHAY II",
@@ -9377,7 +9377,7 @@ export const data = [
             ]
           },
           "SAN MIGUEL": {
-            "b": [
+            b: [
               "BAGONG PAG-ASA",
               "BAGONG SILANG",
               "BALAONG",
@@ -9430,7 +9430,7 @@ export const data = [
             ]
           },
           "SAN RAFAEL": {
-            "b": [
+            b: [
               "BANCA-BANCA",
               "BMA-BALAGTAS",
               "CAINGIN",
@@ -9468,7 +9468,7 @@ export const data = [
             ]
           },
           "SANTA MARIA": {
-            "b": [
+            b: [
               "BAGBAGUIN",
               "BALASING",
               "BUENAVISTA",
@@ -9498,9 +9498,9 @@ export const data = [
         }
       },
       "NUEVA ECIJA": {
-        "m": {
-          "ALIAGA": {
-            "b": [
+        m: {
+          ALIAGA: {
+            b: [
               "BETES",
               "BIBICLAT",
               "BUCOT",
@@ -9529,8 +9529,8 @@ export const data = [
               "UMANGAN"
             ]
           },
-          "BONGABON": {
-            "b": [
+          BONGABON: {
+            b: [
               "ANTIPOLO",
               "ARIENDO",
               "BANTUG",
@@ -9562,7 +9562,7 @@ export const data = [
             ]
           },
           "CABANATUAN CITY": {
-            "b": [
+            b: [
               "ADUAS CENTRO (ADUAS)",
               "ADUAS NORTE",
               "ADUAS SUR",
@@ -9654,8 +9654,8 @@ export const data = [
               "ZULUETA DISTRICT (POB.)"
             ]
           },
-          "CABIAO": {
-            "b": [
+          CABIAO: {
+            b: [
               "BAGONG BUHAY",
               "BAGONG SIKAT",
               "BAGONG SILANG",
@@ -9681,8 +9681,8 @@ export const data = [
               "SINIPIT"
             ]
           },
-          "CARRANGLAN": {
-            "b": [
+          CARRANGLAN: {
+            b: [
               "BANTUG",
               "BUNGA",
               "BURGOS",
@@ -9702,8 +9702,8 @@ export const data = [
               "T. L. PADILLA POB. (BGY. I)"
             ]
           },
-          "CUYAPO": {
-            "b": [
+          CUYAPO: {
+            b: [
               "BALOY",
               "BAMBANABA",
               "BANTUG",
@@ -9758,7 +9758,7 @@ export const data = [
             ]
           },
           "GABALDON (BITULOK AND SABANI)": {
-            "b": [
+            b: [
               "BAGONG SIKAT",
               "BAGTING",
               "BANTUG",
@@ -9778,7 +9778,7 @@ export const data = [
             ]
           },
           "GAPAN CITY": {
-            "b": [
+            b: [
               "BALANTE",
               "BAYANIHAN",
               "BULAK",
@@ -9805,7 +9805,7 @@ export const data = [
             ]
           },
           "GENERAL MAMERTO NATIVIDAD": {
-            "b": [
+            b: [
               "BALANGKARE NORTE",
               "BALANGKARE SUR",
               "BALARING",
@@ -9829,7 +9829,7 @@ export const data = [
             ]
           },
           "GENERAL TINIO (PAPAYA)": {
-            "b": [
+            b: [
               "BAGO",
               "CONCEPCION",
               "NAZARETH",
@@ -9845,8 +9845,8 @@ export const data = [
               "SAN PEDRO (POB.)"
             ]
           },
-          "GUIMBA": {
-            "b": [
+          GUIMBA: {
+            b: [
               "AGCANO",
               "AYOS LOMBOY",
               "BACAYAO",
@@ -9913,8 +9913,8 @@ export const data = [
               "YUSON"
             ]
           },
-          "JAEN": {
-            "b": [
+          JAEN: {
+            b: [
               "CALABASA",
               "DAMPULAN (POB.)",
               "DON MARIANO MARCOS (POB.)",
@@ -9944,8 +9944,8 @@ export const data = [
               "ULANIN-PITAK"
             ]
           },
-          "LAUR": {
-            "b": [
+          LAUR: {
+            b: [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BARANGAY III (POB.)",
@@ -9965,8 +9965,8 @@ export const data = [
               "SICLONG"
             ]
           },
-          "LICAB": {
-            "b": [
+          LICAB: {
+            b: [
               "AQUINO",
               "LINAO",
               "POBLACION NORTE",
@@ -9980,8 +9980,8 @@ export const data = [
               "VILLAROSA"
             ]
           },
-          "LLANERA": {
-            "b": [
+          LLANERA: {
+            b: [
               "A. BONIFACIO",
               "BAGUMBAYAN (POB.)",
               "BOSQUE",
@@ -10006,8 +10006,8 @@ export const data = [
               "VILLA VINIEGAS"
             ]
           },
-          "LUPAO": {
-            "b": [
+          LUPAO: {
+            b: [
               "AGUPALO ESTE",
               "AGUPALO WESTE",
               "ALALAY CHICA",
@@ -10034,8 +10034,8 @@ export const data = [
               "SANTO DOMINGO"
             ]
           },
-          "NAMPICUAN": {
-            "b": [
+          NAMPICUAN: {
+            b: [
               "ALEMANIA",
               "AMBASADOR ALZATE VILLAGE",
               "CABADUCAN EAST (POB.)",
@@ -10060,7 +10060,7 @@ export const data = [
             ]
           },
           "PALAYAN CITY": {
-            "b": [
+            b: [
               "ATATE",
               "AULO",
               "BAGONG BUHAY",
@@ -10082,8 +10082,8 @@ export const data = [
               "SINGALAT"
             ]
           },
-          "PANTABANGAN": {
-            "b": [
+          PANTABANGAN: {
+            b: [
               "CADACLAN",
               "CAMBITALA",
               "CONVERSION",
@@ -10100,8 +10100,8 @@ export const data = [
               "VILLARICA"
             ]
           },
-          "PEÑARANDA": {
-            "b": [
+          PEÑARANDA: {
+            b: [
               "CALLOS",
               "LAS PIÑAS",
               "POBLACION I",
@@ -10114,8 +10114,8 @@ export const data = [
               "SINASAJAN"
             ]
           },
-          "QUEZON": {
-            "b": [
+          QUEZON: {
+            b: [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BERTESE",
@@ -10134,8 +10134,8 @@ export const data = [
               "SANTO TOMAS FERIA"
             ]
           },
-          "RIZAL": {
-            "b": [
+          RIZAL: {
+            b: [
               "AGBANNAWAG",
               "AGLIPAY (CURVA)",
               "BICOS",
@@ -10165,7 +10165,7 @@ export const data = [
             ]
           },
           "SAN ANTONIO": {
-            "b": [
+            b: [
               "BULIRAN",
               "CAMA JUAN",
               "JULO",
@@ -10185,7 +10185,7 @@ export const data = [
             ]
           },
           "SAN ISIDRO": {
-            "b": [
+            b: [
               "ALUA",
               "CALABA",
               "MALAPIT",
@@ -10198,7 +10198,7 @@ export const data = [
             ]
           },
           "SAN JOSE CITY": {
-            "b": [
+            b: [
               "A. PASCUAL",
               "ABAR 2ND",
               "ABAR IST",
@@ -10240,7 +10240,7 @@ export const data = [
             ]
           },
           "SAN LEONARDO": {
-            "b": [
+            b: [
               "BONIFACIO DISTRICT (POB.)",
               "BURGOS DISTRICT (POB.)",
               "CASTELLANO",
@@ -10259,7 +10259,7 @@ export const data = [
             ]
           },
           "SANTA ROSA": {
-            "b": [
+            b: [
               "AGUINALDO",
               "BERANG",
               "BURGOS",
@@ -10296,7 +10296,7 @@ export const data = [
             ]
           },
           "SANTO DOMINGO": {
-            "b": [
+            b: [
               "BALOC",
               "BUASAO",
               "BURGOS",
@@ -10324,7 +10324,7 @@ export const data = [
             ]
           },
           "SCIENCE CITY OF MUÑOZ": {
-            "b": [
+            b: [
               "BAGONG SIKAT",
               "BALANTE",
               "BANTUG",
@@ -10364,8 +10364,8 @@ export const data = [
               "VILLA SANTOS"
             ]
           },
-          "TALAVERA": {
-            "b": [
+          TALAVERA: {
+            b: [
               "ANDAL ALINO (POB.)",
               "BAGONG SIKAT",
               "BAGONG SILANG",
@@ -10421,8 +10421,8 @@ export const data = [
               "VALLE"
             ]
           },
-          "TALUGTUG": {
-            "b": [
+          TALUGTUG: {
+            b: [
               "ALULA",
               "BAYBAYABAS",
               "BUTED",
@@ -10453,8 +10453,8 @@ export const data = [
               "VILLA ROSARIO"
             ]
           },
-          "ZARAGOZA": {
-            "b": [
+          ZARAGOZA: {
+            b: [
               "BATITANG",
               "CARMEN",
               "CONCEPCION",
@@ -10478,10 +10478,10 @@ export const data = [
           }
         }
       },
-      "PAMPANGA": {
-        "m": {
+      PAMPANGA: {
+        m: {
           "ANGELES CITY": {
-            "b": [
+            b: [
               "AGAPITO DEL ROSARIO",
               "AMSIC",
               "ANUNAS",
@@ -10517,8 +10517,8 @@ export const data = [
               "VIRGEN DELOS REMEDIOS"
             ]
           },
-          "APALIT": {
-            "b": [
+          APALIT: {
+            b: [
               "BALUCUC",
               "CALANTIPE",
               "CANSINALA",
@@ -10533,8 +10533,8 @@ export const data = [
               "TABUYUC (SANTO ROSARIO)"
             ]
           },
-          "ARAYAT": {
-            "b": [
+          ARAYAT: {
+            b: [
               "ARENAS",
               "BALITI",
               "BATASAN",
@@ -10567,8 +10567,8 @@ export const data = [
               "TELAPAYONG"
             ]
           },
-          "BACOLOR": {
-            "b": [
+          BACOLOR: {
+            b: [
               "BALAS",
               "CABALANTIAN",
               "CABAMBANGAN (POB.)",
@@ -10592,8 +10592,8 @@ export const data = [
               "TINAJERO"
             ]
           },
-          "CANDABA": {
-            "b": [
+          CANDABA: {
+            b: [
               "BAHAY PARE",
               "BAMBANG",
               "BARANGCA",
@@ -10629,8 +10629,8 @@ export const data = [
               "VIZAL SANTO NIÑO"
             ]
           },
-          "FLORIDABLANCA": {
-            "b": [
+          FLORIDABLANCA: {
+            b: [
               "ANON",
               "APALIT",
               "BASA AIR BASE",
@@ -10666,8 +10666,8 @@ export const data = [
               "VALDEZ"
             ]
           },
-          "GUAGUA": {
-            "b": [
+          GUAGUA: {
+            b: [
               "ASCOMO",
               "BANCAL",
               "JOSE ABAD SANTOS (SIRAN)",
@@ -10701,8 +10701,8 @@ export const data = [
               "SANTO NIÑO (POB.)"
             ]
           },
-          "LUBAO": {
-            "b": [
+          LUBAO: {
+            b: [
               "BALANTACAN",
               "BANCAL PUGAD",
               "BANCAL SINUBLI",
@@ -10750,7 +10750,7 @@ export const data = [
             ]
           },
           "MABALACAT CITY": {
-            "b": [
+            b: [
               "ATLU-BOLA",
               "BICAL",
               "BUNDAGUL",
@@ -10780,8 +10780,8 @@ export const data = [
               "TABUN"
             ]
           },
-          "MACABEBE": {
-            "b": [
+          MACABEBE: {
+            b: [
               "BATASAN",
               "CADUANG TETE",
               "CANDELARIA",
@@ -10809,8 +10809,8 @@ export const data = [
               "TELACSAN"
             ]
           },
-          "MAGALANG": {
-            "b": [
+          MAGALANG: {
+            b: [
               "AYALA",
               "BUCANAN",
               "CAMIAS",
@@ -10840,8 +10840,8 @@ export const data = [
               "TURU"
             ]
           },
-          "MASANTOL": {
-            "b": [
+          MASANTOL: {
+            b: [
               "ALAULI",
               "BAGANG",
               "BALIBAGO",
@@ -10870,8 +10870,8 @@ export const data = [
               "SUA"
             ]
           },
-          "MEXICO": {
-            "b": [
+          MEXICO: {
+            b: [
               "ACLI",
               "ANAO",
               "BALAS",
@@ -10917,8 +10917,8 @@ export const data = [
               "TANGLE (TANGLAY)"
             ]
           },
-          "MINALIN": {
-            "b": [
+          MINALIN: {
+            b: [
               "BULAC",
               "DAWE",
               "LOURDES",
@@ -10936,8 +10936,8 @@ export const data = [
               "SAPLAD"
             ]
           },
-          "PORAC": {
-            "b": [
+          PORAC: {
+            b: [
               "BABO PANGULO",
               "BABO SACAN",
               "BALUBAD",
@@ -10970,7 +10970,7 @@ export const data = [
             ]
           },
           "SAN FERNANDO CITY": {
-            "b": [
+            b: [
               "ALASAS",
               "BALITI",
               "BULAON",
@@ -11009,7 +11009,7 @@ export const data = [
             ]
           },
           "SAN LUIS": {
-            "b": [
+            b: [
               "SAN AGUSTIN",
               "SAN CARLOS",
               "SAN ISIDRO",
@@ -11030,7 +11030,7 @@ export const data = [
             ]
           },
           "SAN SIMON": {
-            "b": [
+            b: [
               "CONCEPCION",
               "DE LA PAZ",
               "SAN AGUSTIN",
@@ -11048,7 +11048,7 @@ export const data = [
             ]
           },
           "SANTA ANA": {
-            "b": [
+            b: [
               "SAN AGUSTIN",
               "SAN BARTOLOME",
               "SAN ISIDRO",
@@ -11066,7 +11066,7 @@ export const data = [
             ]
           },
           "SANTA RITA": {
-            "b": [
+            b: [
               "BECURAN",
               "DILA-DILA",
               "SAN AGUSTIN",
@@ -11080,7 +11080,7 @@ export const data = [
             ]
           },
           "SANTO TOMAS": {
-            "b": [
+            b: [
               "MORAS DE LA PAZ",
               "POBLACION",
               "SAN BARTOLOME",
@@ -11091,7 +11091,7 @@ export const data = [
             ]
           },
           "SASMUAN (SEXMOAN)": {
-            "b": [
+            b: [
               "BATANG 1ST",
               "BATANG 2ND",
               "MABUANBUAN",
@@ -11108,10 +11108,10 @@ export const data = [
           }
         }
       },
-      "TARLAC": {
-        "m": {
-          "ANAO": {
-            "b": [
+      TARLAC: {
+        m: {
+          ANAO: {
+            b: [
               "BAGUINDOC (BAGUINLOC)",
               "BANTOG",
               "CAMPOS",
@@ -11132,8 +11132,8 @@ export const data = [
               "SUAVERDEZ"
             ]
           },
-          "BAMBAN": {
-            "b": [
+          BAMBAN: {
+            b: [
               "ANUPUL",
               "BANABA",
               "BANGCU",
@@ -11151,8 +11151,8 @@ export const data = [
               "VIRGEN DE LOS REMEDIOS (PACALCAL)"
             ]
           },
-          "CAMILING": {
-            "b": [
+          CAMILING: {
+            b: [
               "ANOLING 1ST",
               "ANOLING 2ND",
               "ANOLING 3RD",
@@ -11216,8 +11216,8 @@ export const data = [
               "TUEC"
             ]
           },
-          "CAPAS": {
-            "b": [
+          CAPAS: {
+            b: [
               "ARANGUREN",
               "BUENO",
               "CRISTO REY",
@@ -11241,7 +11241,7 @@ export const data = [
             ]
           },
           "CITY OF TARLAC": {
-            "b": [
+            b: [
               "AGUSO",
               "ALVINDIA SEGUNDO",
               "AMUCAO",
@@ -11320,8 +11320,8 @@ export const data = [
               "VILLA BACOLOR"
             ]
           },
-          "CONCEPCION": {
-            "b": [
+          CONCEPCION: {
+            b: [
               "ALFONSO",
               "BALUTU",
               "CAFE",
@@ -11369,8 +11369,8 @@ export const data = [
               "TINANG"
             ]
           },
-          "GERONA": {
-            "b": [
+          GERONA: {
+            b: [
               "ABAGON",
               "AMACALAN",
               "APSAYAN",
@@ -11418,7 +11418,7 @@ export const data = [
             ]
           },
           "LA PAZ": {
-            "b": [
+            b: [
               "BALANOY",
               "BANTOG-CARICUTAN",
               "CARAMUTAN",
@@ -11442,8 +11442,8 @@ export const data = [
               "SIERRA"
             ]
           },
-          "MAYANTOC": {
-            "b": [
+          MAYANTOC: {
+            b: [
               "AMBALINGIT",
               "BAYBAYAOAS",
               "BIGBIGA",
@@ -11470,8 +11470,8 @@ export const data = [
               "TANGCARANG"
             ]
           },
-          "MONCADA": {
-            "b": [
+          MONCADA: {
+            b: [
               "ABLANG-SAPANG",
               "ARINGIN",
               "ATENCIO",
@@ -11511,8 +11511,8 @@ export const data = [
               "VILLA"
             ]
           },
-          "PANIQUI": {
-            "b": [
+          PANIQUI: {
+            b: [
               "ABOGADO",
               "ACOCOLAO",
               "ADUAS",
@@ -11550,8 +11550,8 @@ export const data = [
               "VENTENILLA"
             ]
           },
-          "PURA": {
-            "b": [
+          PURA: {
+            b: [
               "BALITE",
               "BUENAVISTA",
               "CADANGLAAN",
@@ -11570,8 +11570,8 @@ export const data = [
               "SINGAT"
             ]
           },
-          "RAMOS": {
-            "b": [
+          RAMOS: {
+            b: [
               "CORAL-ILOCO",
               "GUITEB",
               "PANCE",
@@ -11584,7 +11584,7 @@ export const data = [
             ]
           },
           "SAN CLEMENTE": {
-            "b": [
+            b: [
               "BALLOC",
               "BAMBAN",
               "CASIPO",
@@ -11600,7 +11600,7 @@ export const data = [
             ]
           },
           "SAN JOSE": {
-            "b": [
+            b: [
               "BURGOS",
               "DAVID",
               "IBA",
@@ -11617,7 +11617,7 @@ export const data = [
             ]
           },
           "SAN MANUEL": {
-            "b": [
+            b: [
               "COLUBOT",
               "LANAT",
               "LEGASPI",
@@ -11636,7 +11636,7 @@ export const data = [
             ]
           },
           "SANTA IGNACIA": {
-            "b": [
+            b: [
               "BALDIOS",
               "BOTBOTONES",
               "CAANAMONGAN",
@@ -11663,8 +11663,8 @@ export const data = [
               "VARGAS"
             ]
           },
-          "VICTORIA": {
-            "b": [
+          VICTORIA: {
+            b: [
               "BACULONG",
               "BALAYANG",
               "BALBALOTO",
@@ -11695,10 +11695,10 @@ export const data = [
           }
         }
       },
-      "ZAMBALES": {
-        "m": {
-          "BOTOLAN": {
-            "b": [
+      ZAMBALES: {
+        m: {
+          BOTOLAN: {
+            b: [
               "BANCAL",
               "BANGAN",
               "BATONLAPOC",
@@ -11732,8 +11732,8 @@ export const data = [
               "VILLAR"
             ]
           },
-          "CABANGAN": {
-            "b": [
+          CABANGAN: {
+            b: [
               "ANONANG",
               "APO-APO",
               "AREW",
@@ -11758,8 +11758,8 @@ export const data = [
               "TONDO"
             ]
           },
-          "CANDELARIA": {
-            "b": [
+          CANDELARIA: {
+            b: [
               "BABANCAL",
               "BINABALIAN",
               "CATOL",
@@ -11778,8 +11778,8 @@ export const data = [
               "YAMOT"
             ]
           },
-          "CASTILLEJOS": {
-            "b": [
+          CASTILLEJOS: {
+            b: [
               "BALAYBAY",
               "BUENAVISTA",
               "DEL PILAR",
@@ -11796,8 +11796,8 @@ export const data = [
               "SANTA MARIA"
             ]
           },
-          "IBA": {
-            "b": [
+          IBA: {
+            b: [
               "AMUNGAN",
               "BANGANTALINGA",
               "DIRITA-BALOGUEN",
@@ -11814,8 +11814,8 @@ export const data = [
               "ZONE 6 POB. (BAYTAN)"
             ]
           },
-          "MASINLOC": {
-            "b": [
+          MASINLOC: {
+            b: [
               "BALOGANON",
               "BAMBAN",
               "BANI",
@@ -11832,7 +11832,7 @@ export const data = [
             ]
           },
           "OLONGAPO CITY": {
-            "b": [
+            b: [
               "ASINAN",
               "BANICAIN",
               "BARRETO",
@@ -11852,8 +11852,8 @@ export const data = [
               "WEST TAPINAC"
             ]
           },
-          "PALAUIG": {
-            "b": [
+          PALAUIG: {
+            b: [
               "ALWA",
               "BATO",
               "BULAWEN",
@@ -11876,7 +11876,7 @@ export const data = [
             ]
           },
           "SAN ANTONIO": {
-            "b": [
+            b: [
               "ANGELES",
               "ANTIPOLO (POB.)",
               "BURGOS (POB.)",
@@ -11894,7 +11894,7 @@ export const data = [
             ]
           },
           "SAN FELIPE": {
-            "b": [
+            b: [
               "AMAGNA (POB.)",
               "APOSTOL (POB.)",
               "BALINCAGUING",
@@ -11909,7 +11909,7 @@ export const data = [
             ]
           },
           "SAN MARCELINO": {
-            "b": [
+            b: [
               "AGLAO",
               "BUHAWEN",
               "BURGOS (POB.)",
@@ -11931,7 +11931,7 @@ export const data = [
             ]
           },
           "SAN NARCISO": {
-            "b": [
+            b: [
               "ALUSIIS",
               "BEDDENG",
               "CANDELARIA (POB.)",
@@ -11952,7 +11952,7 @@ export const data = [
             ]
           },
           "SANTA CRUZ": {
-            "b": [
+            b: [
               "BABUYAN",
               "BANGCOL",
               "BAYTO",
@@ -11980,8 +11980,8 @@ export const data = [
               "TUBOTUBO SOUTH"
             ]
           },
-          "SUBIC": {
-            "b": [
+          SUBIC: {
+            b: [
               "ANINGWAY SACATIHAN",
               "ASINAN POBLACION",
               "ASINAN PROPER",
@@ -12005,12 +12005,12 @@ export const data = [
     }
   },
   {
-    "r": "REGION IV-A",
-    "p": {
-      "BATANGAS": {
-        "m": {
-          "AGONCILLO": {
-            "b": [
+    r: "REGION IV-A",
+    p: {
+      BATANGAS: {
+        m: {
+          AGONCILLO: {
+            b: [
               "ADIA",
               "BAGONG SIKAT",
               "BALANGON",
@@ -12034,8 +12034,8 @@ export const data = [
               "SUBIC ILAYA"
             ]
           },
-          "ALITAGTAG": {
-            "b": [
+          ALITAGTAG: {
+            b: [
               "BALAGBAG",
               "CONCEPCION",
               "CONCORDIA",
@@ -12057,8 +12057,8 @@ export const data = [
               "TADLAC"
             ]
           },
-          "BALAYAN": {
-            "b": [
+          BALAYAN: {
+            b: [
               "BACLARAN",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -12109,8 +12109,8 @@ export const data = [
               "TANGGOY"
             ]
           },
-          "BALETE": {
-            "b": [
+          BALETE: {
+            b: [
               "ALANGILAN",
               "CALAWIT",
               "LOOC",
@@ -12127,7 +12127,7 @@ export const data = [
             ]
           },
           "BATANGAS CITY": {
-            "b": [
+            b: [
               "ALANGILAN",
               "BALAGTAS",
               "BALETE",
@@ -12235,8 +12235,8 @@ export const data = [
               "WAWA"
             ]
           },
-          "BAUAN": {
-            "b": [
+          BAUAN: {
+            b: [
               "ALAGAO",
               "APLAYA",
               "AS-IS",
@@ -12279,8 +12279,8 @@ export const data = [
               "SINALA"
             ]
           },
-          "CALACA": {
-            "b": [
+          CALACA: {
+            b: [
               "BACLAS",
               "BAGONG TUBIG",
               "BALIMBING",
@@ -12323,8 +12323,8 @@ export const data = [
               "TIMBAIN"
             ]
           },
-          "CALATAGAN": {
-            "b": [
+          CALATAGAN: {
+            b: [
               "BAGONG SILANG",
               "BAHA",
               "BALIBAGO",
@@ -12352,8 +12352,8 @@ export const data = [
               "TANAGAN"
             ]
           },
-          "CUENCA": {
-            "b": [
+          CUENCA: {
+            b: [
               "BALAGBAG",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -12377,8 +12377,8 @@ export const data = [
               "SAN ISIDRO"
             ]
           },
-          "IBAAN": {
-            "b": [
+          IBAAN: {
+            b: [
               "BAGO",
               "BALANGA",
               "BUNGAHAN",
@@ -12407,8 +12407,8 @@ export const data = [
               "TULAY NA PATPAT"
             ]
           },
-          "LAUREL": {
-            "b": [
+          LAUREL: {
+            b: [
               "AS-IS",
               "BALAKILONG",
               "BARANGAY 1 (POB.)",
@@ -12432,8 +12432,8 @@ export const data = [
               "TICUB"
             ]
           },
-          "LEMERY": {
-            "b": [
+          LEMERY: {
+            b: [
               "ANAK-DAGAT",
               "ARUMAHAN",
               "AYAO-IYAO",
@@ -12482,8 +12482,8 @@ export const data = [
               "WAWA ILAYA"
             ]
           },
-          "LIAN": {
-            "b": [
+          LIAN: {
+            b: [
               "BAGONG POOK",
               "BALIBAGO",
               "BARANGAY 1 (POB.)",
@@ -12506,7 +12506,7 @@ export const data = [
             ]
           },
           "LIPA CITY": {
-            "b": [
+            b: [
               "ADYA",
               "ANILAO",
               "ANILAO-LABAC",
@@ -12581,8 +12581,8 @@ export const data = [
               "TIPACAN"
             ]
           },
-          "LOBO": {
-            "b": [
+          LOBO: {
+            b: [
               "APAR",
               "BALATBAT",
               "BALIBAGO",
@@ -12611,8 +12611,8 @@ export const data = [
               "TAYUMAN"
             ]
           },
-          "MABINI": {
-            "b": [
+          MABINI: {
+            b: [
               "ANILAO EAST",
               "ANILAO PROPER",
               "BAGALANGIT",
@@ -12649,8 +12649,8 @@ export const data = [
               "TALAGA PROPER"
             ]
           },
-          "MALVAR": {
-            "b": [
+          MALVAR: {
+            b: [
               "BAGONG POOK",
               "BILUCAO (SAN ISIDRO WESTERN)",
               "BULIHAN",
@@ -12669,7 +12669,7 @@ export const data = [
             ]
           },
           "MATAAS NA KAHOY": {
-            "b": [
+            b: [
               "BARANGAY II-A (POB.)",
               "BAYORBOR",
               "BUBUYAN",
@@ -12688,8 +12688,8 @@ export const data = [
               "UPA"
             ]
           },
-          "NASUGBU": {
-            "b": [
+          NASUGBU: {
+            b: [
               "AGA",
               "BALAYTIGUI",
               "BANILAD",
@@ -12735,7 +12735,7 @@ export const data = [
             ]
           },
           "PADRE GARCIA": {
-            "b": [
+            b: [
               "BANABA",
               "BANAYBANAY",
               "BAWI",
@@ -12756,8 +12756,8 @@ export const data = [
               "TANGOB"
             ]
           },
-          "ROSARIO": {
-            "b": [
+          ROSARIO: {
+            b: [
               "ALUPAY",
               "ANTIPOLO",
               "BAGONG POOK",
@@ -12809,7 +12809,7 @@ export const data = [
             ]
           },
           "SAN JOSE": {
-            "b": [
+            b: [
               "AGUILA",
               "ANUS",
               "AYA",
@@ -12846,7 +12846,7 @@ export const data = [
             ]
           },
           "SAN JUAN": {
-            "b": [
+            b: [
               "ABUNG",
               "BALAGBAG",
               "BARUALTE",
@@ -12892,7 +12892,7 @@ export const data = [
             ]
           },
           "SAN LUIS": {
-            "b": [
+            b: [
               "ABIACAO",
               "BAGONG TUBIG",
               "BALAGTASIN",
@@ -12922,7 +12922,7 @@ export const data = [
             ]
           },
           "SAN NICOLAS": {
-            "b": [
+            b: [
               "ABELO",
               "ALAS-AS",
               "BALETE",
@@ -12944,7 +12944,7 @@ export const data = [
             ]
           },
           "SAN PASCUAL": {
-            "b": [
+            b: [
               "ALALUM",
               "ANTIPOLO",
               "BALIMBING",
@@ -12977,7 +12977,7 @@ export const data = [
             ]
           },
           "SANTA TERESITA": {
-            "b": [
+            b: [
               "ANTIPOLO",
               "BIHIS",
               "BUROL",
@@ -12998,7 +12998,7 @@ export const data = [
             ]
           },
           "SANTO TOMAS": {
-            "b": [
+            b: [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BARANGAY III (POB.)",
@@ -13031,8 +13031,8 @@ export const data = [
               "SANTIAGO"
             ]
           },
-          "TAAL": {
-            "b": [
+          TAAL: {
+            b: [
               "APACAY",
               "BALISONG",
               "BIHIS",
@@ -13077,8 +13077,8 @@ export const data = [
               "TULO"
             ]
           },
-          "TALISAY": {
-            "b": [
+          TALISAY: {
+            b: [
               "AYA",
               "BALAS",
               "BANGA",
@@ -13103,7 +13103,7 @@ export const data = [
             ]
           },
           "TANAUAN CITY": {
-            "b": [
+            b: [
               "ALTURA BATA",
               "ALTURA MATANDA",
               "ALTURA-SOUTH",
@@ -13154,8 +13154,8 @@ export const data = [
               "WAWA"
             ]
           },
-          "TAYSAN": {
-            "b": [
+          TAYSAN: {
+            b: [
               "BACAO",
               "BILOGO",
               "BUKAL",
@@ -13178,8 +13178,8 @@ export const data = [
               "TILAMBO"
             ]
           },
-          "TINGLOY": {
-            "b": [
+          TINGLOY: {
+            b: [
               "BARANGAY 13 (POBLACION 1)",
               "BARANGAY 14 (POBLACION 2)",
               "BARANGAY 15 (POBLACION 3)",
@@ -13197,8 +13197,8 @@ export const data = [
               "TALAHIB"
             ]
           },
-          "TUY": {
-            "b": [
+          TUY: {
+            b: [
               "ACLE",
               "BAYUDBUD",
               "BOLBOC",
@@ -13225,10 +13225,10 @@ export const data = [
           }
         }
       },
-      "CAVITE": {
-        "m": {
-          "ALFONSO": {
-            "b": [
+      CAVITE: {
+        m: {
+          ALFONSO: {
+            b: [
               "AMUYONG",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -13263,8 +13263,8 @@ export const data = [
               "UPLI"
             ]
           },
-          "AMADEO": {
-            "b": [
+          AMADEO: {
+            b: [
               "BANAYBANAY",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -13294,7 +13294,7 @@ export const data = [
             ]
           },
           "BACOOR CITY": {
-            "b": [
+            b: [
               "ALIMA",
               "ANIBAN I",
               "ANIBAN II",
@@ -13370,8 +13370,8 @@ export const data = [
               "ZAPOTE V"
             ]
           },
-          "CARMONA": {
-            "b": [
+          CARMONA: {
+            b: [
               "BANCAL",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -13389,7 +13389,7 @@ export const data = [
             ]
           },
           "CAVITE CITY": {
-            "b": [
+            b: [
               "BARANGAY 1 (HEN. M. ALVAREZ)",
               "BARANGAY 2 (C. TIRONA)",
               "BARANGAY 3 (HEN. E. AGUINALDO)",
@@ -13477,7 +13477,7 @@ export const data = [
             ]
           },
           "DASMARIÑAS CITY": {
-            "b": [
+            b: [
               "BUROL",
               "BUROL I",
               "BUROL II",
@@ -13556,7 +13556,7 @@ export const data = [
             ]
           },
           "GEN. MARIANO ALVAREZ": {
-            "b": [
+            b: [
               "ALDIANO OLAES",
               "BARANGAY 1 POBLACION (AREA I)",
               "BARANGAY 2 POBLACION",
@@ -13587,7 +13587,7 @@ export const data = [
             ]
           },
           "GENERAL EMILIO AGUINALDO": {
-            "b": [
+            b: [
               "A. DALUSAG",
               "BATAS DAO",
               "CASTAÑOS CERCA",
@@ -13605,7 +13605,7 @@ export const data = [
             ]
           },
           "GENERAL TRIAS CITY": {
-            "b": [
+            b: [
               "ALINGARO",
               "ARNALDO POB. (BGY. 7)",
               "BACAO I",
@@ -13642,7 +13642,7 @@ export const data = [
             ]
           },
           "IMUS CITY": {
-            "b": [
+            b: [
               "ALAPAN I-A",
               "ALAPAN I-B",
               "ALAPAN I-C",
@@ -13742,8 +13742,8 @@ export const data = [
               "TOCLONG II-B"
             ]
           },
-          "INDANG": {
-            "b": [
+          INDANG: {
+            b: [
               "AGUS-US",
               "ALULOD",
               "BANABA CERCA",
@@ -13782,8 +13782,8 @@ export const data = [
               "TAMBO MALAKI"
             ]
           },
-          "KAWIT": {
-            "b": [
+          KAWIT: {
+            b: [
               "BALSAHAN-BISITA",
               "BATONG DALIG",
               "BINAKAYAN-APLAYA",
@@ -13809,8 +13809,8 @@ export const data = [
               "WAKAS II"
             ]
           },
-          "MAGALLANES": {
-            "b": [
+          MAGALLANES: {
+            b: [
               "BALIWAG",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -13829,8 +13829,8 @@ export const data = [
               "URDANETA"
             ]
           },
-          "MARAGONDON": {
-            "b": [
+          MARAGONDON: {
+            b: [
               "BUCAL I",
               "BUCAL II",
               "BUCAL III A",
@@ -13861,7 +13861,7 @@ export const data = [
             ]
           },
           "MENDEZ (MENDEZ-NUÑEZ)": {
-            "b": [
+            b: [
               "ANULING CERCA I",
               "ANULING CERCA II",
               "ANULING LEJOS I (ANULING)",
@@ -13888,8 +13888,8 @@ export const data = [
               "POBLACION VII (BARANGAY VII)"
             ]
           },
-          "NAIC": {
-            "b": [
+          NAIC: {
+            b: [
               "BAGONG KARSADA",
               "BALSAHAN",
               "BANCAAN",
@@ -13922,8 +13922,8 @@ export const data = [
               "TIMALAN CONCEPCION"
             ]
           },
-          "NOVELETA": {
-            "b": [
+          NOVELETA: {
+            b: [
               "MAGDIWANG",
               "POBLACION",
               "SALCEDO I",
@@ -13942,8 +13942,8 @@ export const data = [
               "SANTA ROSA II"
             ]
           },
-          "ROSARIO": {
-            "b": [
+          ROSARIO: {
+            b: [
               "BAGBAG I",
               "BAGBAG II",
               "KANLURAN",
@@ -13966,8 +13966,8 @@ export const data = [
               "WAWA III"
             ]
           },
-          "SILANG": {
-            "b": [
+          SILANG: {
+            b: [
               "ACACIA",
               "ADLAS",
               "ANAHAW I",
@@ -14035,7 +14035,7 @@ export const data = [
             ]
           },
           "TAGAYTAY CITY": {
-            "b": [
+            b: [
               "ASISAN",
               "BAGONG TUBIG",
               "CALABUSO",
@@ -14072,8 +14072,8 @@ export const data = [
               "ZAMBAL"
             ]
           },
-          "TANZA": {
-            "b": [
+          TANZA: {
+            b: [
               "AMAYA I",
               "AMAYA II",
               "AMAYA III",
@@ -14117,8 +14117,8 @@ export const data = [
               "TRES CRUSES"
             ]
           },
-          "TERNATE": {
-            "b": [
+          TERNATE: {
+            b: [
               "BUCANA",
               "POBLACION I (BARANGAY I)",
               "POBLACION I A",
@@ -14132,7 +14132,7 @@ export const data = [
             ]
           },
           "TRECE MARTIRES CITY": {
-            "b": [
+            b: [
               "AGUADO (PISCAL MUNDO)",
               "CABEZAS",
               "CABUCO",
@@ -14150,10 +14150,10 @@ export const data = [
           }
         }
       },
-      "LAGUNA": {
-        "m": {
-          "ALAMINOS": {
-            "b": [
+      LAGUNA: {
+        m: {
+          ALAMINOS: {
+            b: [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BARANGAY III (POB.)",
@@ -14171,8 +14171,8 @@ export const data = [
               "SANTA ROSA"
             ]
           },
-          "BAY": {
-            "b": [
+          BAY: {
+            b: [
               "BITIN",
               "CALO",
               "DILA",
@@ -14191,7 +14191,7 @@ export const data = [
             ]
           },
           "CABUYAO CITY": {
-            "b": [
+            b: [
               "BACLARAN",
               "BANAYBANAY",
               "BANLIC",
@@ -14213,7 +14213,7 @@ export const data = [
             ]
           },
           "CALAMBA CITY": {
-            "b": [
+            b: [
               "BAGONG KALSADA",
               "BANADERO",
               "BANLIC",
@@ -14270,8 +14270,8 @@ export const data = [
               "UWISAN"
             ]
           },
-          "CALAUAN": {
-            "b": [
+          CALAUAN: {
+            b: [
               "BALAYHANGIN",
               "BANGYAS",
               "DAYAP",
@@ -14291,8 +14291,8 @@ export const data = [
               "SILANGAN (POB.)"
             ]
           },
-          "CAVINTI": {
-            "b": [
+          CAVINTI: {
+            b: [
               "ANGLAS",
               "BANGCO",
               "BUKAL",
@@ -14315,7 +14315,7 @@ export const data = [
             ]
           },
           "CITY OF BIÑAN": {
-            "b": [
+            b: [
               "BIÑAN (POBLACION)",
               "BUNGAHAN",
               "CANLALAY",
@@ -14342,8 +14342,8 @@ export const data = [
               "ZAPOTE"
             ]
           },
-          "FAMY": {
-            "b": [
+          FAMY: {
+            b: [
               "ASANA (POB.)",
               "BACONG-SIGSIGAN",
               "BAGONG PAG-ASA (POB.)",
@@ -14366,15 +14366,15 @@ export const data = [
               "TUNHAC"
             ]
           },
-          "KALAYAAN": {
-            "b": [
+          KALAYAAN: {
+            b: [
               "LONGOS",
               "SAN ANTONIO",
               "SAN JUAN (POB.)"
             ]
           },
-          "LILIW": {
-            "b": [
+          LILIW: {
+            b: [
               "BAGONG ANYO (POB.)",
               "BAYATE",
               "BONGKOL",
@@ -14411,7 +14411,7 @@ export const data = [
             ]
           },
           "LOS BAÑOS": {
-            "b": [
+            b: [
               "ANOS",
               "BAGONG SILANG",
               "BAMBANG",
@@ -14428,8 +14428,8 @@ export const data = [
               "TIMUGAN (POB.)"
             ]
           },
-          "LUISIANA": {
-            "b": [
+          LUISIANA: {
+            b: [
               "BARANGAY ZONE I (POB.)",
               "BARANGAY ZONE II (POB.)",
               "BARANGAY ZONE III (POB.)",
@@ -14455,8 +14455,8 @@ export const data = [
               "SANTO TOMAS"
             ]
           },
-          "LUMBAN": {
-            "b": [
+          LUMBAN: {
+            b: [
               "BAGONG SILANG",
               "BALIMBINGAN (POB.)",
               "BALUBAD",
@@ -14475,8 +14475,8 @@ export const data = [
               "WAWA"
             ]
           },
-          "MABITAC": {
-            "b": [
+          MABITAC: {
+            b: [
               "AMUYONG",
               "BAYANIHAN (POB.)",
               "LAMBAC (POB.)",
@@ -14494,8 +14494,8 @@ export const data = [
               "SINAGTALA (POB.)"
             ]
           },
-          "MAGDALENA": {
-            "b": [
+          MAGDALENA: {
+            b: [
               "ALIPIT",
               "BAANAN",
               "BALANAC",
@@ -14522,8 +14522,8 @@ export const data = [
               "TIPUNAN"
             ]
           },
-          "MAJAYJAY": {
-            "b": [
+          MAJAYJAY: {
+            b: [
               "AMONOY",
               "BAKIA",
               "BALANAC",
@@ -14566,8 +14566,8 @@ export const data = [
               "VILLA NOGALES"
             ]
           },
-          "NAGCARLAN": {
-            "b": [
+          NAGCARLAN: {
+            b: [
               "ABO",
               "ALIBUNGBUNGAN",
               "ALUMBRADO",
@@ -14622,8 +14622,8 @@ export const data = [
               "YUKOS"
             ]
           },
-          "PAETE": {
-            "b": [
+          PAETE: {
+            b: [
               "BAGUMBAYAN (POB.)",
               "BANGKUSAY (POB.)",
               "ERMITA (POB.)",
@@ -14635,8 +14635,8 @@ export const data = [
               "QUINALE (POB.)"
             ]
           },
-          "PAGSANJAN": {
-            "b": [
+          PAGSANJAN: {
+            b: [
               "ANIBONG",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -14655,8 +14655,8 @@ export const data = [
               "SAN ISIDRO"
             ]
           },
-          "PAKIL": {
-            "b": [
+          PAKIL: {
+            b: [
               "BANILAN",
               "BAÑO (POB.)",
               "BURGOS (POB.)",
@@ -14672,8 +14672,8 @@ export const data = [
               "TAVERA (POB.)"
             ]
           },
-          "PANGIL": {
-            "b": [
+          PANGIL: {
+            b: [
               "BALIAN",
               "DAMBO",
               "GALALAN",
@@ -14684,8 +14684,8 @@ export const data = [
               "SULIB"
             ]
           },
-          "PILA": {
-            "b": [
+          PILA: {
+            b: [
               "APLAYA",
               "BAGONG POOK",
               "BUKAL",
@@ -14705,8 +14705,8 @@ export const data = [
               "TUBUAN"
             ]
           },
-          "RIZAL": {
-            "b": [
+          RIZAL: {
+            b: [
               "ANTIPOLO",
               "EAST POBLACION",
               "ENTABLADO",
@@ -14721,7 +14721,7 @@ export const data = [
             ]
           },
           "SAN PABLO CITY": {
-            "b": [
+            b: [
               "ATISAN",
               "BAGONG BAYAN II-A (POB.)",
               "BAGONG POOK VI-C (POB.)",
@@ -14805,7 +14805,7 @@ export const data = [
             ]
           },
           "SAN PEDRO CITY": {
-            "b": [
+            b: [
               "BAGONG SILANG",
               "CALENDOLA",
               "CHRYSANTHEMUM",
@@ -14836,7 +14836,7 @@ export const data = [
             ]
           },
           "SANTA CRUZ": {
-            "b": [
+            b: [
               "ALIPIT",
               "BAGUMBAYAN",
               "BARANGAY I (POB.)",
@@ -14866,7 +14866,7 @@ export const data = [
             ]
           },
           "SANTA MARIA": {
-            "b": [
+            b: [
               "ADIA",
               "BAGONG POOK",
               "BAGUMBAYAN",
@@ -14895,7 +14895,7 @@ export const data = [
             ]
           },
           "SANTA ROSA CITY": {
-            "b": [
+            b: [
               "APLAYA",
               "BALIBAGO",
               "CAINGIN",
@@ -14916,8 +14916,8 @@ export const data = [
               "TAGAPO"
             ]
           },
-          "SINILOAN": {
-            "b": [
+          SINILOAN: {
+            b: [
               "ACEVIDA",
               "BAGONG PAG-ASA (POB.)",
               "BAGUMBARANGAY (POB.)",
@@ -14940,8 +14940,8 @@ export const data = [
               "WAWA"
             ]
           },
-          "VICTORIA": {
-            "b": [
+          VICTORIA: {
+            b: [
               "BANCA-BANCA",
               "DANIW",
               "MASAPANG",
@@ -14955,10 +14955,10 @@ export const data = [
           }
         }
       },
-      "QUEZON": {
-        "m": {
-          "AGDANGAN": {
-            "b": [
+      QUEZON: {
+        m: {
+          AGDANGAN: {
+            b: [
               "BINAGBAG",
               "DAYAP",
               "IBABANG KINAGUNAN",
@@ -14973,8 +14973,8 @@ export const data = [
               "SILDORA"
             ]
           },
-          "ALABAT": {
-            "b": [
+          ALABAT: {
+            b: [
               "ANGELES",
               "BACONG",
               "BALUNGAY",
@@ -14996,8 +14996,8 @@ export const data = [
               "VILLA VICTORIA"
             ]
           },
-          "ATIMONAN": {
-            "b": [
+          ATIMONAN: {
+            b: [
               "ANGELES",
               "BALUBAD",
               "BALUGOHIN",
@@ -15042,8 +15042,8 @@ export const data = [
               "VILLA ILAYA"
             ]
           },
-          "BUENAVISTA": {
-            "b": [
+          BUENAVISTA: {
+            b: [
               "BAGONG SILANG",
               "BATABAT NORTE",
               "BATABAT SUR",
@@ -15083,8 +15083,8 @@ export const data = [
               "VILLA VERONICA"
             ]
           },
-          "BURDEOS": {
-            "b": [
+          BURDEOS: {
+            b: [
               "ALUYON",
               "AMOT",
               "ANIBAWAN",
@@ -15100,8 +15100,8 @@ export const data = [
               "SAN RAFAEL"
             ]
           },
-          "CALAUAG": {
-            "b": [
+          CALAUAG: {
+            b: [
               "AGOHO",
               "ANAHAWAN",
               "ANAS",
@@ -15185,8 +15185,8 @@ export const data = [
               "YAGANAK"
             ]
           },
-          "CANDELARIA": {
-            "b": [
+          CANDELARIA: {
+            b: [
               "BUENAVISTA EAST",
               "BUENAVISTA WEST",
               "BUKAL NORTE",
@@ -15214,8 +15214,8 @@ export const data = [
               "SANTA CATALINA SUR"
             ]
           },
-          "CATANAUAN": {
-            "b": [
+          CATANAUAN: {
+            b: [
               "AJOS",
               "ANUSAN",
               "BARANGAY 1 (POB.)",
@@ -15264,8 +15264,8 @@ export const data = [
               "TUHIAN"
             ]
           },
-          "DOLORES": {
-            "b": [
+          DOLORES: {
+            b: [
               "ANTONINO (AYUSAN)",
               "BAGONG ANYO (POB.)",
               "BAYANIHAN (POB.)",
@@ -15285,7 +15285,7 @@ export const data = [
             ]
           },
           "GENERAL LUNA": {
-            "b": [
+            b: [
               "BACONG IBABA",
               "BACONG ILAYA",
               "BARANGAY 1 (POB.)",
@@ -15316,7 +15316,7 @@ export const data = [
             ]
           },
           "GENERAL NAKAR": {
-            "b": [
+            b: [
               "ANOLING",
               "BANGLOS",
               "BATANGAN",
@@ -15338,8 +15338,8 @@ export const data = [
               "UMIRAY"
             ]
           },
-          "GUINAYANGAN": {
-            "b": [
+          GUINAYANGAN: {
+            b: [
               "A. MABINI",
               "ALONEROS",
               "ARBISMEN",
@@ -15396,8 +15396,8 @@ export const data = [
               "VILLA HIWASAYAN"
             ]
           },
-          "GUMACA": {
-            "b": [
+          GUMACA: {
+            b: [
               "ADIA BITAOG",
               "ANONANGIN",
               "BAGONG BUHAY (POB.)",
@@ -15459,8 +15459,8 @@ export const data = [
               "VILLA VICTORIA"
             ]
           },
-          "INFANTA": {
-            "b": [
+          INFANTA: {
+            b: [
               "ABIAWIN",
               "AGOS-AGOS",
               "ALITAS",
@@ -15499,8 +15499,8 @@ export const data = [
               "TUDTURAN"
             ]
           },
-          "JOMALIG": {
-            "b": [
+          JOMALIG: {
+            b: [
               "APAD",
               "BUKAL",
               "CASUGURAN",
@@ -15508,8 +15508,8 @@ export const data = [
               "TALISOY (POB.)"
             ]
           },
-          "LOPEZ": {
-            "b": [
+          LOPEZ: {
+            b: [
               "BACUNGAN",
               "BAGACAY",
               "BANABAHIN IBABA",
@@ -15607,8 +15607,8 @@ export const data = [
               "VILLANACAOB"
             ]
           },
-          "LUCBAN": {
-            "b": [
+          LUCBAN: {
+            b: [
               "ABANG",
               "ALILIW",
               "ATULINAO",
@@ -15644,7 +15644,7 @@ export const data = [
             ]
           },
           "LUCENA CITY": {
-            "b": [
+            b: [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BARANGAY 3 (POB.)",
@@ -15680,8 +15680,8 @@ export const data = [
               "TALAO-TALAO"
             ]
           },
-          "MACALELON": {
-            "b": [
+          MACALELON: {
+            b: [
               "AMONTAY",
               "ANOS",
               "BUYAO",
@@ -15714,8 +15714,8 @@ export const data = [
               "VISTA HERMOSA"
             ]
           },
-          "MAUBAN": {
-            "b": [
+          MAUBAN: {
+            b: [
               "ABO-ABO",
               "ALITAP",
               "BAAO",
@@ -15758,8 +15758,8 @@ export const data = [
               "TAPUCAN"
             ]
           },
-          "MULANAY": {
-            "b": [
+          MULANAY: {
+            b: [
               "AJOS",
               "AMUGUIS",
               "ANONANG",
@@ -15791,7 +15791,7 @@ export const data = [
             ]
           },
           "PADRE BURGOS": {
-            "b": [
+            b: [
               "BASIAO (POB.)",
               "BURGOS (POB.)",
               "CABUYAO NORTE",
@@ -15816,8 +15816,8 @@ export const data = [
               "YAWE"
             ]
           },
-          "PAGBILAO": {
-            "b": [
+          PAGBILAO: {
+            b: [
               "ALUPAYE",
               "ANTIPOLO",
               "AÑATO",
@@ -15847,8 +15847,8 @@ export const data = [
               "TUKALAN"
             ]
           },
-          "PANUKULAN": {
-            "b": [
+          PANUKULAN: {
+            b: [
               "BALUNGAY",
               "BATO",
               "BONBON",
@@ -15864,8 +15864,8 @@ export const data = [
               "SAN JUAN (POB.)"
             ]
           },
-          "PATNANUNGAN": {
-            "b": [
+          PATNANUNGAN: {
+            b: [
               "AMAGA",
               "BUSDAK",
               "KILOGAN",
@@ -15874,8 +15874,8 @@ export const data = [
               "PATNANUNGAN SUR (POB.)"
             ]
           },
-          "PEREZ": {
-            "b": [
+          PEREZ: {
+            b: [
               "BAGONG PAG-ASA POB. (BARANGAY 3)",
               "BAGONG SILANG POB. (BARANGAY 4)",
               "MAABOT",
@@ -15892,8 +15892,8 @@ export const data = [
               "VILLAMANZANO SUR"
             ]
           },
-          "PITOGO": {
-            "b": [
+          PITOGO: {
+            b: [
               "AMONTAY",
               "BIGA",
               "BILUCAO",
@@ -15935,8 +15935,8 @@ export const data = [
               "SUMAG WESTE"
             ]
           },
-          "PLARIDEL": {
-            "b": [
+          PLARIDEL: {
+            b: [
               "CENTRAL (POB.)",
               "CONCEPCION",
               "DUHAT",
@@ -15948,8 +15948,8 @@ export const data = [
               "TANAUAN"
             ]
           },
-          "POLILLO": {
-            "b": [
+          POLILLO: {
+            b: [
               "ANAWAN",
               "ATULAYAN",
               "BALESIN",
@@ -15972,8 +15972,8 @@ export const data = [
               "TAMULAYA-ANITONG"
             ]
           },
-          "QUEZON": {
-            "b": [
+          QUEZON: {
+            b: [
               "APAD",
               "ARGOSINO",
               "BARANGAY I (POB.)",
@@ -16000,8 +16000,8 @@ export const data = [
               "VILLA MERCEDES"
             ]
           },
-          "REAL": {
-            "b": [
+          REAL: {
+            b: [
               "BAGONG SILANG",
               "CAPALONG",
               "CAWAYAN",
@@ -16021,8 +16021,8 @@ export const data = [
               "UNGOS"
             ]
           },
-          "SAMPALOC": {
-            "b": [
+          SAMPALOC: {
+            b: [
               "ALUPAY",
               "APASAN",
               "BANOT",
@@ -16040,7 +16040,7 @@ export const data = [
             ]
           },
           "SAN ANDRES": {
-            "b": [
+            b: [
               "ALIBIHABAN",
               "CAMFLORA",
               "MANGERO",
@@ -16051,7 +16051,7 @@ export const data = [
             ]
           },
           "SAN ANTONIO": {
-            "b": [
+            b: [
               "ARAWAN",
               "BAGONG NIING",
               "BALAT ATIS",
@@ -16075,7 +16075,7 @@ export const data = [
             ]
           },
           "SAN FRANCISCO (AURORA)": {
-            "b": [
+            b: [
               "BUTANGUIAD",
               "CASAY",
               "CAWAYAN I",
@@ -16095,7 +16095,7 @@ export const data = [
             ]
           },
           "SAN NARCISO": {
-            "b": [
+            b: [
               "ABUYON",
               "ANDRES BONIFACIO",
               "BANI",
@@ -16122,8 +16122,8 @@ export const data = [
               "WHITE CLIFF"
             ]
           },
-          "SARIAYA": {
-            "b": [
+          SARIAYA: {
+            b: [
               "ANTIPOLO",
               "BALUBAL",
               "BARANGAY 1 (POB.)",
@@ -16169,8 +16169,8 @@ export const data = [
               "TUMBAGA 2"
             ]
           },
-          "TAGKAWAYAN": {
-            "b": [
+          TAGKAWAYAN: {
+            b: [
               "ALDAVOC",
               "ALIJI",
               "BAGONG SILANG",
@@ -16219,7 +16219,7 @@ export const data = [
             ]
           },
           "TAYABAS CITY": {
-            "b": [
+            b: [
               "ALITAO",
               "ALSAM IBABA",
               "ALSAM ILAYA",
@@ -16288,8 +16288,8 @@ export const data = [
               "WAKAS"
             ]
           },
-          "TIAONG": {
-            "b": [
+          TIAONG: {
+            b: [
               "ANASTACIA (TAGBAK)",
               "AQUINO",
               "AYUSAN I",
@@ -16323,8 +16323,8 @@ export const data = [
               "TAMISIAN"
             ]
           },
-          "UNISAN": {
-            "b": [
+          UNISAN: {
+            b: [
               "ALMACEN",
               "BALAGTAS",
               "BALANACAN",
@@ -16365,10 +16365,10 @@ export const data = [
           }
         }
       },
-      "RIZAL": {
-        "m": {
-          "ANGONO": {
-            "b": [
+      RIZAL: {
+        m: {
+          ANGONO: {
+            b: [
               "BAGUMBAYAN",
               "KALAYAAN",
               "MAHABANG PARANG",
@@ -16381,8 +16381,8 @@ export const data = [
               "SANTO NIÑO"
             ]
           },
-          "BARAS": {
-            "b": [
+          BARAS: {
+            b: [
               "CONCEPCION",
               "EVANGELISTA",
               "MABINI",
@@ -16395,8 +16395,8 @@ export const data = [
               "SANTIAGO"
             ]
           },
-          "BINANGONAN": {
-            "b": [
+          BINANGONAN: {
+            b: [
               "BANGAD",
               "BATINGAN",
               "BILIBIRAN",
@@ -16439,8 +16439,8 @@ export const data = [
               "TAYUMAN"
             ]
           },
-          "CAINTA": {
-            "b": [
+          CAINTA: {
+            b: [
               "SAN ANDRES (POB.)",
               "SAN ISIDRO",
               "SAN JUAN",
@@ -16450,8 +16450,8 @@ export const data = [
               "SANTO NIÑO"
             ]
           },
-          "CARDONA": {
-            "b": [
+          CARDONA: {
+            b: [
               "BALIBAGO",
               "BOOR",
               "CALAHAN",
@@ -16473,7 +16473,7 @@ export const data = [
             ]
           },
           "CITY OF ANTIPOLO": {
-            "b": [
+            b: [
               "BAGONG NAYON",
               "BEVERLY HILLS",
               "CALAWIS",
@@ -16493,7 +16493,7 @@ export const data = [
             ]
           },
           "JALA-JALA": {
-            "b": [
+            b: [
               "BAGUMBONG",
               "BAYUGO",
               "LUBO",
@@ -16507,8 +16507,8 @@ export const data = [
               "THIRD DISTRICT (POB.)"
             ]
           },
-          "MORONG": {
-            "b": [
+          MORONG: {
+            b: [
               "BOMBONGAN",
               "CAN-CAL-LAN (CANIOGAN-CALERO-LANANG)",
               "LAGUNDI",
@@ -16519,8 +16519,8 @@ export const data = [
               "SAN PEDRO (POB.)"
             ]
           },
-          "PILILLA": {
-            "b": [
+          PILILLA: {
+            b: [
               "BAGUMBAYAN (POB.)",
               "HALAYHAYIN",
               "HULO (POB.)",
@@ -16533,7 +16533,7 @@ export const data = [
             ]
           },
           "RODRIGUEZ (MONTALBAN)": {
-            "b": [
+            b: [
               "BALITE (POB.)",
               "BURGOS",
               "GERONIMO",
@@ -16548,7 +16548,7 @@ export const data = [
             ]
           },
           "SAN MATEO": {
-            "b": [
+            b: [
               "AMPID I",
               "AMPID II",
               "BANABA",
@@ -16566,8 +16566,8 @@ export const data = [
               "SILANGAN"
             ]
           },
-          "TANAY": {
-            "b": [
+          TANAY: {
+            b: [
               "CAYABU",
               "CUYAMBAY",
               "DARAITAN",
@@ -16590,8 +16590,8 @@ export const data = [
               "WAWA (POB.)"
             ]
           },
-          "TAYTAY": {
-            "b": [
+          TAYTAY: {
+            b: [
               "DOLORES (POB.)",
               "MUZON",
               "SAN ISIDRO",
@@ -16599,8 +16599,8 @@ export const data = [
               "SANTA ANA"
             ]
           },
-          "TERESA": {
-            "b": [
+          TERESA: {
+            b: [
               "BAGUMBAYAN",
               "CALUMPANG SANTO CRISTO",
               "DALIG",
@@ -16617,12 +16617,12 @@ export const data = [
     }
   },
   {
-    "r": "REGION IV-B",
-    "p": {
-      "MARINDUQUE": {
-        "m": {
-          "BOAC": {
-            "b": [
+    r: "REGION IV-B",
+    p: {
+      MARINDUQUE: {
+        m: {
+          BOAC: {
+            b: [
               "AGOT",
               "AGUMAYMAYAN",
               "AMOINGON",
@@ -16686,8 +16686,8 @@ export const data = [
               "TUMAPON"
             ]
           },
-          "BUENAVISTA": {
-            "b": [
+          BUENAVISTA: {
+            b: [
               "BAGACAY",
               "BAGTINGON",
               "BARANGAY I (POB.)",
@@ -16705,8 +16705,8 @@ export const data = [
               "YOOK"
             ]
           },
-          "GASAN": {
-            "b": [
+          GASAN: {
+            b: [
               "ANTIPOLO",
               "BACHAO IBABA",
               "BACHAO ILAYA",
@@ -16734,8 +16734,8 @@ export const data = [
               "TIGUION"
             ]
           },
-          "MOGPOG": {
-            "b": [
+          MOGPOG: {
+            b: [
               "ANAPOG-SIBUCAO",
               "ARGAO",
               "BALANACAN",
@@ -16776,7 +16776,7 @@ export const data = [
             ]
           },
           "SANTA CRUZ": {
-            "b": [
+            b: [
               "ALOBO",
               "ANGAS",
               "ATURAN",
@@ -16834,8 +16834,8 @@ export const data = [
               "TAYTAY"
             ]
           },
-          "TORRIJOS": {
-            "b": [
+          TORRIJOS: {
+            b: [
               "BANGWAYIN",
               "BAYAKBAKIN",
               "BOLO",
@@ -16866,9 +16866,9 @@ export const data = [
         }
       },
       "OCCIDENTAL MINDORO": {
-        "m": {
+        m: {
           "ABRA DE ILOG": {
-            "b": [
+            b: [
               "ARMADO",
               "BALAO",
               "CABACAO",
@@ -16881,8 +16881,8 @@ export const data = [
               "WAWA"
             ]
           },
-          "CALINTAAN": {
-            "b": [
+          CALINTAAN: {
+            b: [
               "CONCEPCION",
               "IRIRON",
               "MALPALON",
@@ -16892,8 +16892,8 @@ export const data = [
               "TANYAG"
             ]
           },
-          "LOOC": {
-            "b": [
+          LOOC: {
+            b: [
               "AGKAWAYAN",
               "AMBIL",
               "BALIKYAS",
@@ -16905,8 +16905,8 @@ export const data = [
               "TALAOTAO"
             ]
           },
-          "LUBANG": {
-            "b": [
+          LUBANG: {
+            b: [
               "ARAW AT BITUIN (POB.)",
               "BAGONG SIKAT (POB.)",
               "BANAAG AT PAG-ASA (POB.)",
@@ -16925,8 +16925,8 @@ export const data = [
               "VIGO"
             ]
           },
-          "MAGSAYSAY": {
-            "b": [
+          MAGSAYSAY: {
+            b: [
               "ALIBOG",
               "CAGURAY",
               "CALAWAG",
@@ -16941,8 +16941,8 @@ export const data = [
               "SIBALAT"
             ]
           },
-          "MAMBURAO": {
-            "b": [
+          MAMBURAO: {
+            b: [
               "BALANSAY",
               "FATIMA (TII)",
               "PAYOMPON",
@@ -16960,8 +16960,8 @@ export const data = [
               "TAYAMAAN"
             ]
           },
-          "PALUAN": {
-            "b": [
+          PALUAN: {
+            b: [
               "ALIPAOY",
               "BAGONG SILANG POB. (BGY 5)",
               "HANDANG TUMULONG POB. (BGY 2)",
@@ -16976,8 +16976,8 @@ export const data = [
               "TUBILI"
             ]
           },
-          "RIZAL": {
-            "b": [
+          RIZAL: {
+            b: [
               "ADELA",
               "AGUAS",
               "MAGSIKAP",
@@ -16991,8 +16991,8 @@ export const data = [
               "SANTO NIÑO"
             ]
           },
-          "SABLAYAN": {
-            "b": [
+          SABLAYAN: {
+            b: [
               "BATONG BUHAY",
               "BUENAVISTA",
               "BURGOS",
@@ -17018,7 +17018,7 @@ export const data = [
             ]
           },
           "SAN JOSE": {
-            "b": [
+            b: [
               "AMBULONG",
               "ANSIRAY",
               "BAGONG SIKAT",
@@ -17061,7 +17061,7 @@ export const data = [
             ]
           },
           "SANTA CRUZ": {
-            "b": [
+            b: [
               "ALACAAK",
               "BARAHAN",
               "CASAGUE",
@@ -17078,9 +17078,9 @@ export const data = [
         }
       },
       "ORIENTAL MINDORO": {
-        "m": {
-          "BACO": {
-            "b": [
+        m: {
+          BACO: {
+            b: [
               "ALAG",
               "BANGKATAN",
               "BARAS (MANGYAN MINORITY)",
@@ -17110,8 +17110,8 @@ export const data = [
               "WATER"
             ]
           },
-          "BANSUD": {
-            "b": [
+          BANSUD: {
+            b: [
               "ALCADESMA",
               "BATO",
               "CONRAZON",
@@ -17127,8 +17127,8 @@ export const data = [
               "VILLA PAG-ASA"
             ]
           },
-          "BONGABONG": {
-            "b": [
+          BONGABONG: {
+            b: [
               "ANILAO",
               "APLAYA",
               "BAGUMBAYAN I",
@@ -17168,7 +17168,7 @@ export const data = [
             ]
           },
           "BULALACAO (SAN PEDRO)": {
-            "b": [
+            b: [
               "BAGONG SIKAT",
               "BALATASAN",
               "BENLI (MANGYAN SETTLEMENT)",
@@ -17187,7 +17187,7 @@ export const data = [
             ]
           },
           "CITY OF CALAPAN": {
-            "b": [
+            b: [
               "BALINGAYAN",
               "BALITE",
               "BARUYAN",
@@ -17252,8 +17252,8 @@ export const data = [
               "WAWA"
             ]
           },
-          "GLORIA": {
-            "b": [
+          GLORIA: {
+            b: [
               "AGOS",
               "AGSALIN",
               "ALMA VILLA",
@@ -17283,8 +17283,8 @@ export const data = [
               "TAMBONG"
             ]
           },
-          "MANSALAY": {
-            "b": [
+          MANSALAY: {
+            b: [
               "B. DEL MUNDO",
               "BALUGO",
               "BONBON",
@@ -17304,8 +17304,8 @@ export const data = [
               "WAYGAN"
             ]
           },
-          "NAUJAN": {
-            "b": [
+          NAUJAN: {
+            b: [
               "ADRIALUNA",
               "ANDRES ILAGAN (MAG-ASAWANG TUBIG)",
               "ANTIPOLO",
@@ -17378,8 +17378,8 @@ export const data = [
               "TIGKAN"
             ]
           },
-          "PINAMALAYAN": {
-            "b": [
+          PINAMALAYAN: {
+            b: [
               "ANOLING",
               "BACUNGAN",
               "BANGBANG",
@@ -17419,8 +17419,8 @@ export const data = [
               "ZONE IV (POB.)"
             ]
           },
-          "POLA": {
-            "b": [
+          POLA: {
+            b: [
               "BACAWAN",
               "BACUNGAN",
               "BATUHAN",
@@ -17447,7 +17447,7 @@ export const data = [
             ]
           },
           "PUERTO GALERA": {
-            "b": [
+            b: [
               "ANINUAN",
               "BACLAYAN",
               "BALATERO",
@@ -17463,8 +17463,8 @@ export const data = [
               "VILLAFLOR"
             ]
           },
-          "ROXAS": {
-            "b": [
+          ROXAS: {
+            b: [
               "BAGUMBAYAN (POB.)",
               "CANTIL",
               "DANGAY",
@@ -17488,7 +17488,7 @@ export const data = [
             ]
           },
           "SAN TEODORO": {
-            "b": [
+            b: [
               "BIGAAN",
               "CAAGUTAYAN",
               "CALANGATAN",
@@ -17499,8 +17499,8 @@ export const data = [
               "TACLIGAN"
             ]
           },
-          "SOCORRO": {
-            "b": [
+          SOCORRO: {
+            b: [
               "BAGSOK",
               "BATONG DALIG",
               "BAYUIN",
@@ -17529,8 +17529,8 @@ export const data = [
               "ZONE IV (POB.)"
             ]
           },
-          "VICTORIA": {
-            "b": [
+          VICTORIA: {
+            b: [
               "ALCATE",
               "ANTONINO",
               "BABANGONAN",
@@ -17567,10 +17567,10 @@ export const data = [
           }
         }
       },
-      "PALAWAN": {
-        "m": {
-          "ABORLAN": {
-            "b": [
+      PALAWAN: {
+        m: {
+          ABORLAN: {
+            b: [
               "APO-APORAWAN",
               "APOC-APOC",
               "APORAWAN",
@@ -17592,8 +17592,8 @@ export const data = [
               "TIGMAN"
             ]
           },
-          "AGUTAYA": {
-            "b": [
+          AGUTAYA: {
+            b: [
               "ABAGAT (POB.)",
               "ALGECIRAS",
               "BANGCAL (POB.)",
@@ -17606,8 +17606,8 @@ export const data = [
               "VILLASOL"
             ]
           },
-          "ARACELI": {
-            "b": [
+          ARACELI: {
+            b: [
               "BALOGO",
               "DAGMAN",
               "DALAYAWON",
@@ -17623,8 +17623,8 @@ export const data = [
               "TUDELA (CALANDAGAN)"
             ]
           },
-          "BALABAC": {
-            "b": [
+          BALABAC: {
+            b: [
               "AGUTAYAN",
               "BANCALAAN",
               "BUGSUK (NEW CAGAYANCILLO)",
@@ -17647,8 +17647,8 @@ export const data = [
               "SEBARING"
             ]
           },
-          "BATARAZA": {
-            "b": [
+          BATARAZA: {
+            b: [
               "BONO-BONO",
               "BULALACAO",
               "BULILUYAN",
@@ -17674,7 +17674,7 @@ export const data = [
             ]
           },
           "BROOKE'S POINT": {
-            "b": [
+            b: [
               "AMAS",
               "ARIBUNGOS",
               "BARONG-BARONG",
@@ -17695,8 +17695,8 @@ export const data = [
               "TUBTUB"
             ]
           },
-          "BUSUANGA": {
-            "b": [
+          BUSUANGA: {
+            b: [
               "BOGTONG",
               "BULUANG",
               "CHEEY",
@@ -17713,8 +17713,8 @@ export const data = [
               "SANTO NIÑO"
             ]
           },
-          "CAGAYANCILLO": {
-            "b": [
+          CAGAYANCILLO: {
+            b: [
               "BANTAYAN (POB.)",
               "CALSADA (POB.)",
               "CONVENTO (POB.)",
@@ -17729,8 +17729,8 @@ export const data = [
               "WAHIG (POB.)"
             ]
           },
-          "CORON": {
-            "b": [
+          CORON: {
+            b: [
               "BANUANG DAAN",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -17756,8 +17756,8 @@ export const data = [
               "TURDA"
             ]
           },
-          "CULION": {
-            "b": [
+          CULION: {
+            b: [
               "BALALA",
               "BALDAT",
               "BINUDAC",
@@ -17774,8 +17774,8 @@ export const data = [
               "TIZA"
             ]
           },
-          "CUYO": {
-            "b": [
+          CUYO: {
+            b: [
               "BALADING",
               "BANGCAL (POB.)",
               "CABIGSING (POB.)",
@@ -17795,8 +17795,8 @@ export const data = [
               "TOCADAN (POB.)"
             ]
           },
-          "DUMARAN": {
-            "b": [
+          DUMARAN: {
+            b: [
               "BACAO",
               "BOHOL",
               "CALASAG",
@@ -17816,7 +17816,7 @@ export const data = [
             ]
           },
           "EL NIDO (BACUIT)": {
-            "b": [
+            b: [
               "ABERAWAN",
               "BAGONG BAYAN",
               "BAROTUAN",
@@ -17837,13 +17837,13 @@ export const data = [
               "VILLA PAZ"
             ]
           },
-          "KALAYAAN": {
-            "b": [
+          KALAYAAN: {
+            b: [
               "PAG-ASA (POB.)"
             ]
           },
-          "LINAPACAN": {
-            "b": [
+          LINAPACAN: {
+            b: [
               "BARANGONAN (ILOC)",
               "CABUNLAWAN",
               "CALIBANGBANGAN",
@@ -17856,8 +17856,8 @@ export const data = [
               "SAN NICOLAS"
             ]
           },
-          "MAGSAYSAY": {
-            "b": [
+          MAGSAYSAY: {
+            b: [
               "ALCOBA",
               "BALAGUEN",
               "CANIPO",
@@ -17871,8 +17871,8 @@ export const data = [
               "RIZAL"
             ]
           },
-          "NARRA": {
-            "b": [
+          NARRA: {
+            b: [
               "ANTIPULUAN",
               "ARAMAYWAN",
               "BAGONG SIKAT",
@@ -17899,7 +17899,7 @@ export const data = [
             ]
           },
           "PUERTO PRINCESA CITY": {
-            "b": [
+            b: [
               "BABUYAN",
               "BACUNGAN",
               "BAGONG BAYAN",
@@ -17968,8 +17968,8 @@ export const data = [
               "TINIGUIBAN"
             ]
           },
-          "QUEZON": {
-            "b": [
+          QUEZON: {
+            b: [
               "ALFONSO XIII (POB.)",
               "ARAMAYWAN",
               "BERONG",
@@ -17987,7 +17987,7 @@ export const data = [
             ]
           },
           "RIZAL (MARCOS)": {
-            "b": [
+            b: [
               "BUNOG",
               "CAMPONG ULAY",
               "CANDAWAGA",
@@ -18001,8 +18001,8 @@ export const data = [
               "TABURI"
             ]
           },
-          "ROXAS": {
-            "b": [
+          ROXAS: {
+            b: [
               "ABAROAN",
               "ANTONINO",
               "BAGONG BAYAN",
@@ -18037,7 +18037,7 @@ export const data = [
             ]
           },
           "SAN VICENTE": {
-            "b": [
+            b: [
               "ALIMANGUAN",
               "BINGA",
               "CARURAY",
@@ -18051,7 +18051,7 @@ export const data = [
             ]
           },
           "SOFRONIO ESPAÑOLA": {
-            "b": [
+            b: [
               "ABO-ABO",
               "IRARAY",
               "ISUMBO",
@@ -18063,8 +18063,8 @@ export const data = [
               "PUNANG"
             ]
           },
-          "TAYTAY": {
-            "b": [
+          TAYTAY: {
+            b: [
               "ABONGAN",
               "ALACALIAN",
               "BANBANAN",
@@ -18100,10 +18100,10 @@ export const data = [
           }
         }
       },
-      "ROMBLON": {
-        "m": {
-          "ALCANTARA": {
-            "b": [
+      ROMBLON: {
+        m: {
+          ALCANTARA: {
+            b: [
               "BAGSIK",
               "BONLAO",
               "CALAGONSAO",
@@ -18118,8 +18118,8 @@ export const data = [
               "TUGDAN"
             ]
           },
-          "BANTON": {
-            "b": [
+          BANTON: {
+            b: [
               "BALOGO",
               "BANICE",
               "HAMBI-AN",
@@ -18139,8 +18139,8 @@ export const data = [
               "YABAWON"
             ]
           },
-          "CAJIDIOCAN": {
-            "b": [
+          CAJIDIOCAN: {
+            b: [
               "ALIBAGON",
               "CAMBAJAO",
               "CAMBALO",
@@ -18157,8 +18157,8 @@ export const data = [
               "TAGUILOS"
             ]
           },
-          "CALATRAVA": {
-            "b": [
+          CALATRAVA: {
+            b: [
               "BALOGO",
               "LINAO",
               "PAGSANGAHAN",
@@ -18168,8 +18168,8 @@ export const data = [
               "TALISAY"
             ]
           },
-          "CONCEPCION": {
-            "b": [
+          CONCEPCION: {
+            b: [
               "BACHAWAN",
               "CALABASAHAN",
               "DALAJICAN",
@@ -18181,8 +18181,8 @@ export const data = [
               "SAN VICENTE"
             ]
           },
-          "CORCUERA": {
-            "b": [
+          CORCUERA: {
+            b: [
               "ALEGRIA",
               "AMBULONG",
               "COLONGCOLONG",
@@ -18200,8 +18200,8 @@ export const data = [
               "TACASAN"
             ]
           },
-          "FERROL": {
-            "b": [
+          FERROL: {
+            b: [
               "AGNONOC",
               "BUNSORAN",
               "CLARO M. RECTO",
@@ -18210,8 +18210,8 @@ export const data = [
               "TUBIGON"
             ]
           },
-          "LOOC": {
-            "b": [
+          LOOC: {
+            b: [
               "AGOJO",
               "BALATUCAN",
               "BUENAVISTA",
@@ -18226,8 +18226,8 @@ export const data = [
               "TUGUIS"
             ]
           },
-          "MAGDIWANG": {
-            "b": [
+          MAGDIWANG: {
+            b: [
               "AGSAO",
               "AGUTAY",
               "AMBULONG",
@@ -18239,8 +18239,8 @@ export const data = [
               "TAMPAYAN"
             ]
           },
-          "ODIONGAN": {
-            "b": [
+          ODIONGAN: {
+            b: [
               "AMATONG",
               "ANAHAO",
               "BANGON",
@@ -18268,8 +18268,8 @@ export const data = [
               "TUMINGAD"
             ]
           },
-          "ROMBLON": {
-            "b": [
+          ROMBLON: {
+            b: [
               "AGBALUTO",
               "AGBUDIA",
               "AGNAGA",
@@ -18304,7 +18304,7 @@ export const data = [
             ]
           },
           "SAN AGUSTIN": {
-            "b": [
+            b: [
               "BACHAWAN",
               "BINONGAHAN",
               "BINUGUSAN",
@@ -18323,7 +18323,7 @@ export const data = [
             ]
           },
           "SAN ANDRES": {
-            "b": [
+            b: [
               "AGPUDLOS",
               "CALUNACON",
               "DOÑA TRINIDAD",
@@ -18340,7 +18340,7 @@ export const data = [
             ]
           },
           "SAN FERNANDO": {
-            "b": [
+            b: [
               "AGTIWA",
               "AZARGA",
               "CAMPALINGO",
@@ -18356,7 +18356,7 @@ export const data = [
             ]
           },
           "SAN JOSE": {
-            "b": [
+            b: [
               "BUSAY",
               "COMBOT",
               "LANAS",
@@ -18365,7 +18365,7 @@ export const data = [
             ]
           },
           "SANTA FE": {
-            "b": [
+            b: [
               "AGMANIC",
               "CANYAYO",
               "DANAO NORTE",
@@ -18380,7 +18380,7 @@ export const data = [
             ]
           },
           "SANTA MARIA (IMELDA)": {
-            "b": [
+            b: [
               "BONGA",
               "CONCEPCION NORTE (POB.)",
               "CONCEPCION SUR",
@@ -18394,12 +18394,12 @@ export const data = [
     }
   },
   {
-    "r": "REGION V",
-    "p": {
-      "ALBAY": {
-        "m": {
-          "BACACAY": {
-            "b": [
+    r: "REGION V",
+    p: {
+      ALBAY: {
+        m: {
+          BACACAY: {
+            b: [
               "BACLAYON",
               "BANAO",
               "BARANGAY 1 (POB.)",
@@ -18458,8 +18458,8 @@ export const data = [
               "VINISITAHAN-NAPAO (ISLAND)"
             ]
           },
-          "CAMALIG": {
-            "b": [
+          CAMALIG: {
+            b: [
               "ANOLING",
               "BALIGANG",
               "BANTONAN",
@@ -18513,7 +18513,7 @@ export const data = [
             ]
           },
           "CITY OF LIGAO": {
-            "b": [
+            b: [
               "ABELLA",
               "ALLANG",
               "AMTIC",
@@ -18572,7 +18572,7 @@ export const data = [
             ]
           },
           "DARAGA (LOCSIN)": {
-            "b": [
+            b: [
               "ALCALA",
               "ALOBO",
               "ANISLAG",
@@ -18629,8 +18629,8 @@ export const data = [
               "VILLAHERMOSA"
             ]
           },
-          "GUINOBATAN": {
-            "b": [
+          GUINOBATAN: {
+            b: [
               "AGPAY",
               "BALITE",
               "BANAO",
@@ -18677,8 +18677,8 @@ export const data = [
               "TRAVESIA"
             ]
           },
-          "JOVELLAR": {
-            "b": [
+          JOVELLAR: {
+            b: [
               "AURORA POB. (BGY. 6)",
               "BAGACAY",
               "BAUTISTA",
@@ -18705,7 +18705,7 @@ export const data = [
             ]
           },
           "LEGAZPI CITY": {
-            "b": [
+            b: [
               "BGY. 1 - EM'S BARRIO (POB.)",
               "BGY. 2 - EM'S BARRIO SOUTH (POB.)",
               "BGY. 3 - EM'S BARRIO EAST (POB.)",
@@ -18778,8 +18778,8 @@ export const data = [
               "BGY. 70 - CAGBACONG (BGY. 50)"
             ]
           },
-          "LIBON": {
-            "b": [
+          LIBON: {
+            b: [
               "ALONGONG",
               "APUD",
               "BACOLOD",
@@ -18829,8 +18829,8 @@ export const data = [
               "ZONE VII (POB.)"
             ]
           },
-          "MALILIPOT": {
-            "b": [
+          MALILIPOT: {
+            b: [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BARANGAY III (POB.)",
@@ -18851,8 +18851,8 @@ export const data = [
               "SANTA TERESA"
             ]
           },
-          "MALINAO": {
-            "b": [
+          MALINAO: {
+            b: [
               "AWANG",
               "BAGATANGKI",
               "BAGUMBAYAN",
@@ -18884,8 +18884,8 @@ export const data = [
               "TULIW"
             ]
           },
-          "MANITO": {
-            "b": [
+          MANITO: {
+            b: [
               "BALABAGON",
               "BALASBAS",
               "BAMBAN",
@@ -18903,8 +18903,8 @@ export const data = [
               "TINAPIAN"
             ]
           },
-          "OAS": {
-            "b": [
+          OAS: {
+            b: [
               "BADBAD",
               "BADIAN",
               "BAGSA",
@@ -18961,7 +18961,7 @@ export const data = [
             ]
           },
           "PIO DURAN": {
-            "b": [
+            b: [
               "AGOL",
               "ALABANGPURO",
               "BANAWAN (BINAWAN)",
@@ -18997,8 +18997,8 @@ export const data = [
               "TIBABO"
             ]
           },
-          "POLANGUI": {
-            "b": [
+          POLANGUI: {
+            b: [
               "AGOS",
               "ALNAY",
               "ALOMON",
@@ -19046,7 +19046,7 @@ export const data = [
             ]
           },
           "RAPU-RAPU": {
-            "b": [
+            b: [
               "BAGAOBAWAN",
               "BATAN",
               "BILBAO",
@@ -19084,7 +19084,7 @@ export const data = [
             ]
           },
           "SANTO DOMINGO (LIBOG)": {
-            "b": [
+            b: [
               "ALIMSOG",
               "BAGONG SAN ROQUE",
               "BUHATAN",
@@ -19111,7 +19111,7 @@ export const data = [
             ]
           },
           "TABACO CITY": {
-            "b": [
+            b: [
               "AGNAS (SAN MIGUEL ISLAND)",
               "BACOLOD",
               "BANGKILINGAN",
@@ -19161,8 +19161,8 @@ export const data = [
               "VISITA (SAN MIGUEL ISLAND)"
             ]
           },
-          "TIWI": {
-            "b": [
+          TIWI: {
+            b: [
               "BAGUMBAYAN",
               "BARIIS",
               "BAYBAY",
@@ -19193,9 +19193,9 @@ export const data = [
         }
       },
       "CAMARINES NORTE": {
-        "m": {
-          "BASUD": {
-            "b": [
+        m: {
+          BASUD: {
+            b: [
               "ANGAS",
               "BACTAS",
               "BINATAGAN",
@@ -19227,8 +19227,8 @@ export const data = [
               "TUACA"
             ]
           },
-          "CAPALONGA": {
-            "b": [
+          CAPALONGA: {
+            b: [
               "ALAYAO",
               "BINAWANGAN",
               "CALABACA",
@@ -19253,8 +19253,8 @@ export const data = [
               "VILLA BELEN"
             ]
           },
-          "DAET": {
-            "b": [
+          DAET: {
+            b: [
               "ALAWIHAO",
               "AWITAN",
               "BAGASBAS",
@@ -19283,7 +19283,7 @@ export const data = [
             ]
           },
           "JOSE PANGANIBAN": {
-            "b": [
+            b: [
               "BAGONG BAYAN",
               "CALERO",
               "DAHICAN",
@@ -19313,8 +19313,8 @@ export const data = [
               "TAMISAN"
             ]
           },
-          "LABO": {
-            "b": [
+          LABO: {
+            b: [
               "ANAHAW (POB.)",
               "ANAMEAM",
               "AWITAN",
@@ -19369,8 +19369,8 @@ export const data = [
               "TULAY NA LUPA"
             ]
           },
-          "MERCEDES": {
-            "b": [
+          MERCEDES: {
+            b: [
               "APUAO",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -19399,8 +19399,8 @@ export const data = [
               "TARUM"
             ]
           },
-          "PARACALE": {
-            "b": [
+          PARACALE: {
+            b: [
               "AWITAN",
               "BAGUMBAYAN",
               "BAKAL",
@@ -19431,7 +19431,7 @@ export const data = [
             ]
           },
           "SAN LORENZO RUIZ (IMELDA)": {
-            "b": [
+            b: [
               "DACULANG BOLO",
               "DAGOTDOTAN",
               "LANGGA",
@@ -19447,7 +19447,7 @@ export const data = [
             ]
           },
           "SAN VICENTE": {
-            "b": [
+            b: [
               "ASDUM",
               "CABANBANAN",
               "CALABAGAS",
@@ -19460,7 +19460,7 @@ export const data = [
             ]
           },
           "SANTA ELENA": {
-            "b": [
+            b: [
               "BASIAD",
               "BULALA",
               "DON TOMAS",
@@ -19482,8 +19482,8 @@ export const data = [
               "VILLA SAN ISIDRO"
             ]
           },
-          "TALISAY": {
-            "b": [
+          TALISAY: {
+            b: [
               "BINANUAAN",
               "CAAWIGAN",
               "CAHABAAN",
@@ -19501,8 +19501,8 @@ export const data = [
               "SANTO NIÑO"
             ]
           },
-          "VINZONS": {
-            "b": [
+          VINZONS: {
+            b: [
               "AGUIT-IT",
               "BANOCBOC",
               "BARANGAY I (POB.)",
@@ -19527,9 +19527,9 @@ export const data = [
         }
       },
       "CAMARINES SUR": {
-        "m": {
-          "BAAO": {
-            "b": [
+        m: {
+          BAAO: {
+            b: [
               "AGDANGAN POB. (SAN CAYETANO)",
               "ANTIPOLO",
               "BAGUMBAYAN",
@@ -19562,8 +19562,8 @@ export const data = [
               "TAPOL"
             ]
           },
-          "BALATAN": {
-            "b": [
+          BALATAN: {
+            b: [
               "CABANBANAN",
               "CABUNGAN",
               "CAMANGAHAN (CAORASAN)",
@@ -19583,8 +19583,8 @@ export const data = [
               "TOMATARAYO"
             ]
           },
-          "BATO": {
-            "b": [
+          BATO: {
+            b: [
               "AGOS",
               "BACOLOD",
               "BULUANG",
@@ -19620,8 +19620,8 @@ export const data = [
               "TRES REYES (POB.)"
             ]
           },
-          "BOMBON": {
-            "b": [
+          BOMBON: {
+            b: [
               "PAGAO (SAN JUAN)",
               "SAN ANTONIO",
               "SAN FRANCISCO",
@@ -19632,8 +19632,8 @@ export const data = [
               "SIEMBRE"
             ]
           },
-          "BUHI": {
-            "b": [
+          BUHI: {
+            b: [
               "AMLONGAN (DEL ROSARIO)",
               "ANTIPOLO",
               "BUROCBUSOC",
@@ -19674,8 +19674,8 @@ export const data = [
               "TAMBO"
             ]
           },
-          "BULA": {
-            "b": [
+          BULA: {
+            b: [
               "BAGOLADIO",
               "BAGUMBAYAN",
               "BALAOGAN",
@@ -19711,8 +19711,8 @@ export const data = [
               "TAISAN"
             ]
           },
-          "CABUSAO": {
-            "b": [
+          CABUSAO: {
+            b: [
               "BARCELONITA",
               "BIONG",
               "CAMAGONG",
@@ -19724,8 +19724,8 @@ export const data = [
               "SANTA LUTGARDA (POB.)"
             ]
           },
-          "CALABANGA": {
-            "b": [
+          CALABANGA: {
+            b: [
               "BALATASAN",
               "BALOMBON",
               "BALONGAY",
@@ -19776,8 +19776,8 @@ export const data = [
               "TOMAGODTOD"
             ]
           },
-          "CAMALIGAN": {
-            "b": [
+          CAMALIGAN: {
+            b: [
               "DUGCAL",
               "MARUPIT",
               "SAN FRANCISCO",
@@ -19793,8 +19793,8 @@ export const data = [
               "TAROSANAN"
             ]
           },
-          "CANAMAN": {
-            "b": [
+          CANAMAN: {
+            b: [
               "BARAS (POB.)",
               "DEL ROSARIO",
               "DINAGA (POB.)",
@@ -19821,8 +19821,8 @@ export const data = [
               "TIBGAO (POB.)"
             ]
           },
-          "CARAMOAN": {
-            "b": [
+          CARAMOAN: {
+            b: [
               "AGAAS",
               "ANTOLON",
               "BACGONG",
@@ -19875,7 +19875,7 @@ export const data = [
             ]
           },
           "DEL GALLEGO": {
-            "b": [
+            b: [
               "BAGONG SILANG",
               "BUCAL",
               "CABASAG",
@@ -19910,8 +19910,8 @@ export const data = [
               "ZONE II SAN ANTONIO (POB.)"
             ]
           },
-          "GAINZA": {
-            "b": [
+          GAINZA: {
+            b: [
               "CAGBUNGA",
               "DAHILIG",
               "DISTRICT I (POB.)",
@@ -19922,8 +19922,8 @@ export const data = [
               "SAMPALOC"
             ]
           },
-          "GARCHITORENA": {
-            "b": [
+          GARCHITORENA: {
+            b: [
               "ASON (ANSON)",
               "BAHI",
               "BARANGAY I (POB.)",
@@ -19949,8 +19949,8 @@ export const data = [
               "TOYTOY"
             ]
           },
-          "GOA": {
-            "b": [
+          GOA: {
+            b: [
               "ABUCAYAN",
               "BAGUMBAYAN GRANDE (POB.)",
               "BAGUMBAYAN PEQUEÑO (POB.)",
@@ -19988,7 +19988,7 @@ export const data = [
             ]
           },
           "IRIGA CITY": {
-            "b": [
+            b: [
               "ANTIPOLO",
               "CRISTO REY",
               "DEL ROSARIO (BANAO)",
@@ -20027,8 +20027,8 @@ export const data = [
               "SANTO NIÑO"
             ]
           },
-          "LAGONOY": {
-            "b": [
+          LAGONOY: {
+            b: [
               "AGOSAIS",
               "AGPO-CAMAGONG-TABOG",
               "AMOGUIS",
@@ -20069,8 +20069,8 @@ export const data = [
               "SIPACO"
             ]
           },
-          "LIBMANAN": {
-            "b": [
+          LIBMANAN: {
+            b: [
               "ASLONG",
               "AWAYAN",
               "BAGACAY",
@@ -20148,8 +20148,8 @@ export const data = [
               "VILLASOCORRO"
             ]
           },
-          "LUPI": {
-            "b": [
+          LUPI: {
+            b: [
               "ALLEOMAR",
               "BAGANGAN SR.",
               "BAGONG SIKAT",
@@ -20190,8 +20190,8 @@ export const data = [
               "TIBLE"
             ]
           },
-          "MAGARAO": {
-            "b": [
+          MAGARAO: {
+            b: [
               "BAROBAYBAY",
               "BELL (POB.)",
               "CARANGCANG",
@@ -20209,8 +20209,8 @@ export const data = [
               "SANTO TOMAS (POB.)"
             ]
           },
-          "MILAOR": {
-            "b": [
+          MILAOR: {
+            b: [
               "ALIMBUYOG",
               "AMPARADO (POB.)",
               "BALAGBAG",
@@ -20233,8 +20233,8 @@ export const data = [
               "TARUSANAN"
             ]
           },
-          "MINALABAC": {
-            "b": [
+          MINALABAC: {
+            b: [
               "ANTIPOLO",
               "BAGOLATAO",
               "BAGONGBONG",
@@ -20262,8 +20262,8 @@ export const data = [
               "TIMBANG"
             ]
           },
-          "NABUA": {
-            "b": [
+          NABUA: {
+            b: [
               "ANGUSTIA (ANGUSTIA INAPATAN)",
               "ANTIPOLO OLD",
               "ANTIPOLO YOUNG",
@@ -20309,7 +20309,7 @@ export const data = [
             ]
           },
           "NAGA CITY": {
-            "b": [
+            b: [
               "ABELLA",
               "BAGUMBAYAN NORTE",
               "BAGUMBAYAN SUR",
@@ -20339,8 +20339,8 @@ export const data = [
               "TRIANGULO"
             ]
           },
-          "OCAMPO": {
-            "b": [
+          OCAMPO: {
+            b: [
               "AYUGAN",
               "CABARIWAN",
               "CAGMANABA",
@@ -20368,8 +20368,8 @@ export const data = [
               "VILLAFLORIDA"
             ]
           },
-          "PAMPLONA": {
-            "b": [
+          PAMPLONA: {
+            b: [
               "BATANG",
               "BURABOD",
               "CAGBIBI",
@@ -20389,8 +20389,8 @@ export const data = [
               "VENERACION (TAGUILID)"
             ]
           },
-          "PASACAO": {
-            "b": [
+          PASACAO: {
+            b: [
               "ANTIPOLO",
               "BAGONG SILANG",
               "BAHAY",
@@ -20412,8 +20412,8 @@ export const data = [
               "TINALMUD"
             ]
           },
-          "PILI": {
-            "b": [
+          PILI: {
+            b: [
               "ANAYAN",
               "BAGONG SIRANG",
               "BINANWAANAN",
@@ -20443,7 +20443,7 @@ export const data = [
             ]
           },
           "PRESENTACION (PARUBCAN)": {
-            "b": [
+            b: [
               "AYUGAO",
               "BAGONG SIRANG",
               "BALIGUIAN",
@@ -20464,8 +20464,8 @@ export const data = [
               "TANAWAN"
             ]
           },
-          "RAGAY": {
-            "b": [
+          RAGAY: {
+            b: [
               "AGAO-AO",
               "AGRUPACION",
               "AMOMOKPOK",
@@ -20506,8 +20506,8 @@ export const data = [
               "UPPER SANTA CRUZ"
             ]
           },
-          "SAGÑAY": {
-            "b": [
+          SAGÑAY: {
+            b: [
               "ANIOG",
               "ATULAYAN",
               "BONGALON",
@@ -20530,7 +20530,7 @@ export const data = [
             ]
           },
           "SAN FERNANDO": {
-            "b": [
+            b: [
               "ALIANZA",
               "BEBERON",
               "BICAL",
@@ -20556,7 +20556,7 @@ export const data = [
             ]
           },
           "SAN JOSE": {
-            "b": [
+            b: [
               "ADIANGAO",
               "BAGACAY",
               "BAHAY",
@@ -20588,8 +20588,8 @@ export const data = [
               "TOMINAWOG"
             ]
           },
-          "SIPOCOT": {
-            "b": [
+          SIPOCOT: {
+            b: [
               "ALDEZAR",
               "ALTEZA",
               "ANIB",
@@ -20638,8 +20638,8 @@ export const data = [
               "YABO"
             ]
           },
-          "SIRUMA": {
-            "b": [
+          SIRUMA: {
+            b: [
               "BAGONG SIRANG",
               "BAHAO",
               "BOBOAN",
@@ -20664,8 +20664,8 @@ export const data = [
               "VITO"
             ]
           },
-          "TIGAON": {
-            "b": [
+          TIGAON: {
+            b: [
               "ABO",
               "CABALINADAN",
               "CARAYCAYON",
@@ -20691,8 +20691,8 @@ export const data = [
               "VINAGRE"
             ]
           },
-          "TINAMBAC": {
-            "b": [
+          TINAMBAC: {
+            b: [
               "AGAY-AYAN",
               "ANTIPOLO",
               "BAGACAY",
@@ -20741,10 +20741,10 @@ export const data = [
           }
         }
       },
-      "CATANDUANES": {
-        "m": {
-          "BAGAMANOC": {
-            "b": [
+      CATANDUANES: {
+        m: {
+          BAGAMANOC: {
+            b: [
               "ANTIPOLO",
               "BACAK",
               "BAGATABAO",
@@ -20765,8 +20765,8 @@ export const data = [
               "SUCHAN"
             ]
           },
-          "BARAS": {
-            "b": [
+          BARAS: {
+            b: [
               "ABIHAO",
               "AGBAN",
               "BAGONG SIRANG",
@@ -20798,8 +20798,8 @@ export const data = [
               "WESTERN POBLACION"
             ]
           },
-          "BATO": {
-            "b": [
+          BATO: {
+            b: [
               "AROYAO PEQUEÑO",
               "BAGUMBAYAN",
               "BANAWANG",
@@ -20829,8 +20829,8 @@ export const data = [
               "TILIS"
             ]
           },
-          "CARAMORAN": {
-            "b": [
+          CARAMORAN: {
+            b: [
               "BAYBAY (POB.)",
               "BOCON",
               "BOTHOAN (POB.)",
@@ -20860,8 +20860,8 @@ export const data = [
               "TUCAO"
             ]
           },
-          "GIGMOTO": {
-            "b": [
+          GIGMOTO: {
+            b: [
               "BIONG",
               "DORORIAN",
               "POBLACION DISTRICT I",
@@ -20873,8 +20873,8 @@ export const data = [
               "SIORON"
             ]
           },
-          "PANDAN": {
-            "b": [
+          PANDAN: {
+            b: [
               "BAGAWANG",
               "BALAGÑONAN",
               "BALDOC",
@@ -20904,7 +20904,7 @@ export const data = [
             ]
           },
           "PANGANIBAN (PAYO)": {
-            "b": [
+            b: [
               "ALINAWAN",
               "BABAGUAN",
               "BAGONG BAYAN",
@@ -20931,7 +20931,7 @@ export const data = [
             ]
           },
           "SAN ANDRES (CALOLBON)": {
-            "b": [
+            b: [
               "AGOJO",
               "ALIBUAG",
               "ASGAD (JUAN M. ALBERTO)",
@@ -20973,7 +20973,7 @@ export const data = [
             ]
           },
           "SAN MIGUEL": {
-            "b": [
+            b: [
               "ATSAN (DISTRICT I)",
               "BALATOHAN",
               "BOTON",
@@ -21000,8 +21000,8 @@ export const data = [
               "TOBREHON"
             ]
           },
-          "VIGA": {
-            "b": [
+          VIGA: {
+            b: [
               "ALMOJUELA",
               "ANANONG",
               "ASUNCION (POB.)",
@@ -21035,8 +21035,8 @@ export const data = [
               "VILLA AURORA"
             ]
           },
-          "VIRAC": {
-            "b": [
+          VIRAC: {
+            b: [
               "ANTIPOLO DEL NORTE",
               "ANTIPOLO DEL SUR",
               "BALITE",
@@ -21104,10 +21104,10 @@ export const data = [
           }
         }
       },
-      "MASBATE": {
-        "m": {
-          "AROROY": {
-            "b": [
+      MASBATE: {
+        m: {
+          AROROY: {
+            b: [
               "AMBOLONG",
               "AMOROY",
               "AMUTAG",
@@ -21151,8 +21151,8 @@ export const data = [
               "TINIGBAN"
             ]
           },
-          "BALENO": {
-            "b": [
+          BALENO: {
+            b: [
               "BAAO",
               "BANASE",
               "BATUILA",
@@ -21179,8 +21179,8 @@ export const data = [
               "TINAPIAN"
             ]
           },
-          "BALUD": {
-            "b": [
+          BALUD: {
+            b: [
               "BAYBAY (LUMOCAB)",
               "BONGCANAWAY",
               "CALUMPANG",
@@ -21215,8 +21215,8 @@ export const data = [
               "VILLA ALVAREZ"
             ]
           },
-          "BATUAN": {
-            "b": [
+          BATUAN: {
+            b: [
               "BURGOS",
               "CAMBAÑEZ",
               "CANARES",
@@ -21233,8 +21233,8 @@ export const data = [
               "SAWANG"
             ]
           },
-          "CATAINGAN": {
-            "b": [
+          CATAINGAN: {
+            b: [
               "ABACA",
               "AGUADA",
               "BADIANG",
@@ -21273,8 +21273,8 @@ export const data = [
               "VILLA POGADO"
             ]
           },
-          "CAWAYAN": {
-            "b": [
+          CAWAYAN: {
+            b: [
               "BEGIA",
               "CABAYUGAN",
               "CABUNGAHAN",
@@ -21314,8 +21314,8 @@ export const data = [
               "VILLAHERMOSA"
             ]
           },
-          "CLAVERIA": {
-            "b": [
+          CLAVERIA: {
+            b: [
               "ALBASAN",
               "BOCA ENGAÑO",
               "BUYO",
@@ -21340,8 +21340,8 @@ export const data = [
               "TAGUILID"
             ]
           },
-          "DIMASALANG": {
-            "b": [
+          DIMASALANG: {
+            b: [
               "BALANTAY",
               "BALOCAWE",
               "BANAHAO",
@@ -21364,8 +21364,8 @@ export const data = [
               "T.R. YANGCO (YANCO)"
             ]
           },
-          "ESPERANZA": {
-            "b": [
+          ESPERANZA: {
+            b: [
               "AGOHO",
               "ALMERO",
               "BARAS",
@@ -21388,8 +21388,8 @@ export const data = [
               "VILLA"
             ]
           },
-          "MANDAON": {
-            "b": [
+          MANDAON: {
+            b: [
               "ALAS",
               "AYAT",
               "BAT-ONGAN",
@@ -21419,7 +21419,7 @@ export const data = [
             ]
           },
           "MASBATE CITY": {
-            "b": [
+            b: [
               "ANAS",
               "ASID",
               "B. TITONG",
@@ -21452,8 +21452,8 @@ export const data = [
               "USAB"
             ]
           },
-          "MILAGROS": {
-            "b": [
+          MILAGROS: {
+            b: [
               "BACOLOD",
               "BANGAD",
               "BARA",
@@ -21483,8 +21483,8 @@ export const data = [
               "TINACLIPAN (BATO)"
             ]
           },
-          "MOBO": {
-            "b": [
+          MOBO: {
+            b: [
               "BAANG",
               "BAGACAY",
               "BALATUCAN",
@@ -21516,8 +21516,8 @@ export const data = [
               "UMABAY INTERIOR"
             ]
           },
-          "MONREAL": {
-            "b": [
+          MONREAL: {
+            b: [
               "CANTORNA",
               "FAMOSA",
               "GUINHADAP",
@@ -21531,8 +21531,8 @@ export const data = [
               "TOGORON"
             ]
           },
-          "PALANAS": {
-            "b": [
+          PALANAS: {
+            b: [
               "ANTIPOLO",
               "BANCO",
               "BIGA-A",
@@ -21560,7 +21560,7 @@ export const data = [
             ]
           },
           "PIO V. CORPUZ (LIMBUHAN)": {
-            "b": [
+            b: [
               "ALEGRIA",
               "BUENASUERTE",
               "BUGANG",
@@ -21581,8 +21581,8 @@ export const data = [
               "TUBOG"
             ]
           },
-          "PLACER": {
-            "b": [
+          PLACER: {
+            b: [
               "AGUADA",
               "BAN-AO",
               "BURABOD",
@@ -21621,7 +21621,7 @@ export const data = [
             ]
           },
           "SAN FERNANDO": {
-            "b": [
+            b: [
               "ALTAVISTA",
               "BAYANIHAN POB. (DISTRICT 4)",
               "BAYBAYDAGAT POB. (DISTRICT 1)",
@@ -21651,7 +21651,7 @@ export const data = [
             ]
           },
           "SAN JACINTO": {
-            "b": [
+            b: [
               "ALMIÑE",
               "BAGACAY",
               "BAGAHANGLAD",
@@ -21676,7 +21676,7 @@ export const data = [
             ]
           },
           "SAN PASCUAL": {
-            "b": [
+            b: [
               "BOCA CHICA",
               "BOLOD (POB.)",
               "BUSING",
@@ -21701,8 +21701,8 @@ export const data = [
               "TERRAPLIN (POB.)"
             ]
           },
-          "USON": {
-            "b": [
+          USON: {
+            b: [
               "ARADO",
               "ARMENIA",
               "AURORA",
@@ -21742,10 +21742,10 @@ export const data = [
           }
         }
       },
-      "SORSOGON": {
-        "m": {
-          "BARCELONA": {
-            "b": [
+      SORSOGON: {
+        m: {
+          BARCELONA: {
+            b: [
               "ALEGRIA",
               "BAGACAY",
               "BANGATE",
@@ -21773,8 +21773,8 @@ export const data = [
               "TAGDON"
             ]
           },
-          "BULAN": {
-            "b": [
+          BULAN: {
+            b: [
               "A. BONIFACIO",
               "ABAD SANTOS",
               "AGUINALDO",
@@ -21840,8 +21840,8 @@ export const data = [
               "ZONE VIII POB. (BGY. 8- LOYO)"
             ]
           },
-          "BULUSAN": {
-            "b": [
+          BULUSAN: {
+            b: [
               "BAGACAY",
               "CENTRAL (POB.)",
               "COGON",
@@ -21868,8 +21868,8 @@ export const data = [
               "TINAMPO"
             ]
           },
-          "CASIGURAN": {
-            "b": [
+          CASIGURAN: {
+            b: [
               "ADOVIS (POB.)",
               "BOTON",
               "BURGOS",
@@ -21897,8 +21897,8 @@ export const data = [
               "TULAY"
             ]
           },
-          "CASTILLA": {
-            "b": [
+          CASTILLA: {
+            b: [
               "AMOMONTING",
               "BAGALAYAG",
               "BAGONG SIRANG",
@@ -21935,8 +21935,8 @@ export const data = [
               "TOMALAYTAY"
             ]
           },
-          "DONSOL": {
-            "b": [
+          DONSOL: {
+            b: [
               "ALIN",
               "AWAI",
               "BANBAN",
@@ -21990,8 +21990,8 @@ export const data = [
               "VINISITAHAN"
             ]
           },
-          "GUBAT": {
-            "b": [
+          GUBAT: {
+            b: [
               "ARIMAN",
               "BAGACAY",
               "BALUD DEL NORTE (POB.)",
@@ -22036,8 +22036,8 @@ export const data = [
               "VILLAREAL"
             ]
           },
-          "IROSIN": {
-            "b": [
+          IROSIN: {
+            b: [
               "BACOLOD (POB.)",
               "BAGSANGAN",
               "BATANG",
@@ -22068,8 +22068,8 @@ export const data = [
               "TONGDOL"
             ]
           },
-          "JUBAN": {
-            "b": [
+          JUBAN: {
+            b: [
               "ANOG",
               "AROROY",
               "BACOLOD",
@@ -22097,8 +22097,8 @@ export const data = [
               "TUGHAN"
             ]
           },
-          "MAGALLANES": {
-            "b": [
+          MAGALLANES: {
+            b: [
               "AGUADA NORTE",
               "AGUADA SUR",
               "ANIBONG",
@@ -22135,8 +22135,8 @@ export const data = [
               "TULATULA SUR"
             ]
           },
-          "MATNOG": {
-            "b": [
+          MATNOG: {
+            b: [
               "BALOCAWE",
               "BANOGAO",
               "BANUANGDAAN",
@@ -22179,8 +22179,8 @@ export const data = [
               "TUGAS"
             ]
           },
-          "PILAR": {
-            "b": [
+          PILAR: {
+            b: [
               "ABAS",
               "ABUCAY",
               "BANTAYAN",
@@ -22233,7 +22233,7 @@ export const data = [
             ]
           },
           "PRIETO DIAZ": {
-            "b": [
+            b: [
               "BRILLANTE (POB.)",
               "BULAWAN",
               "CALAO",
@@ -22260,7 +22260,7 @@ export const data = [
             ]
           },
           "SANTA MAGDALENA": {
-            "b": [
+            b: [
               "BARANGAY POBLACION I",
               "BARANGAY POBLACION II",
               "BARANGAY POBLACION III",
@@ -22278,7 +22278,7 @@ export const data = [
             ]
           },
           "SORSOGON CITY": {
-            "b": [
+            b: [
               "ABUYOG",
               "ALMENDRAS-COGON (POB.)",
               "BALETE",
@@ -22350,12 +22350,12 @@ export const data = [
     }
   },
   {
-    "r": "REGION VI",
-    "p": {
-      "AKLAN": {
-        "m": {
-          "ALTAVAS": {
-            "b": [
+    r: "REGION VI",
+    p: {
+      AKLAN: {
+        m: {
+          ALTAVAS: {
+            b: [
               "CABANGILA",
               "CABUGAO",
               "CATMON",
@@ -22372,8 +22372,8 @@ export const data = [
               "TIBIAO"
             ]
           },
-          "BALETE": {
-            "b": [
+          BALETE: {
+            b: [
               "ARANAS",
               "ARCANGEL",
               "CALIZO",
@@ -22386,8 +22386,8 @@ export const data = [
               "POBLACION"
             ]
           },
-          "BANGA": {
-            "b": [
+          BANGA: {
+            b: [
               "AGBANAWAN",
               "BACAN",
               "BADIANGAN",
@@ -22420,8 +22420,8 @@ export const data = [
               "VENTURANZA"
             ]
           },
-          "BATAN": {
-            "b": [
+          BATAN: {
+            b: [
               "AMBOLONG",
               "ANGAS",
               "BAY-ANG",
@@ -22444,8 +22444,8 @@ export const data = [
               "TABON"
             ]
           },
-          "BURUANGA": {
-            "b": [
+          BURUANGA: {
+            b: [
               "ALEGRIA",
               "BAGONGBAYAN",
               "BALUSBOS",
@@ -22463,8 +22463,8 @@ export const data = [
               "TIGUM"
             ]
           },
-          "IBAJAY": {
-            "b": [
+          IBAJAY: {
+            b: [
               "AGBAGO",
               "AGDUGAYAN",
               "ANTIPOLO",
@@ -22502,8 +22502,8 @@ export const data = [
               "YAWAN"
             ]
           },
-          "KALIBO": {
-            "b": [
+          KALIBO: {
+            b: [
               "ANDAGAW",
               "BACHAW NORTE",
               "BACHAW SUR",
@@ -22522,8 +22522,8 @@ export const data = [
               "TINIGAW"
             ]
           },
-          "LEZO": {
-            "b": [
+          LEZO: {
+            b: [
               "AGCAWILAN",
               "BAGTO",
               "BUGASONGAN",
@@ -22538,8 +22538,8 @@ export const data = [
               "TAYHAWAN"
             ]
           },
-          "LIBACAO": {
-            "b": [
+          LIBACAO: {
+            b: [
               "AGMAILIG",
               "ALFONSO XII",
               "BATOBATO",
@@ -22566,8 +22566,8 @@ export const data = [
               "SIBALEW"
             ]
           },
-          "MADALAG": {
-            "b": [
+          MADALAG: {
+            b: [
               "ALAMINOS",
               "ALAS-AS",
               "BACYANG",
@@ -22595,8 +22595,8 @@ export const data = [
               "TIGBAWAN"
             ]
           },
-          "MAKATO": {
-            "b": [
+          MAKATO: {
+            b: [
               "AGBALOGO",
               "AGLUCAY",
               "ALIBAGON",
@@ -22617,8 +22617,8 @@ export const data = [
               "TUGAS"
             ]
           },
-          "MALAY": {
-            "b": [
+          MALAY: {
+            b: [
               "ARGAO",
               "BALABAG",
               "BALUSBUS",
@@ -22638,8 +22638,8 @@ export const data = [
               "YAPAK"
             ]
           },
-          "MALINAO": {
-            "b": [
+          MALINAO: {
+            b: [
               "BANAYBANAY",
               "BIGA-A",
               "BULABUD",
@@ -22665,8 +22665,8 @@ export const data = [
               "TIGPALAS"
             ]
           },
-          "NABAS": {
-            "b": [
+          NABAS: {
+            b: [
               "ALIMBO-BAYBAY",
               "BUENAFORTUNA",
               "BUENASUERTE",
@@ -22690,7 +22690,7 @@ export const data = [
             ]
           },
           "NEW WASHINGTON": {
-            "b": [
+            b: [
               "CANDELARIA",
               "CAWAYAN",
               "DUMAGUIT",
@@ -22709,8 +22709,8 @@ export const data = [
               "TAMBAK"
             ]
           },
-          "NUMANCIA": {
-            "b": [
+          NUMANCIA: {
+            b: [
               "ALBASAN",
               "ALIPUTOS",
               "BADIO",
@@ -22730,8 +22730,8 @@ export const data = [
               "TABANGKA"
             ]
           },
-          "TANGALAN": {
-            "b": [
+          TANGALAN: {
+            b: [
               "AFGA",
               "BAYBAY",
               "DAPDAP",
@@ -22751,10 +22751,10 @@ export const data = [
           }
         }
       },
-      "ANTIQUE": {
-        "m": {
+      ANTIQUE: {
+        m: {
           "ANINI-Y": {
-            "b": [
+            b: [
               "BAYO GRANDE",
               "BAYO PEQUEÑO",
               "BUTUAN",
@@ -22780,8 +22780,8 @@ export const data = [
               "TALISAYAN"
             ]
           },
-          "BARBAZA": {
-            "b": [
+          BARBAZA: {
+            b: [
               "BAGHARI",
               "BAHUYAN",
               "BERI",
@@ -22823,8 +22823,8 @@ export const data = [
               "YAPO"
             ]
           },
-          "BELISON": {
-            "b": [
+          BELISON: {
+            b: [
               "BOROCBOROC",
               "BUENAVISTA",
               "CONCEPCION",
@@ -22838,8 +22838,8 @@ export const data = [
               "SINAJA"
             ]
           },
-          "BUGASONG": {
-            "b": [
+          BUGASONG: {
+            b: [
               "ANILAWAN",
               "ARANGOTE",
               "BAGTASON",
@@ -22869,8 +22869,8 @@ export const data = [
               "ZARAGOZA"
             ]
           },
-          "CALUYA": {
-            "b": [
+          CALUYA: {
+            b: [
               "ALEGRIA",
               "BACONG",
               "BANAGO",
@@ -22891,8 +22891,8 @@ export const data = [
               "TINOGBOC"
             ]
           },
-          "CULASI": {
-            "b": [
+          CULASI: {
+            b: [
               "ALOJIPAN",
               "BAGACAY",
               "BALAC-BALAC",
@@ -22939,8 +22939,8 @@ export const data = [
               "VALDERAMA"
             ]
           },
-          "HAMTIC": {
-            "b": [
+          HAMTIC: {
+            b: [
               "APDO",
               "ASLUMAN",
               "BANAWON",
@@ -22991,7 +22991,7 @@ export const data = [
             ]
           },
           "LAUA-AN": {
-            "b": [
+            b: [
               "BAGONGBAYAN",
               "BANBAN",
               "BONGBONGAN",
@@ -23034,8 +23034,8 @@ export const data = [
               "VIRGINIA"
             ]
           },
-          "LIBERTAD": {
-            "b": [
+          LIBERTAD: {
+            b: [
               "BARUSBUS",
               "BULANAO",
               "CENTRO ESTE (POB.)",
@@ -23057,8 +23057,8 @@ export const data = [
               "UNION"
             ]
           },
-          "PANDAN": {
-            "b": [
+          PANDAN: {
+            b: [
               "ARACAY",
               "BADIANGAN",
               "BAGUMBAYAN",
@@ -23095,8 +23095,8 @@ export const data = [
               "ZALDIVAR"
             ]
           },
-          "PATNONGON": {
-            "b": [
+          PATNONGON: {
+            b: [
               "ALVAÑIZ",
               "AMPARO",
               "APGAHAN",
@@ -23136,7 +23136,7 @@ export const data = [
             ]
           },
           "SAN JOSE": {
-            "b": [
+            b: [
               "ATABAY",
               "BADIANG",
               "BARANGAY 1 (POB.)",
@@ -23168,7 +23168,7 @@ export const data = [
             ]
           },
           "SAN REMIGIO": {
-            "b": [
+            b: [
               "AGRICULA",
               "ALEGRIA",
               "ANINGALAN",
@@ -23216,8 +23216,8 @@ export const data = [
               "WALKER"
             ]
           },
-          "SEBASTE": {
-            "b": [
+          SEBASTE: {
+            b: [
               "ABIERA",
               "AGUILA",
               "ALEGRE",
@@ -23230,8 +23230,8 @@ export const data = [
               "POBLACION"
             ]
           },
-          "SIBALOM": {
-            "b": [
+          SIBALOM: {
+            b: [
               "ALANGAN",
               "BARI",
               "BIGA-A",
@@ -23310,8 +23310,8 @@ export const data = [
               "VILLAR"
             ]
           },
-          "TIBIAO": {
-            "b": [
+          TIBIAO: {
+            b: [
               "ALEGRE",
               "AMAR",
               "BANDOJA (LUPA-AN)",
@@ -23336,7 +23336,7 @@ export const data = [
             ]
           },
           "TOBIAS FORNIER (DAO)": {
-            "b": [
+            b: [
               "ABACA",
               "ARAS-ASAN",
               "AROBO",
@@ -23389,8 +23389,8 @@ export const data = [
               "YSULAT"
             ]
           },
-          "VALDERRAMA": {
-            "b": [
+          VALDERRAMA: {
+            b: [
               "ALON",
               "BAKIANG",
               "BINANOGAN",
@@ -23417,10 +23417,10 @@ export const data = [
           }
         }
       },
-      "CAPIZ": {
-        "m": {
-          "CUARTERO": {
-            "b": [
+      CAPIZ: {
+        m: {
+          CUARTERO: {
+            b: [
               "AGCABUGAO",
               "AGDAHON",
               "AGNAGA",
@@ -23445,8 +23445,8 @@ export const data = [
               "SINABSABAN"
             ]
           },
-          "DAO": {
-            "b": [
+          DAO: {
+            b: [
               "AGANAN",
               "AGTAMBI",
               "AGTANGUAY",
@@ -23469,8 +23469,8 @@ export const data = [
               "SAN AGUSTIN (ILAS NORTE)"
             ]
           },
-          "DUMALAG": {
-            "b": [
+          DUMALAG: {
+            b: [
               "CONCEPCION",
               "CONSOLACION",
               "DOLORES",
@@ -23492,8 +23492,8 @@ export const data = [
               "SANTO ROSARIO"
             ]
           },
-          "DUMARAO": {
-            "b": [
+          DUMARAO: {
+            b: [
               "AGBATUAN",
               "AGLALANA",
               "AGLANOT",
@@ -23529,8 +23529,8 @@ export const data = [
               "TRACIANO"
             ]
           },
-          "IVISAN": {
-            "b": [
+          IVISAN: {
+            b: [
               "AGMALOBO",
               "AGUSTIN NAVARRA",
               "BALARING",
@@ -23548,8 +23548,8 @@ export const data = [
               "SANTA CRUZ"
             ]
           },
-          "JAMINDAN": {
-            "b": [
+          JAMINDAN: {
+            b: [
               "AGAMBULONG",
               "AGBUN-OD",
               "AGCAGAY",
@@ -23583,7 +23583,7 @@ export const data = [
             ]
           },
           "MA-AYON": {
-            "b": [
+            b: [
               "AGLIMOCON",
               "ALASAGING",
               "ALAYUNAN",
@@ -23618,8 +23618,8 @@ export const data = [
               "WEST VILLAFLORES"
             ]
           },
-          "MAMBUSAO": {
-            "b": [
+          MAMBUSAO: {
+            b: [
               "ATIPLO",
               "BALAT-AN",
               "BALIT",
@@ -23648,8 +23648,8 @@ export const data = [
               "TUMALALUD"
             ]
           },
-          "PANAY": {
-            "b": [
+          PANAY: {
+            b: [
               "AGBALO",
               "AGBANBAN",
               "AGOJO",
@@ -23694,8 +23694,8 @@ export const data = [
               "TICO"
             ]
           },
-          "PANITAN": {
-            "b": [
+          PANITAN: {
+            b: [
               "AGBABADIANG",
               "AGKILO",
               "AGLOWAY",
@@ -23724,8 +23724,8 @@ export const data = [
               "TINIGBAN"
             ]
           },
-          "PILAR": {
-            "b": [
+          PILAR: {
+            b: [
               "BALOGO",
               "BINAOBAWAN",
               "BLASCO",
@@ -23752,8 +23752,8 @@ export const data = [
               "YATING"
             ]
           },
-          "PONTEVEDRA": {
-            "b": [
+          PONTEVEDRA: {
+            b: [
               "AGBANOG",
               "AGDALIPE",
               "AMELIGAN",
@@ -23783,7 +23783,7 @@ export const data = [
             ]
           },
           "PRESIDENT ROXAS": {
-            "b": [
+            b: [
               "ARANGUEL",
               "BADIANGON",
               "BAYUYAN",
@@ -23809,7 +23809,7 @@ export const data = [
             ]
           },
           "ROXAS CITY": {
-            "b": [
+            b: [
               "ADLAWAN",
               "BAGO",
               "BALIJUAGAN",
@@ -23860,7 +23860,7 @@ export const data = [
             ]
           },
           "SAPI-AN": {
-            "b": [
+            b: [
               "AGSILAB",
               "AGTATACAY NORTE",
               "AGTATACAY SUR",
@@ -23873,8 +23873,8 @@ export const data = [
               "POBLACION"
             ]
           },
-          "SIGMA": {
-            "b": [
+          SIGMA: {
+            b: [
               "ACBO",
               "AMAGA",
               "BALUCUAN",
@@ -23898,8 +23898,8 @@ export const data = [
               "TAWOG"
             ]
           },
-          "TAPAZ": {
-            "b": [
+          TAPAZ: {
+            b: [
               "ABANGAY",
               "ACUÑA",
               "AGCOCOC",
@@ -23962,10 +23962,10 @@ export const data = [
           }
         }
       },
-      "GUIMARAS": {
-        "m": {
-          "BUENAVISTA": {
-            "b": [
+      GUIMARAS: {
+        m: {
+          BUENAVISTA: {
+            b: [
               "AGSANAYAN",
               "AVILA",
               "BACJAO (CALUMINGAN)",
@@ -24004,8 +24004,8 @@ export const data = [
               "ZALDIVAR"
             ]
           },
-          "JORDAN": {
-            "b": [
+          JORDAN: {
+            b: [
               "ALAGUISOC",
               "BALCON MARAVILLA",
               "BALCON MELLIZA",
@@ -24023,7 +24023,7 @@ export const data = [
             ]
           },
           "NUEVA VALENCIA": {
-            "b": [
+            b: [
               "CABALAGNAN",
               "CALAYA",
               "CANHAWAN",
@@ -24049,7 +24049,7 @@ export const data = [
             ]
           },
           "SAN LORENZO": {
-            "b": [
+            b: [
               "AGUILAR",
               "CABANO",
               "CABUNGAHAN",
@@ -24064,8 +24064,8 @@ export const data = [
               "TAMBORONG"
             ]
           },
-          "SIBUNAG": {
-            "b": [
+          SIBUNAG: {
+            b: [
               "ALEGRIA",
               "AYANGAN",
               "BUBOG",
@@ -24084,10 +24084,10 @@ export const data = [
           }
         }
       },
-      "ILOILO": {
-        "m": {
-          "AJUY": {
-            "b": [
+      ILOILO: {
+        m: {
+          AJUY: {
+            b: [
               "ADCADARAO",
               "AGBOBOLO",
               "BADIANGAN",
@@ -24124,8 +24124,8 @@ export const data = [
               "TUBOGAN"
             ]
           },
-          "ALIMODIAN": {
-            "b": [
+          ALIMODIAN: {
+            b: [
               "ABANG-ABANG",
               "AGSING",
               "ATABAY",
@@ -24179,8 +24179,8 @@ export const data = [
               "UMINGAN"
             ]
           },
-          "ANILAO": {
-            "b": [
+          ANILAO: {
+            b: [
               "AGBATUAN",
               "BADIANG",
               "BALABAG",
@@ -24204,8 +24204,8 @@ export const data = [
               "VISTA ALEGRE"
             ]
           },
-          "BADIANGAN": {
-            "b": [
+          BADIANGAN: {
+            b: [
               "AGUSIPAN",
               "ASTORGA",
               "BINGAUAN",
@@ -24239,8 +24239,8 @@ export const data = [
               "TINA"
             ]
           },
-          "BALASAN": {
-            "b": [
+          BALASAN: {
+            b: [
               "ARANJUEZ",
               "BACOLOD",
               "BALANTI-AN",
@@ -24266,8 +24266,8 @@ export const data = [
               "ZARAGOSA"
             ]
           },
-          "BANATE": {
-            "b": [
+          BANATE: {
+            b: [
               "ALACAYGAN",
               "BARIGA",
               "BELEN",
@@ -24289,7 +24289,7 @@ export const data = [
             ]
           },
           "BAROTAC NUEVO": {
-            "b": [
+            b: [
               "ACUIT",
               "AGCUYAWAN CALSADA",
               "AGCUYAWAN PULO",
@@ -24322,7 +24322,7 @@ export const data = [
             ]
           },
           "BAROTAC VIEJO": {
-            "b": [
+            b: [
               "BUGNAY",
               "CALIFORNIA",
               "DE LA PEÑA",
@@ -24351,8 +24351,8 @@ export const data = [
               "VISTA ALEGRE"
             ]
           },
-          "BATAD": {
-            "b": [
+          BATAD: {
+            b: [
               "ALAPASCO",
               "ALINSOLONG",
               "BANBAN",
@@ -24379,8 +24379,8 @@ export const data = [
               "TAPI-AN"
             ]
           },
-          "BINGAWAN": {
-            "b": [
+          BINGAWAN: {
+            b: [
               "AGBA-O",
               "ALABIDHAN",
               "BULABOG",
@@ -24397,8 +24397,8 @@ export const data = [
               "TUBOD"
             ]
           },
-          "CABATUAN": {
-            "b": [
+          CABATUAN: {
+            b: [
               "ACAO",
               "AMERANG",
               "AMURAO",
@@ -24469,8 +24469,8 @@ export const data = [
               "ZONE XI POB. (BARANGAY 11)"
             ]
           },
-          "CALINOG": {
-            "b": [
+          CALINOG: {
+            b: [
               "AGCALAGA",
               "AGLIBACAO",
               "AGLONOK",
@@ -24532,8 +24532,8 @@ export const data = [
               "ULAYAN"
             ]
           },
-          "CARLES": {
-            "b": [
+          CARLES: {
+            b: [
               "ABONG",
               "ALIPATA",
               "ASLUMAN",
@@ -24570,7 +24570,7 @@ export const data = [
             ]
           },
           "CITY OF PASSI": {
-            "b": [
+            b: [
               "AGDAHON",
               "AGDAYAO",
               "AGLALANA",
@@ -24624,8 +24624,8 @@ export const data = [
               "TUBURAN"
             ]
           },
-          "CONCEPCION": {
-            "b": [
+          CONCEPCION: {
+            b: [
               "AGLOSONG",
               "AGNAGA",
               "BACJAWAN NORTE",
@@ -24653,8 +24653,8 @@ export const data = [
               "TAMIS-AC"
             ]
           },
-          "DINGLE": {
-            "b": [
+          DINGLE: {
+            b: [
               "ABANGAY",
               "AGSALANAN",
               "AGTATACAY",
@@ -24690,8 +24690,8 @@ export const data = [
               "TULATULA-AN"
             ]
           },
-          "DUEÑAS": {
-            "b": [
+          DUEÑAS: {
+            b: [
               "AGUTAYAN",
               "ANGARE",
               "ANJAWAN",
@@ -24741,8 +24741,8 @@ export const data = [
               "TIPOLO"
             ]
           },
-          "DUMANGAS": {
-            "b": [
+          DUMANGAS: {
+            b: [
               "AURORA-DEL PILAR (POB.)",
               "BACAY",
               "BACONG",
@@ -24790,8 +24790,8 @@ export const data = [
               "VICTORIAS"
             ]
           },
-          "ESTANCIA": {
-            "b": [
+          ESTANCIA: {
+            b: [
               "BAYAS (BAYAS ISLAND)",
               "BAYUYAN",
               "BOTONGON",
@@ -24819,8 +24819,8 @@ export const data = [
               "VILLA PANI-AN"
             ]
           },
-          "GUIMBAL": {
-            "b": [
+          GUIMBAL: {
+            b: [
               "ANONO-O",
               "BACONG",
               "BAGUMBAYAN POB. (BAGUMBAYAN-GRANADA)",
@@ -24856,8 +24856,8 @@ export const data = [
               "TORREBLANCA-BLUMENTRITT (POB.)"
             ]
           },
-          "IGBARAS": {
-            "b": [
+          IGBARAS: {
+            b: [
               "ALAMEDA",
               "AMOROGTONG",
               "ANILAWAN",
@@ -24907,7 +24907,7 @@ export const data = [
             ]
           },
           "ILOILO CITY": {
-            "b": [
+            b: [
               "ABETO MIRASOL TAFT SOUTH (QUIRINO ABETO)",
               "AGUINALDO",
               "AIRPORT (TABUCAN AIRPORT)",
@@ -25090,8 +25090,8 @@ export const data = [
               "ZAMORA-MELLIZA"
             ]
           },
-          "JANIUAY": {
-            "b": [
+          JANIUAY: {
+            b: [
               "ABANGAY",
               "AGCAROPE",
               "AGLOBONG",
@@ -25154,8 +25154,8 @@ export const data = [
               "YABON"
             ]
           },
-          "LAMBUNAO": {
-            "b": [
+          LAMBUNAO: {
+            b: [
               "AGSIRAB",
               "AGTUMAN",
               "ALUGMAWA",
@@ -25231,8 +25231,8 @@ export const data = [
               "WALANG"
             ]
           },
-          "LEGANES": {
-            "b": [
+          LEGANES: {
+            b: [
               "BIGKE",
               "BUNTATALA",
               "CAGAMUTAN NORTE",
@@ -25253,8 +25253,8 @@ export const data = [
               "SAN VICENTE"
             ]
           },
-          "LEMERY": {
-            "b": [
+          LEMERY: {
+            b: [
               "AGPIPILI",
               "ALCANTARA",
               "ALMEÑANA",
@@ -25288,8 +25288,8 @@ export const data = [
               "YAWYAWAN"
             ]
           },
-          "LEON": {
-            "b": [
+          LEON: {
+            b: [
               "AGBOY NORTE",
               "AGBOY SUR",
               "AGTA",
@@ -25377,8 +25377,8 @@ export const data = [
               "TUNGUAN"
             ]
           },
-          "MAASIN": {
-            "b": [
+          MAASIN: {
+            b: [
               "ABAY",
               "ABILAY",
               "AGROCEL POB. (AGUINALDO-ROXAS--CELSO MAYOR)",
@@ -25431,8 +25431,8 @@ export const data = [
               "UBIAN"
             ]
           },
-          "MIAGAO": {
-            "b": [
+          MIAGAO: {
+            b: [
               "AGDUM",
               "AGUIAUAN",
               "ALIMODIAS",
@@ -25554,8 +25554,8 @@ export const data = [
               "WAYANG"
             ]
           },
-          "MINA": {
-            "b": [
+          MINA: {
+            b: [
               "ABAT",
               "AGMANAPHAO",
               "AMIROY",
@@ -25581,7 +25581,7 @@ export const data = [
             ]
           },
           "NEW LUCENA": {
-            "b": [
+            b: [
               "BACLAYAN",
               "BADIANG",
               "BALABAG",
@@ -25605,8 +25605,8 @@ export const data = [
               "WARI-WARI"
             ]
           },
-          "OTON": {
-            "b": [
+          OTON: {
+            b: [
               "ABILAY NORTE",
               "ABILAY SUR",
               "ALEGRE",
@@ -25646,8 +25646,8 @@ export const data = [
               "TUROG-TUROG"
             ]
           },
-          "PAVIA": {
-            "b": [
+          PAVIA: {
+            b: [
               "AGANAN",
               "AMPARO",
               "ANILAO",
@@ -25668,8 +25668,8 @@ export const data = [
               "UNGKA II"
             ]
           },
-          "POTOTAN": {
-            "b": [
+          POTOTAN: {
+            b: [
               "ABANGAY",
               "AMAMAROS",
               "BAGACAY",
@@ -25723,7 +25723,7 @@ export const data = [
             ]
           },
           "SAN DIONISIO": {
-            "b": [
+            b: [
               "AGDALIRAN",
               "AMAYONG",
               "BAGACAY",
@@ -25756,7 +25756,7 @@ export const data = [
             ]
           },
           "SAN ENRIQUE": {
-            "b": [
+            b: [
               "ABACA",
               "ASISIG",
               "BANTAYAN",
@@ -25788,7 +25788,7 @@ export const data = [
             ]
           },
           "SAN JOAQUIN": {
-            "b": [
+            b: [
               "AMBOYU-AN",
               "ANDRES BONIFACIO",
               "ANTALON",
@@ -25877,7 +25877,7 @@ export const data = [
             ]
           },
           "SAN MIGUEL": {
-            "b": [
+            b: [
               "BGY. 1 POB. (ROXAS ST.)",
               "BGY. 2 POB. (SAVILLA STO. ROSARIO)",
               "BGY. 3 POB. (A.S.SUAREZ ST. ZONE 1)",
@@ -25905,7 +25905,7 @@ export const data = [
             ]
           },
           "SAN RAFAEL": {
-            "b": [
+            b: [
               "ARIPDIP",
               "BAGACAY",
               "CALAIGANG",
@@ -25918,7 +25918,7 @@ export const data = [
             ]
           },
           "SANTA BARBARA": {
-            "b": [
+            b: [
               "AGUSIPAN",
               "AGUTAYAN",
               "BAGUMBAYAN",
@@ -25981,8 +25981,8 @@ export const data = [
               "TUNGAY"
             ]
           },
-          "SARA": {
-            "b": [
+          SARA: {
+            b: [
               "AGUIRRE",
               "ALDEGUER",
               "ALIBAYOG",
@@ -26027,8 +26027,8 @@ export const data = [
               "ZERRUDO"
             ]
           },
-          "TIGBAUAN": {
-            "b": [
+          TIGBAUAN: {
+            b: [
               "ALUPIDIAN",
               "ATABAYAN",
               "BAGACAY",
@@ -26083,8 +26083,8 @@ export const data = [
               "TARO"
             ]
           },
-          "TUBUNGAN": {
-            "b": [
+          TUBUNGAN: {
+            b: [
               "ADGAO",
               "AGO",
               "AMBARIHON",
@@ -26135,8 +26135,8 @@ export const data = [
               "ZONE III (POB.)"
             ]
           },
-          "ZARRAGA": {
-            "b": [
+          ZARRAGA: {
+            b: [
               "BALUD I",
               "BALUD II",
               "BALUD LILO-AN",
@@ -26166,9 +26166,9 @@ export const data = [
         }
       },
       "NEGROS OCCIDENTAL": {
-        "m": {
+        m: {
           "BACOLOD CITY": {
-            "b": [
+            b: [
               "ALANGILAN",
               "ALIJIS",
               "BANAGO",
@@ -26233,7 +26233,7 @@ export const data = [
             ]
           },
           "BAGO CITY": {
-            "b": [
+            b: [
               "ABUANAN",
               "ALIANZA",
               "ATIPULUAN",
@@ -26260,8 +26260,8 @@ export const data = [
               "TALOC"
             ]
           },
-          "BINALBAGAN": {
-            "b": [
+          BINALBAGAN: {
+            b: [
               "AMONTAY",
               "BAGROY",
               "BI-AO",
@@ -26281,7 +26281,7 @@ export const data = [
             ]
           },
           "CADIZ CITY": {
-            "b": [
+            b: [
               "ANDRES BONIFACIO",
               "BANQUEROHAN",
               "BARANGAY 1 POB. (ZONE 1)",
@@ -26306,8 +26306,8 @@ export const data = [
               "V. F. GUSTILO"
             ]
           },
-          "CALATRAVA": {
-            "b": [
+          CALATRAVA: {
+            b: [
               "AGPANGI",
               "ANI-E",
               "BAGACAY",
@@ -26350,8 +26350,8 @@ export const data = [
               "WINASWASAN"
             ]
           },
-          "CANDONI": {
-            "b": [
+          CANDONI: {
+            b: [
               "AGBOY",
               "BANGA",
               "CABIA-AN",
@@ -26363,8 +26363,8 @@ export const data = [
               "POBLACION WEST"
             ]
           },
-          "CAUAYAN": {
-            "b": [
+          CAUAYAN: {
+            b: [
               "ABACA",
               "BACLAO",
               "BASAK",
@@ -26393,7 +26393,7 @@ export const data = [
             ]
           },
           "ENRIQUE B. MAGALONA (SARAVIA)": {
-            "b": [
+            b: [
               "ALACAYGAN",
               "ALICANTE",
               "BATEA",
@@ -26420,7 +26420,7 @@ export const data = [
             ]
           },
           "ESCALANTE CITY": {
-            "b": [
+            b: [
               "ALIMANGO",
               "BALINTAWAK (POB.)",
               "BINAGUIOHAN",
@@ -26445,7 +26445,7 @@ export const data = [
             ]
           },
           "HIMAMAYLAN CITY": {
-            "b": [
+            b: [
               "AGUISAN",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -26467,8 +26467,8 @@ export const data = [
               "TO-OY"
             ]
           },
-          "HINIGARAN": {
-            "b": [
+          HINIGARAN: {
+            b: [
               "ANAHAW",
               "ARANDA",
               "BAGA-AS",
@@ -26496,7 +26496,7 @@ export const data = [
             ]
           },
           "HINOBA-AN (ASIA)": {
-            "b": [
+            b: [
               "ALIM",
               "ASIA",
               "BACUYANGAN",
@@ -26512,8 +26512,8 @@ export const data = [
               "TALACAGAY"
             ]
           },
-          "ILOG": {
-            "b": [
+          ILOG: {
+            b: [
               "ANDULAUAN",
               "BALICOTOC",
               "BARANGAY I (POB.)",
@@ -26531,8 +26531,8 @@ export const data = [
               "VISTA ALEGRE"
             ]
           },
-          "ISABELA": {
-            "b": [
+          ISABELA: {
+            b: [
               "AMIN",
               "BANOGBANOG",
               "BARANGAY 1 (POB.)",
@@ -26566,7 +26566,7 @@ export const data = [
             ]
           },
           "KABANKALAN CITY": {
-            "b": [
+            b: [
               "BANTAYAN",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -26602,7 +26602,7 @@ export const data = [
             ]
           },
           "LA CARLOTA CITY": {
-            "b": [
+            b: [
               "ARA-AL",
               "AYUNGON",
               "BALABAG",
@@ -26620,7 +26620,7 @@ export const data = [
             ]
           },
           "LA CASTELLANA": {
-            "b": [
+            b: [
               "BIAKNABATO",
               "CABACUNGAN",
               "CABAGNAAN",
@@ -26636,8 +26636,8 @@ export const data = [
               "TALAPTAP"
             ]
           },
-          "MANAPLA": {
-            "b": [
+          MANAPLA: {
+            b: [
               "BARANGAY I (POB.)",
               "BARANGAY I-A (POB.)",
               "BARANGAY I-B (POB.)",
@@ -26653,7 +26653,7 @@ export const data = [
             ]
           },
           "MOISES PADILLA (MAGALLON)": {
-            "b": [
+            b: [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BARANGAY 3 (POB.)",
@@ -26671,8 +26671,8 @@ export const data = [
               "QUINTIN REMO"
             ]
           },
-          "MURCIA": {
-            "b": [
+          MURCIA: {
+            b: [
               "ABO-ABO",
               "ALEGRIA",
               "AMAYCO",
@@ -26698,8 +26698,8 @@ export const data = [
               "ZONE V (POB.)"
             ]
           },
-          "PONTEVEDRA": {
-            "b": [
+          PONTEVEDRA: {
+            b: [
               "ANTIPOLO",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -26722,8 +26722,8 @@ export const data = [
               "ZAMORA"
             ]
           },
-          "PULUPANDAN": {
-            "b": [
+          PULUPANDAN: {
+            b: [
               "BARANGAY ZONE 1 (POB.)",
               "BARANGAY ZONE 1-A (POB.)",
               "BARANGAY ZONE 2 (POB.)",
@@ -26747,7 +26747,7 @@ export const data = [
             ]
           },
           "SAGAY CITY": {
-            "b": [
+            b: [
               "ANDRES BONIFACIO",
               "BATO",
               "BAVIERA",
@@ -26776,7 +26776,7 @@ export const data = [
             ]
           },
           "SALVADOR BENEDICTO": {
-            "b": [
+            b: [
               "BAGO (LALUNG)",
               "BAGONG SILANG (MARCELO)",
               "BUNGA",
@@ -26787,7 +26787,7 @@ export const data = [
             ]
           },
           "SAN CARLOS CITY": {
-            "b": [
+            b: [
               "BAGONBON",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -26809,7 +26809,7 @@ export const data = [
             ]
           },
           "SAN ENRIQUE": {
-            "b": [
+            b: [
               "BAGONAWA",
               "BALIWAGAN",
               "BATUAN",
@@ -26823,7 +26823,7 @@ export const data = [
             ]
           },
           "SILAY CITY": {
-            "b": [
+            b: [
               "BAGTIC",
               "BALARING",
               "BARANGAY I (POB.)",
@@ -26843,7 +26843,7 @@ export const data = [
             ]
           },
           "SIPALAY CITY": {
-            "b": [
+            b: [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BARANGAY 3 (POB.)",
@@ -26864,7 +26864,7 @@ export const data = [
             ]
           },
           "TALISAY CITY": {
-            "b": [
+            b: [
               "BUBOG",
               "CABATANGAN",
               "CONCEPCION",
@@ -26894,8 +26894,8 @@ export const data = [
               "ZONE 16 (POB.)"
             ]
           },
-          "TOBOSO": {
-            "b": [
+          TOBOSO: {
+            b: [
               "BANDILA",
               "BUG-ANG",
               "GENERAL LUNA",
@@ -26907,8 +26907,8 @@ export const data = [
               "TABUN-AC"
             ]
           },
-          "VALLADOLID": {
-            "b": [
+          VALLADOLID: {
+            b: [
               "ALIJIS",
               "AYUNGON",
               "BAGUMBAYAN",
@@ -26928,7 +26928,7 @@ export const data = [
             ]
           },
           "VICTORIAS CITY": {
-            "b": [
+            b: [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BARANGAY III (POB.)",
@@ -26962,12 +26962,12 @@ export const data = [
     }
   },
   {
-    "r": "REGION VII",
-    "p": {
-      "BOHOL": {
-        "m": {
-          "ALBURQUERQUE": {
-            "b": [
+    r: "REGION VII",
+    p: {
+      BOHOL: {
+        m: {
+          ALBURQUERQUE: {
+            b: [
               "BAHI",
               "BASACDACU",
               "CANTIGUIB",
@@ -26981,8 +26981,8 @@ export const data = [
               "WEST POBLACION"
             ]
           },
-          "ALICIA": {
-            "b": [
+          ALICIA: {
+            b: [
               "CABATANG",
               "CAGONGCAGONG",
               "CAMBAOL",
@@ -27000,8 +27000,8 @@ export const data = [
               "UNTAGA"
             ]
           },
-          "ANDA": {
-            "b": [
+          ANDA: {
+            b: [
               "ALMARIA",
               "BACONG",
               "BADIANG",
@@ -27020,8 +27020,8 @@ export const data = [
               "VIRGEN"
             ]
           },
-          "ANTEQUERA": {
-            "b": [
+          ANTEQUERA: {
+            b: [
               "ANGILAN",
               "BANTOLINAO",
               "BICAHAN",
@@ -27045,8 +27045,8 @@ export const data = [
               "VILLA AURORA (CANOC-OC)"
             ]
           },
-          "BACLAYON": {
-            "b": [
+          BACLAYON: {
+            b: [
               "BUENAVENTURA",
               "CAMBANAC",
               "DASITAM",
@@ -27066,8 +27066,8 @@ export const data = [
               "TANDAY"
             ]
           },
-          "BALILIHAN": {
-            "b": [
+          BALILIHAN: {
+            b: [
               "BAUCAN NORTE",
               "BAUCAN SUR",
               "BOCTOL",
@@ -27101,8 +27101,8 @@ export const data = [
               "TAGUSTUSAN"
             ]
           },
-          "BATUAN": {
-            "b": [
+          BATUAN: {
+            b: [
               "ALOJA",
               "BEHIND THE CLOUDS (SAN JOSE)",
               "CABACNITAN",
@@ -27121,7 +27121,7 @@ export const data = [
             ]
           },
           "BIEN UNIDO": {
-            "b": [
+            b: [
               "BILANGBILANGAN DAKO",
               "BILANGBILANGAN DIOT",
               "HINGOTANAN EAST",
@@ -27139,8 +27139,8 @@ export const data = [
               "TUBORAN"
             ]
           },
-          "BILAR": {
-            "b": [
+          BILAR: {
+            b: [
               "BONIFACIO",
               "BUGANG NORTE",
               "BUGANG SUR",
@@ -27162,8 +27162,8 @@ export const data = [
               "ZAMORA"
             ]
           },
-          "BUENAVISTA": {
-            "b": [
+          BUENAVISTA: {
+            b: [
               "ANONANG",
               "ASINAN",
               "BAGO",
@@ -27201,8 +27201,8 @@ export const data = [
               "WESTERN CABUL-AN"
             ]
           },
-          "CALAPE": {
-            "b": [
+          CALAPE: {
+            b: [
               "ABUCAYAN NORTE",
               "ABUCAYAN SUR",
               "BANLASAN",
@@ -27238,8 +27238,8 @@ export const data = [
               "ULBUJAN"
             ]
           },
-          "CANDIJAY": {
-            "b": [
+          CANDIJAY: {
+            b: [
               "ABIHILAN",
               "ANOLING",
               "BOYO-AN",
@@ -27263,8 +27263,8 @@ export const data = [
               "TUGAS"
             ]
           },
-          "CARMEN": {
-            "b": [
+          CARMEN: {
+            b: [
               "ALEGRIA",
               "BICAO",
               "BUENAVISTA",
@@ -27296,8 +27296,8 @@ export const data = [
               "VILLARCAYO"
             ]
           },
-          "CATIGBIAN": {
-            "b": [
+          CATIGBIAN: {
+            b: [
               "ALEGRIA",
               "AMBUAN",
               "BAANG",
@@ -27322,8 +27322,8 @@ export const data = [
               "TRIPLE UNION"
             ]
           },
-          "CLARIN": {
-            "b": [
+          CLARIN: {
+            b: [
               "BACANI",
               "BOGTONGBOD",
               "BONBON",
@@ -27350,8 +27350,8 @@ export const data = [
               "VILLAFLOR"
             ]
           },
-          "CORELLA": {
-            "b": [
+          CORELLA: {
+            b: [
               "ANISLAG",
               "CANANGCA-AN",
               "CANAPNAPAN",
@@ -27362,8 +27362,8 @@ export const data = [
               "TANDAY"
             ]
           },
-          "CORTES": {
-            "b": [
+          CORTES: {
+            b: [
               "DE LA PAZ",
               "FATIMA",
               "LORETO",
@@ -27380,8 +27380,8 @@ export const data = [
               "UPPER DE LA PAZ"
             ]
           },
-          "DAGOHOY": {
-            "b": [
+          DAGOHOY: {
+            b: [
               "BABAG",
               "CAGAWASAN",
               "CAGAWITAN",
@@ -27399,8 +27399,8 @@ export const data = [
               "VILLA AURORA"
             ]
           },
-          "DANAO": {
-            "b": [
+          DANAO: {
+            b: [
               "CABATUAN",
               "CANTUBOD",
               "CARBON",
@@ -27420,8 +27420,8 @@ export const data = [
               "VILLA ANUNCIADO"
             ]
           },
-          "DAUIS": {
-            "b": [
+          DAUIS: {
+            b: [
               "BIKING",
               "BINGAG",
               "CATARMAN",
@@ -27436,8 +27436,8 @@ export const data = [
               "TOTOLAN"
             ]
           },
-          "DIMIAO": {
-            "b": [
+          DIMIAO: {
+            b: [
               "ABIHID",
               "ALEMANIA",
               "BAGUHAN",
@@ -27475,8 +27475,8 @@ export const data = [
               "TAWID BITAOG"
             ]
           },
-          "DUERO": {
-            "b": [
+          DUERO: {
+            b: [
               "ALEJAWAN",
               "ANGILAN",
               "ANIBONGAN",
@@ -27501,7 +27501,7 @@ export const data = [
             ]
           },
           "GARCIA HERNANDEZ": {
-            "b": [
+            b: [
               "ABIJILAN",
               "ANTIPOLO",
               "BASIAO",
@@ -27534,8 +27534,8 @@ export const data = [
               "VICTORIA"
             ]
           },
-          "GUINDULMAN": {
-            "b": [
+          GUINDULMAN: {
+            b: [
               "BASDIO",
               "BATO",
               "BAYONG",
@@ -27557,8 +27557,8 @@ export const data = [
               "TRINIDAD"
             ]
           },
-          "INABANGA": {
-            "b": [
+          INABANGA: {
+            b: [
               "ANONANG",
               "BADIANG",
               "BAGUHAN",
@@ -27611,8 +27611,8 @@ export const data = [
               "UBUJAN"
             ]
           },
-          "JAGNA": {
-            "b": [
+          JAGNA: {
+            b: [
               "ALEJAWAN",
               "BALILI",
               "BOCTOL",
@@ -27648,8 +27648,8 @@ export const data = [
               "TUBOD MONTE"
             ]
           },
-          "JETAFE": {
-            "b": [
+          JETAFE: {
+            b: [
               "ALUMAR",
               "BANACON",
               "BUYOG",
@@ -27676,8 +27676,8 @@ export const data = [
               "TULANG"
             ]
           },
-          "LILA": {
-            "b": [
+          LILA: {
+            b: [
               "BANBAN",
               "BONKOKAN ILAYA",
               "BONKOKAN UBOS",
@@ -27698,8 +27698,8 @@ export const data = [
               "TIGUIS"
             ]
           },
-          "LOAY": {
-            "b": [
+          LOAY: {
+            b: [
               "AGAPE",
               "ALEGRIA NORTE",
               "ALEGRIA SUR",
@@ -27726,8 +27726,8 @@ export const data = [
               "YANANGAN"
             ]
           },
-          "LOBOC": {
-            "b": [
+          LOBOC: {
+            b: [
               "AGAPE",
               "ALEGRIA",
               "BAGUMBAYAN",
@@ -27758,8 +27758,8 @@ export const data = [
               "VILLAFLOR"
             ]
           },
-          "LOON": {
-            "b": [
+          LOON: {
+            b: [
               "AGSOSO",
               "BADBAD OCCIDENTAL",
               "BADBAD ORIENTAL",
@@ -27829,8 +27829,8 @@ export const data = [
               "UBOJAN"
             ]
           },
-          "MABINI": {
-            "b": [
+          MABINI: {
+            b: [
               "ABACA",
               "ABAD SANTOS",
               "AGUIPO",
@@ -27855,8 +27855,8 @@ export const data = [
               "VALAGA"
             ]
           },
-          "MARIBOJOC": {
-            "b": [
+          MARIBOJOC: {
+            b: [
               "AGAHAY",
               "ALIGUAY",
               "ANISLAG",
@@ -27881,8 +27881,8 @@ export const data = [
               "TORIL"
             ]
           },
-          "PANGLAO": {
-            "b": [
+          PANGLAO: {
+            b: [
               "BIL-ISAN",
               "BOLOD",
               "DANAO",
@@ -27895,8 +27895,8 @@ export const data = [
               "TAWALA"
             ]
           },
-          "PILAR": {
-            "b": [
+          PILAR: {
+            b: [
               "AURORA",
               "BAGACAY",
               "BAGUMBAYAN",
@@ -27921,7 +27921,7 @@ export const data = [
             ]
           },
           "PRES. CARLOS P. GARCIA (PITOGO)": {
-            "b": [
+            b: [
               "AGUINING",
               "BASIAO",
               "BAUD",
@@ -27948,7 +27948,7 @@ export const data = [
             ]
           },
           "SAGBAYAN (BORJA)": {
-            "b": [
+            b: [
               "CALANGAHAN",
               "CANMANO",
               "CANMAYA CENTRO",
@@ -27976,7 +27976,7 @@ export const data = [
             ]
           },
           "SAN ISIDRO": {
-            "b": [
+            b: [
               "ABEHILAN",
               "BARYONG DAAN",
               "BAUNOS",
@@ -27992,7 +27992,7 @@ export const data = [
             ]
           },
           "SAN MIGUEL": {
-            "b": [
+            b: [
               "BAYONGAN",
               "BUGANG",
               "CABANGAHAN",
@@ -28013,8 +28013,8 @@ export const data = [
               "TOMOC"
             ]
           },
-          "SEVILLA": {
-            "b": [
+          SEVILLA: {
+            b: [
               "BAYAWAHAN",
               "CABANCALAN",
               "CALINGA-AN",
@@ -28031,7 +28031,7 @@ export const data = [
             ]
           },
           "SIERRA BULLONES": {
-            "b": [
+            b: [
               "ABACHANAN",
               "ANIBONGAN",
               "BUGSOC",
@@ -28056,8 +28056,8 @@ export const data = [
               "VILLA GARCIA"
             ]
           },
-          "SIKATUNA": {
-            "b": [
+          SIKATUNA: {
+            b: [
               "ABUCAY NORTE",
               "ABUCAY SUR",
               "BADIANG",
@@ -28071,7 +28071,7 @@ export const data = [
             ]
           },
           "TAGBILARAN CITY": {
-            "b": [
+            b: [
               "BOOL",
               "BOOY",
               "CABAWAN",
@@ -28089,8 +28089,8 @@ export const data = [
               "UBUJAN"
             ]
           },
-          "TALIBON": {
-            "b": [
+          TALIBON: {
+            b: [
               "BAGACAY",
               "BALINTAWAK",
               "BURGOS",
@@ -28118,8 +28118,8 @@ export const data = [
               "ZAMORA"
             ]
           },
-          "TRINIDAD": {
-            "b": [
+          TRINIDAD: {
+            b: [
               "BANLASAN",
               "BONGBONG",
               "CATOOGAN",
@@ -28142,8 +28142,8 @@ export const data = [
               "TAGUM SUR"
             ]
           },
-          "TUBIGON": {
-            "b": [
+          TUBIGON: {
+            b: [
               "BAGONGBANWA",
               "BANLASAN",
               "BATASAN (BATASAN ISLAND)",
@@ -28180,8 +28180,8 @@ export const data = [
               "VILLANUEVA"
             ]
           },
-          "UBAY": {
-            "b": [
+          UBAY: {
+            b: [
               "ACHILA",
               "BAY-ANG",
               "BENLIW",
@@ -28228,8 +28228,8 @@ export const data = [
               "VILLA TERESITA"
             ]
           },
-          "VALENCIA": {
-            "b": [
+          VALENCIA: {
+            b: [
               "ADLAWAN",
               "ANAS",
               "ANONANG",
@@ -28269,10 +28269,10 @@ export const data = [
           }
         }
       },
-      "CEBU": {
-        "m": {
-          "ALCANTARA": {
-            "b": [
+      CEBU: {
+        m: {
+          ALCANTARA: {
+            b: [
               "CABADIANGAN",
               "CABIL-ISAN",
               "CANDABONG",
@@ -28284,8 +28284,8 @@ export const data = [
               "SALAGMAYA"
             ]
           },
-          "ALCOY": {
-            "b": [
+          ALCOY: {
+            b: [
               "ATABAY",
               "DAAN-LUNGSOD",
               "GUIWANG",
@@ -28296,8 +28296,8 @@ export const data = [
               "SAN AGUSTIN"
             ]
           },
-          "ALEGRIA": {
-            "b": [
+          ALEGRIA: {
+            b: [
               "COMPOSTELA",
               "GUADALUPE",
               "LEGASPI",
@@ -28309,8 +28309,8 @@ export const data = [
               "VALENCIA"
             ]
           },
-          "ALOGUINSAN": {
-            "b": [
+          ALOGUINSAN: {
+            b: [
               "ANGILAN",
               "BOJO",
               "BONBON",
@@ -28328,8 +28328,8 @@ export const data = [
               "ZARAGOSA"
             ]
           },
-          "ARGAO": {
-            "b": [
+          ARGAO: {
+            b: [
               "ALAMBIJUD",
               "ANAJAO",
               "APO",
@@ -28377,8 +28377,8 @@ export const data = [
               "USMAD"
             ]
           },
-          "ASTURIAS": {
-            "b": [
+          ASTURIAS: {
+            b: [
               "AGBANGA",
               "AGTUGOP",
               "BAGO",
@@ -28408,8 +28408,8 @@ export const data = [
               "UBOGON"
             ]
           },
-          "BADIAN": {
-            "b": [
+          BADIAN: {
+            b: [
               "ALAWIJAO",
               "BALHAAN",
               "BANHIGAN",
@@ -28441,8 +28441,8 @@ export const data = [
               "ZARAGOSA"
             ]
           },
-          "BALAMBAN": {
-            "b": [
+          BALAMBAN: {
+            b: [
               "ABUCAYAN",
               "ALIWANAY",
               "ARPILI",
@@ -28473,8 +28473,8 @@ export const data = [
               "VITO"
             ]
           },
-          "BANTAYAN": {
-            "b": [
+          BANTAYAN: {
+            b: [
               "ATOP-ATOP",
               "BAIGAD",
               "BANTIGUE (POB.)",
@@ -28502,8 +28502,8 @@ export const data = [
               "TICAD (POB.)"
             ]
           },
-          "BARILI": {
-            "b": [
+          BARILI: {
+            b: [
               "AZUCENA",
               "BAGAKAY",
               "BALAO",
@@ -28549,7 +28549,7 @@ export const data = [
             ]
           },
           "BOGO CITY": {
-            "b": [
+            b: [
               "ANONANG NORTE",
               "ANONANG SUR",
               "BANBAN",
@@ -28581,8 +28581,8 @@ export const data = [
               "TAYTAYAN"
             ]
           },
-          "BOLJOON": {
-            "b": [
+          BOLJOON: {
+            b: [
               "ARBOR",
               "BACLAYAN",
               "EL PARDO",
@@ -28596,8 +28596,8 @@ export const data = [
               "UPPER BECERRIL"
             ]
           },
-          "BORBON": {
-            "b": [
+          BORBON: {
+            b: [
               "BAGACAY",
               "BILI",
               "BINGAY",
@@ -28620,7 +28620,7 @@ export const data = [
             ]
           },
           "CARCAR CITY": {
-            "b": [
+            b: [
               "BOLINAWAN",
               "BUENAVISTA",
               "CALIDNGAN",
@@ -28638,8 +28638,8 @@ export const data = [
               "VALLADOLID"
             ]
           },
-          "CARMEN": {
-            "b": [
+          CARMEN: {
+            b: [
               "BARING",
               "CANTIPAY",
               "CANTUKONG",
@@ -28663,8 +28663,8 @@ export const data = [
               "UPPER NATIMAO-AN"
             ]
           },
-          "CATMON": {
-            "b": [
+          CATMON: {
+            b: [
               "AGSUWAO",
               "AMANCION",
               "ANAPOG",
@@ -28688,7 +28688,7 @@ export const data = [
             ]
           },
           "CEBU CITY": {
-            "b": [
+            b: [
               "ADLAON",
               "AGSUNGOT",
               "APAS",
@@ -28771,8 +28771,8 @@ export const data = [
               "ZAPATERA"
             ]
           },
-          "COMPOSTELA": {
-            "b": [
+          COMPOSTELA: {
+            b: [
               "BAGALNGA",
               "BASAK",
               "BULUANG",
@@ -28792,8 +28792,8 @@ export const data = [
               "TUBIGAN"
             ]
           },
-          "CONSOLACION": {
-            "b": [
+          CONSOLACION: {
+            b: [
               "CABANGAHAN",
               "CANSAGA",
               "CASILI",
@@ -28817,8 +28817,8 @@ export const data = [
               "TUGBONGAN"
             ]
           },
-          "CORDOBA": {
-            "b": [
+          CORDOBA: {
+            b: [
               "ALEGRIA",
               "BANGBANG",
               "BUAGSONG",
@@ -28834,8 +28834,8 @@ export const data = [
               "SAN MIGUEL"
             ]
           },
-          "DAANBANTAYAN": {
-            "b": [
+          DAANBANTAYAN: {
+            b: [
               "AGUHO",
               "BAGAY",
               "BAKHAWAN",
@@ -28858,8 +28858,8 @@ export const data = [
               "TOMINJAO"
             ]
           },
-          "DALAGUETE": {
-            "b": [
+          DALAGUETE: {
+            b: [
               "ABLAYAN",
               "BABAYONGAN",
               "BALUD",
@@ -28896,7 +28896,7 @@ export const data = [
             ]
           },
           "DANAO CITY": {
-            "b": [
+            b: [
               "BALIANG",
               "BAYABAS",
               "BINALIW",
@@ -28941,8 +28941,8 @@ export const data = [
               "TUBURAN SUR"
             ]
           },
-          "DUMANJUG": {
-            "b": [
+          DUMANJUG: {
+            b: [
               "BALAYGTIKI",
               "BITOON",
               "BULAK",
@@ -28982,8 +28982,8 @@ export const data = [
               "TUBOD-DUGOAN"
             ]
           },
-          "GINATILAN": {
-            "b": [
+          GINATILAN: {
+            b: [
               "ANAO",
               "CAGSING",
               "CALABAWAN",
@@ -29001,7 +29001,7 @@ export const data = [
             ]
           },
           "LAPU-LAPU CITY (OPON)": {
-            "b": [
+            b: [
               "AGUS",
               "BABAG",
               "BANKAL",
@@ -29034,8 +29034,8 @@ export const data = [
               "TUNGASAN"
             ]
           },
-          "LILOAN": {
-            "b": [
+          LILOAN: {
+            b: [
               "CABADIANGAN",
               "CALERO",
               "CATARMAN",
@@ -29052,8 +29052,8 @@ export const data = [
               "YATI"
             ]
           },
-          "MADRIDEJOS": {
-            "b": [
+          MADRIDEJOS: {
+            b: [
               "BUNAKAN",
               "KANGWAYAN",
               "KAONGKOD",
@@ -29070,8 +29070,8 @@ export const data = [
               "TUGAS"
             ]
           },
-          "MALABUYOC": {
-            "b": [
+          MALABUYOC: {
+            b: [
               "ARMEÑA (CANSILONGAN)",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -29089,7 +29089,7 @@ export const data = [
             ]
           },
           "MANDAUE CITY": {
-            "b": [
+            b: [
               "ALANG-ALANG",
               "BAKILID",
               "BANILAD",
@@ -29119,8 +29119,8 @@ export const data = [
               "UMAPAD"
             ]
           },
-          "MEDELLIN": {
-            "b": [
+          MEDELLIN: {
+            b: [
               "ANTIPOLO",
               "CANHABAGAT",
               "CAPUTATAN NORTE",
@@ -29142,8 +29142,8 @@ export const data = [
               "TINDOG"
             ]
           },
-          "MINGLANILLA": {
-            "b": [
+          MINGLANILLA: {
+            b: [
               "CADULAWAN",
               "CALAJO-AN",
               "CAMP 7",
@@ -29165,8 +29165,8 @@ export const data = [
               "VITO"
             ]
           },
-          "MOALBOAL": {
-            "b": [
+          MOALBOAL: {
+            b: [
               "AGBALANGA",
               "BALA",
               "BALABAGON",
@@ -29185,7 +29185,7 @@ export const data = [
             ]
           },
           "NAGA CITY": {
-            "b": [
+            b: [
               "ALFACO",
               "BAIRAN",
               "BALIRONG",
@@ -29216,8 +29216,8 @@ export const data = [
               "WEST POBLACION"
             ]
           },
-          "OSLOB": {
-            "b": [
+          OSLOB: {
+            b: [
               "ALO",
               "BANGCOGON",
               "BONBON",
@@ -29241,8 +29241,8 @@ export const data = [
               "TUMALOG"
             ]
           },
-          "PILAR": {
-            "b": [
+          PILAR: {
+            b: [
               "BIASONG",
               "CAWIT",
               "DAPDAP",
@@ -29258,8 +29258,8 @@ export const data = [
               "VILLAHERMOSA"
             ]
           },
-          "PINAMUNGAHAN": {
-            "b": [
+          PINAMUNGAHAN: {
+            b: [
               "ANISLAG",
               "ANOPOG",
               "BINABAG",
@@ -29288,8 +29288,8 @@ export const data = [
               "TUTAY"
             ]
           },
-          "PORO": {
-            "b": [
+          PORO: {
+            b: [
               "ADELA",
               "ALTAVISTA",
               "CAGCAGAN",
@@ -29309,8 +29309,8 @@ export const data = [
               "WESTERN POBLACION"
             ]
           },
-          "RONDA": {
-            "b": [
+          RONDA: {
+            b: [
               "BUTONG",
               "CAN-ABUHON",
               "CANDULING",
@@ -29327,8 +29327,8 @@ export const data = [
               "VIVE"
             ]
           },
-          "SAMBOAN": {
-            "b": [
+          SAMBOAN: {
+            b: [
               "BASAK",
               "BONBON",
               "BULANGSURAN",
@@ -29347,7 +29347,7 @@ export const data = [
             ]
           },
           "SAN FERNANDO": {
-            "b": [
+            b: [
               "BALUD",
               "BALUNGAG",
               "BASAK",
@@ -29372,7 +29372,7 @@ export const data = [
             ]
           },
           "SAN FRANCISCO": {
-            "b": [
+            b: [
               "CABUNGA-AN",
               "CAMPO",
               "CONSUELO",
@@ -29391,7 +29391,7 @@ export const data = [
             ]
           },
           "SAN REMIGIO": {
-            "b": [
+            b: [
               "ANAPOG",
               "ARGAWANON",
               "BAGTIC",
@@ -29422,7 +29422,7 @@ export const data = [
             ]
           },
           "SANTA FE": {
-            "b": [
+            b: [
               "BALIDBID",
               "HAGDAN",
               "HILANTAGAAN",
@@ -29435,8 +29435,8 @@ export const data = [
               "TALISAY"
             ]
           },
-          "SANTANDER": {
-            "b": [
+          SANTANDER: {
+            b: [
               "BUNLAN",
               "CABUTONGAN",
               "CANDAMIANG",
@@ -29449,8 +29449,8 @@ export const data = [
               "TALISAY"
             ]
           },
-          "SIBONGA": {
-            "b": [
+          SIBONGA: {
+            b: [
               "ABUGON",
               "BAE",
               "BAGACAY",
@@ -29478,8 +29478,8 @@ export const data = [
               "TUBOD"
             ]
           },
-          "SOGOD": {
-            "b": [
+          SOGOD: {
+            b: [
               "AMPONGOL",
               "BAGAKAY",
               "BAGATAYAM",
@@ -29500,8 +29500,8 @@ export const data = [
               "TAKAY"
             ]
           },
-          "TABOGON": {
-            "b": [
+          TABOGON: {
+            b: [
               "ALANG-ALANG",
               "CADUAWAN",
               "CAMOBOAN",
@@ -29529,8 +29529,8 @@ export const data = [
               "TAPUL"
             ]
           },
-          "TABUELAN": {
-            "b": [
+          TABUELAN: {
+            b: [
               "BONGON",
               "DALID",
               "KANLIM-AO",
@@ -29546,7 +29546,7 @@ export const data = [
             ]
           },
           "TALISAY CITY": {
-            "b": [
+            b: [
               "BIASONG",
               "BULACAO",
               "CADULAWAN",
@@ -29572,7 +29572,7 @@ export const data = [
             ]
           },
           "TOLEDO CITY": {
-            "b": [
+            b: [
               "AWIHAO",
               "BAGAKAY",
               "BATO",
@@ -29613,8 +29613,8 @@ export const data = [
               "TUNGKAY"
             ]
           },
-          "TUBURAN": {
-            "b": [
+          TUBURAN: {
+            b: [
               "ALEGRIA",
               "AMATUGAN",
               "ANTIPOLO",
@@ -29671,8 +29671,8 @@ export const data = [
               "TOMUGPA"
             ]
           },
-          "TUDELA": {
-            "b": [
+          TUDELA: {
+            b: [
               "BUENAVISTA",
               "CALMANTE",
               "DAAN SECANTE",
@@ -29689,9 +29689,9 @@ export const data = [
         }
       },
       "NEGROS ORIENTAL": {
-        "m": {
+        m: {
           "AMLAN (AYUQUITAN)": {
-            "b": [
+            b: [
               "BIO-OS",
               "JANTIANON",
               "JUGNO",
@@ -29702,8 +29702,8 @@ export const data = [
               "TANDAYAG"
             ]
           },
-          "AYUNGON": {
-            "b": [
+          AYUNGON: {
+            b: [
               "AMDUS",
               "ANIBONG",
               "ATABAY",
@@ -29730,8 +29730,8 @@ export const data = [
               "TIGUIB"
             ]
           },
-          "BACONG": {
-            "b": [
+          BACONG: {
+            b: [
               "BALAYAGMANOK",
               "BANILAD",
               "BUNTIS",
@@ -29757,7 +29757,7 @@ export const data = [
             ]
           },
           "BAIS CITY": {
-            "b": [
+            b: [
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
               "BASAK",
@@ -29795,8 +29795,8 @@ export const data = [
               "VALENCIA"
             ]
           },
-          "BASAY": {
-            "b": [
+          BASAY: {
+            b: [
               "ACTIN",
               "BAL-OS",
               "BONGALONAN",
@@ -29810,7 +29810,7 @@ export const data = [
             ]
           },
           "BAYAWAN CITY (TULONG)": {
-            "b": [
+            b: [
               "ALI-IS",
               "BANAYBANAY",
               "BANGA",
@@ -29842,7 +29842,7 @@ export const data = [
             ]
           },
           "BINDOY (PAYABON)": {
-            "b": [
+            b: [
               "ATOTES",
               "BATANGAN",
               "BULOD",
@@ -29868,7 +29868,7 @@ export const data = [
             ]
           },
           "CANLAON CITY": {
-            "b": [
+            b: [
               "BAYOG",
               "BINALBAGAN",
               "BUCALAN (EAST BUDSALAN)",
@@ -29883,8 +29883,8 @@ export const data = [
               "PULA"
             ]
           },
-          "DAUIN": {
-            "b": [
+          DAUIN: {
+            b: [
               "ANAHAWAN",
               "APO ISLAND",
               "BAGACAY",
@@ -29911,7 +29911,7 @@ export const data = [
             ]
           },
           "DUMAGUETE CITY": {
-            "b": [
+            b: [
               "BAGACAY",
               "BAJUMPANDAN",
               "BALUGO",
@@ -29945,7 +29945,7 @@ export const data = [
             ]
           },
           "GUIHULNGAN CITY": {
-            "b": [
+            b: [
               "BAKID",
               "BALOGO",
               "BANWAQUE",
@@ -29981,8 +29981,8 @@ export const data = [
               "VILLEGAS"
             ]
           },
-          "JIMALALUD": {
-            "b": [
+          JIMALALUD: {
+            b: [
               "AGLAHUG",
               "AGUTAYON",
               "APANANGON",
@@ -30014,7 +30014,7 @@ export const data = [
             ]
           },
           "LA LIBERTAD": {
-            "b": [
+            b: [
               "ANINIAW",
               "AYA",
               "BAGTIC",
@@ -30046,8 +30046,8 @@ export const data = [
               "TALAYONG"
             ]
           },
-          "MABINAY": {
-            "b": [
+          MABINAY: {
+            b: [
               "ABIS",
               "AREBASORE",
               "BAGTIC",
@@ -30082,8 +30082,8 @@ export const data = [
               "TARA"
             ]
           },
-          "MANJUYOD": {
-            "b": [
+          MANJUYOD: {
+            b: [
               "ALANGILANAN",
               "BAGTIC",
               "BALAAS",
@@ -30113,8 +30113,8 @@ export const data = [
               "TUPAS"
             ]
           },
-          "PAMPLONA": {
-            "b": [
+          PAMPLONA: {
+            b: [
               "ABANTE",
               "BALAYONG",
               "BANAWE",
@@ -30134,7 +30134,7 @@ export const data = [
             ]
           },
           "SAN JOSE": {
-            "b": [
+            b: [
               "BASAK",
               "BASIAO",
               "CAMBALOCTOT",
@@ -30152,7 +30152,7 @@ export const data = [
             ]
           },
           "SANTA CATALINA": {
-            "b": [
+            b: [
               "ALANGILAN",
               "AMIO",
               "BUENAVISTA",
@@ -30177,8 +30177,8 @@ export const data = [
               "TALALAK"
             ]
           },
-          "SIATON": {
-            "b": [
+          SIATON: {
+            b: [
               "ALBIGA",
               "APOLOY",
               "BONAWON",
@@ -30207,8 +30207,8 @@ export const data = [
               "TAYAK"
             ]
           },
-          "SIBULAN": {
-            "b": [
+          SIBULAN: {
+            b: [
               "AGAN-AN",
               "AJONG",
               "BALUGO",
@@ -30227,7 +30227,7 @@ export const data = [
             ]
           },
           "TANJAY CITY": {
-            "b": [
+            b: [
               "AZAGRA",
               "BAHI-AN",
               "LUCA",
@@ -30254,8 +30254,8 @@ export const data = [
               "TUGAS"
             ]
           },
-          "TAYASAN": {
-            "b": [
+          TAYASAN: {
+            b: [
               "BACONG",
               "BAGO",
               "BANGA",
@@ -30287,7 +30287,7 @@ export const data = [
             ]
           },
           "VALENCIA (LUZURRIAGA)": {
-            "b": [
+            b: [
               "APOLONG",
               "BALABAG EAST",
               "BALABAG WEST",
@@ -30314,8 +30314,8 @@ export const data = [
               "SOUTH POBLACION"
             ]
           },
-          "VALLEHERMOSO": {
-            "b": [
+          VALLEHERMOSO: {
+            b: [
               "BAGAWINES",
               "BAIRAN",
               "CABULIHAN",
@@ -30333,8 +30333,8 @@ export const data = [
               "ULAY"
             ]
           },
-          "ZAMBOANGUITA": {
-            "b": [
+          ZAMBOANGUITA: {
+            b: [
               "BASAC",
               "CALANGO",
               "LOTUBAN",
@@ -30349,10 +30349,10 @@ export const data = [
           }
         }
       },
-      "SIQUIJOR": {
-        "m": {
+      SIQUIJOR: {
+        m: {
           "ENRIQUE VILLANUEVA": {
-            "b": [
+            b: [
               "BALOLONG",
               "BINO-ONGAN",
               "BITAUG",
@@ -30369,8 +30369,8 @@ export const data = [
               "TULAPOS"
             ]
           },
-          "LARENA": {
-            "b": [
+          LARENA: {
+            b: [
               "BAGACAY",
               "BALOLANG",
               "BASAC",
@@ -30396,8 +30396,8 @@ export const data = [
               "TACULING"
             ]
           },
-          "LAZI": {
-            "b": [
+          LAZI: {
+            b: [
               "CAMPALANAS",
               "CANGCLARAN",
               "CANGOMANTONG",
@@ -30418,8 +30418,8 @@ export const data = [
               "YTAYA"
             ]
           },
-          "MARIA": {
-            "b": [
+          MARIA: {
+            b: [
               "BOGO",
               "BONGA",
               "CABAL-ASAN",
@@ -30445,7 +30445,7 @@ export const data = [
             ]
           },
           "SAN JUAN": {
-            "b": [
+            b: [
               "CANASAGAN",
               "CANDURA",
               "CANGMUNAG",
@@ -30463,8 +30463,8 @@ export const data = [
               "TUBOD"
             ]
           },
-          "SIQUIJOR": {
-            "b": [
+          SIQUIJOR: {
+            b: [
               "BANBAN",
               "BOLOS",
               "CAIPILAN",
@@ -30514,12 +30514,12 @@ export const data = [
     }
   },
   {
-    "r": "REGION VIII",
-    "p": {
-      "BILIRAN": {
-        "m": {
-          "ALMERIA": {
-            "b": [
+    r: "REGION VIII",
+    p: {
+      BILIRAN: {
+        m: {
+          ALMERIA: {
+            b: [
               "CAUCAB",
               "IYOSAN",
               "JAMORAWON",
@@ -30535,8 +30535,8 @@ export const data = [
               "TAMARINDO"
             ]
           },
-          "BILIRAN": {
-            "b": [
+          BILIRAN: {
+            b: [
               "BATO",
               "BURABOD",
               "BUSALI",
@@ -30550,8 +30550,8 @@ export const data = [
               "VILLA ENAGE (BARAS)"
             ]
           },
-          "CABUCGAYAN": {
-            "b": [
+          CABUCGAYAN: {
+            b: [
               "BALAQUID",
               "BASO",
               "BUNGA",
@@ -30567,8 +30567,8 @@ export const data = [
               "TALIBONG"
             ]
           },
-          "CAIBIRAN": {
-            "b": [
+          CAIBIRAN: {
+            b: [
               "ALEGRIA",
               "ASUG",
               "BARI-IS",
@@ -30588,8 +30588,8 @@ export const data = [
               "VILLA VICENTA (MAINIT)"
             ]
           },
-          "CULABA": {
-            "b": [
+          CULABA: {
+            b: [
               "ACABAN",
               "BACOLOD",
               "BINONGTOAN",
@@ -30609,8 +30609,8 @@ export const data = [
               "VIRGINIA (POB.)"
             ]
           },
-          "KAWAYAN": {
-            "b": [
+          KAWAYAN: {
+            b: [
               "BAGANITO",
               "BALACSON",
               "BALITE",
@@ -30633,8 +30633,8 @@ export const data = [
               "VILLA CORNEJO (LOOC)"
             ]
           },
-          "MARIPIPI": {
-            "b": [
+          MARIPIPI: {
+            b: [
               "AGUTAY",
               "BANLAS",
               "BATO",
@@ -30652,8 +30652,8 @@ export const data = [
               "VIGA"
             ]
           },
-          "NAVAL": {
-            "b": [
+          NAVAL: {
+            b: [
               "AGPANGI",
               "ANISLAGAN",
               "ATIPOLO",
@@ -30685,9 +30685,9 @@ export const data = [
         }
       },
       "EASTERN SAMAR": {
-        "m": {
-          "ARTECHE": {
-            "b": [
+        m: {
+          ARTECHE: {
+            b: [
               "AGUINALDO",
               "BALUD (POB.)",
               "BATO (SAN LUIS)",
@@ -30710,8 +30710,8 @@ export const data = [
               "TEBALAWON"
             ]
           },
-          "BALANGIGA": {
-            "b": [
+          BALANGIGA: {
+            b: [
               "BACJAO",
               "BARANGAY POBLACION I",
               "BARANGAY POBLACION II",
@@ -30727,8 +30727,8 @@ export const data = [
               "SANTA ROSA"
             ]
           },
-          "BALANGKAYAN": {
-            "b": [
+          BALANGKAYAN: {
+            b: [
               "BALOGO",
               "BANGON",
               "CABAY",
@@ -30747,7 +30747,7 @@ export const data = [
             ]
           },
           "BORONGAN CITY": {
-            "b": [
+            b: [
               "ALANG-ALANG",
               "AMANTACOP",
               "ANDO",
@@ -30812,7 +30812,7 @@ export const data = [
             ]
           },
           "CAN-AVID": {
-            "b": [
+            b: [
               "BALAGON",
               "BARANGAY 1 POBLACION",
               "BARANGAY 2 POBLACION",
@@ -30843,8 +30843,8 @@ export const data = [
               "SOLONG"
             ]
           },
-          "DOLORES": {
-            "b": [
+          DOLORES: {
+            b: [
               "AROGANGA",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -30894,7 +30894,7 @@ export const data = [
             ]
           },
           "GENERAL MACARTHUR": {
-            "b": [
+            b: [
               "AGUINALDO",
               "ALANG-ALANG",
               "BINALAY",
@@ -30927,8 +30927,8 @@ export const data = [
               "VIGAN"
             ]
           },
-          "GIPORLOS": {
-            "b": [
+          GIPORLOS: {
+            b: [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BARANGAY 3 (POB.)",
@@ -30949,8 +30949,8 @@ export const data = [
               "SANTA CRUZ (CANSINGKOL)"
             ]
           },
-          "GUIUAN": {
-            "b": [
+          GUIUAN: {
+            b: [
               "ALINGAROG",
               "BAGUA",
               "BANAAG",
@@ -31013,8 +31013,8 @@ export const data = [
               "VICTORY ISLAND"
             ]
           },
-          "HERNANI": {
-            "b": [
+          HERNANI: {
+            b: [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BARANGAY 3 (POB.)",
@@ -31030,8 +31030,8 @@ export const data = [
               "SAN MIGUEL"
             ]
           },
-          "JIPAPAD": {
-            "b": [
+          JIPAPAD: {
+            b: [
               "AGSAMAN",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -31047,8 +31047,8 @@ export const data = [
               "SAN ROQUE"
             ]
           },
-          "LAWAAN": {
-            "b": [
+          LAWAAN: {
+            b: [
               "BARANGAY POBLACION 1",
               "BARANGAY POBLACION 2",
               "BARANGAY POBLACION 3",
@@ -31067,8 +31067,8 @@ export const data = [
               "TAGUITE"
             ]
           },
-          "LLORENTE": {
-            "b": [
+          LLORENTE: {
+            b: [
               "ANTIPOLO",
               "BABANIKHON",
               "BACAYAWAN",
@@ -31104,8 +31104,8 @@ export const data = [
               "WASO"
             ]
           },
-          "MASLOG": {
-            "b": [
+          MASLOG: {
+            b: [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BULAWAN",
@@ -31120,8 +31120,8 @@ export const data = [
               "TUGAS"
             ]
           },
-          "MAYDOLONG": {
-            "b": [
+          MAYDOLONG: {
+            b: [
               "BARANGAY POBLACION 1",
               "BARANGAY POBLACION 2",
               "BARANGAY POBLACION 3",
@@ -31144,8 +31144,8 @@ export const data = [
               "TAGASLIAN"
             ]
           },
-          "MERCEDES": {
-            "b": [
+          MERCEDES: {
+            b: [
               "ANURON",
               "BANUYO",
               "BARANGAY 1 POBLACION",
@@ -31164,8 +31164,8 @@ export const data = [
               "SUNG-AN"
             ]
           },
-          "ORAS": {
-            "b": [
+          ORAS: {
+            b: [
               "AGSAM",
               "ALANG-ALANG",
               "BAGACAY",
@@ -31210,8 +31210,8 @@ export const data = [
               "TRINIDAD (MAYCOROT)"
             ]
           },
-          "QUINAPONDAN": {
-            "b": [
+          QUINAPONDAN: {
+            b: [
               "ALANG-ALANG",
               "ANISLAG",
               "BAGTE",
@@ -31239,8 +31239,8 @@ export const data = [
               "SANTO NIÑO"
             ]
           },
-          "SALCEDO": {
-            "b": [
+          SALCEDO: {
+            b: [
               "ABEJAO",
               "ALOG",
               "ASGAD",
@@ -31285,7 +31285,7 @@ export const data = [
             ]
           },
           "SAN JULIAN": {
-            "b": [
+            b: [
               "BARANGAY NO. 1 POBLACION",
               "BARANGAY NO. 2 POBLACION",
               "BARANGAY NO. 3 POBLACION",
@@ -31305,7 +31305,7 @@ export const data = [
             ]
           },
           "SAN POLICARPO": {
-            "b": [
+            b: [
               "ALUGAN",
               "BAHAY",
               "BANGON",
@@ -31325,8 +31325,8 @@ export const data = [
               "TAN-AWAN"
             ]
           },
-          "SULAT": {
-            "b": [
+          SULAT: {
+            b: [
               "A-ET",
               "ABUCAY (POB.)",
               "BAYBAY (POB.)",
@@ -31347,8 +31347,8 @@ export const data = [
               "TABI (POB.)"
             ]
           },
-          "TAFT": {
-            "b": [
+          TAFT: {
+            b: [
               "BATIAWAN",
               "BETO",
               "BINALOAN",
@@ -31377,10 +31377,10 @@ export const data = [
           }
         }
       },
-      "LEYTE": {
-        "m": {
-          "ABUYOG": {
-            "b": [
+      LEYTE: {
+        m: {
+          ABUYOG: {
+            b: [
               "ALANGILAN",
               "ANIBONGAN",
               "BAGACAY",
@@ -31446,8 +31446,8 @@ export const data = [
               "VICTORY (POB.)"
             ]
           },
-          "ALANGALANG": {
-            "b": [
+          ALANGALANG: {
+            b: [
               "ASLUM",
               "ASTORGA (BURABOD)",
               "BATO",
@@ -31504,8 +31504,8 @@ export const data = [
               "VETERANOS"
             ]
           },
-          "ALBUERA": {
-            "b": [
+          ALBUERA: {
+            b: [
               "ANTIPOLO",
               "BALUGO",
               "BENOLHO",
@@ -31524,8 +31524,8 @@ export const data = [
               "TINAG-AN"
             ]
           },
-          "BABATNGON": {
-            "b": [
+          BABATNGON: {
+            b: [
               "BACONG",
               "BAGONG SILANG",
               "BIASONG",
@@ -31553,8 +31553,8 @@ export const data = [
               "VILLA MAGSAYSAY"
             ]
           },
-          "BARUGO": {
-            "b": [
+          BARUGO: {
+            b: [
               "ABANGO",
               "AMAHIT",
               "BALIRE",
@@ -31594,8 +31594,8 @@ export const data = [
               "TUTUG-AN"
             ]
           },
-          "BATO": {
-            "b": [
+          BATO: {
+            b: [
               "ALEGRIA",
               "ALEJOS",
               "AMAGOS",
@@ -31631,7 +31631,7 @@ export const data = [
             ]
           },
           "BAYBAY CITY": {
-            "b": [
+            b: [
               "ALTAVISTA",
               "AMBACAN",
               "AMGUHAN",
@@ -31726,8 +31726,8 @@ export const data = [
               "ZACARITO"
             ]
           },
-          "BURAUEN": {
-            "b": [
+          BURAUEN: {
+            b: [
               "ABUYOGON",
               "ANONANG",
               "ARADO",
@@ -31807,8 +31807,8 @@ export const data = [
               "VILLA ROSAS (CABANG)"
             ]
           },
-          "CALUBIAN": {
-            "b": [
+          CALUBIAN: {
+            b: [
               "ABANILLA",
               "AGAS",
               "ANISLAGAN",
@@ -31864,8 +31864,8 @@ export const data = [
               "VILLANUEVA"
             ]
           },
-          "CAPOOCAN": {
-            "b": [
+          CAPOOCAN: {
+            b: [
               "BALUCANAD",
               "BALUD",
               "BALUGO",
@@ -31889,8 +31889,8 @@ export const data = [
               "VISARES"
             ]
           },
-          "CARIGARA": {
-            "b": [
+          CARIGARA: {
+            b: [
               "BAGONG LIPUNAN",
               "BALILIT",
               "BARAYONG",
@@ -31942,8 +31942,8 @@ export const data = [
               "WEST VISORIA"
             ]
           },
-          "DAGAMI": {
-            "b": [
+          DAGAMI: {
+            b: [
               "ABACA",
               "ABRE",
               "BALILIT",
@@ -32011,8 +32011,8 @@ export const data = [
               "VICTORIA"
             ]
           },
-          "DULAG": {
-            "b": [
+          DULAG: {
+            b: [
               "ALEGRE",
               "ARADO",
               "BARBO (POB.)",
@@ -32060,8 +32060,8 @@ export const data = [
               "VICTORY"
             ]
           },
-          "HILONGOS": {
-            "b": [
+          HILONGOS: {
+            b: [
               "AGUTAYAN",
               "ATABAY",
               "BAAS",
@@ -32115,8 +32115,8 @@ export const data = [
               "WESTERN BARANGAY (POB.)"
             ]
           },
-          "HINDANG": {
-            "b": [
+          HINDANG: {
+            b: [
               "ANAHAW",
               "ANOLON",
               "BALDOZA",
@@ -32139,8 +32139,8 @@ export const data = [
               "TAGBIBI"
             ]
           },
-          "INOPACAN": {
-            "b": [
+          INOPACAN: {
+            b: [
               "APID",
               "CABULISAN",
               "CAMINTO",
@@ -32163,8 +32163,8 @@ export const data = [
               "TINAGO"
             ]
           },
-          "ISABEL": {
-            "b": [
+          ISABEL: {
+            b: [
               "ANISLAG",
               "ANTIPOLO",
               "APALE",
@@ -32191,8 +32191,8 @@ export const data = [
               "TUBOD"
             ]
           },
-          "JARO": {
-            "b": [
+          JARO: {
+            b: [
               "ALAHAG",
               "ANIBONGAN",
               "ATIPOLO",
@@ -32242,7 +32242,7 @@ export const data = [
             ]
           },
           "JAVIER (BUGHO)": {
-            "b": [
+            b: [
               "ABUYOGAY",
               "ANDRES BONIFACIO",
               "BATUG",
@@ -32273,8 +32273,8 @@ export const data = [
               "ULHAY"
             ]
           },
-          "JULITA": {
-            "b": [
+          JULITA: {
+            b: [
               "ALEGRIA",
               "ANIBONG",
               "ASLUM",
@@ -32303,8 +32303,8 @@ export const data = [
               "VILLA HERMOSA"
             ]
           },
-          "KANANGA": {
-            "b": [
+          KANANGA: {
+            b: [
               "AGUITING",
               "CACAO",
               "HILUCTOGAN",
@@ -32331,7 +32331,7 @@ export const data = [
             ]
           },
           "LA PAZ": {
-            "b": [
+            b: [
               "BAGACAY EAST",
               "BAGACAY WEST",
               "BOCAWON",
@@ -32369,8 +32369,8 @@ export const data = [
               "TARUGAN"
             ]
           },
-          "LEYTE": {
-            "b": [
+          LEYTE: {
+            b: [
               "BACHAO",
               "BACO",
               "BAGABA-O",
@@ -32403,8 +32403,8 @@ export const data = [
               "WAGUE"
             ]
           },
-          "MACARTHUR": {
-            "b": [
+          MACARTHUR: {
+            b: [
               "BATUG",
               "BURABOD",
               "CAPUDLOSAN",
@@ -32438,8 +32438,8 @@ export const data = [
               "VILLA IMELDA"
             ]
           },
-          "MAHAPLAG": {
-            "b": [
+          MAHAPLAG: {
+            b: [
               "CAMPIN",
               "CUATRO DE AGOSTO",
               "HILUCTOGAN",
@@ -32471,7 +32471,7 @@ export const data = [
             ]
           },
           "MATAG-OB": {
-            "b": [
+            b: [
               "BALAGTAS",
               "BONOY (POB.)",
               "BULAK",
@@ -32495,8 +32495,8 @@ export const data = [
               "TALISAY (POB.)"
             ]
           },
-          "MATALOM": {
-            "b": [
+          MATALOM: {
+            b: [
               "AGBANGA",
               "ALTAVISTA",
               "BAGONG LIPUNAN",
@@ -32529,8 +32529,8 @@ export const data = [
               "ZARAGOZA"
             ]
           },
-          "MAYORGA": {
-            "b": [
+          MAYORGA: {
+            b: [
               "A. BONIFACIO",
               "BURGOS",
               "CALIPAYAN",
@@ -32549,8 +32549,8 @@ export const data = [
               "WILSON"
             ]
           },
-          "MERIDA": {
-            "b": [
+          MERIDA: {
+            b: [
               "BINABAYE",
               "CABALIWAN",
               "CALUNANGAN",
@@ -32576,7 +32576,7 @@ export const data = [
             ]
           },
           "ORMOC CITY": {
-            "b": [
+            b: [
               "AIRPORT",
               "ALEGRIA",
               "ALTA VISTA",
@@ -32689,8 +32689,8 @@ export const data = [
               "VALENCIA"
             ]
           },
-          "PALO": {
-            "b": [
+          PALO: {
+            b: [
               "ANAHAWAY",
               "ARADO",
               "BARAS",
@@ -32726,8 +32726,8 @@ export const data = [
               "TERAZA"
             ]
           },
-          "PALOMPON": {
-            "b": [
+          PALOMPON: {
+            b: [
               "BAGUINBIN",
               "BELEN",
               "BITAOG POB. (YPIL III)",
@@ -32780,8 +32780,8 @@ export const data = [
               "TINUBDAN"
             ]
           },
-          "PASTRANA": {
-            "b": [
+          PASTRANA: {
+            b: [
               "ARABUNOG",
               "ARINGIT",
               "BAHAY",
@@ -32814,7 +32814,7 @@ export const data = [
             ]
           },
           "SAN ISIDRO": {
-            "b": [
+            b: [
               "BANAT-E",
               "BASUD",
               "BAWOD (POB.)",
@@ -32837,7 +32837,7 @@ export const data = [
             ]
           },
           "SAN MIGUEL": {
-            "b": [
+            b: [
               "BAGACAY",
               "BAHAY",
               "BAIRAN",
@@ -32862,7 +32862,7 @@ export const data = [
             ]
           },
           "SANTA FE": {
-            "b": [
+            b: [
               "BACULANAD",
               "BADIANGAY",
               "BULOD",
@@ -32885,8 +32885,8 @@ export const data = [
               "ZONE 4 POB. (CABANGCALAN)"
             ]
           },
-          "TABANGO": {
-            "b": [
+          TABANGO: {
+            b: [
               "BUTASON I",
               "BUTASON II",
               "CAMPOKPOK",
@@ -32902,8 +32902,8 @@ export const data = [
               "TUGAS"
             ]
           },
-          "TABONTABON": {
-            "b": [
+          TABONTABON: {
+            b: [
               "AMANDANGAY",
               "ASLUM",
               "BALINGASAG",
@@ -32923,7 +32923,7 @@ export const data = [
             ]
           },
           "TACLOBAN CITY": {
-            "b": [
+            b: [
               "BARANGAY 2",
               "BARANGAY 5",
               "BARANGAY 5-A",
@@ -33064,8 +33064,8 @@ export const data = [
               "NULA-TULA (BGYS. 3 AND 3A)"
             ]
           },
-          "TANAUAN": {
-            "b": [
+          TANAUAN: {
+            b: [
               "ADA",
               "AMANLURAN",
               "ARADO",
@@ -33122,8 +33122,8 @@ export const data = [
               "TUGOP"
             ]
           },
-          "TOLOSA": {
-            "b": [
+          TOLOSA: {
+            b: [
               "BURAK",
               "CANMOGSAY",
               "CANTARIWIS",
@@ -33141,8 +33141,8 @@ export const data = [
               "TELEGRAFO"
             ]
           },
-          "TUNGA": {
-            "b": [
+          TUNGA: {
+            b: [
               "ASTORGA (UPART)",
               "BALIRE",
               "BANAWANG",
@@ -33153,8 +33153,8 @@ export const data = [
               "SANTO NIÑO (POB.)"
             ]
           },
-          "VILLABA": {
-            "b": [
+          VILLABA: {
+            b: [
               "ABIJAO",
               "BALITE",
               "BANGCAL",
@@ -33195,9 +33195,9 @@ export const data = [
         }
       },
       "NORTHERN SAMAR": {
-        "m": {
-          "ALLEN": {
-            "b": [
+        m: {
+          ALLEN: {
+            b: [
               "ALEJANDRO VILLAGE (SANTIAGO)",
               "BONIFACIO",
               "CABACUNGAN",
@@ -33220,8 +33220,8 @@ export const data = [
               "VICTORIA"
             ]
           },
-          "BIRI": {
-            "b": [
+          BIRI: {
+            b: [
               "KAUSWAGAN (BASUD)",
               "MACARTHUR",
               "PIO DEL PILAR",
@@ -33232,8 +33232,8 @@ export const data = [
               "SANTO NIÑO"
             ]
           },
-          "BOBON": {
-            "b": [
+          BOBON: {
+            b: [
               "ACERIDA",
               "ARELLANO",
               "BALAT-BALUD",
@@ -33254,8 +33254,8 @@ export const data = [
               "TROJELLO"
             ]
           },
-          "CAPUL": {
-            "b": [
+          CAPUL: {
+            b: [
               "AGUIN",
               "JUBANG",
               "LANDUSAN",
@@ -33270,8 +33270,8 @@ export const data = [
               "SAWANG"
             ]
           },
-          "CATARMAN": {
-            "b": [
+          CATARMAN: {
+            b: [
               "ACACIA (POB.)",
               "AGUINALDO",
               "AIRPORT VILLAGE",
@@ -33329,8 +33329,8 @@ export const data = [
               "YAKAL (POB.)"
             ]
           },
-          "CATUBIG": {
-            "b": [
+          CATUBIG: {
+            b: [
               "ANONGO",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -33380,8 +33380,8 @@ export const data = [
               "VIENNA MARIA"
             ]
           },
-          "GAMAY": {
-            "b": [
+          GAMAY: {
+            b: [
               "ANITO",
               "BANGON",
               "BATO",
@@ -33410,8 +33410,8 @@ export const data = [
               "SAN ANTONIO"
             ]
           },
-          "LAOANG": {
-            "b": [
+          LAOANG: {
+            b: [
               "ABATON",
               "AGUADAHAN",
               "AROGANGA",
@@ -33470,8 +33470,8 @@ export const data = [
               "YAPAS"
             ]
           },
-          "LAPINIG": {
-            "b": [
+          LAPINIG: {
+            b: [
               "ALANG-ALANG",
               "BAGACAY",
               "CAHAGWAYAN",
@@ -33490,7 +33490,7 @@ export const data = [
             ]
           },
           "LAS NAVAS": {
-            "b": [
+            b: [
               "BALUGO",
               "BUGAY",
               "BUGTOSAN",
@@ -33546,8 +33546,8 @@ export const data = [
               "VICTORY"
             ]
           },
-          "LAVEZARES": {
-            "b": [
+          LAVEZARES: {
+            b: [
               "BALICUATRO",
               "BANI",
               "BAROBAYBAY",
@@ -33577,7 +33577,7 @@ export const data = [
             ]
           },
           "LOPE DE VEGA": {
-            "b": [
+            b: [
               "BAYHO",
               "BONIFACIO",
               "CAG-AGUINGAY",
@@ -33602,8 +33602,8 @@ export const data = [
               "UPPER CAYNAGA"
             ]
           },
-          "MAPANAS": {
-            "b": [
+          MAPANAS: {
+            b: [
               "BURGOS",
               "DEL NORTE (POB.)",
               "DEL SUR (POB.)",
@@ -33619,8 +33619,8 @@ export const data = [
               "SILJAGON"
             ]
           },
-          "MONDRAGON": {
-            "b": [
+          MONDRAGON: {
+            b: [
               "BAGASBAS",
               "BUGKO",
               "CABLANGAN",
@@ -33647,8 +33647,8 @@ export const data = [
               "TALOLORA"
             ]
           },
-          "PALAPAG": {
-            "b": [
+          PALAPAG: {
+            b: [
               "ASUM (POB.)",
               "BAGACAY",
               "BANGON",
@@ -33683,8 +33683,8 @@ export const data = [
               "TINAMPO (POB.)"
             ]
           },
-          "PAMBUJAN": {
-            "b": [
+          PAMBUJAN: {
+            b: [
               "CABABTO-AN",
               "CABARI-AN",
               "CAGBIGAJO",
@@ -33713,8 +33713,8 @@ export const data = [
               "YNAGUINGAYAN"
             ]
           },
-          "ROSARIO": {
-            "b": [
+          ROSARIO: {
+            b: [
               "AGUADA",
               "BANTOLINAO",
               "BUENAVISTA",
@@ -33729,7 +33729,7 @@ export const data = [
             ]
           },
           "SAN ANTONIO": {
-            "b": [
+            b: [
               "BURABOD",
               "DALUPIRIT",
               "MANRAYA",
@@ -33743,7 +33743,7 @@ export const data = [
             ]
           },
           "SAN ISIDRO": {
-            "b": [
+            b: [
               "ALEGRIA",
               "BALITE",
               "BUENAVISTA",
@@ -33761,7 +33761,7 @@ export const data = [
             ]
           },
           "SAN JOSE": {
-            "b": [
+            b: [
               "AGUADAHAN",
               "BAGONG SABANG",
               "BALITE",
@@ -33781,7 +33781,7 @@ export const data = [
             ]
           },
           "SAN ROQUE": {
-            "b": [
+            b: [
               "BALNASAN",
               "BALUD",
               "BANTAYAN",
@@ -33801,7 +33801,7 @@ export const data = [
             ]
           },
           "SAN VICENTE": {
-            "b": [
+            b: [
               "DESTACADO POB. (BGY.2)",
               "MARAGAT",
               "MONGOL BONGOL POB. (BGY.1)",
@@ -33812,7 +33812,7 @@ export const data = [
             ]
           },
           "SILVINO LOBOS": {
-            "b": [
+            b: [
               "BALUD",
               "CABABAYOGAN",
               "CABUNGA-AN",
@@ -33841,8 +33841,8 @@ export const data = [
               "VICTORY"
             ]
           },
-          "VICTORIA": {
-            "b": [
+          VICTORIA: {
+            b: [
               "ACEDILLO",
               "BUENASUERTE",
               "BUENOS AIRES",
@@ -33864,9 +33864,9 @@ export const data = [
         }
       },
       "SAMAR (WESTERN SAMAR)": {
-        "m": {
-          "ALMAGRO": {
-            "b": [
+        m: {
+          ALMAGRO: {
+            b: [
               "BACJAO",
               "BIASONG I",
               "BIASONG II",
@@ -33892,8 +33892,8 @@ export const data = [
               "VELOSO"
             ]
           },
-          "BASEY": {
-            "b": [
+          BASEY: {
+            b: [
               "AMANDAYEHAN",
               "ANGLIT",
               "BACUBAC",
@@ -33948,7 +33948,7 @@ export const data = [
             ]
           },
           "CALBAYOG CITY": {
-            "b": [
+            b: [
               "ACEDILLO",
               "AGUIT-ITAN (POB.)",
               "ALIBABA",
@@ -34108,8 +34108,8 @@ export const data = [
               "VILLAHERMOSA"
             ]
           },
-          "CALBIGA": {
-            "b": [
+          CALBIGA: {
+            b: [
               "ANTOL",
               "BACYARAN",
               "BARANGAY 1 (POB.)",
@@ -34154,7 +34154,7 @@ export const data = [
             ]
           },
           "CATBALOGAN CITY": {
-            "b": [
+            b: [
               "ALBALATE",
               "BAGONGON",
               "BANGON",
@@ -34214,8 +34214,8 @@ export const data = [
               "TOTORINGON"
             ]
           },
-          "DARAM": {
-            "b": [
+          DARAM: {
+            b: [
               "ARAWANE",
               "ASTORGA",
               "BACHAO",
@@ -34276,8 +34276,8 @@ export const data = [
               "YANGTA"
             ]
           },
-          "GANDARA": {
-            "b": [
+          GANDARA: {
+            b: [
               "ADELA HEIGHTS (POB.)",
               "ARONG",
               "BALOCAWE",
@@ -34349,8 +34349,8 @@ export const data = [
               "TIGBAWON"
             ]
           },
-          "HINABANGAN": {
-            "b": [
+          HINABANGAN: {
+            b: [
               "BAGACAY",
               "BINOBUCALAN",
               "BUCALAN",
@@ -34374,8 +34374,8 @@ export const data = [
               "YABON"
             ]
           },
-          "JIABONG": {
-            "b": [
+          JIABONG: {
+            b: [
               "BARANGAY NO. 1 (POB.)",
               "BARANGAY NO. 2 (POB.)",
               "BARANGAY NO. 3 (POB.)",
@@ -34412,8 +34412,8 @@ export const data = [
               "VICTORY"
             ]
           },
-          "MARABUT": {
-            "b": [
+          MARABUT: {
+            b: [
               "AMAMBUCALE",
               "AMANTILLO",
               "BINUKYAHAN",
@@ -34440,8 +34440,8 @@ export const data = [
               "VELOSO"
             ]
           },
-          "MATUGUINAO": {
-            "b": [
+          MATUGUINAO: {
+            b: [
               "ANGYAP",
               "BAG-OTAN",
               "BARRUZ (BARANGAY NO. 1)",
@@ -34464,8 +34464,8 @@ export const data = [
               "SANTA CRUZ"
             ]
           },
-          "MOTIONG": {
-            "b": [
+          MOTIONG: {
+            b: [
               "ANGYAP",
               "BARAYONG",
               "BAYOG",
@@ -34498,8 +34498,8 @@ export const data = [
               "SARAO"
             ]
           },
-          "PAGSANGHAN": {
-            "b": [
+          PAGSANGHAN: {
+            b: [
               "BANGON",
               "BUENOS AIRES",
               "CALANYUGAN",
@@ -34516,7 +34516,7 @@ export const data = [
             ]
           },
           "PARANAS (WRIGHT)": {
-            "b": [
+            b: [
               "ANAGASI",
               "APOLONIA",
               "BAGSA",
@@ -34563,8 +34563,8 @@ export const data = [
               "TUTUBIGAN"
             ]
           },
-          "PINABACDAO": {
-            "b": [
+          PINABACDAO: {
+            b: [
               "BANGON",
               "BARANGAY I (POB.)",
               "BARANGAY II (POB.)",
@@ -34592,7 +34592,7 @@ export const data = [
             ]
           },
           "SAN JORGE": {
-            "b": [
+            b: [
               "ANQUIANA (ANGKIANA)",
               "AURORA",
               "BAY-ANG",
@@ -34637,7 +34637,7 @@ export const data = [
             ]
           },
           "SAN JOSE DE BUAN": {
-            "b": [
+            b: [
               "AGUINGAYAN",
               "BABACLAYON",
               "BARANGAY 1 (POB.)",
@@ -34655,7 +34655,7 @@ export const data = [
             ]
           },
           "SAN SEBASTIAN": {
-            "b": [
+            b: [
               "BALOGO",
               "BONTOD",
               "CABAYWA",
@@ -34673,7 +34673,7 @@ export const data = [
             ]
           },
           "SANTA MARGARITA": {
-            "b": [
+            b: [
               "AGRUPACION",
               "ARAPISON",
               "AVELINO",
@@ -34713,7 +34713,7 @@ export const data = [
             ]
           },
           "SANTA RITA": {
-            "b": [
+            b: [
               "ALEGRIA",
               "ANIBONGAN",
               "ASLUM",
@@ -34755,7 +34755,7 @@ export const data = [
             ]
           },
           "SANTO NIÑO": {
-            "b": [
+            b: [
               "BALATGUTI",
               "BARAS",
               "BASUD (POB.)",
@@ -34772,7 +34772,7 @@ export const data = [
             ]
           },
           "TAGAPUL-AN": {
-            "b": [
+            b: [
               "BAGUIW",
               "BALOCAWE",
               "GUINBARUCAN",
@@ -34789,8 +34789,8 @@ export const data = [
               "TRINIDAD"
             ]
           },
-          "TALALORA": {
-            "b": [
+          TALALORA: {
+            b: [
               "BO. INDEPENDENCIA",
               "MALAGUINING",
               "MALLORGA",
@@ -34804,8 +34804,8 @@ export const data = [
               "VICTORY"
             ]
           },
-          "TARANGNAN": {
-            "b": [
+          TARANGNAN: {
+            b: [
               "ALCAZAR",
               "AWANG",
               "BAHAY",
@@ -34849,8 +34849,8 @@ export const data = [
               "TIZON"
             ]
           },
-          "VILLAREAL": {
-            "b": [
+          VILLAREAL: {
+            b: [
               "BANQUIL",
               "BINO-ONGAN",
               "BURABOD",
@@ -34891,8 +34891,8 @@ export const data = [
               "VILLAROSA POB. (CAMPIATOT)"
             ]
           },
-          "ZUMARRAGA": {
-            "b": [
+          ZUMARRAGA: {
+            b: [
               "ALEGRIA",
               "ARTECHE",
               "BIOSO",
@@ -34923,9 +34923,9 @@ export const data = [
         }
       },
       "SOUTHERN LEYTE": {
-        "m": {
-          "ANAHAWAN": {
-            "b": [
+        m: {
+          ANAHAWAN: {
+            b: [
               "AMAGUSAN",
               "CALINTAAN",
               "CANLABIAN",
@@ -34942,8 +34942,8 @@ export const data = [
               "TAGUP-ON"
             ]
           },
-          "BONTOC": {
-            "b": [
+          BONTOC: {
+            b: [
               "ANAHAO",
               "BANAHAO",
               "BAUGO",
@@ -34986,8 +34986,8 @@ export const data = [
               "UNION"
             ]
           },
-          "HINUNANGAN": {
-            "b": [
+          HINUNANGAN: {
+            b: [
               "AMBACON",
               "BADIANGON",
               "BANGCAS A",
@@ -35030,8 +35030,8 @@ export const data = [
               "UPPER BANTAWON"
             ]
           },
-          "HINUNDAYAN": {
-            "b": [
+          HINUNDAYAN: {
+            b: [
               "AMAGA",
               "AMBAO",
               "AN-AN",
@@ -35051,8 +35051,8 @@ export const data = [
               "SAGBOK"
             ]
           },
-          "LIBAGON": {
-            "b": [
+          LIBAGON: {
+            b: [
               "BIASONG",
               "BOGASONG",
               "CAWAYAN",
@@ -35069,8 +35069,8 @@ export const data = [
               "TIGBAO"
             ]
           },
-          "LILOAN": {
-            "b": [
+          LILOAN: {
+            b: [
               "AMAGA",
               "ANILAO",
               "BAHAY",
@@ -35097,8 +35097,8 @@ export const data = [
               "TABUGON"
             ]
           },
-          "LIMASAWA": {
-            "b": [
+          LIMASAWA: {
+            b: [
               "CABULIHAN",
               "LUGSONGAN",
               "MAGALLANES",
@@ -35108,7 +35108,7 @@ export const data = [
             ]
           },
           "MAASIN CITY": {
-            "b": [
+            b: [
               "ABGAO (POB.)",
               "ACASIA",
               "ASUNCION",
@@ -35181,8 +35181,8 @@ export const data = [
               "TUNGA-TUNGA (POB.)"
             ]
           },
-          "MACROHON": {
-            "b": [
+          MACROHON: {
+            b: [
               "AGUINALDO",
               "AMPARO",
               "ASUNCION",
@@ -35215,8 +35215,8 @@ export const data = [
               "UPPER VILLA JACINTA"
             ]
           },
-          "MALITBOG": {
-            "b": [
+          MALITBOG: {
+            b: [
               "ABGAO",
               "ASUNCION",
               "AURORA",
@@ -35257,7 +35257,7 @@ export const data = [
             ]
           },
           "PADRE BURGOS": {
-            "b": [
+            b: [
               "BUENAVISTA",
               "BUNGA",
               "CANTUTANG",
@@ -35271,8 +35271,8 @@ export const data = [
               "TANGKAAN"
             ]
           },
-          "PINTUYAN": {
-            "b": [
+          PINTUYAN: {
+            b: [
               "BADIANG",
               "BALONGBALONG",
               "BUENAVISTA",
@@ -35299,7 +35299,7 @@ export const data = [
             ]
           },
           "SAINT BERNARD": {
-            "b": [
+            b: [
               "ATUYAN",
               "AYAHAG",
               "BANTAWON",
@@ -35333,7 +35333,7 @@ export const data = [
             ]
           },
           "SAN FRANCISCO": {
-            "b": [
+            b: [
               "ANISLAGON",
               "BONGAWISAN",
               "BONGBONG",
@@ -35359,7 +35359,7 @@ export const data = [
             ]
           },
           "SAN JUAN (CABALIAN)": {
-            "b": [
+            b: [
               "AGAY-AY",
               "BASAK",
               "BOBON A",
@@ -35381,7 +35381,7 @@ export const data = [
             ]
           },
           "SAN RICARDO": {
-            "b": [
+            b: [
               "BENIT",
               "BITOON",
               "CABUTAN",
@@ -35399,8 +35399,8 @@ export const data = [
               "TIMBA"
             ]
           },
-          "SILAGO": {
-            "b": [
+          SILAGO: {
+            b: [
               "BALAGAWAN",
               "CATMON",
               "HINGATUNGAN",
@@ -35418,8 +35418,8 @@ export const data = [
               "TUBOD"
             ]
           },
-          "SOGOD": {
-            "b": [
+          SOGOD: {
+            b: [
               "BENIT",
               "BUAC DAKU",
               "BUAC GAMAY",
@@ -35468,7 +35468,7 @@ export const data = [
             ]
           },
           "TOMAS OPPUS": {
-            "b": [
+            b: [
               "ANAHAWAN",
               "BANDAY (POB.)",
               "BIASONG",
@@ -35505,12 +35505,12 @@ export const data = [
     }
   },
   {
-    "r": "REGION IX",
-    "p": {
+    r: "REGION IX",
+    p: {
       "ZAMBOANGA DEL NORTE": {
-        "m": {
+        m: {
           "BACUNGAN (LEON T. POSTIGO)": {
-            "b": [
+            b: [
               "BACUNGAN (POB.)",
               "BOGABONGAN",
               "DELUSOM",
@@ -35531,8 +35531,8 @@ export const data = [
               "TITIK"
             ]
           },
-          "BALIGUIAN": {
-            "b": [
+          BALIGUIAN: {
+            b: [
               "ALEGRIA",
               "DIANGAS",
               "DICULOM",
@@ -35553,7 +35553,7 @@ export const data = [
             ]
           },
           "DAPITAN CITY": {
-            "b": [
+            b: [
               "ALIGUAY",
               "ANTIPOLO",
               "ASENIERO",
@@ -35607,7 +35607,7 @@ export const data = [
             ]
           },
           "DIPOLOG CITY": {
-            "b": [
+            b: [
               "BARRA (POB.)",
               "BIASONG (POB.)",
               "CENTRAL (POB.)",
@@ -35631,8 +35631,8 @@ export const data = [
               "TURNO"
             ]
           },
-          "GODOD": {
-            "b": [
+          GODOD: {
+            b: [
               "BALUNO",
               "BANUANGAN",
               "BUNAWAN",
@@ -35652,8 +35652,8 @@ export const data = [
               "SIORAN"
             ]
           },
-          "GUTALAC": {
-            "b": [
+          GUTALAC: {
+            b: [
               "BACONG",
               "BAGONG SILANG",
               "BANGANON",
@@ -35690,7 +35690,7 @@ export const data = [
             ]
           },
           "JOSE DALMAN (PONOT)": {
-            "b": [
+            b: [
               "BALATAKAN",
               "BITOON",
               "DINASAN",
@@ -35711,8 +35711,8 @@ export const data = [
               "TAMIL"
             ]
           },
-          "KALAWIT": {
-            "b": [
+          KALAWIT: {
+            b: [
               "BATAYAN",
               "BOTONG",
               "CONCEPCION",
@@ -35729,8 +35729,8 @@ export const data = [
               "TUGOP"
             ]
           },
-          "KATIPUNAN": {
-            "b": [
+          KATIPUNAN: {
+            b: [
               "BALOK",
               "BARANGAY DOS (POB.)",
               "BARANGAY UNO (POB.)",
@@ -35764,7 +35764,7 @@ export const data = [
             ]
           },
           "LA LIBERTAD": {
-            "b": [
+            b: [
               "EL PARAISO",
               "LA UNION",
               "LA VICTORIA",
@@ -35780,8 +35780,8 @@ export const data = [
               "SINGARAN"
             ]
           },
-          "LABASON": {
-            "b": [
+          LABASON: {
+            b: [
               "ANTONINO (POB.)",
               "BALAS",
               "BOBONGAN",
@@ -35804,8 +35804,8 @@ export const data = [
               "UBAY"
             ]
           },
-          "LILOY": {
-            "b": [
+          LILOY: {
+            b: [
               "BANIGAN",
               "BAYBAY (POB.)",
               "CABANGCALAN",
@@ -35845,8 +35845,8 @@ export const data = [
               "VILLA M. TEJERO"
             ]
           },
-          "MANUKAN": {
-            "b": [
+          MANUKAN: {
+            b: [
               "DIPANE",
               "DISAKAN",
               "DON JOSE AGUIRRE",
@@ -35871,8 +35871,8 @@ export const data = [
               "VILLARAMOS"
             ]
           },
-          "MUTIA": {
-            "b": [
+          MUTIA: {
+            b: [
               "ALVENDA",
               "BUENASUERTE",
               "DILAND",
@@ -35892,7 +35892,7 @@ export const data = [
             ]
           },
           "PIÑAN (NEW PIÑAN)": {
-            "b": [
+            b: [
               "ADANTE",
               "BACUYONG",
               "BAGONG SILANG",
@@ -35917,8 +35917,8 @@ export const data = [
               "VILLARICO"
             ]
           },
-          "POLANCO": {
-            "b": [
+          POLANCO: {
+            b: [
               "ANASTACIO",
               "BANDERA",
               "BETHLEHEM",
@@ -35952,7 +35952,7 @@ export const data = [
             ]
           },
           "PRES. MANUEL A. ROXAS": {
-            "b": [
+            b: [
               "BALUBO",
               "BANBANAN",
               "CANIBONGAN",
@@ -35986,8 +35986,8 @@ export const data = [
               "VILLAHERMOSO"
             ]
           },
-          "RIZAL": {
-            "b": [
+          RIZAL: {
+            b: [
               "BALUBOHAN",
               "BIRAYAN",
               "DAMASING",
@@ -36012,8 +36012,8 @@ export const data = [
               "WEST POBLACION"
             ]
           },
-          "SALUG": {
-            "b": [
+          SALUG: {
+            b: [
               "BACONG",
               "BALAKAN",
               "BINONI",
@@ -36040,7 +36040,7 @@ export const data = [
             ]
           },
           "SERGIO OSMEÑA SR.": {
-            "b": [
+            b: [
               "ANTONINO",
               "BAGONG BAGUIO",
               "BAGUMBAYAN",
@@ -36082,8 +36082,8 @@ export const data = [
               "WILBEN"
             ]
           },
-          "SIAYAN": {
-            "b": [
+          SIAYAN: {
+            b: [
               "BALOK",
               "BALUNOKAN",
               "DATAGAN",
@@ -36108,8 +36108,8 @@ export const data = [
               "SUGUILON"
             ]
           },
-          "SIBUCO": {
-            "b": [
+          SIBUCO: {
+            b: [
               "ANONGAN",
               "BASAK",
               "BONGALAO",
@@ -36140,8 +36140,8 @@ export const data = [
               "TANGARAK"
             ]
           },
-          "SIBUTAD": {
-            "b": [
+          SIBUTAD: {
+            b: [
               "BAGACAY",
               "CALILIC",
               "CALUBE",
@@ -36160,8 +36160,8 @@ export const data = [
               "SIPALOC"
             ]
           },
-          "SINDANGAN": {
-            "b": [
+          SINDANGAN: {
+            b: [
               "BAGO",
               "BALOK",
               "BANTAYAN",
@@ -36216,8 +36216,8 @@ export const data = [
               "UPPER NIPAAN"
             ]
           },
-          "SIOCON": {
-            "b": [
+          SIOCON: {
+            b: [
               "ANDRES MICUBO JR. (BALILI)",
               "BALAGUNAN",
               "BUCANA",
@@ -36246,8 +36246,8 @@ export const data = [
               "TIBANGAO"
             ]
           },
-          "SIRAWAI": {
-            "b": [
+          SIRAWAI: {
+            b: [
               "BALATAKAN",
               "BALONKAN",
               "BALUBUAN",
@@ -36284,8 +36284,8 @@ export const data = [
               "TAPANAYAN"
             ]
           },
-          "TAMPILISAN": {
-            "b": [
+          TAMPILISAN: {
+            b: [
               "BALACBAAN",
               "BANBANAN",
               "BARILI",
@@ -36311,9 +36311,9 @@ export const data = [
         }
       },
       "ZAMBOANGA DEL SUR": {
-        "m": {
-          "AURORA": {
-            "b": [
+        m: {
+          AURORA: {
+            b: [
               "ACAD",
               "ALANG-ALANG",
               "ALEGRIA",
@@ -36360,8 +36360,8 @@ export const data = [
               "WATERFALL"
             ]
           },
-          "BAYOG": {
-            "b": [
+          BAYOG: {
+            b: [
               "BAKING",
               "BALUKBAHAN",
               "BALUMBUNAN",
@@ -36392,8 +36392,8 @@ export const data = [
               "SUPON"
             ]
           },
-          "DIMATALING": {
-            "b": [
+          DIMATALING: {
+            b: [
               "BACAYAWAN",
               "BAHA",
               "BALANAGAN",
@@ -36420,8 +36420,8 @@ export const data = [
               "UPPER LUDIONG"
             ]
           },
-          "DINAS": {
-            "b": [
+          DINAS: {
+            b: [
               "BACAWAN",
               "BENUATAN",
               "BERAY",
@@ -36454,8 +36454,8 @@ export const data = [
               "WEST MIGPULAO"
             ]
           },
-          "DUMALINAO": {
-            "b": [
+          DUMALINAO: {
+            b: [
               "ANONANG",
               "BAG-ONG MISAMIS",
               "BAG-ONG SILAO",
@@ -36488,8 +36488,8 @@ export const data = [
               "UPPER DUMALINAO"
             ]
           },
-          "DUMINGAG": {
-            "b": [
+          DUMINGAG: {
+            b: [
               "BAG-ONG VALENCIA",
               "BAGONG KAUSWAGAN",
               "BAGONG SILANG",
@@ -36536,8 +36536,8 @@ export const data = [
               "UPPER TIMONAN"
             ]
           },
-          "GUIPOS": {
-            "b": [
+          GUIPOS: {
+            b: [
               "BAGONG OROQUIETA",
               "BAGUITAN",
               "BALONGATING",
@@ -36557,8 +36557,8 @@ export const data = [
               "SINGCLOT"
             ]
           },
-          "JOSEFINA": {
-            "b": [
+          JOSEFINA: {
+            b: [
               "BOGO CALABAT",
               "DAWA (DIWA)",
               "EBARLE",
@@ -36575,8 +36575,8 @@ export const data = [
               "UPPER BAGONG TUDELA (POB.)"
             ]
           },
-          "KUMALARANG": {
-            "b": [
+          KUMALARANG: {
+            b: [
               "BOGAYO",
               "BOLISONG",
               "BOYUGAN EAST",
@@ -36597,8 +36597,8 @@ export const data = [
               "SUMINALUM"
             ]
           },
-          "LABANGAN": {
-            "b": [
+          LABANGAN: {
+            b: [
               "BAGALUPA",
               "BALIMBINGAN (WEST LUYA)",
               "BINAYAN",
@@ -36626,8 +36626,8 @@ export const data = [
               "UPPER SANG-AN"
             ]
           },
-          "LAKEWOOD": {
-            "b": [
+          LAKEWOOD: {
+            b: [
               "BAGONG KAHAYAG",
               "BAKING",
               "BISWANGAN",
@@ -36644,8 +36644,8 @@ export const data = [
               "TUBOD"
             ]
           },
-          "LAPUYAN": {
-            "b": [
+          LAPUYAN: {
+            b: [
               "BULAWAN",
               "CARPOC",
               "DANGANAN",
@@ -36674,8 +36674,8 @@ export const data = [
               "TUGAYA"
             ]
           },
-          "MAHAYAG": {
-            "b": [
+          MAHAYAG: {
+            b: [
               "BAG-ONG BALAMBAN",
               "BAG-ONG DALAGUETE",
               "BONIAO",
@@ -36707,8 +36707,8 @@ export const data = [
               "UPPER SANTO NIÑO"
             ]
           },
-          "MARGOSATUBIG": {
-            "b": [
+          MARGOSATUBIG: {
+            b: [
               "BALINTAWAK",
               "BULARONG",
               "DIGON",
@@ -36728,8 +36728,8 @@ export const data = [
               "TULAPOC"
             ]
           },
-          "MIDSALIP": {
-            "b": [
+          MIDSALIP: {
+            b: [
               "BACAHAN",
               "BALONAI",
               "BIBILOP",
@@ -36765,8 +36765,8 @@ export const data = [
               "TULUAN"
             ]
           },
-          "MOLAVE": {
-            "b": [
+          MOLAVE: {
+            b: [
               "ALICIA",
               "ARIOSA",
               "BAGONG ARGAO",
@@ -36795,7 +36795,7 @@ export const data = [
             ]
           },
           "PAGADIAN CITY": {
-            "b": [
+            b: [
               "ALEGRIA",
               "BALANGASAN (POB.)",
               "BALINTAWAK",
@@ -36852,8 +36852,8 @@ export const data = [
               "WHITE BEACH"
             ]
           },
-          "PITOGO": {
-            "b": [
+          PITOGO: {
+            b: [
               "BALABAWAN",
               "BALONG-BALONG",
               "COLOJO",
@@ -36872,7 +36872,7 @@ export const data = [
             ]
           },
           "RAMON MAGSAYSAY (LIARGO)": {
-            "b": [
+            b: [
               "BAGONG OPON",
               "BAMBONG DAKU",
               "BAMBONG DIUT",
@@ -36903,7 +36903,7 @@ export const data = [
             ]
           },
           "SAN MIGUEL": {
-            "b": [
+            b: [
               "BETINAN",
               "BULAWAN",
               "CALUBE",
@@ -36925,7 +36925,7 @@ export const data = [
             ]
           },
           "SAN PABLO": {
-            "b": [
+            b: [
               "BAG-ONG MISAMIS",
               "BUBUAL",
               "BUTON",
@@ -36957,7 +36957,7 @@ export const data = [
             ]
           },
           "SOMINOT (DON MARIANO MARCOS)": {
-            "b": [
+            b: [
               "BAG-ONG BAROY",
               "BAG-ONG OROQUIETA",
               "BARUBUHAN",
@@ -36978,8 +36978,8 @@ export const data = [
               "UPPER SICPAO"
             ]
           },
-          "TABINA": {
-            "b": [
+          TABINA: {
+            b: [
               "ABONG-ABONG",
               "BAGANIAN",
               "BAYA-BAYA",
@@ -36997,8 +36997,8 @@ export const data = [
               "TULTOLAN"
             ]
           },
-          "TAMBULIG": {
-            "b": [
+          TAMBULIG: {
+            b: [
               "ALANG-ALANG",
               "ANGELES",
               "BAG-ONG KAUSWAGAN",
@@ -37032,8 +37032,8 @@ export const data = [
               "UPPER TIPARAK"
             ]
           },
-          "TIGBAO": {
-            "b": [
+          TIGBAO: {
+            b: [
               "BEGONG",
               "BUSOL",
               "CALUMA",
@@ -37054,8 +37054,8 @@ export const data = [
               "UPPER NILO"
             ]
           },
-          "TUKURAN": {
-            "b": [
+          TUKURAN: {
+            b: [
               "ALINDAHAW",
               "BACLAY",
               "BALIMBINGAN",
@@ -37084,7 +37084,7 @@ export const data = [
             ]
           },
           "VINCENZO A. SAGUN": {
-            "b": [
+            b: [
               "AMBULON",
               "BUI-OS",
               "COGON",
@@ -37102,7 +37102,7 @@ export const data = [
             ]
           },
           "ZAMBOANGA CITY": {
-            "b": [
+            b: [
               "ARENA BLANCO",
               "AYALA",
               "BALIWASAN",
@@ -37206,9 +37206,9 @@ export const data = [
         }
       },
       "ZAMBOANGA SIBUGAY": {
-        "m": {
-          "ALICIA": {
-            "b": [
+        m: {
+          ALICIA: {
+            b: [
               "ALEGRIA",
               "BAGONG BUHAY",
               "BELLA",
@@ -37238,8 +37238,8 @@ export const data = [
               "TIMBANG-TIMBANG"
             ]
           },
-          "BUUG": {
-            "b": [
+          BUUG: {
+            b: [
               "AGUTAYAN",
               "BAGONG BORBON",
               "BASALEM",
@@ -37269,8 +37269,8 @@ export const data = [
               "VILLACASTOR (GALIT)"
             ]
           },
-          "DIPLAHAN": {
-            "b": [
+          DIPLAHAN: {
+            b: [
               "BALANGAO",
               "BUTONG",
               "DITAY",
@@ -37295,8 +37295,8 @@ export const data = [
               "TUNO"
             ]
           },
-          "IMELDA": {
-            "b": [
+          IMELDA: {
+            b: [
               "BALUGO",
               "BALUNGISAN",
               "BALUYAN",
@@ -37317,8 +37317,8 @@ export const data = [
               "UPPER BALURAN"
             ]
           },
-          "IPIL": {
-            "b": [
+          IPIL: {
+            b: [
               "BACALAN",
               "BANGKEROHAN",
               "BULU-AN",
@@ -37349,8 +37349,8 @@ export const data = [
               "VETERAN'S VILLAGE (RUIZ)"
             ]
           },
-          "KABASALAN": {
-            "b": [
+          KABASALAN: {
+            b: [
               "BANKER",
               "BOLO BATALLION",
               "BUAYAN",
@@ -37382,8 +37382,8 @@ export const data = [
               "TIMUAY DANDA (MANGAHAS)"
             ]
           },
-          "MABUHAY": {
-            "b": [
+          MABUHAY: {
+            b: [
               "ABUNDA",
               "BAGONG SILANG",
               "BANGKAW-BANGKAW",
@@ -37404,8 +37404,8 @@ export const data = [
               "TANDU-COMOT (KATIPUNAN)"
             ]
           },
-          "MALANGAS": {
-            "b": [
+          MALANGAS: {
+            b: [
               "BACAO",
               "BASAK-BAWANG",
               "BONTONG",
@@ -37433,8 +37433,8 @@ export const data = [
               "TIGABON"
             ]
           },
-          "NAGA": {
-            "b": [
+          NAGA: {
+            b: [
               "AGUINALDO",
               "BAGA",
               "BALUNO",
@@ -37460,8 +37460,8 @@ export const data = [
               "UPPER SULITAN"
             ]
           },
-          "OLUTANGA": {
-            "b": [
+          OLUTANGA: {
+            b: [
               "BATERIA",
               "CALAIS (KALINES)",
               "ESPERANZA",
@@ -37483,8 +37483,8 @@ export const data = [
               "VILLAGONZALO"
             ]
           },
-          "PAYAO": {
-            "b": [
+          PAYAO: {
+            b: [
               "BALIAN",
               "BALOGO",
               "BALUNGISAN",
@@ -37517,7 +37517,7 @@ export const data = [
             ]
           },
           "ROSELLER LIM": {
-            "b": [
+            b: [
               "ALI ALSREE",
               "BALANSAG",
               "CALULA",
@@ -37546,8 +37546,8 @@ export const data = [
               "TUPILAC"
             ]
           },
-          "SIAY": {
-            "b": [
+          SIAY: {
+            b: [
               "BAGONG SILANG",
               "BALAGON",
               "BALINGASAN",
@@ -37579,8 +37579,8 @@ export const data = [
               "VILLAGRACIA"
             ]
           },
-          "TALUSAN": {
-            "b": [
+          TALUSAN: {
+            b: [
               "AURORA",
               "BAGANIPAY",
               "BOLINGAN",
@@ -37597,8 +37597,8 @@ export const data = [
               "TUBURAN"
             ]
           },
-          "TITAY": {
-            "b": [
+          TITAY: {
+            b: [
               "ACHASOL",
               "AZUSANO",
               "BANGCO",
@@ -37631,8 +37631,8 @@ export const data = [
               "TUGOP MUSLIM"
             ]
           },
-          "TUNGAWAN": {
-            "b": [
+          TUNGAWAN: {
+            b: [
               "BALURAN",
               "BATUNGAN",
               "CAYAMCAM",
@@ -37665,12 +37665,12 @@ export const data = [
     }
   },
   {
-    "r": "REGION X",
-    "p": {
-      "BUKIDNON": {
-        "m": {
-          "BAUNGON": {
-            "b": [
+    r: "REGION X",
+    p: {
+      BUKIDNON: {
+        m: {
+          BAUNGON: {
+            b: [
               "BALINTAD",
               "BUENAVISTA",
               "DANATAG",
@@ -37689,8 +37689,8 @@ export const data = [
               "SAN VICENTE"
             ]
           },
-          "CABANGLASAN": {
-            "b": [
+          CABANGLASAN: {
+            b: [
               "ANLOGAN",
               "CABULOHAN",
               "CANANGAAN",
@@ -37709,7 +37709,7 @@ export const data = [
             ]
           },
           "CITY OF MALAYBALAY": {
-            "b": [
+            b: [
               "AGLAYAN",
               "APO MACOTE",
               "BANGCUD",
@@ -37758,8 +37758,8 @@ export const data = [
               "ZAMBOANGUITA"
             ]
           },
-          "DAMULOG": {
-            "b": [
+          DAMULOG: {
+            b: [
               "ALUDAS",
               "ANGGA-AN",
               "KINAPAT",
@@ -37779,8 +37779,8 @@ export const data = [
               "TANGKULAN (JOSE RIZAL)"
             ]
           },
-          "DANGCAGAN": {
-            "b": [
+          DANGCAGAN: {
+            b: [
               "BARONGCOT",
               "BUGWAK",
               "DOLOROSA",
@@ -37798,7 +37798,7 @@ export const data = [
             ]
           },
           "DON CARLOS": {
-            "b": [
+            b: [
               "BISMARTZ",
               "BOCBOC",
               "BUYOT",
@@ -37831,7 +37831,7 @@ export const data = [
             ]
           },
           "IMPASUG-ONG": {
-            "b": [
+            b: [
               "BONTONGON",
               "BULONAY",
               "CAPITAN BAYONG",
@@ -37847,8 +37847,8 @@ export const data = [
               "SAYAWAN"
             ]
           },
-          "KADINGILAN": {
-            "b": [
+          KADINGILAN: {
+            b: [
               "BAGONGBAYAN",
               "BAGOR",
               "BALAORO",
@@ -37868,8 +37868,8 @@ export const data = [
               "SIBONGA"
             ]
           },
-          "KALILANGAN": {
-            "b": [
+          KALILANGAN: {
+            b: [
               "BABORAWON",
               "BANGBANG",
               "CANITUAN",
@@ -37886,8 +37886,8 @@ export const data = [
               "WEST POBLACION"
             ]
           },
-          "KIBAWE": {
-            "b": [
+          KIBAWE: {
+            b: [
               "BALINTAWAK",
               "BUKANG LIWAYWAY",
               "CAGAWASAN",
@@ -37913,8 +37913,8 @@ export const data = [
               "WEST KIBAWE (POB.)"
             ]
           },
-          "KITAOTAO": {
-            "b": [
+          KITAOTAO: {
+            b: [
               "BALANGIGAY",
               "BALUKBUKAN",
               "BERSHIBA",
@@ -37952,8 +37952,8 @@ export const data = [
               "WHITE KULAMAN"
             ]
           },
-          "LANTAPAN": {
-            "b": [
+          LANTAPAN: {
+            b: [
               "ALANIB",
               "BACLAYON",
               "BALILA",
@@ -37970,8 +37970,8 @@ export const data = [
               "VICTORY"
             ]
           },
-          "LIBONA": {
-            "b": [
+          LIBONA: {
+            b: [
               "CAPIHAN",
               "CROSSING",
               "GANGO",
@@ -37988,8 +37988,8 @@ export const data = [
               "SIL-IPON"
             ]
           },
-          "MALITBOG": {
-            "b": [
+          MALITBOG: {
+            b: [
               "KALINGKING",
               "KIABO",
               "MINDAGAT",
@@ -38004,7 +38004,7 @@ export const data = [
             ]
           },
           "MANOLO FORTICH": {
-            "b": [
+            b: [
               "AGUSAN CANYON",
               "ALAE",
               "DAHILAYAN",
@@ -38029,8 +38029,8 @@ export const data = [
               "TICALA"
             ]
           },
-          "MARAMAG": {
-            "b": [
+          MARAMAG: {
+            b: [
               "ANAHAWON",
               "BAGONGSILANG",
               "BASE CAMP",
@@ -38053,8 +38053,8 @@ export const data = [
               "TUBIGON"
             ]
           },
-          "PANGANTUCAN": {
-            "b": [
+          PANGANTUCAN: {
+            b: [
               "ADTUYON",
               "BACUSANON",
               "BANGAHAN",
@@ -38076,8 +38076,8 @@ export const data = [
               "PORTULIN"
             ]
           },
-          "QUEZON": {
-            "b": [
+          QUEZON: {
+            b: [
               "BUTONG",
               "C-HANDUMANAN",
               "CAWAYAN",
@@ -38112,7 +38112,7 @@ export const data = [
             ]
           },
           "SAN FERNANDO": {
-            "b": [
+            b: [
               "BONACAO",
               "BULALANG",
               "CABULING",
@@ -38139,8 +38139,8 @@ export const data = [
               "TUGOP"
             ]
           },
-          "SUMILAO": {
-            "b": [
+          SUMILAO: {
+            b: [
               "CULASI",
               "KISOLON",
               "LICOAN",
@@ -38153,8 +38153,8 @@ export const data = [
               "VISTA VILLA"
             ]
           },
-          "TALAKAG": {
-            "b": [
+          TALAKAG: {
+            b: [
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
               "BARANGAY 3 (POB.)",
@@ -38187,7 +38187,7 @@ export const data = [
             ]
           },
           "VALENCIA CITY": {
-            "b": [
+            b: [
               "BAGONTAAS",
               "BANLAG",
               "BAROBO",
@@ -38223,10 +38223,10 @@ export const data = [
           }
         }
       },
-      "CAMIGUIN": {
-        "m": {
-          "CATARMAN": {
-            "b": [
+      CAMIGUIN: {
+        m: {
+          CATARMAN: {
+            b: [
               "ALGA",
               "BONBON",
               "BURA",
@@ -38243,8 +38243,8 @@ export const data = [
               "TANGARO"
             ]
           },
-          "GUINSILIBAN": {
-            "b": [
+          GUINSILIBAN: {
+            b: [
               "BUTAY",
               "CABUAN",
               "CANTAAN",
@@ -38254,8 +38254,8 @@ export const data = [
               "SOUTH POBLACION"
             ]
           },
-          "MAHINOG": {
-            "b": [
+          MAHINOG: {
+            b: [
               "BENONI",
               "BINATUBO (BINALIWAN)",
               "CATOHUGAN",
@@ -38271,8 +38271,8 @@ export const data = [
               "TUPSAN PEQUEÑO"
             ]
           },
-          "MAMBAJAO": {
-            "b": [
+          MAMBAJAO: {
+            b: [
               "AGOHO",
               "ANITO",
               "BALBAGON",
@@ -38290,8 +38290,8 @@ export const data = [
               "YUMBING"
             ]
           },
-          "SAGAY": {
-            "b": [
+          SAGAY: {
+            b: [
               "ALANGILAN",
               "BACNIT",
               "BALITE",
@@ -38306,9 +38306,9 @@ export const data = [
         }
       },
       "LANAO DEL NORTE": {
-        "m": {
-          "BACOLOD": {
-            "b": [
+        m: {
+          BACOLOD: {
+            b: [
               "ALEGRIA",
               "BABALAYA",
               "BABALAYAN TOWNSITE",
@@ -38327,8 +38327,8 @@ export const data = [
               "RUPAGAN"
             ]
           },
-          "BALOI": {
-            "b": [
+          BALOI: {
+            b: [
               "ABAGA",
               "ADAPUN-ALI (DARIAT)",
               "ANGANDOG (BULAO)",
@@ -38352,8 +38352,8 @@ export const data = [
               "SIGAYAN"
             ]
           },
-          "BAROY": {
-            "b": [
+          BAROY: {
+            b: [
               "ANDIL",
               "BAGONG DAWIS",
               "BAROY DAKU",
@@ -38380,7 +38380,7 @@ export const data = [
             ]
           },
           "ILIGAN CITY": {
-            "b": [
+            b: [
               "ABUNO",
               "ACMAC",
               "BAGONG SILANG",
@@ -38427,8 +38427,8 @@ export const data = [
               "VILLA VERDE"
             ]
           },
-          "KAPATAGAN": {
-            "b": [
+          KAPATAGAN: {
+            b: [
               "BAGONG BADIAN",
               "BAGONG SILANG",
               "BALILI",
@@ -38464,8 +38464,8 @@ export const data = [
               "WATERFALLS"
             ]
           },
-          "KAUSWAGAN": {
-            "b": [
+          KAUSWAGAN: {
+            b: [
               "BAGUMBAYAN (POB.)",
               "BARA-ASON",
               "CAYONTOR",
@@ -38481,8 +38481,8 @@ export const data = [
               "TUGAR"
             ]
           },
-          "KOLAMBUGAN": {
-            "b": [
+          KOLAMBUGAN: {
+            b: [
               "AUSTIN HEIGHTS",
               "BAYBAY",
               "BUBONG",
@@ -38511,8 +38511,8 @@ export const data = [
               "TITUNOD"
             ]
           },
-          "LALA": {
-            "b": [
+          LALA: {
+            b: [
               "ABAGA",
               "ANDIL",
               "CABASAGAN",
@@ -38542,8 +38542,8 @@ export const data = [
               "TUNA-AN"
             ]
           },
-          "LINAMON": {
-            "b": [
+          LINAMON: {
+            b: [
               "BUSQUE",
               "LARAPAN",
               "MAGOONG",
@@ -38554,8 +38554,8 @@ export const data = [
               "SAMBURON"
             ]
           },
-          "MAGSAYSAY": {
-            "b": [
+          MAGSAYSAY: {
+            b: [
               "BABASALON",
               "BAGUIGUICON",
               "DAAN CAMPO",
@@ -38582,8 +38582,8 @@ export const data = [
               "UPPER CANINGAG (TAGUITINGAN)"
             ]
           },
-          "MAIGO": {
-            "b": [
+          MAIGO: {
+            b: [
               "BALAGATASA",
               "CAMP 1",
               "CLARO M. RECTO",
@@ -38599,8 +38599,8 @@ export const data = [
               "SOGAPOD"
             ]
           },
-          "MATUNGAO": {
-            "b": [
+          MATUNGAO: {
+            b: [
               "BANGCO",
               "BATAL",
               "BATANGAN",
@@ -38615,8 +38615,8 @@ export const data = [
               "SOMIORANG"
             ]
           },
-          "MUNAI": {
-            "b": [
+          MUNAI: {
+            b: [
               "BACAYAWAN",
               "BALABACUN",
               "BALINTAD",
@@ -38645,8 +38645,8 @@ export const data = [
               "TAPOROG"
             ]
           },
-          "NUNUNGAN": {
-            "b": [
+          NUNUNGAN: {
+            b: [
               "ABAGA",
               "BANGCO",
               "CABASARAN (LAYA)",
@@ -38675,7 +38675,7 @@ export const data = [
             ]
           },
           "PANTAO RAGAT": {
-            "b": [
+            b: [
               "ALOON",
               "BANDAY",
               "BOBONGA PANTAO RAGAT",
@@ -38698,8 +38698,8 @@ export const data = [
               "TONGCOPAN"
             ]
           },
-          "PANTAR": {
-            "b": [
+          PANTAR: {
+            b: [
               "BANGCAL",
               "BOWI",
               "BUBONG MADAYA",
@@ -38724,7 +38724,7 @@ export const data = [
             ]
           },
           "POONA PIAGAPO": {
-            "b": [
+            b: [
               "ALOWIN",
               "BUBONG-DINAIG",
               "CABASARAN",
@@ -38753,8 +38753,8 @@ export const data = [
               "TIMBANGALAN"
             ]
           },
-          "SALVADOR": {
-            "b": [
+          SALVADOR: {
+            b: [
               "BARANDIA",
               "BULACON",
               "BUNTONG",
@@ -38782,8 +38782,8 @@ export const data = [
               "SUDLON"
             ]
           },
-          "SAPAD": {
-            "b": [
+          SAPAD: {
+            b: [
               "BANING",
               "BURIASAN (POB.)",
               "DANSALAN",
@@ -38804,7 +38804,7 @@ export const data = [
             ]
           },
           "SULTAN NAGA DIMAPORO (KAROMATAN)": {
-            "b": [
+            b: [
               "BANGAAN",
               "BANGCO",
               "BANSARVIL II",
@@ -38844,8 +38844,8 @@ export const data = [
               "TOPOCON (CAPOCGO)"
             ]
           },
-          "TAGOLOAN": {
-            "b": [
+          TAGOLOAN: {
+            b: [
               "DALAMAS",
               "DARIMBANG",
               "DIMAYON",
@@ -38855,8 +38855,8 @@ export const data = [
               "PANALAWAN"
             ]
           },
-          "TANGCAL": {
-            "b": [
+          TANGCAL: {
+            b: [
               "BAYABAO",
               "BERWAR",
               "BIG BANISILON",
@@ -38877,8 +38877,8 @@ export const data = [
               "TANGCAL PROPER"
             ]
           },
-          "TUBOD": {
-            "b": [
+          TUBOD: {
+            b: [
               "BARAKANAS",
               "BARIS (LUMANGCULOB)",
               "BUALAN",
@@ -38908,9 +38908,9 @@ export const data = [
         }
       },
       "MISAMIS OCCIDENTAL": {
-        "m": {
-          "ALORAN": {
-            "b": [
+        m: {
+          ALORAN: {
+            b: [
               "BALINTONGA",
               "BANISILON",
               "BURGOS",
@@ -38951,8 +38951,8 @@ export const data = [
               "ZAMORA"
             ]
           },
-          "BALIANGAO": {
-            "b": [
+          BALIANGAO: {
+            b: [
               "DEL PILAR",
               "LANDING",
               "LUMIPAC",
@@ -38970,8 +38970,8 @@ export const data = [
               "TUGAS"
             ]
           },
-          "BONIFACIO": {
-            "b": [
+          BONIFACIO: {
+            b: [
               "BAG-ONG ANONANG",
               "BAGUMBANG",
               "BAYBAY",
@@ -39002,8 +39002,8 @@ export const data = [
               "UPPER USOGAN"
             ]
           },
-          "CALAMBA": {
-            "b": [
+          CALAMBA: {
+            b: [
               "BONIFACIO",
               "BUNAWAN",
               "CALARAN",
@@ -39025,8 +39025,8 @@ export const data = [
               "SULIPAT"
             ]
           },
-          "CLARIN": {
-            "b": [
+          CLARIN: {
+            b: [
               "BERNAD",
               "BITO-ON",
               "CABUNGA-AN",
@@ -39058,8 +39058,8 @@ export const data = [
               "TINACLA-AN"
             ]
           },
-          "CONCEPCION": {
-            "b": [
+          CONCEPCION: {
+            b: [
               "BAGONG NAYON",
               "CAPULE",
               "GUIBAN",
@@ -39081,7 +39081,7 @@ export const data = [
             ]
           },
           "DON VICTORIANO CHIONGBIAN (DON MARIANO MARCOS)": {
-            "b": [
+            b: [
               "BAGONG CLARIN",
               "GANDAWAN",
               "LAKE DUMINAGAT",
@@ -39095,8 +39095,8 @@ export const data = [
               "TUNO"
             ]
           },
-          "JIMENEZ": {
-            "b": [
+          JIMENEZ: {
+            b: [
               "ADORABLE",
               "BUTUAY",
               "CARMEN",
@@ -39124,7 +39124,7 @@ export const data = [
             ]
           },
           "LOPEZ JAENA": {
-            "b": [
+            b: [
               "ALEGRIA",
               "BAGONG SILANG",
               "BIASONG",
@@ -39156,7 +39156,7 @@ export const data = [
             ]
           },
           "OROQUIETA CITY": {
-            "b": [
+            b: [
               "APIL",
               "BINUANGAN",
               "BOLIBOL",
@@ -39207,7 +39207,7 @@ export const data = [
             ]
           },
           "OZAMIS CITY": {
-            "b": [
+            b: [
               "50TH DISTRICT (POB.)",
               "AGUADA (POB.)",
               "BACOLOD",
@@ -39261,8 +39261,8 @@ export const data = [
               "TRIGOS"
             ]
           },
-          "PANAON": {
-            "b": [
+          PANAON: {
+            b: [
               "BAGA",
               "BANGKO",
               "CAMANUCAN",
@@ -39281,8 +39281,8 @@ export const data = [
               "VILLALIN"
             ]
           },
-          "PLARIDEL": {
-            "b": [
+          PLARIDEL: {
+            b: [
               "AGUNOD",
               "BATO",
               "BUENA VOLUNTAD",
@@ -39319,7 +39319,7 @@ export const data = [
             ]
           },
           "SAPANG DALAGA": {
-            "b": [
+            b: [
               "AGAPITO YAP, SR. (NAPILAN)",
               "BAUTISTA",
               "BITIBUT",
@@ -39350,8 +39350,8 @@ export const data = [
               "VENTURA"
             ]
           },
-          "SINACABAN": {
-            "b": [
+          SINACABAN: {
+            b: [
               "CAGAY-ANON",
               "CAMANSE",
               "COLUPAN ALTO",
@@ -39372,7 +39372,7 @@ export const data = [
             ]
           },
           "TANGUB CITY": {
-            "b": [
+            b: [
               "AQUINO (MARCOS)",
               "BALATACAN",
               "BALUK",
@@ -39430,8 +39430,8 @@ export const data = [
               "VILLABA"
             ]
           },
-          "TUDELA": {
-            "b": [
+          TUDELA: {
+            b: [
               "BALON",
               "BARRA",
               "BASIRANG",
@@ -39470,9 +39470,9 @@ export const data = [
         }
       },
       "MISAMIS ORIENTAL": {
-        "m": {
-          "ALUBIJID": {
-            "b": [
+        m: {
+          ALUBIJID: {
+            b: [
               "BAYBAY",
               "BENIGWAYAN",
               "CALATCAT",
@@ -39491,8 +39491,8 @@ export const data = [
               "TULA"
             ]
           },
-          "BALINGASAG": {
-            "b": [
+          BALINGASAG: {
+            b: [
               "BALAGNAN",
               "BALIWAGAN",
               "BARANGAY 1 (POB.)",
@@ -39525,8 +39525,8 @@ export const data = [
               "WATERFALL"
             ]
           },
-          "BALINGOAN": {
-            "b": [
+          BALINGOAN: {
+            b: [
               "BAUKBAUK POB. (G.E. ANTONINO)",
               "DAHILIG",
               "KABANGASAN",
@@ -39538,8 +39538,8 @@ export const data = [
               "SAN ALONZO"
             ]
           },
-          "BINUANGAN": {
-            "b": [
+          BINUANGAN: {
+            b: [
               "DAMPIAS",
               "KITAMBAN",
               "KITAMBIS",
@@ -39551,7 +39551,7 @@ export const data = [
             ]
           },
           "CAGAYAN DE ORO CITY": {
-            "b": [
+            b: [
               "AGUSAN",
               "BAIKINGON",
               "BALUBAL",
@@ -39634,8 +39634,8 @@ export const data = [
               "TUMPAGON"
             ]
           },
-          "CLAVERIA": {
-            "b": [
+          CLAVERIA: {
+            b: [
               "ANI-E",
               "APOSKAHOY",
               "BULAHAN",
@@ -39663,7 +39663,7 @@ export const data = [
             ]
           },
           "EL SALVADOR CITY": {
-            "b": [
+            b: [
               "AMOROS",
               "BOLISONG",
               "BOLOBOLO",
@@ -39682,7 +39682,7 @@ export const data = [
             ]
           },
           "GINGOOG CITY": {
-            "b": [
+            b: [
               "AGAY-AYAN",
               "ALAGATAN",
               "ANAKAN",
@@ -39764,8 +39764,8 @@ export const data = [
               "TINULONGAN"
             ]
           },
-          "GITAGUM": {
-            "b": [
+          GITAGUM: {
+            b: [
               "BURNAY",
               "CARLOS P. GARCIA",
               "COGON",
@@ -39779,8 +39779,8 @@ export const data = [
               "ULAB"
             ]
           },
-          "INITAO": {
-            "b": [
+          INITAO: {
+            b: [
               "ALUNA",
               "ANDALES",
               "APAS",
@@ -39799,8 +39799,8 @@ export const data = [
               "TUBIGAN"
             ]
           },
-          "JASAAN": {
-            "b": [
+          JASAAN: {
+            b: [
               "APLAYA",
               "BOBONTUGAN",
               "CORRALES",
@@ -39818,8 +39818,8 @@ export const data = [
               "UPPER JASAAN (POB.)"
             ]
           },
-          "KINOGUITAN": {
-            "b": [
+          KINOGUITAN: {
+            b: [
               "BERAY",
               "BOLISONG",
               "BUKO",
@@ -39837,8 +39837,8 @@ export const data = [
               "SUMALAG"
             ]
           },
-          "LAGONGLONG": {
-            "b": [
+          LAGONGLONG: {
+            b: [
               "BANGLAY",
               "DAMPIL",
               "GASTON",
@@ -39851,8 +39851,8 @@ export const data = [
               "UMAGOS"
             ]
           },
-          "LAGUINDINGAN": {
-            "b": [
+          LAGUINDINGAN: {
+            b: [
               "AROMAHON",
               "GASI",
               "KIBAGHOT",
@@ -39866,8 +39866,8 @@ export const data = [
               "TUBAJON"
             ]
           },
-          "LIBERTAD": {
-            "b": [
+          LIBERTAD: {
+            b: [
               "DULONG",
               "GIMAYLAN",
               "KIMALOK",
@@ -39879,8 +39879,8 @@ export const data = [
               "TAYTAYAN"
             ]
           },
-          "LUGAIT": {
-            "b": [
+          LUGAIT: {
+            b: [
               "AYA-AYA",
               "BETAHON",
               "BIGA",
@@ -39892,7 +39892,7 @@ export const data = [
             ]
           },
           "MAGSAYSAY (LINUGOS)": {
-            "b": [
+            b: [
               "ABUNDA",
               "ARTADI",
               "BONIFACIO AQUINO",
@@ -39920,8 +39920,8 @@ export const data = [
               "VILLA FELIPA"
             ]
           },
-          "MANTICAO": {
-            "b": [
+          MANTICAO: {
+            b: [
               "ARGAYOSO",
               "BALINTAD",
               "CABALANTIAN",
@@ -39937,8 +39937,8 @@ export const data = [
               "UPPER MALUBOG"
             ]
           },
-          "MEDINA": {
-            "b": [
+          MEDINA: {
+            b: [
               "BANGBANG",
               "BULWA",
               "CABUG",
@@ -39960,8 +39960,8 @@ export const data = [
               "TUP-ON"
             ]
           },
-          "NAAWAN": {
-            "b": [
+          NAAWAN: {
+            b: [
               "DON PEDRO",
               "LINANGKAYAN",
               "LUBILAN",
@@ -39974,8 +39974,8 @@ export const data = [
               "TUBORAN"
             ]
           },
-          "OPOL": {
-            "b": [
+          OPOL: {
+            b: [
               "AWANG",
               "BAGOCBOC",
               "BARRA",
@@ -39992,8 +39992,8 @@ export const data = [
               "TINGALAN"
             ]
           },
-          "SALAY": {
-            "b": [
+          SALAY: {
+            b: [
               "ALIPUATON",
               "AMPENICAN",
               "BUNAL",
@@ -40014,8 +40014,8 @@ export const data = [
               "YUNGOD"
             ]
           },
-          "SUGBONGCOGON": {
-            "b": [
+          SUGBONGCOGON: {
+            b: [
               "ALICOMOHAN",
               "AMPIANGA",
               "KAULAYANAN",
@@ -40028,8 +40028,8 @@ export const data = [
               "SILAD"
             ]
           },
-          "TAGOLOAN": {
-            "b": [
+          TAGOLOAN: {
+            b: [
               "BALUARTE",
               "CASINGLOT",
               "GRACIA",
@@ -40042,8 +40042,8 @@ export const data = [
               "SUGBONGCOGON"
             ]
           },
-          "TALISAYAN": {
-            "b": [
+          TALISAYAN: {
+            b: [
               "BUGDANG",
               "CALAMCAM",
               "CASIBOLE",
@@ -40064,8 +40064,8 @@ export const data = [
               "TAGBOCBOC"
             ]
           },
-          "VILLANUEVA": {
-            "b": [
+          VILLANUEVA: {
+            b: [
               "BALACANAS",
               "DAYAWAN",
               "IMELDA",
@@ -40084,12 +40084,12 @@ export const data = [
     }
   },
   {
-    "r": "REGION XI",
-    "p": {
+    r: "REGION XI",
+    p: {
       "COMPOSTELA VALLEY": {
-        "m": {
-          "COMPOSTELA": {
-            "b": [
+        m: {
+          COMPOSTELA: {
+            b: [
               "AURORA",
               "BAGONGON",
               "GABI",
@@ -40109,7 +40109,7 @@ export const data = [
             ]
           },
           "LAAK (SAN VICENTE)": {
-            "b": [
+            b: [
               "AGUINALDO",
               "AMOR CRUZ",
               "AMPAWID",
@@ -40153,7 +40153,7 @@ export const data = [
             ]
           },
           "MABINI (DOÑA ALICIA)": {
-            "b": [
+            b: [
               "ANITAPAN",
               "CABUYUAN",
               "CADUNAN",
@@ -40167,8 +40167,8 @@ export const data = [
               "TAGNANAN (MAMPISING)"
             ]
           },
-          "MACO": {
-            "b": [
+          MACO: {
+            b: [
               "ANIBONGAN",
               "ANISLAGAN",
               "BINUANGAN",
@@ -40209,7 +40209,7 @@ export const data = [
             ]
           },
           "MARAGUSAN (SAN MARIANO)": {
-            "b": [
+            b: [
               "BAGONG SILANG",
               "BAHI",
               "CAMBAGANG",
@@ -40236,8 +40236,8 @@ export const data = [
               "TUPAZ"
             ]
           },
-          "MAWAB": {
-            "b": [
+          MAWAB: {
+            b: [
               "ANDILI",
               "BAWANI",
               "CONCEPCION",
@@ -40251,8 +40251,8 @@ export const data = [
               "TUBORAN"
             ]
           },
-          "MONKAYO": {
-            "b": [
+          MONKAYO: {
+            b: [
               "AWAO",
               "BABAG",
               "BANLAG",
@@ -40276,8 +40276,8 @@ export const data = [
               "UPPER ULIP"
             ]
           },
-          "MONTEVISTA": {
-            "b": [
+          MONTEVISTA: {
+            b: [
               "BANAGBANAG",
               "BANGLASAN",
               "BANKEROHAN NORTE",
@@ -40300,8 +40300,8 @@ export const data = [
               "TAPIA"
             ]
           },
-          "NABUNTURAN": {
-            "b": [
+          NABUNTURAN: {
+            b: [
               "ANISLAGAN",
               "ANTIQUERA",
               "BASAK",
@@ -40333,7 +40333,7 @@ export const data = [
             ]
           },
           "NEW BATAAN": {
-            "b": [
+            b: [
               "ANDAP",
               "BANTACAN",
               "BATINAO",
@@ -40352,8 +40352,8 @@ export const data = [
               "TANDAWAN"
             ]
           },
-          "PANTUKAN": {
-            "b": [
+          PANTUKAN: {
+            b: [
               "ARAIBO",
               "BONGABONG",
               "BONGBONG",
@@ -40372,9 +40372,9 @@ export const data = [
         }
       },
       "DAVAO (DAVAO DEL NORTE)": {
-        "m": {
+        m: {
           "ASUNCION (SAUG)": {
-            "b": [
+            b: [
               "BINANCIAN",
               "BUAN",
               "BUCLAD",
@@ -40398,7 +40398,7 @@ export const data = [
             ]
           },
           "BRAULIO E. DUJALI": {
-            "b": [
+            b: [
               "CABAY-ANGAN",
               "DUJALI",
               "MAGUPISING",
@@ -40406,8 +40406,8 @@ export const data = [
               "TANGLAW"
             ]
           },
-          "CARMEN": {
-            "b": [
+          CARMEN: {
+            b: [
               "ALEJAL",
               "ANIBONGAN",
               "ASUNCION (CUATRO-CUATRO)",
@@ -40431,7 +40431,7 @@ export const data = [
             ]
           },
           "CITY OF TAGUM": {
-            "b": [
+            b: [
               "APOKON",
               "BINCUNGAN",
               "BUSAON",
@@ -40458,7 +40458,7 @@ export const data = [
             ]
           },
           "ISLAND GARDEN CITY OF SAMAL": {
-            "b": [
+            b: [
               "ADECOR",
               "ANONANG",
               "AUMBAY",
@@ -40507,8 +40507,8 @@ export const data = [
               "TORIL"
             ]
           },
-          "KAPALONG": {
-            "b": [
+          KAPALONG: {
+            b: [
               "CAPUNGAGAN",
               "FLORIDA",
               "GABUYAN",
@@ -40526,7 +40526,7 @@ export const data = [
             ]
           },
           "NEW CORELLA": {
-            "b": [
+            b: [
               "CABIDIANAN",
               "CARCOR",
               "DEL MONTE",
@@ -40550,7 +40550,7 @@ export const data = [
             ]
           },
           "PANABO CITY": {
-            "b": [
+            b: [
               "A. O. FLOIRENDO",
               "BUENAVISTA",
               "CACAO",
@@ -40594,7 +40594,7 @@ export const data = [
             ]
           },
           "SAN ISIDRO": {
-            "b": [
+            b: [
               "DACUDAO",
               "DATU BALONG",
               "IGANGON",
@@ -40611,7 +40611,7 @@ export const data = [
             ]
           },
           "SANTO TOMAS": {
-            "b": [
+            b: [
               "BALAGUNAN",
               "BOBONGON",
               "CASIG-ANG",
@@ -40633,8 +40633,8 @@ export const data = [
               "TULALIAN"
             ]
           },
-          "TALAINGOD": {
-            "b": [
+          TALAINGOD: {
+            b: [
               "DAGOHOY",
               "PALMA GIL",
               "SANTO NIÑO"
@@ -40643,9 +40643,9 @@ export const data = [
         }
       },
       "DAVAO DEL SUR": {
-        "m": {
-          "BANSALAN": {
-            "b": [
+        m: {
+          BANSALAN: {
+            b: [
               "ALEGRE",
               "ALTA VISTA",
               "ANONANG",
@@ -40674,7 +40674,7 @@ export const data = [
             ]
           },
           "DAVAO CITY": {
-            "b": [
+            b: [
               "ACACIA",
               "AGDAO",
               "ALAMBRE",
@@ -40860,7 +40860,7 @@ export const data = [
             ]
           },
           "DIGOS CITY": {
-            "b": [
+            b: [
               "APLAYA",
               "BALABAG",
               "BINATON",
@@ -40889,8 +40889,8 @@ export const data = [
               "ZONE 3 (POB.)"
             ]
           },
-          "HAGONOY": {
-            "b": [
+          HAGONOY: {
+            b: [
               "BALUTAKAY",
               "CLIB",
               "GUIHING",
@@ -40914,8 +40914,8 @@ export const data = [
               "TOLOGAN"
             ]
           },
-          "KIBLAWAN": {
-            "b": [
+          KIBLAWAN: {
+            b: [
               "ABNATE",
               "BAGONG NEGROS",
               "BAGONG SILANG",
@@ -40948,8 +40948,8 @@ export const data = [
               "WATERFALL"
             ]
           },
-          "MAGSAYSAY": {
-            "b": [
+          MAGSAYSAY: {
+            b: [
               "BACUNGAN",
               "BALNATE",
               "BARAYONG",
@@ -40974,8 +40974,8 @@ export const data = [
               "UPPER BALA"
             ]
           },
-          "MALALAG": {
-            "b": [
+          MALALAG: {
+            b: [
               "BAGUMBAYAN",
               "BAYBAY",
               "BOLTON",
@@ -40993,8 +40993,8 @@ export const data = [
               "TAGANSULE"
             ]
           },
-          "MATANAO": {
-            "b": [
+          MATANAO: {
+            b: [
               "ASBANG",
               "ASINAN",
               "BAGUMBAYAN",
@@ -41030,8 +41030,8 @@ export const data = [
               "TOWAK"
             ]
           },
-          "PADADA": {
-            "b": [
+          PADADA: {
+            b: [
               "ALMENDRAS (POB.)",
               "DON SERGIO OSMEÑA, SR.",
               "HARADA BUTAI",
@@ -41052,7 +41052,7 @@ export const data = [
             ]
           },
           "SANTA CRUZ": {
-            "b": [
+            b: [
               "ASTORGA",
               "BATO",
               "CORONON",
@@ -41073,8 +41073,8 @@ export const data = [
               "ZONE IV (POB.)"
             ]
           },
-          "SULOP": {
-            "b": [
+          SULOP: {
+            b: [
               "BALASINON",
               "BUGUIS",
               "CARRE",
@@ -41105,9 +41105,9 @@ export const data = [
         }
       },
       "DAVAO OCCIDENTAL": {
-        "m": {
+        m: {
           "DON MARCELINO": {
-            "b": [
+            b: [
               "BALUNTAYA",
               "CALIAN",
               "DALUPAN",
@@ -41126,7 +41126,7 @@ export const data = [
             ]
           },
           "JOSE ABAD SANTOS (TRINIDAD)": {
-            "b": [
+            b: [
               "BALANGONAN",
               "BUGUIS",
               "BUKID",
@@ -41155,8 +41155,8 @@ export const data = [
               "TANUMAN"
             ]
           },
-          "MALITA": {
-            "b": [
+          MALITA: {
+            b: [
               "BITO",
               "BOLILA",
               "BUHANGIN",
@@ -41190,7 +41190,7 @@ export const data = [
             ]
           },
           "SANTA MARIA": {
-            "b": [
+            b: [
               "BASIAWAN",
               "BUCA",
               "CADAATAN",
@@ -41215,8 +41215,8 @@ export const data = [
               "TANGLAD"
             ]
           },
-          "SARANGANI": {
-            "b": [
+          SARANGANI: {
+            b: [
               "BATUGANDING",
               "CAMAHUAL",
               "CAMALIG",
@@ -41234,9 +41234,9 @@ export const data = [
         }
       },
       "DAVAO ORIENTAL": {
-        "m": {
-          "BAGANGA": {
-            "b": [
+        m: {
+          BAGANGA: {
+            b: [
               "BACULIN",
               "BANAO",
               "BATAWAN",
@@ -41257,8 +41257,8 @@ export const data = [
               "SAOQUEGUE"
             ]
           },
-          "BANAYBANAY": {
-            "b": [
+          BANAYBANAY: {
+            b: [
               "CABANGCALAN",
               "CAGANGANAN",
               "CALUBIHAN",
@@ -41275,8 +41275,8 @@ export const data = [
               "SAN VICENTE"
             ]
           },
-          "BOSTON": {
-            "b": [
+          BOSTON: {
+            b: [
               "CAATIHAN",
               "CABASAGAN",
               "CARMEN",
@@ -41287,8 +41287,8 @@ export const data = [
               "SIMULAO"
             ]
           },
-          "CARAGA": {
-            "b": [
+          CARAGA: {
+            b: [
               "ALVAR",
               "CANINGAG",
               "DON LEON BALANTE",
@@ -41308,8 +41308,8 @@ export const data = [
               "SOBRECAREY"
             ]
           },
-          "CATEEL": {
-            "b": [
+          CATEEL: {
+            b: [
               "ABIJOD",
               "ALEGRIA",
               "ALIWAGWAG",
@@ -41329,7 +41329,7 @@ export const data = [
             ]
           },
           "GOVERNOR GENEROSO": {
-            "b": [
+            b: [
               "ANITAP",
               "CRISPIN DELA CRUZ",
               "DON AURELIO CHICOTE",
@@ -41352,8 +41352,8 @@ export const data = [
               "UPPER TIBANBAN"
             ]
           },
-          "LUPON": {
-            "b": [
+          LUPON: {
+            b: [
               "BAGUMBAYAN",
               "CABADIANGAN",
               "CALAPAGAN",
@@ -41377,8 +41377,8 @@ export const data = [
               "TAGUGPO"
             ]
           },
-          "MANAY": {
-            "b": [
+          MANAY: {
+            b: [
               "CAPASNAN",
               "CAYAWAN",
               "CENTRAL (POB.)",
@@ -41399,7 +41399,7 @@ export const data = [
             ]
           },
           "MATI CITY": {
-            "b": [
+            b: [
               "BADAS",
               "BOBON",
               "BUSO",
@@ -41429,7 +41429,7 @@ export const data = [
             ]
           },
           "SAN ISIDRO": {
-            "b": [
+            b: [
               "BAON",
               "BATOBATO (POB.)",
               "BITAOGAN",
@@ -41448,8 +41448,8 @@ export const data = [
               "TALISAY"
             ]
           },
-          "TARRAGONA": {
-            "b": [
+          TARRAGONA: {
+            b: [
               "CABAGAYAN",
               "CENTRAL (POB.)",
               "DADONG",
@@ -41467,12 +41467,12 @@ export const data = [
     }
   },
   {
-    "r": "REGION XII",
-    "p": {
+    r: "REGION XII",
+    p: {
       "COTABATO (NORTH COT.)": {
-        "m": {
-          "ALAMADA": {
-            "b": [
+        m: {
+          ALAMADA: {
+            b: [
               "BAO",
               "BARANGIRAN",
               "CAMANSI",
@@ -41492,8 +41492,8 @@ export const data = [
               "RARADANGAN"
             ]
           },
-          "ALEOSAN": {
-            "b": [
+          ALEOSAN: {
+            b: [
               "BAGOLIBAS",
               "CAWILIHAN",
               "DUALING",
@@ -41515,8 +41515,8 @@ export const data = [
               "UPPER MINGADING"
             ]
           },
-          "ANTIPAS": {
-            "b": [
+          ANTIPAS: {
+            b: [
               "B. CADUNGON",
               "CAMUTAN",
               "CANAAN",
@@ -41532,8 +41532,8 @@ export const data = [
               "POBLACION"
             ]
           },
-          "ARAKAN": {
-            "b": [
+          ARAKAN: {
+            b: [
               "ALLAB",
               "ANAPOLON",
               "BADIANGON",
@@ -41564,8 +41564,8 @@ export const data = [
               "TUMANDING"
             ]
           },
-          "BANISILAN": {
-            "b": [
+          BANISILAN: {
+            b: [
               "BANISILAN POBLACION",
               "BUSAON",
               "CAPAYANGAN",
@@ -41588,8 +41588,8 @@ export const data = [
               "WADYA"
             ]
           },
-          "CARMEN": {
-            "b": [
+          CARMEN: {
+            b: [
               "AROMAN",
               "BENTANGAN",
               "CADIIS",
@@ -41621,7 +41621,7 @@ export const data = [
             ]
           },
           "CITY OF KIDAPAWAN": {
-            "b": [
+            b: [
               "AMAS",
               "AMAZION",
               "BALABAG",
@@ -41664,8 +41664,8 @@ export const data = [
               "SUMBAO"
             ]
           },
-          "KABACAN": {
-            "b": [
+          KABACAN: {
+            b: [
               "ARINGAY",
               "BANGILAN",
               "BANNAWAG",
@@ -41692,8 +41692,8 @@ export const data = [
               "TAMPED"
             ]
           },
-          "LIBUNGAN": {
-            "b": [
+          LIBUNGAN: {
+            b: [
               "ABAGA",
               "BAGUER",
               "BARONGIS",
@@ -41717,7 +41717,7 @@ export const data = [
             ]
           },
           "M'LANG": {
-            "b": [
+            b: [
               "BAGONTAPAY",
               "BIALONG",
               "BUAYAN",
@@ -41757,8 +41757,8 @@ export const data = [
               "UGPAY"
             ]
           },
-          "MAGPET": {
-            "b": [
+          MAGPET: {
+            b: [
               "ALIBAYON",
               "AMABEL",
               "BAGUMBAYAN",
@@ -41793,8 +41793,8 @@ export const data = [
               "TEMPORAN"
             ]
           },
-          "MAKILALA": {
-            "b": [
+          MAKILALA: {
+            b: [
               "BATASAN",
               "BATO",
               "BIANGAN",
@@ -41835,8 +41835,8 @@ export const data = [
               "VILLAFLORES"
             ]
           },
-          "MATALAM": {
-            "b": [
+          MATALAM: {
+            b: [
               "ARAKAN",
               "BANGBANG",
               "BATO",
@@ -41873,8 +41873,8 @@ export const data = [
               "TAMPED (TAMPAD)"
             ]
           },
-          "MIDSAYAP": {
-            "b": [
+          MIDSAYAP: {
+            b: [
               "AGRICULTURE",
               "ANONANG",
               "ARIZONA",
@@ -41934,8 +41934,8 @@ export const data = [
               "VILLARICA"
             ]
           },
-          "PIGKAWAYAN": {
-            "b": [
+          PIGKAWAYAN: {
+            b: [
               "ANICK (UPPER BALOGO)",
               "BALACAYON",
               "BALOGO",
@@ -41978,8 +41978,8 @@ export const data = [
               "UPPER PANGANGKALAN"
             ]
           },
-          "PIKIT": {
-            "b": [
+          PIKIT: {
+            b: [
               "BAGOAINGUD (BAGOINGED)",
               "BALABAK",
               "BALATICAN",
@@ -42025,7 +42025,7 @@ export const data = [
             ]
           },
           "PRESIDENT ROXAS": {
-            "b": [
+            b: [
               "ALEGRIA",
               "BATO-BATO",
               "CABANGBANGAN",
@@ -42053,8 +42053,8 @@ export const data = [
               "TUAEL"
             ]
           },
-          "TULUNAN": {
-            "b": [
+          TULUNAN: {
+            b: [
               "BACONG",
               "BAGUMBAYAN",
               "BANAYAL",
@@ -42088,10 +42088,10 @@ export const data = [
           }
         }
       },
-      "SARANGANI": {
-        "m": {
-          "ALABEL": {
-            "b": [
+      SARANGANI: {
+        m: {
+          ALABEL: {
+            b: [
               "ALEGRIA",
               "BAGACAY",
               "BALUNTAY",
@@ -42107,8 +42107,8 @@ export const data = [
               "TOKAWAL"
             ]
           },
-          "GLAN": {
-            "b": [
+          GLAN: {
+            b: [
               "BALITON",
               "BATOTULING",
               "BATULAKI",
@@ -42142,8 +42142,8 @@ export const data = [
               "TAPON"
             ]
           },
-          "KIAMBA": {
-            "b": [
+          KIAMBA: {
+            b: [
               "BADTASAN",
               "DATU DANI",
               "GASI",
@@ -42165,8 +42165,8 @@ export const data = [
               "TAMBILIL"
             ]
           },
-          "MAASIM": {
-            "b": [
+          MAASIM: {
+            b: [
               "AMSIPIT",
               "BALES",
               "COLON",
@@ -42185,8 +42185,8 @@ export const data = [
               "TINOTO"
             ]
           },
-          "MAITUM": {
-            "b": [
+          MAITUM: {
+            b: [
               "BATI-AN",
               "KALANEG",
               "KALAONG",
@@ -42208,8 +42208,8 @@ export const data = [
               "ZION"
             ]
           },
-          "MALAPATAN": {
-            "b": [
+          MALAPATAN: {
+            b: [
               "DAAN SUYAN",
               "KIHAN",
               "KINAM",
@@ -42224,8 +42224,8 @@ export const data = [
               "UPPER SUYAN"
             ]
           },
-          "MALUNGON": {
-            "b": [
+          MALUNGON: {
+            b: [
               "ALKIKAN",
               "AMPON",
               "ATLAE",
@@ -42262,9 +42262,9 @@ export const data = [
         }
       },
       "SOUTH COTABATO": {
-        "m": {
-          "BANGA": {
-            "b": [
+        m: {
+          BANGA: {
+            b: [
               "BENITEZ (POB.)",
               "CABUDIAN",
               "CABULING",
@@ -42290,7 +42290,7 @@ export const data = [
             ]
           },
           "GENERAL SANTOS CITY (DADIANGAS)": {
-            "b": [
+            b: [
               "APOPONG",
               "BALUAN",
               "BATOMELONG",
@@ -42320,7 +42320,7 @@ export const data = [
             ]
           },
           "KORONADAL CITY": {
-            "b": [
+            b: [
               "ASSUMPTION (BULOL)",
               "AVANCEÑA (BO. 3)",
               "CACUB",
@@ -42351,7 +42351,7 @@ export const data = [
             ]
           },
           "LAKE SEBU": {
-            "b": [
+            b: [
               "BACDULONG",
               "DENLAG",
               "HALILAN",
@@ -42373,8 +42373,8 @@ export const data = [
               "UPPER MACULAN"
             ]
           },
-          "NORALA": {
-            "b": [
+          NORALA: {
+            b: [
               "BENIGNO AQUINO, JR.",
               "DUMAGUIL",
               "ESPERANZA",
@@ -42391,8 +42391,8 @@ export const data = [
               "TINAGO"
             ]
           },
-          "POLOMOLOK": {
-            "b": [
+          POLOMOLOK: {
+            b: [
               "BENTUNG",
               "CANNERY SITE",
               "CROSSING PALKAN",
@@ -42419,7 +42419,7 @@ export const data = [
             ]
           },
           "SANTO NIÑO": {
-            "b": [
+            b: [
               "AMBALGAN",
               "GUINSANG-AN",
               "KATIPUNAN",
@@ -42432,8 +42432,8 @@ export const data = [
               "TERESITA"
             ]
           },
-          "SURALLAH": {
-            "b": [
+          SURALLAH: {
+            b: [
               "BUENAVISTA",
               "CANAHAY (GODWINO)",
               "CENTRALA",
@@ -42454,7 +42454,7 @@ export const data = [
             ]
           },
           "T`BOLI": {
-            "b": [
+            b: [
               "AFLEK",
               "AFUS",
               "BASAG",
@@ -42482,8 +42482,8 @@ export const data = [
               "TUDOK"
             ]
           },
-          "TAMPAKAN": {
-            "b": [
+          TAMPAKAN: {
+            b: [
               "ALBAGAN",
               "BUTO",
               "DANLAG",
@@ -42500,8 +42500,8 @@ export const data = [
               "TABLU"
             ]
           },
-          "TANTANGAN": {
-            "b": [
+          TANTANGAN: {
+            b: [
               "BUKAY PAIT",
               "CABULING",
               "DUMADALIG",
@@ -42517,8 +42517,8 @@ export const data = [
               "TINONGCOP"
             ]
           },
-          "TUPI": {
-            "b": [
+          TUPI: {
+            b: [
               "ACMONAN",
               "BOLOLMALA",
               "BUNAO",
@@ -42539,9 +42539,9 @@ export const data = [
         }
       },
       "SULTAN KUDARAT": {
-        "m": {
-          "BAGUMBAYAN": {
-            "b": [
+        m: {
+          BAGUMBAYAN: {
+            b: [
               "BAI SARIFINANG",
               "BIWANG",
               "BUSOK",
@@ -42563,8 +42563,8 @@ export const data = [
               "TUKA"
             ]
           },
-          "COLUMBIO": {
-            "b": [
+          COLUMBIO: {
+            b: [
               "BANTANGAN (LASAK)",
               "DATABLAO",
               "EDAY",
@@ -42583,8 +42583,8 @@ export const data = [
               "TELAFAS"
             ]
           },
-          "ESPERANZA": {
-            "b": [
+          ESPERANZA: {
+            b: [
               "ALA",
               "DALADAP",
               "DUKAY",
@@ -42606,8 +42606,8 @@ export const data = [
               "VILLAMOR"
             ]
           },
-          "ISULAN": {
-            "b": [
+          ISULAN: {
+            b: [
               "BAMBAD",
               "BUAL",
               "D'LOTILLA",
@@ -42627,8 +42627,8 @@ export const data = [
               "TAYUGO"
             ]
           },
-          "KALAMANSIG": {
-            "b": [
+          KALAMANSIG: {
+            b: [
               "BANTOGON (SANTA CLARA)",
               "CADIZ",
               "DATU ITO ANDONG",
@@ -42647,7 +42647,7 @@ export const data = [
             ]
           },
           "LAMBAYONG (MARIANO MARCOS)": {
-            "b": [
+            b: [
               "CARIDAD (CUYAPON)",
               "DIDTARAS",
               "GANSING (BILUMEN)",
@@ -42676,8 +42676,8 @@ export const data = [
               "UDTONG"
             ]
           },
-          "LEBAK": {
-            "b": [
+          LEBAK: {
+            b: [
               "AURELIO F. FREIRES SR. ( POBLACION II)",
               "BARURAO",
               "BARURAO II",
@@ -42707,8 +42707,8 @@ export const data = [
               "VILLAMONTE"
             ]
           },
-          "LUTAYAN": {
-            "b": [
+          LUTAYAN: {
+            b: [
               "ANTONG",
               "BAYASONG",
               "BLINGKONG",
@@ -42722,8 +42722,8 @@ export const data = [
               "TAMNAG (POB.)"
             ]
           },
-          "PALIMBANG": {
-            "b": [
+          PALIMBANG: {
+            b: [
               "AKOL",
               "BADIANGON",
               "BALIANGO",
@@ -42767,7 +42767,7 @@ export const data = [
             ]
           },
           "PRESIDENT QUIRINO": {
-            "b": [
+            b: [
               "BAGUMBAYAN",
               "BANNAWAG",
               "BAYAWA",
@@ -42790,7 +42790,7 @@ export const data = [
             ]
           },
           "SEN. NINOY AQUINO": {
-            "b": [
+            b: [
               "BANALI",
               "BASAG",
               "BUENAFLORES",
@@ -42814,7 +42814,7 @@ export const data = [
             ]
           },
           "TACURONG CITY": {
-            "b": [
+            b: [
               "BARAS",
               "BUENAFLOR",
               "CALEAN",
@@ -42842,12 +42842,12 @@ export const data = [
     }
   },
   {
-    "r": "REGION XIII",
-    "p": {
+    r: "REGION XIII",
+    p: {
       "AGUSAN DEL NORTE": {
-        "m": {
-          "BUENAVISTA": {
-            "b": [
+        m: {
+          BUENAVISTA: {
+            b: [
               "ABILAN",
               "AGONG-ONG",
               "ALUBIJID",
@@ -42876,7 +42876,7 @@ export const data = [
             ]
           },
           "BUTUAN CITY": {
-            "b": [
+            b: [
               "AGAO POB. (BGY. 3)",
               "AGUSAN PEQUEÑO",
               "AMBAGO",
@@ -42966,7 +42966,7 @@ export const data = [
             ]
           },
           "CABADBARAN CITY": {
-            "b": [
+            b: [
               "ANTONIO LUNA",
               "BAY-ANG",
               "BAYABAS",
@@ -43000,8 +43000,8 @@ export const data = [
               "TOLOSA"
             ]
           },
-          "CARMEN": {
-            "b": [
+          CARMEN: {
+            b: [
               "CAHAYAGAN",
               "GOSOON",
               "MANOLIGAO",
@@ -43012,8 +43012,8 @@ export const data = [
               "VINAPOR"
             ]
           },
-          "JABONGA": {
-            "b": [
+          JABONGA: {
+            b: [
               "A. BELTRAN (CAMALIG)",
               "BALEGUIAN",
               "BANGONAY",
@@ -43031,8 +43031,8 @@ export const data = [
               "SANTO NIÑO"
             ]
           },
-          "KITCHARAO": {
-            "b": [
+          KITCHARAO: {
+            b: [
               "BANGAYAN",
               "CANAWAY",
               "CROSSING",
@@ -43047,7 +43047,7 @@ export const data = [
             ]
           },
           "LAS NIEVES": {
-            "b": [
+            b: [
               "AMBACON",
               "BALUNGAGAN",
               "BONIFACIO",
@@ -43070,8 +43070,8 @@ export const data = [
               "TINUCORAN"
             ]
           },
-          "MAGALLANES": {
-            "b": [
+          MAGALLANES: {
+            b: [
               "BUHANG",
               "CALOC-AN",
               "GUIASAN",
@@ -43082,8 +43082,8 @@ export const data = [
               "TAOD-OY"
             ]
           },
-          "NASIPIT": {
-            "b": [
+          NASIPIT: {
+            b: [
               "ACLAN",
               "AMONTAY",
               "ATA-ATAHON",
@@ -43106,7 +43106,7 @@ export const data = [
             ]
           },
           "REMEDIOS T. ROMUALDEZ": {
-            "b": [
+            b: [
               "BALANGBALANG",
               "BASILISA",
               "HUMILOG",
@@ -43117,8 +43117,8 @@ export const data = [
               "TAGBONGABONG"
             ]
           },
-          "SANTIAGO": {
-            "b": [
+          SANTIAGO: {
+            b: [
               "CURVA",
               "ESTANISLAO MORGADO",
               "JAGUPIT",
@@ -43130,8 +43130,8 @@ export const data = [
               "TAGBUYACAN"
             ]
           },
-          "TUBAY": {
-            "b": [
+          TUBAY: {
+            b: [
               "BINUANGAN",
               "CABAYAWA",
               "DOÑA ROSARIO",
@@ -43150,9 +43150,9 @@ export const data = [
         }
       },
       "AGUSAN DEL SUR": {
-        "m": {
+        m: {
           "BAYUGAN CITY": {
-            "b": [
+            b: [
               "BERSEBA",
               "BUCAC",
               "CAGBAS",
@@ -43198,8 +43198,8 @@ export const data = [
               "WAWA"
             ]
           },
-          "BUNAWAN": {
-            "b": [
+          BUNAWAN: {
+            b: [
               "BUNAWAN BROOK",
               "CONSUELO",
               "IMELDA",
@@ -43212,8 +43212,8 @@ export const data = [
               "SAN TEODORO"
             ]
           },
-          "ESPERANZA": {
-            "b": [
+          ESPERANZA: {
+            b: [
               "AGSABU",
               "AGUINALDO",
               "ANOLINGAN",
@@ -43264,7 +43264,7 @@ export const data = [
             ]
           },
           "LA PAZ": {
-            "b": [
+            b: [
               "ANGELES",
               "BATAAN",
               "COMOTA",
@@ -43282,8 +43282,8 @@ export const data = [
               "VILLA PAZ"
             ]
           },
-          "LORETO": {
-            "b": [
+          LORETO: {
+            b: [
               "BINUCAYAN",
               "JOHNSON",
               "KASAPA",
@@ -43303,8 +43303,8 @@ export const data = [
               "WALOE"
             ]
           },
-          "PROSPERIDAD": {
-            "b": [
+          PROSPERIDAD: {
+            b: [
               "AURORA",
               "AWA",
               "AZPETIA",
@@ -43339,8 +43339,8 @@ export const data = [
               "SANTA MARIA"
             ]
           },
-          "ROSARIO": {
-            "b": [
+          ROSARIO: {
+            b: [
               "BAYUGAN 3",
               "CABANTAO",
               "CABAWAN",
@@ -43355,7 +43355,7 @@ export const data = [
             ]
           },
           "SAN FRANCISCO": {
-            "b": [
+            b: [
               "ALEGRIA",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -43386,7 +43386,7 @@ export const data = [
             ]
           },
           "SAN LUIS": {
-            "b": [
+            b: [
               "ANISLAGAN",
               "BALIT",
               "BAYLO",
@@ -43415,7 +43415,7 @@ export const data = [
             ]
           },
           "SANTA JOSEFA": {
-            "b": [
+            b: [
               "ANGAS",
               "AURORA",
               "AWAO",
@@ -43429,8 +43429,8 @@ export const data = [
               "TAPAZ"
             ]
           },
-          "SIBAGAT": {
-            "b": [
+          SIBAGAT: {
+            b: [
               "AFGA",
               "ANAHAWAN",
               "BANAGBANAG",
@@ -43457,8 +43457,8 @@ export const data = [
               "VILLANGIT"
             ]
           },
-          "TALACOGON": {
-            "b": [
+          TALACOGON: {
+            b: [
               "BATUCAN",
               "BUENAGRACIA",
               "CAUSWAGAN",
@@ -43477,8 +43477,8 @@ export const data = [
               "ZILLOVIA"
             ]
           },
-          "TRENTO": {
-            "b": [
+          TRENTO: {
+            b: [
               "BASA",
               "CEBOLIN",
               "CUEVAS",
@@ -43497,8 +43497,8 @@ export const data = [
               "TUDELA"
             ]
           },
-          "VERUELA": {
-            "b": [
+          VERUELA: {
+            b: [
               "ANITAP",
               "BACAY II",
               "BINONGAN",
@@ -43524,9 +43524,9 @@ export const data = [
         }
       },
       "DINAGAT ISLANDS": {
-        "m": {
+        m: {
           "BASILISA (RIZAL)": {
-            "b": [
+            b: [
               "BENGLEN",
               "CATADMAN",
               "COLUMBUS",
@@ -43556,8 +43556,8 @@ export const data = [
               "VILLA PANTINOPLE"
             ]
           },
-          "CAGDIANAO": {
-            "b": [
+          CAGDIANAO: {
+            b: [
               "BOA",
               "CABUNGA-AN",
               "DEL PILAR",
@@ -43574,8 +43574,8 @@ export const data = [
               "VALENCIA"
             ]
           },
-          "DINAGAT": {
-            "b": [
+          DINAGAT: {
+            b: [
               "BAGUMBAYAN",
               "CAB-ILAN",
               "CABAYAWAN",
@@ -43591,7 +43591,7 @@ export const data = [
             ]
           },
           "LIBJO (ALBOR)": {
-            "b": [
+            b: [
               "ALBOR (POB.)",
               "ARELLANO",
               "BAYANIHAN",
@@ -43610,8 +43610,8 @@ export const data = [
               "SANTO NIÑO"
             ]
           },
-          "LORETO": {
-            "b": [
+          LORETO: {
+            b: [
               "CARMEN (POB.)",
               "ESPERANZA",
               "FERDINAND",
@@ -43625,7 +43625,7 @@ export const data = [
             ]
           },
           "SAN JOSE": {
-            "b": [
+            b: [
               "AURELIO",
               "CUARINTA",
               "DON RUBEN ECLEO (BALTAZAR)",
@@ -43640,8 +43640,8 @@ export const data = [
               "WILSON"
             ]
           },
-          "TUBAJON": {
-            "b": [
+          TUBAJON: {
+            b: [
               "DIAZ (ROMUALDEZ)",
               "IMELDA",
               "MABINI",
@@ -43656,9 +43656,9 @@ export const data = [
         }
       },
       "SURIGAO DEL NORTE": {
-        "m": {
-          "ALEGRIA": {
-            "b": [
+        m: {
+          ALEGRIA: {
+            b: [
               "ALIPAO",
               "ANAHAW",
               "BUDLINGIN",
@@ -43673,8 +43673,8 @@ export const data = [
               "SAN PEDRO"
             ]
           },
-          "BACUAG": {
-            "b": [
+          BACUAG: {
+            b: [
               "CABUGAO",
               "CAMBUAYON",
               "CAMPO",
@@ -43686,8 +43686,8 @@ export const data = [
               "SANTO ROSARIO"
             ]
           },
-          "BURGOS": {
-            "b": [
+          BURGOS: {
+            b: [
               "BAYBAY",
               "BITAUG",
               "MATIN-AO",
@@ -43696,8 +43696,8 @@ export const data = [
               "SAN MATEO"
             ]
           },
-          "CLAVER": {
-            "b": [
+          CLAVER: {
+            b: [
               "BAGAKAY (POB. WEST)",
               "CABUGO",
               "CAGDIANAO",
@@ -43714,8 +43714,8 @@ export const data = [
               "WANGKE"
             ]
           },
-          "DAPA": {
-            "b": [
+          DAPA: {
+            b: [
               "BAGAKAY",
               "BARANGAY 1 (POB.)",
               "BARANGAY 2 (POB.)",
@@ -43748,7 +43748,7 @@ export const data = [
             ]
           },
           "DEL CARMEN": {
-            "b": [
+            b: [
               "ANTIPOLO",
               "BAGAKAY (ALBURO)",
               "BITOON",
@@ -43772,7 +43772,7 @@ export const data = [
             ]
           },
           "GENERAL LUNA": {
-            "b": [
+            b: [
               "ANAJAWAN",
               "CABITOONAN",
               "CATANGNAN",
@@ -43794,8 +43794,8 @@ export const data = [
               "TAWIN-TAWIN"
             ]
           },
-          "GIGAQUIT": {
-            "b": [
+          GIGAQUIT: {
+            b: [
               "ALAMBIQUE (POB.)",
               "ANIBONGAN",
               "CAM-BOAYON",
@@ -43811,8 +43811,8 @@ export const data = [
               "VILLAFRANCA"
             ]
           },
-          "MAINIT": {
-            "b": [
+          MAINIT: {
+            b: [
               "BINGA",
               "BOBONA-ON",
               "CANTUGAS",
@@ -43836,8 +43836,8 @@ export const data = [
               "TOLINGON"
             ]
           },
-          "MALIMONO": {
-            "b": [
+          MALIMONO: {
+            b: [
               "BUNYASAN",
               "CAGTINAE",
               "CAN-AGA",
@@ -43854,8 +43854,8 @@ export const data = [
               "VILLARIZA"
             ]
           },
-          "PILAR": {
-            "b": [
+          PILAR: {
+            b: [
               "ASINAN (POB.)",
               "CARIDAD",
               "CENTRO (POB.)",
@@ -43873,8 +43873,8 @@ export const data = [
               "SAN ROQUE"
             ]
           },
-          "PLACER": {
-            "b": [
+          PLACER: {
+            b: [
               "AMOSLOG",
               "ANISLAGAN",
               "BAD-AS",
@@ -43898,7 +43898,7 @@ export const data = [
             ]
           },
           "SAN BENITO": {
-            "b": [
+            b: [
               "BONGDO",
               "MARIBOJOC",
               "NUEVO CAMPO",
@@ -43908,7 +43908,7 @@ export const data = [
             ]
           },
           "SAN FRANCISCO (ANAO-AON)": {
-            "b": [
+            b: [
               "AMONTAY",
               "BALITE",
               "BANBANON",
@@ -43923,7 +43923,7 @@ export const data = [
             ]
           },
           "SAN ISIDRO": {
-            "b": [
+            b: [
               "BUHING CALIPAY",
               "DEL CARMEN (POB.)",
               "DEL PILAR",
@@ -43939,7 +43939,7 @@ export const data = [
             ]
           },
           "SANTA MONICA (SAPAO)": {
-            "b": [
+            b: [
               "ABAD SANTOS",
               "ALEGRIA",
               "BAILAN",
@@ -43953,8 +43953,8 @@ export const data = [
               "TANGBO"
             ]
           },
-          "SISON": {
-            "b": [
+          SISON: {
+            b: [
               "BIYABID",
               "GACEPAN",
               "IMA",
@@ -43969,8 +43969,8 @@ export const data = [
               "UPPER PATAG"
             ]
           },
-          "SOCORRO": {
-            "b": [
+          SOCORRO: {
+            b: [
               "ALBINO TARUC",
               "DEL PILAR",
               "HELENE",
@@ -43988,7 +43988,7 @@ export const data = [
             ]
           },
           "SURIGAO CITY": {
-            "b": [
+            b: [
               "ALANG-ALANG",
               "ALEGRIA",
               "ANOMAR",
@@ -44046,7 +44046,7 @@ export const data = [
             ]
           },
           "TAGANA-AN": {
-            "b": [
+            b: [
               "AURORA (POB.)",
               "AZUCENA (POB.)",
               "BANBAN",
@@ -44063,8 +44063,8 @@ export const data = [
               "UPPER LIBAS"
             ]
           },
-          "TUBOD": {
-            "b": [
+          TUBOD: {
+            b: [
               "CAPAYAHAN",
               "CAWILAN",
               "DEL ROSARIO",
@@ -44079,9 +44079,9 @@ export const data = [
         }
       },
       "SURIGAO DEL SUR": {
-        "m": {
-          "BAROBO": {
-            "b": [
+        m: {
+          BAROBO: {
+            b: [
               "AMAGA",
               "BAHI",
               "CABACUNGAN",
@@ -44105,8 +44105,8 @@ export const data = [
               "WAKAT"
             ]
           },
-          "BAYABAS": {
-            "b": [
+          BAYABAS: {
+            b: [
               "AMAG",
               "BALETE (POB.)",
               "CABUGO",
@@ -44117,7 +44117,7 @@ export const data = [
             ]
           },
           "BISLIG CITY": {
-            "b": [
+            b: [
               "BUCTO",
               "BURBOANAN",
               "CAGUYAO",
@@ -44144,8 +44144,8 @@ export const data = [
               "TUMANAN"
             ]
           },
-          "CAGWAIT": {
-            "b": [
+          CAGWAIT: {
+            b: [
               "ARAS-ASAN",
               "BACOLOD",
               "BITAUGAN EAST",
@@ -44159,8 +44159,8 @@ export const data = [
               "UNIDAD"
             ]
           },
-          "CANTILAN": {
-            "b": [
+          CANTILAN: {
+            b: [
               "BUGSUKAN",
               "BUNTALID",
               "CABANGAHAN",
@@ -44180,8 +44180,8 @@ export const data = [
               "TIGABONG"
             ]
           },
-          "CARMEN": {
-            "b": [
+          CARMEN: {
+            b: [
               "ANTAO",
               "CANCAVAN",
               "CARMEN (POB.)",
@@ -44192,8 +44192,8 @@ export const data = [
               "SANTA CRUZ"
             ]
           },
-          "CARRASCAL": {
-            "b": [
+          CARRASCAL: {
+            b: [
               "ADLAY",
               "BABUYAN",
               "BACOLOD",
@@ -44210,8 +44210,8 @@ export const data = [
               "TAG-ANITO"
             ]
           },
-          "CORTES": {
-            "b": [
+          CORTES: {
+            b: [
               "BALIBADON",
               "BURGOS",
               "CAPANDAN",
@@ -44226,8 +44226,8 @@ export const data = [
               "UBA"
             ]
           },
-          "HINATUAN": {
-            "b": [
+          HINATUAN: {
+            b: [
               "BACULIN",
               "BENIGNO AQUINO (ZONE I) POB.",
               "BIGAAN",
@@ -44254,8 +44254,8 @@ export const data = [
               "ZONE III MAHARLIKA (POB.)"
             ]
           },
-          "LANUZA": {
-            "b": [
+          LANUZA: {
+            b: [
               "AGSAM",
               "BOCAWE",
               "BUNGA",
@@ -44271,8 +44271,8 @@ export const data = [
               "ZONE IV (POB.)"
             ]
           },
-          "LIANGA": {
-            "b": [
+          LIANGA: {
+            b: [
               "ANIBONGAN",
               "BAN-AS",
               "BANAHAO",
@@ -44288,8 +44288,8 @@ export const data = [
               "SAN PEDRO"
             ]
           },
-          "LINGIG": {
-            "b": [
+          LINGIG: {
+            b: [
               "ANIBONGAN",
               "BARCELONA",
               "BOGAK",
@@ -44310,8 +44310,8 @@ export const data = [
               "VALENCIA"
             ]
           },
-          "MADRID": {
-            "b": [
+          MADRID: {
+            b: [
               "BAGSAC",
               "BAYOGO",
               "LINIBONAN",
@@ -44328,8 +44328,8 @@ export const data = [
               "UNION"
             ]
           },
-          "MARIHATAG": {
-            "b": [
+          MARIHATAG: {
+            b: [
               "ALEGRIA",
               "AMONTAY",
               "ANTIPOLO",
@@ -44345,7 +44345,7 @@ export const data = [
             ]
           },
           "SAN AGUSTIN": {
-            "b": [
+            b: [
               "BRETANIA",
               "BUATONG",
               "BUHISAN",
@@ -44362,7 +44362,7 @@ export const data = [
             ]
           },
           "SAN MIGUEL": {
-            "b": [
+            b: [
               "BAGYANG",
               "BARAS",
               "BITAUGAN",
@@ -44383,8 +44383,8 @@ export const data = [
               "UMALAG"
             ]
           },
-          "TAGBINA": {
-            "b": [
+          TAGBINA: {
+            b: [
               "BATUNAN",
               "CARPENITO",
               "DOÑA CARMEN",
@@ -44412,8 +44412,8 @@ export const data = [
               "VILLAVERDE"
             ]
           },
-          "TAGO": {
-            "b": [
+          TAGO: {
+            b: [
               "ALBA",
               "ANAHAO BAG-O",
               "ANAHAO DAAN",
@@ -44441,7 +44441,7 @@ export const data = [
             ]
           },
           "TANDAG CITY": {
-            "b": [
+            b: [
               "AWASIAN",
               "BAGONG LUNGSOD (POB.)",
               "BIOTO",
@@ -44470,12 +44470,12 @@ export const data = [
     }
   },
   {
-    "r": "BARMM",
-    "p": {
-      "BASILAN": {
-        "m": {
-          "AKBAR": {
-            "b": [
+    r: "BARMM",
+    p: {
+      BASILAN: {
+        m: {
+          AKBAR: {
+            b: [
               "CADDAYAN",
               "LINONGAN",
               "LOWER BATO-BATO",
@@ -44488,7 +44488,7 @@ export const data = [
             ]
           },
           "AL-BARKA": {
-            "b": [
+            b: [
               "APIL-APIL",
               "BATO-BATO",
               "BOHE-PIANG",
@@ -44508,7 +44508,7 @@ export const data = [
             ]
           },
           "HADJI MOHAMMAD AJUL": {
-            "b": [
+            b: [
               "BASAKAN",
               "BUTON",
               "CANDIIS",
@@ -44523,7 +44523,7 @@ export const data = [
             ]
           },
           "HADJI MUHTAMAD": {
-            "b": [
+            b: [
               "BALUK-BALUK",
               "DASALAN",
               "LUBUKAN",
@@ -44537,7 +44537,7 @@ export const data = [
             ]
           },
           "ISABELA CITY": {
-            "b": [
+            b: [
               "AGUADA",
               "BALATANAY",
               "BALUNO",
@@ -44586,7 +44586,7 @@ export const data = [
             ]
           },
           "LAMITAN CITY": {
-            "b": [
+            b: [
               "ARCO",
               "BA-AS",
               "BAIMBING",
@@ -44634,8 +44634,8 @@ export const data = [
               "ULAME"
             ]
           },
-          "LANTAWAN": {
-            "b": [
+          LANTAWAN: {
+            b: [
               "ATONG-ATONG",
               "BAGBAGON",
               "BAUNGIS",
@@ -44663,8 +44663,8 @@ export const data = [
               "UPPER MANGGAS"
             ]
           },
-          "MALUSO": {
-            "b": [
+          MALUSO: {
+            b: [
               "ABONG-ABONG",
               "BATUNGAL",
               "CALANG CANAS",
@@ -44687,8 +44687,8 @@ export const data = [
               "UPPER GARLAYAN"
             ]
           },
-          "SUMISIP": {
-            "b": [
+          SUMISIP: {
+            b: [
               "BACUNG",
               "BAIWAS",
               "BASAK",
@@ -44721,7 +44721,7 @@ export const data = [
             ]
           },
           "TABUAN-LASA": {
-            "b": [
+            b: [
               "BABAG (BABUAN ISLAND)",
               "BALANTING",
               "BOLOH-BOLOH",
@@ -44737,7 +44737,7 @@ export const data = [
             ]
           },
           "TIPO-TIPO": {
-            "b": [
+            b: [
               "BADJA",
               "BAGUINDAN",
               "BANAH",
@@ -44751,8 +44751,8 @@ export const data = [
               "TIPO-TIPO PROPER (POB.)"
             ]
           },
-          "TUBURAN": {
-            "b": [
+          TUBURAN: {
+            b: [
               "BOHETAMBIS",
               "CALUT",
               "DUGA-A",
@@ -44766,7 +44766,7 @@ export const data = [
             ]
           },
           "UNGKAYA PUKAN": {
-            "b": [
+            b: [
               "AMALOY",
               "BOHE-PAHUH",
               "BOHE-SUYAK",
@@ -44784,9 +44784,9 @@ export const data = [
         }
       },
       "LANAO DEL SUR": {
-        "m": {
+        m: {
           "AMAI MANABILANG (BUMBARAN)": {
-            "b": [
+            b: [
               "BAGUMBAYAN",
               "BANDARA-INGUD",
               "COMARA",
@@ -44807,7 +44807,7 @@ export const data = [
             ]
           },
           "BACOLOD-KALAWI (BACOLOD GRANDE)": {
-            "b": [
+            b: [
               "AMPAO",
               "BAGOAINGUD",
               "BALUT",
@@ -44836,8 +44836,8 @@ export const data = [
               "TUKA II"
             ]
           },
-          "BALABAGAN": {
-            "b": [
+          BALABAGAN: {
+            b: [
               "BAGOAINGUD",
               "BANAGO",
               "BARORAO",
@@ -44868,7 +44868,7 @@ export const data = [
             ]
           },
           "BALINDONG (WATU)": {
-            "b": [
+            b: [
               "ABAGA",
               "BANTOGA WATO",
               "BARIT",
@@ -44909,8 +44909,8 @@ export const data = [
               "TUKA BUBONG"
             ]
           },
-          "BAYANG": {
-            "b": [
+          BAYANG: {
+            b: [
               "BAGOAINGUD",
               "BAIRAN (POB.)",
               "BANDINGUN",
@@ -44962,8 +44962,8 @@ export const data = [
               "TUCA (POB.)"
             ]
           },
-          "BINIDAYAN": {
-            "b": [
+          BINIDAYAN: {
+            b: [
               "BADAK",
               "BAGUIANGUN",
               "BALUT MAITO",
@@ -44993,7 +44993,7 @@ export const data = [
             ]
           },
           "BUADIPOSO-BUNTONG": {
-            "b": [
+            b: [
               "BACOLOD",
               "BANGON",
               "BANGON PROPER",
@@ -45029,8 +45029,8 @@ export const data = [
               "TUKA"
             ]
           },
-          "BUBONG": {
-            "b": [
+          BUBONG: {
+            b: [
               "BACOLOD",
               "BAGOAINGUD",
               "BANSAYAN",
@@ -45069,8 +45069,8 @@ export const data = [
               "TABORO"
             ]
           },
-          "BUTIG": {
-            "b": [
+          BUTIG: {
+            b: [
               "BAYABAO POBLACION",
               "BUTIG PROPER",
               "CABASARAN",
@@ -45089,8 +45089,8 @@ export const data = [
               "TIOWI"
             ]
           },
-          "CALANOGAS": {
-            "b": [
+          CALANOGAS: {
+            b: [
               "BUBONGA RANAO",
               "CALALAOAN (POB.)",
               "GAS",
@@ -45111,7 +45111,7 @@ export const data = [
             ]
           },
           "DITSAAN-RAMAIN": {
-            "b": [
+            b: [
               "BACLAYAN LILOD",
               "BACLAYAN RAYA",
               "BAGOAINGUD",
@@ -45149,8 +45149,8 @@ export const data = [
               "UPPER PUGAAN"
             ]
           },
-          "GANASSI": {
-            "b": [
+          GANASSI: {
+            b: [
               "BAGOAINGUD",
               "BALINTAD",
               "BALINTAD A",
@@ -45185,8 +45185,8 @@ export const data = [
               "TALIOGON"
             ]
           },
-          "KAPAI": {
-            "b": [
+          KAPAI: {
+            b: [
               "BABAYOG",
               "CORMATAN",
               "DILABAYAN",
@@ -45209,8 +45209,8 @@ export const data = [
               "POBLACION (KAPAI PROPER)"
             ]
           },
-          "KAPATAGAN": {
-            "b": [
+          KAPATAGAN: {
+            b: [
               "BAKIKIS",
               "BARAO",
               "BONGABONG",
@@ -45229,7 +45229,7 @@ export const data = [
             ]
           },
           "LUMBA-BAYABAO (MAGUING)": {
-            "b": [
+            b: [
               "BACOLOD I",
               "BACOLOD II",
               "BANTAYAO",
@@ -45271,7 +45271,7 @@ export const data = [
             ]
           },
           "LUMBACA-UNAYAN": {
-            "b": [
+            b: [
               "BANGON (DILAUSAN)",
               "BETA",
               "CALALON",
@@ -45283,8 +45283,8 @@ export const data = [
               "TRINGUN"
             ]
           },
-          "LUMBATAN": {
-            "b": [
+          LUMBATAN: {
+            b: [
               "ALOG",
               "BASAYUNGUN",
               "BUAD",
@@ -45308,8 +45308,8 @@ export const data = [
               "TAMBAC"
             ]
           },
-          "LUMBAYANAGUE": {
-            "b": [
+          LUMBAYANAGUE: {
+            b: [
               "BAGOAINGUD",
               "BALAIGAY",
               "BUALAN",
@@ -45334,8 +45334,8 @@ export const data = [
               "WAGO"
             ]
           },
-          "MADALUM": {
-            "b": [
+          MADALUM: {
+            b: [
               "ABAGA",
               "BACAYAWAN",
               "BAGOAINGUD",
@@ -45375,8 +45375,8 @@ export const data = [
               "UDANGUN"
             ]
           },
-          "MADAMBA": {
-            "b": [
+          MADAMBA: {
+            b: [
               "BALAGUNUN",
               "BALINTAD",
               "BAWANG",
@@ -45403,8 +45403,8 @@ export const data = [
               "UYAAN PROPER (POB.)"
             ]
           },
-          "MAGUING": {
-            "b": [
+          MAGUING: {
+            b: [
               "AGAGAN",
               "BALAGUNUN",
               "BALAWAG",
@@ -45441,8 +45441,8 @@ export const data = [
               "SABALA DILAUSAN"
             ]
           },
-          "MALABANG": {
-            "b": [
+          MALABANG: {
+            b: [
               "BACAYAWAN",
               "BADAK LUMAO",
               "BAGOAINGUD",
@@ -45482,8 +45482,8 @@ export const data = [
               "TUBOC"
             ]
           },
-          "MARANTAO": {
-            "b": [
+          MARANTAO: {
+            b: [
               "BACAYAWAN",
               "BACONG",
               "BANGA-PANTAR",
@@ -45521,7 +45521,7 @@ export const data = [
             ]
           },
           "MARAWI CITY": {
-            "b": [
+            b: [
               "AMBOLONG",
               "AMITO MARANTAO",
               "BACOLOD CHICO PROPER",
@@ -45620,8 +45620,8 @@ export const data = [
               "WAWALAYAN MARINAUT"
             ]
           },
-          "MAROGONG": {
-            "b": [
+          MAROGONG: {
+            b: [
               "BAGUMBAYAN",
               "BALUT",
               "BITAYAN",
@@ -45648,8 +45648,8 @@ export const data = [
               "SARANG"
             ]
           },
-          "MASIU": {
-            "b": [
+          MASIU: {
+            b: [
               "ABDULLAH BUISAN",
               "ALIP LALABUAN",
               "ALUMPANG PAINO MIMBALAY",
@@ -45687,8 +45687,8 @@ export const data = [
               "UNDA DAYAWAN"
             ]
           },
-          "MULONDO": {
-            "b": [
+          MULONDO: {
+            b: [
               "BAGOAINGUD",
               "BANGON",
               "BUADI-ABALA",
@@ -45718,7 +45718,7 @@ export const data = [
             ]
           },
           "PAGAYAWAN (TATARIKAN)": {
-            "b": [
+            b: [
               "AYONG",
               "BANDARA INGUD",
               "BANGON (POB.)",
@@ -45739,8 +45739,8 @@ export const data = [
               "RUBOKUN"
             ]
           },
-          "PIAGAPO": {
-            "b": [
+          PIAGAPO: {
+            b: [
               "APOSONG",
               "BAGOAINGUD",
               "BANGCO (POB.)",
@@ -45781,7 +45781,7 @@ export const data = [
             ]
           },
           "PICONG (SULTAN GUMANDER)": {
-            "b": [
+            b: [
               "ANAS",
               "BARA-AS",
               "BIASONG",
@@ -45804,7 +45804,7 @@ export const data = [
             ]
           },
           "POONA BAYABAO (GATA)": {
-            "b": [
+            b: [
               "ATARAGADONG",
               "BANGON",
               "BANSAYAN",
@@ -45832,8 +45832,8 @@ export const data = [
               "TAPOROG"
             ]
           },
-          "PUALAS": {
-            "b": [
+          PUALAS: {
+            b: [
               "BADAK",
               "BANTAYAN",
               "BASAGAD",
@@ -45859,8 +45859,8 @@ export const data = [
               "YARAN"
             ]
           },
-          "SAGUIARAN": {
-            "b": [
+          SAGUIARAN: {
+            b: [
               "ALINUN",
               "BAGOAINGUD",
               "BASAK MAITO",
@@ -45894,7 +45894,7 @@ export const data = [
             ]
           },
           "SULTAN DUMALONDONG": {
-            "b": [
+            b: [
               "BACAYAWAN",
               "BUTA (SUMALINDAO)",
               "DINGANUN GUILOPA (DINGUNUN)",
@@ -45904,8 +45904,8 @@ export const data = [
               "TAGORANAO"
             ]
           },
-          "TAGOLOAN": {
-            "b": [
+          TAGOLOAN: {
+            b: [
               "BAGOAINGUD",
               "BANTALAN",
               "BAYOG",
@@ -45927,8 +45927,8 @@ export const data = [
               "TAGOLOAN POBLACION"
             ]
           },
-          "TAMPARAN": {
-            "b": [
+          TAMPARAN: {
+            b: [
               "BALUTMADIAR",
               "BANGON",
               "BERUAR",
@@ -45975,8 +45975,8 @@ export const data = [
               "TUBOK"
             ]
           },
-          "TARAKA": {
-            "b": [
+          TARAKA: {
+            b: [
               "BANDERA BUISAN",
               "BORIONGAN",
               "BOROWA",
@@ -46022,8 +46022,8 @@ export const data = [
               "TUPA-AN BUADIATUPA"
             ]
           },
-          "TUBARAN": {
-            "b": [
+          TUBARAN: {
+            b: [
               "ALOG",
               "BAGIANGUN",
               "BETA",
@@ -46047,8 +46047,8 @@ export const data = [
               "WAGO"
             ]
           },
-          "TUGAYA": {
-            "b": [
+          TUGAYA: {
+            b: [
               "BAGOAINGUD",
               "BUADI ALAWANG",
               "BUADI DICO",
@@ -46074,8 +46074,8 @@ export const data = [
               "TANGCAL"
             ]
           },
-          "WAO": {
-            "b": [
+          WAO: {
+            b: [
               "AMOYONG",
               "BALATIN",
               "BANGA",
@@ -46106,10 +46106,10 @@ export const data = [
           }
         }
       },
-      "MAGUINDANAO": {
-        "m": {
-          "AMPATUAN": {
-            "b": [
+      MAGUINDANAO: {
+        m: {
+          AMPATUAN: {
+            b: [
               "DICALONGAN (POB.)",
               "KAKAL",
               "KAMASI",
@@ -46123,8 +46123,8 @@ export const data = [
               "TUBAK"
             ]
           },
-          "BARIRA": {
-            "b": [
+          BARIRA: {
+            b: [
               "BARIRA (POB.)",
               "BUALAN",
               "GADUNG",
@@ -46141,8 +46141,8 @@ export const data = [
               "TOGAIG"
             ]
           },
-          "BULDON": {
-            "b": [
+          BULDON: {
+            b: [
               "AMPUAN",
               "ARATUC",
               "CABAYUAN",
@@ -46160,8 +46160,8 @@ export const data = [
               "RUMIDAS"
             ]
           },
-          "BULUAN": {
-            "b": [
+          BULUAN: {
+            b: [
               "DIGAL",
               "LOWER SILING",
               "MASLABENG",
@@ -46172,7 +46172,7 @@ export const data = [
             ]
           },
           "COTABATO CITY": {
-            "b": [
+            b: [
               "BAGUA",
               "BAGUA I",
               "BAGUA II",
@@ -46213,7 +46213,7 @@ export const data = [
             ]
           },
           "DATU ABDULLAH SANGKI": {
-            "b": [
+            b: [
               "BANABA",
               "DIMAAMPAO",
               "GUINIBON",
@@ -46227,7 +46227,7 @@ export const data = [
             ]
           },
           "DATU ANGGAL MIDTIMBANG": {
-            "b": [
+            b: [
               "ADAON",
               "BRAR",
               "MAPAYAG",
@@ -46238,7 +46238,7 @@ export const data = [
             ]
           },
           "DATU BLAH T. SINSUAT": {
-            "b": [
+            b: [
               "KINIMI",
               "LAGUITAN",
               "LAPAKEN",
@@ -46255,7 +46255,7 @@ export const data = [
             ]
           },
           "DATU HOFFER AMPATUAN": {
-            "b": [
+            b: [
               "KUBENTONG",
               "LABU-LABU I",
               "LABU-LABU II",
@@ -46270,7 +46270,7 @@ export const data = [
             ]
           },
           "DATU ODIN SINSUAT (DINAIG)": {
-            "b": [
+            b: [
               "AMBOLODTO",
               "AWANG",
               "BADAK",
@@ -46308,7 +46308,7 @@ export const data = [
             ]
           },
           "DATU PAGLAS": {
-            "b": [
+            b: [
               "ALIP (POB.)",
               "BONAWAN",
               "BULOD",
@@ -46335,7 +46335,7 @@ export const data = [
             ]
           },
           "DATU PIANG": {
-            "b": [
+            b: [
               "ALONGANAN",
               "AMBADAO",
               "BALANAKAN",
@@ -46355,7 +46355,7 @@ export const data = [
             ]
           },
           "DATU SALIBO": {
-            "b": [
+            b: [
               "ALONGANAN",
               "ANDAVIT",
               "BALANAKAN",
@@ -46376,7 +46376,7 @@ export const data = [
             ]
           },
           "DATU SAUDI AMPATUAN": {
-            "b": [
+            b: [
               "DAPIAWAN",
               "ELIAN",
               "GAWANG",
@@ -46388,7 +46388,7 @@ export const data = [
             ]
           },
           "DATU UNSAY": {
-            "b": [
+            b: [
               "BULAYAN",
               "IGANAGAMPONG",
               "MACALAG",
@@ -46400,7 +46400,7 @@ export const data = [
             ]
           },
           "GEN. S. K. PENDATUN": {
-            "b": [
+            b: [
               "BADAK",
               "BULOD",
               "KALADTURAN",
@@ -46422,8 +46422,8 @@ export const data = [
               "UPPER LASANGAN"
             ]
           },
-          "GUINDULUNGAN": {
-            "b": [
+          GUINDULUNGAN: {
+            b: [
               "AHAN",
               "BAGAN",
               "DATALPANDAN",
@@ -46438,7 +46438,7 @@ export const data = [
             ]
           },
           "KABUNTALAN (TUMBAO)": {
-            "b": [
+            b: [
               "BAGUMBAYAN",
               "BUTERIN",
               "DADTUMOG (DADTUMEG)",
@@ -46458,8 +46458,8 @@ export const data = [
               "UPPER TAVIRAN"
             ]
           },
-          "MAMASAPANO": {
-            "b": [
+          MAMASAPANO: {
+            b: [
               "BAGUMBONG",
               "DABENAYAN",
               "DALADAP",
@@ -46476,8 +46476,8 @@ export const data = [
               "TUKANALIPAO"
             ]
           },
-          "MANGUDADATU": {
-            "b": [
+          MANGUDADATU: {
+            b: [
               "DALADAGAN",
               "KALIAN",
               "LUAYAN",
@@ -46488,8 +46488,8 @@ export const data = [
               "TUMBAO"
             ]
           },
-          "MATANOG": {
-            "b": [
+          MATANOG: {
+            b: [
               "BAYANGA NORTE",
               "BAYANGA SUR",
               "BUGASAN NORTE",
@@ -46501,7 +46501,7 @@ export const data = [
             ]
           },
           "NORTHERN KABUNTALAN": {
-            "b": [
+            b: [
               "BALONG",
               "DAMATOG",
               "GAYONGA",
@@ -46515,8 +46515,8 @@ export const data = [
               "TUMAGUINTING"
             ]
           },
-          "PAGAGAWAN": {
-            "b": [
+          PAGAGAWAN: {
+            b: [
               "BALATUNGKAYO (BATUNGKAYO)",
               "BULIT",
               "BULOD",
@@ -46530,8 +46530,8 @@ export const data = [
               "TUNGGOL"
             ]
           },
-          "PAGALUNGAN": {
-            "b": [
+          PAGALUNGAN: {
+            b: [
               "BAGOENGED",
               "BULIOK",
               "DALGAN",
@@ -46546,8 +46546,8 @@ export const data = [
               "POBLACION"
             ]
           },
-          "PAGLAT": {
-            "b": [
+          PAGLAT: {
+            b: [
               "CAMPO",
               "DAMAKLING",
               "DAMALUSAY",
@@ -46558,8 +46558,8 @@ export const data = [
               "UPPER IDTIG"
             ]
           },
-          "PANDAG": {
-            "b": [
+          PANDAG: {
+            b: [
               "KABULING",
               "KAYAGA",
               "KAYUPO (CUYAPO)",
@@ -46570,8 +46570,8 @@ export const data = [
               "UPPER D'LAG"
             ]
           },
-          "PARANG": {
-            "b": [
+          PARANG: {
+            b: [
               "BONGO ISLAND (LITAYEN)",
               "CAMPO ISLAM",
               "COTONGAN",
@@ -46600,7 +46600,7 @@ export const data = [
             ]
           },
           "RAJAH BUAYAN": {
-            "b": [
+            b: [
               "BAITAL",
               "BAKAT",
               "DAPANTIS",
@@ -46615,7 +46615,7 @@ export const data = [
             ]
           },
           "SHARIFF AGUAK (MAGANOY)": {
-            "b": [
+            b: [
               "BAGONG",
               "BIALONG",
               "KULOY",
@@ -46632,7 +46632,7 @@ export const data = [
             ]
           },
           "SHARIFF SAYDONA MUSTAPHA": {
-            "b": [
+            b: [
               "BAKAT",
               "DALE-BONG",
               "DASAWAO",
@@ -46652,7 +46652,7 @@ export const data = [
             ]
           },
           "SOUTH UPI": {
-            "b": [
+            b: [
               "BIARONG",
               "BONGO",
               "ITAW",
@@ -46667,7 +46667,7 @@ export const data = [
             ]
           },
           "SULTAN KUDARAT (NULING)": {
-            "b": [
+            b: [
               "ALAMADA",
               "BANATIN",
               "BANUBO",
@@ -46710,7 +46710,7 @@ export const data = [
             ]
           },
           "SULTAN MASTURA": {
-            "b": [
+            b: [
               "BALUT",
               "BOLIOK",
               "BUNGABONG",
@@ -46727,7 +46727,7 @@ export const data = [
             ]
           },
           "SULTAN SA BARONGIS (LAMBAYONG)": {
-            "b": [
+            b: [
               "ANGKAYAMAT",
               "BARURAO",
               "BULOD",
@@ -46742,8 +46742,8 @@ export const data = [
               "TUKANAKUDEN"
             ]
           },
-          "TALAYAN": {
-            "b": [
+          TALAYAN: {
+            b: [
               "BINANGGA NORTH",
               "BINANGGA SOUTH",
               "BOBOGUIRON",
@@ -46761,8 +46761,8 @@ export const data = [
               "TIMBALUAN"
             ]
           },
-          "TALITAY": {
-            "b": [
+          TALITAY: {
+            b: [
               "BINTAN (BENTAN)",
               "GADUNGAN",
               "KILADAP",
@@ -46774,8 +46774,8 @@ export const data = [
               "TALITAY"
             ]
           },
-          "UPI": {
-            "b": [
+          UPI: {
+            b: [
               "BANTEK",
               "BAYABAS",
               "BLENSONG",
@@ -46803,10 +46803,10 @@ export const data = [
           }
         }
       },
-      "SULU": {
-        "m": {
+      SULU: {
+        m: {
           "HADJI PANGLIMA TAHIL (MARUNGGAS)": {
-            "b": [
+            b: [
               "BANGAS (POB.)",
               "BUBUAN",
               "KABUUKAN",
@@ -46814,8 +46814,8 @@ export const data = [
               "TEOMABAL"
             ]
           },
-          "INDANAN": {
-            "b": [
+          INDANAN: {
+            b: [
               "ADJID",
               "BANGALAN",
               "BATO-BATO",
@@ -46852,8 +46852,8 @@ export const data = [
               "TUMANTANGIS"
             ]
           },
-          "JOLO": {
-            "b": [
+          JOLO: {
+            b: [
               "ALAT",
               "ASTURIAS",
               "BUS-BUS",
@@ -46865,7 +46865,7 @@ export const data = [
             ]
           },
           "KALINGALAN CALUANG": {
-            "b": [
+            b: [
               "KAMBING",
               "KANLAGAY",
               "KARUNGDONG (POB.)",
@@ -46877,8 +46877,8 @@ export const data = [
               "TUNGGOL"
             ]
           },
-          "LUGUS": {
-            "b": [
+          LUGUS: {
+            b: [
               "ALU BUS-BUS",
               "ALU-DUYONG",
               "BAS LUGUS",
@@ -46898,8 +46898,8 @@ export const data = [
               "TINGKANGAN"
             ]
           },
-          "LUUK": {
-            "b": [
+          LUUK: {
+            b: [
               "BUAL",
               "GUIMBAUN",
               "KAN-BULAK",
@@ -46914,8 +46914,8 @@ export const data = [
               "TULAYAN ISLAND"
             ]
           },
-          "MAIMBUNG": {
-            "b": [
+          MAIMBUNG: {
+            b: [
               "ANAK JATI",
               "BATO UGIS",
               "BUALO LAHI",
@@ -46946,7 +46946,7 @@ export const data = [
             ]
           },
           "OLD PANAMAO": {
-            "b": [
+            b: [
               "ASIN",
               "BAKUD",
               "BANGDAY",
@@ -46980,8 +46980,8 @@ export const data = [
               "UPPER PATIBULAN"
             ]
           },
-          "OMAR": {
-            "b": [
+          OMAR: {
+            b: [
               "ANDALAN",
               "ANGILAN",
               "CAPUAL ISLAND",
@@ -46992,8 +46992,8 @@ export const data = [
               "TANGKUAN"
             ]
           },
-          "PANDAMI": {
-            "b": [
+          PANDAMI: {
+            b: [
               "BALIGTANG",
               "BUD SIBAUD",
               "HAMBILAN",
@@ -47013,7 +47013,7 @@ export const data = [
             ]
           },
           "PANGLIMA ESTINO (NEW PANAMAO)": {
-            "b": [
+            b: [
               "GAGGUIL",
               "GATA-GATA",
               "JINGGAN",
@@ -47028,8 +47028,8 @@ export const data = [
               "TIPTIPON"
             ]
           },
-          "PANGUTARAN": {
-            "b": [
+          PANGUTARAN: {
+            b: [
               "ALU BUNAH",
               "BANGKILAY",
               "KAWITAN",
@@ -47048,8 +47048,8 @@ export const data = [
               "TUBIG SALLANG"
             ]
           },
-          "PARANG": {
-            "b": [
+          PARANG: {
+            b: [
               "ALU LAYAG-LAYAG",
               "ALU PANGKOH",
               "BAGSAK",
@@ -47092,8 +47092,8 @@ export const data = [
               "WANNI PIYANJIHAN"
             ]
           },
-          "PATA": {
-            "b": [
+          PATA: {
+            b: [
               "ANDALAN",
               "DAUNGDONG",
               "KAMAWI",
@@ -47110,8 +47110,8 @@ export const data = [
               "TIMUDDAS"
             ]
           },
-          "PATIKUL": {
-            "b": [
+          PATIKUL: {
+            b: [
               "ANULING",
               "BAKONG",
               "BANGKAL",
@@ -47144,8 +47144,8 @@ export const data = [
               "UMANGAY"
             ]
           },
-          "SIASI": {
-            "b": [
+          SIASI: {
+            b: [
               "BAKUD",
               "BUAN",
               "BULANSING TARA",
@@ -47198,8 +47198,8 @@ export const data = [
               "TULLING"
             ]
           },
-          "TALIPAO": {
-            "b": [
+          TALIPAO: {
+            b: [
               "ANDALAN",
               "BAGSAK",
               "BANDANG",
@@ -47254,8 +47254,8 @@ export const data = [
               "UPPER TALIPAO"
             ]
           },
-          "TAPUL": {
-            "b": [
+          TAPUL: {
+            b: [
               "ALU-KABINGAAN",
               "BANTING",
               "HAWAN",
@@ -47273,8 +47273,8 @@ export const data = [
               "TULAKAN"
             ]
           },
-          "TONGKIL": {
-            "b": [
+          TONGKIL: {
+            b: [
               "BAKKAAN",
               "BANGALAW",
               "DANAO",
@@ -47294,9 +47294,9 @@ export const data = [
         }
       },
       "TAWI-TAWI": {
-        "m": {
-          "BONGAO": {
-            "b": [
+        m: {
+          BONGAO: {
+            b: [
               "BONGAO POBLACION",
               "IPIL",
               "KAMAGONG",
@@ -47334,8 +47334,8 @@ export const data = [
               "UNGUS-UNGUS"
             ]
           },
-          "LANGUYAN": {
-            "b": [
+          LANGUYAN: {
+            b: [
               "ADNIN",
               "BAKAW-BAKAW",
               "BAKONG",
@@ -47359,7 +47359,7 @@ export const data = [
             ]
           },
           "MAPUN (CAGAYAN DE TAWI-TAWI)": {
-            "b": [
+            b: [
               "BOKI",
               "DUHUL BATU",
               "EROK-EROK",
@@ -47378,7 +47378,7 @@ export const data = [
             ]
           },
           "PANGLIMA SUGALA (BALIMBING)": {
-            "b": [
+            b: [
               "BALIMBING PROPER",
               "BATU-BATU (POB.)",
               "BAUNO GARING",
@@ -47399,7 +47399,7 @@ export const data = [
             ]
           },
           "SAPA-SAPA": {
-            "b": [
+            b: [
               "BALDATAL ISLAM",
               "BUTUN",
               "DALO-DALO",
@@ -47424,8 +47424,8 @@ export const data = [
               "TUP-TUP BANARAN"
             ]
           },
-          "SIBUTU": {
-            "b": [
+          SIBUTU: {
+            b: [
               "AMBULONG SAPAL",
               "DATU AMILHAMJA JAAFAR",
               "HADJI IMAM BIDIN",
@@ -47444,8 +47444,8 @@ export const data = [
               "UNGUS-UNGUS"
             ]
           },
-          "SIMUNUL": {
-            "b": [
+          SIMUNUL: {
+            b: [
               "BAGID*",
               "BAKONG",
               "DOH-TONG",
@@ -47463,8 +47463,8 @@ export const data = [
               "UBOL"
             ]
           },
-          "SITANGKAI": {
-            "b": [
+          SITANGKAI: {
+            b: [
               "DATU BAGUINDA PUTIH",
               "IMAM SAPIE",
               "NORTH LARAP",
@@ -47477,7 +47477,7 @@ export const data = [
             ]
           },
           "SOUTH UBIAN": {
-            "b": [
+            b: [
               "BABAGAN",
               "BENGKOL",
               "BINTAWLAN",
@@ -47511,8 +47511,8 @@ export const data = [
               "UNAS-UNAS"
             ]
           },
-          "TANDUBAS": {
-            "b": [
+          TANDUBAS: {
+            b: [
               "BALIUNGAN",
               "BALLAK",
               "BUTUN",
@@ -47536,7 +47536,7 @@ export const data = [
             ]
           },
           "TURTLE ISLANDS": {
-            "b": [
+            b: [
               "LIKUD BAKKAO",
               "TAGANAK POBLACION"
             ]
@@ -47546,12 +47546,12 @@ export const data = [
     }
   },
   {
-    "r": "CAR",
-    "p": {
-      "ABRA": {
-        "m": {
-          "BANGUED": {
-            "b": [
+    r: "CAR",
+    p: {
+      ABRA: {
+        m: {
+          BANGUED: {
+            b: [
               "AGTANGAO",
               "ANGAD",
               "BANGBANGAR",
@@ -47585,8 +47585,8 @@ export const data = [
               "ZONE 7 POB. (BALILING)"
             ]
           },
-          "BOLINEY": {
-            "b": [
+          BOLINEY: {
+            b: [
               "AMTI",
               "BAO-YAN",
               "DANAC EAST",
@@ -47597,8 +47597,8 @@ export const data = [
               "POBLACION (BOLINEY)"
             ]
           },
-          "BUCAY": {
-            "b": [
+          BUCAY: {
+            b: [
               "ABANG",
               "BANGBANGCAG",
               "BANGCAGAN",
@@ -47622,24 +47622,24 @@ export const data = [
               "TABIOG"
             ]
           },
-          "BUCLOC": {
-            "b": [
+          BUCLOC: {
+            b: [
               "DUCLIGAN",
               "LABAAN",
               "LAMAO (POB.)",
               "LINGAY"
             ]
           },
-          "DAGUIOMAN": {
-            "b": [
+          DAGUIOMAN: {
+            b: [
               "ABLEG",
               "CABARUYAN",
               "PIKEK",
               "TUI (POB.)"
             ]
           },
-          "DANGLAS": {
-            "b": [
+          DANGLAS: {
+            b: [
               "ABAQUID",
               "CABARUAN",
               "CAUPASAN (POB.)",
@@ -47649,8 +47649,8 @@ export const data = [
               "PANGAL"
             ]
           },
-          "DOLORES": {
-            "b": [
+          DOLORES: {
+            b: [
               "BAYAAN",
               "CABAROAN",
               "CALUMBAYA",
@@ -47669,7 +47669,7 @@ export const data = [
             ]
           },
           "LA PAZ": {
-            "b": [
+            b: [
               "BENBEN (BONBON)",
               "BULBULALA",
               "BULI",
@@ -47684,8 +47684,8 @@ export const data = [
               "UDANGAN"
             ]
           },
-          "LACUB": {
-            "b": [
+          LACUB: {
+            b: [
               "BACAG",
               "BUNEG",
               "GUINGUINABANG",
@@ -47694,8 +47694,8 @@ export const data = [
               "POBLACION (TALAMPAC)"
             ]
           },
-          "LAGANGILANG": {
-            "b": [
+          LAGANGILANG: {
+            b: [
               "AGUET",
               "BACOOC",
               "BALAIS",
@@ -47715,8 +47715,8 @@ export const data = [
               "TAPING"
             ]
           },
-          "LAGAYAN": {
-            "b": [
+          LAGAYAN: {
+            b: [
               "BA-I",
               "COLLAGO",
               "PANG-OT",
@@ -47724,8 +47724,8 @@ export const data = [
               "PULOT"
             ]
           },
-          "LANGIDEN": {
-            "b": [
+          LANGIDEN: {
+            b: [
               "BAAC",
               "DALAYAP (NALAAS)",
               "MABUNGTOT",
@@ -47735,7 +47735,7 @@ export const data = [
             ]
           },
           "LICUAN-BAAY (LICUAN)": {
-            "b": [
+            b: [
               "BONGLO (PATAGUI)",
               "BULBULALA",
               "CAWAYAN",
@@ -47749,8 +47749,8 @@ export const data = [
               "TUMALIP"
             ]
           },
-          "LUBA": {
-            "b": [
+          LUBA: {
+            b: [
               "AMPALIOC",
               "BARIT",
               "GAYAMAN",
@@ -47761,8 +47761,8 @@ export const data = [
               "SABNANGAN"
             ]
           },
-          "MALIBCONG": {
-            "b": [
+          MALIBCONG: {
+            b: [
               "BAYABAS",
               "BINASARAN",
               "BUANAO",
@@ -47777,8 +47777,8 @@ export const data = [
               "UMNAP"
             ]
           },
-          "MANABO": {
-            "b": [
+          MANABO: {
+            b: [
               "AYYENG (POB.)",
               "CATACDEGAN NUEVO",
               "CATACDEGAN VIEJO",
@@ -47792,8 +47792,8 @@ export const data = [
               "SANTO TOMAS"
             ]
           },
-          "PEÑARRUBIA": {
-            "b": [
+          PEÑARRUBIA: {
+            b: [
               "DUMAYCO",
               "LUSUAC",
               "MALAMSIT (PAU-MALAMSIT)",
@@ -47805,8 +47805,8 @@ export const data = [
               "TATTAWA"
             ]
           },
-          "PIDIGAN": {
-            "b": [
+          PIDIGAN: {
+            b: [
               "ALINAYA",
               "ARAB",
               "GARRETA",
@@ -47824,8 +47824,8 @@ export const data = [
               "YUYENG"
             ]
           },
-          "PILAR": {
-            "b": [
+          PILAR: {
+            b: [
               "BOLBOLO",
               "BROOKSIDE",
               "DALIT",
@@ -47847,8 +47847,8 @@ export const data = [
               "VILLAVIEJA"
             ]
           },
-          "SALLAPADAN": {
-            "b": [
+          SALLAPADAN: {
+            b: [
               "BAZAR",
               "BILABILA",
               "GANGAL (POB.)",
@@ -47861,7 +47861,7 @@ export const data = [
             ]
           },
           "SAN ISIDRO": {
-            "b": [
+            b: [
               "CABAYOGAN",
               "DALIMAG",
               "LANGBABAN",
@@ -47874,7 +47874,7 @@ export const data = [
             ]
           },
           "SAN JUAN": {
-            "b": [
+            b: [
               "ABUALAN",
               "BA-UG",
               "BADAS",
@@ -47897,7 +47897,7 @@ export const data = [
             ]
           },
           "SAN QUINTIN": {
-            "b": [
+            b: [
               "LABAAN",
               "PALANG",
               "PANTOC",
@@ -47906,8 +47906,8 @@ export const data = [
               "VILLA MERCEDES"
             ]
           },
-          "TAYUM": {
-            "b": [
+          TAYUM: {
+            b: [
               "BAGALAY",
               "BASBASA",
               "BUDAC",
@@ -47921,8 +47921,8 @@ export const data = [
               "VELASCO"
             ]
           },
-          "TINEG": {
-            "b": [
+          TINEG: {
+            b: [
               "ALAOA",
               "ANAYAN",
               "APAO",
@@ -47935,8 +47935,8 @@ export const data = [
               "POBLACION (AGSIMAO)"
             ]
           },
-          "TUBO": {
-            "b": [
+          TUBO: {
+            b: [
               "ALANGTIN",
               "AMTUAGAN",
               "DILONG",
@@ -47949,8 +47949,8 @@ export const data = [
               "WAYANGAN"
             ]
           },
-          "VILLAVICIOSA": {
-            "b": [
+          VILLAVICIOSA: {
+            b: [
               "AP-APAYA",
               "BOL-LILISING",
               "CAL-LAO",
@@ -47963,10 +47963,10 @@ export const data = [
           }
         }
       },
-      "APAYAO": {
-        "m": {
+      APAYAO: {
+        m: {
           "CALANASAN (BAYAG)": {
-            "b": [
+            b: [
               "BUTAO",
               "CADACLAN",
               "DON ROQUE ABLAN SR.",
@@ -47987,8 +47987,8 @@ export const data = [
               "TUBONGAN"
             ]
           },
-          "CONNER": {
-            "b": [
+          CONNER: {
+            b: [
               "ALLANGIGAN",
               "BANBAN",
               "BULUAN",
@@ -48012,8 +48012,8 @@ export const data = [
               "TALIFUGO"
             ]
           },
-          "FLORA": {
-            "b": [
+          FLORA: {
+            b: [
               "ALLIG",
               "ANNINIPAN",
               "ATOK",
@@ -48032,8 +48032,8 @@ export const data = [
               "UPPER ATOK (COLIMAN)"
             ]
           },
-          "KABUGAO": {
-            "b": [
+          KABUGAO: {
+            b: [
               "BADDUAT",
               "BALIWANAN",
               "BULU",
@@ -48057,8 +48057,8 @@ export const data = [
               "WAGA"
             ]
           },
-          "LUNA": {
-            "b": [
+          LUNA: {
+            b: [
               "BACSAY",
               "CAGANDUNGAN",
               "CALABIGAN",
@@ -48083,8 +48083,8 @@ export const data = [
               "ZUMIGUI"
             ]
           },
-          "PUDTOL": {
-            "b": [
+          PUDTOL: {
+            b: [
               "AGA",
               "ALEM",
               "AMADO",
@@ -48110,7 +48110,7 @@ export const data = [
             ]
           },
           "SANTA MARCELA": {
-            "b": [
+            b: [
               "BAROCBOC",
               "CONSUELO",
               "EMILIANA",
@@ -48128,10 +48128,10 @@ export const data = [
           }
         }
       },
-      "BENGUET": {
-        "m": {
-          "ATOK": {
-            "b": [
+      BENGUET: {
+        m: {
+          ATOK: {
+            b: [
               "ABIANG",
               "CALIKING",
               "CATTUBO",
@@ -48143,7 +48143,7 @@ export const data = [
             ]
           },
           "BAGUIO CITY": {
-            "b": [
+            b: [
               "A. BONIFACIO-CAGUIOA-RIMANDO (ABCR)",
               "ABANAO-ZANDUETA-KAYANG-CHUGUM-OTEK (AZKCO)",
               "ALFONSO TABORA",
@@ -48274,8 +48274,8 @@ export const data = [
               "VICTORIA VILLAGE"
             ]
           },
-          "BAKUN": {
-            "b": [
+          BAKUN: {
+            b: [
               "AMPUSONGAN",
               "BAGU",
               "DALIPEY",
@@ -48285,8 +48285,8 @@ export const data = [
               "SINACBAT"
             ]
           },
-          "BOKOD": {
-            "b": [
+          BOKOD: {
+            b: [
               "AMBUCLAO",
               "BILA",
               "BOBOK-BISAL",
@@ -48299,8 +48299,8 @@ export const data = [
               "TIKEY"
             ]
           },
-          "BUGUIAS": {
-            "b": [
+          BUGUIAS: {
+            b: [
               "ABATAN",
               "AMGALEYGUEY",
               "AMLIMAY",
@@ -48317,8 +48317,8 @@ export const data = [
               "SEBANG"
             ]
           },
-          "ITOGON": {
-            "b": [
+          ITOGON: {
+            b: [
               "AMPUCAO",
               "DALUPIRIP",
               "GUMATDANG",
@@ -48330,8 +48330,8 @@ export const data = [
               "VIRAC"
             ]
           },
-          "KABAYAN": {
-            "b": [
+          KABAYAN: {
+            b: [
               "ADAOAY",
               "ANCHUKEY",
               "BALLAY",
@@ -48347,8 +48347,8 @@ export const data = [
               "TAWANGAN"
             ]
           },
-          "KAPANGAN": {
-            "b": [
+          KAPANGAN: {
+            b: [
               "BALAKBAK",
               "BELENG-BELIS",
               "BOKLAOAN",
@@ -48366,8 +48366,8 @@ export const data = [
               "TABA-AO"
             ]
           },
-          "KIBUNGAN": {
-            "b": [
+          KIBUNGAN: {
+            b: [
               "BADEO",
               "LUBO",
               "MADAYMEN",
@@ -48378,7 +48378,7 @@ export const data = [
             ]
           },
           "LA TRINIDAD": {
-            "b": [
+            b: [
               "ALAPANG",
               "ALNO",
               "AMBIONG",
@@ -48397,8 +48397,8 @@ export const data = [
               "WANGAL"
             ]
           },
-          "MANKAYAN": {
-            "b": [
+          MANKAYAN: {
+            b: [
               "BALILI",
               "BEDBED",
               "BULALACAO",
@@ -48413,8 +48413,8 @@ export const data = [
               "TANEG"
             ]
           },
-          "SABLAN": {
-            "b": [
+          SABLAN: {
+            b: [
               "BAGONG",
               "BALLUAY",
               "BANANGAN",
@@ -48425,8 +48425,8 @@ export const data = [
               "POBLACION"
             ]
           },
-          "TUBA": {
-            "b": [
+          TUBA: {
+            b: [
               "ANSAGAN",
               "CAMP 3",
               "CAMP 4",
@@ -48442,8 +48442,8 @@ export const data = [
               "TWIN PEAKS"
             ]
           },
-          "TUBLAY": {
-            "b": [
+          TUBLAY: {
+            b: [
               "AMBASSADOR",
               "AMBONGDOLAN",
               "BA-AYAN",
@@ -48456,10 +48456,10 @@ export const data = [
           }
         }
       },
-      "IFUGAO": {
-        "m": {
-          "AGUINALDO": {
-            "b": [
+      IFUGAO: {
+        m: {
+          AGUINALDO: {
+            b: [
               "AWAYAN",
               "BUNHIAN",
               "BUTAC",
@@ -48479,7 +48479,7 @@ export const data = [
             ]
           },
           "ALFONSO LISTA (POTIA)": {
-            "b": [
+            b: [
               "BANGAR",
               "BUSILAC",
               "CALIMAG",
@@ -48502,8 +48502,8 @@ export const data = [
               "SANTO DOMINGO (CABICALAN)"
             ]
           },
-          "ASIPULO": {
-            "b": [
+          ASIPULO: {
+            b: [
               "AMDUNTOG",
               "ANTIPOLO",
               "CAMANDAG",
@@ -48516,8 +48516,8 @@ export const data = [
               "PULA"
             ]
           },
-          "BANAUE": {
-            "b": [
+          BANAUE: {
+            b: [
               "AMGANAD",
               "ANABA",
               "BALAWIS",
@@ -48538,8 +48538,8 @@ export const data = [
               "VIEW POINT"
             ]
           },
-          "HINGYON": {
-            "b": [
+          HINGYON: {
+            b: [
               "ANAO",
               "BANGTINON",
               "BITU",
@@ -48554,8 +48554,8 @@ export const data = [
               "UMALBONG"
             ]
           },
-          "HUNGDUAN": {
-            "b": [
+          HUNGDUAN: {
+            b: [
               "ABATAN",
               "BA-ANG",
               "BANGBANG",
@@ -48567,8 +48567,8 @@ export const data = [
               "POBLACION"
             ]
           },
-          "KIANGAN": {
-            "b": [
+          KIANGAN: {
+            b: [
               "AMBABAG",
               "BAGUINGE",
               "BOKIAWAN",
@@ -48585,8 +48585,8 @@ export const data = [
               "TUPLAC"
             ]
           },
-          "LAGAWE": {
-            "b": [
+          LAGAWE: {
+            b: [
               "ABINUAN",
               "BANGA",
               "BOLIWONG",
@@ -48609,8 +48609,8 @@ export const data = [
               "TUPAYA"
             ]
           },
-          "LAMUT": {
-            "b": [
+          LAMUT: {
+            b: [
               "AMBASA",
               "BIMPAL",
               "HAPID",
@@ -48631,8 +48631,8 @@ export const data = [
               "UMILAG"
             ]
           },
-          "MAYOYAO": {
-            "b": [
+          MAYOYAO: {
+            b: [
               "ADUYONGAN",
               "ALIMIT",
               "AYANGAN",
@@ -48662,8 +48662,8 @@ export const data = [
               "TULAED"
             ]
           },
-          "TINOC": {
-            "b": [
+          TINOC: {
+            b: [
               "AHIN",
               "AP-APID",
               "BINABLAYAN",
@@ -48680,10 +48680,10 @@ export const data = [
           }
         }
       },
-      "KALINGA": {
-        "m": {
-          "BALBALAN": {
-            "b": [
+      KALINGA: {
+        m: {
+          BALBALAN: {
+            b: [
               "ABABA-AN",
               "BALANTOY",
               "BALBALAN PROPER",
@@ -48700,8 +48700,8 @@ export const data = [
               "TAWANG"
             ]
           },
-          "LUBUAGAN": {
-            "b": [
+          LUBUAGAN: {
+            b: [
               "ANTONIO CANAO",
               "DANGOY",
               "LOWER UMA",
@@ -48713,8 +48713,8 @@ export const data = [
               "UPPER UMA"
             ]
           },
-          "PASIL": {
-            "b": [
+          PASIL: {
+            b: [
               "ABLEG",
               "BAGTAYAN",
               "BALATOC",
@@ -48731,8 +48731,8 @@ export const data = [
               "PUGONG"
             ]
           },
-          "PINUKPUK": {
-            "b": [
+          PINUKPUK: {
+            b: [
               "ACIGA",
               "ALLAGUIA",
               "AMMACIAN",
@@ -48759,7 +48759,7 @@ export const data = [
             ]
           },
           "RIZAL (LIWAN)": {
-            "b": [
+            b: [
               "BABALAG EAST (POB.)",
               "BABALAG WEST (POB.)",
               "BULBOL",
@@ -48777,7 +48777,7 @@ export const data = [
             ]
           },
           "TABUK CITY": {
-            "b": [
+            b: [
               "AGBANNAWAG",
               "AMLAO",
               "APPAS",
@@ -48822,8 +48822,8 @@ export const data = [
               "TUGA"
             ]
           },
-          "TANUDAN": {
-            "b": [
+          TANUDAN: {
+            b: [
               "ANGGACAN",
               "ANGGACAN SUR",
               "BABBANOY",
@@ -48842,8 +48842,8 @@ export const data = [
               "UPPER TALOCTOC"
             ]
           },
-          "TINGLAYAN": {
-            "b": [
+          TINGLAYAN: {
+            b: [
               "AMBATO LEGLEG",
               "BANGAD CENTRO",
               "BASAO",
@@ -48869,9 +48869,9 @@ export const data = [
         }
       },
       "MOUNTAIN PROVINCE": {
-        "m": {
-          "BARLIG": {
-            "b": [
+        m: {
+          BARLIG: {
+            b: [
               "CHUPAC",
               "FIANGTIN",
               "GAWANA (POB.)",
@@ -48885,8 +48885,8 @@ export const data = [
               "OGOOG"
             ]
           },
-          "BAUKO": {
-            "b": [
+          BAUKO: {
+            b: [
               "ABATAN",
               "BAGNEN ORIENTE",
               "BAGNEN PROPER",
@@ -48911,8 +48911,8 @@ export const data = [
               "TAPAPAN"
             ]
           },
-          "BESAO": {
-            "b": [
+          BESAO: {
+            b: [
               "AGAWA",
               "AMBAGUIO",
               "BANGUITAN",
@@ -48929,8 +48929,8 @@ export const data = [
               "TAMBOAN"
             ]
           },
-          "BONTOC": {
-            "b": [
+          BONTOC: {
+            b: [
               "ALAB ORIENTE",
               "ALAB PROPER",
               "BALILI",
@@ -48949,8 +48949,8 @@ export const data = [
               "TOCUCAN"
             ]
           },
-          "NATONIN": {
-            "b": [
+          NATONIN: {
+            b: [
               "ALUNOGAN",
               "BALANGAO",
               "BANAO",
@@ -48964,8 +48964,8 @@ export const data = [
               "TONGLAYAN"
             ]
           },
-          "PARACELIS": {
-            "b": [
+          PARACELIS: {
+            b: [
               "ANONAT",
               "BACARNI",
               "BANANAO",
@@ -48977,8 +48977,8 @@ export const data = [
               "POBLACION"
             ]
           },
-          "SABANGAN": {
-            "b": [
+          SABANGAN: {
+            b: [
               "BAO-ANGAN",
               "BUN-AYAN",
               "BUSA",
@@ -48996,8 +48996,8 @@ export const data = [
               "TAMBINGAN"
             ]
           },
-          "SADANGA": {
-            "b": [
+          SADANGA: {
+            b: [
               "ANABEL",
               "BEKIGAN",
               "BELWANG",
@@ -49008,8 +49008,8 @@ export const data = [
               "SACLIT"
             ]
           },
-          "SAGADA": {
-            "b": [
+          SAGADA: {
+            b: [
               "AGUID",
               "AMBASING",
               "ANGKELING",
@@ -49031,8 +49031,8 @@ export const data = [
               "TETEPAN SUR"
             ]
           },
-          "TADIAN": {
-            "b": [
+          TADIAN: {
+            b: [
               "BALAOA",
               "BANAAO",
               "BANTEY",

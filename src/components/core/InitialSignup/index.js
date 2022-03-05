@@ -44,56 +44,54 @@ class InitialSignup extends Component {
     };
   }
 	onClickSubmit = () => {
-    if (!this.state.username.value || 
+	  if (!this.state.username.value || 
       this.state.username.hasError || 
       !this.state.password.value ||
       !this.state.confirm_password.value ||
       this.state.password.value.length < 8) {
 	    this.onUsernameChange(this.state.username.value);
 	    this.onPasswordChange(this.state.password.value);
-      this.onConfirmPasswordChange(this.state.confirm_password.value);
+	    this.onConfirmPasswordChange(this.state.confirm_password.value);
+	  } else if (this.state.confirm_password.value !== this.state.password.value) {
+	    this.setState({
+	      confirm_password: {
+	        ...this.state.confirm_password,
+	        hasError: true,
+	        error: getTranslation('PASSWORD_UNMATCH')
+	      }
+	    });
 	  } else {
-      if ( this.state.confirm_password.value !== this.state.password.value ) {
-        this.setState({
-          confirm_password: {
-            ...this.state.confirm_password,
-            hasError: true,
-            error: getTranslation('PASSWORD_UNMATCH')
-          }
-        });
-      } else {
-        displayPageLoader(true);
-        validateUsername(this.state.username.value)
-          .then((res) => {
-            displayPageLoader(false);
-            if (res.available) {
-              this.props.toggleSignupForm();
-              updateStore({
-                signup: {
-                  username: this.state.username.value,
-                  password: this.state.password.value,
-                  socType: 'U',
-                  socId: ''
-                }
-              });
-              route(`/landing/data-privacy`);
-            } else {
-              this.setState({
-                username: {
-                  ...this.state.username,
-                  hasError: true,
-                  error: getTranslation('USERNAME_UNAVAILABLE')
-                }
-              });
-            }
-          })
-      }
-    }
+	    displayPageLoader(true);
+	    validateUsername(this.state.username.value)
+	      .then((res) => {
+	        displayPageLoader(false);
+	        if (res.available) {
+	          this.props.toggleSignupForm();
+	          updateStore({
+	            signup: {
+	              username: this.state.username.value,
+	              password: this.state.password.value,
+	              socType: 'U',
+	              socId: ''
+	            }
+	          });
+	          route(`/landing/data-privacy`);
+	        } else {
+	          this.setState({
+	            username: {
+	              ...this.state.username,
+	              hasError: true,
+	              error: getTranslation('USERNAME_UNAVAILABLE')
+	            }
+	          });
+	        }
+	      })
+	  }
 	};
 
   onUsernameChange = (value) => {
     // check for special characters
-    if( value && special_char.test(value) ) {
+    if (value && special_char.test(value)) {
       this.setState({
         username: {
           ...this.state.username,
@@ -113,7 +111,7 @@ class InitialSignup extends Component {
         }
       });
     }
-	};
+  };
   onPasswordChange = (value) => {
     if (value && value.length < 8) {
       this.setState({
@@ -134,8 +132,7 @@ class InitialSignup extends Component {
         }
       });
     }
-   
-	};
+  };
   onConfirmPasswordChange = (value) => {
 	  this.setState({
 	    confirm_password: {
@@ -145,7 +142,7 @@ class InitialSignup extends Component {
 	      error: !value ? 'REQUIRED' : ''
 	    }
 	  });
-	};
+  };
 
   onClickSocial = (type) => {
     (type == 'F' 
@@ -159,38 +156,38 @@ class InitialSignup extends Component {
       )
     )
       .then(res => {
-        if(res.success) {
-        const data = res.data;
-        // validate username
-        displayPageLoader(true);
-        validateUsername(data.email)
-          .then((res) => {
-            displayPageLoader(false);
-            if (res.available) {
-              this.props.toggleSignupForm();
-              updateStore({
-                signup: {
-                  username: (data.email || '').toString(),
-                  password: (data.id || '').toString(),
-                  fname: data.fname,
-                  lname: data.lname,
-                  socId: (data.id || '').toString(),
-                  socType: type
-                }
-              });
-              route(`/${this.props.parent}/data-privacy`);
-            } else {
-              showAlertBox({
-                message: 'ACCOUNT_EXIST',
-                noTopBar: true
-              });
-            }
-          });
-        } else if (res.error !== 'SIGN_IN_CANCELLED') {
-            showAlertBox({
-              message: typeof res.error === 'string' ? res.error : 'SOMETHING_WRONG',
-              noTopBar: true
+        if (res.success) {
+          const data = res.data;
+          // validate username
+          displayPageLoader(true);
+          validateUsername(data.email)
+            .then((res) => {
+              displayPageLoader(false);
+              if (res.available) {
+                this.props.toggleSignupForm();
+                updateStore({
+                  signup: {
+                    username: (data.email || '').toString(),
+                    password: (data.id || '').toString(),
+                    fname: data.fname,
+                    lname: data.lname,
+                    socId: (data.id || '').toString(),
+                    socType: type
+                  }
+                });
+                route(`/${this.props.parent}/data-privacy`);
+              } else {
+                showAlertBox({
+                  message: 'ACCOUNT_EXIST',
+                  noTopBar: true
+                });
+              }
             });
+        } else if (res.error !== 'SIGN_IN_CANCELLED') {
+          showAlertBox({
+            message: typeof res.error === 'string' ? res.error : 'SOMETHING_WRONG',
+            noTopBar: true
+          });
         }
       })
       .catch(err => {
@@ -213,46 +210,46 @@ class InitialSignup extends Component {
         <ul>
           <li>
             <a onClick={() => {
-                this.onClickSocial('F');
-              }}>
+              this.onClickSocial('F');
+            }}>
               <ImageLoader
-              src="assets/images/fb_icon.png"
-              style={{ container: style.socMedIcons }}
+                src="assets/images/fb_icon.png"
+                style={{ container: style.socMedIcons }}
               />
             </a>
           </li>
           <li>
             <a onClick={() => {
-                this.onClickSocial('T');
-              }}>
+              this.onClickSocial('T');
+            }}>
               <ImageLoader
-              src="assets/images/twitter_icon.png"
-              style={{ container: style.socMedIcons }}
+                src="assets/images/twitter_icon.png"
+                style={{ container: style.socMedIcons }}
               />
             </a>
           </li>
           <li>
             <a onClick={() => {
-                this.onClickSocial('G');
-              }}>
+              this.onClickSocial('G');
+            }}>
               <ImageLoader
-              src="assets/images/google_icon.png"
-              style={{ container: style.socMedIcons }}
+                src="assets/images/google_icon.png"
+                style={{ container: style.socMedIcons }}
               />
             </a>
           </li>
           {process.env.PLATFORM === 'ios' && (
-          <li>
-            <a className={style.appleLogo} 
-              onClick={() => {
-                this.onClickSocial('A');
-              }}>
-              <ImageLoader
-              src="assets/images/apple_icon.png"
-              style={{ container: style.socMedIcons }}
-              />
-            </a>
-          </li>
+            <li>
+              <a className={style.appleLogo} 
+                onClick={() => {
+                  this.onClickSocial('A');
+                }}>
+                <ImageLoader
+                  src="assets/images/apple_icon.png"
+                  style={{ container: style.socMedIcons }}
+                />
+              </a>
+            </li>
           )}
         </ul>
       </div>
@@ -275,90 +272,90 @@ class InitialSignup extends Component {
 	        className={isOpen ? `${style.signup} ${style.toggled}` : style.signup}
 	      >
 	        {/* Initial Signup Contents Here */}
-          <div className={style.formTitle}>
-            <p className={`extraBold ${style.formTitle}`}>
-              {getTranslation('WELCOME')} <span className={`extraBold`}>{getTranslation('KAKAMPINK')}</span> <br/>
-              {getTranslation('JOIN_US')}
-            </p>
-          </div>
-          <div className={style.formFieldWrap}>
-            <form className={style.form}>
-            <FormGroup 
-              label="Username" 
-              hasError={username.hasError}
-              className={style.formGroup}
-            >
-              <FormInput
-              value={username.value}
-              type="text"
-              onBlur={(e) => {
-                this.onUsernameChange(e.target.value)
-              }}
-              onInput={(e) => {
-                this.onUsernameChange(e.target.value)
-              }}
-              hasError={username.hasError}
-              error={username.error}
-              message={username.message}
-              className={style.formInput}
-              />
-            </FormGroup>
-            <FormGroup 
-              label="Password" 
-              hasError={password.hasError}
-              className={style.formGroup}
-            >
-              <FormInput
-              value={password.value}
-              type="password"
-              onBlur={(e) => {
-                this.onPasswordChange(e.target.value)
-              }}
-              onInput={(e) => {
-                this.onPasswordChange(e.target.value)
-              }}
-              hasError={password.hasError}
-              error={password.error}
-              message={password.message}
-              className={style.formInput}
-              />
-            </FormGroup>
-            <FormGroup
-              label="Confirm Password"
-              hasError={confirm_password.hasError}
-              className={style.formGroup}
-            >
-              <FormInput
-              value={confirm_password.value}
-              type="password"
-              onBlur={(e) => {
-                this.onConfirmPasswordChange(e.target.value)
-              }}
-              onInput={(e) => {
-                this.onConfirmPasswordChange(e.target.value)
-              }}
-              hasError={confirm_password.hasError}
-              error={confirm_password.error}
-              message={confirm_password.message}
-              className={style.formInput}
-              />
-            </FormGroup>
-            <div className={style.buttonWrap}>
-              <ButtonDescription
-              onClickCallback={this.onClickSubmit}
-              text={getTranslation('SIGNUP_CONTINUE')}
-              bottomDescription=""
-              buttonStyle={`${style.buttonStyle}`}
-              />
-              <div onClick={toggleSignupForm}>
-                <p className={style.backButton}> {getTranslation('BACK')} </p>
-              </div>
-            </div>
-            </form>
+	        <div className={style.formTitle}>
+	          <p className={`extraBold ${style.formTitle}`}>
+	            {getTranslation('WELCOME')} <span className={`extraBold`}>{getTranslation('KAKAMPINK')}</span> <br />
+	            {getTranslation('JOIN_US')}
+	          </p>
+	        </div>
+	        <div className={style.formFieldWrap}>
+	          <form className={style.form}>
+	            <FormGroup 
+	              label="Username" 
+	              hasError={username.hasError}
+	              className={style.formGroup}
+	            >
+	              <FormInput
+	                value={username.value}
+	                type="text"
+	                onBlur={(e) => {
+	                  this.onUsernameChange(e.target.value)
+	                }}
+	                onInput={(e) => {
+	                  this.onUsernameChange(e.target.value)
+	                }}
+	                hasError={username.hasError}
+	                error={username.error}
+	                message={username.message}
+	                className={style.formInput}
+	              />
+	            </FormGroup>
+	            <FormGroup 
+	              label="Password" 
+	              hasError={password.hasError}
+	              className={style.formGroup}
+	            >
+	              <FormInput
+	                value={password.value}
+	                type="password"
+	                onBlur={(e) => {
+	                  this.onPasswordChange(e.target.value)
+	                }}
+	                onInput={(e) => {
+	                  this.onPasswordChange(e.target.value)
+	                }}
+	                hasError={password.hasError}
+	                error={password.error}
+	                message={password.message}
+	                className={style.formInput}
+	              />
+	            </FormGroup>
+	            <FormGroup
+	              label="Confirm Password"
+	              hasError={confirm_password.hasError}
+	              className={style.formGroup}
+	            >
+	              <FormInput
+	                value={confirm_password.value}
+	                type="password"
+	                onBlur={(e) => {
+	                  this.onConfirmPasswordChange(e.target.value)
+	                }}
+	                onInput={(e) => {
+	                  this.onConfirmPasswordChange(e.target.value)
+	                }}
+	                hasError={confirm_password.hasError}
+	                error={confirm_password.error}
+	                message={confirm_password.message}
+	                className={style.formInput}
+	              />
+	            </FormGroup>
+	            <div className={style.buttonWrap}>
+	              <ButtonDescription
+	                onClickCallback={this.onClickSubmit}
+	                text={getTranslation('SIGNUP_CONTINUE')}
+	                bottomDescription=""
+	                buttonStyle={`${style.buttonStyle}`}
+	              />
+	              <div onClick={toggleSignupForm}>
+	                <p className={style.backButton}> {getTranslation('BACK')} </p>
+	              </div>
+	            </div>
+	          </form>
               
-            {/* Social Media */}
-            {this.renderSocialMedia()}
-          </div>
+	          {/* Social Media */}
+	          {this.renderSocialMedia()}
+	        </div>
 	      </div>
 	    </div>
 	  );

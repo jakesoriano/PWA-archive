@@ -1,7 +1,7 @@
 export const volunteerNeeds = [
-  {id:'trompa', value: 'TROMPA Package'},
-  {id: 'mobilization', value: 'Mobilization'},
-  {id: 'collaterals', value: 'Collaterals'}
+  { id: 'trompa', value: 'TROMPA Package' },
+  { id: 'mobilization', value: 'Mobilization' },
+  { id: 'collaterals', value: 'Collaterals' }
   // {id:'caravan', value: 'Caravan Logistics'},
   // {id:'content', value: 'Content Writer'},
   // {id:'social', value: 'Social Media Content Posting'},

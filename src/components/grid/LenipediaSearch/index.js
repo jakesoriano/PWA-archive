@@ -52,9 +52,11 @@ class LenipediaSearch extends Component {
   render = (props, state) => (
     <div className={style.leniSearchWrap}>
       {
-        props.heading && <div className={style.header}>
-          <span className={style.title}>{getTranslation(props.heading)}</span>
-        </div>
+        props.heading && (
+          <div className={style.header}>
+            <span className={style.title}>{getTranslation(props.heading)}</span>
+          </div>
+        )
       }
       <div className={style.search}>
         <input
@@ -65,8 +67,8 @@ class LenipediaSearch extends Component {
         />
         <div id="lenipedia-search" onClick={this.handleSearch}>
           <ImageLoader
-            src={'assets/images/magnifying_icon.png'}
-            style={{container: style.searchIcon}}
+            src={'assets/icons/icon_search_blue.png'}
+            style={{ container: style.searchIcon }}
           />
         </div>
       </div>

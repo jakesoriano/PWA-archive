@@ -6,7 +6,7 @@ export function fetchAnnouncements (page, limit) {
   const { announcements } = store.getState();
   
   // fetching
-  if(announcements.fetching) {
+  if (announcements.fetching) {
     return;
   }
 
@@ -27,33 +27,33 @@ export function fetchAnnouncements (page, limit) {
         s: limit || 6 // limit
       }
     })
-    .then((res) => {
-      updateStore({
-        announcements: {
-          data: page && page > 1 ? [
-            ...announcements.data,
-            ...res.data.results
-          ] : res.data.results,
-          total: res.data.total,
-          page: page || 1,
-          fetching: false,
-          result: true
-        }
+      .then((res) => {
+        updateStore({
+          announcements: {
+            data: page && page > 1 ? [
+              ...announcements.data,
+              ...res.data.results
+            ] : res.data.results,
+            total: res.data.total,
+            page: page || 1,
+            fetching: false,
+            result: true
+          }
+        });
+        console.log(`SPA >> fetchAnnouncements Success`, res.success);
+        resolve(true);
+      })
+      .catch((err) => {
+        updateStore({
+          announcements: {
+            ...announcements,
+            fetching: false,
+            result: false
+          }
+        });
+        console.log(`SPA >> fetchAnnouncements Error`, err);
+        resolve(false);
       });
-      console.log(`SPA >> fetchAnnouncements Success`, res.success);
-      resolve(true);
-    })
-    .catch((err) => {
-      updateStore({
-        announcements: {
-          ...announcements,
-          fetching: false,
-          result: false
-        }
-      });
-      console.log(`SPA >> fetchAnnouncements Error`, err);
-      resolve(false);
-    });
   });
 }
 
@@ -63,7 +63,7 @@ export function likeShareAnnouncements (item, action) {
   const _url = action === 'liked' ? urlLike : urlShare
   
   // fetching
-  if(announcements.fetching) {
+  if (announcements.fetching) {
     return;
   }
   
@@ -71,7 +71,7 @@ export function likeShareAnnouncements (item, action) {
   announcements = {
     ...announcements,
     data: announcements.data.map(i => {
-      if(i.id === item.id) {
+      if (i.id === item.id) {
         i[action] = true;
       }
       return i;
@@ -91,40 +91,40 @@ export function likeShareAnnouncements (item, action) {
         parentType: 'X'
       }
     })
-    .then((res) => {
-      updateStore({
-        announcements: {
-          ...announcements,
-          data: announcements.data.map(i => {
-            if(i.id === item.id) {
-              action === 'liked' ? 
-                i.likeCount = i.likeCount+1 : 
-                i.shareCount = i.shareCount+1;
-            }
-            return i;
-          }),
-          fetching: false
-        }
+      .then((res) => {
+        updateStore({
+          announcements: {
+            ...announcements,
+            data: announcements.data.map(i => {
+              if (i.id === item.id) {
+                action === 'liked' ? 
+                  i.likeCount +=1 : 
+                  i.shareCount +=1;
+              }
+              return i;
+            }),
+            fetching: false
+          }
+        });
+        console.log(`SPA >> likeAnnouncements Success`, res);
+        resolve(true);
+      })
+      .catch((err) => {
+        updateStore({
+          announcements: {
+            ...announcements,
+            data: announcements.data.map(i => {
+              if (i.id === item.id) {
+                i[action] = false;
+              }
+              return i;
+            }),
+            fetching: false
+          }
+        });
+        console.log(`SPA >> likeAnnouncements Error`, err);
+        resolve(false);
       });
-      console.log(`SPA >> likeAnnouncements Success`, res);
-      resolve(true);
-    })
-    .catch((err) => {
-      updateStore({
-        announcements: {
-          ...announcements,
-          data: announcements.data.map(i => {
-            if(i.id === item.id) {
-              i[action] = false;
-            }
-            return i;
-          }),
-          fetching: false
-        }
-      });
-      console.log(`SPA >> likeAnnouncements Error`, err);
-      resolve(false);
-    });
   });
 }
 
@@ -133,7 +133,7 @@ export function removeLikeAnnouncements (item) {
   const { authUser } = store.getState();
   
   // fetching
-  if(announcements.fetching) {
+  if (announcements.fetching) {
     return;
   }
 
@@ -141,7 +141,7 @@ export function removeLikeAnnouncements (item) {
   announcements = {
     ...announcements,
     data: announcements.data.map(i => {
-      if(i.id === item.id) {
+      if (i.id === item.id) {
         i.liked = false;
       }
       return i;
@@ -161,37 +161,37 @@ export function removeLikeAnnouncements (item) {
         parentType: 'X'
       }
     })
-    .then((res) => {
-      updateStore({
-        announcements: {
-          ...announcements,
-          data: announcements.data.map(i => {
-            if(i.id === item.id) {
-              i.likeCount = i.likeCount - 1;
-            }
-            return i;
-          }),
-          fetching: false
-        }
+      .then((res) => {
+        updateStore({
+          announcements: {
+            ...announcements,
+            data: announcements.data.map(i => {
+              if (i.id === item.id) {
+                i.likeCount -= 1;
+              }
+              return i;
+            }),
+            fetching: false
+          }
+        });
+        console.log(`SPA >> removeLikeAnnouncements Success`, res);
+        resolve(true);
+      })
+      .catch((err) => {
+        updateStore({
+          announcements: {
+            ...announcements,
+            data: announcements.data.map(i => {
+              if (i.id === item.id) {
+                i.liked = true;
+              }
+              return i;
+            }),
+            fetching: false
+          }
+        });
+        console.log(`SPA >> removeLikeAnnouncements Error`, err);
+        resolve(false);
       });
-      console.log(`SPA >> removeLikeAnnouncements Success`, res);
-      resolve(true);
-    })
-    .catch((err) => {
-      updateStore({
-        announcements: {
-          ...announcements,
-          data: announcements.data.map(i => {
-            if(i.id === item.id) {
-              i.liked = true;
-            }
-            return i;
-          }),
-          fetching: false
-        }
-      });
-      console.log(`SPA >> removeLikeAnnouncements Error`, err);
-      resolve(false);
-    });
   });
 }

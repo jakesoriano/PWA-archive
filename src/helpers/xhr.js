@@ -33,7 +33,7 @@ export function xhr (url, options, externalAPI) {
 
       if ('result' in ev.data) {
         resolve(ev.data.result);
-      } else if (authUser && ev.data && ev.data.status === 401){
+      } else if (authUser && ev.data && ev.data.status === 401) {
         // Unauthorized
         logOut();
         displayPageLoader(false);

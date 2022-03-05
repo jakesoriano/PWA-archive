@@ -1,8 +1,6 @@
 @import '../../../style/variables.scss';
 .globalAnnouncement {
-  background: $details_bg;
   margin: 0 15px 15px;
-  border-radius: 10px;
   &.marginTop {
     margin-top: 10px;
   }
@@ -46,9 +44,13 @@
       }
       .announcementWrap {
         .item {
+          background: $light_gray;
           width: 100%;
           padding: 10px 10px;
-          border-right: 1px solid #f1ebeb;
+          border-radius: 10px;
+          &:not(:first-of-type) {
+            margin-top: 10px;
+          }
           &:last-child {
             border: none;
           }
@@ -63,12 +65,12 @@
     }
     .details {
       position: relative;
-      background: #878080;
-      color: #737373;
-
+      * {
+        color: #737373;
+      }
       .detailImage {
         width: 100%;
-        padding-bottom: 175px;
+        padding-bottom: 205px;
         .img {
           width: 100%;
           top: 50%;
@@ -77,11 +79,9 @@
       }
       
       .detailContent {
-        position: absolute;
         width: 100%;
         bottom: 0;
         z-index: 1;
-        background: rgba(43,45,50,0.7);
         border-radius: 10px 10px 0 0;
         padding: 10px;
         &.rows{
@@ -90,6 +90,7 @@
         .detailHead {
           .userName {
             font-size: 0.875rem;
+            color: $pink_text;
           }
         }
         .detailBody {
@@ -101,7 +102,6 @@
             word-break: break-word; 
             span {
               float: right;
-              color:  $primary;
               text-decoration: underline;
             }
           }
@@ -150,77 +150,93 @@
     }
   }
 }
-.pWrap {
-  position: fixed;
-  top: 66px;
-  left: 10px;
-  width: calc(100% - 20px);
-  height: calc(100% - 136px);
-  background: $details_bg;
-  border-radius: 10px;
-  z-index: 2;
-  padding: 40px 10px 10px;
-  overflow: scroll;
-  * {
-    color: #000;
+.detailsWrap {
+  .backDrop {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
   }
   .pClose {
     position: absolute;
     right: 5px;
-    top: 5px;
+    top: 0px;
     .closeBtn {
-      width: 27px;
-      height: 27px;
+      width: 30px;
+      height: 30px;
     }
   }
-  .pHeader {
-    display: flex;
-    .pImage {
-      padding-bottom: 150px;
-      width: 150px;
+  .pWrap {
+    position: fixed;
+    top: 100px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 180px);
+    background: #fff;
+    border-radius: 10px;
+    z-index: 2;
+    padding: 10px;
+    overflow: scroll;
+    * {
+      color: #000;
     }
-    .pNews {
-      width: calc(100% - 150px);
-      padding-left: 15px;
-      .pTitle{
-        font-size: 0.8rem;
-        color: $primary_layout;
-        word-break: break-word; 
-      }
-      .pLink{
-        font-size: 0.6rem;
-        display: inline-block;
+    .pHeader {
+      display: flex;
+      flex-direction: column;
+      .pImage {
+        padding-bottom: 200px;
         width: 100%;
-        margin-top: 10px;
+        margin: 15px 0;
+      }
+      .pNews {
+        .pTitle{
+          padding: 10px 0;
+          font-size: 1.2rem;
+          color: $primary_layout;
+          text-align: center;
+        }
       }
     }
-  }
-
-  .pContent {
-    font-size: 0.8rem;
-    br {
-      display: block;
-      content: "";
-      margin: 10px 0;
+    .pDate {
+      font-size: 0.875rem;
+      padding: 10px 10px 0;
     }
-  }
-  .pShare {
-    background: $primary;
-    display: flex;
-    width: 100px;
-    margin: 0 auto;
-    padding: 5px 10px;
-    width: max-content;
-    margin-top: 20px;
-    .pIconShare {
-      padding-bottom: 18px;
-      width: 18px;
-      margin-right: 5px;
+    .pLink {
+      font-size: 0.875rem;
+      padding: 0 10px 10px;
+      overflow-wrap: break-word;
+      color: $pink_text;
     }
-    span {
-      color: #fff;
+    .pContent {
       font-size: 0.8rem;
-      text-transform: uppercase;
+      padding: 0 10px;
+      overflow-wrap: break-word;
+      br {
+        display: block;
+        content: "";
+        margin: 10px 0;
+      }
+    }
+    .pShare {
+      background: $primary;
+      display: flex;
+      width: 100px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      width: max-content;
+      margin-top: 20px;
+      border-radius: 6px;
+  
+      .pIconShare {
+        padding-bottom: 18px;
+        width: 18px;
+        margin-right: 5px;
+      }
+      span {
+        color: #fff;
+        font-size: 1rem;
+      }
     }
   }
 }

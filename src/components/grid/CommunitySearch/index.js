@@ -30,44 +30,44 @@ class CommunitySearch extends Component {
   };
 
   handleSort = () => {
-    var selected = '';
+    let selected = '';
     communitySort.map((i) => {
       if (i.value === this.props.communities.sort) {
         selected = i.value;
       }
     })
-		let props = {
-			data: communitySort,
-			onClickParent: (val) => this.onClickCallback(val),
-			onClickChild: (val) => this.onClickCallback(val),
-			selected: selected || 'popularity',
-		};
+    let props = {
+      data: communitySort,
+      onClickParent: (val) => this.onClickCallback(val),
+      onClickChild: (val) => this.onClickCallback(val),
+      selected: selected || 'popularity',
+    };
 
-		// show popup options
-		showFilter(props);
+    // show popup options
+    showFilter(props);
   }
 
 	onClickCallback = (val) => {
-    try {
-      const { communities } = store.getState();
-      updateStore({
-        communities: {
-          ...communities,
-          sort: val.parentVal
-        }
-      });
-      displayPageLoader(true);
+	  try {
+	    const { communities } = store.getState();
+	    updateStore({
+	      communities: {
+	        ...communities,
+	        sort: val.parentVal
+	      }
+	    });
+	    displayPageLoader(true);
 
-      filterCommunity(this.props.communities.filter, val.parentVal).then((a) => {
-        displayPageLoader(false);
-        showFilter(null);
-      });
-    } catch (err) {
-      console.log(err);
-    }
+	    filterCommunity(this.props.communities.filter, val.parentVal).then((a) => {
+	      displayPageLoader(false);
+	      showFilter(null);
+	    });
+	  } catch (err) {
+	    console.log(err);
+	  }
 	};
 
-  render = ({communities, showSort}) => (
+  render = ({ communities, showSort }) => (
     <div className={style.searchWrap}>
       <div className={style.search}>
         <input
@@ -77,17 +77,19 @@ class CommunitySearch extends Component {
           onInput={this.handleSearchByName}
         />
         <ImageLoader
-          src={'assets/images/magnifying_icon.png'}
-          style={{container: style.searchIcon}}
+          src={'assets/icons/icon_search_blue.png'}
+          style={{ container: style.searchIcon }}
         />
       </div>
       {
-        showSort && <div className={style.sort} onClick={this.handleSort}>
-          <ImageLoader
-            src={'assets/icons/icon_sort.png'}
-            style={{container: style.sortIcon}}
-          />
-        </div>
+        showSort && (
+          <div className={style.sort} onClick={this.handleSort}>
+            <ImageLoader
+              src={'assets/icons/icon_sort.png'}
+              style={{ container: style.sortIcon }}
+            />
+          </div>
+        )
       }
     </div>
   )

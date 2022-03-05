@@ -23,16 +23,11 @@
 			text-align: center;
 			align-self: center;
 		}
+		&:nth-child(4),
 		&:nth-child(5) {
 			.imgCont {
-				width: 47px;
-				padding-bottom: 32px;
-			}
-		}
-		&:nth-child(4) {
-			.imgCont {
-				width: 36px;
-				padding-bottom: 32px;
+				width: 33px;
+				padding-bottom: 33px;
 			}
 		}
 		.imgCont {

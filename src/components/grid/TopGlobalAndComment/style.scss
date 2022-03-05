@@ -1,0 +1,67 @@
+@import '../../../style/variables.scss';
+.invitedCountWrap {
+  text-align: center;
+  background: $gray_bg;
+  padding: 10px;
+  display: flex;
+  // justify-content: space-around;
+  justify-content: left;
+  * {
+      color: #231f20;
+      font-size: 0.6rem;
+    }
+  .featured {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    .avatar {
+      width: 60px;
+      padding-bottom: 60px;
+      border-radius: 80px;
+    }
+    .topLeader {
+      padding-left: 5px;
+      display: grid;
+      align-content: center;
+      flex-grow: 1;
+      width: calc(100% - 190px);
+      text-align: left;
+      span {
+        text-transform: capitalize;
+      }
+      p:last-child {
+        margin-top: 10px;
+      }
+    }
+  }
+  .adminWrap {
+    display: flex;
+    align-items: center;
+    position: relative;
+    .avatar {
+      width: 60px;
+      padding-bottom: 60px;
+      border-radius: 80px;
+    }
+    .admin {
+      display: grid;
+      align-content: center;
+      flex-grow: 1;
+      width: calc(100% - 190px);
+      text-align: center;
+      .dialog {
+        position: absolute;
+        width: 140px;
+        padding-bottom: 62px;
+        top: 0;
+      }
+      p {
+        max-width: 130px;
+        padding-left: 5px;
+      }
+      span {
+        text-transform: capitalize;
+      }
+    }
+  }
+}

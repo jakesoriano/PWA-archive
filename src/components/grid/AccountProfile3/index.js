@@ -3,13 +3,13 @@ import { Link } from 'preact-router/match';
 import { connect } from 'unistore/preact';
 import { LoaderRing, ImageLoader, UserAvatar } from '_components/core';
 import { 
-	fetchUserPoints
+  fetchUserPoints
 } from '_mutations';
 import {
-	getTranslation,
-	formatNumber,
-	displayName,
-	formatRank
+  getTranslation,
+  formatNumber,
+  displayName,
+  formatRank
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
@@ -25,14 +25,14 @@ class AccountProfile extends Component {
 	};
 
 	onShare = () => {
-		nativeShare({
-			title: `Be a Hero`,
-			message: `\n
+	  nativeShare({
+	    title: `Be a Hero`,
+	    message: `\n
 				I've earned ${this.props.authUser.points} Hero Points. \n\n
 				Download the kakampink App, enter the referral code "${this.props.authUser.profile.refCode}" and let's show our support!\n\n
 				#LetLeniLead
 			`
-		});
+	  });
 	}
 
 	render = ({ authUser, members }) => {
@@ -43,35 +43,35 @@ class AccountProfile extends Component {
 	  return (
 	    <div className={style.accountProfile}>
 	      <div className={style.profile}>
-					<div className={style.user}>
-						<div className={style.avatar}>
-							<UserAvatar /> 
-						</div>
-						<div className={style.nameMember}>
-							<p className={`bold ${style.name}`}>{displayName(authUser.profile)}</p>
-							<div className={style.heroRankingContainer}>
-								<p className={`bold`}>{getTranslation('RANKING')}</p>
-								<div className={style.heroRanking}>
-									<div className={style.rankBox}>
-										<p class={`extraBold ${style.rankPoints}`}>{formatRank(authUser.rank.regional)}</p>
-										<p class={style.rankPointsText}>{getTranslation('REGIONAL')}</p>
-									</div>
-									<div className={style.rankBox}>
-										<p class={`extraBold ${style.rankPoints}`}>{formatRank(authUser.rank.overall)}</p>
-										<p class={style.rankPointsText}>{getTranslation('OVERALL')}</p>
-									</div>
-								</div>
-							</div>
-							<p className={`extraBold ${style.heroPoints}`}>{`${authUser.points === 0 ? '-' : formatNumber(authUser.points, 2) || 0} ${getTranslation('HERO_POINTS')} `}</p>
-						</div>
-						<a onClick={() => {
-							this.onShare();
-						}}>
-						<ImageLoader 
-							src="assets/images/share_icon.png"
-							style={{container: style.share}} />
-						</a>
-					</div>
+	        <div className={style.user}>
+	          <div className={style.avatar}>
+	            <UserAvatar /> 
+	          </div>
+	          <div className={style.nameMember}>
+	            <p className={`bold ${style.name}`}>{displayName(authUser.profile)}</p>
+	            <div className={style.heroRankingContainer}>
+	              <p className={`bold`}>{getTranslation('RANKING')}</p>
+	              <div className={style.heroRanking}>
+	                <div className={style.rankBox}>
+	                  <p class={`extraBold ${style.rankPoints}`}>{formatRank(authUser.rank.regional)}</p>
+	                  <p class={style.rankPointsText}>{getTranslation('REGIONAL')}</p>
+	                </div>
+	                <div className={style.rankBox}>
+	                  <p class={`extraBold ${style.rankPoints}`}>{formatRank(authUser.rank.overall)}</p>
+	                  <p class={style.rankPointsText}>{getTranslation('OVERALL')}</p>
+	                </div>
+	              </div>
+	            </div>
+	            <p className={`extraBold ${style.heroPoints}`}>{`${authUser.points === 0 ? '-' : formatNumber(authUser.points, 2) || 0} ${getTranslation('HERO_POINTS')} `}</p>
+	          </div>
+	          <a onClick={() => {
+	            this.onShare();
+	          }}>
+	            <ImageLoader 
+	              src="assets/images/share_icon.png"
+	              style={{ container: style.share }} />
+	          </a>
+	        </div>
 	      </div>
 	    </div>
 	  );

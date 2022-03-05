@@ -1,0 +1,28 @@
+@import '../../../style/variables.scss';
+.invitedCountWrap {
+  text-align: center;
+  background: $gray_bg;
+  padding: 20px 10px 25px 10px;
+  display: flex;
+  justify-content: space-around;
+  * {
+      color: #231f20;
+      font-size: 0.9rem;
+  }
+  .countCard {
+    .text {
+      font-size: 1rem;
+      color: $blue;
+      text-transform: uppercase;
+    }
+    .count {
+      font-size: 3rem;
+      color: #737373;
+    }
+  }
+  .noInvite {
+    color: $blue;
+    font-size: 1.5rem;
+    padding: 15px 0;
+  }
+}

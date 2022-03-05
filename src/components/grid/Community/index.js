@@ -26,19 +26,19 @@ class Community extends Component {
     this.timer = null;
   }
 	componentDidMount = () => {
-    const { communities } = this.props;
-    if (!communities.data.length) {
-      fetchCommunities();
-    }
-		updateStore({
-			customBack: () => {
-				route(`community`, true);
-			},
-      communities: {
-        ...communities,
-        filter: ''
-      }
-		});
+	  const { communities } = this.props;
+	  if (!communities.data.length) {
+	    fetchCommunities();
+	  }
+	  updateStore({
+	    customBack: () => {
+	      route(`community`, true);
+	    },
+	    communities: {
+	      ...communities,
+	      filter: ''
+	    }
+	  });
 	};
 
   componentDidUpdate = () => {
@@ -108,19 +108,23 @@ class Community extends Component {
     }
     return this.props.communities.data.map((item, i) => (
       <div className={style.communityCard}>
-        {item.image &&
-        <div onClick={() => { this.visitCommunity(item) }}>
-          <ImageLoader
-            src={item.image}
-            style={{container: style.imgCont, image: style.img}}
-            lazy
-          />
-        </div>
-        }
+        {item.image && (
+          <div onClick={() => {
+            this.visitCommunity(item) 
+          }}>
+            <ImageLoader
+              src={item.image}
+              style={{ container: style.imgCont, image: style.img }}
+              lazy
+            />
+          </div>
+        )}
         <div className={style.cardBody}>
           <ButtonDescription
             id={item.followed ? 'community-unfollow' : 'community-follow'}
-            onClickCallback={(e) => { this.handleFollow(item)}}
+            onClickCallback={(e) => {
+              this.handleFollow(item) 
+            }}
             text={getTranslation(item.followed ? 'UNFOLLOW' : 'FOLLOW')}
             bottomDescription={item.name}
             buttonStyle={`${style.buttonStyle} ${item.followed ? style.followed : ''}`}
@@ -130,30 +134,30 @@ class Community extends Component {
           {item.followers > 0 && <p className={style.followers}>{formatN(item.followers, 2)} kakam-PINK</p>}
         </div>
       </div>
-      ))
+    ))
   }
 
 	render = ({ communities }) => {
 	  return (
 	    <div className={style.communityWrapper}>
-        <div className={style.communityBody}>
-          <p className={`${style.title} bold`}>{getTranslation('FOLLOW_COMMUNITIES')}</p>
-          <div className={style.communities}>
-            { this.renderCommunities() }
-          </div>
-          {/* show more */}
-          {communities.data.length < communities.total && !communities.fetching && (
-            <button className={style.showMore} onClick={this.handleShowMore}>
-              <span><span>&#8659;</span> {getTranslation('SHOW_MORE')}</span>
-            </button>
-          )}
-          {/* loader */}
-          {this.state.moreFetching && (
-            <LoaderRing styles={{container: style.loaderWrap}}/>
-          )}
-        </div>
+	      <div className={style.communityBody}>
+	        <p className={`${style.title} bold`}>{getTranslation('FOLLOW_COMMUNITIES')}</p>
+	        <div className={style.communities}>
+	          { this.renderCommunities() }
+	        </div>
+	        {/* show more */}
+	        {communities.data.length < communities.total && !communities.fetching && (
+	          <button className={style.showMore} onClick={this.handleShowMore}>
+	            <span><span>&#8659;</span> {getTranslation('SHOW_MORE')}</span>
+	          </button>
+	        )}
+	        {/* loader */}
+	        {this.state.moreFetching && (
+	          <LoaderRing styles={{ container: style.loaderWrap }} />
+	        )}
+	      </div>
 
-			</div>
+	    </div>
 	  );
 	};
 }

@@ -7,12 +7,11 @@ import { getCurrentUrl } from 'preact-router';
 import style from './style';
 
 class CommunityEvents extends Component {
- 
 	onShareEvent = (item) => {
-		nativeShare({
-			url: item.image,
-			title: item.title,
-			message: `\n\n
+	  nativeShare({
+	    url: item.image,
+	    title: item.title,
+	    message: `\n\n
 				Unity despite diversity leads to victory. Come join us, KakamPink!\n\n
 				Event Title: ${item.title}\n
 				Event Date: ${dateEventFormat(item.date)}\n
@@ -20,10 +19,10 @@ class CommunityEvents extends Component {
 				${getTranslation(item.isOnline ? 'ONLINE_EVENT' : 'ONSITE_EVENT')}:\n
 				Event Location: ${item.location}
 			`
-		});
-		if (!item.shared) {
-			shareEventByLeader(item);
-		}
+	  });
+	  if (!item.shared) {
+	    shareEventByLeader(item);
+	  }
 	};
 
 
@@ -32,26 +31,28 @@ class CommunityEvents extends Component {
       return data.map((i, index) => (
         <div className={`${style.contentItem} ${style.eventItem}`}>
           {
-            !getCurrentUrl().includes('community') &&
-            <div className={style.community}>
-              <ImageLoader
-                src={i.community.image}
-                style={{container: style.comImage}}
-                lazy />
-              <span>{getTranslation(i.community.name)}</span>
-            </div>
+            !getCurrentUrl().includes('community') && (
+              <div className={style.community}>
+                <ImageLoader
+                  src={i.community.image}
+                  style={{ container: style.comImage }}
+                  lazy />
+                <span>{getTranslation(i.community.name)}</span>
+              </div>
+            )
           }
-          <a className={style.details} onClick={() => {
-            this.props.onClickItemCallback(i);
-          }}>
+          <a className={style.details}
+            onClick={() => {
+              this.props.onClickItemCallback(i);
+            }}>
             <ImageLoader
               src={i.image}
-              style={{container: style.detailImage}}
+              style={{ container: style.detailImage }}
               lazy />
             <div className={style.detailContent}>
               <p>{dateEventFormat(i.date)} <br />
-              {`${getTranslation('EVENT_BY')}: ${i.by}`} <br />
-              {getTranslation(i.isOnline ? 'ONLINE_EVENT' : 'ONSITE_EVENT')}</p>
+                {`${getTranslation('EVENT_BY')}: ${i.by}`} <br />
+                {getTranslation(i.isOnline ? 'ONLINE_EVENT' : 'ONSITE_EVENT')}</p>
               <p className={`${style.stats} bold`}>
                 <span className='extraBold'>{`${i.likeCount ? i.likeCount : '0'} ${getTranslation("LIKES")}`}</span>
                 <span className='extraBold'>{`${i.shareCount ? i.shareCount : '0'} ${getTranslation("SHARES")}`}</span>
@@ -74,8 +75,8 @@ class CommunityEvents extends Component {
                 this.onShareEvent(i);
               }}>
               <ImageLoader
-              src={!i.shared ? 'assets/images/share_icon_lite.png' : 'assets/images/share_icon_dark.png'}
-              style={{container: `extraBold ${style.likeButton}`}}/>
+                src={!i.shared ? 'assets/images/share_icon_lite.png' : 'assets/images/share_icon_dark.png'}
+                style={{ container: `extraBold ${style.likeButton}` }} />
               {getTranslation('SHARE')}
             </a>
           </div>
