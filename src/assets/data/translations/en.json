@@ -321,5 +321,9 @@
 	"FEATURED": "Featured",
 	"NO_INVITE": "Make your first invite today!",
 	"NARRATE_CONCERN": "Narrate your concern",
-	"SAVE_PROFILE": "Save Profile"
+	"SAVE_PROFILE": "Save Profile",
+	"TASKS_TODAY": "Tasks Today",
+	"VIEW_LEADERBOARD": "VIEW LEADERBOARD",
+	"GUIDE_TASKS": "Guide: i-click ang <b>link</b> para umpisahan ang task.",
+	"CLICK_NEXT_TASK": "Congratulations! {num} completed. Click ang <b>link</b> para sa Next Task"
 }
