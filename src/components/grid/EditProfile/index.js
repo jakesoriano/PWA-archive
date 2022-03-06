@@ -260,24 +260,36 @@ class EditProfile extends Component {
 	};
 
 	validateDob = (value) => {
-	  const maxDate = new Date(getMaxDOBDate()).getTime();
-	  const selectedDate = new Date(value).getTime();
-	  const spliteValue = (value || '').split('-');
-	  if (
-	    maxDate < selectedDate ||
-			Boolean(
-			  new Date(value).toString().toLowerCase().indexOf('invalid') > -1
-			) ||
-			!(spliteValue[0] && spliteValue[0].length === 4) ||
-			!(
-			  spliteValue[1] &&
-				(spliteValue[1].length === 1 || spliteValue[1].length === 2)
-			) ||
-			!(
-			  spliteValue[2] &&
-				(spliteValue[2].length === 1 || spliteValue[1].length === 2)
-			)
-	  ) {
+	  try {
+	    const maxDate = new Date(getMaxDOBDate()).getTime();
+	    const selectedDate = new Date(value).getTime();
+	    const spliteValue = (value || '').split('-');
+	    if (
+	      maxDate < selectedDate ||
+				Boolean(
+				  new Date(value).toString().toLowerCase().indexOf('invalid') > -1
+				) ||
+				!(spliteValue[0] && spliteValue[0].length === 4) ||
+				!(
+				  spliteValue[1] &&
+					(spliteValue[1].length === 1 || spliteValue[1].length === 2)
+				) ||
+				!(
+				  spliteValue[2] &&
+					(spliteValue[2].length === 1 || spliteValue[1].length === 2)
+				)
+	    ) {
+	      this.setState({
+	        birthday: {
+	          ...this.state.birthday,
+	          value: value,
+	          hasError: true,
+	          error: getTranslation('ERRMSG_DOB'),
+	        },
+	      });
+	    }
+	  } catch (err) {
+	    console.error('validateDob', err);
 	    this.setState({
 	      birthday: {
 	        ...this.state.birthday,

@@ -7,9 +7,10 @@ import {
   getConfigByKey,
   dateNewsFormat,
   removeTags,
+  componentModal,
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
-import { ImageLoader, LoaderRing } from '_components/core';
+import { ImageLoader, LoaderRing , ArticleDetails } from '_components/core';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -18,7 +19,6 @@ class GlobalAnnouncement extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedItem: null,
       moreFetching: false,
     };
   }
@@ -60,8 +60,8 @@ class GlobalAnnouncement extends Component {
 	};
 
 	onClickItem = (data) => {
-	  this.setState({
-	    selectedItem: data,
+	  componentModal({
+	    content: <ArticleDetails data={data} />,
 	  });
 	};
 
@@ -76,75 +76,6 @@ class GlobalAnnouncement extends Component {
 
 	seeAll = () => {
 	  route(`/global-announcements`);
-	};
-
-	renderDetails = (data) => {
-	  if (data) {
-	    return (
-	      <div className={style.detailsWrap}>
-	        <div className={style.backDrop}></div>
-	        <a
-	          className={`${style.pClose}`}
-	          onClick={() => {
-	            this.setState({
-	              selectedItem: null,
-	            });
-	          }}
-	        >
-	          <ImageLoader
-	            src="assets/images/icon_close_white.png"
-	            style={{ container: style.closeBtn }}
-	          />
-	        </a>
-	        <div className={style.pWrap}>
-	          <div className={`${style.pHeader}`}>
-	            <div className={style.pNews}>
-	              <p className={`bold ${style.pTitle}`}>
-	                {getTranslation(data.title)}
-	              </p>
-	            </div>
-	            <div
-	              className={`${style.pHeader} ${
-									this.state.active === 'events' ? style.pHeaderEvents : ''
-								}`}
-	            >
-	              <ImageLoader
-	                src={data.image}
-	                style={{ container: style.pImage }}
-	                lazy
-	              />
-	            </div>
-	            <p className={`${style.pDate}`}>
-	              {dateNewsFormat(data.postedDate)}
-	            </p>
-	            <a href={data.link} className={`${style.pLink}`}>
-	              {data.link}
-	            </a>
-	            <p
-	              className={style.pContent}
-	              dangerouslySetInnerHTML={{
-	                __html: data.desc,
-	              }}
-	            />
-	            <a
-	              id="global-announcement-share"
-	              className={style.pShare}
-	              onClick={() => {
-	                this.onShareAnnouncement(data);
-	              }}
-	            >
-	              <ImageLoader
-	                src="assets/images/share_icon_white.png"
-	                style={{ container: style.pIconShare }}
-	              />
-	              <span>{getTranslation('SHARE')}</span>
-	            </a>
-	          </div>
-	        </div>
-	      </div>
-	    );
-	  }
-	  return null;
 	};
 
 	renderAnnouncements = () => {
@@ -266,7 +197,6 @@ class GlobalAnnouncement extends Component {
 	          )}
 	        </div>
 	      </div>
-	      {selectedItem && this.renderDetails(selectedItem)}
 	    </>
 	  );
 	};

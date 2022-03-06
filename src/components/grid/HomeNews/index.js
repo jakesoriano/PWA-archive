@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
 import { connect } from 'unistore/preact';
-import { ImageLoader } from '_components/core';
+import { ImageLoader , ArticleDetails } from '_components/core';
 import { nativeShare } from '_platform/helpers';
 import { likeShareAnnouncements } from '_mutations';
 import {
@@ -9,14 +9,12 @@ import {
   getTranslation,
   getConfigByKey,
   removeTags,
+  componentModal,
 } from '_helpers';
 import style from './style';
 class HomeNews extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selectedItem: null,
-    };
   }
 	onShareAnnouncement = (item) => {
 	  nativeShare({
@@ -38,79 +36,11 @@ class HomeNews extends Component {
 	  }
 	};
 	onShowPopup = (data) => {
-	  this.setState({
-	    selectedItem: data,
+	  componentModal({
+	    content: <ArticleDetails data={data} />,
 	  });
 	};
-	renderDetails = (data) => {
-	  if (data) {
-	    return (
-	      <div className={style.detailsWrap}>
-	        <div className={style.backDrop}></div>
-	        <a
-	          className={`${style.pClose}`}
-	          onClick={() => {
-	            this.setState({
-	              selectedItem: null,
-	            });
-	          }}
-	        >
-	          <ImageLoader
-	            src="assets/images/icon_close_white.png"
-	            style={{ container: style.closeBtn }}
-	          />
-	        </a>
-	        <div className={style.pWrap}>
-	          <div className={`${style.pHeader}`}>
-	            <div className={style.pNews}>
-	              <p className={`bold ${style.pTitle}`}>
-	                {getTranslation(data.title)}
-	              </p>
-	            </div>
-	            <div
-	              className={`${style.pHeader} ${
-									this.state.active === 'events' ? style.pHeaderEvents : ''
-								}`}
-	            >
-	              <ImageLoader
-	                src={data.image}
-	                style={{ container: style.pImage }}
-	                lazy
-	              />
-	            </div>
-	            <p className={`${style.pDate}`}>
-	              {dateNewsFormat(data.postedDate)}
-	            </p>
-	            <a href={data.link} className={`${style.pLink}`}>
-	              {data.link}
-	            </a>
-	            <p
-	              className={style.pContent}
-	              dangerouslySetInnerHTML={{
-	                __html: data.desc,
-	              }}
-	            />
-	            <a
-	              id="global-announcement-share"
-	              className={style.pShare}
-	              onClick={() => {
-	                this.onShareAnnouncement(data);
-	              }}
-	            >
-	              <ImageLoader
-	                src="assets/images/share_icon_white.png"
-	                style={{ container: style.pIconShare }}
-	              />
-	              <span>{getTranslation('SHARE')}</span>
-	            </a>
-	          </div>
-	        </div>
-	      </div>
-	    );
-	  }
-	  return null;
-	};
-	render = ({ announcements, page }, { selectedItem }) => (
+	render = ({ announcements, page }) => (
 	  <div className={style.pnWrap}>
 	    <div className={style.news}>
 	      {announcements?.data?.length && (
@@ -162,7 +92,6 @@ class HomeNews extends Component {
 	        </a>
 	      </div>
 	    </div>
-	    {selectedItem && this.renderDetails(selectedItem)}
 	  </div>
 	);
 }

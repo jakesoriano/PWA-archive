@@ -1,18 +1,36 @@
 import { h } from 'preact';
 import { componentModal } from '_helpers';
 import Modal from '../Modal';
+import ImageLoader from '../ImageLoader';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
 export default ({ title, content }) => (
   // eslint-disable-next-line react/jsx-no-bind
   <Modal
-    fullscreen
-    title={title}
+    styles={{
+      modal: style.modal,
+      contentWrap: style.contentWrap,
+      content: style.content,
+    }}
+    hideHeader
     cbClose={() => {
       componentModal(null);
     }}
   >
-    <div className={style.componentModal}>{content}</div>
+    <>
+      <a
+        className={`${style.closeBtn}`}
+        onClick={() => {
+          componentModal(null);
+        }}
+      >
+        <ImageLoader
+          src="assets/images/icon_close_white.png"
+          style={{ container: style.imgWrap }}
+        />
+      </a>
+      <div className={style.componentModal}>{content}</div>
+    </>
   </Modal>
 );
