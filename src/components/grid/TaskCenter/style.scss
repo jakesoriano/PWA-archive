@@ -287,25 +287,34 @@
     right: 0;
     left: 0;
     top: 65px;
-    > div {
+    .imgCont {
       width: 95px;
       padding-bottom: 95px;
     }
-    p {
-      width: 57px;
-      color: white;
-      top: 11px;
+    .completedText {
       position: absolute;
-      z-index: 1;
-      font-size: 0.65rem;
-      text-align: center;
-      span {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 123px;
+      z-index: 2;
+      p {
+        width: 57px;
         color: white;
-        display: block;
-        font-size: 1.4rem;
-        font-weight: 900;
+        top: 11px;
+        z-index: 2;
+        font-size: 0.65rem;
+        text-align: center;
+        font-weight: bold;
+        span {
+          color: white;
+          display: block;
+          font-size: 1.4rem;
+          font-weight: bold;
+        }
       }
     }
+   
   }
 
   .heartReact {

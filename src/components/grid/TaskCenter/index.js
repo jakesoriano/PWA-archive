@@ -147,14 +147,19 @@ class TaskCenter extends Component {
 	  return (
 	    <div>
 	      <div className={style.taskShield}>
+	        <div className={style.completedText}>
+	          <p>
+							You have completed{' '}
+	            <span className={style.taskCompletedCount}>
+	              {this.taskCompletedCount()}
+	            </span>{' '}
+							tasks
+	          </p>
+	        </div>
 	        <ImageLoader
 	          src={`assets/images/shield.png`}
 	          style={{ container: style.imgCont }}
 	        />
-	        <p>
-						You have completed{' '}
-	          <span className={style.taskCompletedCount}>2</span> tasks
-	        </p>
 	      </div>
 
 	      <div className={style.heartReact}>
