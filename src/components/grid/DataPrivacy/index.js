@@ -1,10 +1,12 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
-import { updateStore } from '_unistore';
+import { connect } from 'unistore/preact';
+import { store, updateStore } from '_unistore';
 import { 
   ButtonDescription,
   FormInput
 }  from '_components/core';
+import { getConfigByKey } from '_helpers';
 import style from './style.scss';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -44,7 +46,18 @@ class DataPrivacy extends Component {
 	};
 
 	handleContinue = (e) => {
-	  route(`/${this.props.parent}/signup`);
+	  if (this.props?.isUpdateProfile) {
+	    this.props.onAcceptCallback();
+	  } else {
+	    let { signup } = store.getState();
+	    updateStore({
+			  signup: {
+	        ...signup,
+	        acceptedPrivacyPolicy: getConfigByKey(privacyPolicyVersion)
+			  }
+	    });
+	    route(`/${this.props.parent}/signup`);
+	  }
 	};
 	
 	onAcceptedChange = (value) => {
@@ -57,7 +70,7 @@ class DataPrivacy extends Component {
 	  route(`/${this.props.parent}/about-kaya-natin`);
 	};
 
-	renderContent = () => {
+	renderContent = (accepted) => {
 	  return (
 	    <div className={`${style.termsContent} ${this.props.fromLandingPage ? style.landingTermsContent: ''}`}
 	      ref={(el) => {
@@ -182,7 +195,7 @@ class DataPrivacy extends Component {
 	              label="The information I provided is true and correct."
 	              value="yes"
 	              id="accepted"
-	              checked={this.state.accepted}
+	              checked={this.state.accepted || accepted}
 	              onChange={(e) => {
 	                this.setState({
 	                  accepted: true
@@ -195,7 +208,7 @@ class DataPrivacy extends Component {
 	              label="I have read this Privacy Policy Statement and Terms and Conditions"
 	              value="yes"
 	              id="readCondition"
-	              checked={this.state.accepted2}
+	              checked={this.state.accepted2 || accepted}
 	              onChange={() => {
 	                this.setState({
 	                  accepted2: true
@@ -208,7 +221,7 @@ class DataPrivacy extends Component {
 	              label="I acknowledge that this Leni App is created by Kaya Natin volunteers in the spirit of bayanihan where volunteers like me give support to like-minded supporters in the context of political speech."
 	              value="yes"
 	              id="accepted3"
-	              checked={this.state.accepted3}
+	              checked={this.state.accepted3 || accepted}
 	              onChange={(e) => {
 	                this.setState({
 	                  accepted3: true
@@ -221,7 +234,7 @@ class DataPrivacy extends Component {
 	              label="I warrant and represent that I am a Filipino citizen, and that I am committed to obey the Philippine election laws, as well as report any violation thereto."
 	              value="yes"
 	              id="accepted4"
-	              checked={this.state.accepted4}
+	              checked={this.state.accepted4 || accepted}
 	              onChange={(e) => {
 	                this.setState({
 	                  accepted4: true
@@ -235,10 +248,12 @@ class DataPrivacy extends Component {
 	  );
 	}
 
-	render = () => {
+	render = (props) => {
 	  return (
-	    <div className={style.termsWrapper}>
-	      {this.renderContent()}
+	    <div
+	      className={`${style.termsWrapper} ${props?.style}`}
+	    >
+	      {this.renderContent(props?.accepted)}
 	      <div className={style.buttonContainer}>
 	        {this.props.fromLandingPage ? null : (
 	          <ButtonDescription

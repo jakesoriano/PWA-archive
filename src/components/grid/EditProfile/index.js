@@ -17,6 +17,8 @@ import {
   showAlertBox,
   isUserUpdatedProfile,
   circleModal,
+  componentModal,
+  getConfigByKey
 } from '_helpers';
 import {
   FormGroup,
@@ -24,6 +26,7 @@ import {
   FormDropdown,
   ButtonDescription,
 } from '_components/core';
+import { DataPrivacy } from '_components/grid';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -103,6 +106,12 @@ class EditProfile extends Component {
       },
       isRegisteredVoter: {
         value: profile && profile.isRegisteredVoter === false ? 'no' : 'yes',
+        error: '',
+        message: '',
+        hasError: false,
+      },
+      acceptedPrivacyPolicy: {
+        value: profile && profile.acceptedPrivacyPolicy ? profile.acceptedPrivacyPolicy : '',
         error: '',
         message: '',
         hasError: false,
@@ -259,6 +268,15 @@ class EditProfile extends Component {
 	  });
 	};
 
+	onPolicyChange = (value) => {
+	  this.setState({
+	    acceptedPrivacyPolicy: {
+	      ...this.state.acceptedPrivacyPolicy,
+	      value: value,
+	    },
+	  });
+	};
+
 	validateDob = (value) => {
 	  try {
 	    const maxDate = new Date(getMaxDOBDate()).getTime();
@@ -301,6 +319,17 @@ class EditProfile extends Component {
 	  }
 	};
 
+	handleAccept = () => {
+	  let { acceptedPrivacyPolicy } = this.state;
+	  componentModal(null);
+	  this.setState({
+	    acceptedPrivacyPolicy: {
+	      ...acceptedPrivacyPolicy,
+	      value: getConfigByKey('privacyPolicyVersion')
+	    }
+	  })
+	}
+
 	handleContinue = () => {
 	  if (
 	    !this.state.fname.value ||
@@ -336,6 +365,8 @@ class EditProfile extends Component {
 	      barangay: this.state.barangay.value,
 	      isRegisteredVoter:
 					this.state.isRegisteredVoter.value === 'yes' ? true : false,
+	      acceptedPrivacyPolicy:
+						this.state.acceptedPrivacyPolicy.value === 'accepted' ? true : false,
 	    };
 	    displayPageLoader(true);
 	    const isUpdatedProfile = isUserUpdatedProfile();
@@ -386,6 +417,7 @@ class EditProfile extends Component {
 	    municipalityOptions,
 	    barangayOptions,
 	    gender,
+	    acceptedPrivacyPolicy
 	  }
 	) => {
 	  return (
@@ -588,7 +620,7 @@ class EditProfile extends Component {
 	              label="YES"
 	              value="yes"
 	              id="yes"
-	              checked={isRegisteredVoter.value === 'yes'}
+	              checked={acceptedPrivacyPolicy.value === 'yes'}
 	              onInput={(e) => {
 	                this.onVoterChange(e.target.value);
 	              }}
@@ -602,6 +634,33 @@ class EditProfile extends Component {
 	              checked={isRegisteredVoter.value === 'no'}
 	              onInput={(e) => {
 	                this.onVoterChange(e.target.value);
+	              }}
+	            />
+	          </div>
+	        </FormGroup>
+
+	        <FormGroup hasError={acceptedPrivacyPolicy.hasError}>
+	          <div className={style.checkWrap}>
+	            <FormInput
+	              name="policy"
+	              type="checkbox"
+	              id="policy"
+	              value={getConfigByKey('privacyPolicyVersion')}
+	              label={getTranslation('ACCEPT_UPDATED_POLICY')}
+	              checked={acceptedPrivacyPolicy?.value === getConfigByKey('privacyPolicyVersion')}
+	              disabled={acceptedPrivacyPolicy?.value === getConfigByKey('privacyPolicyVersion')}
+	              onInput={(e) => {
+	                this.onPolicyChange(e.target.value);
+	              }}
+	              onClick={() => {
+	                componentModal({
+	                  content: <DataPrivacy
+	                    isUpdateProfile
+	                    style={style.privacy}
+	                    accepted={acceptedPrivacyPolicy.value === getConfigByKey('privacyPolicyVersion') ? true : false}
+	                    onAcceptCallback={this.handleAccept}
+	                  />
+	                });
 	              }}
 	            />
 	          </div>
