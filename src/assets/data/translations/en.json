@@ -325,6 +325,6 @@
 	"TASKS_TODAY": "Tasks Today",
 	"VIEW_LEADERBOARD": "VIEW LEADERBOARD",
 	"GUIDE_TASKS": "Guide: i-click ang <b>link</b> para umpisahan ang task.",
-	"COMPLETED_TASK": "Congratulations! {num} completed.",
+	"COMPLETED_TASK": "Congratulations! {num} task completed.",
 	"CLICK_NEXT_TASK": "Click ang <b>link</b> para sa Next Task"
 }
