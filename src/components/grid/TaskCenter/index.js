@@ -128,12 +128,16 @@ class TaskCenter extends Component {
 	          ) : (
 	            <p
 	              dangerouslySetInnerHTML={{
-	                __html: `${getTranslation('CLICK_NEXT_TASK').replace(
+	                __html: `${getTranslation('COMPLETED_TASK').replace(
 	                  '{num}',
 										`${this.taskCompletedCount()}/${
 											this.props?.tasks?.data?.length
 										}`
-	                )}`,
+	                )} ${
+										!this.props?.tasks?.completed
+										  ? getTranslation('CLICK_NEXT_TASK')
+										  : ''
+									}`,
 	              }}
 	            />
 	          )}
