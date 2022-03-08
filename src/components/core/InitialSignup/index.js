@@ -19,7 +19,7 @@ import {
   nativeSigninApple,
 } from '_platform/helpers';
 import React from 'react';
-import ReCaptchaV2 from 'react-google-recaptcha';
+import ReCAPTCHA from 'react-google-recaptcha';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -50,17 +50,17 @@ class InitialSignup extends Component {
         message: '',
         hasError: false,
       },
-      isLoading: false,
+      // isLoading: false,
       recaptchaChecked: false,
     };
   }
 
-  // ReCAPTCHA
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ isLoading: true });
-    }, 1500);
-  }
+	// ReCAPTCHA
+	// componentDidMount() {
+	//   setTimeout(() => {
+	//     this.setState({ isLoading: true });
+	//   }, 1500);
+	// }
 	onHandleToken = (token) => {
 	  // if token is not null recaptcha checked
 	  if (token !== null) this.setState({ recaptchaChecked: true });
@@ -384,15 +384,15 @@ class InitialSignup extends Component {
 	                className={style.formInput}
 	              />
 	            </FormGroup>
-	            {this.state.isLoading && (
-	              <FormGroup>
-	                <ReCaptchaV2
-	                  sitekey={REACT_APP_SITE_KEY}
-	                  onChange={this.onHandleToken}
-	                  className={style.recaptcha}
-	                />
-	              </FormGroup>
-	            )}
+	            {/* {this.state.isLoading && ( */}
+	            <FormGroup>
+	              <ReCAPTCHA
+	                sitekey={REACT_APP_SITE_KEY}
+	                onChange={this.onHandleToken}
+	                className={style.recaptcha}
+	              />
+	            </FormGroup>
+	            {/* )} */}
 	            <div className={style.buttonWrap}>
 	              <ButtonDescription
 	                onClickCallback={this.onClickSubmit}
