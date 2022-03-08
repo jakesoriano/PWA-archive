@@ -13,10 +13,14 @@ import {
   nativeSigninGoogle,
   nativeSigninApple,
 } from '_platform/helpers';
+import React from "react";
+import ReCaptchaV2 from "react-google-recaptcha";
 // eslint-disable-next-line import/extensions
 import style from './style';
 
 let special_char = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+let emoji_char = /(\p{Emoji_Presentation}|\p{Extended_Pictographic})/gu;
+let REACT_APP_SITE_KEY = "6LcCIsEeAAAAAGPLFYVpbvH-AoVK1mc2RNus3J52";
 
 // eslint-disable-next-line react/prefer-stateless-function
 class InitialSignup extends Component {
@@ -40,9 +44,25 @@ class InitialSignup extends Component {
         error: '',
         message: '',
         hasError: false
-      }
+      },
+      isLoading: false,
+      recaptchaChecked: false,
     };
+    this.recaptchaRef = React.createRef();
   }
+
+  // ReCAPTCHA
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ isLoading: true });
+    }, 1500);
+  }
+  onHandleToken = (token) => {
+    // if token is not null recaptcha checked
+    if (token !== null) this.setState({ recaptchaChecked: true });
+  }
+
+  // Form Validations
 	onClickSubmit = () => {
 	  if (!this.state.username.value || 
       this.state.username.hasError || 
@@ -98,7 +118,15 @@ class InitialSignup extends Component {
           value,
           hasError: true,
           error: getTranslation('SPECIAL_CHARACTERS')
-
+        }
+      });
+    } else if (value.match(emoji_char)) {
+      this.setState({
+        username: {
+          ...this.state.username,
+          value,
+          hasError: true,
+          error: getTranslation('EMOJI_CHARACTERS')
         }
       });
     } else {
@@ -340,12 +368,31 @@ class InitialSignup extends Component {
 	                className={style.formInput}
 	              />
 	            </FormGroup>
+              {this.state.isLoading && (
+                <FormGroup>
+                  <ReCaptchaV2 
+                    ref={this.recaptchaRef}
+                    sitekey={REACT_APP_SITE_KEY}
+                    onChange={this.onHandleToken}
+                    className={style.recaptcha}
+                  />
+                </FormGroup>
+              )}
 	            <div className={style.buttonWrap}>
 	              <ButtonDescription
 	                onClickCallback={this.onClickSubmit}
 	                text={getTranslation('SIGNUP_CONTINUE')}
 	                bottomDescription=""
 	                buttonStyle={`${style.buttonStyle}`}
+                  isDisabled={
+                    this.state.username.value == '' || 
+                    this.state.password.value == '' || 
+                    this.state.confirm_password.value == '' ||
+                    this.state.username.hasError || 
+                    this.state.password.hasError || 
+                    this.state.confirm_password.hasError ||
+                    !this.state.recaptchaChecked
+                  }
 	              />
 	              <div onClick={toggleSignupForm}>
 	                <p className={style.backButton}> {getTranslation('BACK')} </p>
