@@ -46,14 +46,14 @@ class DataPrivacy extends Component {
 	};
 
 	handleContinue = (e) => {
-	  if (this.props?.isUpdateProfile) {
+	  if (this.props.onAcceptCallback) {
 	    this.props.onAcceptCallback();
 	  } else {
 	    let { signup } = store.getState();
 	    updateStore({
 			  signup: {
 	        ...signup,
-	        acceptedPrivacyPolicy: getConfigByKey(privacyPolicyVersion)
+	        acceptedPrivacyPolicy: getConfigByKey('privacyPolicyVersion')
 			  }
 	    });
 	    route(`/${this.props.parent}/signup`);
@@ -70,7 +70,7 @@ class DataPrivacy extends Component {
 	  route(`/${this.props.parent}/about-kaya-natin`);
 	};
 
-	renderContent = (accepted) => {
+	renderContent = () => {
 	  return (
 	    <div className={`${style.termsContent} ${this.props.fromLandingPage ? style.landingTermsContent: ''}`}
 	      ref={(el) => {
@@ -195,7 +195,7 @@ class DataPrivacy extends Component {
 	              label="The information I provided is true and correct."
 	              value="yes"
 	              id="accepted"
-	              checked={this.state.accepted || accepted}
+	              checked={this.state.accepted}
 	              onChange={(e) => {
 	                this.setState({
 	                  accepted: true
@@ -208,7 +208,7 @@ class DataPrivacy extends Component {
 	              label="I have read this Privacy Policy Statement and Terms and Conditions"
 	              value="yes"
 	              id="readCondition"
-	              checked={this.state.accepted2 || accepted}
+	              checked={this.state.accepted2}
 	              onChange={() => {
 	                this.setState({
 	                  accepted2: true
@@ -221,7 +221,7 @@ class DataPrivacy extends Component {
 	              label="I acknowledge that this Leni App is created by Kaya Natin volunteers in the spirit of bayanihan where volunteers like me give support to like-minded supporters in the context of political speech."
 	              value="yes"
 	              id="accepted3"
-	              checked={this.state.accepted3 || accepted}
+	              checked={this.state.accepted3}
 	              onChange={(e) => {
 	                this.setState({
 	                  accepted3: true
@@ -234,7 +234,7 @@ class DataPrivacy extends Component {
 	              label="I warrant and represent that I am a Filipino citizen, and that I am committed to obey the Philippine election laws, as well as report any violation thereto."
 	              value="yes"
 	              id="accepted4"
-	              checked={this.state.accepted4 || accepted}
+	              checked={this.state.accepted4}
 	              onChange={(e) => {
 	                this.setState({
 	                  accepted4: true
@@ -253,7 +253,7 @@ class DataPrivacy extends Component {
 	    <div
 	      className={`${style.termsWrapper} ${props?.style}`}
 	    >
-	      {this.renderContent(props?.accepted)}
+	      {this.renderContent()}
 	      <div className={style.buttonContainer}>
 	        {this.props.fromLandingPage ? null : (
 	          <ButtonDescription

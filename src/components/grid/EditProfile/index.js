@@ -655,9 +655,7 @@ class EditProfile extends Component {
 	              onClick={() => {
 	                componentModal({
 	                  content: <DataPrivacy
-	                    isUpdateProfile
 	                    style={style.privacy}
-	                    accepted={acceptedPrivacyPolicy.value === getConfigByKey('privacyPolicyVersion') ? true : false}
 	                    onAcceptCallback={this.handleAccept}
 	                  />
 	                });
