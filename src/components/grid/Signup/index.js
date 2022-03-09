@@ -12,7 +12,7 @@ import {
   getBarangay,
   displayPageLoader,
   showAlertBox,
-  getMobilePrefixOptions
+  getMobilePrefixOptions,
 } from '_helpers';
 import {
   FormGroup,
@@ -102,7 +102,7 @@ class Signup extends Component {
         hasError: false,
       },
       mobilePrefix: {
-        value: props.signup ? props.signup.mobilePrefix : '',
+        value: props.signup ? props.signup.mobilePrefix : '+63',
         error: '',
         message: '',
         hasError: false,
@@ -292,7 +292,7 @@ class Signup extends Component {
 	      value: value,
 	      hasError: !Boolean(value),
 	      error: !Boolean(value) ? 'REQUIRED' : '',
-	    }
+	    },
 	  });
 	};
 
@@ -448,7 +448,7 @@ class Signup extends Component {
 	    barangayOptions,
 	    gender,
 	    mobilePrefix,
-	    mobilePrefixOptions
+	    mobilePrefixOptions,
 	  }
 	) => {
 	  return (
@@ -613,9 +613,7 @@ class Signup extends Component {
 	              style={{ container: style.mobileContainer }}
 	            />
 	          </div>
-	          <p className={style.message}>
-	            {getTranslation(mobile.message)}
-	          </p>
+	          <p className={style.message}>{getTranslation(mobile.message)}</p>
 	        </FormGroup>
 	        {/* 
 					<FormGroup label="REGION" hasError={region.hasError}>
