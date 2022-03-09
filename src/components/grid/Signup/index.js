@@ -197,14 +197,25 @@ class Signup extends Component {
 	};
 
 	onMobileChange = (value) => {
-	  this.setState({
-	    mobile: {
-	      ...this.state.mobile,
-	      value: (value || '').slice(0, 13),
-	      hasError: !Boolean(value),
-	      error: !Boolean(value) ? 'REQUIRED' : '',
-	    },
-	  });
+	  if (value && value.length < 8) {
+	    this.setState({
+	      mobile: {
+	        ...this.state.mobile,
+	        value,
+	        hasError: true,
+	        error: getTranslation('MINIMUM_CHARACTERS'),
+	      },
+	    });
+	  } else {
+      this.setState({
+        mobile: {
+          ...this.state.mobile,
+          value: (value || '').slice(0, 13),
+          hasError: !Boolean(value),
+          error: !Boolean(value) ? 'REQUIRED' : '',
+        },
+      }); 
+    }
 	};
 
 	onRegionChange = (value) => {
@@ -285,7 +296,7 @@ class Signup extends Component {
 	  });
 	};
 
-	onmobilePrefixChange = (value) => {
+	onMobilePrefixChange = (value) => {
 	  this.setState({
 	    mobilePrefix: {
 	      ...this.state.mobilePrefix,
@@ -351,7 +362,7 @@ class Signup extends Component {
 	    // this.onLnameChange(this.state.lname.value);
 	    // this.onGenderChange(this.state.gender.value);
 	    // this.onDobChange(this.state.birthday.value);
-	    this.onmobilePrefixChange(this.state.mobile.value);
+	    this.onMobilePrefixChange(this.state.mobile.value);
 	    this.onMobileChange(this.state.mobile.value);
 	    // this.onRegionChange(this.state.region.value);
 	    // this.onProvinceChange(this.state.province.value);
@@ -587,10 +598,10 @@ class Signup extends Component {
 	              getValue={(option) => option.value}
 	              getText={(option) => option.text}
 	              onBlur={(e) => {
-	                this.onmobilePrefixChange(e.target.value);
+	                this.onMobilePrefixChange(e.target.value);
 	              }}
 	              onChange={(e) => {
-	                this.onmobilePrefixChange(e.target.value);
+	                this.onMobilePrefixChange(e.target.value);
 	              }}
 	              hasError={mobilePrefix.hasError}
 	              error={mobilePrefix.error}
@@ -599,7 +610,6 @@ class Signup extends Component {
 	            <FormInput
 	              value={mobile.value}
 	              type="number"
-	              placeholder={'919...'}
 	              max={10}
 	              onBlur={(e) => {
 	                this.onMobileChange(e.target.value);
