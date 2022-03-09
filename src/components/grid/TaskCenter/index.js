@@ -205,12 +205,12 @@ class TaskCenter extends Component {
 	        </div>
 
 	        {/* Go to leaderboards */}
-	        <p
+	        {/* <p
 	          onClick={() => route('leaderboard', true)}
 	          className={style.redirect}
 	        >
 	          {getTranslation('VIEW_LEADERBOARD')}
-	        </p>
+	        </p> */}
 	      </div>
 	    );
 	  } else {
