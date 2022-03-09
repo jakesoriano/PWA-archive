@@ -424,7 +424,7 @@ class EditProfile extends Component {
 	    barangayOptions,
 	    gender,
 	    acceptedPrivacyPolicy,
-		mobilePrefix
+	    mobilePrefix
 	  }
 	) => {
 	  return (

@@ -374,7 +374,7 @@ class Signup extends Component {
 	              lname: '', // this.state.lname.value,
 	              // 'gender': this.state.gender.value,
 	              birthday: this.state.birthday.value,
-                mobilePrefix: this.state.mobilePrefix.value,
+	              mobilePrefix: this.state.mobilePrefix.value,
 	              mobile: this.state.mobile.value,
 	              region: this.state.region.value,
 	              province: this.state.province.value,
@@ -447,8 +447,8 @@ class Signup extends Component {
 	    municipalityOptions,
 	    barangayOptions,
 	    gender,
-      mobilePrefix,
-      mobilePrefixOptions
+	    mobilePrefix,
+	    mobilePrefixOptions
 	  }
 	) => {
 	  return (
@@ -579,43 +579,43 @@ class Signup extends Component {
 	          hasError={mobile.hasError}
 	          className={style.formGroup}
 	        >
-            <div className={style.mobileGroup}>
-              <FormDropdown
-                className={style.mobilePrefix}
-                value={mobilePrefix.value}
-                options={mobilePrefixOptions}
-                getValue={(option) => option.value}
-                getText={(option) => option.text}
-                onBlur={(e) => {
-                  this.onmobilePrefixChange(e.target.value);
-                }}
-                onChange={(e) => {
-                  this.onmobilePrefixChange(e.target.value);
-                }}
-                hasError={mobilePrefix.hasError}
-                error={mobilePrefix.error}
-                message={mobilePrefix.message}
-              />
-              <FormInput
-                value={mobile.value}
-                type="number"
-                placeholder={'919...'}
-                max={10}
-                onBlur={(e) => {
-                  this.onMobileChange(e.target.value);
-                }}
-                onInput={(e) => {
-                  this.onMobileChange(e.target.value);
-                }}
-                hasError={mobile.hasError}
-                error={mobile.error}
-                className={style.formInput}
-                style={{container: style.mobileContainer}}
-              />
-            </div>
-            <p className={style.message}>
-              {getTranslation(mobile.message)}
-            </p>
+	          <div className={style.mobileGroup}>
+	            <FormDropdown
+	              className={style.mobilePrefix}
+	              value={mobilePrefix.value}
+	              options={mobilePrefixOptions}
+	              getValue={(option) => option.value}
+	              getText={(option) => option.text}
+	              onBlur={(e) => {
+	                this.onmobilePrefixChange(e.target.value);
+	              }}
+	              onChange={(e) => {
+	                this.onmobilePrefixChange(e.target.value);
+	              }}
+	              hasError={mobilePrefix.hasError}
+	              error={mobilePrefix.error}
+	              message={mobilePrefix.message}
+	            />
+	            <FormInput
+	              value={mobile.value}
+	              type="number"
+	              placeholder={'919...'}
+	              max={10}
+	              onBlur={(e) => {
+	                this.onMobileChange(e.target.value);
+	              }}
+	              onInput={(e) => {
+	                this.onMobileChange(e.target.value);
+	              }}
+	              hasError={mobile.hasError}
+	              error={mobile.error}
+	              className={style.formInput}
+	              style={{ container: style.mobileContainer }}
+	            />
+	          </div>
+	          <p className={style.message}>
+	            {getTranslation(mobile.message)}
+	          </p>
 	        </FormGroup>
 	        {/* 
 					<FormGroup label="REGION" hasError={region.hasError}>
