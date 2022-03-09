@@ -402,21 +402,38 @@ class InitialSignup extends Component {
 	              </FormGroup>
 	            )}
 	            <div className={style.buttonWrap}>
-	              <ButtonDescription
-	                onClickCallback={this.onClickSubmit}
-	                text={getTranslation('SIGNUP_CONTINUE')}
-	                bottomDescription=""
-	                buttonStyle={`${style.buttonStyle}`}
-	                isDisabled={
-	                  this.state.username.value == '' ||
-										this.state.password.value == '' ||
-										this.state.confirm_password.value == '' ||
-										this.state.username.hasError ||
-										this.state.password.hasError ||
-										this.state.confirm_password.hasError ||
-										!this.state.recaptchaChecked
-	                }
-	              />
+	              {process.env.PLATFORM !== 'ios' ? (
+	                <ButtonDescription
+	                  onClickCallback={this.onClickSubmit}
+	                  text={getTranslation('SIGNUP_CONTINUE')}
+	                  bottomDescription=""
+	                  buttonStyle={`${style.buttonStyle}`}
+	                  isDisabled={
+	                    this.state.username.value == '' ||
+											this.state.password.value == '' ||
+											this.state.confirm_password.value == '' ||
+											this.state.username.hasError ||
+											this.state.password.hasError ||
+											this.state.confirm_password.hasError ||
+											!this.state.recaptchaChecked
+	                  }
+	                />
+	              ) : (
+	                <ButtonDescription
+	                  onClickCallback={this.onClickSubmit}
+	                  text={getTranslation('SIGNUP_CONTINUE')}
+	                  bottomDescription=""
+	                  buttonStyle={`${style.buttonStyle}`}
+	                  isDisabled={
+	                    this.state.username.value == '' ||
+											this.state.password.value == '' ||
+											this.state.confirm_password.value == '' ||
+											this.state.username.hasError ||
+											this.state.password.hasError ||
+											this.state.confirm_password.hasError
+	                  }
+	                />
+	              )}
 	              <div onClick={toggleSignupForm}>
 	                <p className={style.backButton}> {getTranslation('BACK')} </p>
 	              </div>
