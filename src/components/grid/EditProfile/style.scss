@@ -33,6 +33,37 @@
     input:disabled {
       color: #aaa;
     }
+    .checkWrap {
+      display: flex;
+      > div {
+        flex-grow: 1;
+        label {
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+        }
+        input[type="checkbox"] {
+          display: none;
+        }
+        input[type="checkbox"] + *::before {
+          content: "";
+          display: inline-block;
+          vertical-align: bottom;
+          width: 14px;
+          height: 14px;
+          margin-right: 5px;
+          border-radius: 2px;
+          position: relative;
+          border: 1px solid $gray;
+        }
+        input[type="checkbox"]:checked + *::before {
+          background: $primary;
+        }
+      }
+    }
+    input:disabled {
+      color: #aaa;
+    }
     .displayOnly {
       border: none;
       border-radius: 0;
@@ -41,5 +72,10 @@
       width: 100%;
       background: transparent;
     }
+  }
+}
+.privacy {
+  * {
+    color: #737373;
   }
 }

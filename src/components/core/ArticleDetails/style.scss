@@ -1,0 +1,67 @@
+@import '../../../style/variables.scss';
+.pWrap {
+  * {
+    color: #000;
+  }
+  .pHeader {
+    display: flex;
+    flex-direction: column;
+    .pImage {
+      padding-bottom: 200px;
+      width: 100%;
+      margin: 15px 0;
+    }
+    .pNews {
+      .pTitle{
+        padding: 10px 0;
+        font-size: 1.2rem;
+        color: $primary_layout;
+        text-align: center;
+      }
+    }
+  }
+  .pVideo {
+    margin: 15px 0;
+    border-radius: 5px;
+  }
+  .pDate {
+    font-size: 0.875rem;
+    padding: 10px 10px 0;
+  }
+  .pLink {
+    font-size: 0.875rem;
+    padding: 0 10px 10px;
+    overflow-wrap: break-word;
+    color: $pink_text;
+  }
+  .pContent {
+    font-size: 0.8rem;
+    padding: 0 10px;
+    overflow-wrap: break-word;
+    br {
+      display: block;
+      content: "";
+      margin: 10px 0;
+    }
+  }
+  .pShare {
+    background: $primary;
+    display: flex;
+    width: 100px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    width: max-content;
+    margin-top: 20px;
+    border-radius: 6px;
+
+    .pIconShare {
+      padding-bottom: 18px;
+      width: 18px;
+      margin-right: 5px;
+    }
+    span {
+      color: #fff;
+      font-size: 1rem;
+    }
+  }
+}

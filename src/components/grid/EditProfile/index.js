@@ -17,6 +17,8 @@ import {
   showAlertBox,
   isUserUpdatedProfile,
   circleModal,
+  componentModal,
+  getConfigByKey
 } from '_helpers';
 import {
   FormGroup,
@@ -24,6 +26,7 @@ import {
   FormDropdown,
   ButtonDescription,
 } from '_components/core';
+import { DataPrivacy } from '_components/grid';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
@@ -71,6 +74,12 @@ class EditProfile extends Component {
         message: '',
         hasError: false,
       },
+      mobilePrefix: {
+        value: profile.mobilePrefix ? profile.mobilePrefix : '',
+        error: '',
+        message: '',
+        hasError: false,
+      },
       mobile: {
         value: profile.mobile ? profile.mobile : '',
         error: '',
@@ -103,6 +112,12 @@ class EditProfile extends Component {
       },
       isRegisteredVoter: {
         value: profile && profile.isRegisteredVoter === false ? 'no' : 'yes',
+        error: '',
+        message: '',
+        hasError: false,
+      },
+      acceptedPrivacyPolicy: {
+        value: profile && profile.acceptedPrivacyPolicy ? profile.acceptedPrivacyPolicy : '',
         error: '',
         message: '',
         hasError: false,
@@ -259,25 +274,46 @@ class EditProfile extends Component {
 	  });
 	};
 
+	onPolicyChange = (value) => {
+	  this.setState({
+	    acceptedPrivacyPolicy: {
+	      ...this.state.acceptedPrivacyPolicy,
+	      value: value,
+	    },
+	  });
+	};
+
 	validateDob = (value) => {
-	  const maxDate = new Date(getMaxDOBDate()).getTime();
-	  const selectedDate = new Date(value).getTime();
-	  const spliteValue = (value || '').split('-');
-	  if (
-	    maxDate < selectedDate ||
-			Boolean(
-			  new Date(value).toString().toLowerCase().indexOf('invalid') > -1
-			) ||
-			!(spliteValue[0] && spliteValue[0].length === 4) ||
-			!(
-			  spliteValue[1] &&
-				(spliteValue[1].length === 1 || spliteValue[1].length === 2)
-			) ||
-			!(
-			  spliteValue[2] &&
-				(spliteValue[2].length === 1 || spliteValue[1].length === 2)
-			)
-	  ) {
+	  try {
+	    const maxDate = new Date(getMaxDOBDate()).getTime();
+	    const selectedDate = new Date(value).getTime();
+	    const spliteValue = (value || '').split('-');
+	    if (
+	      maxDate < selectedDate ||
+				Boolean(
+				  new Date(value).toString().toLowerCase().indexOf('invalid') > -1
+				) ||
+				!(spliteValue[0] && spliteValue[0].length === 4) ||
+				!(
+				  spliteValue[1] &&
+					(spliteValue[1].length === 1 || spliteValue[1].length === 2)
+				) ||
+				!(
+				  spliteValue[2] &&
+					(spliteValue[2].length === 1 || spliteValue[1].length === 2)
+				)
+	    ) {
+	      this.setState({
+	        birthday: {
+	          ...this.state.birthday,
+	          value: value,
+	          hasError: true,
+	          error: getTranslation('ERRMSG_DOB'),
+	        },
+	      });
+	    }
+	  } catch (err) {
+	    console.error('validateDob', err);
 	    this.setState({
 	      birthday: {
 	        ...this.state.birthday,
@@ -288,6 +324,17 @@ class EditProfile extends Component {
 	    });
 	  }
 	};
+
+	handleAccept = () => {
+	  let { acceptedPrivacyPolicy } = this.state;
+	  componentModal(null);
+	  this.setState({
+	    acceptedPrivacyPolicy: {
+	      ...acceptedPrivacyPolicy,
+	      value: getConfigByKey('acceptedPrivacyPolicy')
+	    }
+	  })
+	}
 
 	handleContinue = () => {
 	  if (
@@ -324,6 +371,8 @@ class EditProfile extends Component {
 	      barangay: this.state.barangay.value,
 	      isRegisteredVoter:
 					this.state.isRegisteredVoter.value === 'yes' ? true : false,
+	      acceptedPrivacyPolicy:
+						this.state.acceptedPrivacyPolicy.value,
 	    };
 	    displayPageLoader(true);
 	    const isUpdatedProfile = isUserUpdatedProfile();
@@ -374,6 +423,8 @@ class EditProfile extends Component {
 	    municipalityOptions,
 	    barangayOptions,
 	    gender,
+	    acceptedPrivacyPolicy,
+	    mobilePrefix
 	  }
 	) => {
 	  return (
@@ -480,7 +531,7 @@ class EditProfile extends Component {
 							value={mobile.value}
 							disabled={true}
 						/> */}
-	          <p className={style.displayOnly}>{mobile.value}</p>
+	          <p className={style.displayOnly}>{`${mobilePrefix.value}${mobile.value}`}</p>
 	        </FormGroup>
 
 	        <FormGroup label="REGION" hasError={region.hasError}>
@@ -590,6 +641,31 @@ class EditProfile extends Component {
 	              checked={isRegisteredVoter.value === 'no'}
 	              onInput={(e) => {
 	                this.onVoterChange(e.target.value);
+	              }}
+	            />
+	          </div>
+	        </FormGroup>
+
+	        <FormGroup hasError={acceptedPrivacyPolicy.hasError}>
+	          <div className={style.checkWrap}>
+	            <FormInput
+	              name="policy"
+	              type="checkbox"
+	              id="policy"
+	              value={getConfigByKey('acceptedPrivacyPolicy')}
+	              label={getTranslation('ACCEPT_UPDATED_POLICY')}
+	              checked={acceptedPrivacyPolicy?.value === getConfigByKey('acceptedPrivacyPolicy')}
+	              disabled={acceptedPrivacyPolicy?.value === getConfigByKey('acceptedPrivacyPolicy')}
+	              onInput={(e) => {
+	                this.onPolicyChange(e.target.value);
+	              }}
+	              onClick={() => {
+	                componentModal({
+	                  content: <DataPrivacy
+	                    style={style.privacy}
+	                    onAcceptCallback={this.handleAccept}
+	                  />
+	                });
 	              }}
 	            />
 	          </div>

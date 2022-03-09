@@ -87,7 +87,8 @@
 	"SOCIAL_MEDIA": "Sign in using your social media accounts",
 	"FOLLOW_COMMUNITIES": "Follow KakamPink Communities in Philippines",
 	"MINIMUM_CHARACTERS": "Minimum of 8 Characters.",
-	"SPECIAL_CHARACTERS": "Do not use special characters",
+	"SPECIAL_CHARACTERS": "Do not use special characters or spaces",
+	"EMOJI_CHARACTERS": "Do not use emojis",
 	"PASSWORD_UNMATCH": "Passwords do not match",
 	"LOGOUT": "Logout",
 	"SIGNIN": "Sign in",
@@ -321,5 +322,11 @@
 	"FEATURED": "Featured",
 	"NO_INVITE": "Make your first invite today!",
 	"NARRATE_CONCERN": "Narrate your concern",
-	"SAVE_PROFILE": "Save Profile"
+	"SAVE_PROFILE": "Save Profile",
+	"TASKS_TODAY": "Tasks Today",
+	"VIEW_LEADERBOARD": "VIEW LEADERBOARD",
+	"GUIDE_TASKS": "Guide: i-click ang <b>link</b> para umpisahan ang task.",
+	"COMPLETED_TASK": "Congratulations! {num} task completed.",
+	"CLICK_NEXT_TASK": "Click ang <b>link</b> para sa Next Task",
+	"ACCEPT_UPDATED_POLICY": "Accept our updated privacy policy"
 }
