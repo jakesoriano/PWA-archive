@@ -53,24 +53,24 @@ class InitialSignup extends Component {
       isLoading: false,
       recaptchaChecked: false,
     };
-    this.recaptchaRef = React.createRef();
+    // this.recaptchaRef = React.createRef();
   }
 
-  // ReCAPTCHA
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ isLoading: true });
-    }, 1500);
-    // console.log("sarsa didMount - reCaptcha Ref-", this.recaptchaRef);
-  }
-	onHandleToken = (token) => {
-	  // console.log("sarsa captcha token:", token);
-	  // if token is not null recaptcha checked
-	  if (token !== null) this.setState({ recaptchaChecked: true });
-	};
-	asyncScriptOnLoad = () => {
-	  // console.log("sarsa scriptLoad - reCaptcha Ref-", this.recaptchaRef);
-	};
+  // // ReCAPTCHA
+  // componentDidMount() {
+  //   setTimeout(() => {
+  //     this.setState({ isLoading: true });
+  //   }, 1500);
+  //   // console.log("sarsa didMount - reCaptcha Ref-", this.recaptchaRef);
+  // }
+  // onHandleToken = (token) => {
+  //   // console.log("sarsa captcha token:", token);
+  //   // if token is not null recaptcha checked
+  //   if (token !== null) this.setState({ recaptchaChecked: true });
+  // };
+  // asyncScriptOnLoad = () => {
+  //   // console.log("sarsa scriptLoad - reCaptcha Ref-", this.recaptchaRef);
+  // };
 
 	// Form Validations
 	onClickSubmit = () => {
@@ -390,7 +390,7 @@ class InitialSignup extends Component {
 	                className={style.formInput}
 	              />
 	            </FormGroup>
-	            {this.state.isLoading && process.env.PLATFORM !== 'ios' && (
+	            {/* {this.state.isLoading && process.env.PLATFORM !== 'ios' && (
 	              <FormGroup>
 	                <ReCAPTCHA
 	                  ref={this.recaptchaRef}
@@ -400,9 +400,9 @@ class InitialSignup extends Component {
 	                  className={style.recaptcha}
 	                />
 	              </FormGroup>
-	            )}
+	            )} */}
 	            <div className={style.buttonWrap}>
-	              {process.env.PLATFORM !== 'ios' ? (
+	              {/* {process.env.PLATFORM !== 'ios' ? (
 	                <ButtonDescription
 	                  onClickCallback={this.onClickSubmit}
 	                  text={getTranslation('SIGNUP_CONTINUE')}
@@ -418,22 +418,22 @@ class InitialSignup extends Component {
 											!this.state.recaptchaChecked
 	                  }
 	                />
-	              ) : (
-	                <ButtonDescription
-	                  onClickCallback={this.onClickSubmit}
-	                  text={getTranslation('SIGNUP_CONTINUE')}
-	                  bottomDescription=""
-	                  buttonStyle={`${style.buttonStyle}`}
-	                  isDisabled={
-	                    this.state.username.value == '' ||
-											this.state.password.value == '' ||
-											this.state.confirm_password.value == '' ||
-											this.state.username.hasError ||
-											this.state.password.hasError ||
-											this.state.confirm_password.hasError
-	                  }
-	                />
-	              )}
+	              ) : ( */}
+	              <ButtonDescription
+	                onClickCallback={this.onClickSubmit}
+	                text={getTranslation('SIGNUP_CONTINUE')}
+	                bottomDescription=""
+	                buttonStyle={`${style.buttonStyle}`}
+	                isDisabled={
+	                  this.state.username.value == '' ||
+										this.state.password.value == '' ||
+										this.state.confirm_password.value == '' ||
+										this.state.username.hasError ||
+										this.state.password.hasError ||
+										this.state.confirm_password.hasError
+	                }
+	              />
+	              {/* )} */}
 	              <div onClick={toggleSignupForm}>
 	                <p className={style.backButton}> {getTranslation('BACK')} </p>
 	              </div>
