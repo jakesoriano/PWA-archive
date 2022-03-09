@@ -34,7 +34,7 @@ class ArticleDetails extends Component {
 	            {getTranslation(data.title)}
 	          </p>
 	        </div>
-	        {data.image && (
+	        {!data.video && data.image && (
 	          <div
 	            className={`${style.pHeader} ${
 								this.state.active === 'events' ? style.pHeaderEvents : ''
@@ -47,6 +47,15 @@ class ArticleDetails extends Component {
 	            />
 	          </div>
 	        )}
+           {data.video && (
+             <iframe
+               className={style.pVideo}
+               width="100%"
+               height="auto"
+               frameBorder="0"
+               src={data.video}
+             ></iframe>
+           )}
 	        <p className={`${style.pDate}`}>{dateNewsFormat(data.postedDate)}</p>
 	        <a href={data.link} className={`${style.pLink}`}>
 	          {data.link}
