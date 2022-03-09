@@ -50,6 +50,21 @@
 			padding-bottom: 5px;
 			color: #282828;
 		}
+		.mobileGroup {
+			display: flex;
+			.dialCode {
+				width: fit-content;
+			}
+			.mobileContainer {
+				margin-left: 5px;
+				flex: 1;
+			}
+		}
+		.message {
+			font-size: 0.6rem;
+			margin: 5px 0;
+			display: block;
+		}
 		.formInput {
 			border: 1px solid #d3d3d3;
 			padding: 10px;

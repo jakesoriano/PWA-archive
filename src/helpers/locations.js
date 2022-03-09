@@ -1,4 +1,4 @@
-import { data } from '_constant';
+import { data, countryCodes } from '_constant';
 
 export function getRegions () {
   try {
@@ -45,6 +45,19 @@ export function getBarangay (r, pKey, mKey) {
       return {
         value: key,
         text: key
+      }
+    });
+  } catch (error) {
+    return [];
+  }
+}
+
+export function getMobilePrefixOptions () {
+  try {
+    return countryCodes.map(i => {
+      return {
+        value: i.dial_code,
+        text: `${i.dial_code} (${i.code})`
       }
     });
   } catch (error) {
