@@ -390,7 +390,7 @@ class InitialSignup extends Component {
 	                className={style.formInput}
 	              />
 	            </FormGroup>
-	            {this.state.isLoading && (
+	            {this.state.isLoading && process.env.PLATFORM !== 'ios' && (
 	              <FormGroup>
 	                <ReCAPTCHA
 	                  ref={this.recaptchaRef}
