@@ -331,7 +331,7 @@ class EditProfile extends Component {
 	  this.setState({
 	    acceptedPrivacyPolicy: {
 	      ...acceptedPrivacyPolicy,
-	      value: getConfigByKey('privacyPolicyVersion')
+	      value: getConfigByKey('acceptedPrivacyPolicy')
 	    }
 	  })
 	}
@@ -372,7 +372,7 @@ class EditProfile extends Component {
 	      isRegisteredVoter:
 					this.state.isRegisteredVoter.value === 'yes' ? true : false,
 	      acceptedPrivacyPolicy:
-						this.state.acceptedPrivacyPolicy.value === 'accepted' ? true : false,
+						this.state.acceptedPrivacyPolicy.value,
 	    };
 	    displayPageLoader(true);
 	    const isUpdatedProfile = isUserUpdatedProfile();
@@ -652,10 +652,10 @@ class EditProfile extends Component {
 	              name="policy"
 	              type="checkbox"
 	              id="policy"
-	              value={getConfigByKey('privacyPolicyVersion')}
+	              value={getConfigByKey('acceptedPrivacyPolicy')}
 	              label={getTranslation('ACCEPT_UPDATED_POLICY')}
-	              checked={acceptedPrivacyPolicy?.value === getConfigByKey('privacyPolicyVersion')}
-	              disabled={acceptedPrivacyPolicy?.value === getConfigByKey('privacyPolicyVersion')}
+	              checked={acceptedPrivacyPolicy?.value === getConfigByKey('acceptedPrivacyPolicy')}
+	              disabled={acceptedPrivacyPolicy?.value === getConfigByKey('acceptedPrivacyPolicy')}
 	              onInput={(e) => {
 	                this.onPolicyChange(e.target.value);
 	              }}
