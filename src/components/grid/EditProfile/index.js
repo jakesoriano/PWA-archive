@@ -74,6 +74,12 @@ class EditProfile extends Component {
         message: '',
         hasError: false,
       },
+      mobilePrefix: {
+        value: profile.mobilePrefix ? profile.mobilePrefix : '',
+        error: '',
+        message: '',
+        hasError: false,
+      },
       mobile: {
         value: profile.mobile ? profile.mobile : '',
         error: '',
@@ -417,7 +423,8 @@ class EditProfile extends Component {
 	    municipalityOptions,
 	    barangayOptions,
 	    gender,
-	    acceptedPrivacyPolicy
+	    acceptedPrivacyPolicy,
+	    mobilePrefix
 	  }
 	) => {
 	  return (
@@ -524,7 +531,7 @@ class EditProfile extends Component {
 							value={mobile.value}
 							disabled={true}
 						/> */}
-	          <p className={style.displayOnly}>{mobile.value}</p>
+	          <p className={style.displayOnly}>{`${mobilePrefix.value}${mobile.value}`}</p>
 	        </FormGroup>
 
 	        <FormGroup label="REGION" hasError={region.hasError}>
@@ -620,7 +627,7 @@ class EditProfile extends Component {
 	              label="YES"
 	              value="yes"
 	              id="yes"
-	              checked={acceptedPrivacyPolicy.value === 'yes'}
+	              checked={isRegisteredVoter.value === 'yes'}
 	              onInput={(e) => {
 	                this.onVoterChange(e.target.value);
 	              }}

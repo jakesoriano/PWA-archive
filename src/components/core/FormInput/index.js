@@ -37,7 +37,7 @@ class FormInput extends Component {
 					['checkbox', 'radio'].indexOf(props.type) > -1
 					  ? style.isCheckRadio
 					  : ''
-				}`}
+				} ${props.style?.container}`}
 	    >
 	      {props.type === 'textarea' ? (
 	        <textarea

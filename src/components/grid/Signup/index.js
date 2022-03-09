@@ -12,6 +12,7 @@ import {
   getBarangay,
   displayPageLoader,
   showAlertBox,
+  getMobilePrefixOptions
 } from '_helpers';
 import {
   FormGroup,
@@ -39,6 +40,7 @@ class Signup extends Component {
           props.signup.municipality
 				  )
         : [],
+      mobilePrefixOptions: getMobilePrefixOptions(),
       fname: {
         value: props.signup ? props.signup.fname : '',
         error: '',
@@ -95,6 +97,12 @@ class Signup extends Component {
       },
       barangay: {
         value: props.signup ? props.signup.barangay : '',
+        error: '',
+        message: '',
+        hasError: false,
+      },
+      mobilePrefix: {
+        value: props.signup ? props.signup.mobilePrefix : '',
         error: '',
         message: '',
         hasError: false,
@@ -192,7 +200,7 @@ class Signup extends Component {
 	  this.setState({
 	    mobile: {
 	      ...this.state.mobile,
-	      value: (value || '').slice(0, 11),
+	      value: (value || '').slice(0, 13),
 	      hasError: !Boolean(value),
 	      error: !Boolean(value) ? 'REQUIRED' : '',
 	    },
@@ -277,6 +285,17 @@ class Signup extends Component {
 	  });
 	};
 
+	onmobilePrefixChange = (value) => {
+	  this.setState({
+	    mobilePrefix: {
+	      ...this.state.mobilePrefix,
+	      value: value,
+	      hasError: !Boolean(value),
+	      error: !Boolean(value) ? 'REQUIRED' : '',
+	    }
+	  });
+	};
+
 	onVoterChange = (value) => {
 	  this.setState({
 	    isRegisteredVoter: {
@@ -332,6 +351,7 @@ class Signup extends Component {
 	    // this.onLnameChange(this.state.lname.value);
 	    // this.onGenderChange(this.state.gender.value);
 	    // this.onDobChange(this.state.birthday.value);
+	    this.onmobilePrefixChange(this.state.mobile.value);
 	    this.onMobileChange(this.state.mobile.value);
 	    // this.onRegionChange(this.state.region.value);
 	    // this.onProvinceChange(this.state.province.value);
@@ -354,6 +374,7 @@ class Signup extends Component {
 	              lname: '', // this.state.lname.value,
 	              // 'gender': this.state.gender.value,
 	              birthday: this.state.birthday.value,
+	              mobilePrefix: this.state.mobilePrefix.value,
 	              mobile: this.state.mobile.value,
 	              region: this.state.region.value,
 	              province: this.state.province.value,
@@ -426,6 +447,8 @@ class Signup extends Component {
 	    municipalityOptions,
 	    barangayOptions,
 	    gender,
+	    mobilePrefix,
+	    mobilePrefixOptions
 	  }
 	) => {
 	  return (
@@ -556,22 +579,43 @@ class Signup extends Component {
 	          hasError={mobile.hasError}
 	          className={style.formGroup}
 	        >
-	          <FormInput
-	            value={mobile.value}
-	            type="number"
-	            placeholder={'0919...'}
-	            max={11}
-	            onBlur={(e) => {
-	              this.onMobileChange(e.target.value);
-	            }}
-	            onInput={(e) => {
-	              this.onMobileChange(e.target.value);
-	            }}
-	            hasError={mobile.hasError}
-	            error={mobile.error}
-	            message={mobile.message}
-	            className={style.formInput}
-	          />
+	          <div className={style.mobileGroup}>
+	            <FormDropdown
+	              className={style.mobilePrefix}
+	              value={mobilePrefix.value}
+	              options={mobilePrefixOptions}
+	              getValue={(option) => option.value}
+	              getText={(option) => option.text}
+	              onBlur={(e) => {
+	                this.onmobilePrefixChange(e.target.value);
+	              }}
+	              onChange={(e) => {
+	                this.onmobilePrefixChange(e.target.value);
+	              }}
+	              hasError={mobilePrefix.hasError}
+	              error={mobilePrefix.error}
+	              message={mobilePrefix.message}
+	            />
+	            <FormInput
+	              value={mobile.value}
+	              type="number"
+	              placeholder={'919...'}
+	              max={10}
+	              onBlur={(e) => {
+	                this.onMobileChange(e.target.value);
+	              }}
+	              onInput={(e) => {
+	                this.onMobileChange(e.target.value);
+	              }}
+	              hasError={mobile.hasError}
+	              error={mobile.error}
+	              className={style.formInput}
+	              style={{ container: style.mobileContainer }}
+	            />
+	          </div>
+	          <p className={style.message}>
+	            {getTranslation(mobile.message)}
+	          </p>
 	        </FormGroup>
 	        {/* 
 					<FormGroup label="REGION" hasError={region.hasError}>
