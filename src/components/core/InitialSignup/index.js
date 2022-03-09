@@ -50,20 +50,26 @@ class InitialSignup extends Component {
         message: '',
         hasError: false,
       },
-      // isLoading: false,
+      isLoading: false,
       recaptchaChecked: false,
     };
+    this.recaptchaRef = React.createRef();
   }
 
-	// ReCAPTCHA
-	// componentDidMount() {
-	//   setTimeout(() => {
-	//     this.setState({ isLoading: true });
-	//   }, 1500);
-	// }
+  // ReCAPTCHA
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ isLoading: true });
+    }, 1500);
+    // console.log("sarsa didMount - reCaptcha Ref-", this.recaptchaRef);
+  }
 	onHandleToken = (token) => {
+	  // console.log("sarsa captcha token:", token);
 	  // if token is not null recaptcha checked
 	  if (token !== null) this.setState({ recaptchaChecked: true });
+	};
+	asyncScriptOnLoad = () => {
+	  // console.log("sarsa scriptLoad - reCaptcha Ref-", this.recaptchaRef);
 	};
 
 	// Form Validations
@@ -384,15 +390,17 @@ class InitialSignup extends Component {
 	                className={style.formInput}
 	              />
 	            </FormGroup>
-	            {/* {this.state.isLoading && ( */}
-	            <FormGroup>
-	              <ReCAPTCHA
-	                sitekey={REACT_APP_SITE_KEY}
-	                onChange={this.onHandleToken}
-	                className={style.recaptcha}
-	              />
-	            </FormGroup>
-	            {/* )} */}
+	            {this.state.isLoading && (
+	              <FormGroup>
+	                <ReCAPTCHA
+	                  ref={this.recaptchaRef}
+	                  sitekey={REACT_APP_SITE_KEY}
+	                  onChange={this.onHandleToken}
+	                  asyncScriptOnLoad={this.asyncScriptOnLoad}
+	                  className={style.recaptcha}
+	                />
+	              </FormGroup>
+	            )}
 	            <div className={style.buttonWrap}>
 	              <ButtonDescription
 	                onClickCallback={this.onClickSubmit}
