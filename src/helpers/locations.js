@@ -56,7 +56,6 @@ export function getBarangay(r, pKey, mKey) {
 
 export function getMobilePrefixOptions() {
   try {
-    console.error(countryCodes);
     return countryCodes
       .sort((a, b) => {
         if (a.code < b.code) {

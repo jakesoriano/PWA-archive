@@ -47,15 +47,15 @@ class ArticleDetails extends Component {
 	            />
 	          </div>
 	        )}
-           {data.video && (
-             <iframe
-               className={style.pVideo}
-               width="100%"
-               height="auto"
-               frameBorder="0"
-               src={data.video}
-             ></iframe>
-           )}
+	        {data.video && (
+	          <iframe
+	            className={style.pVideo}
+	            width="100%"
+	            height="auto"
+	            frameBorder="0"
+	            src={data.video}
+	          ></iframe>
+	        )}
 	        <p className={`${style.pDate}`}>{dateNewsFormat(data.postedDate)}</p>
 	        <a href={data.link} className={`${style.pLink}`}>
 	          {data.link}

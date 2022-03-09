@@ -207,15 +207,15 @@ class Signup extends Component {
 	      },
 	    });
 	  } else {
-      this.setState({
-        mobile: {
-          ...this.state.mobile,
-          value: (value || '').slice(0, 13),
-          hasError: !Boolean(value),
-          error: !Boolean(value) ? 'REQUIRED' : '',
-        },
-      }); 
-    }
+	    this.setState({
+	      mobile: {
+	        ...this.state.mobile,
+	        value: (value || '').slice(0, 13),
+	        hasError: !Boolean(value),
+	        error: !Boolean(value) ? 'REQUIRED' : '',
+	      },
+	    });
+	  }
 	};
 
 	onRegionChange = (value) => {
