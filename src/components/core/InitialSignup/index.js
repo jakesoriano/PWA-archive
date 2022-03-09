@@ -413,7 +413,8 @@ class InitialSignup extends Component {
 										this.state.confirm_password.value == '' ||
 										this.state.username.hasError ||
 										this.state.password.hasError ||
-										this.state.confirm_password.hasError
+										this.state.confirm_password.hasError ||
+										!this.state.recaptchaChecked
 	                }
 	              />
 	              <div onClick={toggleSignupForm}>
