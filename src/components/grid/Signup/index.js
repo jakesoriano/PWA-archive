@@ -102,7 +102,7 @@ class Signup extends Component {
         hasError: false,
       },
       mobilePrefix: {
-        value: props.signup ? props.signup.mobilePrefix : '+63',
+        value: (props.signup && props.signup.mobilePrefix) || '+63',
         error: '',
         message: '',
         hasError: false,
