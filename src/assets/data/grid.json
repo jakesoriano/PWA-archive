@@ -540,10 +540,7 @@
 		"withBack": true,
 		"contents": [
 			{
-				"component": "TaskCenter",
-				"props": {
-					"topText": "Use our hashtag of the day #BulacanIsPink"
-				}
+				"component": "TaskCenter"
 			}
 		]
 	},
