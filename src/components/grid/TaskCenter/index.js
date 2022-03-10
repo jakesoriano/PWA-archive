@@ -7,12 +7,12 @@ import {
   dateEventFormat,
   displayPageLoader,
   showAlertBox,
+  getConfigByKey,
 } from '_helpers';
 import { connect } from 'unistore/preact';
-import { ImageLoader, ButtonDescription } from '_components/core';
+import { ImageLoader } from '_components/core';
 import { fetchTasks, validateTask } from '_mutations';
 import style from './style.scss';
-import { route } from 'preact-router';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class TaskCenter extends Component {
@@ -101,12 +101,13 @@ class TaskCenter extends Component {
 	};
 
 	topHash = () => {
+	  const topText = getConfigByKey('taskTopText');
 	  return (
 	    <div className={style.topHash}>
 	      <div className={style.info}>
 	        {/* Info */}
 	        <div className={style.infoTitle}>
-	          <p>{this.props?.topText || ''}</p>
+	          <p>{topText || ''}</p>
 	        </div>
 	      </div>
 	    </div>
