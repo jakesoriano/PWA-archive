@@ -213,7 +213,7 @@ class InitialSignup extends Component {
 	                socType: type,
 	              },
 	            });
-	            route(`/${this.props.parent}/data-privacy`);
+	            route(`/landing/data-privacy`);
 	          } else {
 	            showAlertBox({
 	              message: 'ACCOUNT_EXIST',

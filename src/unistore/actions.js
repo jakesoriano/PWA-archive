@@ -5,7 +5,7 @@ import { initialStore } from './initialStore';
 // export const actions = store => ({});
 
 // restore data
-async function getData (key) {
+async function getData(key) {
   return new Promise((resolve) => {
     getItem(key, (res) => {
       // with fetch and result
@@ -15,15 +15,15 @@ async function getData (key) {
           result: {
             ...(res || initialStore[key]),
             result: !!res,
-            fetching: false
-          }
+            fetching: false,
+          },
         });
       }
 
       // return data
       resolve({
         key,
-        result: res
+        result: res,
       });
     });
   }).catch((err) => {
@@ -31,11 +31,11 @@ async function getData (key) {
     console.error('Failed to getData', err);
     return {
       key,
-      result: null
+      result: null,
     };
   });
 }
-export async function restoreData () {
+export async function restoreData() {
   return Promise.all(Object.keys(initialStore).map((i) => getData(i))).then(
     (res) => {
       try {
@@ -62,12 +62,14 @@ export async function restoreData () {
 }
 
 // global method to update store
-function syncDataToStorage (newState) {
+function syncDataToStorage(newState) {
   Object.keys(newState).forEach((key) => {
-    setItem(key, newState[key]);
+    if (initialStore[key]) {
+      setItem(key, newState[key]);
+    }
   });
 }
-export function updateStore (newState, disabledCache) {
+export function updateStore(newState, disabledCache) {
   // sync data to storage
   if (!disabledCache) {
     syncDataToStorage(newState);
@@ -76,7 +78,7 @@ export function updateStore (newState, disabledCache) {
   store.setState(newState);
 }
 
-export function resetStore (cb) {
+export function resetStore(cb) {
   try {
     updateStore(initialStore);
     if (cb) {
