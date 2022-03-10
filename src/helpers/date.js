@@ -164,7 +164,7 @@ export const getMonthYear = (date) => {
 };
 export const getDayText = (date) => {
   try {
-    const d = new Date(date);
+    const d = new Date(new Date(date).getTime() - gmtHours);
     return days[d.getDay()];
   } catch (error) {
     console.log('SPA >> Component dateEventFormat failed.', error);
