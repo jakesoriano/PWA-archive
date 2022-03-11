@@ -381,16 +381,16 @@ class Signup extends Component {
 	            const userData = {
 	              ...(this.props.signup || {}),
 	              fname: this.state.fname.value,
-	              mname: this.state.mname.value,
-	              lname: '', // this.state.lname.value,
-	              // 'gender': this.state.gender.value,
-	              birthday: this.state.birthday.value,
+	              // mname: this.state.mname.value,
+	              // lname: this.state.lname.value,
+	              // gender: this.state.gender.value,
+	              // birthday: this.state.birthday.value,
 	              mobilePrefix: this.state.mobilePrefix.value,
 	              mobile: this.state.mobile.value,
-	              region: this.state.region.value,
-	              province: this.state.province.value,
-	              municipality: this.state.municipality.value,
-	              barangay: this.state.barangay.value,
+	              // region: this.state.region.value,
+	              // province: this.state.province.value,
+	              // municipality: this.state.municipality.value,
+	              // barangay: this.state.barangay.value,
 	              isRegisteredVoter:
 									this.state.isRegisteredVoter.value === 'yes' ? true : false,
 	              parentRefCode:
@@ -401,8 +401,9 @@ class Signup extends Component {
 	              socType: this.props.signup.socType,
 	              socId: this.props.signup.socId,
 	              image: '',
-	              industry: '',
+	              // industry: '',
 	            };
+	            console.error(userData);
 	            displayPageLoader(true);
 	            completeSignup(userData)
 	              .then((res) => {
