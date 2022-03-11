@@ -1,8 +1,10 @@
 export const volunteerNeeds = [
   { id: 'trompa', value: 'TROMPA Package' },
   { id: 'mobilization', value: 'Mobilization' },
-  { id: 'collaterals', value: 'Collaterals' }
-  // {id:'caravan', value: 'Caravan Logistics'},
+  { id: 'collaterals', value: 'Tarpaulins' },
+  { id:'house_to_house_50', value: 'House to House Tarpaulin (50-100)'},
+	{ id:'house_to_house_100', value: 'House to House Tarpaulin (100-200)'},
+	{ id:'house_to_house_200', value: 'House to House Tarpaulin (200-400)'}
   // {id:'content', value: 'Content Writer'},
   // {id:'social', value: 'Social Media Content Posting'},
   // {id:'video', value: 'Video and Image Editors'},
