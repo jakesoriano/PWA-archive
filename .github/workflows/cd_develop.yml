@@ -55,5 +55,5 @@ jobs:
           curl --request GET \
           --header 'admin-key: ${{ secrets.UAT_ADMIN_KEY }}' \
           --header 'content-type: application/json' \
-          --url $API_DOMAIN/admin/appVersion/1.7.${{ github.run_number }}
+          --url $API_DOMAIN/admin/appVersion/1.8.${{ github.run_number }}
 
