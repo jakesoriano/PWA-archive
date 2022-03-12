@@ -64,7 +64,7 @@ export async function restoreData() {
 // global method to update store
 function syncDataToStorage(newState) {
   Object.keys(newState).forEach((key) => {
-    if (initialStore[key]) {
+    if (key in initialStore) {
       setItem(key, newState[key]);
     }
   });

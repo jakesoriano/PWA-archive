@@ -11,6 +11,8 @@ import {
 	getMonthYear,
 	getDayText,
 	dateEventFormat,
+	getFormatedDate,
+	getDayNum,
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 import style from './style';
@@ -31,8 +33,9 @@ class UpcomingEvents extends Component {
 				.sort((a, b) => new Date(b.date) - new Date(a.date))
 				.reduce((arr, item) => {
 					// group data by date
-					arr[item.date] = arr[item.date] || [];
-					arr[item.date].push(item);
+					const eDate = getFormatedDate(item.date);
+					arr[eDate] = arr[eDate] || [];
+					arr[eDate].push(item);
 					return arr;
 				}, Object.create(null));
 			this.setState({
@@ -71,12 +74,14 @@ class UpcomingEvents extends Component {
 			return (
 				<div>
 					<div className={style.backDrop}></div>
-						<a className={`${style.pClose}`}
+					<a
+						className={`${style.pClose}`}
 						onClick={() => {
 							this.setState({
-							selectedItem: null
+								selectedItem: null,
 							});
-						}}>
+						}}
+					>
 						<ImageLoader
 							src="assets/images/icon_close_white.png"
 							style={{ container: style.closeBtn }}
@@ -139,19 +144,18 @@ class UpcomingEvents extends Component {
 					{state.grouped &&
 						Object.keys(state.grouped).length &&
 						Object.keys(state.grouped).map((key) => {
-							const date = new Date(
-								state.grouped[key].filter(
-									(item) => key.toString() === item.date.toString()
-								)[0].date
-							);
+							const date =
+								state.grouped[key] && state.grouped[key].length
+									? state.grouped[key][0].date
+									: '';
 							return (
 								<div className={style.item}>
 									<div className={style.box}>
 										<span className={style.day}>
-											{getDayText(date).substring(0, 3)}
+											{date ? getDayText(date).substring(0, 3) : ''}
 										</span>
 										<span className={`extraBold ${style.date}`}>
-											{date.getUTCDate()}
+											{date ? getDayNum(date) : ''}
 										</span>
 									</div>
 									<div className={style.events}>
