@@ -171,3 +171,29 @@ export const getDayText = (date) => {
     return date;
   }
 };
+export const getDayNum = (date) => {
+  try {
+    const d = new Date(new Date(date).getTime() - gmtHours);
+    let day = d.getDate();
+    return day < 10 ? `0${day}` : day;
+  } catch (error) {
+    console.log('SPA >> Component getDayNum failed.', error);
+    return '';
+  }
+};
+
+export const getFormatedDate = (date) => {
+  const { selectedLanguage } = store.getState();
+  try {
+    const d = new Date(new Date(date).getTime() - gmtHours);
+    let month = d.getMonth() + 1;
+    month = month < 10 ? `0${month}` : month;
+    let day = d.getDate();
+    day = day < 10 ? `0${day}` : day;
+    const year = d.getFullYear();
+    return `${year}-${month}-${day}`;
+  } catch (error) {
+    console.log('SPA >> Component getDate failed.', error);
+    return date;
+  }
+};
