@@ -80,6 +80,46 @@ class DataPrivacy extends Component {
 	      }}
 	      onScroll={this.checkIfRead}
 	    >
+	      {/* Input Cont */}
+	      {this.props.fromLandingPage ? null : (
+	        <>
+	          <p style={{ margin: '10px 0' }}> This is to confirm that: </p>
+	          <ul>
+	            <li>The information I provided is true and correct.</li>
+	            <li>
+								I have read this Privacy Policy Statement and Terms and
+								Conditions.
+	            </li>
+	            <li>
+								I acknowledge that this Leni App is created by Kaya Natin
+								volunteers in the spirit of bayanihan where volunteers like me
+								give support to like-minded supporters in the context of
+								political speech.
+	            </li>
+	            <li>
+								I warrant and represent that I am a Filipino citizen, and that I
+								am committed to obey the Philippine election laws, as well as
+								report any violation thereto.
+	            </li>
+	          </ul>
+	          <div className={style.inputCont}>
+	            <FormInput
+	              name="accepted4"
+	              type="radio"
+	              label="I agree to all of the above"
+	              value="yes"
+	              id="accepted4"
+	              checked={this.state.accepted}
+	              onChange={(e) => {
+	                this.setState({
+	                  accepted: true,
+	                });
+	              }}
+	            />
+	          </div>
+	        </>
+	      )}
+
 	      <p className={`bold ${style.heading}`}>
 	        {' '}
 					Data Privacy Policy Statement{' '}
@@ -100,7 +140,7 @@ class DataPrivacy extends Component {
 					Data in this App. We may update this Privacy Policy Statement to
 					reflect current changes in our policy, applicable election regulations
 					and other laws. For any questions about your privacy, contact us at{' '}
-	        <a href="mailto:kayanatin2022@gmail.com">kayanatin2022@gmail.com</a>.
+	        <a href="mailto:privacy@kayanatin.ph">privacy@kayanatin.ph</a>.
 	      </p>
 
 	      <p className={`bold ${style.heading}`}> What Information We Collect </p>
@@ -155,7 +195,7 @@ class DataPrivacy extends Component {
 						sign-up; and (6) how users explore and visit the app. To the extent
 						as users of mobile devices would allow, location data and device
 						information of the KakamPink app users may be processed for purposes
-						of campaign activities, which KakamPinks may also opt out anytime
+						of campaign activities, which KakamPinks may also opt out anytime.
 	        </li>
 	      </ol>
 
@@ -261,10 +301,7 @@ class DataPrivacy extends Component {
 	        <li>
 	          <span className={`bold`}> Right to file a complaint. </span> You may
 						file your complaint or any concerns with our Data Protection Officer
-						at{' '}
-	          <a href="mailto:privacy.kayanatin@gmail.com">
-							privacy.kayanatin@gmail.com
-	          </a>{' '}
+						at <a href="mailto:privacy@kayanatin.ph">privacy@kayanatin.ph</a>{' '}
 						and/or with the National Privacy Commission through
 						www.privacy.gov.ph
 	        </li>
@@ -295,67 +332,6 @@ class DataPrivacy extends Component {
 					obligations and who have implemented minimum security features against
 					data leakage, unauthorized access, or disclosure.
 	      </p>
-
-	      {/* Input Cont */}
-	      {this.props.fromLandingPage ? null : (
-	        <>
-	          <p style={{ margin: '30px 0 10px' }}> This is to confirm that: </p>
-	          <div className={style.inputCont}>
-	            <FormInput
-	              name="accepted"
-	              type="radio"
-	              label="The information I provided is true and correct."
-	              value="yes"
-	              id="accepted"
-	              checked={this.state.accepted}
-	              onChange={(e) => {
-	                this.setState({
-	                  accepted: true,
-	                });
-	              }}
-	            />
-	            <FormInput
-	              name="readCondition"
-	              type="radio"
-	              label="I have read this Privacy Policy Statement and Terms and Conditions"
-	              value="yes"
-	              id="readCondition"
-	              checked={this.state.accepted2}
-	              onChange={() => {
-	                this.setState({
-	                  accepted2: true,
-	                });
-	              }}
-	            />
-	            <FormInput
-	              name="accepted3"
-	              type="radio"
-	              label="I acknowledge that this Leni App is created by Kaya Natin volunteers in the spirit of bayanihan where volunteers like me give support to like-minded supporters in the context of political speech."
-	              value="yes"
-	              id="accepted3"
-	              checked={this.state.accepted3}
-	              onChange={(e) => {
-	                this.setState({
-	                  accepted3: true,
-	                });
-	              }}
-	            />
-	            <FormInput
-	              name="accepted4"
-	              type="radio"
-	              label="I warrant and represent that I am a Filipino citizen, and that I am committed to obey the Philippine election laws, as well as report any violation thereto."
-	              value="yes"
-	              id="accepted4"
-	              checked={this.state.accepted4}
-	              onChange={(e) => {
-	                this.setState({
-	                  accepted4: true,
-	                });
-	              }}
-	            />
-	          </div>
-	        </>
-	      )}
 	    </div>
 	  );
 	};
@@ -369,13 +345,8 @@ class DataPrivacy extends Component {
 	          <ButtonDescription
 	            onClickCallback={this.handleContinue}
 	            text="CONTINUE"
-	            bottomDescription="PRIVACY_BOTTON_DESC"
-	            isDisabled={
-	              !this.state.accepted ||
-								!this.state.accepted2 ||
-								!this.state.accepted3 ||
-								!this.state.accepted4
-	            }
+	            // bottomDescription="PRIVACY_BOTTON_DESC"
+	            isDisabled={!this.state.accepted}
 	            buttonStyle={`${style.buttonStyle}`}
 	          />
 	        )}
