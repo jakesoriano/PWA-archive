@@ -5,7 +5,8 @@ export function messageModal (data) {
     messageModal: data,
     promptModal: null,
     componentModal: null,
-    circleModal: null
+    circleModal: null,
+    successMessage: null
   });
 }
 
@@ -14,7 +15,8 @@ export function promptModal (data) {
     messageModal: null,
     promptModal: data,
     componentModal: null,
-    circleModal: null
+    circleModal: null,
+    successMessage: null
   });
 }
 
@@ -23,7 +25,8 @@ export function componentModal (data) {
     messageModal: null,
     promptModal: null,
     componentModal: data,
-    circleModal: null
+    circleModal: null,
+    successMessage: null
   });
 }
 
@@ -32,7 +35,18 @@ export function circleModal (data) {
     messageModal: null,
     promptModal: null,
     componentModal: null,
-    circleModal: data
+    circleModal: data,
+    successMessage: null
+  });
+}
+
+export function successMessage (data) {
+  store.setState({
+    messageModal: null,
+    promptModal: null,
+    componentModal: null,
+    circleModal: null,
+    successMessage: data
   });
 }
 

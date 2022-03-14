@@ -34,6 +34,7 @@ import {
   AlertBox,
   PopupModal,
   CircleModal,
+  SuccessMessage,
   CustomListSelection
 } from '_components/core';
 import {
@@ -349,6 +350,19 @@ class Grid extends Component {
 	  }
 	};
 
+	renderSuccessMessage = () => {
+	  const { successMessage } = this.props;
+	  try {
+	    const props = { ...successMessage };
+	    // eslint-disable-next-line react/jsx-props-no-spreading
+	    return <SuccessMessage {...props} />;
+	  } catch (err) {
+	    // eslint-disable-next-line no-console
+	    console.error('Widget Component >> renderSuccessMessage >> Error:', err);
+	    return null;
+	  }
+	};
+
 	renderFilter = () => {
 	  const { filterShow } = this.props;
 	  try {
@@ -373,6 +387,7 @@ class Grid extends Component {
 	    alertShow,
 	    popupModal,
 	    circleModal,
+	    successMessage,
 	    filterShow,
 	    tourGuide
 	  },
@@ -469,6 +484,7 @@ class Grid extends Component {
 	      {popupModal && this.renderPopupModal()}
 	      {circleModal && this.renderCircleModal()}
 	      {filterShow && this.renderFilter()}
+	      {successMessage && this.renderSuccessMessage()}
 	      {pageLoader.display && <LoaderRing fullpage />}
 
 	      <BackToTop
@@ -498,7 +514,8 @@ const ConnectComponent = connect([
   'notifications',
   'deviceId',
   'filterShow',
-  'tourGuide'
+  'tourGuide',
+  'successMessage'
 ])(Grid);
 export default ConnectComponent;
 

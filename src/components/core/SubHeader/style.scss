@@ -1,0 +1,16 @@
+@import '../../../style/variables.scss';
+.subHeader {
+  padding: 10px 15px 10px;
+  display: flex;
+  align-items: center;
+  background-color: #00826c;
+  .title {
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .imgWrap {
+    width: 97px;
+    padding-bottom: 50px;
+    margin-right: 10px;
+  }
+}

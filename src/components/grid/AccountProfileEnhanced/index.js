@@ -1,14 +1,20 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { route } from 'preact-router';
-import { LoaderRing, ImageLoader, UserAvatar } from '_components/core';
+import {
+  LoaderRing,
+  ImageLoader,
+  UserAvatar,
+  ReportButtons,
+} from '_components/core';
 import {
   getTranslation,
   formatNumber,
   getConfigByKey,
   circleModal,
   displayName,
-  showAlertBox
+  showAlertBox,
+  componentModal,
 } from '_helpers';
 import { fetchUserPoints } from '_mutations';
 import { nativeShare } from '_platform/helpers';
@@ -30,7 +36,7 @@ class AccountProfile extends Component {
 	      circleModal({
 	        title: getTranslation('ITS_OFFICIAL'),
 	        content: getTranslation('YOURE_KAKAMPINK'),
-	        code: authUser.profile.refCode
+	        code: authUser.profile.refCode,
 	      });
 	      updateStore({
 	        authUser: {
@@ -42,11 +48,11 @@ class AccountProfile extends Component {
 	  }
 	};
 
-	copyText = (text) =>{
+	copyText = (text) => {
 	  copy(text);
 	  showAlertBox({
 	    message: 'COPY_MSG_REFCODE',
-	    success: true
+	    success: true,
 	  });
 	};
 
@@ -64,6 +70,13 @@ class AccountProfile extends Component {
 	  });
 	};
 
+	onReportClicked = () => {
+	  componentModal({
+	    content: <ReportButtons />,
+	    transparentBG: true,
+	  });
+	};
+
 	render = ({ authUser, page }) => {
 	  if (!authUser) {
 	    return <LoaderRing fullpage />;
@@ -73,21 +86,20 @@ class AccountProfile extends Component {
 	    <div className={style.accountProfile}>
 	      <div className={style.profile}>
 	        <div className={style.user}>
-	          <UserAvatar
-	            allowUpdate
-	            styles={{ avatar: style.avatar }}
-	          />
+	          <UserAvatar allowUpdate styles={{ avatar: style.avatar }} />
 	          <div className={style.profileInfo}>
 	            <div className={style.nameMember}>
-	              <p
-	                className={`bold ${style.name}`}
-	              >{displayName(authUser.profile)}</p>
+	              <p className={`bold ${style.name}`}>
+	                {displayName(authUser.profile)}
+	              </p>
 	            </div>
 	            <div className={style.pointsRank}>
 	              <div className={style.heroPoints}>
 	                <p>
 	                  <span className={`bold ${style.points}`}>
-	                    {authUser.points === 0 ? '-' : formatNumber(authUser.points, 2) || 0}
+	                    {authUser.points === 0
+	                      ? '-'
+	                      : formatNumber(authUser.points, 2) || 0}
 	                  </span>
 										&nbsp;
 	                  <span className={`bold ${style.textPoints}`}>
@@ -95,9 +107,17 @@ class AccountProfile extends Component {
 	                  </span>
 	                </p>
 	                <p className={style.invite}>
-	                  <span className='bold'>{getTranslation('INVITE_OTHERS_USING')}:</span>
-	                  <div id={`copy-referral-code`} className={`${style.refCode}`} onClick={() => this.copyText(authUser?.profile?.refCode)}>
-	                    <span className={`bold`}>{authUser?.profile?.refCode}</span>
+	                  <span className="bold">
+	                    {getTranslation('INVITE_OTHERS_USING')}:
+	                  </span>
+	                  <div
+	                    id={`copy-referral-code`}
+	                    className={`${style.refCode}`}
+	                    onClick={() => this.copyText(authUser?.profile?.refCode)}
+	                  >
+	                    <span className={`bold`}>
+	                      {authUser?.profile?.refCode}
+	                    </span>
 	                    <ImageLoader
 	                      src={'assets/icons/icon_copy_blue.png'}
 	                      style={{ container: style.copy }}
@@ -113,13 +133,17 @@ class AccountProfile extends Component {
 	        <a
 	          id={`${page}-report`}
 	          className={`bold ${style.button} ${style.report}`}
-	          onClick={() => route('contactus')}
-	        >{getTranslation('REPORT')}</a>
+	          onClick={this.onReportClicked}
+	        >
+	          {getTranslation('REPORT')}
+	        </a>
 	        <a
 	          id={`${page}-update-profile`}
 	          className={`bold ${style.button} ${style.update}`}
 	          onClick={() => route('update-profile')}
-	        >{getTranslation('UPDATE_PROFILE')}</a>
+	        >
+	          {getTranslation('UPDATE_PROFILE')}
+	        </a>
 	      </div>
 	    </div>
 	  );

@@ -20,6 +20,9 @@
       width: calc(100% - 30px);
       height: calc(100% - 55px);
       margin-top: 25px;
+      &.transparentBG {
+        background-color: transparent;
+      }
     }
   }
 }

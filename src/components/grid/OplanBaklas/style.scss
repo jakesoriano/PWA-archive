@@ -1,0 +1,18 @@
+@import '../../../style/variables.scss';
+.oplanWrap {
+    padding: 10px 10px;
+    .buttonStyle {
+        font-size: 0.9rem !important;
+        .iconStyle {
+            width: 30px;
+            padding-bottom: 30px;
+            margin-right: 10px;
+        }
+    }
+    .topDescStyle {
+        color: $primary_layout !important;
+        text-align: center;
+        font-size: 0.7rem;
+        margin: 30px 40px 15px;
+    }   
+}

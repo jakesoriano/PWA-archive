@@ -5,13 +5,13 @@ import ImageLoader from '../ImageLoader';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
-export default ({ title, content }) => (
+export default ({ title, content, transparentBG }) => (
   // eslint-disable-next-line react/jsx-no-bind
   <Modal
     styles={{
       modal: style.modal,
       contentWrap: style.contentWrap,
-      content: style.content,
+      content: `${style.content} ${transparentBG ? style.transparentBG : ''}`,
     }}
     hideHeader
     cbClose={() => {

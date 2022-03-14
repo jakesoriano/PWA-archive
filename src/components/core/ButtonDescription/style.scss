@@ -11,6 +11,9 @@
 		text-align: center;
 		padding: 10px 0;
 		margin-top: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		&:disabled {
 			opacity: 0.5;
 		}

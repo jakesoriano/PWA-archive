@@ -60,3 +60,7 @@ export { default as InviteHeader } from './InviteHeader';
 export { default as TextAndButtonCard } from './TextAndButtonCard';
 export { default as InvitedCount } from './InvitedCount';
 export { default as TopGlobalAndComment } from './TopGlobalAndComment';
+export { default as LawyersForChel } from './LawyersForChel';
+export { default as OplanBaklas } from './OplanBaklas';
+export { default as PermitRelated } from './PermitRelated';
+export { default as ReportForm } from './ReportForm';

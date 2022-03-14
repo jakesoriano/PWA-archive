@@ -311,6 +311,36 @@
 		]
 	},
 	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "KNOW_YOUR_RIGHTS",
+		"uri": "lawyers-for-chel",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "LawyersForChel",
+				"props": {
+					"title": "Pumili ng Isyu",
+					"artwork": "Artwork by Jojo Mendoza",
+					"headerImage": "assets/images/chel_header.png",
+					"footerImage": "assets/images/chel_footer.png",
+					"issues": [
+						{
+							"title": "Oplan Baklas",
+							"url": "lawyers-for-chel-oplan-baklas",
+							"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+						},
+						{
+							"title": "Permit Related",
+							"url": "lawyers-for-chel-permit-related",
+							"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+						}
+					]
+				}
+			}
+		]
+	},
+	{
 		"styles": [
 			{
 				"selector": "#w1 > div",
@@ -754,6 +784,141 @@
 		"contents": [
 			{
 				"component": "SignupSuccess"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "KNOW_YOUR_RIGHTS",
+		"uri": "lawyers-for-chel-oplan-baklas",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "OplanBaklas",
+				"props": {
+					"data": [
+						{
+							"question": {
+								"text": "The Government is removing my campaign poster. Illegal daw?",
+								"thumb": "https://i3.ytimg.com/vi/HSxq_E3ihfI/maxresdefault.jpg"
+							},
+							"answer": {
+								"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+								"author": "The Author",
+								"authorImg": "assets/images/avatar.jpeg",
+								"video": "https://www.youtube.com/embed/HSxq_E3ihfI"
+							},
+							"active": false
+						},
+						{
+							"question": {
+								"text": "The Government is removing my campaign poster. Illegal daw?",
+								"thumb": "https://i3.ytimg.com/vi/HSxq_E3ihfI/maxresdefault.jpg"
+							},
+							"answer": {
+								"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+								"video": "https://www.youtube.com/embed/HSxq_E3ihfI",
+								"author": "The Author",
+								"authorImg": "assets/images/avatar.jpeg"
+							},
+							"active": false
+						},
+						{
+							"question": {
+								"text": "The Government is removing my campaign poster. Illegal daw?"
+							},
+							"answer": {
+								"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+								"author": "The Author",
+								"authorImg": "assets/images/avatar.jpeg"
+							},
+							"active": false
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "KNOW_YOUR_RIGHTS",
+		"uri": "lawyers-for-chel-permit-related",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "PermitRelated",
+				"props": {
+					"data": [
+						{
+							"question": {
+								"text": "The Government is removing my campaign poster. Illegal daw?",
+								"image": "assets/images/chel_header.png"
+							},
+							"answer": {
+								"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+								"image": "assets/images/chel_header.png",
+								"author": "The Author",
+								"authorImg": "assets/images/avatar.jpeg",
+								"video": "https://www.youtube.com/embed/HSxq_E3ihfI"
+							},
+							"active": false
+						},
+						{
+							"question": {
+								"text": "The Government is removing my campaign poster. Illegal daw?"
+							},
+							"answer": {
+								"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+								"author": "The Author",
+								"authorImg": "assets/images/avatar.jpeg"
+							},
+							"active": false
+						},
+						{
+							"question": {
+								"text": "The Government is removing my campaign poster. Illegal daw?"
+							},
+							"answer": {
+								"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+								"author": "The Author",
+								"authorImg": "assets/images/avatar.jpeg"
+							},
+							"active": false
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "KNOW_YOUR_RIGHTS",
+		"uri": "oplan-baklas-report",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "ReportForm",
+				"props": {
+					"category": "Oplan Baklas"
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "KNOW_YOUR_RIGHTS",
+		"uri": "permit-related-report",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "ReportForm",
+				"props": {
+					"category": "Permit Related"
+				}
 			}
 		]
 	}

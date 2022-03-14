@@ -20,3 +20,4 @@ export * from './contentTypes';
 export * from './file';
 export * from './storage';
 export * from './profile';
+export * from './incidentCategories';

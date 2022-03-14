@@ -150,6 +150,7 @@ export const initialStore = {
   alertShow: null,
   filterShow: null,
   tourGuide: null,
+  successMessage: null,
   pageLoader: {
     display: false
   },
