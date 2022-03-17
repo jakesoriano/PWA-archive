@@ -61,7 +61,7 @@ export function sendReport(data) {
       .then((res) => {
         if (!res.success) {
           console.log(`SPA >> sendReport Error`, res);
-          resolve(false);
+          resolve(res);
         } else {
           console.log(`SPA >> sendReport successful`, res);
           resolve(res);

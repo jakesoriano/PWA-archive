@@ -10,9 +10,10 @@ export default ({
   disableClose,
   styles,
   hideHeader,
+  id
 }) => (
   <div
-    id="modal"
+    id={id || 'modal'}
     className={`${style.modal} ${fullscreen ? style.fullscreen : ''} ${
 			styles.modal || ''
 		}`}

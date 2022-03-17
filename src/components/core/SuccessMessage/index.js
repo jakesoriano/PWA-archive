@@ -28,9 +28,7 @@ class SuccessMessage extends Component {
 	};
 
 	render = ({ pageTitle, title, message }) => (
-	  <div
-	    className={`${style.popupPage} ${style.noAnimate}`}
-	  >
+	  <div className={`${style.popupPage} ${style.noAnimate}`}>
 	    <div className={style.header}>
 	      <button
 	        className="icon-back clickable"
@@ -41,16 +39,16 @@ class SuccessMessage extends Component {
 	        <ImageLoader
 	          style={{ container: style.backImg }}
 	          src="assets/images/downarrow.png"
-	        /> 
+	        />
 	      </button>
 	      <h3 className={`extraBold`}>{getTranslation(pageTitle)}</h3>
 	    </div>
 	    <div className={style.body}>
 	      <ImageLoader
-	          style={{ container: style.sIcon }}
-	          src="assets/images/icon_check_pink.png"
+	        style={{ container: style.sIcon }}
+	        src="assets/images/icon_check_pink.png"
 	        lazy
-	        />
+	      />
 	      <h2>{getTranslation(title)}</h2>
 	      <p>{getTranslation(message)}</p>
 	      <div className={style.btnWrap}>

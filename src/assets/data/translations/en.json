@@ -267,7 +267,7 @@
 	"NEEDS": "Needs",
 	"NEEDS_MSG": "If retained to 0, means no limit of volunteers",
 	"COMMUNITY_VOLUNTEER": "Volunteer",
-	"COMMUNITY_CROWDSOURCING": "Crowdsourcing",
+	"COMMUNITY_CROWDSOURCING": "Community Crowdsourcing",
 	"COMMUNITY_BE_A_VOLUNTEER": "DISCLAIMER : Payments will not go to the official campaign fund since Merch Bridgers for LeniKiko is an independent volunteer group.",
 	"ACCOMPLISH_MORE": "About Merch Bridgers for LeniKiko: We are an independent volunteer group that connects Kakampink volunteers with one another to avail bulk priced merch at cost, as well as support in distributing these to various communities all over the country.",
 	"COMMUNITY_VOLUNTEER_TITLE": "Community Volunteer",
@@ -329,6 +329,12 @@
 	"COMPLETED_TASK": "Congratulations! {num} task completed.",
 	"CLICK_NEXT_TASK": "Click ang <b>link</b> para sa Next Task",
 	"ACCEPT_UPDATED_POLICY": "Accept our updated privacy policy",
+	"REPORT_FAKE_NEWS": "Report Fake News",
+	"Library": "Library",
+	"PASABUY": "PasaBUY",
+	"LABEL_COMMUNITY_LEADER": "Leader",
+	"SEARCH_PINKPEDIA": "Search PinkPedia",
+	"DOWNLOAD_FILE": "Download File",
 	"KNOW_YOUR_RIGHTS": "Know Your Rights",
 	"LAWYERS_FOR_CHEL": "Lawyers for Chel",
 	"OPLAN_BAKLAS": "Oplan Baklas",
@@ -344,5 +350,6 @@
 	"SUBMIT_REPORT_SUCCESS": "Thanky you for submitting a report. We will review your report and revert accordingly.",
 	"GO_BACK": "Go back",
 	"EMAIL": "Email",
-	"INVALID_EMAIL": "Invalid Email"
+	"INVALID_EMAIL": "Invalid Email",
+	"REPORTING_EMAIL_BLACKLISTED": "Your email is blacklisted, please use another email."
 }

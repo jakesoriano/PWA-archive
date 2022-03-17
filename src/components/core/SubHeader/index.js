@@ -1,8 +1,6 @@
 import { h, Component } from 'preact';
 import { ImageLoader } from '_components/core';
-import {
-  getTranslation
-} from '_helpers';
+import { getTranslation } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 // eslint-disable-next-line react/prefer-stateless-function

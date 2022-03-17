@@ -1,0 +1,68 @@
+@import '../../../style/variables.scss';
+.hilWrap {
+    padding: 0 15px;
+    .heading {
+        color: $pink_text;
+        font-size: 0.9rem;
+    }
+    .itemsWrap {
+        display: flex;
+        overflow-x: auto;
+        margin-top: 5px;
+        .item {
+            flex: 0 0 110px;
+            &:not(:first-of-type) {
+                margin-left: 5px;
+            }
+            .thumbnail {
+                width: 100%;
+                padding-bottom: 85px;
+                border: 1px solid #737373;
+                border-radius: 8px;
+                img {
+                    position: absolute;
+                    top: -9999px;
+                    bottom: -9999px;
+                    left: -9999px;
+                    right: -9999px;
+                    margin: auto;
+                }
+            }
+            .title {
+                color: #737373;
+                font-size: 0.7rem;
+                margin-top: 5px;
+                text-align: center;
+            }
+        }
+    }
+}
+.modalWrap {
+    display: flex;
+    flex-direction: column;
+    .pdf {
+      display: block;
+    }
+    .modalImage {
+      height: auto;
+      width: 100%;
+      padding: 0;
+      border-radius: 10px;
+      img {
+          position: relative;
+      }
+    }
+    .title {
+        font-size: 1rem;
+        text-align: center;
+        margin: 10px 0 15px;
+    }
+    .button {
+        border-radius: 8px;
+        font-size: 0.875rem;
+        padding: 15px;
+        background-color: $primary;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}

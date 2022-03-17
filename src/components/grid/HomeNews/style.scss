@@ -1,51 +1,69 @@
 @import '../../../style/variables.scss';
-.pnWrap {
-    * {
-        color: #737373;
-        font-size: 0.9rem;
+.homeNewsWrap {
+  padding: 10px 15px 0px;
+  border-bottom: 1px solid #e9e9e9;
+  .header {
+    display: flex;
+    margin-bottom: 10px;
+    .title {
+      color: $pink_text;
+      flex-grow: 1;
     }
-    .news {
-        margin-top: 10px;
-        padding: 15px;
-        background-color: $light_gray;
-        .item {
-            clear: both;
-        }
-        * {
-            font-size: 0.7rem;
-        }
-        .title {
-            color: $blue;
-            font-size: 0.9rem;
-        }
-        .date {
-            margin-bottom: 15px;
-        }
-        .title, .description {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;  
-            overflow: hidden;
-            margin-bottom: 5px;
-        }
-        .button {
-            display: block;
-            text-align: right;
-            text-decoration: underline;
-        }
+    a {
+      color: $blue_text;
+      font-size: 0.8rem;
     }
-    .nav {
-        display: flex;
-        justify-content: space-between;
-        margin: 15px 10px;
-        .item {
-            display: flex;
-            align-items: center;
-            .navImgContainer {
-                width: 20px;
-                padding-bottom: 12%;
-                margin-right: 5px;
-            }
+  }
+  .sliderWrap {
+    position: relative;
+    padding-bottom: 10px;
+    .item {
+      border-radius: 10px;
+      .sliderImage {
+        width: 100%;
+        padding-bottom: 56%;
+        margin-bottom: 10px;
+        img {
+          position: absolute;
+          top: -9999px;
+          bottom: -9999px;
+          left: -9999px;
+          right: -9999px;
+          margin: auto;
         }
+      }
+      .iTitle {
+        color: $pink_text;
+        font-size: 0.8rem;
+        text-align: left;
+      }
+      .iDesc {
+        color: $gray_text;
+        font-size: 0.7rem;
+        text-align: left;
+        margin-bottom: 10px;
+      }
     }
+    .customCarousel {
+      :global(.carousel) {
+        padding-bottom: 15px;
+        :global(.control-dots) {
+          margin: 0;
+          :global(.dot) {
+            background-color: $gray_bg;
+            border: 1px solid $gray_bg;
+            box-shadow: none;
+            height: 12px;
+            margin: 0 5px;
+            width: 12px; 
+            opacity: 1;
+          }
+          :global(.selected) {
+            background-color: $pink_button;
+            border: none;
+          }
+        }
+      }
+    }
+  }
 }

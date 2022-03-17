@@ -35,13 +35,13 @@ import {
   PopupModal,
   CircleModal,
   SuccessMessage,
-  CustomListSelection
+  CustomListSelection,
 } from '_components/core';
 import {
   nativeWebReady,
   nativeExitApp,
   nativeGetDeviceId,
-  nativeGetVersion
+  nativeGetVersion,
 } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -201,7 +201,7 @@ class Grid extends Component {
 	  // get native version
 	  nativeGetVersion((v) => {
 	    updateStore({
-	      nativeVersion: v
+	      nativeVersion: v,
 	    });
 	  });
 	};
@@ -389,7 +389,7 @@ class Grid extends Component {
 	    circleModal,
 	    successMessage,
 	    filterShow,
-	    tourGuide
+	    tourGuide,
 	  },
 	  { data, popup, rightSideBar }
 	) => {
@@ -423,7 +423,7 @@ class Grid extends Component {
 	      <div className={style.mainContent}>
 	        {/* Content Wrap */}
 	        <div className={style.contentWrap}>
-	          {data && data.auth && !data.hideTopBar &&(
+	          {data && data.auth && !data.hideTopBar && (
 	            <Topbar
 	              title={data.pageTitle || ''}
 	              page={this.getPageName()}
@@ -445,7 +445,9 @@ class Grid extends Component {
 	          >
 	            {renderGrid(this.getPageName(), this.getPageName(), data)}
 	          </div>
-	          {data && data.auth && !data.hideBottomBar && <BottomBar page={this.getPageName()} />}
+	          {data && data.auth && !data.hideBottomBar && (
+	            <BottomBar page={this.getPageName()} />
+	          )}
 	        </div>
 	        {/* Popup Page */}
 	        {popup && (
@@ -515,7 +517,7 @@ const ConnectComponent = connect([
   'deviceId',
   'filterShow',
   'tourGuide',
-  'successMessage'
+  'successMessage',
 ])(Grid);
 export default ConnectComponent;
 

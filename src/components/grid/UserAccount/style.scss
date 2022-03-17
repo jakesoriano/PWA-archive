@@ -1,0 +1,68 @@
+@import '../../../style/variables.scss';
+.profileWrap {
+  margin: 0px 15px 5px;
+  background: rgb(6,28,130);
+  background: linear-gradient(0deg, rgba(6,28,130,1) 0%, rgba(39,65,187,1) 100%);
+  border-radius: 10px;
+  padding: 15px 10px;
+  .top,
+  .bottom {
+    display: flex;
+    align-items: center;
+    > * {
+      flex-grow: 1;
+    }
+    .text {
+      font-size: 0.9rem;
+    }
+    .button {
+      border-radius: 6px;
+      text-align: center;
+      padding: 5px 10px;
+      font-size: 0.7rem;
+      width: 100px;
+      max-width: 110px;
+      position: relative;
+      .dot {
+        background-color: $red_bg;
+        width: 10px;
+        height: 10px;
+        border: 1px solid #fff;
+        position: absolute;
+        border-radius: 10px;
+        top: -4px;
+        left: -4px;
+      }
+      &.update {
+        color: $white;
+        border: 1px solid $white;
+      }
+      &.invite {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+  .top {
+    border-bottom: 1px solid #fff3;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    > div {
+      flex-grow: 0;
+      label {
+        div {
+          border: none;
+          background-color: $gray_bg;
+          margin-right: 10px;
+          width: 45px;
+          padding-bottom: 45px;
+        }
+      }
+    }
+  }
+  .bottom {
+    > div {
+      flex-grow: 1;
+    }
+  }
+}

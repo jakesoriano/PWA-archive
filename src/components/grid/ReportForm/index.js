@@ -182,7 +182,7 @@ class ReportForm extends Component {
 	      });
 	    } else {
 	      showAlertBox({
-	        message: res.errMessage || 'OOPS_SOMETHING_WRONG',
+	        message: res?.error?.message || 'OOPS_SOMETHING_WRONG',
 	      });
 	    }
 	  });

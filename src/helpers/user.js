@@ -1,7 +1,7 @@
 import { store } from '_unistore';
 import { formatNumber } from './number';
 
-export function isUsingSocialLogin () {
+export function isUsingSocialLogin() {
   const { authUser } = store.getState();
   return Boolean(authUser && authUser.profile && authUser.profile.socId);
 }
@@ -16,4 +16,9 @@ export function displayName(profile) {
     return `${name} ${profile.lname || ''}`;
   }
   return name;
+}
+export function isUserUpdatedProfile() {
+  const { authUser } = store.getState();
+  // check if there is region on profile data
+  return Boolean(authUser?.profile.region);
 }

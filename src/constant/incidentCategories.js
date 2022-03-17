@@ -1,5 +1,1 @@
-export const incidentCategories = [
-  "Oplan Baklas",
-  "Permit Related"
-]
-
+export const incidentCategories = ['Oplan Baklas', 'Permit Related'];

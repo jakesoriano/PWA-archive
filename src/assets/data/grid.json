@@ -104,23 +104,267 @@
 		]
 	},
 	{
-		"styles": [],
+		"styles": [
+			{
+				"selector": "#w1 > div > div:first-child",
+				"styles": "background: #2741bb;"
+			},
+			{
+				"selector": "#w1 > div > div:last-child",
+				"styles": "background: #3F3E3E;"
+			},
+			{
+				"selector": [
+					"#home-crowdsourcing",
+					"#home-pasabuy"
+				],
+				"styles": "background: rgb(6,28,130);background: linear-gradient(270deg, rgba(6,28,130,1) 0%, rgba(39,65,187,1) 100%);"
+			},
+			{
+				"selector": [
+					"#home-tasks",
+					"#home-report",
+					"#home-vol-kit",
+					"#home-library"
+				],
+				"styles": "background: rgb(161,32,95); background: linear-gradient(270deg, rgba(161,32,95,1) 0%, rgba(236,0,134,1) 100%);"
+			},
+			{
+				"selector": "#home-search-pinkpedia",
+				"styles": "background: #FFF; border: 2px solid #1a4789; display: block; text-align: center; margin-right: 15px;"
+			},
+			{
+				"selector": "#home-search-pinkpedia > div",
+				"styles": "width: 20px; min-width: 20px; padding-bottom: 20px; display: inline-block;"
+			},
+			{
+				"selector": "#home-search-pinkpedia span",
+				"styles": "color: #1a4789; position: relative; top: -4px; font-family: 'OpenSans-Bold', arial, sans-serif;"
+			},
+			{
+				"selector": "#home-comics",
+				"styles": "margin-top: 10px;"
+			},
+			{
+				"selector": [
+					"#tarp_modal #modal_content",
+					"#tarp_modal #modal_content"
+				],
+				"styles": "background: transparent; padding: 0 15px;"
+			}
+		],
 		"auth": true,
 		"pageTitle": "PAGE_HOME",
 		"uri": "home",
-		"hideBottomBar": true,
 		"contents": [
 			{
 				"component": "Countdown"
 			},
 			{
-				"component": "HomeFeatures"
+				"component": "UserAccount"
 			},
 			{
-				"component": "HomeNews"
+				"component": "Buttons",
+				"props": {
+					"data": [
+						{
+							"id": "home-crowdsourcing",
+							"text": "COMMUNITY_CROWDSOURCING",
+							"icon": "assets/images/h_crowd.png",
+							"tag": "COMING_SOON"
+						},
+						{
+							"id": "home-pasabuy",
+							"text": "PASABUY",
+							"icon": "assets/images/h_pasabuy.png",
+							"tag": "COMING_SOON"
+						},
+						{
+							"id": "home-tasks",
+							"text": "TASK_CENTER",
+							"icon": "assets/images/h_tasks.png",
+							"url": "task-center"
+						},
+						{
+							"id": "home-report",
+							"text": "REPORT_FAKE_NEWS",
+							"icon": "assets/images/h_report.png",
+							"tag": "COMING_SOON"
+						},
+						{
+							"id": "home-vol-kit",
+							"text": "DOWNLOAD_VOLUNTEER_KIT",
+							"icon": "assets/images/h_vol-kit.png",
+							"url": "volunteer-kits"
+						},
+						{
+							"id": "home-library",
+							"text": "LIBRARY",
+							"icon": "assets/images/h_library.png",
+							"tag": "COMING_SOON"
+						}
+					]
+				}
 			},
 			{
-				"component": "AccountProfileEnhanced"
+				"component": "Banner",
+				"props": {
+					"id": "home-pollwatcher",
+					"image": "https://d2vjy6bhj0z1t0.cloudfront.net/files/pollwatcher.jpg",
+					"url": "poll-watcher"
+				}
+			},
+			{
+				"component": "Buttons",
+				"props": {
+					"data": [
+						{
+							"id": "home-search-pinkpedia",
+							"text": "SEARCH_PINKPEDIA",
+							"icon": "assets/images/magnifer_blue.png",
+							"url": "lenipedia"
+						}
+					]
+				}
+			},
+			{
+				"component": "Text",
+				"props": {
+					"text": "PRINTABLE MERC",
+					"id": "printable-merch",
+					"isTitle": true,
+					"additionalClass": "bold"
+				}
+			},
+			{
+				"component": "HorizontalImageList",
+				"props": {
+					"id": "home-tarps",
+					"heading": "Tarpaulins",
+					"data": [
+						{
+							"title": "Leni Kiko One-Pager",
+							"thumbnail": "https://d2ecox8kjhkvbt.cloudfront.net/uploads/01FT7TY4289BEN8198ANR7KW8W.jpg",
+							"file": "https://d2vjy6bhj0z1t0.cloudfront.net/files/tarps/Leni+Kiko+One-Pager.png"
+						},
+						{
+							"title": "Leni Kiko 2x3",
+							"thumbnail": "https://d2ecox8kjhkvbt.cloudfront.net/uploads/01FT7TY4289BEN8198ANR7KW8W.jpg",
+							"file": "https://d2vjy6bhj0z1t0.cloudfront.net/files/tarps/Leni+Kiko+2x3.pdf"
+						},
+						{
+							"title": "Leni Kiko 3x2",
+							"thumbnail": "https://d2ecox8kjhkvbt.cloudfront.net/uploads/01FT7TY4289BEN8198ANR7KW8W.jpg",
+							"file": "https://d2vjy6bhj0z1t0.cloudfront.net/files/tarps/Leni+Kiko+3x2.pdf"
+						},
+						{
+							"title": "Bakit si Leni?",
+							"thumbnail": "https://d2ecox8kjhkvbt.cloudfront.net/uploads/01FT7TY4289BEN8198ANR7KW8W.jpg",
+							"file": "https://d2vjy6bhj0z1t0.cloudfront.net/files/tarps/Bakit+si+Leni.png"
+						},
+						{
+							"title": "Leni Kiko 2022",
+							"thumbnail": "https://d2ecox8kjhkvbt.cloudfront.net/uploads/01FT7TY4289BEN8198ANR7KW8W.jpg",
+							"file": "https://d2vjy6bhj0z1t0.cloudfront.net/files/tarps/Leni+Kiko+2022.png"
+						},
+						{
+							"title": "Let Leni Lead",
+							"thumbnail": "https://d2ecox8kjhkvbt.cloudfront.net/uploads/01FT7TY4289BEN8198ANR7KW8W.jpg",
+							"file": "https://d2vjy6bhj0z1t0.cloudfront.net/files/tarps/Let+Leni+Lead.png"
+						},
+						{
+							"title": "Kulay Rosas ang Bukas (Silkscreen)",
+							"thumbnail": "https://d2ecox8kjhkvbt.cloudfront.net/uploads/01FT7TY4289BEN8198ANR7KW8W.jpg",
+							"file": "https://d2vjy6bhj0z1t0.cloudfront.net/files/tarps/Kulay+Rosas+ang+Bukas+(Silkscreen).png"
+						},
+						{
+							"title": "Leni 2x3 Tarp",
+							"thumbnail": "https://d2ecox8kjhkvbt.cloudfront.net/uploads/01FT7TY4289BEN8198ANR7KW8W.jpg",
+							"file": "https://d2vjy6bhj0z1t0.cloudfront.net/files/tarps/Leni+2x3+Tarp.jpg"
+						}
+					]
+				}
+			},
+			{
+				"component": "HorizontalImageList",
+				"props": {
+					"id": "home-comics",
+					"heading": "Comics",
+					"data": [
+						{
+							"title": "Malayo Ang Mararating",
+							"thumbnail": "https://d2ecox8kjhkvbt.cloudfront.net/uploads/01FT7TY4289BEN8198ANR7KW8W.jpg",
+							"file": "https://d2vjy6bhj0z1t0.cloudfront.net/files/comics/Malayo+Ang+Mararating.pdf"
+						},
+						{
+							"title": "Mga Pangarap Na Pag-Uwi",
+							"thumbnail": "https://d2ecox8kjhkvbt.cloudfront.net/uploads/01FT7TY4289BEN8198ANR7KW8W.jpg",
+							"file": "https://d2vjy6bhj0z1t0.cloudfront.net/files/comics/Mga+Pangarap+Na+Pag-Uwi.pdf"
+						}
+					]
+				}
+			},
+			{
+				"component": "HomeNews",
+				"props": {
+					"title": "NEWS AND ANNOUCEMENTS",
+					"more": {
+						"url": "global-announcements",
+						"text": "SEE_ALL_NEWS"
+					},
+					"data": [
+						{
+							"image": "01FY1WAG123NTHZF4HJHFXXP0T.jpg",
+							"link": "https://www.facebook.com/VPLeniRobredoPH/videos/292078199512269/",
+							"title": "WALANG AATRAS. WALANG PANGHIHINAAN NG LOOB. ",
+							"postedDate": "2022-03-13",
+							"desc": "MALINAW ANG ATING POSISYON: Labag sa batas ang Operation Baklas na isinagawa ng COMELEC kahapon sa mga bahay at mga pribadong pag-aari.<br><br>WALANG AATRAS. WALANG PANGHIHINAAN NG LOOB. Ituloy natin ang pagpapahayag ng suporta para kay VP Leni Robredo, Sen. Kiko Pangilinan, at sa Tropang Angat.<br><br>Mas lalo nating pagsipagan. Ipakita natin na hindi nila kailanman man mababaklas ang lakas ng taumbayan.<br><br>HEART & SHARE po natin ang video na ito mula sa presscon ni Atty. Macalintal kaninang umaga!<br><br>Facebook: https://www.facebook.com/VPLeniRobredoPH/videos/292078199512269/<br><br>YouTube: https://youtu.be/3M_jTxeJrxk<br><br>Maraming salamat po!<br>#AngatBuhayLahat"
+						},
+						{
+							"image": "01FY1WADXFES6VSQCKF8BRJJ1B.jpg",
+							"link": "#AngatBuhayLahat",
+							"title": "ADVISORY: HINDI KAILANMAN KAYANG BAKLASIN ANG LAKAS NG PEOPLE'S CAMPAIGN.",
+							"postedDate": "2022-03-13",
+							"desc": "ADVISORY<br><br>HINDI KAILANMAN KAYANG BAKLASIN ANG LAKAS NG PEOPLE'S CAMPAIGN.<br><br>Hindi tama ang ginagawa na pagpasok sa mga pribadong ari-arian, at pagbaklas at pagkumpiska ng mga campaign materials nang walang pahintulot alinsunod na din sa desisyon ng Korte Suprema. Hindi lang ito laban ng ating kampo lamang, kundi laban ito ng bawat Pilipinong natatapakan ang kalayaan sa pamamahayag maging sinoman ang kandidatong sinusuportahan.<br><br>Nasa likod ni VP Leni Robredo, Sen. Kiko Pangilingan, at ng Tropang Angat ang taumbayan na patuloy na ikakampanya ang hangarin natin na Gobyernong Tapat, para #AngatBuhayLahat. <br><br>Please share!"
+						},
+						{
+							"image": "01FY1WABAQ1EDRAXMV7JKBTDEE.jpg",
+							"link": "https://www.facebook.com/VPLeniRobredoPH/videos/4985283191532417",
+							"title": "LIVE ngayon si VP Leni sa Facebook!",
+							"postedDate": "2022-03-13",
+							"desc": "LIVE ADVISORY<br><br>LIVE ngayon si VP Leni sa Facebook!<br><br>https://www.facebook.com/VPLeniRobredoPH/videos/4985283191532417<br><br>SHARE po natin!"
+						},
+						{
+							"image": "01FY1WA7CQ65GBFGK6D6VKSVHY.png",
+							"link": "https://www.facebook.com/RobredoPeoplesCouncil/videos/4157684741000655",
+							"title": "Press Conference on COMELEC's Operation Baklas with Atty. Barry Gutierrez and Atty. Romy Macalintal",
+							"postedDate": "2022-03-13",
+							"desc": "LIVE ADVISORY<br>17 February 9:30AM<br><br>Press Conference on COMELEC's Operation Baklas with Atty. Barry Gutierrez and Atty. Romy Macalintal<br><br>https://www.facebook.com/RobredoPeoplesCouncil/videos/4157684741000655<br><br>PLEASE SHARE"
+						},
+						{
+							"image": "01FWDMG7FZ9AYW7AD342H2JSH6.jpg",
+							"link": "https://www.facebook.com/VPLeniRobredoPH/videos/292078199512269/",
+							"title": "WALANG AATRAS. WALANG PANGHIHINAAN NG LOOB. ",
+							"postedDate": "2022-03-13",
+							"desc": "MALINAW ANG ATING POSISYON: Labag sa batas ang Operation Baklas na isinagawa ng COMELEC kahapon sa mga bahay at mga pribadong pag-aari.<br><br>WALANG AATRAS. WALANG PANGHIHINAAN NG LOOB. Ituloy natin ang pagpapahayag ng suporta para kay VP Leni Robredo, Sen. Kiko Pangilinan, at sa Tropang Angat.<br><br>Mas lalo nating pagsipagan. Ipakita natin na hindi nila kailanman man mababaklas ang lakas ng taumbayan.<br><br>HEART & SHARE po natin ang video na ito mula sa presscon ni Atty. Macalintal kaninang umaga!<br><br>Facebook: https://www.facebook.com/VPLeniRobredoPH/videos/292078199512269/<br><br>YouTube: https://youtu.be/3M_jTxeJrxk<br><br>Maraming salamat po!<br>#AngatBuhayLahat"
+						},
+						{
+							"image": "01FWDMG5CP096EX8DNVW87G4GE.jpg",
+							"link": "#AngatBuhayLahat",
+							"title": "ADVISORY: HINDI KAILANMAN KAYANG BAKLASIN ANG LAKAS NG PEOPLE'S CAMPAIGN.",
+							"postedDate": "2022-03-13",
+							"desc": "ADVISORY<br><br>HINDI KAILANMAN KAYANG BAKLASIN ANG LAKAS NG PEOPLE'S CAMPAIGN.<br><br>Hindi tama ang ginagawa na pagpasok sa mga pribadong ari-arian, at pagbaklas at pagkumpiska ng mga campaign materials nang walang pahintulot alinsunod na din sa desisyon ng Korte Suprema. Hindi lang ito laban ng ating kampo lamang, kundi laban ito ng bawat Pilipinong natatapakan ang kalayaan sa pamamahayag maging sinoman ang kandidatong sinusuportahan.<br><br>Nasa likod ni VP Leni Robredo, Sen. Kiko Pangilingan, at ng Tropang Angat ang taumbayan na patuloy na ikakampanya ang hangarin natin na Gobyernong Tapat, para #AngatBuhayLahat. <br><br>Please share!"
+						}
+					]
+				}
+			},
+			{
+				"component": "Banner",
+				"props": {
+					"id": "home-laywets-for-chel",
+					"image": "https://d2vjy6bhj0z1t0.cloudfront.net/files/lawyers-for-chel.png",
+					"url": "lawyers-for-chel"
+				}
 			}
 		]
 	},

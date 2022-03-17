@@ -4,34 +4,34 @@ export const initialStore = {
   translation: {
     fetching: false,
     result: false,
-    data: null
+    data: null,
   },
   selectedLanguage: null,
   grid: {
     fetching: false,
     result: false,
-    data: []
+    data: [],
   },
   news: {
     fetching: false,
     result: false,
     data: [],
     total: 0,
-    page: 1
+    page: 1,
   },
   cnews: {
     fetching: false,
     result: false,
     data: [],
     total: 0,
-    page: 1
+    page: 1,
   },
   events: {
     fetching: false,
     result: false,
     data: [],
     total: 0,
-    page: 1
+    page: 1,
   },
   upevents: {
     fetching: false,
@@ -52,7 +52,7 @@ export const initialStore = {
     result: false,
     data: [],
     total: 0,
-    page: 1
+    page: 1,
   },
   lpannouncements: {
     fetching: false,
@@ -61,17 +61,17 @@ export const initialStore = {
     filter: '',
     total: 0,
     page: 1,
-    selected: null
+    selected: null,
   },
   members: {
     fetching: false,
     result: false,
-    data: []
+    data: [],
   },
   invited: {
     fetching: false,
     result: false,
-    data: []
+    data: [],
   },
   communities: {
     fetching: false,
@@ -81,7 +81,7 @@ export const initialStore = {
     filter: null,
     sort: null,
     total: 0,
-    page: 1
+    page: 1,
   },
   communityDetails: {
     id: '',
@@ -94,7 +94,7 @@ export const initialStore = {
     result: false,
     data: [],
     total: 0,
-    page: 1
+    page: 1,
   },
   notifications: {
     fetching: false,
@@ -102,41 +102,41 @@ export const initialStore = {
     data: [],
     isRead: false,
     lastDateNotified: null,
-    lastDatePointsNotified: null
+    lastDatePointsNotified: null,
   },
   stories: {
     fetching: false,
     result: false,
-    data: []
+    data: [],
   },
   signup: null,
   forgot: null,
   settings: {
-    touchId: false
+    touchId: false,
   },
   appConfig: {
     fetching: false,
     result: false,
-    data: {}
+    data: {},
   },
   appLandingConfig: {
     fetching: false,
     result: false,
-    data: {}
+    data: {},
   },
   tasks: {
     fetching: false,
     result: false,
     data: null,
     date: null,
-    completed: false
+    completed: false,
   },
   leaderboard: {
     fetching: false,
     result: false,
     data: null,
     featured: null,
-    filter: {}
+    filter: {},
   },
   // user
   authUser: null,
@@ -152,26 +152,26 @@ export const initialStore = {
   tourGuide: null,
   successMessage: null,
   pageLoader: {
-    display: false
+    display: false,
   },
   communityInfo: {
     fetching: false,
     result: false,
-    data: null
+    data: null,
   },
   leaderCommunityEvents: {
     fetching: false,
     result: false,
     data: [],
     total: 0,
-    page: 1
+    page: 1,
   },
   leaderCommunityAnnouncements: {
     fetching: false,
     result: false,
     data: [],
     total: 0,
-    page: 1
+    page: 1,
   },
   videos: {
     fetching: false,
@@ -179,7 +179,7 @@ export const initialStore = {
     data: [],
     total: 0,
     page: 1,
-    selected: null
+    selected: null,
   },
   communityVolunteers: {
     fetching: false,
@@ -192,11 +192,11 @@ export const initialStore = {
     data: [],
     total: 0,
     page: 1,
-    selected: null
+    selected: null,
   },
   mChat: {
     fetching: false,
     result: false,
-    data: {}
-  }
+    data: {},
+  },
 };
