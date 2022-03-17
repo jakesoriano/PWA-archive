@@ -8,13 +8,12 @@ class OplanBaklas extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ...props,
+      data: props.dataKey ? getConfigByKey(props.dataKey) : props.data,
     };
   }
 
 	toggleAccordion = (item) => {
 	  this.setState({
-	    ...this.state,
 	    data: this.state.data.map((i, index) => {
 	      if (index === item) {
 	        i.active = !i.active;
@@ -27,9 +26,8 @@ class OplanBaklas extends Component {
 	  route(`/${this.props.parent}/oplan-baklas-report`);
 	};
 
-	render = ({ data, dataKey }) => {
-	  let items = dataKey ? getConfigByKey(dataKey) : data;
-	  if (!(items && items.length)) {
+	render = ({}, { data }) => {
+	  if (!(data && data.length)) {
 	    return null;
 	  }
 	  return (
