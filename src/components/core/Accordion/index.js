@@ -51,10 +51,11 @@ class Accordion extends Component {
 	            style={{ container: style.aIconWrap, image: style.aIcon }}
 	            lazy
 	          />
-	          <p dangerouslySetInnerHTML={{
-							__html: data.answer.text
-						}}
-						></p>
+	          <p
+	            dangerouslySetInnerHTML={{
+	              __html: data.answer.text,
+	            }}
+	          ></p>
 	        </div>
 	        <div className={style.aBottom}>
 	          {data.answer.video && (

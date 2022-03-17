@@ -34,7 +34,7 @@ class PermitRelated extends Component {
 	    <>
 	      <SubHeader title="PERMIT_RELATED" />
 	      <div className={style.oplanWrap}>
-	        {items.map((item, i) => {
+	        {data.map((item, i) => {
 	          return (
 	            <Accordion
 	              data={item}
