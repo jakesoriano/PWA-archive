@@ -80,7 +80,17 @@ class Topbar extends Component {
 	        )}
 	        {/* page title */}
 	        <h1 id="tb-title" className={`extraBold ${style.title}`}>
-	          {props.title && props.withBack ? getTranslation(props.title) : ''}
+	          {props.title && props.withBack ? (
+	            getTranslation(props.title)
+	          ) : (
+	            <>
+	              <ImageLoader
+	                src={'assets/icons/pink_ribbon.png'}
+	                style={{ container: style.logo }}
+	              />
+								LENI 2022
+	            </>
+	          )}
 	        </h1>
 	        {/* notification */}
 	        {!props.withBack && (

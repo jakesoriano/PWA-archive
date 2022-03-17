@@ -20,3 +20,4 @@ export * from './videos';
 export * from './lenipedia';
 export * from './messages';
 export * from './appLandingConfig';
+export * from './appHomeConfig';

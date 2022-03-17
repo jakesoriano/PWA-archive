@@ -10,13 +10,20 @@ import {
   removeTags,
   componentModal,
 } from '_helpers';
+import { fetchAppHomeConfig } from '_mutations';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import style from './style';
 class HomeNews extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      data: getConfigByKey('news'),
+    };
   }
+	componentDidMount = () => {
+	  fetchAppHomeConfig();
+	};
 	onShareAnnouncement = (item) => {
 	  nativeShare({
 	    url: item.image,
@@ -38,13 +45,13 @@ class HomeNews extends Component {
 	    content: <ArticleDetails data={data} />,
 	  });
 	};
-	render = ({ data, title, more, page }) => {
+	render = ({ title, more, page }, { data }) => {
 	  if (!(data && data.length)) {
 	    return null;
 	  }
 
 	  return (
-	    <div className={style.homeNewsWrap}>
+	    <div className={style.homeNewsWrap} id="home-news">
 	      {/* Title and See All */}
 	      <div className={style.header}>
 	        <p className={`bold ${style.title}`}>{getTranslation(title)}</p>

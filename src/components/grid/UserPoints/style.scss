@@ -1,0 +1,50 @@
+@import '../../../style/variables.scss';
+.userPoints {
+  margin: 0px 15px 5px;
+  background: $blue_bg;
+  border-radius: 10px;
+  padding: 10px;
+  .top {
+    display: flex;
+    align-items: center;
+    // avatar
+    > div {
+      flex-grow: 0;
+      label {
+        div {
+          border: none;
+          background-color: $gray_bg;
+          margin-right: 10px;
+          width: 40px;
+          padding-bottom: 40px;
+        }
+      }
+    }
+    // points
+    .points {
+      flex-grow: 1;
+      display: flex;
+      border-right: 1px solid #fff3;
+      flex-wrap: wrap;
+      span:first-child {
+        padding-right: 5px;
+      }
+    }
+    .text {
+      font-size: 0.8rem;
+    }
+    .button {
+      flex-grow: 1;
+      border-radius: 6px;
+      text-align: center;
+      padding: 5px;
+      font-size: 0.8rem;
+      position: relative;
+      text-decoration: underline;
+      &.invite {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+}

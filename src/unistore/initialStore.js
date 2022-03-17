@@ -138,6 +138,11 @@ export const initialStore = {
     featured: null,
     filter: {},
   },
+  appHomeConfig: {
+    fetching: false,
+    result: false,
+    data: {},
+  },
   // user
   authUser: null,
   deviceId: null,

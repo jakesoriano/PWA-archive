@@ -78,7 +78,9 @@
   .eventItem {
     .details {
       .detailImage {
-        width: 40%;
+        width: 100px;
+        max-width: 100px;
+        min-width: 100px;
       }
       .detailContent {
         display: grid;
@@ -132,7 +134,7 @@
     a {
       text-align: left;
       border: none;
-      border-bottom: 2px solid #d9d9d9;
+      border-bottom: 1px solid #e9e9e9;
       color: #606060;
       font-weight: bold;
       padding: 8px 15px;

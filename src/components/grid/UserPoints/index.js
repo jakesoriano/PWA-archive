@@ -18,7 +18,7 @@ import copy from 'clipboard-copy';
 import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
-class AccountProfile extends Component {
+class UserPoints extends Component {
   constructor(props) {
     super(props);
   }
@@ -71,55 +71,28 @@ class AccountProfile extends Component {
 	  }
 
 	  return (
-	    <div className={style.profileWrap}>
-	      {/* top */}
+	    <div className={style.userPoints}>
 	      <div className={style.top}>
 	        <UserAvatar allowUpdate styles={{ avatar: style.avatar }} />
-	        <p className={`bold ${style.text}`}>
-	          {displayName(authUser.profile)}
-	        </p>
-	        <a
-	          id={`${page}-update-profile`}
-	          className={`${style.button} ${style.update}`}
-	          onClick={() => route('update-profile')}
-	        >
-	          {isUserUpdatedProfile() ? (
-	            <span className={style.dot}></span>
-	          ) : null}
-	          {getTranslation('UPDATE_PROFILE')}
-	        </a>
-	      </div>
-	      {/* bottom */}
-	      <div className={style.bottom}>
-	        <div>
-	          <p className={style.text}>{getTranslation('ACCOUNT_LEVEL')}</p>
-	          {authUser.profile.roles == '100' ? (
-	            <p className={`bold ${style.text}`}>
-	              {getTranslation('LABEL_COMMUNITY_LEADER')}
-	            </p>
-	          ) : (
-	            <p className={`bold ${style.text}`}>{getTranslation('MEMBER')}</p>
-	          )}
-	        </div>
-	        <div>
-	          <p className={style.text}>{getTranslation('HERO_POINTS')}</p>
-	          <p className={`bold ${style.text}`}>
+	        <div className={style.points}>
+	          <span className={style.text}>{getTranslation('HERO_POINTS')}</span>
+	          <span className={`bold ${style.text}`}>
 	            {authUser.points === 0
 	              ? '-'
 	              : formatNumber(authUser.points, 2) || 0}{' '}
 	            {getTranslation('POINTS')}
-	          </p>
+	          </span>
 	        </div>
 	        <a
-	          id={`${page}-invite`}
-	          className={`${style.button} ${style.invite}`}
+	          id={`${page}-update-profile`}
+	          className={`${style.button} ${style.inbite}`}
 	          onClick={() => route('invite')}
 	        >
-	          {getTranslation('REPORT')}
+	          {getTranslation('Invite Kakampinks +')}
 	        </a>
 	      </div>
 	    </div>
 	  );
 	};
 }
-export default connect(['authUser'])(AccountProfile);
+export default connect(['authUser'])(UserPoints);

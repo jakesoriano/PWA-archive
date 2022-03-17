@@ -68,3 +68,5 @@ export { default as LawyersForChel } from './LawyersForChel';
 export { default as OplanBaklas } from './OplanBaklas';
 export { default as PermitRelated } from './PermitRelated';
 export { default as ReportForm } from './ReportForm';
+export { default as HomeEvents } from './HomeEvents';
+export { default as UserPoints } from './UserPoints';

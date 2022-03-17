@@ -14,11 +14,11 @@
             &:not(:first-of-type) {
                 margin-left: 5px;
             }
-            .thumbnail {
+            .thumb {
                 width: 100%;
-                padding-bottom: 85px;
-                border: 1px solid #737373;
-                border-radius: 8px;
+                padding-bottom: 81px;
+                // border: 1px solid #737373;
+                border-radius: 4px;
                 img {
                     position: absolute;
                     top: -9999px;

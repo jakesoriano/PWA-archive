@@ -39,6 +39,10 @@
 			text-overflow: ellipsis;
 			overflow: hidden;
 			white-space: nowrap;
+			.logo {
+				width: 30px;
+				padding-bottom: 30px;
+			}
 		}
 		.btnBack,
 		.burger,

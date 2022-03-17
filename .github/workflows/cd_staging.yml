@@ -61,7 +61,7 @@ jobs:
         uses: chetan/invalidate-cloudfront-action@v2
         env:
           DISTRIBUTION: ${{ secrets.STG_DISTRIBUTION }}
-          PATHS: "/android/index.html /android/assets/* /ios/index.html /ios/assets/* /uploads/appConfig.json"
+          PATHS: "/android/index.html /android/assets/* /ios/index.html /ios/assets/* /uploads/appConfig.json /uploads/appHomeConfig.json"
           AWS_REGION: "ap-southeast-1"
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
