@@ -7,30 +7,10 @@
 		flex-direction: column;
 		background-color: #00826c;
 		position: relative;
+		padding: 20px 0 15px;
 		div {
 			width: 58%;
-			padding-bottom: 45%;
-		}
-		span {
-			position: absolute;
-			top: 83%;
-			bottom: 0;
-			right: 12px;
-			font-size: 0.6rem;
-			z-index: 1;
-			p {
-				color: #3aa797;
-			}
-		}
-	}
-	.footerImage {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin-top: 60px;
-		div {
-			width: 230px;
-			padding-bottom: 130px;
+			padding-bottom: 30%;
 		}
 	}
 	.pageTitle {

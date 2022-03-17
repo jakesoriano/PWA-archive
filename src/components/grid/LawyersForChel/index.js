@@ -12,17 +12,11 @@ class LawyersForChel extends Component {
 	  route(url);
 	};
 
-	render = ({ page }) => {
+	render = ({ page, headerImage }) => {
 	  return (
 	    <div className={style.hfWrap}>
 	      <div className={style.headerImage}>
-	        <ImageLoader
-	          style={{ container: style.backImg }}
-	          src={'assets/images/chel_header.png'}
-	        />
-	        <span>
-	          <p>{this.props?.artwork}</p>
-	        </span>
+	        <ImageLoader style={{ container: style.backImg }} src={headerImage} />
 	      </div>
 
 	      <div className={style.pageTitle}>{this.props?.title}</div>
@@ -55,10 +49,6 @@ class LawyersForChel extends Component {
 	            </a>
 	          );
 	        })}
-	      </div>
-
-	      <div className={style.footerImage}>
-	        <ImageLoader src={'assets/images/chel_footer.png'} />
 	      </div>
 	    </div>
 	  );

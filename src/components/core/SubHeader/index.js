@@ -8,11 +8,13 @@ class SubHeader extends Component {
 	render = ({ image, title }) => {
 	  return (
 	    <div className={style.subHeader}>
-	      <ImageLoader
-	        src={image}
-	        style={{ container: style.imgWrap, image: style.img }}
-	        lazy
-	      />
+	      {image && (
+	        <ImageLoader
+	          src={image}
+	          style={{ container: style.imgWrap, image: style.img }}
+	          lazy
+	        />
+	      )}
 	      <p className={`bold ${style.title}`}>{getTranslation(title)}</p>
 	    </div>
 	  );

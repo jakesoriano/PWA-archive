@@ -106,36 +106,22 @@
 	{
 		"styles": [
 			{
-				"selector": "#w1 > div > div:first-child",
-				"styles": "background: #1A4789;"
-			},
-			{
-				"selector": "#w1 > div > div:last-child",
-				"styles": "background: #3F3E3E;"
-			},
-			{
 				"selector": [
 					"#home-news",
 					"#home-events",
 					"#home-comics"
 				],
 				"styles" : "border-bottom: 1px solid #e9e9e9; margon-bottom: 10px; padding-bottom: 10px;"
-			},	
-			{
-				"selector": [
-					"#home-crowdsourcing",
-					"#home-pasabuy"
-				],
-				"styles": "background: rgb(6,28,130);background: linear-gradient(270deg, rgba(6,28,130,1) 0%, rgba(39,65,187,1) 100%);"
 			},
 			{
 				"selector": [
+					"#home-crowdsourcing",
 					"#home-tasks",
 					"#home-report",
 					"#home-vol-kit",
-					"#home-library"
+					"#home-editor"
 				],
-				"styles": "background: rgb(161,32,95); background: linear-gradient(270deg, rgba(161,32,95,1) 0%, rgba(236,0,134,1) 100%);"
+				"styles": "background: rgb(161,32,95); background: linear-gradient(270deg, rgba(161,32,95,1) 0%, rgba(236,0,134,1) 100%);padding: 10px 30px;"
 			},
 			{
 				"selector": "#home-search-pinkpedia",
@@ -182,16 +168,16 @@
 							"tag": "COMING_SOON"
 						},
 						{
-							"id": "home-pasabuy",
-							"text": "PASABUY",
-							"icon": "assets/images/h_pasabuy.png",
-							"tag": "COMING_SOON"
-						},
-						{
 							"id": "home-tasks",
 							"text": "TASK_CENTER",
 							"icon": "assets/images/h_tasks.png",
 							"url": "task-center"
+						},
+						{
+							"id": "home-vol-kit",
+							"text": "VOLUNTEER_KIT",
+							"icon": "assets/images/h_vol-kit.png",
+							"url": "volunteer-kits"
 						},
 						{
 							"id": "home-report",
@@ -200,15 +186,9 @@
 							"tag": "COMING_SOON"
 						},
 						{
-							"id": "home-vol-kit",
-							"text": "DOWNLOAD_VOLUNTEER_KIT",
-							"icon": "assets/images/h_vol-kit.png",
-							"url": "volunteer-kits"
-						},
-						{
-							"id": "home-library",
-							"text": "LIBRARY",
-							"icon": "assets/images/h_library.png",
+							"id": "home-editor",
+							"text": "EDITORS_PICK",
+							"icon": "assets/images/h_editor.png",
 							"tag": "COMING_SOON"
 						}
 					]
@@ -230,16 +210,6 @@
 					"id": "home-pollwatcher",
 					"image": "https://d2vjy6bhj0z1t0.cloudfront.net/files/pollwatcher.jpg",
 					"url": "poll-watcher"
-				}
-			},
-			{
-				"component": "HomeEvents",
-				"props": {
-					"title": "COMING UP",
-					"more": {
-						"url": "community-events-v2",
-						"text": "SEE_ALL_EVENTS"
-					}
 				}
 			},
 			{
@@ -494,18 +464,17 @@
 				"props": {
 					"title": "Pumili ng Isyu",
 					"artwork": "Artwork by Jojo Mendoza",
-					"headerImage": "assets/images/chel_header.png",
-					"footerImage": "assets/images/chel_footer.png",
+					"headerImage": "assets/images/chel_logo.png",
 					"issues": [
 						{
 							"title": "Oplan Baklas",
 							"url": "lawyers-for-chel-oplan-baklas",
-							"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+							"description": "Alamin ang mga dapat nating tandaan bilang volunteers patungkol sa paglalagay ng campaign materials sa mga pribadong gusali o tahanan."
 						},
 						{
 							"title": "Permit Related",
 							"url": "lawyers-for-chel-permit-related",
-							"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+							"description": "Alamin ang mga dapat nating tandaan bilang volunteers patungkol sa permit requirements para sa pangangampanya."
 						}
 					]
 				}
@@ -973,45 +942,7 @@
 			{
 				"component": "OplanBaklas",
 				"props": {
-					"data": [
-						{
-							"question": {
-								"text": "The Government is removing my campaign poster. Illegal daw?",
-								"thumb": "https://i3.ytimg.com/vi/HSxq_E3ihfI/maxresdefault.jpg"
-							},
-							"answer": {
-								"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-								"author": "The Author",
-								"authorImg": "assets/images/avatar.jpeg",
-								"video": "https://www.youtube.com/embed/HSxq_E3ihfI"
-							},
-							"active": false
-						},
-						{
-							"question": {
-								"text": "The Government is removing my campaign poster. Illegal daw?",
-								"thumb": "https://i3.ytimg.com/vi/HSxq_E3ihfI/maxresdefault.jpg"
-							},
-							"answer": {
-								"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-								"video": "https://www.youtube.com/embed/HSxq_E3ihfI",
-								"author": "The Author",
-								"authorImg": "assets/images/avatar.jpeg"
-							},
-							"active": false
-						},
-						{
-							"question": {
-								"text": "The Government is removing my campaign poster. Illegal daw?"
-							},
-							"answer": {
-								"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-								"author": "The Author",
-								"authorImg": "assets/images/avatar.jpeg"
-							},
-							"active": false
-						}
-					]
+					"dataKey": "oplanBaklas"
 				}
 			}
 		]
@@ -1026,44 +957,7 @@
 			{
 				"component": "PermitRelated",
 				"props": {
-					"data": [
-						{
-							"question": {
-								"text": "The Government is removing my campaign poster. Illegal daw?",
-								"image": "assets/images/chel_header.png"
-							},
-							"answer": {
-								"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-								"image": "assets/images/chel_header.png",
-								"author": "The Author",
-								"authorImg": "assets/images/avatar.jpeg",
-								"video": "https://www.youtube.com/embed/HSxq_E3ihfI"
-							},
-							"active": false
-						},
-						{
-							"question": {
-								"text": "The Government is removing my campaign poster. Illegal daw?"
-							},
-							"answer": {
-								"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-								"author": "The Author",
-								"authorImg": "assets/images/avatar.jpeg"
-							},
-							"active": false
-						},
-						{
-							"question": {
-								"text": "The Government is removing my campaign poster. Illegal daw?"
-							},
-							"answer": {
-								"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-								"author": "The Author",
-								"authorImg": "assets/images/avatar.jpeg"
-							},
-							"active": false
-						}
-					]
+					"dataKey": "permitRelated"
 				}
 			}
 		]

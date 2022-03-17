@@ -78,9 +78,21 @@
             border-radius: 5px;
         }
         p {
-            color: #737373;
+            color: #231f20;
             text-align: left;
             font-size: 0.8rem;
+            strong {
+                color: #231f20;
+            }
+            ul, ol {
+                li {
+                    color: #231f20;
+                    margin: 10px 0;
+                }
+            }
+            ol {
+                padding-left: 15px;
+            }
         }
         &.active {
             display: flex;

@@ -1,13 +1,8 @@
 import { Component } from 'preact';
 import { route, Link } from 'preact-router';
 import { connect } from 'unistore/preact';
-import {
-  ImageLoader,
-  ButtonDescription,
-  Accordion,
-  SubHeader,
-} from '_components/core';
-import { getTranslation } from '_helpers';
+import { ButtonDescription, Accordion, SubHeader } from '_components/core';
+import { getTranslation, getConfigByKey } from '_helpers';
 import style from './style';
 class OplanBaklas extends Component {
   constructor(props) {
@@ -32,15 +27,16 @@ class OplanBaklas extends Component {
 	  route(`/${this.props.parent}/oplan-baklas-report`);
 	};
 
-	render = ({ data }) => {
-	  if (!(data && data.length)) {
+	render = ({ data, dataKey }) => {
+	  let items = dataKey ? getConfigByKey(dataKey) : data;
+	  if (!(items && items.length)) {
 	    return null;
 	  }
 	  return (
 	    <>
-	      <SubHeader image="assets/images/chel_footer.png" title="OPLAN_BAKLAS" />
+	      <SubHeader title="OPLAN_BAKLAS" />
 	      <div className={style.oplanWrap}>
-	        {data.map((item, i) => {
+	        {items.map((item, i) => {
 	          return (
 	            <Accordion
 	              data={item}
