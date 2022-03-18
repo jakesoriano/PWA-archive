@@ -1,5 +1,5 @@
-import { store } from '_unistore';
-import { xhr, urlContactUs, urlIncidentReport, urlReport } from '_helpers';
+import { updateStore, store } from '_unistore';
+import { xhr, urlContactUs, urlIncidentReport, urlReport, urlApplyPollWatcher } from '_helpers';
 
 export function sendContactUs(data) {
   // current state
@@ -73,3 +73,36 @@ export function sendReport(data) {
       });
   });
 }
+export function applyPollWatcher(data) {
+  return new Promise((resolve) => {
+    xhr(urlApplyPollWatcher, {
+      method: 'POST',
+      data,
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> applyPollWatcher Error`, res);
+          resolve(false);
+        } else {
+          console.log(`SPA >> applyPollWatcher successful`, res);
+          const { authUser } = store.getState();
+          updateStore({
+            authUser: {
+              ...authUser,
+              profile: {
+                ...authUser.profile,
+                pollWatcher: res.profile.pollWatcher
+              }
+            }
+          });
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(false);
+        console.log(`SPA >> applyPollWatcher failed`, err);
+      });
+  });
+}
+
+

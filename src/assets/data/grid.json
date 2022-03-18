@@ -991,5 +991,21 @@
 				}
 			}
 		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_POLLWATCHER",
+		"uri": "poll-watcher",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "PollWatcher",
+				"props": {
+					"video": "https://www.youtube.com/embed/RKUxOZC5sr4",
+					"text": "Maraming salamat KakamPink! Maghintay lamang ng update mula sa Leni Robredo Campaign Team ukol sa iyong application na maging Poll Watcher."
+				}
+			}
+		]
 	}
 ]

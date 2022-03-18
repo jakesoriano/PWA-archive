@@ -47,3 +47,4 @@ export const urlLeniPedia = `${process.env.API_DOMAIN}lenipedia`;
 export const urlCommunityVolunteer = `${process.env.API_DOMAIN}community/listings/search`;
 export const urlMessages = `${urlCommunity}/listings/msgfeed`;
 export const urlIncidentReport = `${process.env.API_DOMAIN}report`;
+export const urlApplyPollWatcher = urlUser + `/pollwatcher/application`;

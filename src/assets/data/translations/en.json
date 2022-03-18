@@ -17,6 +17,7 @@
 	"PAGE_MANAGE_PAGE": "Manage Page",
 	"PAGE_UPDATE_PROFILE": "Update Profile",
 	"PAGE_VOLUNTEER_ANNOUNCEMENT": "Volunteer Announcement",
+	"PAGE_POLLWATCHER": "Be A Poll Watcher",
 	"MEMBERS": "Members",
 	"HERO_POINTS": "Hero Pts.",
 	"EARN_100P": "Earn 100 pts",
@@ -351,5 +352,11 @@
 	"GO_BACK": "Go back",
 	"EMAIL": "Email",
 	"INVALID_EMAIL": "Invalid Email",
+	"REQUIREMENTS": "Requirement",
+	"COMPLETE_PROFILE": "Complete and updated profile",
+	"SUBMIT_PROFILE_MSG": "I want to submit my complete profile to be vetted by the campaign.",
+	"SUBMIT_APPLICATION": "Submit Application",
+	"POLLWATCHER_TITLE": "Why be a pollwatcher?",
+	"POLLWATCHER_CONTENT": "On May 9, our polls need watching to protect your Kakampink votes more than ever. With more than 120,000 precincts in the country, we need at least two in each to assist in safeguarding our votes. This can be you and a friend, or more. Sign up with us today para maipanalo na natin ‘to!",
 	"REPORTING_EMAIL_BLACKLISTED": "Your email is blacklisted, please use another email."
 }
