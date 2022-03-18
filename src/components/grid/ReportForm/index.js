@@ -247,10 +247,7 @@ class ReportForm extends Component {
 
 	  return (
 	    <div className={style.formWrap}>
-	      <SubHeader
-	        image="assets/images/chel_footer.png"
-	        title={`${this.state.category.value} Report`}
-	      />
+	      <SubHeader title={`${this.state.category.value} Report`} />
 	      <div className={style.contactUs}>
 	        <div className={style.infoWrap}>
 	          <FormGroup
