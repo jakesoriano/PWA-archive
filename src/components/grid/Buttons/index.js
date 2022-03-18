@@ -6,7 +6,9 @@ import { getTranslation, showTourGuide } from '_helpers';
 import style from './style';
 class Buttons extends Component {
 	onClick = (url) => {
-	  if (url) {
+	  if (url && url.substr(0, 4) == 'http') {
+	    window.open(url);
+	  } else if (url) {
 	    route(url);
 	  }
 	};

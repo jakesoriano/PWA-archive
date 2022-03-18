@@ -165,7 +165,7 @@
 							"id": "home-crowdsourcing",
 							"text": "COMMUNITY_CROWDSOURCING",
 							"icon": "assets/images/h_crowd.png",
-							"tag": "COMING_SOON"
+							"url": "https://shop.unicare.ph/landing"
 						},
 						{
 							"id": "home-tasks",
