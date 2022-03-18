@@ -1,6 +1,11 @@
 import { Component } from 'preact';
 import { ImageLoader } from '_components/core';
-import { componentModal, getTranslation, getConfigByKey } from '_helpers';
+import {
+  componentModal,
+  getTranslation,
+  getConfigByKey,
+  replaceUrlPlaceholders,
+} from '_helpers';
 import style from './style';
 class HorizontalImageList extends Component {
 	onClick = (item) => {
@@ -21,7 +26,7 @@ class HorizontalImageList extends Component {
 	    <p className={style.title}>{item.title}</p>
 	    <a
 	      className={style.button}
-	      href={item.file}
+	      href={replaceUrlPlaceholders(item.file)}
 	      download
 	      target="_blank"
 	      rel="noreferrer"
