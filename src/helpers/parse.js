@@ -1,7 +1,7 @@
 import { store } from '_unistore';
 
 // eslint-disable-next-line import/prefer-default-export
-export function replaceUrlPlaceholders (url) {
+export function replaceUrlPlaceholders(url) {
   try {
     const { selectedLanguage } = store.getState();
 
@@ -17,6 +17,10 @@ export function replaceUrlPlaceholders (url) {
         .replace(/{langAlias}/gim, selectedLanguage)
         .replace(/{API_DOMAIN}/gim, process.env.API_DOMAIN)
         .replace(/{CDN_DOMAIN}/gim, process.env.CDN_DOMAIN)
+        .replace(
+          /{CDN_DOMAIN_FILES}/gim,
+          process.env.CDN_DOMAIN.replace('/uploads', '/files')
+        )
         .replace(/{PUBLIC_PATH}/gim, process.env.PUBLIC_PATH)
         .replace(/{TARGET}/gim, process.env.PLATFORM)
         .replace(/{DOMAIN}/gim, domain);
@@ -33,7 +37,7 @@ export function replaceUrlPlaceholders (url) {
   return null;
 }
 
-export function getQueryStringValue (key) {
+export function getQueryStringValue(key) {
   try {
     const splitUrl = window.location.href.split('?');
     if (splitUrl.length > 1) {
@@ -51,21 +55,26 @@ export function getQueryStringValue (key) {
   }
 }
 
-export function resolveImageUrl (imageUrl) {
-  if (imageUrl && imageUrl.substr(0, 4) !== 'http' && imageUrl.split('/').length === 1) {
+export function resolveImageUrl(imageUrl) {
+  if (
+    imageUrl &&
+		imageUrl.substr(0, 4) !== 'http' &&
+		imageUrl.split('/').length === 1 &&
+		imageUrl.substr(0, 1) !== '{'
+  ) {
     return replaceUrlPlaceholders(`{CDN_DOMAIN}${imageUrl}`);
   }
   return replaceUrlPlaceholders(imageUrl);
 }
 
 export function removeTags(str) {
-  if ((str===null) || (str==='')) {
-    return false; 
+  if (str === null || str === '') {
+    return false;
   }
   str = str.toString();
-        
-  // Regular expression to identify HTML tags in 
-  // the input string. Replacing the identified 
+
+  // Regular expression to identify HTML tags in
+  // the input string. Replacing the identified
   // HTML tag with a null string.
-  return str.replace(/(<([^>]+)>)/ig, '');
+  return str.replace(/(<([^>]+)>)/gi, '');
 }
