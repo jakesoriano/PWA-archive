@@ -8,15 +8,11 @@ import style from './style';
 class SuccessMessage extends Component {
 	ref = createRef();
 
-	handleBack = (cb) => {
-	  // if (this.ref.current) {
-	  //   this.ref.current && this.ref.current.classList.remove(style.animate);
-	  //   this.ref.current && this.ref.current.classList.add(style.close);
-	  //   setTimeout(cb, 400);
-	  // } else {
-	  //   cb();
-	  // }
+	handleBack = (cbBack) => {
 	  successMessage(null);
+	  if (cbBack) {
+	    cbBack();
+	  }
 	};
 
 	componentDidMount = () => {
@@ -27,13 +23,13 @@ class SuccessMessage extends Component {
 	  }
 	};
 
-	render = ({ pageTitle, title, message }) => (
+	render = ({ pageTitle, title, message, cbBack }) => (
 	  <div className={`${style.popupPage} ${style.noAnimate}`}>
 	    <div className={style.header}>
 	      <button
 	        className="icon-back clickable"
 	        onClick={() => {
-	          this.handleBack();
+	          this.handleBack(cbBack);
 	        }}
 	      >
 	        <ImageLoader
@@ -54,7 +50,7 @@ class SuccessMessage extends Component {
 	      <div className={style.btnWrap}>
 	        <ButtonDescription
 	          onClickCallback={() => {
-	            this.handleBack();
+	            this.handleBack(cbBack);
 	          }}
 	          text={getTranslation('GO_BACK')}
 	          buttonStyle={`${style.buttonStyle}`}

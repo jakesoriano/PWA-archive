@@ -7,16 +7,12 @@ import {
   LoaderRing,
   FormGroup,
   FormInput,
-  FormDropdown,
   ImageLoader,
   ButtonDescription,
-  SubHeader,
 } from '_components/core';
 import {
   getTranslation,
-  getIncidentCategories,
   successMessage,
-  uploadFile,
   displayPageLoader,
   showAlertBox,
 } from '_helpers';
@@ -35,7 +31,6 @@ class PollWatcher extends Component {
     this.state = this.initialState;
   }
 
-
 	submitData = () => {
 	  applyPollWatcher().then((res) => {
 	    displayPageLoader(false);
@@ -47,6 +42,9 @@ class PollWatcher extends Component {
 	        pageTitle: getTranslation('PAGE_POLLWATCHER'),
 	        title: getTranslation('SUBMIT_SUCCESS'),
 	        message: this.props.text,
+	        cbBack: () => {
+	          route('/home', true);
+	        },
 	      });
 	    } else {
 	      showAlertBox({
@@ -57,48 +55,52 @@ class PollWatcher extends Component {
 	};
 
 	handleContinue = () => {
-	  if (
-	    this.state.completeProfileCheck.checked &&
-			this.validateRequirement()
-	  ) {
+	  if (this.state.completeProfileCheck.checked && this.validateRequirement()) {
 	    this.submitData();
 	  }
 	};
 
 	validateRequirement = () => {
-	  const isProfileUpdated = this.props.authUser.profile.barangay ? true : false;
+	  const isProfileUpdated = this.props.authUser.profile.barangay
+	    ? true
+	    : false;
 	  return isProfileUpdated;
-	}
+	};
 
-	render = (
-	  { authUser },
-	  {
-	    completeProfileCheck,
-	  }
-	) => {
+	render = ({ authUser }, { completeProfileCheck }) => {
 	  if (!authUser) {
 	    return <LoaderRing fullpage />;
 	  }
 
 	  return (
-	      <div className={style.pollWatcherWrap}>
+	    <div className={style.pollWatcherWrap}>
 	      <div className={style.header}>
-	        <p className={`bold ${style.title}`}>{getTranslation('POLLWATCHER_TITLE')}</p>
+	        <p className={`bold ${style.title}`}>
+	          {getTranslation('POLLWATCHER_TITLE')}
+	        </p>
 	        <iframe
 	          className={style.video}
 	          width="100%"
-	          height="auto"
+	          height="300"
 	          frameBorder="0"
 	          src={this.props.video}
 	        ></iframe>
-	        <p className={`${style.content}`}>{getTranslation('POLLWATCHER_CONTENT')}</p>
+	        <p className={`${style.content}`}>
+	          {getTranslation('POLLWATCHER_CONTENT')}
+	        </p>
 	      </div>
-					
-	        <div className={style.requirements}>
-	         <p className={`bold ${style.title}`}>{getTranslation('REQUIREMENTS')}</p>
-					 <div className={style.rItem}>
+
+	      <div className={style.requirements}>
+	        <p className={`bold ${style.title}`}>
+	          {getTranslation('REQUIREMENTS')}
+	        </p>
+	        <div className={style.rItem}>
 	          <ImageLoader
-	            src={`${authUser.profile.barangay ? 'assets/icons/red_check.svg' : 'assets/icons/gray_check.svg'}`}
+	            src={`${
+								authUser.profile.barangay
+								  ? 'assets/icons/red_check.svg'
+								  : 'assets/icons/gray_check.svg'
+							}`}
 	            // style={{ container: `${style.dropdown} ${authUser.profile.active ? style.active : ''}` }}
 	            style={{ container: `${style.checkImg}` }}
 	          />
@@ -110,49 +112,65 @@ class PollWatcher extends Component {
 	                  route('/update-profile');
 	                }
 	              }}
-	              text={`${authUser.profile.barangay ? getTranslation('COMPLETED') : getTranslation('UPDATE_PROFILE')}`}
-	              buttonStyle={`light ${!authUser.profile.barangay ? style.buttonActive : style.buttonInactive}`}
+	              text={`${
+									authUser.profile.barangay
+									  ? getTranslation('COMPLETED')
+									  : getTranslation('UPDATE_PROFILE')
+								}`}
+	              buttonStyle={`light ${
+									!authUser.profile.barangay
+									  ? style.buttonActive
+									  : style.buttonInactive
+								}`}
 	            />
 	          </div>
-					 </div>
 	        </div>
-	      {authUser.profile.pollWatcher && <p className={`bold ${style.message}`}>{this.props.text}</p>}
-	      {!authUser.profile.pollWatcher && (
-	        <><FormGroup>
-	          <FormInput
-	            type="checkbox"
-	            label={getTranslation('SUBMIT_PROFILE_MSG')}
-	            onClick={() => {
-	              this.setState({
-	                completeProfileCheck: {
-	                  ...completeProfileCheck,
-	                  checked: !completeProfileCheck.checked,
-	                },
-	              });
-	            }}
-	            checked={completeProfileCheck.checked}
-	            name="agreeToTerms"
-	            className={style.checkBox}
-	            style={{
-	              container:
-								completeProfileCheck.required && !completeProfileCheck.checked
-								  ? style.checkWrap
-								  : '',
-	            }}
-	          />
-	        </FormGroup>
-	        <div className={style.buttonContainer}>
-	          <ButtonDescription
-	            onClickCallback={() => {
-	              this.handleContinue();
-	            }}
-	            text={getTranslation('SUBMIT_APPLICATION')}
-	            buttonStyle={`${completeProfileCheck.checked && this.validateRequirement() ? style.buttonStyle : style.buttonDisabled}`}
-	          />
-	        </div></>
-	      ) }
-					
 	      </div>
+	      {authUser.profile.pollWatcher && (
+	        <p className={`bold ${style.message}`}>{this.props.text}</p>
+	      )}
+	      {!authUser.profile.pollWatcher && (
+	        <>
+	          <FormGroup>
+	            <FormInput
+	              type="checkbox"
+	              label={getTranslation('SUBMIT_PROFILE_MSG')}
+	              onClick={() => {
+	                this.setState({
+	                  completeProfileCheck: {
+	                    ...completeProfileCheck,
+	                    checked: !completeProfileCheck.checked,
+	                  },
+	                });
+	              }}
+	              checked={completeProfileCheck.checked}
+	              name="agreeToTerms"
+	              className={style.checkBox}
+	              style={{
+	                container:
+										completeProfileCheck.required &&
+										!completeProfileCheck.checked
+										  ? style.checkWrap
+										  : '',
+	              }}
+	            />
+	          </FormGroup>
+	          <div className={style.buttonContainer}>
+	            <ButtonDescription
+	              onClickCallback={() => {
+	                this.handleContinue();
+	              }}
+	              text={getTranslation('SUBMIT_APPLICATION')}
+	              buttonStyle={`${
+									completeProfileCheck.checked && this.validateRequirement()
+									  ? style.buttonStyle
+									  : style.buttonDisabled
+								}`}
+	            />
+	          </div>
+	        </>
+	      )}
+	    </div>
 	  );
 	};
 }
