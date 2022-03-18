@@ -197,7 +197,7 @@
 			{
 				"component": "HomeNews",
 				"props": {
-					"title": "NEWS AND ANNOUCEMENTS",
+					"title": "NEWS AND ANNOUNCEMENTS",
 					"more": {
 						"url": "global-announcements",
 						"text": "SEE_ALL_NEWS"
@@ -215,7 +215,7 @@
 			{
 				"component": "Text",
 				"props": {
-					"text": "PRINTABLE MERC",
+					"text": "PRINTABLES",
 					"id": "printable-merch",
 					"isTitle": true,
 					"additionalClass": "bold"
@@ -240,7 +240,7 @@
 			{
 				"component": "Banner",
 				"props": {
-					"id": "home-laywets-for-chel",
+					"id": "home-lawyers-for-chel",
 					"image": "https://d2vjy6bhj0z1t0.cloudfront.net/files/lawyers-for-chel.png",
 					"url": "lawyers-for-chel"
 				}

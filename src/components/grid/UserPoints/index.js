@@ -7,9 +7,7 @@ import {
   formatNumber,
   getConfigByKey,
   circleModal,
-  displayName,
   showAlertBox,
-  isUserUpdatedProfile,
 } from '_helpers';
 import { fetchUserPoints } from '_mutations';
 import { nativeShare } from '_platform/helpers';
@@ -84,7 +82,7 @@ class UserPoints extends Component {
 	          </span>
 	        </div>
 	        <a
-	          id={`${page}-update-profile`}
+	          id={`${page}-invite`}
 	          className={`${style.button} ${style.inbite}`}
 	          onClick={() => route('invite')}
 	        >

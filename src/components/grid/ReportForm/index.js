@@ -21,6 +21,7 @@ import {
 } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
+import { route } from 'preact-router';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class ReportForm extends Component {
@@ -179,6 +180,9 @@ class ReportForm extends Component {
 	        pageTitle: getTranslation('KNOW_YOUR_RIGHTS'),
 	        title: getTranslation('SUBMIT_SUCCESS'),
 	        message: getTranslation('SUBMIT_REPORT_SUCCESS'),
+	        cbBack: () => {
+	          route('/home', true);
+	        },
 	      });
 	    } else {
 	      showAlertBox({

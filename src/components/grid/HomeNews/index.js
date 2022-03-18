@@ -75,7 +75,7 @@ class HomeNews extends Component {
 	          {data.map((item) => {
 	            return (
 	              <div
-	                className={style.item}
+	                className={`home-news ${style.item}`}
 	                onClick={() => {
 	                  this.onShowPopup(item);
 	                }}
