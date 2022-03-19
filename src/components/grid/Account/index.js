@@ -1,6 +1,11 @@
 import { Component } from 'preact';
 // import { route } from 'preact-router';
-import { getTranslation, displayPageLoader, circleModal, showAlertBox } from '_helpers';
+import {
+  getTranslation,
+  displayPageLoader,
+  circleModal,
+  showAlertBox,
+} from '_helpers';
 import { useCode } from '_mutations';
 import { connect } from 'unistore/preact';
 import { FormGroup, FormInput, ButtonDescription } from '_components/core';
@@ -16,11 +21,11 @@ class Account extends Component {
         value: '',
         error: '',
         message: '',
-        hasError: false
+        hasError: false,
       },
       communityRadio: {
         checked: true,
-      }
+      },
     };
   }
 
@@ -30,13 +35,13 @@ class Account extends Component {
 	      value: '',
 	      error: '',
 	      message: '',
-	      hasError: false
+	      hasError: false,
 	    },
 	    communityRadio: {
 	      checked: true,
-	    }
+	    },
 	  });
-	}
+	};
 
 	onCodeChange = (value) => {
 	  this.setState({
@@ -44,8 +49,8 @@ class Account extends Component {
 	      ...this.state.inviteCode,
 	      value,
 	      hasError: !value,
-	      error: !value ? 'REQUIRED' : ''
-	    }
+	      error: !value ? 'REQUIRED' : '',
+	    },
 	  });
 	};
 
@@ -61,28 +66,30 @@ class Account extends Component {
 	      inviteCode: this.state.inviteCode.value,
 	    };
 	    // Submit invite code
-	    displayPageLoader(true)
-	    useCode(data).then((res) => {
-	      if (res && res.success) {
-	        // reset form data
-	        this.resetState();
-	        circleModal({
-	          title: getTranslation('COMMUNITY_CODE_SUCCESS'),
-	          content: getTranslation('COMMUNITY_CODE_DESC')
-	        });
-	        route(`/community-setup`);
-	      } else {
+	    displayPageLoader(true);
+	    useCode(data)
+	      .then((res) => {
+	        if (res && res.success) {
+	          // reset form data
+	          this.resetState();
+	          circleModal({
+	            title: getTranslation('COMMUNITY_CODE_SUCCESS'),
+	            content: getTranslation('COMMUNITY_CODE_DESC'),
+	          });
+	          route(`/community-setup`);
+	        } else {
+	          showAlertBox({
+	            message: 'INVALID_CODE',
+	          });
+	        }
+	        displayPageLoader(false);
+	      })
+	      .catch((err) => {
 	        showAlertBox({
-	          message: 'INVALID_CODE'
+	          message: 'INVALID_CODE',
 	        });
-	      }
-	      displayPageLoader(false);
-	    }).catch((err) => {
-	      showAlertBox({
-	        message: 'INVALID_CODE'
+	        displayPageLoader(false);
 	      });
-	      displayPageLoader(false);
-	    });
 	  }
 	};
 
@@ -90,14 +97,13 @@ class Account extends Component {
 	  return (
 	    <div className={style.accountProfileWrap}>
 	      <div className={style.accountProfileContent}>
-					
 	        <h4>{`${getTranslation('ACCOUNT_LEVEL')}: Member`}</h4>
 	        <h2>{getTranslation('UPGRADE_ACCOUNT')}</h2>
 	        <form className={style.form}>
 	          <FormGroup hasError={inviteCode.hasError}>
 	            <FormInput
 	              className={style.communityRadio}
-	              type='radio'
+	              type="radio"
 	              checked={communityRadio.checked}
 	              label={getTranslation('COMMUNITY_LEADER')}
 	            />
@@ -106,41 +112,40 @@ class Account extends Component {
 	              value={inviteCode.value}
 	              placeholder={getTranslation('ENTER_INVITE_CODE')}
 	              onBlur={(e) => {
-	                this.onCodeChange(e.target.value)
+	                this.onCodeChange(e.target.value);
 	              }}
 	              onInput={(e) => {
-	                this.onCodeChange(e.target.value)
+	                this.onCodeChange(e.target.value);
 	              }}
 	              hasError={inviteCode.hasError}
 	              error={inviteCode.error}
 	              message={inviteCode.message}
 	            />
 	          </FormGroup>
-	          <FormGroup className={style.inactive}>
+	          {/* <FormGroup className={style.inactive}>
 	            <FormInput
 	              className={style.communityRadio}
 	              value=''
 	              type='radio'
 	              label={getTranslation('APPLY_COMMUNITY_LEADER')}
 	            />
-	          </FormGroup>
+	          </FormGroup> */}
 
-	          <FormGroup className={style.inactive}>
+	          {/* <FormGroup className={style.inactive}>
 	            <FormInput
 	              className={style.communityRadio}
 	              value=''
 	              type='radio'
 	              label={getTranslation('VOLUNTEER')}
 	            />
-	          </FormGroup>
-					
+	          </FormGroup> */}
 	        </form>
 	      </div>
 
 	      <div className={style.buttonContainer}>
 	        <ButtonDescription
 	          onClickCallback={() => {
-	            this.handleContinue()
+	            this.handleContinue();
 	          }}
 	          text="Continue"
 	        />

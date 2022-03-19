@@ -11,13 +11,23 @@ import style from './style';
 class PopupPage extends Component {
 	ref = createRef();
 
+	handleCallback = (cb) => {
+	  if (this.props.route?.router?.props?.history) {
+	    this.props.route.router.props.history.goBack();
+	  } else {
+	    cb();
+	  }
+	};
+
 	handleBack = (cb) => {
 	  if (this.ref.current) {
 	    this.ref.current && this.ref.current.classList.remove(style.animate);
 	    this.ref.current && this.ref.current.classList.add(style.close);
-	    setTimeout(cb, 400);
+	    setTimeout(() => {
+	      this.handleCallback(cb);
+	    }, 400);
 	  } else {
-	    cb();
+	    this.handleCallback(cb);
 	  }
 	};
 
@@ -55,4 +65,4 @@ class PopupPage extends Component {
 	);
 }
 
-export default connect(['customBack', 'authUser'])(PopupPage);
+export default connect(['customBack', 'authUser', 'route'])(PopupPage);

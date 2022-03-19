@@ -1,0 +1,128 @@
+@import "../../../style/variables.scss";
+.hfWrap {
+	.headerImage {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background-color: #00826c;
+		position: relative;
+		padding: 20px 0 15px;
+		div {
+			width: 58%;
+			padding-bottom: 30%;
+		}
+	}
+	.pageTitle {
+		color: black;
+		padding-top: 25px;
+		text-align: center;
+		font-weight: bold;
+		font-size: 1.2rem;
+	}
+	.body {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 10px 10px;
+		.item {
+			width: calc(50% - 10px);
+			// background-color: $white;
+			margin: 5px;
+			display: flex;
+			flex-direction: column;
+			padding: 10px 5px 5px;
+			position: relative;
+			.button {
+				background-color: white !important;
+				border: 1px solid #1a4789 !important;
+				color: #1a4789;
+				margin-bottom: 10px;
+				display: flex !important;
+				justify-content: space-between;
+				padding: 8px 10px 8px 10px !important;
+				a {
+					color: #1a4789;
+				}
+				div {
+					div {
+						width: 20px;
+						padding-bottom: 20px;
+					}
+				}
+				.arrow {
+					div {
+						width: 10px;
+						padding-bottom: 20px;
+					}
+				}
+			}
+			&:nth-child(even) {
+				.tooltip {
+					right: 0;
+					left: auto;
+					.arrow {
+						right: 20%;
+						left: auto;
+					}
+					.title {
+						color: $primary;
+					}
+					.desc {
+						background-color: $primary;
+					}
+				}
+			}
+			> p {
+				flex-grow: 1;
+			}
+			.iconWrap {
+				width: 100px;
+				height: 100px;
+				background-color: $light_gray;
+				border-radius: 50%;
+				margin: 0 auto;
+				padding: 10px;
+				.imageContainer {
+					width: 50px;
+					padding-bottom: 50px;
+					margin: 15px auto;
+				}
+			}
+			.description {
+				color: #737373;
+				text-align: center;
+				font-size: 10px;
+				padding-top: 5px;
+				font-style: italic;
+			}
+			.subtitle {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				.information {
+					div {
+						width: 15px;
+						padding-bottom: 15px;
+					}
+					margin-right: 5px;
+				}
+				div {
+					font-size: 10px;
+					color: #737373;
+					font-weight: bold;
+					text-align: center;
+				}
+			}
+			.button {
+				background-color: $primary;
+				display: block;
+				text-align: center;
+				width: 100%;
+				padding: 10px 0;
+				margin-top: 10px;
+				border-radius: 6px;
+				font-size: 0.9rem;
+			}
+		}
+	}
+}

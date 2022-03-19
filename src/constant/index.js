@@ -5,3 +5,4 @@ export * from './leaderboard';
 export * from './filter';
 export * from './volunteerNeeds';
 export * from './countryCodes';
+export * from './incidentCategories';

@@ -1,10 +1,10 @@
 @import '../../../style/variables.scss';
 .termsWrapper {
 	.termsContent {
-		max-height: calc(100vh - 164px);
+		max-height: calc(100vh - 150px);
 		overflow-y: scroll;
 		padding: 15px 15px 30px;
-		min-height: calc(100vh - 165px);
+		min-height: calc(100vh - 150px);
 		a {
 			text-decoration: underline;
 			color: $primary;
@@ -15,48 +15,20 @@
 				margin: 15px 0;
 			}
 		}
-		ul {
+		ul,
+		ol {
 			padding-left: 20px;
 			margin: 0;
 			li {
 				margin-bottom: 5px;
-				font-size: 0.9rem;
-			}
-			ul li {
-				font-size: 0.8rem;
 			}
 		}
 		.inputCont {
-			margin-top: 20px;
+			margin: 10px 0 30px;
 			> div {
 				align-items: center;
 				input {
 					margin-top: 0;
-				}
-
-				// custom radio
-				input[type='radio'] {
-					display: none;
-				}
-				input[type='radio'] + *::before {
-					content: '';
-					display: inline-block;
-					vertical-align: bottom;
-					min-width: 14px;
-					height: 14px;
-					margin-right: 0.5rem;
-					border-radius: 50%;
-					border: 1px solid #f8b6cc;
-					position: relative;
-					top: 3px;
-				}
-				input[type='radio']:checked + *::before {
-					background: radial-gradient(
-						$light_pink 0%,
-						$light_pink 40%,
-						transparent 50%,
-						transparent
-					);
 				}
 			}
 			label {
@@ -68,8 +40,7 @@
 	.buttonContainer {
 		padding: 0 15px;
 		position: relative;
-		bottom: 30px;
-		background: white;
+		bottom: 5px;
 		.buttonStyle {
 			font-size: 1.3rem;
 			background-color: $pink_button;

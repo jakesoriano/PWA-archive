@@ -1,55 +1,69 @@
 import { store } from '_unistore';
 
-export function messageModal (data) {
+export function messageModal(data) {
   store.setState({
     messageModal: data,
     promptModal: null,
     componentModal: null,
-    circleModal: null
+    circleModal: null,
+    successMessage: null,
   });
 }
 
-export function promptModal (data) {
+export function promptModal(data) {
   store.setState({
     messageModal: null,
     promptModal: data,
     componentModal: null,
-    circleModal: null
+    circleModal: null,
+    successMessage: null,
   });
 }
 
-export function componentModal (data) {
+export function componentModal(data) {
   store.setState({
     messageModal: null,
     promptModal: null,
     componentModal: data,
-    circleModal: null
+    circleModal: null,
+    successMessage: null,
   });
 }
 
-export function circleModal (data) {
+export function circleModal(data) {
   store.setState({
     messageModal: null,
     promptModal: null,
     componentModal: null,
-    circleModal: data
+    circleModal: data,
+    successMessage: null,
   });
 }
 
-export function showAlertBox (data) {
+export function successMessage(data) {
   store.setState({
-    alertShow: data
+    messageModal: null,
+    promptModal: null,
+    componentModal: null,
+    circleModal: null,
+    successMessage: data,
   });
 }
 
-export function showFilter (data) {
+export function showAlertBox(data) {
   store.setState({
-    filterShow: data
+    alertShow: data,
   });
 }
 
-export function showTourGuide (val) {
+export function showFilter(data) {
   store.setState({
-    tourGuide: val
+    filterShow: data,
+  });
+}
+
+export function showTourGuide(val) {
+  store.setState({
+    tourGuide: val,
   });
 }

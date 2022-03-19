@@ -11,23 +11,6 @@
         label {
           flex-grow: 1;
         }
-        input[type="radio"] {
-          display: none;
-        }
-        input[type="radio"] + *::before {
-          content: "";
-          display: inline-block;
-          vertical-align: bottom;
-          width: 14px;
-          height: 14px;
-          margin-right: 5px;
-          border-radius: 50%;
-          position: relative;
-          border: 1px solid $gray;
-        }
-        input[type="radio"]:checked + *::before {
-          background: $primary;
-        }
       }
     }
     input:disabled {
@@ -41,23 +24,6 @@
           flex-grow: 1;
           display: flex;
           align-items: center;
-        }
-        input[type="checkbox"] {
-          display: none;
-        }
-        input[type="checkbox"] + *::before {
-          content: "";
-          display: inline-block;
-          vertical-align: bottom;
-          width: 14px;
-          height: 14px;
-          margin-right: 5px;
-          border-radius: 2px;
-          position: relative;
-          border: 1px solid $gray;
-        }
-        input[type="checkbox"]:checked + *::before {
-          background: $primary;
         }
       }
     }

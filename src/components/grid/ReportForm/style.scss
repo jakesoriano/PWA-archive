@@ -1,0 +1,77 @@
+@import '../../../style/variables.scss';
+.formWrap {
+  overflow-y: scroll;
+  position: fixed;
+  width: 100%;
+  height: calc(100% - 76px);
+  padding-bottom: 30px;
+  .contactUs {
+    padding: 15px 15px 10px;
+    * {
+      color: #737373;
+    }
+    .infoWrap {
+      border-radius: 10px;
+      .formGroup > label {
+        font-style: italic;
+        padding-bottom: 5px;
+        color: #282828;
+      }
+      .attLabel {
+        display: flex;
+        font-style: italic;
+        .attIcon {
+          margin-left: 5px;
+          width: 20px;
+          padding-bottom: 20px;
+        }
+      }
+      .dummyInput {
+        border: 0;
+        padding: 0;
+      }
+      .hidden {
+        display: none;
+      }
+      .attachmentWrap {
+        display: flex;
+        align-items: center;
+        .attachmentInputWrap {
+          flex-grow: 1;
+          .attachment {
+            width: 95%;
+          }
+        }
+        .pShare {
+          flex-grow: 1;
+        }
+        .pShare {
+          background: $primary;
+          margin: 0 auto;
+          padding: 5px 20px;
+          width: max-content;
+          text-align: center;
+          border-radius: 5px;
+          .pIconShare {
+            padding-bottom: 18px;
+            width: 18px;
+            margin-right: 5px;
+          }
+          span {
+            color: #fff;
+            font-size: 0.8rem;
+            text-transform: capitalize;
+          }
+        }
+      }
+      .checkWrap {
+        label {
+          color: red;
+        }
+      }
+    }
+    .buttonStyle {
+      background: $primary !important;
+    }
+  }
+}

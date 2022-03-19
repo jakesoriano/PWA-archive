@@ -34,13 +34,14 @@ import {
   AlertBox,
   PopupModal,
   CircleModal,
-  CustomListSelection
+  SuccessMessage,
+  CustomListSelection,
 } from '_components/core';
 import {
   nativeWebReady,
   nativeExitApp,
   nativeGetDeviceId,
-  nativeGetVersion
+  nativeGetVersion,
 } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -200,7 +201,7 @@ class Grid extends Component {
 	  // get native version
 	  nativeGetVersion((v) => {
 	    updateStore({
-	      nativeVersion: v
+	      nativeVersion: v,
 	    });
 	  });
 	};
@@ -349,6 +350,19 @@ class Grid extends Component {
 	  }
 	};
 
+	renderSuccessMessage = () => {
+	  const { successMessage } = this.props;
+	  try {
+	    const props = { ...successMessage };
+	    // eslint-disable-next-line react/jsx-props-no-spreading
+	    return <SuccessMessage {...props} />;
+	  } catch (err) {
+	    // eslint-disable-next-line no-console
+	    console.error('Widget Component >> renderSuccessMessage >> Error:', err);
+	    return null;
+	  }
+	};
+
 	renderFilter = () => {
 	  const { filterShow } = this.props;
 	  try {
@@ -373,8 +387,9 @@ class Grid extends Component {
 	    alertShow,
 	    popupModal,
 	    circleModal,
+	    successMessage,
 	    filterShow,
-	    tourGuide
+	    tourGuide,
 	  },
 	  { data, popup, rightSideBar }
 	) => {
@@ -408,7 +423,7 @@ class Grid extends Component {
 	      <div className={style.mainContent}>
 	        {/* Content Wrap */}
 	        <div className={style.contentWrap}>
-	          {data && data.auth && !data.hideTopBar &&(
+	          {data && data.auth && !data.hideTopBar && (
 	            <Topbar
 	              title={data.pageTitle || ''}
 	              page={this.getPageName()}
@@ -430,7 +445,9 @@ class Grid extends Component {
 	          >
 	            {renderGrid(this.getPageName(), this.getPageName(), data)}
 	          </div>
-	          {data && data.auth && !data.hideBottomBar && <BottomBar page={this.getPageName()} />}
+	          {data && data.auth && !data.hideBottomBar && (
+	            <BottomBar page={this.getPageName()} />
+	          )}
 	        </div>
 	        {/* Popup Page */}
 	        {popup && (
@@ -469,6 +486,7 @@ class Grid extends Component {
 	      {popupModal && this.renderPopupModal()}
 	      {circleModal && this.renderCircleModal()}
 	      {filterShow && this.renderFilter()}
+	      {successMessage && this.renderSuccessMessage()}
 	      {pageLoader.display && <LoaderRing fullpage />}
 
 	      <BackToTop
@@ -498,7 +516,8 @@ const ConnectComponent = connect([
   'notifications',
   'deviceId',
   'filterShow',
-  'tourGuide'
+  'tourGuide',
+  'successMessage',
 ])(Grid);
 export default ConnectComponent;
 

@@ -1,0 +1,82 @@
+@import '../../../style/variables.scss';
+.popupPage {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 100%;
+	background: $white;
+	transition: left 0.2s linear;
+	&.animate {
+		left: 0%;
+	}
+	&.close {
+		left: 100%;
+	}
+	&.noAnimate {
+		left: 0;
+	}
+	.backImg {
+		width: 25px;
+		padding-bottom: 25px;
+		transform: rotate(90deg);
+	}
+	.header {
+		width: 100%;
+		padding: 25px 10px 20px;
+		background-color: $gray_bg;
+		display: flex;
+		align-items: center;
+		button {
+			display: inline-block;
+			padding: 0 10px 0 10px;
+			color: $white;
+			font-size: 1.7rem;
+			background: transparent;
+			border: none;
+		}
+		h3 {
+			display: inline-block;
+			font-size: 1.4rem;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			color: $pink_text;
+			font-weight: 400;
+			margin: 0;
+			padding: 0;
+		}
+	}
+	.body {
+		height: calc(100% - 56px);
+    text-align: center;
+    margin: 30px;
+		* {
+			color: $black;
+		}
+    .sIcon {
+      margin: 0 auto;
+      width: 180px;
+      padding-bottom: 180px;
+      margin-top: 100px;
+    }
+    h2 {
+      color: $primary;
+      font-size: 1.2rem;
+    }
+    p {
+      color: #737373;
+      font-size: 0.9rem;
+      margin: 0 10px;
+    }
+    .btnWrap {
+      margin-top: 10px;
+      .buttonStyle {
+        background: none;
+        color: $blue_text;
+        font-size: 1rem;
+      }
+    }
+	}
+}
