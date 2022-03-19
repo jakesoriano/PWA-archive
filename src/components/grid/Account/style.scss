@@ -13,27 +13,6 @@
         font-size: 1rem;
         color: #686868;
       }
-      input[type="radio"], .inactive {
-        display: none;
-      }
-      small {
-        margin-left: 35px;
-      }
-      input[type="radio"] + *::before {
-        content: "";
-        display: inline-block;
-        vertical-align: bottom;
-        width: 14px;
-        height: 14px;
-        margin-right: 20px;
-        border-radius: 50%;
-        border: 2px solid #DA8289;
-        position: relative;
-        top: -2px;
-      }
-      input[type="radio"]:checked + *::before {
-        background: radial-gradient(#DA8289 0%, #DA8289 40%, transparent 50%, transparent);
-      }
       .communityInputCode {
         margin-left: 35px;
         width: calc(100% - 35px);

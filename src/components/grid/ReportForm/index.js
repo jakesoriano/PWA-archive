@@ -385,6 +385,7 @@ class ReportForm extends Component {
 	          </FormGroup>
 	          <FormGroup className={style.checkBoxGroup}>
 	            <FormInput
+	              id="location"
 	              type={'checkbox'}
 	              label={getTranslation('SHARE_LOCATION')}
 	              onClick={() => {
@@ -406,6 +407,7 @@ class ReportForm extends Component {
 	              }}
 	            />
 	            <FormInput
+	              id="contacts"
 	              type={'checkbox'}
 	              label={getTranslation('SHARE_CONTACT_DETAILS')}
 	              onClick={() => {
@@ -428,6 +430,7 @@ class ReportForm extends Component {
 	            />
 
 	            <FormInput
+	              id="terms"
 	              type="checkbox"
 	              label={getTranslation('AGREE_TERMS')}
 	              onClick={() => {

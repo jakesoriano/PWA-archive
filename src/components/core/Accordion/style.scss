@@ -48,14 +48,15 @@
             border-radius: 0;
             position: absolute;
             right: 25px;
+            transition: all 0.1s ease;
             &.active {
                 transform: rotate(180deg);
-                transition: all 0.1s ease;
             }
-            }
+        }
     }
     .answer {
-        display: none;
+        height: 0;
+        overflow: hidden;
         .aIconWrap {
             width: 20px;
             padding-bottom: 20px;
@@ -95,7 +96,8 @@
             }
         }
         &.active {
-            display: flex;
+            transition: all 0.2s ease;
+            height: 100%;
             flex-direction: column;
             margin-top: 20px;
             width: 100%;

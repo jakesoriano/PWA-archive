@@ -30,31 +30,6 @@
 				input {
 					margin-top: 0;
 				}
-
-				// custom radio
-				input[type='radio'] {
-					display: none;
-				}
-				input[type='radio'] + *::before {
-					content: '';
-					display: inline-block;
-					vertical-align: bottom;
-					min-width: 14px;
-					height: 14px;
-					margin-right: 0.5rem;
-					border-radius: 50%;
-					border: 1px solid #f8b6cc;
-					position: relative;
-					top: 3px;
-				}
-				input[type='radio']:checked + *::before {
-					background: radial-gradient(
-						$light_pink 0%,
-						$light_pink 40%,
-						transparent 50%,
-						transparent
-					);
-				}
 			}
 			label {
 				font-family: 'OpenSans-SemiBold', arial, sans-serif;

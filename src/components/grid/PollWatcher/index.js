@@ -133,6 +133,7 @@ class PollWatcher extends Component {
 	        <>
 	          <FormGroup>
 	            <FormInput
+	              id="accept"
 	              type="checkbox"
 	              label={getTranslation('SUBMIT_PROFILE_MSG')}
 	              onClick={() => {
