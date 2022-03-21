@@ -42,7 +42,7 @@ class CrowdSourcingItem extends Component {
 	          {/* Barangay Name and Price */}
 	          <div className={style.namePrice}>
 	            <span>{item?.name}</span>
-	            <span>{`₱ ${item?.amount}`}</span>
+	            <span>{`₱${item?.amount}`}</span>
 	          </div>
 
 	          {/* Barangay Address */}
