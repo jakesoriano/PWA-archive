@@ -18,7 +18,7 @@ import {
   isUserUpdatedProfile,
   circleModal,
   componentModal,
-  getConfigByKey
+  getConfigByKey,
 } from '_helpers';
 import {
   FormGroup,
@@ -117,7 +117,10 @@ class EditProfile extends Component {
         hasError: false,
       },
       acceptedPrivacyPolicy: {
-        value: profile && profile.acceptedPrivacyPolicy ? profile.acceptedPrivacyPolicy : '',
+        value:
+					profile && profile.acceptedPrivacyPolicy
+					  ? profile.acceptedPrivacyPolicy
+					  : '',
         error: '',
         message: '',
         hasError: false,
@@ -285,13 +288,14 @@ class EditProfile extends Component {
 
 	validateDob = (value) => {
 	  try {
-	    const maxDate = new Date(getMaxDOBDate()).getTime();
-	    const selectedDate = new Date(value).getTime();
 	    const spliteValue = (value || '').split('-');
+	    const maxDate = new Date(getMaxDOBDate()).getTime();
+	    const selectedDate = new Date(spliteValue.join('/')).getTime();
 	    if (
 	      maxDate < selectedDate ||
 				Boolean(
-				  new Date(value).toString().toLowerCase().indexOf('invalid') > -1
+				  new Date(selectedDate).toString().toLowerCase().indexOf('invalid') >
+						-1
 				) ||
 				!(spliteValue[0] && spliteValue[0].length === 4) ||
 				!(
@@ -300,7 +304,7 @@ class EditProfile extends Component {
 				) ||
 				!(
 				  spliteValue[2] &&
-					(spliteValue[2].length === 1 || spliteValue[1].length === 2)
+					(spliteValue[2].length === 1 || spliteValue[2].length === 2)
 				)
 	    ) {
 	      this.setState({
@@ -331,10 +335,10 @@ class EditProfile extends Component {
 	  this.setState({
 	    acceptedPrivacyPolicy: {
 	      ...acceptedPrivacyPolicy,
-	      value: getConfigByKey('acceptedPrivacyPolicy')
-	    }
-	  })
-	}
+	      value: getConfigByKey('acceptedPrivacyPolicy'),
+	    },
+	  });
+	};
 
 	handleContinue = () => {
 	  if (
@@ -359,20 +363,24 @@ class EditProfile extends Component {
 	    this.onBarangayChange(this.state.barangay.value);
 	    this.onVoterChange(this.state.isRegisteredVoter.value);
 	  } else {
+	    // format date and month for birthday
+	    let splitedBDay = (this.state.birthday.value || '').split('-');
+	    splitedBDay[1] = (splitedBDay[1].length == 1 ? '0' : '') + splitedBDay[1];
+	    splitedBDay[2] = (splitedBDay[2].length == 1 ? '0' : '') + splitedBDay[2];
+
 	    const userData = {
 	      fname: this.state.fname.value,
 	      mname: this.state.mname.value,
 	      lname: this.state.lname.value,
 	      gender: this.state.gender.value,
-	      birthday: this.state.birthday.value,
+	      birthday: splitedBDay.join('-'),
 	      region: this.state.region.value,
 	      province: this.state.province.value,
 	      municipality: this.state.municipality.value,
 	      barangay: this.state.barangay.value,
 	      isRegisteredVoter:
 					this.state.isRegisteredVoter.value === 'yes' ? true : false,
-	      acceptedPrivacyPolicy:
-						this.state.acceptedPrivacyPolicy.value,
+	      acceptedPrivacyPolicy: this.state.acceptedPrivacyPolicy.value,
 	    };
 	    displayPageLoader(true);
 	    const isUpdatedProfile = isUserUpdatedProfile();
@@ -424,7 +432,7 @@ class EditProfile extends Component {
 	    barangayOptions,
 	    gender,
 	    acceptedPrivacyPolicy,
-	    mobilePrefix
+	    mobilePrefix,
 	  }
 	) => {
 	  return (
@@ -531,7 +539,9 @@ class EditProfile extends Component {
 							value={mobile.value}
 							disabled={true}
 						/> */}
-	          <p className={style.displayOnly}>{`${mobilePrefix.value}${mobile.value}`}</p>
+	          <p
+	            className={style.displayOnly}
+	          >{`${mobilePrefix.value}${mobile.value}`}</p>
 	        </FormGroup>
 
 	        <FormGroup label="REGION" hasError={region.hasError}>
@@ -654,17 +664,25 @@ class EditProfile extends Component {
 	              id="policy"
 	              value={getConfigByKey('acceptedPrivacyPolicy')}
 	              label={getTranslation('ACCEPT_UPDATED_POLICY')}
-	              checked={acceptedPrivacyPolicy?.value === getConfigByKey('acceptedPrivacyPolicy')}
-	              disabled={acceptedPrivacyPolicy?.value === getConfigByKey('acceptedPrivacyPolicy')}
+	              checked={
+									acceptedPrivacyPolicy?.value ===
+									getConfigByKey('acceptedPrivacyPolicy')
+	              }
+	              disabled={
+									acceptedPrivacyPolicy?.value ===
+									getConfigByKey('acceptedPrivacyPolicy')
+	              }
 	              onInput={(e) => {
 	                this.onPolicyChange(e.target.value);
 	              }}
 	              onClick={() => {
 	                componentModal({
-	                  content: <DataPrivacy
-	                    style={style.privacy}
-	                    onAcceptCallback={this.handleAccept}
-	                  />
+	                  content: (
+	                    <DataPrivacy
+	                      style={style.privacy}
+	                      onAcceptCallback={this.handleAccept}
+	                    />
+	                  ),
 	                });
 	              }}
 	            />
