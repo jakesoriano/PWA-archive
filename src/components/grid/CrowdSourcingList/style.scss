@@ -1,0 +1,56 @@
+.hfWrap {
+  padding: 15px;
+  .title {
+    color: #ce0f68;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  .description {
+    color: black;
+    display: inline-block;
+    font-size: 0.8rem;
+  }
+
+  .checkout {
+    margin-top: 20px;
+    div {
+      height: 50px;
+      width: 100%;
+      border-radius: 10px;
+      border: none;
+      background-color: #e41e93;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+  }
+
+  .showMore {
+    text-align: right;
+    border: none;
+    background: none;
+    width: 100%;
+    padding: 10px;
+    span {
+      color: #737373;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      span {
+        color: #ff2cd7;
+      }
+    }
+  }
+  .loaderWrap {
+    display: block;
+    text-align: right;
+    > div div {
+      border: 4px solid #fff;
+      border-color: #ffb1bb transparent transparent transparent;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

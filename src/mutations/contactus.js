@@ -1,5 +1,11 @@
 import { updateStore, store } from '_unistore';
-import { xhr, urlContactUs, urlIncidentReport, urlReport, urlApplyPollWatcher } from '_helpers';
+import {
+  xhr,
+  urlContactUs,
+  urlIncidentReport,
+  urlReport,
+  urlApplyPollWatcher,
+} from '_helpers';
 
 export function sendContactUs(data) {
   // current state
@@ -91,9 +97,9 @@ export function applyPollWatcher(data) {
               ...authUser,
               profile: {
                 ...authUser.profile,
-                pollWatcher: res.profile.pollWatcher
-              }
-            }
+                pollWatcher: res.profile.pollWatcher,
+              },
+            },
           });
           resolve(res);
         }
@@ -104,5 +110,3 @@ export function applyPollWatcher(data) {
       });
   });
 }
-
-

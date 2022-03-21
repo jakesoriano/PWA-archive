@@ -1,0 +1,154 @@
+@import '../../../style/variables.scss';
+.itemMain {
+  background-color: $gray_bg;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  -webkit-transition: height 1s;
+  -moz-transition: height 1s;
+  -ms-transition: height 1s;
+  -o-transition: height 1s;
+  transition: height 1s;
+  .itemContainer {
+    display: flex;
+    padding: 10px 10px 0px 10px;
+    div {
+      .img {
+        width: 110px;
+        padding-bottom: 110px;
+        margin-right: 10px;
+      }
+    }
+    .itemImage {
+    }
+
+    .contentContainer {
+      flex: 1;
+      .namePrice {
+        display: flex;
+        justify-content: space-between;
+        span {
+          color: black;
+          font-size: 0.9rem !important;
+          font-weight: bold;
+        }
+      }
+
+      .address {
+        color: black;
+        font-size: 0.8rem !important;
+      }
+
+      .itemUserDescription {
+        margin-top: 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 50px;
+        p {
+          color: grey;
+          font-size: 0.7rem !important;
+          font-style: italic;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  .housesTarp {
+    width: 110px;
+    min-width: 110px;
+    padding-top: 2.5px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    div {
+      display: flex;
+      span {
+        color: black;
+        text-align: center;
+        font-size: 0.8rem !important;
+        margin-right: 2.5px;
+      }
+
+      .count {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    button {
+      width: 100%;
+      border-radius: 5px;
+      padding: 5px;
+      font-size: 0.8rem;
+    }
+    .moreInfo {
+      margin-right: 5px;
+      border: 1px solid $blue_text;
+      color: $blue_text;
+      background-color: $white;
+      width: 50%;
+    }
+
+    .addToCart {
+      background-color: $pink_button;
+      border: none;
+    }
+  }
+
+  .moreInfoContainer {
+    padding: 0 10px;
+    max-height: 0;
+    transition: all 0.2s ease-in-out;
+    &.show {
+      max-height: 500px;
+    }
+    .title {
+      color: black;
+      font-size: 1rem;
+    }
+    .volunteerInfo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      .volunteerDescription {
+        color: black;
+        font-size: 0.7rem;
+      }
+      .volunteerImage {
+        .volunteerImg {
+          border-radius: 50%;
+          width: 25px;
+          padding-bottom: 25px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .volunteer {
+      color: black;
+      font-size: 0.7rem;
+    }
+
+    .downButton {
+      padding-top: 10px;
+      padding-bottom: 5px;
+      display: flex;
+      justify-content: center;
+      div {
+        transform: rotate(-180deg);
+        width: 15px;
+        padding-bottom: 15px;
+        img {
+        }
+      }
+    }
+  }
+}

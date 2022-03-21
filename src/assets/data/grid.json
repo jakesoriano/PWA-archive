@@ -152,7 +152,7 @@
 		"uri": "home",
 		"contents": [
 			{
-				"component": "Countdown"
+				"component": "CountdownAndDismissableText"
 			},
 			{
 				"component": "UserPoints"
@@ -165,7 +165,7 @@
 							"id": "home-crowdsourcing",
 							"text": "COMMUNITY_CROWDSOURCING",
 							"icon": "assets/images/h_crowd.png",
-							"url": "https://shop.unicare.ph/landing"
+							"url": "community-crowdsourcing"
 						},
 						{
 							"id": "home-tasks",
@@ -210,6 +210,16 @@
 					"id": "home-pollwatcher",
 					"image": "https://d2vjy6bhj0z1t0.cloudfront.net/files/pollwatcher.jpg",
 					"url": "poll-watcher"
+				}
+			},
+			{
+				"component": "HomeEvents",
+				"props": {
+					"title": "COMING UP",
+					"more": {
+						"url": "community-events-v2",
+						"text": "SEE_ALL_EVENTS"
+					}
 				}
 			},
 			{
@@ -443,12 +453,33 @@
 	{
 		"styles": [],
 		"auth": true,
-		"pageTitle": "PAGE_COMMUNITY_EVENTS",
+		"pageTitle": "PAGE_CROWDSOURCING",
 		"uri": "community-crowdsourcing",
 		"withBack": true,
 		"contents": [
 			{
-				"component": "UpcomingEvents"
+				"component": "TextAndDescription",
+				"props": {
+					"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+				}
+			},
+			{
+				"component": "CrowdSourcingList",
+				"props": {
+					"title": "Nanays for Leni"
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_CHECKOUT",
+		"uri": "checkout",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "Checkout"
 			}
 		]
 	},

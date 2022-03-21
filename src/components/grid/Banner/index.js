@@ -19,11 +19,7 @@ class Buttons extends Component {
 	      this.onClick(url);
 	    }}
 	  >
-	    <ImageLoader
-	      style={{ container: style.imgContainer }}
-	      src={image}
-	      lazy
-	    />
+	    <ImageLoader style={{ container: style.imgContainer }} src={image} lazy />
 	  </button>
 	);
 }

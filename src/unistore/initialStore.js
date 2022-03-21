@@ -104,6 +104,7 @@ export const initialStore = {
     lastDateNotified: null,
     lastDatePointsNotified: null,
   },
+  hnotification: null,
   stories: {
     fetching: false,
     result: false,
@@ -203,5 +204,17 @@ export const initialStore = {
     fetching: false,
     result: false,
     data: {},
+  },
+  cart: {
+    fetching: false,
+    result: false,
+    data: [],
+  },
+  crowdsourcing: {
+    fetching: false,
+    result: false,
+    data: [],
+    total: 0,
+    page: 1,
   },
 };
