@@ -2,7 +2,7 @@ import { updateStore, store } from '_unistore';
 import { xhr, urlCommunityInviteCode, urlUserProfile } from '_helpers';
 import { nativeSetAuthToken } from '_platform/helpers';
 
-export function useCode (data) {
+export function useCode(data) {
   const url = `${urlCommunityInviteCode}/${data.inviteCode}`;
   console.log('url', url);
   return new Promise((resolve) => {
@@ -15,7 +15,7 @@ export function useCode (data) {
           resolve(false);
         } else {
           if (res.token) {
-            const token =  JSON.parse(atob(res.token.split('.')[1]));
+            const token = JSON.parse(atob(res.token.split('.')[1]));
             const { authUser } = store.getState();
             updateStore({
               authUser: {
@@ -23,9 +23,9 @@ export function useCode (data) {
                 token: res.token,
                 profile: {
                   ...authUser.profile,
-                  roles: token.roles
-                }
-              }
+                  roles: token.roles,
+                },
+              },
             });
             // set auth token in native
             nativeSetAuthToken(res.token);
@@ -41,16 +41,16 @@ export function useCode (data) {
   });
 }
 
-export function updateProfile (data) {
+export function updateProfile(data) {
   return new Promise((resolve) => {
     xhr(urlUserProfile, {
       method: 'PATCH',
-      data
+      data,
     })
       .then((res) => {
         if (res && res.success) {
           // eslint-disable-next-line
-          const { authUser } = store.getState();
+					const { authUser } = store.getState();
           updateStore({
             authUser: {
               ...authUser,
@@ -67,8 +67,8 @@ export function updateProfile (data) {
                 municipality: res.profile.municipality,
                 barangay: res.profile.barangay,
                 isRegisteredVoter: res.profile.isRegisteredVoter,
-              }
-            }
+              },
+            },
           });
           console.log(`SPA >> updateProfile successful`, res);
         }
@@ -79,9 +79,10 @@ export function updateProfile (data) {
 				console.log(`SPA >> updateProfile Error`, err);
         resolve({
           success: false,
-          error: {
-            message: 'SOMETHING_WRONG'
-          }
+          error:
+						err?.data?.message && err?.data?.message.length
+						  ? err?.data?.message[0]
+						  : 'SOMETHING_WRONG',
         });
       });
   });
