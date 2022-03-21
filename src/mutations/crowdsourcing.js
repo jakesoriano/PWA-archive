@@ -1,5 +1,5 @@
 import { updateStore, store } from '_unistore';
-import { xhr, urlCrowdsourcing, urlCommunityVolunteer } from '_helpers';
+import { xhr, urlCrowdsourcing } from '_helpers';
 
 export function getCommunityCrowdsourcing(page, limit) {
   //
@@ -18,7 +18,7 @@ export function getCommunityCrowdsourcing(page, limit) {
       result: false,
     },
   });
-  const url = `${urlCommunityVolunteer}`;
+  const url = `${urlCrowdsourcing}`;
   return new Promise((resolve) => {
     xhr(url, {
       method: 'GET',

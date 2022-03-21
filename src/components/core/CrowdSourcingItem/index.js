@@ -41,15 +41,15 @@ class CrowdSourcingItem extends Component {
 	        <div className={style.contentContainer}>
 	          {/* Barangay Name and Price */}
 	          <div className={style.namePrice}>
-	            <span>{item?.barangayName}</span>
-	            <span>{`₱ ${item?.price}`}</span>
+	            <span>{item?.name}</span>
+	            <span>{`₱ ${item?.amount}`}</span>
 	          </div>
 
 	          {/* Barangay Address */}
-	          <span className={style.address}>{item?.barangayAddress}</span>
+	          <span className={style.address}>{item?.volunteer?.name}</span>
 
 	          <div className={style.itemUserDescription}>
-	            <p>"{item?.itemUserDescription}"</p>
+	            <p>"{item?.shortDesc}"</p>
 	          </div>
 	        </div>
 	      </div>
@@ -59,13 +59,13 @@ class CrowdSourcingItem extends Component {
 	        {/* Houses and Tarp */}
 	        <div className={style.housesTarp}>
 	          <div>
-	            <span className={style.count}>{item?.houses}</span>
+	            <span className={style.count}>{item?.target}</span>
 	            <span>{getTranslation('HOUSES')}</span>
 	          </div>
 
 	          <div>
-	            <span className={style.count}>{item?.tarpaulins}</span>
-	            <span>{getTranslation('TARPAULINS')}</span>
+	            <span className={style.count}>{item?.quantity}</span>
+	            <span>{getTranslation(item.purpose)}</span>
 	          </div>
 	        </div>
 	        {!this.state.moreInfo && (
@@ -79,7 +79,7 @@ class CrowdSourcingItem extends Component {
 	        <button
 	          onClick={() => {
 	            // if (!this.existingToCart(item)) addToCart(item);
-	            this.onClick(item?.supportUrl);
+	            this.onClick(item?.url);
 	          }}
 	          className={style.addToCart}
 	        >
@@ -100,18 +100,18 @@ class CrowdSourcingItem extends Component {
 	        <div className={style.volunteerInfo}>
 	          <div className={style.volunteerImage}>
 	            <ImageLoader
-	              src={item?.image}
+	              src={item?.volunteer?.image}
 	              style={{ container: style.volunteerImg }}
 	            />
 	          </div>
 
 	          <span className={style.volunteerDescription}>
-	            {item?.volunteerName}, {item?.volunteerAge} y.o
+	            {item?.volunteer?.name}, {item?.volunteer.nage} y.o
 	          </span>
 	        </div>
 
 	        {/* Description */}
-	        <span className={style.volunteer}>{item?.volunteerDescription}</span>
+	        <span className={style.volunteer}>{item?.longDesc}</span>
 
 	        {/* Button */}
 	        <div

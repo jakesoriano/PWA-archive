@@ -70,24 +70,9 @@ class CrowdSourcingList extends Component {
 
 	      {/* List */}
 	      {this.state?.data?.map((item) => {
-	        const prices = [500, 1000, 1500, 2000];
-	        const price = prices[Math.floor(Math.random() * prices.length)];
 	        item = {
-	          id: 'asdasdasd',
-	          image: '01FPKV8B1N1KGXJH8B5Z0CS52V.jpeg',
-	          barangayName: 'San Juan',
-	          barangayAddress: 'San Juan, Rizal',
-	          moreInfo:
-							"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-	          tarpaulins: 400,
-	          houses: 500,
-	          volunteerName: 'Nanay Ermelita',
-	          volunteerAge: 46,
-	          volunteerDescription:
-							"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-	          itemUserDescription: 'Kailangan po namin ng pamigay na tarpaulin',
-	          supportUrl: this.getLinkByPrice(price),
-	          price,
+	          ...item,
+	          url: this.getLinkByPrice(item.amount),
 	        };
 	        return (
 	          <CrowdSourcingItem
