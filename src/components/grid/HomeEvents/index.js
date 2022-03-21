@@ -37,7 +37,7 @@ class HomeEvents extends Component {
 			.map((i) => {
 				return {
 					...i,
-					date: new Date(i.date).getTime() + gmtHours,
+					date: new Date(i.date.replace(/-/gim, '/')).getTime() + gmtHours,
 				};
 			})
 			.filter(
