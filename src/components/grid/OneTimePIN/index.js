@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
-import { getTranslation, displayPageLoader, showAlertBox } from '_helpers';
+import { getTranslation, getTraceID, displayPageLoader, showAlertBox } from '_helpers';
 import { completeRegister, resendOTP } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
@@ -122,8 +122,9 @@ class OneTimePIN extends Component {
 	    if (res.success) {
 	      this.setCountdown();
 	    } else {
+	      const errorMessage = getTraceID(res)
 	      showAlertBox({
-	        message: 'SOMETHING_WRONG'
+	        message: errorMessage
 	      });
 	    }
 	  })

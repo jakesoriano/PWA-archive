@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { getTranslation, showAlertBox, platform } from '_helpers';
+import { getTranslation, getTraceID, showAlertBox, platform } from '_helpers';
 import { route } from 'preact-router';
 import { ToggleInput } from '_components/core';
 import { nativeToggleTouchID, nativeStatusTouchID } from '_platform/helpers';
@@ -33,8 +33,9 @@ class Settings extends Component {
 	          isTouchIdEnable: !this.state.isTouchIdEnable
 	        });
 	      } else {
+	        const errorMessage = getTraceID(res)
 	        showAlertBox({
-	          message: 'SOMETHING_WRONG'
+	          message: errorMessage
 	        });
 	      }
 	    });

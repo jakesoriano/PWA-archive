@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { getCommunityInfo, createCommunityEvent, createCommunityNews, updateCommunityEvent, updateCommunityNews } from '_mutations';
 import { LoaderRing , FormGroup, FormInput, FormDropdown, ImageLoader, ButtonDescription } from '_components/core';
-import { getTranslation, getContentTypes, displayPageLoader, messageModal, uploadFile, showAlertBox } from '_helpers';
+import { getTranslation, getContentTypes, getTraceID, displayPageLoader, messageModal, uploadFile, showAlertBox } from '_helpers';
 import { updateStore } from '_unistore';
 import { getCurrentUrl, route, RouterProps, Route, Router } from 'preact-router';
 // eslint-disable-next-line import/extensions
@@ -291,13 +291,15 @@ class PostContent extends Component {
 	          success: true
 	        });
 	      } else {
+	        const errorMessage = getTraceID(res)
 	        showAlertBox({
-	          message: res.error.message || 'SOMETHING_WRONG'
+	          message: res.error.message || errorMessage
 	        });
 	      }
 	    }).catch((err) => {
+	      const errorMessage = getTraceID(err)
 	      showAlertBox({
-	        message: err.message || 'SOMETHING_WRONG'
+	        message: err.message || errorMessage
 	      });
 	      displayPageLoader(false);
 	    });
@@ -323,13 +325,15 @@ class PostContent extends Component {
 	          success: true
 	        });
 	      } else {
+	        const errorMessage = getTraceID(res)
 	        showAlertBox({
-	          message: res.error.message || 'SOMETHING_WRONG'
+	          message: res.error.message || errorMessage
 	        });
 	      }
 	    }).catch((err) => {
+	      const errorMessage = getTraceID(err)
 	      showAlertBox({
-	        message: err.message || 'SOMETHING_WRONG'
+	        message: err.message || errorMessage
 	      });
 	      displayPageLoader(false);
 	    });
@@ -349,9 +353,10 @@ class PostContent extends Component {
 	          this.submitData(res.data.image);
 	        }
 	      } else {
+	        const errorMessage = getTraceID(res)
 	        displayPageLoader(false)
 	        showAlertBox({
-	          message: res.errMessage || 'SOMETHING_WRONG'
+	          message: res.errMessage || errorMessage
 	        });
 	      }
 	    });
@@ -383,13 +388,15 @@ class PostContent extends Component {
 	          success: true
 	        });
 	      } else {
+	        const errorMessage = getTraceID(res)
 	        showAlertBox({
-	          message: res.error.message || 'SOMETHING_WRONG'
+	          message: res.error.message || errorMessage
 	        });
 	      }
 	    }).catch((err) => {
+	      const errorMessage = getTraceID(err)
 	      showAlertBox({
-	        message: err.message || 'SOMETHING_WRONG'
+	        message: err.message || errorMessage
 	      });
 	      displayPageLoader(false);
 	    });
@@ -413,13 +420,15 @@ class PostContent extends Component {
 	          success: true
 	        });
 	      } else {
+	        const errorMessage = getTraceID(res)
 	        showAlertBox({
-	          message: res.error.message || 'SOMETHING_WRONG'
+	          message: res.error.message || errorMessage
 	        });
 	      }
 	    }).catch((err) => {
+	      const errorMessage = getTraceID(err)
 	      showAlertBox({
-	        message: err.message || 'SOMETHING_WRONG'
+	        message: err.message || errorMessage
 	      });
 	      displayPageLoader(false);
 	    });
