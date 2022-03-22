@@ -76,7 +76,7 @@ class CountdownAndDismissableText extends Component {
 	        <DismissableText
 	          text={notif.text.replace(
 	            /{NAME}/,
-	            authUser.profile.fname || 'User'
+							authUser?.profile?.fname || 'User'
 	          )}
 	          date={new Date(notif.date).getTime() + gmtHours}
 	          onClickDismissCb={this.onDismissText}
