@@ -74,5 +74,6 @@ export { default as ReportForm } from './ReportForm';
 export { default as PollWatcher } from './PollWatcher';
 export { default as HomeEvents } from './HomeEvents';
 export { default as UserPoints } from './UserPoints';
+export { default as ReportFakeNews } from './ReportFakeNews';
 export { default as HomeNotification } from './HomeNotification';
 export { default as CountdownAndDismissableText } from './CountdownAndDismissableText';

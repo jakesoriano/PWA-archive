@@ -47,7 +47,9 @@ export function fetchAppConfig() {
             cookieReload + 1,
             new Date().setHours('23', '59', '59')
           );
-          window.location.reload();
+          setTimeout(() => {
+            window.location.reload();
+          }, 300);
         }
 
         // Get Native Version

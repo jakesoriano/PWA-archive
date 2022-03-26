@@ -18,6 +18,7 @@
 	"PAGE_UPDATE_PROFILE": "Update Profile",
 	"PAGE_VOLUNTEER_ANNOUNCEMENT": "Volunteer Announcement",
 	"PAGE_POLLWATCHER": "Be A Poll Watcher",
+	"PAGE_REPORT_FAKENEWS": "Report Fake News",
 	"MEMBERS": "Members",
 	"HERO_POINTS": "Hero Pts.",
 	"EARN_100P": "Earn 100 pts",
@@ -374,5 +375,15 @@
 	"POLLWATCHER_TITLE": "Why be a pollwatcher?",
 	"POLLWATCHER_CONTENT": "On May 9, our polls need watching to protect your Kakampink votes more than ever. With more than 120,000 precincts in the country, we need at least two in each to assist in safeguarding our votes. This can be you and a friend, or more. Sign up with us today para maipanalo na natin ‘to!",
 	"REPORTING_EMAIL_BLACKLISTED": "Your email is blacklisted, please use another email.",
-	"DISMISS": "Dismiss"
+	"FAKENEWS_TEXT": "We can't sttop fake news form being made but we can help and stop the spread false information online.",
+	"FAKENEWS_TITLE": "Help us fight fake news!",
+	"ADD_LINK": "Add another link",
+	"FAKE_NEWS_LINK": "Fake News Link",
+	"LINK_PLACEHOLDER": "Copy and paste the fake news link here",
+	"DESC_PLACEHOLDER": "Describe the article containing false information (Optional)",
+	"REMOVE": "Remove",
+	"NANAYS_FOR_LENI": "Nanays for Leni",
+	"FAKENEWS_SUBMIT_SUCCESS": "Thank you for submitting a fake news report!",
+	"DISMISS": "Dismiss",
+	"USER_ALREADY_REPORTED_LINK": "Link is already reported."
 }

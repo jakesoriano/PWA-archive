@@ -49,3 +49,4 @@ export const urlCrowdsourcing = `${process.env.API_DOMAIN}community/crowdsource?
 export const urlMessages = `${urlCommunity}/listings/msgfeed`;
 export const urlIncidentReport = `${process.env.API_DOMAIN}report`;
 export const urlApplyPollWatcher = urlUser + `/pollwatcher/application`;
+export const urlReportFakeNews = urlUser + `/report/fakenews`;
