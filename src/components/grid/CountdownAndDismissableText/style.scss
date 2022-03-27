@@ -1,0 +1,22 @@
+@import '../../../style/variables.scss';
+.hasDismissableText {
+	position: relative;
+	background-color: #EC0086;
+	.dismissTextWrap {
+		position: relative;
+		margin-bottom: 40px;
+		padding-bottom: 20px;
+		max-height: 300px;
+		&.hide {
+			transition: all 0.2s ease-out;
+			overflow: hidden;
+			max-height: 40px;
+		}
+	}
+	.countdownCont {
+		position: absolute;
+		bottom: -36px;
+		background-color: transparent;
+		width: 100%;
+	}
+}

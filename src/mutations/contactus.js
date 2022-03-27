@@ -1,5 +1,12 @@
 import { updateStore, store } from '_unistore';
-import { xhr, urlContactUs, urlIncidentReport, urlReport, urlApplyPollWatcher } from '_helpers';
+import {
+  xhr,
+  urlContactUs,
+  urlIncidentReport,
+  urlReport,
+  urlApplyPollWatcher,
+  urlReportFakeNews,
+} from '_helpers';
 
 export function sendContactUs(data) {
   // current state
@@ -91,9 +98,9 @@ export function applyPollWatcher(data) {
               ...authUser,
               profile: {
                 ...authUser.profile,
-                pollWatcher: res.profile.pollWatcher
-              }
-            }
+                pollWatcher: res.profile.pollWatcher,
+              },
+            },
           });
           resolve(res);
         }
@@ -104,5 +111,24 @@ export function applyPollWatcher(data) {
       });
   });
 }
-
-
+export function reportFakeNews(data) {
+  return new Promise((resolve) => {
+    xhr(urlReportFakeNews, {
+      method: 'POST',
+      data,
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> reportFakeNews Error`, res);
+          resolve(res.error);
+        } else {
+          console.log(`SPA >> reportFakeNews successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> reportFakeNews failed`, err);
+      });
+  });
+}

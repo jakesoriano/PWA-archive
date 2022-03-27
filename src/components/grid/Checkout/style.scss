@@ -1,0 +1,321 @@
+.checkoutContainer {
+  margin: 10px;
+  height: calc(100vh - 76px);
+  position: relative;
+  .title {
+    color: #e41e93;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .formContainer {
+    margin: 10px;
+    div {
+      padding-bottom: 10px;
+    }
+
+  }
+  .cartContainer {
+    span {
+      font-size: 1rem;
+    }
+    .title {
+      font-weight: bold;
+      color: #e41e93;
+    }
+    .cartItemContainer {
+      @import '../../../style/variables.scss';
+      .itemMain {
+        background-color: $gray_bg;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        -webkit-transition: height 1s;
+        -moz-transition: height 1s;
+        -ms-transition: height 1s;
+        -o-transition: height 1s;
+        transition: height 1s;
+        .itemContainer {
+          display: flex;
+          padding: 10px 10px 0px 10px;
+          div {
+            .img {
+              width: 110px;
+              padding-bottom: 110px;
+              margin-right: 10px;
+            }
+          }
+          .itemImage {
+          }
+      
+          .contentContainer {
+            flex: 1;
+            .namePrice {
+              display: flex;
+              justify-content: space-between;
+              span {
+                color: black;
+                font-size: 0.9rem !important;
+                font-weight: bold;
+              }
+
+              span {
+                div {
+                  padding-bottom: 12px;
+                  width: 12px;
+
+                }
+              }
+            }
+      
+            .address {
+              color: black;
+              font-size: 0.8rem !important;
+            }
+      
+            .itemUserDescription {
+              margin-top: 5px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              height: 50px;
+              p {
+                color: grey;
+                font-size: 0.7rem !important;
+                font-style: italic;
+                line-height: 1.5;
+              }
+            }
+          }
+        }
+      
+        .itemAmount {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          width: 35%;
+          flex-grow: 1;
+        }
+        .housesTarp {
+          width: 110px;
+          min-width: 110px;
+          padding-top: 2.5px;
+          margin-bottom: 5px;
+          margin-right: 10px;
+          display: flex;
+          justify-content: space-around;
+          flex-direction: column;
+
+          div {
+            display: flex;
+            span {
+              color: black;
+              text-align: center;
+              font-size: 0.8rem !important;
+              margin-right: 2.5px;
+            }
+      
+            .count {
+              font-weight: bold;
+            }
+          }
+        }
+      
+        .buttonContainer {
+          display: flex;
+          justify-content: space-between;
+          margin: 10px;
+          button {
+            width: 100%;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 0.8rem;
+          }
+          .moreInfo {
+            margin-right: 5px;
+            border: 1px solid $blue_text;
+            color: $blue_text;
+            background-color: $white;
+            width: 50%;
+          }
+      
+          .addToCart {
+            background-color: $pink_button;
+            border: none;
+          }
+        }
+      
+        .moreInfoContainer {
+          padding: 0 10px;
+          max-height: 0;
+          transition: all 0.2s ease-in-out;
+          &.show {
+            max-height: 500px;
+          }
+          .title {
+            color: black;
+            font-size: 1rem;
+          }
+          .volunteerInfo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            .volunteerDescription {
+              color: black;
+              font-size: 0.7rem;
+            }
+            .volunteerImage {
+              .volunteerImg {
+                border-radius: 50%;
+                width: 25px;
+                padding-bottom: 25px;
+                margin-right: 10px;
+              }
+            }
+          }
+      
+          .volunteer {
+            color: black;
+            font-size: 0.7rem;
+          }
+      
+          .downButton {
+            padding-top: 10px;
+            padding-bottom: 5px;
+            display: flex;
+            justify-content: center;
+            div {
+              transform: rotate(-180deg);
+              width: 15px;
+              padding-bottom: 15px;
+              img {
+              }
+            }
+          }
+        }
+      }
+      
+    }
+  }
+
+  .payContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    .overallPrice {
+      display: flex;
+      flex-direction: column;
+      span {
+        font-size: 0.8rem;
+      }
+
+      .titleAmount {
+        color: black;
+      }
+      .totalAmount {
+        color: #e41e93;
+        font-weight: bold;
+      }
+    }
+
+    .pay {
+      height: 40px;
+      width: 50%;
+      background-color: #e41e93;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      width: 100%;
+      height: 56px;
+      margin: 0px;
+      border: none;
+      div {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8rem;
+      }
+    }
+
+    .payDisabled {
+      height: 40px;
+      width: 50%;
+      background-color: grey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      div {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.checkoutSuccess {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .iconCheck {
+    margin-top: 50px;
+    width: 120px;
+    padding-bottom: 120px;
+  }
+
+  .orderPlaced {
+    color: #e41e93 !important;
+    font-weight: bold;
+    margin: 20px;
+    font-size: 1rem;
+  }
+
+  .support {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .attention {
+    background-color: #1a4789;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    height: 150px;
+    .attentionTitle {
+      
+      color: white;
+      font-size: 0.8rem;
+    }
+
+    .firstAttention {
+      color: white;
+      font-size: 0.8rem;
+      padding-top: 10px;
+    }
+
+    .secondAttention {
+      color: white;
+      font-size: 0.8rem;
+      padding-top: 10px;
+    }
+  }
+
+
+  .goBack {
+    color: #1a4789 !important;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+}

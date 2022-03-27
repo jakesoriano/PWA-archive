@@ -10,7 +10,7 @@ export default ({
   disableClose,
   styles,
   hideHeader,
-  id
+  id,
 }) => (
   <div
     id={id || 'modal'}

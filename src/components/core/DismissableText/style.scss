@@ -1,0 +1,23 @@
+@import '../../../style/variables.scss';
+.dtWrap {
+    background-color: #EC0086;
+    padding: 25px 15px;
+    .head {
+        overflow: auto;
+        margin-bottom: 10px;
+        * {
+            font-size: 0.75rem;
+        }
+        .date {
+            float: left;
+        }
+        .dismiss {
+            float: right;
+            text-transform: uppercase;
+            text-decoration: underline;
+        }
+    }
+    .body {
+        width: 75%;
+    }
+}
