@@ -6,6 +6,8 @@ import { Checkout } from '_components/core';
 import { connect } from 'unistore/preact';
 // eslint-disable-next-line import/extensions
 import style from './style';
+import { updateStore } from '_unistore';
+import { route } from 'preact-router';
 
 class CrowdSourcingItem extends Component {
   constructor() {
@@ -28,7 +30,18 @@ class CrowdSourcingItem extends Component {
 	  }
 	};
 
-	render = ({ item, addToCart }) => {
+	onItemSupport = (item) => {
+	  updateStore({
+	    cart: {
+	      data: [item],
+	      loading: false,
+	      result: true,
+	    },
+	  });
+	  route(`/community-crowdsourcing/checkout`);
+	};
+
+	render = ({ item }) => {
 	  return (
 	  // eslint-disable-next-line react/jsx-no-bind
 	    <div className={`${style.itemMain}`}>
@@ -78,8 +91,10 @@ class CrowdSourcingItem extends Component {
 	        )}
 	        <button
 	          onClick={() => {
+	            console.log({ item });
 	            // if (!this.existingToCart(item)) addToCart(item);
-	            this.onClick(item?.url);
+	            // this.onClick(item?.url);
+	            this.onItemSupport(item);
 	          }}
 	          className={style.addToCart}
 	        >

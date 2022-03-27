@@ -50,3 +50,4 @@ export const urlMessages = `${urlCommunity}/listings/msgfeed`;
 export const urlIncidentReport = `${process.env.API_DOMAIN}report`;
 export const urlApplyPollWatcher = urlUser + `/pollwatcher/application`;
 export const urlReportFakeNews = urlUser + `/report/fakenews`;
+export const urlTransaction = `${process.env.API_DOMAIN}transaction`;

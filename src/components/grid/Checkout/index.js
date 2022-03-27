@@ -1,6 +1,12 @@
 /* eslint-disable no-else-return */
 import { Component } from 'preact';
-import { getTranslation, displayPageLoader } from '_helpers';
+import {
+  getTranslation,
+  displayPageLoader,
+  successMessage,
+  showAlertBox,
+} from '_helpers';
+import { crowdSourcingCheckout, checkCrowdSourcingtStatus } from '_mutations';
 import { connect } from 'unistore/preact';
 import { ImageLoader, FormInput } from '_components/core';
 import { updateStore } from '_unistore';
@@ -13,13 +19,13 @@ class Checkout extends Component {
     super(props);
     this.state = {
       fullName: {
-        value: '',
+        value: props.authUser?.profile?.fname || '',
         error: '',
         message: '',
         hasError: false,
       },
       phoneNumber: {
-        value: '',
+        value: props.authUser?.profile?.mobile || '',
         error: '',
         message: '',
         hasError: false,
@@ -33,8 +39,70 @@ class Checkout extends Component {
       isLoading: false,
       recaptchaChecked: false,
       showSuccess: false,
+      apiResponse: null,
     };
   }
+
+	componentDidUpdate = () => {
+	  // get transaction status
+	  const apiResponse = this.state.apiResponse;
+	  if (
+	    apiResponse &&
+			!apiResponse.fetching &&
+			apiResponse.transactionId &&
+			this.props.appResume
+	  ) {
+	    // set fetching state
+	    this.setState(
+	      {
+	        apiResponse: {
+	          ...apiResponse,
+	          fetching: true,
+	        },
+	      },
+	      () => {
+	        // check status
+	        displayPageLoader(true);
+	        checkCrowdSourcingtStatus(this.state.apiResponse.transactionId)
+	          .then((res) => {
+	            displayPageLoader(false);
+	            updateStore({ appResume: false }, true);
+	            // success
+	            if (res && res.status === 'completed') {
+	              this.setState({ apiResponse: null });
+	              const cartItem = this.props.cart?.data?.length
+	                ? this.props.cart.data[0]
+	                : {};
+	              successMessage({
+	                pageTitle: getTranslation('NANAYS_FOR_LENI'),
+	                title: getTranslation('SUBMIT_SUCCESS'),
+	                message: getTranslation('SUBMIT_SUCCESS_NANAY')
+	                  .replace('{BRGY}', cartItem.name || '')
+	                  .replace('{STATUS}', res.status),
+	                cbBack: () => {
+	                  route('/community-crowdsourcing', true);
+	                },
+	              });
+	            } else {
+	              this.setState({
+	                apiResponse: {
+	                  ...this.state.apiResponse,
+	                  fetching: false,
+	                },
+	              });
+	            }
+	          })
+	          .catch((err) => {
+	            displayPageLoader(false);
+	            updateStore({ appResume: false }, true);
+	            this.setState({
+	              apiResponse: null,
+	            });
+	          });
+	      }
+	    );
+	  }
+	};
 
 	onFullNameChange = (value) => {
 	  this.setState({
@@ -59,48 +127,85 @@ class Checkout extends Component {
 	};
 
 	onEmailChange = (value) => {
+	  const validEmail = value.match(
+	    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+	  );
 	  this.setState({
 	    email: {
 	      ...this.state.email,
 	      value: value,
-	      hasError: !Boolean(value),
-	      error: !Boolean(value) ? 'REQUIRED' : '',
+	      hasError: !Boolean(validEmail),
+	      error: !Boolean(validEmail) ? 'Invalid Email' : '',
 	    },
 	  });
 	};
 
 	onCheckout = () => {
-	  this.setState({
-	    showSuccess: true,
-	  });
-	  // if (!this.props.cart?.data.length) return;
 	  const { fullName, phoneNumber, email } = this.state;
-	  if (!fullName.value || phoneNumber.value || email.value) {
+	  if (!fullName.value || !phoneNumber.value || !email.value) {
 	    this.onFullNameChange(fullName.value);
 	    this.onPhoneChange(phoneNumber.value);
 	    this.onEmailChange(email.value);
 	  } else {
+	    const { data } = this.props?.cart;
 	    displayPageLoader(true);
-	    console.log({ state: this.state });
-
-	    // get the data to be passed
-
-	    // display success message
+	    const checkoutData = {
+	      referenceId: data[0]?.id,
+	      payerName: fullName?.value,
+	      payerPhoneNumber: phoneNumber?.value,
+	      payerEmail: email?.value,
+	    };
+	    crowdSourcingCheckout(checkoutData)
+	      .then((res) => {
+	        if (res?.redirectUrl) {
+	          this.setState(
+	            {
+	              apiResponse: {
+	                ...res,
+	                fetching: false,
+	              },
+	            },
+	            () => {
+	              displayPageLoader(false);
+	              window.open(res.redirectUrl);
+	            }
+	          );
+	        } else {
+	          showAlertBox({
+	            message: res?.message || 'SOMETHING_WRONG',
+	          });
+	        }
+	        displayPageLoader(false);
+	      })
+	      .catch((err) => {
+	        showAlertBox({
+	          message: 'SOMETHING_WRONG',
+	        });
+	        displayPageLoader(false);
+	      });
 	  }
 	};
 
-	getCartTotal = () =>
-	  this.props.cart.data.reduce((curr, next) => curr + next.price, 0);
+	// getCartTotal = () =>
+	//   this.props.cart.data.reduce((curr, next) => curr + next.price, 0);
 
-	removeFromCart = (item) => {
-	  updateStore({
-	    cart: {
-	      ...this.props.cart,
-	      data: this.props?.cart?.data?.filter(
-	        (cartItem) => cartItem?.id !== item?.id
-	      ),
-	    },
-	  });
+	// removeFromCart = (item) => {
+	//   updateStore({
+	//     cart: {
+	//       ...this.props.cart,
+	//       data: this.props?.cart?.data?.filter(
+	//         (cartItem) => cartItem?.id !== item?.id
+	//       ),
+	//     },
+	//   });
+	// };
+
+	onClick = (url) => {
+	  if (url && url.substr(0, 4) == 'http') {
+	    window.open(url);
+	  } else if (url) {
+	    route(url);
+	  }
 	};
 
 	render = () => {
@@ -197,7 +302,7 @@ class Checkout extends Component {
 	          <div className={style.cartItemContainer}>
 	            {this.props.cart?.data?.map((item) => {
 	              return (
-	                <div className={style.itemMain}>
+	                <div className={`${style.itemMain}`}>
 	                  <div className={style.itemContainer}>
 	                    {/* Image */}
 	                    <div className={style.itemImage}>
@@ -208,44 +313,83 @@ class Checkout extends Component {
 	                    </div>
 	                    {/* Content */}
 	                    <div className={style.contentContainer}>
-	                      {/* Barangay Name and Price */}
-	                      <div className={style.namePrice}>
-	                        <span>{item?.barangayName}</span>
-	                        <span onClick={() => this.removeFromCart(item)}>
-	                          <ImageLoader
-	                            src={`assets/images/NOT_INTERESTED-dark.png`}
-	                            style={{ container: style.detailImage }}
-	                            lazy
-	                          />
-	                        </span>
-	                      </div>
-
 	                      {/* Barangay Address */}
 	                      <span className={style.address}>
-	                        {item?.barangayAddress}
+	                        {item?.volunteer?.name}
 	                      </span>
 
-	                      {/* Houses and Tarp */}
-	                      <div className={style.housesTarp}>
-	                        <div>
-	                          <span className={style.count}>{item?.houses}</span>
-	                          <span>{getTranslation('HOUSES')}</span>
-	                        </div>
-
-	                        <div>
-	                          <span className={style.count}>
-	                            {item?.tarpaulins}
-	                          </span>
-	                          <span>{getTranslation('TARPAULINS')}</span>
-	                        </div>
-	                      </div>
-
-	                      {/* More and Add to cart */}
-	                      <div className={style.namePrice}>
-	                        <span>P {item?.price}</span>
+	                      <div className={style.itemUserDescription}>
+	                        <p>"{item?.shortDesc}"</p>
 	                      </div>
 	                    </div>
 	                  </div>
+	                  {/* More Info */}
+	                  {/* More and Add to cart */}
+	                  <div className={style.buttonContainer}>
+	                    {/* Houses and Tarp */}
+	                    <div className={style.housesTarp}>
+	                      <div>
+	                        <span className={style.count}>{item?.target}</span>
+	                        <span>{getTranslation('HOUSES')}</span>
+	                      </div>
+
+	                      <div>
+	                        <span className={style.count}>{item?.quantity}</span>
+	                        <span>{getTranslation(item.purpose)}</span>
+	                      </div>
+	                    </div>
+
+	                    <span
+	                      className={style.itemAmount}
+	                    >{`₱${item?.amount}`}</span>
+	                    {!this.state.moreInfo && (
+	                      <button
+	                        onClick={() =>
+	                          this.setState({ moreInfo: !this.state.moreInfo })}
+	                        className={style.moreInfo}
+	                      >
+	                        {getTranslation('MORE_INFO')}
+	                      </button>
+	                    )}
+	                  </div>
+	                  {/* {this.state.moreInfo ? ( */}
+
+	                  <div
+	                    className={`${style.moreInfoContainer} ${
+												this.state.moreInfo ? style.show : ''
+											}`}
+	                  >
+	                    <span className={`bold ${style.title}`}>
+	                      {getTranslation('NANAY_VOLUNTEER')}
+	                    </span>
+
+	                    {/* Image and Info */}
+	                    <div className={style.volunteerInfo}>
+	                      <div className={style.volunteerImage}>
+	                        <ImageLoader
+	                          src={item?.volunteer?.image}
+	                          style={{ container: style.volunteerImg }}
+	                        />
+	                      </div>
+
+	                      <span className={style.volunteerDescription}>
+	                        {item?.volunteer?.name}, {item?.volunteer.age} y.o
+	                      </span>
+	                    </div>
+
+	                    {/* Description */}
+	                    <span className={style.volunteer}>{item?.longDesc}</span>
+
+	                    {/* Button */}
+	                    <div
+	                      onClick={() =>
+	                        this.setState({ moreInfo: !this.state.moreInfo })}
+	                      className={style.downButton}
+	                    >
+	                      <ImageLoader src="assets/images/downarrow.png" />
+	                    </div>
+	                  </div>
+	                  {/* ) : null} */}
 	                </div>
 	              );
 	            })}
@@ -254,15 +398,15 @@ class Checkout extends Component {
 
 	        {/* Pay */}
 	        <div className={style.payContainer}>
-	          <div className={style.overallPrice}>
+	          {/* <div className={style.overallPrice}>
 	            <span className={style.titleAmount}>
 	              {getTranslation('TOTAL_AMOUNT')}
 	            </span>
 	            <span className={style.totalAmount}>
 								PHP {this.getCartTotal()}
 	            </span>
-	          </div>
-	          <div
+	          </div> */}
+	          <button
 	            className={
 								this.props.cart?.data.length > 0
 								  ? `${style.pay}`
@@ -271,11 +415,11 @@ class Checkout extends Component {
 	            onClick={() => this.onCheckout()}
 	          >
 	            <div>Pay</div>
-	          </div>
+	          </button>
 	        </div>
 	      </div>
 	    );
 	  }
 	};
 }
-export default connect(['cart'])(Checkout);
+export default connect(['cart', 'authUser', 'appResume'])(Checkout);

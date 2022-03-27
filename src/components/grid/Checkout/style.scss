@@ -1,5 +1,7 @@
 .checkoutContainer {
   margin: 10px;
+  height: calc(100vh - 76px);
+  position: relative;
   .title {
     color: #e41e93;
     font-size: 1rem;
@@ -9,11 +11,6 @@
     margin: 10px;
     div {
       padding-bottom: 10px;
-
-      input {
-        border-radius: 10px;
-        color: #7d7d7d;
-      }
     }
 
   }
@@ -26,25 +23,32 @@
       color: #e41e93;
     }
     .cartItemContainer {
+      @import '../../../style/variables.scss';
       .itemMain {
-        background-color: #f2f2f2;
+        background-color: $gray_bg;
         border-radius: 5px;
-        margin: 5px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        -webkit-transition: height 1s;
+        -moz-transition: height 1s;
+        -ms-transition: height 1s;
+        -o-transition: height 1s;
+        transition: height 1s;
         .itemContainer {
           display: flex;
-          padding: 10px;
+          padding: 10px 10px 0px 10px;
           div {
             .img {
-              width: 100px;
-              padding-bottom: 100px;
+              width: 110px;
+              padding-bottom: 110px;
+              margin-right: 10px;
             }
           }
           .itemImage {
           }
-
+      
           .contentContainer {
             flex: 1;
-            padding: 5px;
             .namePrice {
               display: flex;
               justify-content: space-between;
@@ -52,65 +56,100 @@
                 color: black;
                 font-size: 0.9rem !important;
                 font-weight: bold;
+              }
 
+              span {
                 div {
-                  width: 15px;
-                  padding-bottom: 15px;
+                  padding-bottom: 12px;
+                  width: 12px;
+
                 }
               }
             }
-
+      
             .address {
-              color: grey;
-              font-size: 0.7rem !important;
+              color: black;
+              font-size: 0.8rem !important;
             }
-
-            .housesTarp {
-              padding-top: 2.5px;
-              margin-bottom: 15px;
-              display: flex;
-              justify-content: flex-start;
-              align-items: center;
-              div {
-                display: flex;
-                justify-content: center;
-                margin-right: 10px;
-                span {
-                  color: black;
-                  text-align: center;
-                  font-size: 0.8rem !important;
-                }
-
-                .count {
-                  font-weight: bold;
-                  margin-right: 5px;
-                }
-              }
-            }
-
-            .buttonContainer {
-              display: flex;
-              justify-content: space-between;
-              button {
-                width: 100%;
-                border-radius: 5px;
-                padding: 2.5px;
-              }
-              .moreInfo {
-                margin-right: 5px;
-                border: 1px solid #1a4789;
-                color: #1a4789;
-              }
-
-              .addToCart {
-                background-color: #e41e93;
-                border: none;
+      
+            .itemUserDescription {
+              margin-top: 5px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              height: 50px;
+              p {
+                color: grey;
+                font-size: 0.7rem !important;
+                font-style: italic;
+                line-height: 1.5;
               }
             }
           }
         }
+      
+        .itemAmount {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          width: 35%;
+          flex-grow: 1;
+        }
+        .housesTarp {
+          width: 110px;
+          min-width: 110px;
+          padding-top: 2.5px;
+          margin-bottom: 5px;
+          margin-right: 10px;
+          display: flex;
+          justify-content: space-around;
+          flex-direction: column;
+
+          div {
+            display: flex;
+            span {
+              color: black;
+              text-align: center;
+              font-size: 0.8rem !important;
+              margin-right: 2.5px;
+            }
+      
+            .count {
+              font-weight: bold;
+            }
+          }
+        }
+      
+        .buttonContainer {
+          display: flex;
+          justify-content: space-between;
+          margin: 10px;
+          button {
+            width: 100%;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 0.8rem;
+          }
+          .moreInfo {
+            margin-right: 5px;
+            border: 1px solid $blue_text;
+            color: $blue_text;
+            background-color: $white;
+            width: 50%;
+          }
+      
+          .addToCart {
+            background-color: $pink_button;
+            border: none;
+          }
+        }
+      
         .moreInfoContainer {
-          padding: 10px;
+          padding: 0 10px;
+          max-height: 0;
+          transition: all 0.2s ease-in-out;
+          &.show {
+            max-height: 500px;
+          }
           .title {
             color: black;
             font-size: 1rem;
@@ -119,6 +158,7 @@
             display: flex;
             align-items: center;
             margin-bottom: 10px;
+            margin-top: 10px;
             .volunteerDescription {
               color: black;
               font-size: 0.7rem;
@@ -132,25 +172,28 @@
               }
             }
           }
-
+      
           .volunteer {
             color: black;
             font-size: 0.7rem;
           }
-
+      
           .downButton {
             padding-top: 10px;
-            padding-bottom: 20px;
+            padding-bottom: 5px;
             display: flex;
             justify-content: center;
             div {
-              transform: rotate(-90deg);
-              width: 10px;
-              padding-bottom: 20px;
+              transform: rotate(-180deg);
+              width: 15px;
+              padding-bottom: 15px;
+              img {
+              }
             }
           }
         }
       }
+      
     }
   }
 
@@ -159,6 +202,9 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     .overallPrice {
       display: flex;
       flex-direction: column;
@@ -183,6 +229,10 @@
       align-items: center;
       justify-content: center;
       border-radius: 10px;
+      width: 100%;
+      height: 56px;
+      margin: 0px;
+      border: none;
       div {
         color: white;
         display: flex;

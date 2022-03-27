@@ -539,12 +539,22 @@ if (typeof window !== 'undefined') {
 
   // native on resume
   window.onResume = () => {
-    // fetch app config
-    fetchAppConfig();
-    // fetch tasks to trigger notification if there is pending
-    fetchTasks();
     // url
     const path = getCurrentUrl();
     console.log('onResume', path);
+    if (path.indexOf('checkout') > -1) {
+      // add to global store
+      updateStore(
+        {
+          appResume: true,
+        },
+        true
+      );
+    } else {
+      // fetch app config
+      fetchAppConfig();
+      // fetch tasks to trigger notification if there is pending
+      fetchTasks();
+    }
   };
 }

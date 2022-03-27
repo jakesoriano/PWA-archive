@@ -1,5 +1,4 @@
-import { incidentCategories , fakeNewsCategories } from '_constant';
-
+import { incidentCategories, fakeNewsCategories } from '_constant';
 
 export function getIncidentCategories() {
   try {

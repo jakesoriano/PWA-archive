@@ -46,12 +46,6 @@ class CrowdSourcingList extends Component {
 	  console.log('res', this.state.data);
 	};
 
-	getLinkByPrice = (price) => {
-	  const config = getConfigByKey('crowdsourcing');
-	  const result = (config?.links || []).find((i) => i.price === price);
-	  return result ? result.url : config?.linkDefault || null;
-	};
-
 	// addToCart = (item) => {
 	//   updateStore({
 	//     cart: {
@@ -70,10 +64,6 @@ class CrowdSourcingList extends Component {
 
 	      {/* List */}
 	      {this.state?.data?.map((item) => {
-	        item = {
-	          ...item,
-	          url: this.getLinkByPrice(item.amount),
-	        };
 	        return (
 	          <CrowdSourcingItem
 	            item={item}

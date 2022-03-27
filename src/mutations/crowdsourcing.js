@@ -1,5 +1,5 @@
 import { updateStore, store } from '_unistore';
-import { xhr, urlCrowdsourcing } from '_helpers';
+import { xhr, urlCrowdsourcing, urlTransaction } from '_helpers';
 
 export function getCommunityCrowdsourcing(page, limit) {
   //
@@ -54,6 +54,42 @@ export function getCommunityCrowdsourcing(page, limit) {
         });
         console.log(`SPA >> fetchcrowdsourcing Error`, err);
         resolve(false);
+      });
+  });
+}
+
+export function crowdSourcingCheckout(data) {
+  const url = `${urlTransaction}`;
+
+  return new Promise((resolve) => {
+    xhr(url, {
+      method: 'POST',
+      data: {
+        category: 'crowdsourcing',
+        ...data,
+      },
+    })
+      .then((res) => {
+        resolve(res?.error || res?.data);
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`SPA >> Checkout failed`, err);
+      });
+  });
+}
+
+export function checkCrowdSourcingtStatus(transactionId) {
+  const url = `${urlTransaction}/ulid/${transactionId}`;
+
+  return new Promise((resolve) => {
+    xhr(url)
+      .then((res) => {
+        resolve(res?.data);
+      })
+      .catch((err) => {
+        resolve(false);
+        console.log(`SPA >> Checkout Status failed`, err);
       });
   });
 }

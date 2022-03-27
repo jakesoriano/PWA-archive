@@ -5,7 +5,7 @@ import {
   urlIncidentReport,
   urlReport,
   urlApplyPollWatcher,
-  urlReportFakeNews
+  urlReportFakeNews,
 } from '_helpers';
 
 export function sendContactUs(data) {
@@ -132,5 +132,3 @@ export function reportFakeNews(data) {
       });
   });
 }
-
-

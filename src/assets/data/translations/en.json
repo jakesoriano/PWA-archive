@@ -269,7 +269,6 @@
 	"NEEDS": "Needs",
 	"NEEDS_MSG": "If retained to 0, means no limit of volunteers",
 	"COMMUNITY_VOLUNTEER": "Volunteer",
-	"COMMUNITY_CROWDSOURCING": "Support a Ground Initiative",
 	"COMMUNITY_BE_A_VOLUNTEER": "DISCLAIMER : Payments will not go to the official campaign fund since Merch Bridgers for LeniKiko is an independent volunteer group.",
 	"ACCOMPLISH_MORE": "About Merch Bridgers for LeniKiko: We are an independent volunteer group that connects Kakampink volunteers with one another to avail bulk priced merch at cost, as well as support in distributing these to various communities all over the country.",
 	"COMMUNITY_VOLUNTEER_TITLE": "Community Volunteer",
@@ -345,7 +344,7 @@
 	"TOTAL_AMOUNT": "TOTAL AMOUNT",
 	"SUPPORT_VOLUNTEER": "SUPPORT VOLUNTEER",
 	"SUPPORTED": "SUPPORTED",
-	"PAGE_CROWDSOURCING": "Support a Ground Initiative",
+	"PAGE_CROWDSOURCING": "Help House-to-House Campaign",
 	"PAGE_CHECKOUT": "Nanays for Leni",
 	"REPORT_FAKE_NEWS": "Report Fake News",
 	"EDITORS_PICK": "See Editor's Picks",
@@ -364,7 +363,7 @@
 	"SHARE_CONTACT_DETAILS": "Share your contact details",
 	"AGREE_TERMS": "Agree to our Terms & Conditions",
 	"SUBMIT_SUCCESS": "Submitted Succesfully!",
-	"SUBMIT_REPORT_SUCCESS": "Thanky you for submitting a report. We will review your report and revert accordingly.",
+	"SUBMIT_REPORT_SUCCESS": "Thank you for submitting a report. We will review your report and revert accordingly.",
 	"GO_BACK": "Go back",
 	"EMAIL": "Email",
 	"INVALID_EMAIL": "Invalid Email",
@@ -385,5 +384,8 @@
 	"NANAYS_FOR_LENI": "Nanays for Leni",
 	"FAKENEWS_SUBMIT_SUCCESS": "Thank you for submitting a fake news report!",
 	"DISMISS": "Dismiss",
-	"USER_ALREADY_REPORTED_LINK": "Link is already reported."
+	"USER_ALREADY_REPORTED_LINK": "Link is already reported.",
+	"SUBMIT_SUCCESS_NANAY": "Thank you for agreeing to support {BRGY}!, Your transaction has been {STATUS}.",
+	"REFERENCE_DATA_NOT_FOUND": "Selected item is already supported.",
+	"REFERENCE_DATA_LOCKED": "Selected item is already processing by other user."
 }
