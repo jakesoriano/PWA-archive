@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 // import { route } from 'preact-router';
-import { getTranslation, displayPageLoader, showAlertBox } from '_helpers';
+import { getTranslation, getTraceID, displayPageLoader, showAlertBox } from '_helpers';
 import { changePassword } from '_mutations';
 import { connect } from 'unistore/preact';
 import { FormGroup, FormInput, ButtonDescription } from '_components/core';
@@ -145,8 +145,9 @@ class ChangePassword extends Component {
 	      }
 	      displayPageLoader(false);
 	    }).catch((err) => {
+	      const errorMessage = getTraceID(err)
 	      showAlertBox({
-	        message: 'SOMETHING_WRONG'
+	        message: errorMessage
 	      });
 	      displayPageLoader(false);
 	    });

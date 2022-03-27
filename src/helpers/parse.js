@@ -78,3 +78,14 @@ export function removeTags(str) {
   // HTML tag with a null string.
   return str.replace(/(<([^>]+)>)/gi, '');
 }
+
+export function getTraceID(data) {
+  if (data.error?.includes('traceId')) {
+    const traceID = data.error?.split(' ')[1];
+    const message = `Something went wrong. Please contact support with this reference number: ${traceID}`;
+
+    return message;
+  }
+
+  return 'SOMETHING_WRONG';
+}

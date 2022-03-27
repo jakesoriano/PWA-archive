@@ -3,7 +3,7 @@ import { route, getCurrentUrl } from 'preact-router';
 import { updateStore } from '_unistore';
 import { forgotCredentials } from '_mutations';
 import { ButtonDescription } from '_components/core';
-import { getTranslation, displayPageLoader, showAlertBox } from '_helpers';
+import { getTranslation, getTraceID, displayPageLoader, showAlertBox } from '_helpers';
 import style from './style';
 
 class ForgotEnterMobile extends Component {
@@ -52,8 +52,9 @@ class ForgotEnterMobile extends Component {
           message: res.error
         });
       } else {
+        const errorMessage = getTraceID(res)
         showAlertBox({
-          message: 'SOMETHING_WRONG'
+          message: errorMessage
         });
       }
     })

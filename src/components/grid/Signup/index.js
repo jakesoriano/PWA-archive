@@ -10,6 +10,7 @@ import {
   getProvince,
   getMunicipality,
   getBarangay,
+  getTraceID,
   displayPageLoader,
   showAlertBox,
   getMobilePrefixOptions,
@@ -413,8 +414,9 @@ class Signup extends Component {
 	                  // route(`/${this.props.parent}/home`);
 	                  route(`/signup-success`);
 	                } else {
+	                  const errorMessage = getTraceID(res)
 	                  showAlertBox({
-	                    message: res.error || 'SOMETHING_WRONG',
+	                    message: res.error || errorMessage,
 	                  });
 	                }
 	              })
@@ -432,8 +434,9 @@ class Signup extends Component {
 	          });
 	        }
 	      } else {
+	        const errorMessage = getTraceID(res)
 	        showAlertBox({
-	          message: 'SOMETHING_WRONG',
+	          message: errorMessage,
 	        });
 	      }
 	    });
