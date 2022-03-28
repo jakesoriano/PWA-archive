@@ -8,6 +8,7 @@ import { updateAvatar } from '_mutations';
 import { connect } from 'unistore/preact';
 import {
   getTranslation,
+  getTraceID,
   showAlertBox,
   promptModal,
   resizeImage,
@@ -66,14 +67,16 @@ class RegistrationInvite extends Component {
 	            success: true,
 	          });
 	        } else {
+	          const errorMessage = getTraceID(resUpdate);
 	          showAlertBox({
-	            message: resUpdate.errMessage || 'SOMETHING_WRONG',
+	            message: resUpdate.errMessage || errorMessage,
 	          });
 	        }
 	      });
 	    } else {
+	      const errorMessage = getTraceID(res);
 	      showAlertBox({
-	        message: res.errMessage || 'SOMETHING_WRONG',
+	        message: res.errMessage || errorMessage,
 	      });
 	    }
 	  });

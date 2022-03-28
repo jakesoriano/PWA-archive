@@ -16,6 +16,7 @@ import {
 	getDayNum,
 	componentModal,
 	getConfigByKey,
+	gmtHours,
 } from '_helpers';
 import { nativeShare } from '_platform/helpers';
 import style from './style';
@@ -31,10 +32,17 @@ class HomeEvents extends Component {
 	componentDidMount = () => {
 		const data = getConfigByKey('events') || [];
 		// remove expired date / event
-		const currentTimestamp = Date.now();
-		let groupsByDate = data.filter(
-			(i) => new Date(getFormatedDate(i.date)).getTime() > currentTimestamp
-		);
+		const currentTimestamp = new Date().setHours('00', '00', '00');
+		let groupsByDate = data
+			.map((i) => {
+				return {
+					...i,
+					date: new Date(i.date.replace(/-/gim, '/')).getTime() + gmtHours,
+				};
+			})
+			.filter(
+				(i) => new Date(getFormatedDate(i.date)).getTime() > currentTimestamp
+			);
 		// group by date
 		if (groupsByDate && groupsByDate.length) {
 			groupsByDate = groupsByDate

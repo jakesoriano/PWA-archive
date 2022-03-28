@@ -25,7 +25,7 @@ const days = [
   'Saturday',
 ];
 
-const gmtHours = 1000 * 60 * 60 * 8; // - 8 hours
+export const gmtHours = 1000 * 60 * 60 * 8; // - 8 hours
 
 export const dateEventFormat = (date) => {
   const { selectedLanguage } = store.getState();

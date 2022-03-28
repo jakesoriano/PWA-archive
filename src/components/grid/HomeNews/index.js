@@ -87,7 +87,7 @@ class HomeNews extends Component {
 	                />
 	                <p className={`bold ${style.iTitle}`}>{item.title}</p>
 	                <p className={`bold ${style.iDesc}`}>
-	                  {dateNewsFormat(item.postedDate)}
+	                  {item.postedDate ? dateNewsFormat(item.postedDate) : ''}
 	                </p>
 	                <p className={style.iDesc}>{`${removeTags(item.desc).substr(
 	                  0,

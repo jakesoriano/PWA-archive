@@ -10,18 +10,18 @@ export default ({
   disableClose,
   styles,
   hideHeader,
-  id
+  id,
 }) => (
   <div
     id={id || 'modal'}
     className={`${style.modal} ${fullscreen ? style.fullscreen : ''} ${
-			styles.modal || ''
+			styles?.modal || ''
 		}`}
   >
-    <div className={`${style.modalContentWrap} ${styles.contentWrap || ''}`}>
+    <div className={`${style.modalContentWrap} ${styles?.contentWrap || ''}`}>
       <div
         id="modal_content"
-        className={`${style.modalContent}  ${styles.content || ''}`}
+        className={`${style.modalContent}  ${styles?.content || ''}`}
       >
         {/* header */}
         {!hideHeader && (

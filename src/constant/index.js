@@ -6,3 +6,4 @@ export * from './filter';
 export * from './volunteerNeeds';
 export * from './countryCodes';
 export * from './incidentCategories';
+export * from './fakeNewsCategories';

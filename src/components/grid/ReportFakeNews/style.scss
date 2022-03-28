@@ -1,0 +1,65 @@
+@import '../../../style/variables.scss';
+.fakeNewsWrap {
+  padding: 0 0 20px;
+  * {
+    color: #737373;
+  }
+  .header {
+    display: block;
+    .title {
+      color: $pink_text;
+      margin: 15px 15px 0;
+    }
+    .content {
+      font-size: 0.8rem;
+      padding: 15px;
+    }
+  }
+  .message {
+    text-align: center;
+    border-top: 1px solid #E9E9E9;
+    padding: 20px 20px;
+    margin: 10px 0;
+    font-size: 0.9rem;
+  }
+  .fakeNewsForm {
+    padding: 15px;
+    .formGroup {
+      padding: 10px 0;
+      position: relative;
+      p {
+        position: absolute;
+        right: 0;
+        top: 10px;
+        text-decoration: underline;
+        color: #ce0f68;
+      }
+      label {
+        font-style: normal;
+      }
+    }
+    .checkBoxGroup {
+      padding-left: 0;
+    }
+    .addLink {
+      font-size: 0.9rem;
+      background: none;
+      border: 1px solid #ce0f68;
+      color: #ce0f68;
+      max-width: 200px;
+      padding: 10px;
+      margin-bottom: 20px;
+      .iconStyle {
+          width: 10px;
+          padding-bottom: 10px;
+          margin-right: 10px;
+      }
+    }
+    .checkWrap {
+      label {
+        color: red;
+      }
+    }
+  }
+ 
+}

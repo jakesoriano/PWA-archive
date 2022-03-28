@@ -7,6 +7,7 @@ import { connect } from 'unistore/preact';
 import { ImageLoader, FormInput } from '_components/core';
 import {
   getDefaultAvatar,
+  getTraceID,
   displayPageLoader,
   resizeImage,
   uploadFile,
@@ -49,8 +50,9 @@ class UserAvatar extends Component {
 	        }
 	      });
 	    } else {
+	      const errorMessage = getTraceID(res);
 	      showAlertBox({
-	        message: res.errMessage || 'SOMETHING_WRONG',
+	        message: res.errMessage || errorMessage,
 	      });
 	    }
 	  });

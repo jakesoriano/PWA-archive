@@ -1,6 +1,11 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
-import { getTranslation, displayPageLoader, showAlertBox } from '_helpers';
+import {
+  getTranslation,
+  getTraceID,
+  displayPageLoader,
+  showAlertBox,
+} from '_helpers';
 import { completeRegister, resendOTP } from '_mutations';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
@@ -16,15 +21,15 @@ class OneTimePIN extends Component {
       isOTPInvalid: false,
       isResendCd: false,
       seconds: 60,
-      inputFocus: false
+      inputFocus: false,
     };
   }
 
 	componentDidMount = () => {
 	  updateStore({
 	    customBack: () => {
-	      route(`/${this.props.parent}/signup`, true)
-	    }
+	      route(`/${this.props.parent}/signup`, true);
+	    },
 	  });
 	};
 	handleContinue = (e) => {
@@ -40,7 +45,7 @@ class OneTimePIN extends Component {
 	      route('/home', true);
 	    } else if (!isOTPInvalid) {
 	      showAlertBox({
-	        message: 'OTP_INVALID'
+	        message: 'OTP_INVALID',
 	      });
 	      this.setState({
 	        isOTPInvalid: true,
@@ -59,14 +64,14 @@ class OneTimePIN extends Component {
 	  let timer;
 	  if (seconds === 1) {
 	    this.setState({
-	      seconds: 60
-	    })
+	      seconds: 60,
+	    });
 	    seconds = 60;
 	  }
 	  if (!timer) {
 	    this.setState({
 	      isResendCd: true,
-	      pin: ''
+	      pin: '',
 	    });
 	    timer = window.setInterval(() => {
 	      if (seconds > 0) {
@@ -85,10 +90,15 @@ class OneTimePIN extends Component {
 
 	renderBox = (i, isActive, isLast) => {
 	  const pin = this.state.pin || '';
-	  const isFocus = this.state.inputFocus && (pin.length === i || (isLast && pin.length === (i + 1)));
+	  const isFocus =
+			this.state.inputFocus &&
+			(pin.length === i || (isLast && pin.length === i + 1));
 	  return (
 	    <div
-	      className={`${style.otpBox} ${isFocus ? style.otpBoxActive : ''} ${isActive ? style.otpBoxActive : ''}`}>
+	      className={`${style.otpBox} ${isFocus ? style.otpBoxActive : ''} ${
+					isActive ? style.otpBoxActive : ''
+				}`}
+	    >
 	      {pin.charAt(i)}
 	    </div>
 	  );
@@ -96,7 +106,7 @@ class OneTimePIN extends Component {
 
 	toggleInputFocus = (value) => {
 	  this.setState({
-	    inputFocus: value
+	    inputFocus: value,
 	  });
 	};
 
@@ -114,19 +124,20 @@ class OneTimePIN extends Component {
 	  const { registrationId, mobile } = this.props.signup || '';
 	  let data = {
 	    registrationId: registrationId,
-	    mobile: mobile
-	  }
+	    mobile: mobile,
+	  };
 	  displayPageLoader(true);
 	  resendOTP(data).then((res) => {
 	    displayPageLoader(false);
 	    if (res.success) {
 	      this.setCountdown();
 	    } else {
+	      const errorMessage = getTraceID(res);
 	      showAlertBox({
-	        message: 'SOMETHING_WRONG'
+	        message: errorMessage,
 	      });
 	    }
-	  })
+	  });
 	};
 
 	render = ({}, { pin }) => {
@@ -136,15 +147,22 @@ class OneTimePIN extends Component {
 	        <p className={style.heading}>{getTranslation('OTP_ENTER')}</p>
 	        <label for="enteredPIN">
 	          <div className={style.otpBoxContainer}>
-	            {this.renderBox(0, (pin && pin.length >= 1 ? true : false))}
-	            {this.renderBox(1, (pin && pin.length >= 2 ? true : false))}
-	            {this.renderBox(2, (pin && pin.length >= 3 ? true : false))}
-	            {this.renderBox(3, (pin && pin.length >= 4 ? true : false))}
-	            {this.renderBox(4, (pin && pin.length >= 5 ? true : false))}
-	            {this.renderBox(5, (pin && pin.length >= 6 ? true : false), true)}
+	            {this.renderBox(0, pin && pin.length >= 1 ? true : false)}
+	            {this.renderBox(1, pin && pin.length >= 2 ? true : false)}
+	            {this.renderBox(2, pin && pin.length >= 3 ? true : false)}
+	            {this.renderBox(3, pin && pin.length >= 4 ? true : false)}
+	            {this.renderBox(4, pin && pin.length >= 5 ? true : false)}
+	            {this.renderBox(5, pin && pin.length >= 6 ? true : false, true)}
 	          </div>
 	        </label>
-	        <p>{getTranslation('OTP_SENT').replace('{4_DIGITS}', this.props.signup.mobile.slice(this.props.signup.mobile.length - 4))}</p>
+	        <p>
+	          {getTranslation('OTP_SENT').replace(
+	            '{4_DIGITS}',
+	            this.props.signup.mobile.slice(
+	              this.props.signup.mobile.length - 4
+	            )
+	          )}
+	        </p>
 	        <br />
 	        <p>
 	          {getTranslation('OTP_FAIL')}&nbsp;
@@ -155,7 +173,9 @@ class OneTimePIN extends Component {
 	              }}
 	              id="timer"
 	              class="bold"
-	            >{getTranslation('RESEND')}</span>
+	            >
+	              {getTranslation('RESEND')}
+	            </span>
 	          )}
 	          {this.state.isResendCd && (
 	            <span className={`${style.timer} ${'bold'}`}>
