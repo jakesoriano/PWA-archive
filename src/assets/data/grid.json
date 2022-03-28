@@ -136,6 +136,10 @@
 				"styles": "color: #1a4789; position: relative; top: -4px; font-family: 'OpenSans-Bold', arial, sans-serif;"
 			},
 			{
+				"selector": "#home-gif > div",
+				"styles": "padding-bottom: 77%;"
+			},
+			{
 				"selector": "#home-comics",
 				"styles": "margin-top: 10px;"
 			},
@@ -208,7 +212,7 @@
 				"component": "Banner",
 				"props": {
 					"id": "home-pollwatcher",
-					"image": "https://d2vjy6bhj0z1t0.cloudfront.net/files/pollwatcher.jpg",
+					"image": "{CDN_DOMAIN_FILES}pollwatcher.jpg",
 					"url": "poll-watcher"
 				}
 			},
@@ -220,6 +224,13 @@
 						"url": "community-events-v2",
 						"text": "SEE_ALL_EVENTS"
 					}
+				}
+			},
+			{
+				"component": "Banner",
+				"props": {
+					"id": "home-gif",
+					"image": "{CDN_DOMAIN_FILES}robredo2022-kakampink.gif"
 				}
 			},
 			{
