@@ -56,7 +56,9 @@ class ArticleDetails extends Component {
 	            src={data.video}
 	          ></iframe>
 	        )}
-	        <p className={`${style.pDate}`}>{dateNewsFormat(data.postedDate)}</p>
+	        <p className={`${style.pDate}`}>
+	          {data.postedDate ? dateNewsFormat(data.postedDate) : ''}
+	        </p>
 	        <a href={data.link} className={`${style.pLink}`}>
 	          {data.link}
 	        </a>

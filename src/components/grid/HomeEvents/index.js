@@ -32,7 +32,7 @@ class HomeEvents extends Component {
 	componentDidMount = () => {
 		const data = getConfigByKey('events') || [];
 		// remove expired date / event
-		const currentTimestamp = Date.now();
+		const currentTimestamp = new Date().setHours('00', '00', '00');
 		let groupsByDate = data
 			.map((i) => {
 				return {
