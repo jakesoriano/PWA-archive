@@ -2,7 +2,7 @@ import { store, updateStore } from '_unistore';
 import { xhr, urlInvited, getTraceID, showAlertBox } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
-export function fetchInvited () {
+export function fetchInvited() {
   // current state
   const { invited } = store.getState();
 
@@ -10,14 +10,14 @@ export function fetchInvited () {
   if (invited.fetching) {
     return;
   }
-  
+
   // initial state
   updateStore({
     invited: {
       ...invited,
       fetching: true,
-      result: false
-    }
+      result: false,
+    },
   });
 
   return new Promise((resolve) => {
@@ -29,8 +29,8 @@ export function fetchInvited () {
           invited: {
             data: res.data,
             fetching: false,
-            result: true
-          }
+            result: true,
+          },
         });
         console.log(`SPA >> fetchInvitations Success`, res.success);
         resolve(true);
@@ -40,8 +40,8 @@ export function fetchInvited () {
           invited: {
             ...invited,
             fetching: false,
-            result: false
-          }
+            result: false,
+          },
         });
         console.log(`SPA >> fetchInvitations Error`, err);
         resolve(false);
@@ -49,19 +49,19 @@ export function fetchInvited () {
   });
 }
 
-export function newInvite (data) {
+export function newInvite(data) {
   return new Promise((resolve) => {
     xhr(urlInvited, {
       method: 'POST',
-      data
+      data,
     })
       .then((res) => {
         if (!res.success) {
-          const errorMessage = getTraceID(res)
+          const errorMessage = getTraceID(res);
           console.log(`SPA >> newInvite Error`, res);
           showAlertBox({
-            message: errorMessage
-          })
+            message: errorMessage,
+          });
           resolve(true);
         } else {
           console.log(`SPA >> newInvite successful`, res);

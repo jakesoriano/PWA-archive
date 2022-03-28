@@ -67,14 +67,14 @@ class RegistrationInvite extends Component {
 	            success: true,
 	          });
 	        } else {
-	          const errorMessage = getTraceID(resUpdate)
+	          const errorMessage = getTraceID(resUpdate);
 	          showAlertBox({
 	            message: resUpdate.errMessage || errorMessage,
 	          });
 	        }
 	      });
 	    } else {
-	      const errorMessage = getTraceID(res)
+	      const errorMessage = getTraceID(res);
 	      showAlertBox({
 	        message: res.errMessage || errorMessage,
 	      });

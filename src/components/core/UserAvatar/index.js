@@ -50,7 +50,7 @@ class UserAvatar extends Component {
 	        }
 	      });
 	    } else {
-	      const errorMessage = getTraceID(res)
+	      const errorMessage = getTraceID(res);
 	      showAlertBox({
 	        message: res.errMessage || errorMessage,
 	      });

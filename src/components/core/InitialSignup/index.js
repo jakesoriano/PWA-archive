@@ -4,7 +4,12 @@ import { Component } from 'preact';
 import { route } from 'preact-router';
 import { connect } from 'unistore/preact';
 import { updateStore } from '_unistore';
-import { getTranslation, getTraceID, displayPageLoader, showAlertBox } from '_helpers';
+import {
+  getTranslation,
+  getTraceID,
+  displayPageLoader,
+  showAlertBox,
+} from '_helpers';
 import { validateUsername } from '_mutations';
 import {
   ImageLoader,
@@ -230,7 +235,7 @@ class InitialSignup extends Component {
 	      }
 	    })
 	    .catch((err) => {
-	      const errorMessage = getTraceID(err)
+	      const errorMessage = getTraceID(err);
 	      showAlertBox({
 	        message: errorMessage,
 	        noTopBar: true,

@@ -167,7 +167,7 @@ class Checkout extends Component {
 	            },
 	            () => {
 	              displayPageLoader(false);
-	              window.open(res.redirectUrl);
+	              window.open(res.redirectUrl, '_self');
 	            }
 	          );
 	        } else {

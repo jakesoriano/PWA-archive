@@ -4,8 +4,18 @@ import { Component } from 'preact';
 import { Link } from 'preact-router/match';
 import { updateStore } from '_unistore';
 import { connect } from 'unistore/preact';
-import { getTranslation, getTraceID, displayPageLoader, showAlertBox } from '_helpers';
-import { ImageLoader, FormGroup, FormInput, ButtonDescription } from '_components/core';
+import {
+  getTranslation,
+  getTraceID,
+  displayPageLoader,
+  showAlertBox,
+} from '_helpers';
+import {
+  ImageLoader,
+  FormGroup,
+  FormInput,
+  ButtonDescription,
+} from '_components/core';
 import { login } from '_mutations';
 import { route } from 'preact-router';
 import {
@@ -21,75 +31,80 @@ import style from './style';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Login extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
       username: {
         value: props.login ? props.login.username : '',
         error: '',
         message: '',
-        hasError: false
+        hasError: false,
       },
       password: {
         value: props.login ? props.login.password : '',
         error: '',
         message: '',
-        hasError: false
-      }
+        hasError: false,
+      },
     };
   }
 
-  componentDidUpdate = (prevProps) => {
-    if (this.props.isOpen && prevProps.isOpen !== this.props.isOpen) {
-      nativeLoginWithTouchID()
-        .then(res => {
-          if (res) {
-            this.onLogin({
-              username: res.username,
-              password: res.password
-            }, true);
-          }
-        });
-    }
-  }
+	componentDidUpdate = (prevProps) => {
+	  if (this.props.isOpen && prevProps.isOpen !== this.props.isOpen) {
+	    nativeLoginWithTouchID().then((res) => {
+	      if (res) {
+	        this.onLogin(
+	          {
+	            username: res.username,
+	            password: res.password,
+	          },
+	          true
+	        );
+	      }
+	    });
+	  }
+	};
 
-  onLogin = (payload, isAuto, errMessage) => {
-    displayPageLoader(true);
-	    login(payload)
-	      .then((res) => {
-        displayPageLoader(false);
-        /**
-           * 1. login success
-           * 2. login require otp
-           * 3. login fail
-           */
-        if (res === true) {
-          if (!isAuto) {
-            nativeSetCredential(payload);
-          }
-          route('/home', true);
-        } else if (res.otp) {
-          updateStore({
-            loginInfo: {
-              username: payload.username,
-              password: payload.password,
-              mobile: res.mobile,
-              isAuto
-            }
-          }, true);
-          this.props.toggleLoginForm();
-          route(`/landing/login-otp`);
-        } else {
-          showAlertBox({
-            message: errMessage || 'INVALID_USER_PASS',
-            noTopBar: true
-          });
-        }
-	      })
-	      .catch((err) => {
-        displayPageLoader(false);
-	      });
-  }
+	onLogin = (payload, isAuto, errMessage) => {
+	  displayPageLoader(true);
+	  login(payload)
+	    .then((res) => {
+	      displayPageLoader(false);
+	      /**
+				 * 1. login success
+				 * 2. login require otp
+				 * 3. login fail
+				 */
+	      if (res === true) {
+	        if (!isAuto) {
+	          nativeSetCredential(payload);
+	        }
+	        route('/home', true);
+	      } else if (res.otp) {
+	        updateStore(
+	          {
+	            loginInfo: {
+	              username: payload.username,
+	              password: payload.password,
+	              mobile: res.mobile,
+	              isAuto,
+	            },
+	          },
+	          true
+	        );
+	        this.props.toggleLoginForm();
+	        route(`/landing/login-otp`);
+	      } else {
+	        showAlertBox({
+	          message: errMessage || 'INVALID_USER_PASS',
+	          noTopBar: true,
+	        });
+	      }
+	    })
+	    .catch((err) => {
+	      displayPageLoader(false);
+	    });
+	};
 
 	onClickSubmit = () => {
 	  if (!this.state.username.value || !this.state.password.value) {
@@ -98,7 +113,7 @@ class Login extends Component {
 	  } else {
 	    this.onLogin({
 	      username: this.state.username.value,
-	      password: this.state.password.value
+	      password: this.state.password.value,
 	    });
 	  }
 	};
@@ -113,8 +128,8 @@ class Login extends Component {
 	      ...this.state.username,
 	      value,
 	      hasError: !value,
-	      error: !value ? 'REQUIRED' : ''
-	    }
+	      error: !value ? 'REQUIRED' : '',
+	    },
 	  });
 	};
 
@@ -124,102 +139,114 @@ class Login extends Component {
 	      ...this.state.password,
 	      value,
 	      hasError: !value,
-	      error: !value ? 'REQUIRED' : ''
-	    }
+	      error: !value ? 'REQUIRED' : '',
+	    },
 	  });
 	};
 
-  onClickSocial = (type) => {
-    (type == 'F' 
-      ? nativeSigninFacebook() 
-      : (type === 'T' 
-        ? nativeSigninTwitter() 
-        : (type === 'A' 
-          ? nativeSigninApple() 
-          : nativeSigninGoogle()
-        )
-      )
-    )
-      .then(res => {
-        if (res.success) {
-          // submit data
-          this.onLogin({
-            username: (res.data.email || '').toString(),
-            password: (res.data.id || '').toString()
-          }, true, 'ACCOUNT_NOT_FOUND');
-        } else if (res.error !== 'SIGN_IN_CANCELLED') {
-          showAlertBox({
-            message: 'ACCOUNT_NOT_FOUND',
-            noTopBar: true
-          });
-        }
-      })
-      .catch(err => {
-        const errorMessage = getTraceID(err)
-        showAlertBox({
-          message: errorMessage,
-          noTopBar: true
-        });
-      })
-  };
+	onClickSocial = (type) => {
+	  (type == 'F'
+	    ? nativeSigninFacebook()
+	    : type === 'T'
+	      ? nativeSigninTwitter()
+	      : type === 'A'
+	        ? nativeSigninApple()
+	        : nativeSigninGoogle()
+	  )
+	    .then((res) => {
+	      if (res.success) {
+	        // submit data
+	        this.onLogin(
+	          {
+	            username: (res.data.email || '').toString(),
+	            password: (res.data.id || '').toString(),
+	          },
+	          true,
+	          'ACCOUNT_NOT_FOUND'
+	        );
+	      } else if (res.error !== 'SIGN_IN_CANCELLED') {
+	        showAlertBox({
+	          message: 'ACCOUNT_NOT_FOUND',
+	          noTopBar: true,
+	        });
+	      }
+	    })
+	    .catch((err) => {
+	      const errorMessage = getTraceID(err);
+	      showAlertBox({
+	        message: errorMessage,
+	        noTopBar: true,
+	      });
+	    });
+	};
 
-  renderSocialMedia = () => {
-    if (process.env.PLATFORM === 'ios' &&
-      this.props.nativeVersion &&
-      parseInt(this.props.nativeVersion.replace(/\./gim, '')) < 110) {
-      return null;
-    }
-    return (
-      <div className={`${style.socialMedia}`}>
-        <p>{getTranslation('SOCIAL_MEDIA')}</p>
-        <ul>
-          <li>
-            <a onClick={() => {
-              this.onClickSocial('F');
-            }}>
-              <ImageLoader
-                src="assets/images/fb_icon.png"
-                style={{ container: style.socMedIcons }}
-              />
-            </a>
-          </li>
-          <li>
-            <a onClick={() => {
-              this.onClickSocial('T');
-            }}>
-              <ImageLoader
-                src="assets/images/twitter_icon.png"
-                style={{ container: style.socMedIcons }}
-              />
-            </a>
-          </li>
-          <li>
-            <a onClick={() => {
-              this.onClickSocial('G');
-            }}>
-              <ImageLoader
-                src="assets/images/google_icon.png"
-                style={{ container: style.socMedIcons }}
-              />
-            </a>
-          </li>
-          {process.env.PLATFORM === 'ios' && (
-            <li>
-              <a className={style.appleLogo} 
-                onClick={() => {
-                  this.onClickSocial('A');
-                }}>
-                <ImageLoader
-                  src="assets/images/apple_icon.png"
-                  style={{ container: style.socMedIcons }}
-                />
-              </a>
-            </li>
-          )}
-        </ul>
-      </div>
-    )
-  };
+	renderSocialMedia = () => {
+	  if (
+	    process.env.PLATFORM === 'ios' &&
+			this.props.nativeVersion &&
+			parseInt(this.props.nativeVersion.replace(/\./gim, '')) < 110
+	  ) {
+	    return null;
+	  }
+	  return (
+	    <div className={`${style.socialMedia}`}>
+	      <p>{getTranslation('SOCIAL_MEDIA')}</p>
+	      <ul>
+	        <li>
+	          <a
+	            onClick={() => {
+	              this.onClickSocial('F');
+	            }}
+	          >
+	            <ImageLoader
+	              src="assets/images/fb_icon.png"
+	              style={{ container: style.socMedIcons }}
+	            />
+	          </a>
+	        </li>
+	        <li>
+	          <a
+	            onClick={() => {
+	              this.onClickSocial('T');
+	            }}
+	          >
+	            <ImageLoader
+	              src="assets/images/twitter_icon.png"
+	              style={{ container: style.socMedIcons }}
+	            />
+	          </a>
+	        </li>
+	        <li>
+	          <a
+	            onClick={() => {
+	              this.onClickSocial('G');
+	            }}
+	          >
+	            <ImageLoader
+	              src="assets/images/google_icon.png"
+	              style={{ container: style.socMedIcons }}
+	            />
+	          </a>
+	        </li>
+	        {process.env.PLATFORM === 'ios' && (
+	          <li>
+	            <a
+	              className={style.appleLogo}
+	              onClick={() => {
+	                this.onClickSocial('A');
+	              }}
+	            >
+	              <ImageLoader
+	                src="assets/images/apple_icon.png"
+	                style={{ container: style.socMedIcons }}
+	              />
+	            </a>
+	          </li>
+	        )}
+	      </ul>
+	    </div>
+	  );
+	};
 
 	render = ({ toggleLoginForm, isOpen }, { username, password }) => {
 	  return (
@@ -228,22 +255,23 @@ class Login extends Component {
 	      <div
 	        onClick={toggleLoginForm}
 	        className={isOpen ? style.loginOutside : null}
-	      >
-	      </div>
+	      ></div>
 	      <div
 	        className={isOpen ? `${style.login} ${style.toggled}` : style.login}
 	      >
 	        {/* Login Contents Here */}
 	        <div className={style.formTitle}>
 	          <p className={`extraBold ${style.formTitle}`}>
-	            {getTranslation('WELCOME')} <span className={`extraBold`}>{getTranslation('KAKAMPINK')}</span> <br />
+	            {getTranslation('WELCOME')}{' '}
+	            <span className={`extraBold`}>{getTranslation('KAKAMPINK')}</span>{' '}
+	            <br />
 	            {getTranslation('JOIN_US')}
 	          </p>
 	        </div>
 	        <div className={style.formFieldWrap}>
 	          <form className={style.form}>
-	            <FormGroup 
-	              label="USERNAME" 
+	            <FormGroup
+	              label="USERNAME"
 	              hasError={username.hasError}
 	              className={style.formGroup}
 	            >
@@ -264,8 +292,8 @@ class Login extends Component {
 	                className={style.formInput}
 	              />
 	            </FormGroup>
-	            <FormGroup 
-	              label="PASSWORD" 
+	            <FormGroup
+	              label="PASSWORD"
 	              hasError={password.hasError}
 	              className={style.formGroup}
 	            >
@@ -290,7 +318,7 @@ class Login extends Component {
 	              <ButtonDescription
 	                onClickCallback={(e) => {
 	                  e.stopPropagation();
-	                  this.onClickSubmit()
+	                  this.onClickSubmit();
 	                }}
 	                text={getTranslation('LOGIN_SUBMIT')}
 	                bottomDescription=""
@@ -301,21 +329,29 @@ class Login extends Component {
 	                // onClick={this.onClickForgotUserPass}
 	              >
 	                {getTranslation('FORGOT')}&nbsp;
-	                <Link class={`bold`}
-	                  href={`/landing/enter-mobile-un`} 
+	                <Link
+	                  class={`bold`}
+	                  href={`/landing/enter-mobile-un`}
 	                  className={style.sMItem}
-	                  onClick={this.onClickForgotUserPass}>{getTranslation('USERNAME')}</Link>
-                  &nbsp;<span>{getTranslation('OR')}</span>&nbsp;
-	                <Link class={`bold`}
-	                  href={`/landing/enter-mobile-pw`} 
+	                  onClick={this.onClickForgotUserPass}
+	                >
+	                  {getTranslation('USERNAME')}
+	                </Link>
+									&nbsp;<span>{getTranslation('OR')}</span>&nbsp;
+	                <Link
+	                  class={`bold`}
+	                  href={`/landing/enter-mobile-pw`}
 	                  className={style.sMItem}
-	                  onClick={this.onClickForgotUserPass}>{getTranslation('PASSWORD')}</Link>
+	                  onClick={this.onClickForgotUserPass}
+	                >
+	                  {getTranslation('PASSWORD')}
+	                </Link>
 	              </p>
 	              <div onClick={toggleLoginForm}>
 	                <p className={style.backButton}> {getTranslation('BACK')} </p>
 	              </div>
 	            </div>
-              
+
 	            {/* Social Media */}
 	            {this.renderSocialMedia()}
 	          </form>

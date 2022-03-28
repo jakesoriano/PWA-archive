@@ -414,7 +414,7 @@ class Signup extends Component {
 	                  // route(`/${this.props.parent}/home`);
 	                  route(`/signup-success`);
 	                } else {
-	                  const errorMessage = getTraceID(res)
+	                  const errorMessage = getTraceID(res);
 	                  showAlertBox({
 	                    message: res.error || errorMessage,
 	                  });
@@ -434,7 +434,7 @@ class Signup extends Component {
 	          });
 	        }
 	      } else {
-	        const errorMessage = getTraceID(res)
+	        const errorMessage = getTraceID(res);
 	        showAlertBox({
 	          message: errorMessage,
 	        });
