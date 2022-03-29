@@ -18,6 +18,7 @@ import {
 import {
   fetchTranslation,
   fetchAppConfig,
+  fetchAppHomeConfig,
   // fetchUserData
   fetchTasks,
 } from '_mutations';
@@ -553,6 +554,8 @@ if (typeof window !== 'undefined') {
     } else {
       // fetch app config
       fetchAppConfig();
+      // fetch app home config
+      fetchAppHomeConfig();
       // fetch tasks to trigger notification if there is pending
       fetchTasks();
     }
