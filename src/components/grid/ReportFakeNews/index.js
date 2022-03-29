@@ -152,14 +152,14 @@ class ReportFakeNews extends Component {
 	  if (
 	    this.state.link.hasError ||
 			!this.state.link.value ||
-			!this.state.category.value ||
-			!this.state.agreeToTerms.checked ||
-			!this.state.shareLocation.checked ||
-			!this.state.shareContact.checked
+			!this.state.category.value
+			// !this.state.agreeToTerms.checked ||
+			// !this.state.shareLocation.checked ||
+			// !this.state.shareContact.checked
 	  ) {
-	    this.onCheckTerms();
-	    this.onCheckShareLoc();
-	    this.onCheckShareContact();
+	    // this.onCheckTerms();
+	    // this.onCheckShareLoc();
+	    // this.onCheckShareContact();
 	    this.onLinkChange(this.state.link.value);
 	    this.onCategoryChange(this.state.category.value);
 	  } else {
@@ -306,7 +306,7 @@ class ReportFakeNews extends Component {
 	          icon="assets/icons/plus.svg"
 	          iconStyle={style.iconStyle}
 	        /> */}
-	        <FormGroup className={style.checkBoxGroup}>
+	        {/* <FormGroup className={style.checkBoxGroup}>
 	          <FormInput
 	            id="location"
 	            type={'checkbox'}
@@ -374,7 +374,7 @@ class ReportFakeNews extends Component {
 									  : '',
 	            }}
 	          />
-	        </FormGroup>
+	        </FormGroup> */}
 	        <div className={style.buttonContainer}>
 	          <ButtonDescription
 	            onClickCallback={() => {

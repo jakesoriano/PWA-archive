@@ -1,8 +1,6 @@
 import { h, Component } from 'preact';
-import { componentModal, getTranslation } from '_helpers';
-import Modal from '../Modal';
+import { getDefaultAvatar, getTranslation } from '_helpers';
 import ImageLoader from '../ImageLoader';
-import { Checkout } from '_components/core';
 import { connect } from 'unistore/preact';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -61,9 +59,11 @@ class CrowdSourcingItem extends Component {
 	          {/* Barangay Address */}
 	          <span className={style.address}>{item?.volunteer?.name}</span>
 
-	          <div className={style.itemUserDescription}>
-	            <p>"{item?.shortDesc}"</p>
-	          </div>
+	          {item?.longDesc && (
+	            <div className={style.itemUserDescription}>
+	              <p>"{item?.shortDesc}"</p>
+	            </div>
+	          )}
 	        </div>
 	      </div>
 	      {/* More Info */}
@@ -115,7 +115,7 @@ class CrowdSourcingItem extends Component {
 	        <div className={style.volunteerInfo}>
 	          <div className={style.volunteerImage}>
 	            <ImageLoader
-	              src={item?.volunteer?.image}
+	              src={item?.volunteer?.image || getDefaultAvatar()}
 	              style={{ container: style.volunteerImg }}
 	            />
 	          </div>
@@ -126,7 +126,9 @@ class CrowdSourcingItem extends Component {
 	        </div>
 
 	        {/* Description */}
-	        <span className={style.volunteer}>{item?.longDesc}</span>
+	        {item?.longDesc && (
+	          <span className={style.volunteer}>{item?.longDesc}</span>
+	        )}
 
 	        {/* Button */}
 	        <div
