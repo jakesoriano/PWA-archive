@@ -167,7 +167,10 @@ class Checkout extends Component {
 	            },
 	            () => {
 	              displayPageLoader(false);
-	              window.open(res.redirectUrl, '_self');
+	              window.open(
+	                res.redirectUrl,
+	                process.env.PLATFORM === 'android' ? '_blank' : '_self'
+	              );
 	            }
 	          );
 	        } else {
