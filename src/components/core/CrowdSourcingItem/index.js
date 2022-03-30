@@ -58,7 +58,6 @@ class CrowdSourcingItem extends Component {
 
 	          {/* Barangay Address */}
 	          <span className={style.address}>{item?.volunteer?.name}</span>
-
 	          {item?.longDesc && (
 	            <div className={style.itemUserDescription}>
 	              <p>"{item?.shortDesc}"</p>
