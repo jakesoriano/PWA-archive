@@ -137,7 +137,7 @@
 			},
 			{
 				"selector": "#home-gif > div",
-				"styles": "padding-bottom: 77%;"
+				"styles": "padding-bottom: 100%;"
 			},
 			{
 				"selector": "#home-comics",
