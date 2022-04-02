@@ -8,7 +8,7 @@ import {
 } from '_helpers';
 import { crowdSourcingCheckout, checkCrowdSourcingtStatus } from '_mutations';
 import { connect } from 'unistore/preact';
-import { ImageLoader, FormInput } from '_components/core';
+import { ImageLoader, FormInput, FormGroup } from '_components/core';
 import { updateStore } from '_unistore';
 import style from './style.scss';
 import { route } from 'preact-router';
@@ -40,6 +40,18 @@ class Checkout extends Component {
       recaptchaChecked: false,
       showSuccess: false,
       apiResponse: null,
+      isFilipino: {
+        required: false,
+        checked: false,
+      },
+      isPaying: {
+        required: false,
+        checked: false,
+      },
+      isReceiving: {
+        required: false,
+        checked: false,
+      },
     };
   }
 
@@ -104,6 +116,33 @@ class Checkout extends Component {
 	  }
 	};
 
+	onCheckIsFilipino = () => {
+	  this.setState({
+	    isFilipino: {
+	      ...this.state.isFilipino,
+	      required: true,
+	    },
+	  });
+	};
+
+	onCheckIsPaying = () => {
+	  this.setState({
+	    isPaying: {
+	      ...this.state.isPaying,
+	      required: true,
+	    },
+	  });
+	};
+
+	onCheckIsReceiving = () => {
+	  this.setState({
+	    isReceiving: {
+	      ...this.state.isReceiving,
+	      required: true,
+	    },
+	  });
+	};
+
 	onFullNameChange = (value) => {
 	  this.setState({
 	    fullName: {
@@ -141,11 +180,22 @@ class Checkout extends Component {
 	};
 
 	onCheckout = () => {
-	  const { fullName, phoneNumber, email } = this.state;
-	  if (!fullName.value || !phoneNumber.value || !email.value) {
+	  const { fullName, phoneNumber, email, isFilipino, isPaying, isReceiving } =
+			this.state;
+	  if (
+	    !fullName.value ||
+			!phoneNumber.value ||
+			!email.value ||
+			!isFilipino?.checked ||
+			!isPaying?.checked ||
+			!isReceiving?.checked
+	  ) {
 	    this.onFullNameChange(fullName.value);
 	    this.onPhoneChange(phoneNumber.value);
 	    this.onEmailChange(email.value);
+	    this.onCheckIsFilipino();
+	    this.onCheckIsPaying();
+	    this.onCheckIsReceiving();
 	  } else {
 	    const { data } = this.props?.cart;
 	    displayPageLoader(true);
@@ -398,6 +448,84 @@ class Checkout extends Component {
 	            })}
 	          </div>
 	        </div>
+
+	        {/* Inputs */}
+	        <FormGroup>
+	          <span className={style.title}>
+	            {getTranslation('FOLLOWING_TERMS')}
+	          </span>
+	          <FormInput
+	            id="accept"
+	            type="checkbox"
+	            label={getTranslation('IS_FILIPINO')}
+	            checked={this.state.isFilipino.checked}
+	            onClick={() => {
+	              console.log({ state: this.state });
+	              this.setState({
+	                isFilipino: {
+	                  ...this.state.isFilipino,
+	                  checked: !this.state.isFilipino?.checked,
+	                },
+	              });
+	            }}
+	            name="isFilipino"
+	            className={style.checkBox}
+	            style={{
+	              container:
+									this.state.isFilipino?.required &&
+									!this.state.isFilipino?.checked
+									  ? style.checkWrap
+									  : '',
+	            }}
+	          />
+	          <FormInput
+	            id="accept1"
+	            type="checkbox"
+	            label={getTranslation('IS_PAYING')}
+	            checked={this.state.isPaying.checked}
+	            onClick={() => {
+	              console.log({ state1: this.state });
+	              this.setState({
+	                isPaying: {
+	                  ...this.state.isPaying,
+	                  checked: !this.state.isPaying?.checked,
+	                },
+	              });
+	            }}
+	            name="isPaying"
+	            className={style.checkBox}
+	            style={{
+	              container:
+									this.state.isPaying?.required && !this.state.isPaying?.checked
+									  ? style.checkWrap
+									  : '',
+	            }}
+	          />
+	          <FormInput
+	            id="accept2"
+	            type="checkbox"
+	            label={getTranslation('IS_RECEIVING')}
+	            checked={this.state.isReceiving.checked}
+	            onClick={() => {
+	              console.log({ state2: this.state });
+	              this.setState({
+	                isReceiving: {
+	                  ...this.state.isReceiving,
+	                  checked: !this.state.isReceiving?.checked,
+	                },
+	              });
+	            }}
+	            name="isReceiving"
+	            className={style.checkBox}
+	            style={{
+	              container:
+									this.state.isReceiving?.required &&
+									!this.state.isReceiving?.checked
+									  ? style.checkWrap
+									  : '',
+	            }}
+	          />
+	        </FormGroup>
 
 	        {/* Pay */}
 	        <div className={style.payContainer}>

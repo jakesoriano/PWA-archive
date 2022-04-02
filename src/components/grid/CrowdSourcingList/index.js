@@ -63,16 +63,22 @@ class CrowdSourcingList extends Component {
 	      <span className={style.title}>{this.props?.title}</span>
 
 	      {/* List */}
-	      {this.state?.data?.map((item) => {
-	        return (
-	          <CrowdSourcingItem
-	            item={item}
-	            setState={this.setState}
-	            moreInfo={this.state.moreInfo}
-	            // addToCart={this.addToCart}
-	          />
-	        );
-	      })}
+	      {this.state?.data?.length ? (
+					this.state?.data?.map((item) => {
+					  return (
+					    <CrowdSourcingItem
+					      item={item}
+					      setState={this.setState}
+					      moreInfo={this.state.moreInfo}
+					      // addToCart={this.addToCart}
+					    />
+					  );
+					})
+	      ) : (
+	        <span className={style.empty}>
+	          {getTranslation('LOOKING_VOLUNTEERS')}
+	        </span>
+	      )}
 
 	      {/* Checkout */}
 	      {/* <div className={style.checkout} onClick={this.onShowPopup}>
