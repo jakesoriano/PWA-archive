@@ -119,7 +119,8 @@
 					"#home-tasks",
 					"#home-report",
 					"#home-vol-kit",
-					"#home-editor"
+					"#home-editor",
+					"#home-h2hcalendar"
 				],
 				"styles": "background: rgb(161,32,95); background: linear-gradient(270deg, rgba(161,32,95,1) 0%, rgba(236,0,134,1) 100%);padding: 10px 30px;"
 			},
@@ -172,6 +173,12 @@
 							"url": "community-crowdsourcing"
 						},
 						{
+							"id": "home-h2hcalendar",
+							"text": "H2H_CALENDAR",
+							"icon": "assets/images/h_editor.png",
+							"url": "house-to-house-calendar"
+						},
+						{
 							"id": "home-tasks",
 							"text": "TASK_CENTER",
 							"icon": "assets/images/h_tasks.png",
@@ -188,12 +195,6 @@
 							"text": "REPORT_FAKE_NEWS",
 							"icon": "assets/images/h_report.png",
 							"url": "report-fake-news"
-						},
-						{
-							"id": "home-editor",
-							"text": "EDITORS_PICK",
-							"icon": "assets/images/h_editor.png",
-							"tag": "COMING_SOON"
 						}
 					]
 				}
@@ -1063,6 +1064,18 @@
 				"props": {
 					"text": "Thank you for submitting a fake news report!"
 				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "H2H_CAMPAIGN",
+		"uri": "house-to-house-calendar",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "House2HouseCalendar"
 			}
 		]
 	}

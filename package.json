@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "@fingerprintjs/fingerprintjs": "^3.2.0",
+    "@wojtekmaj/react-daterange-picker": "^3.4.0",
     "axios": "^0.21.1",
     "clipboard-copy": "^4.0.1",
     "history": "^4.10.1",

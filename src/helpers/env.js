@@ -51,3 +51,4 @@ export const urlIncidentReport = `${process.env.API_DOMAIN}report`;
 export const urlApplyPollWatcher = urlUser + `/pollwatcher/application`;
 export const urlReportFakeNews = urlUser + `/report/fakenews`;
 export const urlTransaction = `${process.env.API_DOMAIN}transaction`;
+export const urlHouse2House = `${process.env.API_DOMAIN}campaign/h2h`;
