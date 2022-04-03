@@ -169,13 +169,13 @@
 						{
 							"id": "home-crowdsourcing",
 							"text": "PAGE_CROWDSOURCING",
-							"icon": "assets/images/h_crowd.png",
+							"icon": "assets/images/h_h2h-camp.png",
 							"url": "community-crowdsourcing"
 						},
 						{
 							"id": "home-h2hcalendar",
 							"text": "H2H_CALENDAR",
-							"icon": "assets/images/h_editor.png",
+							"icon": "assets/images/h_h2h-cal.png",
 							"url": "house-to-house-calendar"
 						},
 						{
