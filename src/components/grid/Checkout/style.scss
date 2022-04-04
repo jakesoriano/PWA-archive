@@ -1,10 +1,9 @@
 @import '../../../style/variables.scss';
 .checkoutContainer {
   margin: 10px;
-  height: calc(100vh - 76px);
   position: relative;
   .title {
-    color: #e41e93;
+    color: $pink_text;
     font-size: 1rem;
     font-weight: bold;
   }
@@ -21,7 +20,7 @@
     }
     .title {
       font-weight: bold;
-      color: #e41e93;
+      color: $pink_text;
     }
     .cartItemContainer {
       .itemMain {
@@ -199,7 +198,7 @@
 
   .title {
     font-weight: bold;
-    color: #e41e93 !important;
+    color: $pink_text !important;
   }
 
   .checkWrap {
@@ -213,7 +212,6 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
-    position: absolute;
     bottom: 0;
     width: 100%;
     .overallPrice {
@@ -227,7 +225,7 @@
         color: black;
       }
       .totalAmount {
-        color: #e41e93;
+        color: $pink_text;
         font-weight: bold;
       }
     }
@@ -235,7 +233,7 @@
     .pay {
       height: 40px;
       width: 50%;
-      background-color: #e41e93;
+      background-color: $pink_button;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -284,7 +282,7 @@
   }
 
   .orderPlaced {
-    color: #e41e93 !important;
+    color: $pink_text !important;
     font-weight: bold;
     margin: 20px;
     font-size: 1rem;
