@@ -206,19 +206,17 @@ class House2HouseCalendar extends Component {
 	  fetchHouse2HouseCalendar(null, filter);
 	};
 
-	renderModalContent = (loc, city, name, num) => (
+	renderModalContent = (loc, city, name, num, desc) => (
 	  <div className={style.modalContent}>
 	    <div className={style.modalHead}>
-	      <p className={`bold ${style.title}`}>
-	        {getTranslation('CONTACT_CHAPTER_HEAD')}
-	      </p>
+	      <p className={`bold ${style.title}`}>{getTranslation('ORGANIZER')}</p>
 	      <p className={style.location}>
 	        {`${getTranslation('MEETUP_LOCATION')}: ${loc || ''}`},{' '}
 	        <span className={style.city}>{city}</span>
 	      </p>
 	    </div>
 	    <div className={style.modalBody}>
-	      <p className={style.descr}>{getTranslation('H2HC_MODAL_CONTENT')}</p>
+	      <p className={style.descr}>{desc}</p>
 	    </div>
 	    <div className={style.footer}>
 	      <p className={style.name}>
@@ -283,7 +281,8 @@ class House2HouseCalendar extends Component {
 	                  item.location,
 	                  item.city.replace('CITY OF', ''),
 										item.contact?.name,
-										item.contact?.mobile
+										item.contact?.mobile,
+										item.description
 	                ),
 	                transparentBG: true,
 	                modalId: style.h2hcModal,
@@ -295,7 +294,7 @@ class House2HouseCalendar extends Component {
 	        </div>
 	      </div>
 	    ));
-	  } 
+	  }
 	  return <p className={style.noResult}>{getTranslation('NO_DATA')}</p>;
 	};
 

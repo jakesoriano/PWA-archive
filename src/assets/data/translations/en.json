@@ -397,10 +397,9 @@
 	"RESULTS_AUTOMATIC": "Results will be automatically updated once you make changes in the fields.",
 	"CONTACT_PERSON": "Contact Person",
 	"CONTACT_ORGANIZER": "Contact Organizer",
-	"CONTACT_CHAPTER_HEAD": "Contact Chapter Head",
+	"ORGANIZER": "Organizer",
 	"MEETUP_LOCATION": "Meet-up Location",
 	"CHAPTER_HEAD": "Chapter head",
 	"CONTACT_NO": "Contact No.",
-	"H2H_CALENDAR": "House-to-House Calendar",
-	"H2HC_MODAL_CONTENT": "orem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porttitor luctus lacus, vel cursus nisl eleifend eget. Donec malesuada ipsum vitae neque hendrerit semper. Curabitur interdum sem risus, dapibus volutpat leo viverra ac. In lobortis sapien justo, sit amet vulputate felis eleifend ac. Ut vitae consectetur ante. Etiam ultrices dictum tellus vel tristique."
+	"H2H_CALENDAR": "House-to-House Calendar"
 }
