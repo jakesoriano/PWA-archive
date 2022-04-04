@@ -217,4 +217,11 @@ export const initialStore = {
     total: 0,
     page: 1,
   },
+  h2hcalendar: {
+    fetching: false,
+    result: false,
+    data: [],
+    total: 0,
+    page: 1,
+  },
 };

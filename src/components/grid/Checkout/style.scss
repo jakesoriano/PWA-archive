@@ -1,3 +1,4 @@
+@import '../../../style/variables.scss';
 .checkoutContainer {
   margin: 10px;
   height: calc(100vh - 76px);
@@ -23,7 +24,6 @@
       color: #e41e93;
     }
     .cartItemContainer {
-      @import '../../../style/variables.scss';
       .itemMain {
         background-color: $gray_bg;
         border-radius: 5px;
@@ -194,6 +194,17 @@
         }
       }
       
+    }
+  }
+
+  .title {
+    font-weight: bold;
+    color: #e41e93 !important;
+  }
+
+  .checkWrap {
+    label {
+      color: red;
     }
   }
 

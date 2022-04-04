@@ -39,6 +39,24 @@ export function getMunicipality(r, pKey) {
   }
 }
 
+export function getMunicipalityByRegion(r) {
+  try {
+    let rProvinces = data.find((i) => i.r === r).p;
+    let m = [];
+    Object.keys(rProvinces).map((pKey) => {
+      Object.keys(rProvinces[pKey].m).map((key) => {
+        m.push({
+          value: key,
+          text: key,
+        });
+      });
+    });
+    return m;
+  } catch (error) {
+    return [];
+  }
+}
+
 export function getBarangay(r, pKey, mKey) {
   try {
     return data
