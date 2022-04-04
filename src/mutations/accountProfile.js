@@ -67,6 +67,7 @@ export function updateProfile(data) {
                 municipality: res.profile.municipality,
                 barangay: res.profile.barangay,
                 isRegisteredVoter: res.profile.isRegisteredVoter,
+                email: res.profile.email
               },
             },
           });
