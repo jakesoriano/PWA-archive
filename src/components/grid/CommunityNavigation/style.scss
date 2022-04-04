@@ -13,12 +13,21 @@
     width: 48%;
     border-radius: 10px;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px;
     margin-bottom: 10px;
+    display: flex;
+    > div {
+      width: 40px;
+    }
     .icon {
-      width: 65px;
-      padding-bottom: 65px;
-      margin: 0 auto 10px;
+      width: 30px;
+      padding-bottom: 30px;
+      margin: 0 10px 0 0;
+    }
+    p {
+      align-self: center;
+      text-align: left;
+      color: $blue_text;
     }
   }
 }

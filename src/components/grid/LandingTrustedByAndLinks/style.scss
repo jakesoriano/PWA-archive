@@ -1,0 +1,33 @@
+@import '../../../style/variables.scss';
+.trusted_by {
+	margin: 40px auto;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	.partners {
+		padding: 0 15px;
+		p {
+			color: $white;
+			font-size: 0.65rem;
+			text-transform: uppercase;
+		}
+		.partnerImages {
+			margin: 15px auto;
+			max-width: 240px;
+			display: flex;
+			justify-content: space-between;
+			.imgWrap {
+				width: 50px;
+				padding-bottom: 50px;
+			}
+		}
+	}
+	.privacyPolicy {
+		margin-top: 30px;
+		font-size: 0.7rem;
+		color: $white;
+		a {
+			color: $white;
+		}
+	}
+}

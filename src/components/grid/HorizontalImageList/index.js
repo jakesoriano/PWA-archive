@@ -10,10 +10,18 @@ import style from './style';
 class HorizontalImageList extends Component {
 	onClick = (item) => {
 	  if (item) {
-	    componentModal({
-	      content: this.renderModalContent(item),
-	      modalId: 'tarp_modal',
-	    });
+	    if (item.link) {
+	      if (item.link.substr(0, 4) == 'http') {
+	        window.open(item.link, '_blank');
+	      } else {
+	        route(item.link);
+	      }
+	    } else {
+	      componentModal({
+	        content: this.renderModalContent(item),
+	        modalId: 'tarp_modal',
+	      });
+	    }
 	  }
 	};
 	renderModalContent = (item) => (
@@ -50,7 +58,7 @@ class HorizontalImageList extends Component {
 	          return (
 	            <a
 	              id={item.id}
-	              className={style.item}
+	              className={`${style.item} ${item.link ? style.iconWrap : ''}`}
 	              onClick={() => {
 	                this.onClick(item);
 	              }}
@@ -58,7 +66,7 @@ class HorizontalImageList extends Component {
 	              {item.thumb && (
 	                <ImageLoader
 	                  src={item.thumb}
-	                  style={{ container: style.thumb }}
+	                  style={{ container: item.link ? style.icon : style.thumb }}
 	                  lazy
 	                />
 	              )}

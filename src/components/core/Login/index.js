@@ -92,7 +92,7 @@ class Login extends Component {
 	          },
 	          true
 	        );
-	        this.props.toggleLoginForm();
+	        this.onClickForgotUserPass();
 	        route(`/landing/login-otp`);
 	      } else {
 	        showAlertBox({
@@ -119,7 +119,7 @@ class Login extends Component {
 	};
 
 	onClickForgotUserPass = () => {
-	  this.props.toggleLoginForm();
+	  // this.props.toggleLoginForm();
 	};
 
 	onUsernameChange = (value) => {
@@ -248,17 +248,14 @@ class Login extends Component {
 	  );
 	};
 
-	render = ({ toggleLoginForm, isOpen }, { username, password }) => {
+	onBack = () => {
+	  route('/landing', true);
+	};
+
+	render = ({}, { username, password }) => {
 	  return (
 	    <div className={style.loginFormContainer}>
-	      {/* eslint-disable-next-line react/self-closing-comp */}
-	      <div
-	        onClick={toggleLoginForm}
-	        className={isOpen ? style.loginOutside : null}
-	      ></div>
-	      <div
-	        className={isOpen ? `${style.login} ${style.toggled}` : style.login}
-	      >
+	      <div className={`${style.login} ${style.toggled}`}>
 	        {/* Login Contents Here */}
 	        <div className={style.formTitle}>
 	          <p className={`extraBold ${style.formTitle}`}>
@@ -289,7 +286,6 @@ class Login extends Component {
 	                hasError={username.hasError}
 	                error={username.error}
 	                message={username.message}
-	                className={style.formInput}
 	              />
 	            </FormGroup>
 	            <FormGroup
@@ -311,7 +307,6 @@ class Login extends Component {
 	                hasError={password.hasError}
 	                error={password.error}
 	                message={password.message}
-	                className={style.formInput}
 	              />
 	            </FormGroup>
 	            <div className={style.buttonWrap}>
@@ -347,7 +342,11 @@ class Login extends Component {
 	                  {getTranslation('PASSWORD')}
 	                </Link>
 	              </p>
-	              <div onClick={toggleLoginForm}>
+	              <div
+	                onClick={() => {
+	                  this.onBack();
+	                }}
+	              >
 	                <p className={style.backButton}> {getTranslation('BACK')} </p>
 	              </div>
 	            </div>

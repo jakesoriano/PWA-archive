@@ -1,0 +1,16 @@
+@import '../../../style/variables.scss';
+.signInUpBtnWrap {
+	margin: 15px;
+	p {
+		text-align: center;
+		margin-top: 10px;
+		font-size: 0.9rem;
+	}
+	.buttonStyle {
+		background-color: #fff !important;
+    color: #ce0f68 !important;
+    border-radius: 30px !important;
+    padding: 15px 10px !important;
+		font-size: 1rem !important;
+	}
+}

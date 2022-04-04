@@ -1,0 +1,18 @@
+.titleComponent {
+  display: flex;
+  .text {
+    flex-grow: 1;
+    padding: 45px 15px 10px;
+    span {
+      display: block;
+      font-weight: bold;
+      font-size: 1.5rem;
+      letter-spacing: 1.5px;
+      line-height: 1.8rem;
+    }
+  }
+  .imgWrap {
+    width: 209px;
+    padding-bottom: 112px;
+  }
+}

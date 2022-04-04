@@ -1,0 +1,158 @@
+@import '../../../style/variables.scss';
+.tabComponent {
+  margin: 20px 15px 30px;
+  .tabContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid $light_pink;
+
+    div {
+      width: 50%;
+      text-align: center;
+      padding: 2.5px;
+      span {
+        text-transform: uppercase;
+        font-size: 0.9rem;
+      }
+    }
+
+    .active {
+      border-bottom: 2px solid $white;
+      span {
+        font-weight: bold;
+      }
+    }
+
+    .inactive {
+      border-bottom: 2px solid tranparent;
+      span {
+        color: $light_pink;
+      }
+    }
+  }
+
+  .tabContent {
+    .newsContainer {
+      .newsCardContainer {
+        transition: transform 0.2s ease-in-out;
+        transform: translateX(0);
+        border-bottom: 1px solid $light_pink;
+        padding: 5px 5px 15px;
+        margin: 10px 0px 10px 0px;
+        display: flex;
+        justify-items: center;
+        animation-name: slide1;
+        animation-duration: 0.2s;
+        .imageContainer {
+          div {
+            border: 1px solid $white;
+            img {
+              height: 88px !important;
+            }
+          }
+        }
+
+        .contentContainer {
+          margin-left: 10px;
+          .title {
+            display: block;
+            // $white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: bold;
+            width: 100%;
+            padding-bottom: 5px;
+          }
+
+          .postedDate {
+            display: block;
+            margin: 1px !important;
+            text-align: left;
+            width: 100%;
+            font-size: 0.7rem;
+          }
+
+          .desc {
+            display: block;
+            $white-space: wrap;
+            font-size: 0.7rem;
+            word-wrap: break-word;
+          }
+        }
+      }
+    }
+
+    .eventContainer {
+      .newsCardContainer {
+        border-bottom: 1px solid $light_pink;
+        padding: 5px 5px 15px;
+        margin: 10px 0px 10px 0px;
+        display: flex;
+        justify-items: center;
+        overflow: hidden;
+        animation-name: slide2;
+        animation-duration: 0.2s;
+        .imageContainer {
+          div {
+            border: 1px solid $white;
+            img {
+              height: 88px !important;
+            }
+          }
+        }
+
+        .contentContainer {
+          margin-left: 10px;
+          .title {
+            display: block;
+            // $white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: bold;
+            width: 240px;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            text-align: start;
+            width: 100%;
+          }
+
+          .date {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: bold;
+          }
+
+          .location {
+            display: block;
+            $white-space: wrap;
+            font-size: 0.75rem;
+          }
+
+          .desc {
+            display: block;
+            $white-space: wrap;
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes slide2 {
+  from {transform: translateX(-120px);}
+  to {transform: translateX(0)}
+}
+
+@keyframes slide1 {
+  from {transform: translateX(120px);}
+  to {transform: translateX(0)}
+}
+
+
+
+
+
+
