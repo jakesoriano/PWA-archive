@@ -295,7 +295,7 @@ class House2HouseCalendar extends Component {
 	      </div>
 	    ));
 	  }
-	  return <p className={style.noResult}>{getTranslation('NO_DATA')}</p>;
+	  return <p className={style.noResult}>{getTranslation('NO_H2H_DATA')}</p>;
 	};
 
 	render = (
