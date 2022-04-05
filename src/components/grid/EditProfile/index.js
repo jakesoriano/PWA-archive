@@ -288,6 +288,8 @@ class EditProfile extends Component {
 	    acceptedPrivacyPolicy: {
 	      ...this.state.acceptedPrivacyPolicy,
 	      value: value,
+	      hasError: !Boolean(value) || !Boolean(value !== getConfigByKey('acceptedPrivacyPolicy')),
+	      error: !Boolean(value) ? 'REQUIRED' : value !== getConfigByKey('acceptedPrivacyPolicy') ? 'Please accept updated policy.' : '',
 	    },
 	  });
 	};
@@ -372,7 +374,8 @@ class EditProfile extends Component {
 			!this.state.municipality.value ||
 			!this.state.barangay.value ||
 			!this.state.isRegisteredVoter.value||
-			!this.state.email.value
+			!this.state.email.value ||
+			!this.state.acceptedPrivacyPolicy.value
 	  ) {
 	    this.onFnameChange(this.state.fname.value);
 	    this.onLnameChange(this.state.lname.value);
@@ -384,6 +387,7 @@ class EditProfile extends Component {
 	    this.onBarangayChange(this.state.barangay.value);
 	    this.onVoterChange(this.state.isRegisteredVoter.value);
 	    this.onEmailChange(this.state.email.value);
+      this.onPolicyChange(this.state.acceptedPrivacyPolicy.value)
 	  } else {
 	    // format date and month for birthday
 	    let splitedBDay = (this.state.birthday.value || '').split('-');
@@ -725,6 +729,8 @@ class EditProfile extends Component {
 	                  ),
 	                });
 	              }}
+	              hasError={acceptedPrivacyPolicy.hasError}
+	              error={acceptedPrivacyPolicy.error}
 	            />
 	          </div>
 	        </FormGroup>
