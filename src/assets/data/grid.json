@@ -345,9 +345,6 @@
 				"component": "AccountProfile3"
 			},
 			{
-				"component": "FeaturedTopRanking"
-			},
-			{
 				"component": "Leaderboard"
 			}
 		]

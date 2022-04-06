@@ -1,0 +1,39 @@
+@import '../../../style/variables.scss';
+.filterBy {
+  padding: 10px 15px;
+  * {
+    font-size: 0.8rem;
+  }
+  .title {
+    color: $blue;
+    margin: 0 0 5px 0;
+  }
+  .items {
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    .title {
+      margin: 0 5px 0 0;
+      width: 50px;
+    }
+    .buttons {
+      flex-grow: 1;
+      display: flex;
+      .btn {
+        width: calc(33.3333% - 5px);
+        color: $blue;
+        border: none;
+        background: none;
+        text-align: center;
+        border: 1px solid $blue;
+        border-radius: 15px;
+        margin-right: 5px;
+        padding: 5px;
+        &.active {
+          color: $white;
+          background: $blue;
+        }
+      }
+    }
+  }
+}

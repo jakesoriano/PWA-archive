@@ -387,7 +387,7 @@ class EditProfile extends Component {
 	    this.onBarangayChange(this.state.barangay.value);
 	    this.onVoterChange(this.state.isRegisteredVoter.value);
 	    this.onEmailChange(this.state.email.value);
-      this.onPolicyChange(this.state.acceptedPrivacyPolicy.value)
+	    this.onPolicyChange(this.state.acceptedPrivacyPolicy.value)
 	  } else {
 	    // format date and month for birthday
 	    let splitedBDay = (this.state.birthday.value || '').split('-');
@@ -407,7 +407,7 @@ class EditProfile extends Component {
 	      isRegisteredVoter:
 					this.state.isRegisteredVoter.value === 'yes' ? true : false,
 	      acceptedPrivacyPolicy: this.state.acceptedPrivacyPolicy.value,
-          email: this.state.email.value
+	      email: this.state.email.value
 	    };
 	    displayPageLoader(true);
 	    const isUpdatedProfile = isUserUpdatedProfile();
@@ -460,7 +460,7 @@ class EditProfile extends Component {
 	    gender,
 	    acceptedPrivacyPolicy,
 	    mobilePrefix,
-      email
+	    email
 	  }
 	) => {
 	  return (

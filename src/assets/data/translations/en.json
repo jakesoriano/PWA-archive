@@ -125,8 +125,8 @@
 	"DOWNLOAD_VOLUNTEER_KIT": "Download Volunteer Kit",
 	"GET_KIT": "Get the KakamPink Kit Here",
 	"WATCH_VIDEOS": "Watch the Training Videos",
-	"REGIONAL": "Regional",
-	"OVERALL": "Overall",
+	"REGIONAL": "Regional Rank",
+	"OVERALL": "Overall Rank",
 	"KAKAMPINK_STORIES": "A KakamPink Story",
 	"READ_ALL": "READ ALL",
 	"FOLLOW": "Follow",
@@ -403,5 +403,10 @@
 	"CHAPTER_HEAD": "Chapter head",
 	"CONTACT_NO": "Contact No.",
 	"H2H_CALENDAR": "House-to-House Calendar",
+	"H2HC_MODAL_CONTENT": "orem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porttitor luctus lacus, vel cursus nisl eleifend eget. Donec malesuada ipsum vitae neque hendrerit semper. Curabitur interdum sem risus, dapibus volutpat leo viverra ac. In lobortis sapien justo, sit amet vulputate felis eleifend ac. Ut vitae consectetur ante. Etiam ultrices dictum tellus vel tristique.",
+	"H2H_THANK_YOU": "Thank you making it possible for our volunteers to do a house-to-house campaign!",
+	"FILTER_BY": "Filter By",
+	"PERIOD": "Period",
+	"RANGE": "Range",
 	"NO_H2H_DATA": "Volunteers are organizing more House-to-House campaigns everyday. Please come back later. #TaoSaTaoParaKayRobredo"
 }
