@@ -408,5 +408,7 @@
 	"FILTER_BY": "Filter By",
 	"PERIOD": "Period",
 	"RANGE": "Range",
-	"NO_H2H_DATA": "Volunteers are organizing more House-to-House campaigns everyday. Please come back later. #TaoSaTaoParaKayRobredo"
+	"NO_H2H_DATA": "Volunteers are organizing more House-to-House campaigns everyday. Please come back later. #TaoSaTaoParaKayRobredo",
+	"MAINTENANCE_TITLE": "Maintenance",
+	"MAINTENANCE_DESC": "This page is currently undergoing maintenance. Please check back again later."
 }

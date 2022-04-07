@@ -44,3 +44,4 @@ export { default as Tabs } from './Tabs';
 export { default as LeaderboardFilterBy } from './LeaderboardFilterBy';
 export { default as LeaderboardListing } from './LeaderboardListing';
 export { default as EventDetails } from './EventDetails';
+export { default as Maintenance } from './Maintenance';
