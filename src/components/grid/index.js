@@ -84,3 +84,4 @@ export { default as LandingButtons } from './LandingButtons';
 export { default as LandingTrustedByAndLinks } from './LandingTrustedByAndLinks';
 export { default as LandingNewsAndEvents } from './LandingNewsAndEvents';
 export { default as LandingTitle } from './LandingTitle';
+export { default as TextVideoAndDesc } from './TextVideoAndDesc';
