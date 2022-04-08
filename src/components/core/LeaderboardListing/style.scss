@@ -14,6 +14,9 @@
     border-bottom: 1px solid $item_border;
     &.featured {
       background-color: $pink_button;
+      * {
+        color: $white;
+      }
     }
     .avatar {
       width: 50px;
