@@ -72,9 +72,7 @@ class LeaderboardListing extends Component {
 	            >
 	              <ImageLoader
 	                src={
-	                  item.profile
-	                    ? item.profile.image
-	                    : item.image || getDefaultAvatar()
+											item?.profile?.image || item.image || getDefaultAvatar()
 	                }
 	                style={{ container: style.avatar }}
 	              />
