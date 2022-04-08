@@ -83,8 +83,8 @@ export function fetchUserPoints() {
               completedTaskCount: res.data.completedTaskCount_alltime,
               completedTaskCount_daily: res.data.completedTaskCount_daily,
               rank: {
-                overall: res.data?.rank_points?.data?.global,
-                regional: res.data?.rank_points?.data?.region,
+                overall: res.data?.rank_points?.global_alltime,
+                regional: res.data?.rank_points?.regional_alltime,
                 points: res.data?.rank_points,
                 tasks: res.data?.rank_tasks,
               },
