@@ -87,7 +87,7 @@ export function fetchLeaderboardPoints(filter) {
         appendUserData ? [...res.data, ...[appendUserData]] : res.data
       )
         .filter((i) => i)
-        .sort((a, b) => a.points - b.points);
+        .sort((a, b) => b.points - a.points);
       // update store
       updateStore({
         leaderboard: {
@@ -147,7 +147,7 @@ export function fetchLeaderboardTask(filter) {
         appendUserData ? [...res.data, ...[appendUserData]] : res.data
       )
         .filter((i) => i)
-        .sort((a, b) => a.completedTaskCount - b.completedTaskCount);
+        .sort((a, b) => b.completedTaskCount - a.completedTaskCount);
       // update store
       updateStore({
         leaderboardTask: {
@@ -197,7 +197,9 @@ export function fetchLeaderboardH2H() {
   return new Promise((resolve) => {
     xhr(urlLeaderboardH2H)
       .then((res) => {
-        const data = res.data?.results?.filter((i) => i) || null;
+        const data = (res.data?.results?.filter((i) => i) || []).sort(
+          (a, b) => b.count - a.count
+        );
         updateStore({
           leaderboardH2H: {
             ...leaderboardH2H,
