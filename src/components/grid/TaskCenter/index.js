@@ -52,6 +52,14 @@ class TaskCenter extends Component {
 
 	handleDone = () => {
 	  try {
+	    // maintenance mode
+	    const maintenance = getConfigByKey('maintenance') || [];
+	    if (maintenance.indexOf('/tasks-center')) {
+	      showAlertBox({
+	        message: getTranslation('MAINTENANCE_DESC'),
+	      });
+	      return;
+	    }
 	    validateTask(this.state.item.id)
 	      .then((status) => {
 	        /**

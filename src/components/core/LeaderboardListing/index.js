@@ -62,71 +62,69 @@ class LeaderboardListing extends Component {
 	      {/* content */}
 	      <div className={style.content}>
 	        {data && data.length
-	          ? data
-	            .sort((a, b) => b.points - a.points)
-	            .map((item, index) => (
-	              <div
-	                className={`${style.item} ${
-											authUser?.profile?._id === item?.profile?._id
-											  ? style.featured
-											  : ''
-										}`}
-	              >
-	                <ImageLoader
-	                  src={
-	                    item.profile
-	                      ? item.profile.image
-	                      : item.image || getDefaultAvatar()
-	                  }
-	                  style={{ container: style.avatar }}
-	                />
-	                <div className={style.nameMember}>
-	                  <div>
-	                    <p className={`light ${style.name}`}>
-	                      {displayName(item.profile ? item.profile : item)}
-	                    </p>
-	                    <p className={`light ${style.members}`}>{`${
-													item.members
-												} ${getTranslation('MEMBERS')}`}</p>
-	                  </div>
+	          ? data.map((item, index) => (
+	            <div
+	              className={`${style.item} ${
+										authUser?.profile?._id === item?.profile?._id
+										  ? style.featured
+										  : ''
+									}`}
+	            >
+	              <ImageLoader
+	                src={
+	                  item.profile
+	                    ? item.profile.image
+	                    : item.image || getDefaultAvatar()
+	                }
+	                style={{ container: style.avatar }}
+	              />
+	              <div className={style.nameMember}>
+	                <div>
+	                  <p className={`light ${style.name}`}>
+	                    {displayName(item.profile ? item.profile : item)}
+	                  </p>
+	                  <p className={`light ${style.members}`}>{`${
+												item.members
+											} ${getTranslation('MEMBERS')}`}</p>
 	                </div>
-	                {id === 'task' && (
-	                  <>
-	                    <div className={style.count}>
-	                      <p className={`light`}>
-	                        {formatNumber(item.rank || index + 1)}
-	                      </p>
-	                    </div>
-	                    <div className={style.count}>
-	                      <p className={`light`}>
-	                        {item.completedTaskCount || 0}
-	                      </p>
-	                    </div>
-	                  </>
-	                )}
-	                {id === 'points' && (
-	                  <>
-	                    <div className={style.count}>
-	                      <p className={`light`}>
-	                        {formatNumber(item.rank || index + 1)}
-	                      </p>
-	                    </div>
-	                    <div className={style.count}>
-	                      <p className={`light`}>
-	                        {formatNumber(item.points) || 0}
-	                      </p>
-	                    </div>
-	                  </>
-	                )}
-	                {id === 'h2h' && (
-	                  <>
-	                    <div className={style.count}>
-	                      <p className={`light`}>{item.count || 0}</p>
-	                    </div>
-	                  </>
-	                )}
 	              </div>
-	            ))
+	              {id === 'task' && (
+	                <>
+	                  <div className={style.count}>
+	                    <p className={`light`}>
+	                      {formatNumber(item.rank || index + 1)}
+	                    </p>
+	                  </div>
+	                  <div className={style.count}>
+	                    <p className={`light`}>
+	                      {item.completedTaskCount || 0}
+	                    </p>
+	                  </div>
+	                </>
+	              )}
+	              {id === 'points' && (
+	                <>
+	                  <div className={style.count}>
+	                    <p className={`light`}>
+	                      {formatNumber(item.rank || index + 1)}
+	                    </p>
+	                  </div>
+	                  <div className={style.count}>
+	                    <p className={`light`}>
+	                      {formatNumber(item.points) || 0}
+	                    </p>
+	                  </div>
+	                </>
+	              )}
+	              {id === 'h2h' && (
+	                <>
+	                  <div className={style.count}>
+	                    <p className={`light`}>{item.count || 0}</p>
+	                  </div>
+	                </>
+	              )}
+	            </div>
+						  ))
 	          : null}
 	      </div>
 	      {/* no record */}
