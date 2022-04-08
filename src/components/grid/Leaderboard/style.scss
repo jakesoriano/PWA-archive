@@ -1,81 +1,44 @@
 @import '../../../style/variables.scss';
-.membersWrap {
-  background: $light_gray;
-  border-radius: 10px;
-  margin: 10px 15px;
-  padding-top: 10px;
-  display: block;
-  overflow: hidden;
-  * {
-    color: #737373;
+.leaderboard {
+  padding: 20px 15px;
+  .heartWrap {
+    margin-top: 20px;
+    .heart {
+      width: 30px;
+      padding-bottom: 30px;
+      margin: 0 auto;
+    }
+  }
+  .text {
+    color: $pink_text;
+    padding: 5px 25px 15px 20px;
+    text-align: center;
     font-size: 0.9rem;
+    font-style: italic;
   }
-  .titleHead {
-    position: relative;
-    .filter {
-      display: flex;
-      align-items: center;
-      position: absolute;
-      right: 10px;
-      top: 0;
-      .filterIcon {
-        width: 24px;
-        padding-bottom: 24px;
-        margin-right: 10px;
+  .showMore {
+    text-align: right;
+    border: none;
+    background: none;
+    width: 100%;
+    span {
+      font-size: 0.7rem;
+      color: #737373;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      span {
+        color: #ff2cd7;
       }
     }
   }
-  .title {
-    font-size: 1.2rem;
-    text-align: center;
-    color: $primary;
-  }
-  .item {
-    display: flex;
-    padding: 10px 15px;
-    border-bottom: 1px solid $item_border;
-    .avatar {
-      width: 50px;
-      padding-bottom: 50px;
-      border-radius: 80px;
+  .loaderWrap {
+    display: block;
+    text-align: right;
+    > div div {
+      border: 4px solid #fff;
+      border-color: #ffb1bb transparent transparent transparent;
+      width: 30px;
+      height: 30px;
     }
-    .nameMember {
-      padding-left: 15px;
-      display: grid;
-      align-content: center;
-      flex-grow: 1;
-      width: calc(100% - 190px);
-      .members {
-        font-size: 0.5rem;
-      }
-    }
-    .rank,
-    .points {
-      display: grid;
-      align-content: center;
-      flex-grow: 1;
-      width: 70px;
-      p {
-        padding-bottom: 12px;
-        text-align: center;;
-      }
-    }
-  }
-  .itemHeader {
-    border-bottom: 1px solid $item_border;
-    .avatar{
-      width: 60px;
-      padding-bottom: 0;
-    }
-    .rank,
-    .points {
-      p {
-        padding-bottom: 0;
-      }
-    }
-  }
-  .noRecord {
-    text-align: center;
-    padding: 10px;
   }
 }

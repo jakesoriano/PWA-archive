@@ -4,22 +4,8 @@
 	width: 100%;
 }
 
-.loginOutside {
-	height: 100%;
-	width: 100%;
-	opacity: 0.5;
-	z-index: 4;
-	position: absolute;
-	top: 0;
-}
-
 .login {
 	background: white;
-	position: absolute;
-	overflow: scroll;
-	width: 100%;
-	height: 100%;
-	z-index: 4;
 	text-align: left;
 	.formTitle {
 		background-color: $gray_bg;
@@ -41,10 +27,6 @@
 			font-style: italic;
 			padding-bottom: 5px;
 			color: #282828;
-		}
-		.formInput {
-			border: 1px solid #d3d3d3;
-			padding: 10px;
 		}
 		p,
 		a,

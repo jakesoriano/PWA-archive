@@ -40,3 +40,8 @@ export { default as Accordion } from './Accordion';
 export { default as SubHeader } from './SubHeader';
 export { default as SuccessMessage } from './SuccessMessage';
 export { default as DismissableText } from './DismissableText';
+export { default as Tabs } from './Tabs';
+export { default as LeaderboardFilterBy } from './LeaderboardFilterBy';
+export { default as LeaderboardListing } from './LeaderboardListing';
+export { default as EventDetails } from './EventDetails';
+export { default as Maintenance } from './Maintenance';

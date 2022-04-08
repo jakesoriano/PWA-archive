@@ -74,7 +74,7 @@ class Topbar extends Component {
 	          >
 	            <ImageLoader
 	              style={{ container: style.backImg }}
-	              src="assets/images/downarrow.png"
+	              src="assets/images/backbutton.png"
 	            />
 	          </button>
 	        )}

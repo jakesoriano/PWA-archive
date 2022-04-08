@@ -1,61 +1,71 @@
 @import '../../../style/variables.scss';
 .accountProfile {
-  padding: 15px 15px 0;
   * {
-    color: #737373;
+    color: $white;
   }
   .profile {
-    background: $light_gray;
-    border-radius: 10px;
+    background: $pink_button;
     padding: 10px 10px 0 10px;
     .user {
       display: flex;
       width: 100%;
+      margin-bottom: 10px;
       .avatar {
-        align-self: flex-start;
+        align-self: center;
+        label {
+          div {
+            border: 1px solid $white;
+            background-color: $gray_bg;
+            width: 47px;
+            margin-right: 0;
+            padding-bottom: 45px;
+          }
+        }
       }
       .nameMember {
         flex-grow: 1;
         padding: 10px;
         .name {
-          font-size: 1.2rem;
-          color: $primary;
-          text-transform: uppercase;
-          text-align: center;
+          font-size: 0.9rem;
+          color: $white;
+          text-transform: capitalize;
         }
         .heroRankingContainer {
           flex: 1;
-          text-align: center;
-          margin-bottom: 10px;
-          .heroRanking {
-            flex: 1;
-            display: flex;
-            margin-top: 5px;
-            justify-content: space-around;
-            .rankBox {
-              background-color: #ededed;
-              padding: 0 5px 5px;
-              width: 60px;
-              border-radius: 5px;
-              &:not(:first-of-type) {
-                margin-left: 10px;
-              }
-              .rankPoints {
-                font-size: 1.5rem;
-              }
-              .rankPointsText {
-                font-size: 0.75rem;
-              }
-            }
-          }
         }
         .heroPoints {
-          text-align: center;
+          color: $white;
+          font-size: 0.9rem;
         }
       }
-      .share {
-        width: 20px;
-        padding-bottom: 20px;
+      .shareWrap {
+        align-self: center;
+        display: flex;
+        font-size: 0.8rem;
+        .share {
+          width: 20px;
+          padding-bottom: 20px;
+          margin-right: 5px;
+        }
+      }
+      
+    }
+    .heroRanking {
+      flex: 1;
+      display: flex;
+      padding: 15px 0;
+      justify-content: space-around;
+      border-top: 1px solid #f466b6;
+      .rankBox {
+        padding: 0 5px 5px;
+        width: 100%;
+        text-align: center;
+        &:not(:first-of-type) {
+          border-left: 1px solid #f466b6;
+        }
+        .rankPointsText {
+          font-size: 0.75rem;
+        }
       }
     }
   }

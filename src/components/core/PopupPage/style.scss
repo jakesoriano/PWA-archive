@@ -18,14 +18,15 @@
 		left: 0;
 	}
 	.backImg {
-		width: 25px;
-		padding-bottom: 25px;
-		transform: rotate(90deg);
+		width: 20px;
+		padding-bottom: 20px;
+		// transform: rotate(90deg);
 	}
 	.header {
 		width: 100%;
-		padding: 25px 10px 20px;
-		background-color: $gray_bg;
+		padding: 14.5px 10px;
+		// background-color: $gray_bg;
+		background-color: $primary_layout;
 		display: flex;
 		align-items: center;
 		button {
@@ -38,11 +39,11 @@
 		}
 		h3 {
 			display: inline-block;
-			font-size: 1.4rem;
+			font-size: 1.2rem;
 			text-overflow: ellipsis;
 			overflow: hidden;
 			white-space: nowrap;
-			color: $pink_text;
+			color: $white;
 			font-weight: 400;
 			margin: 0;
 			padding: 0;

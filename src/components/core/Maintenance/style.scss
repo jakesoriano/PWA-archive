@@ -1,0 +1,19 @@
+@import '../../../style/variables.scss';
+.maintenanceWrap {
+  height: calc(100vh - (56px + 80px));
+  display: flex;
+  align-items: center;
+  .maintenance {
+    text-align: center;
+    padding: 30px;
+    .title {
+      color: $pink_text;
+      font-size: 1.2rem;
+    }
+    .desc {
+      margin-top: 15px;
+      color: $black_text;
+      font-size: 0.8rem;
+    }
+  }
+}

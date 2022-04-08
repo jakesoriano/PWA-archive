@@ -2,18 +2,49 @@
 	{
 		"styles": [
 			{
-				"selector": "#w1",
-				"styles": "position: absolute; top: 0px; z-index: 2; width: 100%;"
+				"selector": "#page-widgets",
+				"styles": "background: #CC196A; background-image: url('{CDN_DOMAIN_FILES}landing-bg-v2.png');background-repeat: no-repeat;background-position: top center; background-size: cover;overflow-x: scroll;"
 			}
 		],
 		"pageTitle": "PAGE_LANDING",
 		"uri": "landing",
 		"contents": [
 			{
+				"component": "LandingTitle"
+			},
+			{
 				"component": "Countdown"
 			},
 			{
-				"component": "LandingPage"
+				"component": "LandingNewsAndEvents"
+			},
+			{
+				"component": "LandingButtons"
+			},
+			{
+				"component": "LandingTrustedByAndLinks"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"pageTitle": "Initial Signup",
+		"uri": "initial-signup",
+		"hideTopBar": true,
+		"contents": [
+			{
+				"component": "LandingInitialSignup"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"pageTitle": "Login",
+		"uri": "login",
+		"hideTopBar": true,
+		"contents": [
+			{
+				"component": "LandingLogin"
 			}
 		]
 	},
@@ -314,9 +345,6 @@
 				"component": "AccountProfile3"
 			},
 			{
-				"component": "FeaturedTopRanking"
-			},
-			{
 				"component": "Leaderboard"
 			}
 		]
@@ -470,10 +498,11 @@
 		"withBack": true,
 		"contents": [
 			{
-				"component": "TextAndDescription",
+				"component": "TextVideoAndDesc",
 				"props": {
 					"title": "What is House-to-House Campaign?",
-					"description": "House-to-House Campaign is a safe space to request for help from fellow kakampinks. Ground volunteers seeking support as they campaign house-to-house among various baranggays across the country can enlist help here from manpower, trompas, transportation to collaterals. In true Bayanihan fashion, let’s all share our resources in solidifying a LeniKiko win!"
+					"video": "https://www.youtube.com/embed/VIn5CJIADQc",
+					"description": "House-to-House Campaign is a safe space to request for help from fellow kakampinks. Ground volunteers seeking support as they campaign house-to-house among various barangays across the country can enlist help here from manpower, trompas, transportation to collaterals. In true Bayanihan fashion, let’s all share our resources in solidifying a LeniKiko win!"
 				}
 			},
 			{
@@ -908,55 +937,103 @@
 		]
 	},
 	{
-		"styles": [],
+		"styles": [
+			{
+				"selector": "#volunteer-comics",
+				"styles": "margin-top: 10px;"
+			},
+			{
+				"selector": "#volunteer-kits",
+				"styles": "margin-top: 40px;"
+			},
+			{
+				"selector": "#volunteer-kits > p",
+				"styles": "font-size: 1rem;"
+			}
+		],
 		"auth": true,
-		"pageTitle": "VOLUNTEER_KIT",
+		"pageTitle": "PAGE_VOLUNTEER",
 		"uri": "volunteer-kits",
 		"withBack": true,
 		"contents": [
 			{
-				"component": "VolunteerKit",
+				"component": "Text",
 				"props": {
+					"text": "PRINTABLES",
+					"id": "printable-merch",
+					"isTitle": true,
+					"additionalClass": "bold"
+				}
+			},
+			{
+				"component": "HorizontalImageList",
+				"props": {
+					"id": "volunteer-tarps",
+					"heading": "Tarpaulins",
+					"dataKey": "tarps"
+				}
+			},
+			{
+				"component": "HorizontalImageList",
+				"props": {
+					"id": "volunteer-comics",
+					"heading": "Comics",
+					"dataKey": "comics"
+				}
+			},
+			{
+				"component": "HorizontalImageList",
+				"props": {
+					"id": "volunteer-kits",
+					"heading": "Volunteer Kit",
 					"data": [
 						{
+							"id": "social-media-content",
 							"title": "Social Media Content Posting",
 							"link": "https://www.notion.so/7e00a0c241be44e689a141a81fb717ff?v=29eb8910e2824153922e47662ae12e69",
-							"icon": "v_social"
+							"thumb": "assets/images/v_social.png"
 						},
 						{
+							"id": "conversation-kit",
 							"title": "Conversation Kit",
 							"link": "https://drive.google.com/drive/u/7/folders/1JHUaCdAzO_otkum8zVv9mfFWs49osqOP",
-							"icon": "v_convert"
+							"thumb": "assets/images/v_convert.png"
 						},
 						{
+							"id": "training-kit",
 							"title": "Training Kit",
 							"link": "https://drive.google.com/drive/u/7/folders/1u_U-O5ent84xXL_EehnL5-KwRom4xcWb",
-							"icon": "v_train"
+							"thumb": "assets/images/v_train.png"
 						},
 						{
+							"id": "volunteer-kit",
 							"title": "Volunteer Kit",
 							"link": "https://drive.google.com/drive/u/7/folders/1muk04qDXgZL3zKbZq7Y_vW0pSyQFP4hM",
-							"icon": "v_vol"
+							"thumb": "assets/images/v_vol.png"
 						},
 						{
+							"id": "training-videos",
 							"title": "Training Videos",
 							"link": "/videos",
-							"icon": "v_social"
+							"thumb": "assets/images/v_social.png"
 						},
 						{
+							"id": "printables",
 							"title": "Printables",
 							"link": "https://www.notion.so/fee52cca14ab498484b1dbf27d786cc0?v=8e11d88debea4937b349d2bf93ac0af1",
-							"icon": "v_print"
+							"thumb": "assets/images/v_print.png"
 						},
 						{
+							"id": "wearables",
 							"title": "Wearables",
 							"link": "https://www.notion.so/1074a65797de4b7fb3e5116c78a9f4b9?v=ac72cfaab55f43ddb765a6355598c922",
-							"icon": "v_wear"
+							"thumb": "assets/images/v_wear.png"
 						},
 						{
+							"id": "other-resources",
 							"title": "Other Resources",
 							"link": "https://www.notion.so/defe97ec7a63432caec70211484118cb?v=961ee67435b34cba8796d0bfe0742380",
-							"icon": "v_other"
+							"thumb": "assets/images/v_other.png"
 						}
 					]
 				}
@@ -1070,7 +1147,7 @@
 	{
 		"styles": [],
 		"auth": true,
-		"pageTitle": "H2H_CAMPAIGN",
+		"pageTitle": "H2H_CALENDAR",
 		"uri": "house-to-house-calendar",
 		"withBack": true,
 		"contents": [

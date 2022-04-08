@@ -50,28 +50,27 @@ class AccountProfile extends Component {
 	          <div className={style.nameMember}>
 	            <p className={`bold ${style.name}`}>{displayName(authUser.profile)}</p>
 	            <div className={style.heroRankingContainer}>
-	              <p className={`bold`}>{getTranslation('RANKING')}</p>
-	              <div className={style.heroRanking}>
-	                <div className={style.rankBox}>
-	                  <p class={`extraBold ${style.rankPoints}`}>{formatRank(authUser.rank.regional)}</p>
-	                  <p class={style.rankPointsText}>{getTranslation('REGIONAL')}</p>
-	                </div>
-	                <div className={style.rankBox}>
-	                  <p class={`extraBold ${style.rankPoints}`}>{formatRank(authUser.rank.overall)}</p>
-	                  <p class={style.rankPointsText}>{getTranslation('OVERALL')}</p>
-	                </div>
-	              </div>
+	              <p className={`bold ${style.heroPoints}`}>{`${authUser.points === 0 ? '-' : formatNumber(authUser.points, 2) || 0}`} <span>{getTranslation('HERO_POINTS')}</span></p>
 	            </div>
-	            <p className={`extraBold ${style.heroPoints}`}>{`${authUser.points === 0 ? '-' : formatNumber(authUser.points, 2) || 0} ${getTranslation('HERO_POINTS')} `}</p>
 	          </div>
 	          <a onClick={() => {
 	            this.onShare();
-	          }}>
+	          }}
+	          className={style.shareWrap}>
 	            <ImageLoader 
-	              src="assets/images/share_icon.png"
+	              src="assets/images/share_icon_white.png"
 	              style={{ container: style.share }} />
+	            {getTranslation('SHARE')}
 	          </a>
 	        </div>
+	        <div className={style.heroRanking}>
+	          <div className={style.rankBox}>
+	            <p class={style.rankPointsText}>{getTranslation('REGIONAL')} <span class={`bold`}>{formatRank(authUser.rank.regional)}</span></p>
+	          </div>
+	          <div className={style.rankBox}>
+	            <p class={style.rankPointsText}>{getTranslation('OVERALL')} <span class={`bold`}>{formatRank(authUser.rank.overall)}</span></p>
+	          </div>
+	        </div> 
 	      </div>
 	    </div>
 	  );

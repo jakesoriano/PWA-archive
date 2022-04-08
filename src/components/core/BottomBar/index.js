@@ -1,50 +1,100 @@
 import { h } from 'preact';
 import { Link } from 'preact-router/match';
 import { ImageLoader } from '_components/core';
+import { getTranslation } from '_helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
 
 export default ({ page }) => (
   <div className={style.bottomBar}>
-    <Link id="tab-home" class={style.menu} activeClassName={style.active} href="/home">
+    <Link
+      id="tab-home"
+      class={style.menu}
+      activeClassName={style.active}
+      href="/home"
+    >
       <ImageLoader
-        src={`assets/images/bb_home_${
-          page === 'home' ? 'active' : 'inactive'
-        }.png`}
+        src={`assets/icons/bb_home.png`}
         style={{ container: style.imgCont }}
       />
+      <p className={`bold ${style.title}`}>{getTranslation('PAGE_HOME')}</p>
+      {page === 'home' && (
+        <p className={style.dot}>
+          <span>●</span>
+        </p>
+      )}
     </Link>
-    <Link id="tab-invite" class={style.menu} activeClassName={style.active} href="/invite">
+    <Link
+      id="tab-invite"
+      class={style.menu}
+      activeClassName={style.active}
+      href="/invite"
+    >
       <ImageLoader
-        src={`assets/images/bb_invite_${
-          page === 'invite' ? 'active' : 'inactive'
-        }.png`}
+        src={`assets/icons/bb_invite.png`}
         style={{ container: style.imgCont }}
       />
+      <p className={`bold ${style.title}`}>{getTranslation('PAGE_INVITE')}</p>
+      {page === 'invite' && (
+        <p className={style.dot}>
+          <span>●</span>
+        </p>
+      )}
     </Link>
-    <Link id="tab-tasks" class={style.menu} activeClassName={style.active} href="/task-center">
+    <Link
+      id="tab-tasks"
+      class={style.menu}
+      activeClassName={style.active}
+      href="/task-center"
+    >
       <ImageLoader
-        src={`assets/images/bb_task_${
-          page === 'task-center' ? 'active' : 'inactive'
-        }.png`}
+        src={`assets/icons/bb_todo.png`}
         style={{ container: style.imgCont }}
       />
+      <p className={`bold ${style.title}`}>{getTranslation('TASK_CENTER')}</p>
+      {page === 'task-center' && (
+        <p className={style.dot}>
+          <span>●</span>
+        </p>
+      )}
     </Link>
-    <Link id="tab-leaderboard" class={style.menu} activeClassName={style.active} href="/leaderboard">
+    <Link
+      id="tab-leaderboard"
+      class={style.menu}
+      activeClassName={style.active}
+      href="/leaderboard"
+    >
       <ImageLoader
-        src={`assets/images/bb_lead_${
-          page === 'leaderboard' ? 'active' : 'inactive'
-        }.png`}
+        src={`assets/icons/bb_lead.png`}
         style={{ container: style.imgCont }}
       />
+      <p className={`bold ${style.title}`}>
+        {getTranslation('PAGE_LEADERBOARD')}
+      </p>
+      {page === 'leaderboard' && (
+        <p className={style.dot}>
+          <span>●</span>
+        </p>
+      )}
     </Link>
-    <Link id="tab-community" class={style.menu} activeClassName={style.active} href="/community">
+    <Link
+      id="tab-community"
+      class={style.menu}
+      activeClassName={style.active}
+      href="/community"
+    >
       <ImageLoader
-        src={`assets/images/bb_com_${
-          page.indexOf('community') > -1 ? 'active' : 'inactive'
-        }.png`}
+        src={`assets/icons/bb_com.png`}
         style={{ container: style.imgCont }}
       />
+      <p className={`bold ${style.title}`}>
+        {getTranslation('PAGE_COMMUNITY')}
+      </p>
+      {page.indexOf('community') > -1 && (
+        <p className={style.dot}>
+          <span>●</span>
+        </p>
+      )}
     </Link>
   </div>
 );

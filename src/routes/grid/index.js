@@ -14,6 +14,7 @@ import {
   // messageModal,
   // getTranslation,
   setCookie,
+  getConfigByKey,
 } from '_helpers';
 import {
   fetchTranslation,
@@ -37,6 +38,7 @@ import {
   CircleModal,
   SuccessMessage,
   CustomListSelection,
+  Maintenance,
 } from '_components/core';
 import {
   nativeWebReady,
@@ -444,7 +446,11 @@ class Grid extends Component {
 	            id={`page-${this.getPageName()}`}
 	            type="grid_content"
 	          >
-	            {renderGrid(this.getPageName(), this.getPageName(), data)}
+	            {(getConfigByKey('maintenance') || []).indexOf(url) > -1 ? (
+	              <Maintenance />
+	            ) : (
+	              renderGrid(this.getPageName(), this.getPageName(), data)
+	            )}
 	          </div>
 	          {data && data.auth && !data.hideBottomBar && (
 	            <BottomBar page={this.getPageName()} />

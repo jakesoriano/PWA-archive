@@ -14,6 +14,16 @@
             &:not(:first-of-type) {
                 margin-left: 5px;
             }
+            &.iconWrap {
+                padding: 10px; 
+                background-color: #f2f2f2; 
+                border-radius: 10px;
+            }
+            .icon {
+                width: 50px;
+                padding-bottom: 50px;
+                margin: 10px auto 0;
+            }
             .thumb {
                 width: 100%;
                 padding-bottom: 81px;

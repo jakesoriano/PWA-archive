@@ -20,5 +20,5 @@ export function displayName(profile) {
 export function isUserUpdatedProfile() {
   const { authUser } = store.getState();
   // check if there is region on profile data
-  return Boolean(authUser?.profile.region);
+  return Boolean(authUser?.profile.email);
 }

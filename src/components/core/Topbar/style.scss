@@ -10,16 +10,16 @@
 	left: 0;
 	z-index: 2;
 	&.withBack {
-		background-color: $gray_bg;
+		// background-color: $gray_bg;
 		.container {
 			.title {
-				color: $pink_text;
+				// color: $pink_text;
 			}
 			.btnBack,
 			.burger,
 			.notif {
 				.backImg {
-					transform: rotate(90deg);
+					// transform: rotate(90deg);
 				}
 			}
 		}

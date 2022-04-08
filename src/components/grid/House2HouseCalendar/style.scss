@@ -3,6 +3,8 @@
   padding: 15px;
   .filter {
     margin: 0 -10px;
+    position: relative;
+    z-index: 1;
     .datepicker {
       padding: 0 10px;
     }
@@ -23,6 +25,8 @@
   }
   .results {
     margin-top: 15px;
+    z-index: 0;
+    position: relative;
     * {
       color: $black;
     }

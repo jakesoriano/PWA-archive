@@ -104,7 +104,7 @@ class InitialSignup extends Component {
 	    validateUsername(this.state.username.value).then((res) => {
 	      displayPageLoader(false);
 	      if (res.available) {
-	        this.props.toggleSignupForm();
+	        // this.props.toggleSignupForm();
 	        updateStore({
 	          signup: {
 	            username: this.state.username.value,
@@ -207,7 +207,7 @@ class InitialSignup extends Component {
 	        validateUsername(data.email).then((res) => {
 	          displayPageLoader(false);
 	          if (res.available) {
-	            this.props.toggleSignupForm();
+	            // this.props.toggleSignupForm();
 	            updateStore({
 	              signup: {
 	                username: (data.email || '').toString(),
@@ -311,20 +311,14 @@ class InitialSignup extends Component {
 	  );
 	};
 
-	render = (
-	  { toggleSignupForm, isOpen },
-	  { username, password, confirm_password }
-	) => {
+	onBack = () => {
+	  route('/landing', true);
+	};
+
+	render = ({}, { username, password, confirm_password }) => {
 	  return (
 	    <div className={style.signupFormContainer}>
-	      {/* eslint-disable-next-line react/self-closing-comp */}
-	      <div
-	        onClick={toggleSignupForm}
-	        className={isOpen ? style.signupOutside : null}
-	      ></div>
-	      <div
-	        className={isOpen ? `${style.signup} ${style.toggled}` : style.signup}
-	      >
+	      <div className={`${style.signup} ${style.toggled}`}>
 	        {/* Initial Signup Contents Here */}
 	        <div className={style.formTitle}>
 	          <p className={`extraBold ${style.formTitle}`}>
@@ -440,7 +434,11 @@ class InitialSignup extends Component {
 	                }
 	              />
 	              {/* )} */}
-	              <div onClick={toggleSignupForm}>
+	              <div
+	                onClick={() => {
+	                  this.onBack();
+	                }}
+	              >
 	                <p className={style.backButton}> {getTranslation('BACK')} </p>
 	              </div>
 	            </div>

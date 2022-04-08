@@ -35,35 +35,33 @@ class CommunityNavigation extends Component {
 	    >
 	      <div>
 	        <ImageLoader
-	          src={'assets/images/community_volunteer_blue.png' || getDefaultAvatar()}
+	          src={
+	            'assets/images/community_volunteer_blue.png' || getDefaultAvatar()
+	          }
 	          style={{ container: style.icon }}
 	          lazy
 	        />
 	      </div>
-	      <p className="semiBold">{`${getTranslation(
-	        'PAGE_COMMUNITY'
-	      )} ${getTranslation('COMMUNITY_VOLUNTEER')}`}</p>
+	      <p className="semiBold">{getTranslation('COMMUNITY_VOLUNTEER')}</p>
 	    </div>
 
 	    {/* Community CrowdSourcing */}
 	    <div
 	      className={`${style.navBox} ${style.events}`}
 	      id="community-crowdsourcing"
-	      // onClick={() => route('community-crowdsourcing')}
+	      onClick={() => route('community-crowdsourcing')}
 	    >
 	      <div>
 	        <ImageLoader
 	          src={
-	            'assets/images/community_crowdsourcing_blue.png' || getDefaultAvatar()
+	            'assets/images/community_crowdsourcing_blue.png' ||
+							getDefaultAvatar()
 	          }
 	          style={{ container: style.icon }}
 	          lazy
 	        />
 	      </div>
-	      <p className="semiBold">{`${getTranslation(
-	        'PAGE_COMMUNITY'
-	      )} ${getTranslation('COMMUNITY_CROWDSOURCING')}`}</p>
-	      <span>({getTranslation('COMING_SOON')})</span>
+	      <p className="semiBold">{getTranslation('PAGE_CROWDSOURCING')}</p>
 	    </div>
 
 	    {/* Community Events */}
@@ -74,14 +72,14 @@ class CommunityNavigation extends Component {
 	    >
 	      <div>
 	        <ImageLoader
-	          src={'assets/images/community_events_blue.png' || getDefaultAvatar()}
+	          src={
+	            'assets/images/community_events_blue.png' || getDefaultAvatar()
+	          }
 	          style={{ container: style.icon }}
 	          lazy
 	        />
 	      </div>
-	      <p className="semiBold">{`${getTranslation(
-	        'PAGE_COMMUNITY'
-	      )} ${getTranslation('EVENTS')}`}</p>
+	      <p className="semiBold">{getTranslation('EVENTS')}</p>
 	    </div>
 
 	    {/* Community Announcements */}
@@ -100,9 +98,7 @@ class CommunityNavigation extends Component {
 	          lazy
 	        />
 	      </div>
-	      <p className="semiBold">{`${getTranslation(
-	        'PAGE_COMMUNITY'
-	      )} ${getTranslation('ANNOUNCEMENTS')}`}</p>
+	      <p className="semiBold">{getTranslation('ANNOUNCEMENTS')}</p>
 	    </div>
 	  </div>
 	);

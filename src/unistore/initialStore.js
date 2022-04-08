@@ -139,6 +139,20 @@ export const initialStore = {
     featured: null,
     filter: {},
   },
+  leaderboardTask: {
+    fetching: false,
+    result: false,
+    data: null,
+    featured: null,
+    filter: {},
+  },
+  leaderboardH2H: {
+    fetching: false,
+    result: false,
+    data: null,
+    featured: null,
+    filter: {},
+  },
   appHomeConfig: {
     fetching: false,
     result: false,

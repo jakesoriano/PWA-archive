@@ -1,6 +1,5 @@
 import { store, updateStore } from '_unistore';
 import { xhr, urlAppHomeConfig, replaceUrlPlaceholders } from '_helpers';
-import { nativeGetVersion } from '_platform/helpers';
 
 // eslint-disable-next-line import/prefer-default-export
 export function fetchAppHomeConfig() {
@@ -31,6 +30,7 @@ export function fetchAppHomeConfig() {
           result: true,
         },
       });
+      return true;
     })
     .catch(() => {
       updateStore({
@@ -40,5 +40,6 @@ export function fetchAppHomeConfig() {
           result: false,
         },
       });
+      return false;
     });
 }

@@ -1,7 +1,8 @@
 import * as GridComponents from '_components/grid';
 import { ComponentLoader } from '_components/core';
+import { replaceUrlPlaceholders } from '_helpers';
 
-function renderContent (page, data, parent) {
+function renderContent(page, data, parent) {
   try {
     if (data !== undefined && data.component !== undefined) {
       const Compo = GridComponents[data.component] || null;
@@ -9,7 +10,7 @@ function renderContent (page, data, parent) {
         const props = {
           ...data.props,
           page,
-          parent
+          parent,
         };
         // eslint-disable-next-line react/jsx-props-no-spreading
         return <Compo {...props} />;
@@ -23,13 +24,15 @@ function renderContent (page, data, parent) {
   }
 }
 
-function generateStyles (parentSelector, styles) {
+function generateStyles(parentSelector, styles) {
   try {
     // construct CSS rules from config
     let css = '';
     // eslint-disable-next-line no-restricted-syntax
     for (const item of styles) {
-      css = `${css}${parentSelector} ${item.selector}{${item.styles}}\n`;
+      css = `${css}${parentSelector} ${item.selector}{${replaceUrlPlaceholders(
+        item.styles
+      )}}\n`;
     }
     return css;
   } catch (err) {
@@ -40,7 +43,7 @@ function generateStyles (parentSelector, styles) {
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export function renderGrid (page, parentClass, data) {
+export function renderGrid(page, parentClass, data) {
   return (
     <div id="page-widgets">
       {data.contents.map((item, i) => {
@@ -59,8 +62,8 @@ export function renderGrid (page, parentClass, data) {
             {/* Style */}
             <style type="text/css">
               {generateStyles(
-                `#page-${parentClass.toLowerCase()} .widget${i + 1}`,
-                item.styles ? item.styles : []
+								`#page-${parentClass.toLowerCase()} .widget${i + 1}`,
+								item.styles ? item.styles : []
               )}
             </style>
           </ComponentLoader>
@@ -69,8 +72,8 @@ export function renderGrid (page, parentClass, data) {
       {/* Global Styles */}
       <style type="text/css">
         {generateStyles(
-          `#page-${page ? page.toLowerCase() : ''}`,
-          data.styles ? data.styles : []
+					`#page-${page ? page.toLowerCase() : ''}`,
+					data.styles ? data.styles : []
         )}
       </style>
     </div>

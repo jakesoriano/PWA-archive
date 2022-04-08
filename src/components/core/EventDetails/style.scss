@@ -1,0 +1,55 @@
+@import '../../../style/variables.scss';
+.pWrap {
+  * {
+    color: #000;
+  }
+  .pHeader {
+    display: flex;
+    flex-direction: column;
+    .pImage {
+      padding-bottom: 250px;
+      width: 100%;
+      margin: 15px 0;
+    }
+    .pTitle{
+      font-size: 1.2rem;
+      color: $pink_text;
+      text-align: center;
+    }
+  }
+  .source {
+    font-size: 0.875rem;
+    .pLink{
+      font-size: 0.6rem;
+    }
+  }
+  .pContent {
+    font-size: 0.8rem;
+    margin-top: 30px;
+    br {
+      display: block;
+      content: "";
+      margin: 10px 0;
+    }
+  }
+  .pShare {
+    background: $primary;
+    display: flex;
+    width: 100px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    width: max-content;
+    margin-top: 20px;
+    border-radius: 6px;
+
+    .pIconShare {
+      padding-bottom: 18px;
+      width: 18px;
+      margin-right: 5px;
+    }
+    span {
+      color: #fff;
+      font-size: 1rem;
+    }
+  }
+}

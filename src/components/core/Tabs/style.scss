@@ -1,0 +1,18 @@
+@import '../../../style/variables.scss';
+.tabs {
+  display: flex;
+  border-bottom: 1px solid $gray_bg;
+  .btn {
+    color: $gray_text;
+    border: none;
+    background: none;
+    text-align: center;
+    text-transform: uppercase;
+    width: 33.333%;
+    font-size: 0.9rem;
+    &.active {
+      color: $pink_text;
+      border-bottom: 2px solid $pink_text;
+    }
+  }
+}

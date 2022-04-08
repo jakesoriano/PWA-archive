@@ -74,6 +74,12 @@ class EditProfile extends Component {
         message: '',
         hasError: false,
       },
+      email: {
+        value: profile.email ? profile.email : '',
+        error: '',
+        message: '',
+        hasError: false,
+      },
       mobilePrefix: {
         value: profile.mobilePrefix ? profile.mobilePrefix : '',
         error: '',
@@ -282,9 +288,25 @@ class EditProfile extends Component {
 	    acceptedPrivacyPolicy: {
 	      ...this.state.acceptedPrivacyPolicy,
 	      value: value,
+	      hasError: !Boolean(value) || !Boolean(value !== getConfigByKey('acceptedPrivacyPolicy')),
+	      error: !Boolean(value) ? 'REQUIRED' : value !== getConfigByKey('acceptedPrivacyPolicy') ? 'Please accept updated policy.' : '',
 	    },
 	  });
 	};
+
+	onEmailChange = (value) => {
+	  const validEmail = value.match(
+	    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+	  );
+	  this.setState({
+	    email: {
+	      ...this.state.email,
+	      value: value,
+	      hasError: !Boolean(validEmail) || !Boolean(value),
+	      error: !Boolean(value) ? 'REQUIRED' : !Boolean(validEmail) ? 'Invalid Email' : '',
+	    },
+	  });
+	}
 
 	validateDob = (value) => {
 	  try {
@@ -351,7 +373,9 @@ class EditProfile extends Component {
 			!this.state.province.value ||
 			!this.state.municipality.value ||
 			!this.state.barangay.value ||
-			!this.state.isRegisteredVoter.value
+			!this.state.isRegisteredVoter.value||
+			!this.state.email.value ||
+			!this.state.acceptedPrivacyPolicy.value
 	  ) {
 	    this.onFnameChange(this.state.fname.value);
 	    this.onLnameChange(this.state.lname.value);
@@ -362,6 +386,8 @@ class EditProfile extends Component {
 	    this.onMunicipalityChange(this.state.municipality.value);
 	    this.onBarangayChange(this.state.barangay.value);
 	    this.onVoterChange(this.state.isRegisteredVoter.value);
+	    this.onEmailChange(this.state.email.value);
+	    this.onPolicyChange(this.state.acceptedPrivacyPolicy.value)
 	  } else {
 	    // format date and month for birthday
 	    let splitedBDay = (this.state.birthday.value || '').split('-');
@@ -381,6 +407,7 @@ class EditProfile extends Component {
 	      isRegisteredVoter:
 					this.state.isRegisteredVoter.value === 'yes' ? true : false,
 	      acceptedPrivacyPolicy: this.state.acceptedPrivacyPolicy.value,
+	      email: this.state.email.value
 	    };
 	    displayPageLoader(true);
 	    const isUpdatedProfile = isUserUpdatedProfile();
@@ -433,6 +460,7 @@ class EditProfile extends Component {
 	    gender,
 	    acceptedPrivacyPolicy,
 	    mobilePrefix,
+	    email
 	  }
 	) => {
 	  return (
@@ -531,6 +559,22 @@ class EditProfile extends Component {
 	            hasError={birthday.hasError}
 	            error={birthday.error}
 	            message={birthday.message}
+	          />
+	        </FormGroup>
+
+	        <FormGroup label="EMAIL" hasError={email.hasError}>
+	          <FormInput
+	            value={email.value}
+	            type="email"
+	            onInput={(e) => {
+	              this.onEmailChange(e.target.value);
+	            }}
+	            onBlur={(e) => {
+	              this.onEmailChange(e.target.value);
+	            }}
+	            hasError={email.hasError}
+	            error={email.error}
+	            message={email.message}
 	          />
 	        </FormGroup>
 
@@ -685,6 +729,8 @@ class EditProfile extends Component {
 	                  ),
 	                });
 	              }}
+	              hasError={acceptedPrivacyPolicy.hasError}
+	              error={acceptedPrivacyPolicy.error}
 	            />
 	          </div>
 	        </FormGroup>
