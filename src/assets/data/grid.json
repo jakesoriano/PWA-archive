@@ -1147,7 +1147,7 @@
 	{
 		"styles": [],
 		"auth": true,
-		"pageTitle": "H2H_CAMPAIGN",
+		"pageTitle": "H2H_CALENDAR",
 		"uri": "house-to-house-calendar",
 		"withBack": true,
 		"contents": [
