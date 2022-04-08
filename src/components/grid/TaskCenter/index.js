@@ -54,7 +54,7 @@ class TaskCenter extends Component {
 	  try {
 	    // maintenance mode
 	    const maintenance = getConfigByKey('maintenance') || [];
-	    if (maintenance.indexOf('/tasks-center')) {
+	    if (maintenance.indexOf('/tasks-center') > -1) {
 	      showAlertBox({
 	        message: getTranslation('MAINTENANCE_DESC'),
 	      });
