@@ -36,7 +36,11 @@ class Leaderboard extends Component {
           id: 'points',
           title: 'Hero Points',
           period: ['Alltime', 'Daily'],
-          range: ['Global', 'Regional', 'Personal'],
+          range: [
+            'Global',
+            'Regional',
+            // 'Personal'
+          ],
           defaultFilter: {
             period: 'Alltime',
             range: 'Global',
