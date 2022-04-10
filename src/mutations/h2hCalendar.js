@@ -22,7 +22,15 @@ export function fetchHouse2HouseCalendar(page, filter, limit) {
       params: {
         p: page || 1, // page number
         s: limit || 9, // limit
-        ...filter,
+        ...{
+          ...filter,
+          date_start: filter.date_start
+            ? new Date(filter.date_start).getTime()
+            : Date.now(),
+          date_end: filter.date_end
+            ? new Date(filter.date_end).getTime()
+            : Date.now() + 7 * 24 * 60 * 60 * 1000, // + 7 days by default
+        },
       },
     })
       .then((res) => {
@@ -38,6 +46,14 @@ export function fetchHouse2HouseCalendar(page, filter, limit) {
               total: res.data.total,
               fetching: false,
               result: true,
+            },
+          });
+        } else {
+          updateStore({
+            h2hcalendar: {
+              ...h2hcalendar,
+              fetching: false,
+              result: false,
             },
           });
         }

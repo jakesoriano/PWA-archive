@@ -79,14 +79,7 @@ class House2HouseCalendar extends Component {
 	      city: this.state.municipality.value,
 	    };
 	    this.validateFilter(filter);
-	    displayPageLoader(true);
-	    fetchHouse2HouseCalendar(null, filter)
-	      .then(() => {
-	        displayPageLoader(false);
-	      })
-	      .catch((e) => {
-	        displayPageLoader(false);
-	      });
+	    this.fetchData(null, filter);
 	  }
 	};
 
@@ -113,14 +106,7 @@ class House2HouseCalendar extends Component {
 	      city: this.state.municipality.value,
 	    };
 	    this.validateFilter(filter);
-	    displayPageLoader(true);
-	    fetchHouse2HouseCalendar(null, filter)
-	      .then(() => {
-	        displayPageLoader(false);
-	      })
-	      .catch((e) => {
-	        displayPageLoader(false);
-	      });
+	    this.fetchData(null, filter);
 	  }
 	};
 
@@ -140,14 +126,7 @@ class House2HouseCalendar extends Component {
 	      city: value,
 	    };
 	    this.validateFilter(filter);
-	    displayPageLoader(true);
-	    fetchHouse2HouseCalendar(null, filter)
-	      .then(() => {
-	        displayPageLoader(false);
-	      })
-	      .catch((e) => {
-	        displayPageLoader(false);
-	      });
+	    this.fetchData(null, filter);
 	  }
 	};
 
@@ -164,14 +143,7 @@ class House2HouseCalendar extends Component {
 	      city: this.state.municipality.value,
 	    };
 	    this.validateFilter(filter);
-	    displayPageLoader(true);
-	    fetchHouse2HouseCalendar(null, filter)
-	      .then(() => {
-	        displayPageLoader(false);
-	      })
-	      .catch((e) => {
-	        displayPageLoader(false);
-	      });
+	    this.fetchData(null, filter);
 	  }
 	};
 
@@ -181,6 +153,21 @@ class House2HouseCalendar extends Component {
 	      delete filter[key];
 	    }
 	  });
+	};
+
+	fetchData = (page, filter) => {
+	  try {
+	    displayPageLoader(true);
+	    fetchHouse2HouseCalendar(page, filter)
+	      .then(() => {
+	        displayPageLoader(false);
+	      })
+	      .catch((e) => {
+	        displayPageLoader(false);
+	      });
+	  } catch (err) {
+	    displayPageLoader(false);
+	  }
 	};
 
 	handleShowMore = () => {
