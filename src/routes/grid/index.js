@@ -45,6 +45,7 @@ import {
   nativeExitApp,
   nativeGetDeviceId,
   nativeGetVersion,
+  nativeGetPushToken,
 } from '_platform/helpers';
 // eslint-disable-next-line import/extensions
 import style from './style';
@@ -207,6 +208,12 @@ class Grid extends Component {
 	      nativeVersion: v,
 	    });
 	  });
+
+	  // get push notif user token
+	  nativeGetPushToken((data) => {
+	    // alert(JSON.stringify(data.token));
+	    // save to api
+	  });
 	};
 
 	componentDidUpdate = (prevProps) => {
@@ -251,6 +258,35 @@ class Grid extends Component {
 	    // fetch app config
 	    fetchAppConfig();
 	  }
+
+	  // push notif
+	  const url = getCurrentUrl();
+	  if (
+	    this.props.pushNotif &&
+			!this.props.authUser &&
+			url.indexOf('login') === -1
+	  ) {
+	    route(`/landing/login`);
+	  } else if (
+	    this.props.pushNotif &&
+			this.props.authUser &&
+			url.indexOf(this.props.pushNotif) === -1
+	  ) {
+	    this.redirectToPushNotif(this.props.pushNotif);
+	  }
+	};
+
+	redirectToPushNotif = (link) => {
+	  setTimeout(() => {
+	    if (this.props.authUser && link) {
+	      updateStore({
+	        pushNotif: null,
+	      });
+	      route(`/${link}`);
+	    } else {
+	      this.redirectToPushNotif(link);
+	    }
+	  }, 1500);
 	};
 
 	dashboardReady = () => {
@@ -525,6 +561,7 @@ const ConnectComponent = connect([
   'filterShow',
   'tourGuide',
   'successMessage',
+  'pushNotif',
 ])(Grid);
 export default ConnectComponent;
 
@@ -565,5 +602,12 @@ if (typeof window !== 'undefined') {
       // fetch tasks to trigger notification if there is pending
       fetchTasks();
     }
+  };
+
+  // native push notification
+  window.onPush = (link) => {
+    updateStore({
+      pushNotif: link.replace('com.leni2022://mobile/', ''),
+    });
   };
 }

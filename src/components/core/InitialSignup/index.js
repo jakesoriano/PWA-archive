@@ -23,7 +23,7 @@ import {
   nativeSigninGoogle,
   nativeSigninApple,
 } from '_platform/helpers';
-import React from 'react';
+// import React from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 // eslint-disable-next-line import/extensions
 import style from './style';

@@ -230,3 +230,35 @@ export function nativeGetVersion (callback) {
     callback: 'window.cbGetVersion',
   });
 }
+
+export function nativeGetPushToken (callback) {
+  // using native
+  window.cbGetPushToken = (res) => {
+    callback(JSON.parse(res));
+    window.cbGetPushToken = null;
+  }
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeGetPushToken();');
+  callNative({
+    action: 'getPushNotifToken',
+    callback: 'window.cbGetPushToken',
+  });
+}
+
+export function nativeLocalPushNotif (data) {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeLocalPushNotif();');
+  callNative({
+    action: 'localPushNotif',
+    data,
+  });
+}
+
+export function nativeLocalPushNotifSchedule (data) {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeLocalPushNotifSchedule();');
+  callNative({
+    action: 'localPushNotifSchedule',
+    data,
+  });
+}

@@ -71,12 +71,12 @@ class CrowdSourcingItem extends Component {
 	        {/* Houses and Tarp */}
 	        <div className={style.housesTarp}>
 	          <div>
-	            <span className={style.count}>{item?.target}</span>
+	            <span className={`bold ${style.count}`}>{item?.target}</span>
 	            <span>{getTranslation('HOUSES')}</span>
 	          </div>
 
 	          <div>
-	            <span className={style.count}>{item?.quantity}</span>
+	            <span className={`bold ${style.count}`}>{item?.quantity}</span>
 	            <span>{getTranslation(item.purpose)}</span>
 	          </div>
 	        </div>

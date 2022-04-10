@@ -39,9 +39,12 @@ export function prefetch(hasUser) {
     hasUser && fetchLeaderboardTask(),
     hasUser && fetchLeaderboardH2H(),
     hasUser && fetchVideos(),
-    hasUser && fetchMessages(),	
+    hasUser && fetchMessages(),
     hasUser && fetchCommunityVolunteers(),
   ]).then(() => {
-    hasUser && generateNotifications();
+    if (hasUser) {
+      generateNotifications();
+    }
+    return true;
   });
 }

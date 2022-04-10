@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { ImageLoader, LoaderRing } from '_components/core';
 import { fetchCommunityVolunteers } from '_mutations';
