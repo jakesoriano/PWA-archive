@@ -14,7 +14,7 @@ import {
   getTranslation,
   getDayText,
   getDayNum,
-  dateEventFormat,
+  dateH2HCalendarFormat,
   displayPageLoader,
   componentModal,
 } from '_helpers';
@@ -250,7 +250,7 @@ class House2HouseCalendar extends Component {
 	            <div className={style.infoText}>
 	              {item.date && (
 	                <p className={`bold ${style.date}`}>
-	                  {dateEventFormat(item.date)}
+	                  {dateH2HCalendarFormat(item.date)}
 	                </p>
 	              )}
 	              {item.location && (
