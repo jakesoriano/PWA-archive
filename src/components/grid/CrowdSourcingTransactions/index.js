@@ -62,10 +62,10 @@ class CrowdSourcingTransactions extends Component {
 	            {getTranslation('STATUS')}:
 	            <em>
 	              {item.hasOwnProperty('h2hProof')
-	                ? getTranslation('TRANSACTION_RECEIVED')
+	                ? getTranslation('H2H_COMPLETED')
 	                : item.hasOwnProperty('disbursed')
-	                  ? getTranslation('TRANSATION_OTW')
-	                  : getTranslation('TRANSACTION_VERIFYING')}
+	                  ? getTranslation('TRANSACTION_RECEIVED')
+	                  : getTranslation('TRANSATION_OTW')}
 	            </em>
 	          </p>
 	        </div>
