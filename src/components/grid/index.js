@@ -85,3 +85,6 @@ export { default as LandingTrustedByAndLinks } from './LandingTrustedByAndLinks'
 export { default as LandingNewsAndEvents } from './LandingNewsAndEvents';
 export { default as LandingTitle } from './LandingTitle';
 export { default as TextVideoAndDesc } from './TextVideoAndDesc';
+export { default as FullImage } from './FullImage';
+export { default as CrowdSourcingTransactions } from './CrowdSourcingTransactions';
+export { default as CrowdSourcingTransactionDetails } from './CrowdSourcingTransactionDetails';

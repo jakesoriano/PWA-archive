@@ -63,6 +63,12 @@ class Topbar extends Component {
 										this.props.route.url.indexOf('lawyers-for-chel-') > -1
 	                ) {
 	                  this.props.route.router.props.history.goBack();
+	                } else if (
+	                  this.props.route &&
+										this.props.route.url &&
+										this.props.route.url.indexOf('cs-transactions') > -1
+	                ) {
+	                  this.props.route.router.props.history.goBack();
 	                } else {
 	                  props.onBack();
 	                }

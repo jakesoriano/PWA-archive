@@ -76,6 +76,24 @@ export const dateH2HCalendarFormat = (date) => {
   }
 };
 
+export const epochDateFormat = (date) => {
+  const { selectedLanguage } = store.getState();
+  try {
+    const d = new Date(new Date(date).getTime());
+    let month = d.getMonth();
+    let day = d.getDate();
+    day = day < 10 ? `0${day}` : day;
+    const year = d.getFullYear();
+    const time = d
+      .toLocaleTimeString(getLanguageCode(selectedLanguage))
+      .replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, '$1$3');
+    return `${monthNames[month]} ${day}, ${year}, ${time}`;
+  } catch (error) {
+    console.log('SPA >> Component epochDateFormat failed.', error);
+    return '';
+  }
+};
+
 export const dateLastLoginFormat = (date) => {
   const { selectedLanguage } = store.getState();
   try {
