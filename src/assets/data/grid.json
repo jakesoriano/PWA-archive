@@ -939,6 +939,10 @@
 	{
 		"styles": [
 			{
+				"selector": "#printable-merch",
+				"styles": "margin-top: 20px;"
+			},
+			{
 				"selector": "#volunteer-comics",
 				"styles": "margin-top: 10px;"
 			},
@@ -992,18 +996,6 @@
 							"title": "Social Media Content Posting",
 							"link": "https://www.notion.so/7e00a0c241be44e689a141a81fb717ff?v=29eb8910e2824153922e47662ae12e69",
 							"thumb": "assets/images/v_social.png"
-						},
-						{
-							"id": "conversation-kit",
-							"title": "Conversation Kit",
-							"link": "https://drive.google.com/drive/u/7/folders/1JHUaCdAzO_otkum8zVv9mfFWs49osqOP",
-							"thumb": "assets/images/v_convert.png"
-						},
-						{
-							"id": "training-kit",
-							"title": "Training Kit",
-							"link": "https://drive.google.com/drive/u/7/folders/1u_U-O5ent84xXL_EehnL5-KwRom4xcWb",
-							"thumb": "assets/images/v_train.png"
 						},
 						{
 							"id": "volunteer-kit",
