@@ -1,0 +1,33 @@
+@import '../../../style/variables.scss';
+.hfWrap {
+  margin: 10px;
+ .title {
+   color: $pink_text;
+   font-size: 1rem;
+   font-weight: bold;
+   margin-bottom: 10px;
+ }
+ div {
+   text-align: center;
+  //  display: flex;
+  //  align-items: center;
+  //  justify-content: center;
+  .navBox {
+    background-color: $primary;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    > div {
+      width: 40px;
+    }
+    p {
+      color: $white;
+      width: 100%;
+      font-size: 0.8rem;
+    }
+  }
+ }
+}

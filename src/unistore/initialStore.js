@@ -67,6 +67,8 @@ export const initialStore = {
     fetching: false,
     result: false,
     data: [],
+    total: 0,
+    page: 1,
   },
   invited: {
     fetching: false,
@@ -235,6 +237,13 @@ export const initialStore = {
     fetching: false,
     result: false,
     data: [],
+    total: 0,
+    page: 1,
+  },
+  projectsSupported: {
+    data: [],
+    fetching: false,
+    result: false,
     total: 0,
     page: 1,
   },

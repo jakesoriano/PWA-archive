@@ -27,6 +27,32 @@
 		]
 	},
 	{
+		"styles": [
+			{
+				"selector": "#page-widgets #w3",
+				"styles": "padding-bottom: 10px;"
+			}
+		],
+		"pageTitle": "PAGE_PROFILE",
+		"auth": true,
+		"uri": "profile",
+		"contents": [
+			{
+				"component": "ProfileHeader"
+			},
+			{
+				"component": "BeACommunityLeader"
+			},
+			{
+				"component": "KakampinkFriends",
+				"props": {
+					"showAllUrl": "invite",
+					"limit": 5
+				}
+			}
+		]
+	},
+	{
 		"styles": [],
 		"pageTitle": "Initial Signup",
 		"uri": "initial-signup",
@@ -314,7 +340,12 @@
 		]
 	},
 	{
-		"styles": [],
+		"styles": [
+			{
+				"selector": "#page-widgets #w3",
+				"styles": "padding-bottom: 10px;"
+			}
+		],
 		"auth": true,
 		"pageTitle": "PAGE_INVITE",
 		"uri": "invite",
@@ -324,13 +355,10 @@
 				"component": "InviteHeader"
 			},
 			{
-				"component": "InvitedCount"
-			},
-			{
 				"component": "TextAndButtonCard"
 			},
 			{
-				"component": "TopGlobalAndComment"
+				"component": "KakampinkFriends"
 			}
 		]
 	},
@@ -611,7 +639,7 @@
 		"styles": [],
 		"auth": true,
 		"pageTitle": "PAGE_PROFILE",
-		"uri": "profile",
+		"uri": "profile_archive",
 		"withBack": true,
 		"contents": [
 			{

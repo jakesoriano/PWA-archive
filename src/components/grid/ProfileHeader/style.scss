@@ -1,0 +1,156 @@
+@import "../../../style/variables.scss";
+.profileHeaderContainer {
+  position: relative;
+  background-color: #ec0086;
+  margin-bottom: 30px;
+  .dismissTextWrap {
+    position: relative;
+    margin-bottom: 65px;
+    padding-bottom: 40px;
+    max-height: 300px;
+    .extraInfo {
+      display: flex;
+      justify-content: space-evenly;
+
+      div {
+        font-size: 0.75rem;
+        span {
+          font-weight: bold;
+        }
+      }
+      .divider {
+        height: 20px;
+        width: 1px;
+        background-color: $light_gray;
+      }
+    }
+    .sUser {
+      display: flex;
+      padding: 10px 10px;
+  
+      .sAvatar {
+        width: 55px;
+        padding-bottom: 51px;
+        border: 2px solid #fff;
+        border-radius: 80px;
+        background: white;
+      }
+      > div {
+        width: calc(100% - 65px);
+        padding-left: 10px;
+        display: grid;
+        align-content: center;
+        .sName {
+          font-size: 1.2rem;
+          color: $white;
+        }
+        .sLogin {
+          font-size: 0.6rem;
+        }
+      }
+    }
+    &.hide {
+      transition: all 0.2s ease-out;
+      overflow: hidden;
+      max-height: 40px;
+    }
+  }
+  .countdownCont {
+    position: absolute;
+    bottom: -50px;
+    background-color: transparent;
+    width: 100%;
+
+    .infoWrap {
+      display: flex;
+      padding: 10px;
+      .info {
+        background-color: $blue_bg;
+        border-radius: 10px;
+        padding: 5px;
+        flex-grow: 1;
+        .title {
+          color: $white;
+          font-size: 0.6rem;
+          text-align: center;
+        }
+        .content {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          width: 100%;
+          margin: 0 auto;
+          .divider {
+            height: 40px;
+            width: 1px;
+            background-color: $light_gray;
+          }
+          .count {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            span {
+              font-size: 1rem;
+            }
+            span:last-child {
+              font-size: 0.5rem;
+              text-transform: uppercase;
+            }
+          }
+          .menu {
+            width: 20%;
+            text-align: center;
+            padding-bottom: 5px;
+            a {
+              flex-grow: 1;
+              padding: 9px 5px;
+              display: block;
+              width: 20%;
+              text-transform: uppercase;
+              color: #d3dee3;
+              text-decoration: none;
+              line-height: 1;
+              text-align: center;
+              align-self: center;
+            }
+            .imgCont {
+              text-align: center;
+              width: 30px;
+              padding-bottom: 30px;
+              margin: 10px auto 0;
+            }
+            p {
+              font-size: 0.6rem;
+              margin-top: 5px;
+              width: 100%;
+            }
+            .dot {
+              margin: 0;
+              justify-content: center;
+            }
+            &.active {
+              p {
+                opacity: 1;
+              }
+            }
+            .title {
+              text-align: center;
+            }
+          }
+
+        }
+        &AppDownload {
+          background-color: #231f20;
+        }
+        .appDownload {
+          color: $white;
+          font-size: 1.2rem;
+          text-align: center;
+          display: block;
+        }
+
+
+      }
+    }
+  }
+}
