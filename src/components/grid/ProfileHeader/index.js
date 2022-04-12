@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
-import { displayUserRole, getTranslation, displayName } from '_helpers';
+import { getUserRole, getTranslation, displayName } from '_helpers';
 import { ImageLoader } from '_components/core';
 import { Link } from 'preact-router/match';
 import style from './style.scss';
@@ -89,7 +89,7 @@ class ProfileHeader extends Component {
 	        </div>
 	        <div className={style.divider}></div>
 	        <div>
-						Level: <span>{displayUserRole()}</span>
+						Level: <span>{getUserRole()}</span>
 	        </div>
 	      </div>
 	    </div>

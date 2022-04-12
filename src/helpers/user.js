@@ -23,7 +23,12 @@ export function isUserUpdatedProfile() {
   return Boolean(authUser?.profile.email);
 }
 
-export function displayUserRole() {
+export function getUserRole() {
   const { authUser } = store.getState();
   return authUser?.profile?.roles === '100' ? 'Leader' : 'Member';
+}
+
+export function isCommunityLeader() {
+  const { authUser } = store.getState();
+  return authUser?.profile?.roles === '100' ? true : false;
 }

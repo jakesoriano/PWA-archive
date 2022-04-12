@@ -1,15 +1,17 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
 import { connect } from 'unistore/preact';
-import { getTranslation } from '_helpers';
+import { getTranslation, isCommunityLeader } from '_helpers';
 import style from './style';
 
 class BeACommunityLeader extends Component {
 	render = ({ page }) => {
+	  if (isCommunityLeader()) {
+	    return;
+	  }
 	  return (
 	    <div className={style.hfWrap}>
 	      <p className={`bold ${style.title}`}>{getTranslation('BE_A_LEADER')}</p>
-
 	      <div>
 	        <div
 	          className={`${style.navBox}`}
