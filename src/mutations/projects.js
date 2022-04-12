@@ -7,7 +7,9 @@ export function fetchProjectsSupported(page, limit) {
 
   // fetching
   if (projectsSupported.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state

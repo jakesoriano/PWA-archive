@@ -181,10 +181,10 @@ export const getCountdown = (endDate) => {
     finish,
   };
 };
-export const getMonthYear = (date) => {
+export const getMonthYear = (date, isEpoc) => {
   const { selectedLanguage } = store.getState();
   try {
-    const d = new Date(new Date(date).getTime() - gmtHours);
+    const d = new Date(new Date(date).getTime() - (isEpoc ? 0 : gmtHours));
     let month = d.getMonth();
     let day = d.getDate();
     day = day < 10 ? `0${day}` : day;
@@ -198,18 +198,18 @@ export const getMonthYear = (date) => {
     return date;
   }
 };
-export const getDayText = (date) => {
+export const getDayText = (date, isEpoc) => {
   try {
-    const d = new Date(new Date(date).getTime() - gmtHours);
+    const d = new Date(new Date(date).getTime() - (isEpoc ? 0 : gmtHours));
     return days[d.getDay()];
   } catch (error) {
     console.log('SPA >> Component dateEventFormat failed.', error);
     return date;
   }
 };
-export const getDayNum = (date) => {
+export const getDayNum = (date, isEpoc) => {
   try {
-    const d = new Date(new Date(date).getTime() - gmtHours);
+    const d = new Date(new Date(date).getTime() - (isEpoc ? 0 : gmtHours));
     let day = d.getDate();
     return day < 10 ? `0${day}` : day;
   } catch (error) {

@@ -7,7 +7,9 @@ export function getCommunityCrowdsourcing(page, limit) {
 
   // fetching
   if (crowdsourcing.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state

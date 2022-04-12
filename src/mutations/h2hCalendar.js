@@ -23,13 +23,13 @@ export function fetchHouse2HouseCalendar(page, filter, limit) {
         p: page || 1, // page number
         s: limit || 9, // limit
         ...{
-          ...filter,
-          date_start: filter.date_start
-            ? new Date(filter.date_start).getTime()
-            : Date.now(),
-          date_end: filter.date_end
-            ? new Date(filter.date_end).getTime()
-            : Date.now() + 7 * 24 * 60 * 60 * 1000, // + 7 days by default
+          ...(filter || {}),
+          date_start: filter?.date_start
+            ? new Date(filter?.date_start).getTime()
+            : new Date().setHours('00', '00', '00'),
+          date_end: filter?.date_end
+            ? new Date(filter?.date_end).getTime()
+            : new Date().setHours('23', '59', '59') + 7 * 24 * 60 * 60 * 1000, // + 7 days by default
         },
       },
     })

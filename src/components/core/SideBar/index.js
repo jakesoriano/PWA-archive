@@ -7,8 +7,7 @@ import {
   getTranslation,
   dateLastLoginFormat,
   isUsingSocialLogin,
-  showTourGuide,
-	isCommunityLeader
+  isCommunityLeader,
 } from '_helpers';
 import { ImageLoader } from '_components/core';
 import { logOut } from '_mutations';

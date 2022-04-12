@@ -7,7 +7,9 @@ export function fetchEvents(page, limit) {
 
   // fetching
   if (events.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -61,7 +63,9 @@ export function fetchUpcomingOtherEvents(view, page, limit) {
 
   // fetching
   if (upevents.fetching || oevents.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -84,16 +88,16 @@ export function fetchUpcomingOtherEvents(view, page, limit) {
   }
 
   return new Promise((resolve) => {
-    xhr(`${urlEvents}/feed/followed`,{
+    xhr(`${urlEvents}/feed/followed`, {
       method: 'GET',
       params: {
         s: limit || '50',
         p: page || '1',
-        view: view
-      }
+        view: view,
+      },
     })
       .then((res) => {
-        console.log(res)
+        console.log(res);
         if (view === 'current_month') {
           updateStore({
             upevents: {
@@ -152,7 +156,9 @@ export function fetchEventsByCommunityId(id, page, limit) {
 
   // fetching
   if (cevents.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state

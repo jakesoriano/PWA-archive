@@ -2,23 +2,25 @@ import { store, updateStore } from '_unistore';
 import { xhr, urlFetchStories } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
-export function fetchStories () {
+export function fetchStories() {
   // current state
   const { stories } = store.getState();
   const { authUser } = store.getState();
 
   // fetching
   if (stories.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
-  
+
   // initial state
   updateStore({
     stories: {
       ...stories,
       fetching: true,
-      result: false
-    }
+      result: false,
+    },
   });
 
   return new Promise((resolve) => {
@@ -30,8 +32,8 @@ export function fetchStories () {
           stories: {
             data: res.data,
             fetching: false,
-            result: true
-          }
+            result: true,
+          },
         });
         console.log(`SPA >> fetchStories Success`, res.success);
         resolve(true);
@@ -41,8 +43,8 @@ export function fetchStories () {
           stories: {
             ...stories,
             fetching: false,
-            result: false
-          }
+            result: false,
+          },
         });
         console.log(`SPA >> fetchStories Error`, err);
         resolve(false);

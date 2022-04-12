@@ -8,7 +8,9 @@ export function fetchCSTransactions(page, limit) {
 
   // fetching
   if (cstransactions.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state

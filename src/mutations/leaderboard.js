@@ -62,7 +62,9 @@ export function fetchLeaderboardPoints(filter) {
 
   // fetching
   if (leaderboard.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -125,7 +127,9 @@ export function fetchLeaderboardTask(filter) {
 
   // fetching
   if (leaderboardTask.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -187,7 +191,9 @@ export function fetchLeaderboardH2H() {
 
   // fetching
   if (leaderboardH2H.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state

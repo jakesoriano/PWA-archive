@@ -8,7 +8,9 @@ export function fetchInvited() {
 
   // fetching
   if (invited.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state

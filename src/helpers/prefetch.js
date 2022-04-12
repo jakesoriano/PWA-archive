@@ -18,6 +18,7 @@ import {
   fetchVideos,
   fetchMessages,
   fetchCommunityVolunteers,
+  fetchHouse2HouseCalendar,
 } from '_mutations';
 
 // eslint-disable-next-line import/prefer-default-export
@@ -41,6 +42,7 @@ export function prefetch(hasUser) {
     hasUser && fetchVideos(),
     hasUser && fetchMessages(),
     hasUser && fetchCommunityVolunteers(),
+    hasUser && fetchHouse2HouseCalendar(),
   ]).then(() => {
     if (hasUser) {
       generateNotifications();

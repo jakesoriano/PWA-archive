@@ -7,9 +7,8 @@ import {
   getTranslation,
   getConfigByKey,
   setItemWithExpiry,
-  getItemWithExpiry
+  getItemWithExpiry,
 } from '_helpers';
-
 
 function taskNotification(data) {
   try {
@@ -18,22 +17,27 @@ function taskNotification(data) {
     storeData = storeData.circleModal || null;
     const cookieKey = 'pt';
     const hasCookie = parseInt(getItemWithExpiry(cookieKey) || '0');
-    const pendingTask = data.find(i => i.completed !== true);
+    const pendingTask = data.find((i) => i.completed !== true);
     if (pendingTask && !hasCookie) {
-      const expDate = Date.now() + ((1000 * 60) * getConfigByKey('taskNotifInterval'));
+      const expDate =
+				Date.now() + 1000 * 60 * getConfigByKey('taskNotifInterval');
       setItemWithExpiry(cookieKey, 1, expDate);
       const data = {
         title: getTranslation('TASKS_NOTIF_TITLE'),
         content: getTranslation('TASKS_NOTIF_CONTENT'),
         link: {
           url: '/task-center',
-          text: getTranslation('TASKS_NOTIF_LINK')
-        }
+          text: getTranslation('TASKS_NOTIF_LINK'),
+        },
       };
-      circleModal(storeData ? {
-        ...storeData,
-        next: data
-      } : data);
+      circleModal(
+        storeData
+          ? {
+            ...storeData,
+            next: data,
+					  }
+          : data
+      );
     }
   } catch (err) {
     console.error('taskNotification', err);
@@ -41,7 +45,7 @@ function taskNotification(data) {
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export function fetchTasks () {
+export function fetchTasks() {
   // curreny state
   const { tasks } = store.getState();
 
@@ -49,16 +53,18 @@ export function fetchTasks () {
   // const currentDate = Date.now();
   // if (tasks.data && tasks.date && currentDate < tasks.date) {
   if (tasks.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
-  
+
   // initial state
   updateStore({
     tasks: {
       ...tasks,
       fetching: true,
-      result: false
-    }
+      result: false,
+    },
   });
 
   return xhr(urlTasks)
@@ -69,9 +75,9 @@ export function fetchTasks () {
             data: res.data,
             fetching: false,
             result: true,
-            date: new Date().setHours(23, 59, 50),
-            completed: !Boolean(res.data.find(i => i.completed !== true))
-          }
+            date: new Date().setHours('23', '59', '50'),
+            completed: !Boolean(res.data.find((i) => i.completed !== true)),
+          },
         });
         // task notification
         setTimeout(() => {
@@ -82,8 +88,8 @@ export function fetchTasks () {
           tasks: {
             ...tasks,
             fetching: false,
-            result: false
-          }
+            result: false,
+          },
         });
       }
       return true;
@@ -93,35 +99,35 @@ export function fetchTasks () {
         tasks: {
           ...tasks,
           fetching: false,
-          result: false
-        }
+          result: false,
+        },
       });
       return false;
     });
 }
 
-export function validateTask (id) {
+export function validateTask(id) {
   return new Promise((resolve) => {
     xhr(urlValidateTask.replace('{id}', id), {
-      method: 'POST'
+      method: 'POST',
     })
       .then((res) => {
         if (res.success) {
           // curreny state
           const { tasks } = store.getState();
           // update status
-          const newData = tasks.data.map(i => {
+          const newData = tasks.data.map((i) => {
             if (i.id === id) {
               i.completed = true;
             }
             return i;
-          })
+          });
           updateStore({
             tasks: {
               ...tasks,
               data: newData,
-              completed: !Boolean(newData.find(i => i.completed !== true))
-            }
+              completed: !Boolean(newData.find((i) => i.completed !== true)),
+            },
           });
           resolve(1);
         } else {

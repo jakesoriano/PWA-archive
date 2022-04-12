@@ -1,8 +1,5 @@
 import { updateStore, store } from '_unistore';
-import {
-  xhr,
-  urlVideos
-} from '_helpers';
+import { xhr, urlVideos } from '_helpers';
 
 // eslint-disable-next-line import/prefer-default-export
 export function filterVideos(name, page, limit) {
@@ -11,7 +8,9 @@ export function filterVideos(name, page, limit) {
 
   // fetching
   if (videos.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -19,30 +18,30 @@ export function filterVideos(name, page, limit) {
     videos: {
       ...videos,
       fetching: true,
-      result: false
-    }
+      result: false,
+    },
   });
-  
+
   return new Promise((resolve) => {
     xhr(urlVideos, {
       params: {
         q: name || '', // query string
         p: page || 1, // page number
-        s: limit || 6 // limit
-      }
+        s: limit || 6, // limit
+      },
     })
       .then((res) => {
         updateStore({
           videos: {
-            data: page && page > 1 ? [
-              ...videos.data,
-              ...res.data.results
-            ] : res.data.results,
+            data:
+							page && page > 1
+							  ? [...videos.data, ...res.data.results]
+							  : res.data.results,
             total: res.data.total,
             page: page || 1,
             fetching: false,
-            result: true
-          }
+            result: true,
+          },
         });
         resolve(true);
       })
@@ -51,8 +50,8 @@ export function filterVideos(name, page, limit) {
           videos: {
             ...videos,
             fetching: false,
-            result: false
-          }
+            result: false,
+          },
         });
         resolve(false);
       });
@@ -65,7 +64,9 @@ export function fetchVideos(page, limit) {
 
   // fetching
   if (videos.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -73,30 +74,30 @@ export function fetchVideos(page, limit) {
     videos: {
       ...videos,
       fetching: true,
-      result: false
-    }
+      result: false,
+    },
   });
 
   return new Promise((resolve) => {
     xhr(urlVideos, {
       params: {
         p: page || 1, // page number
-        s: limit || 6 // limit
-      }
+        s: limit || 6, // limit
+      },
     })
       .then((res) => {
         updateStore({
           videos: {
             ...videos,
-            data: page && page > 1 ? [
-              ...videos.data,
-              ...res.data.results
-            ] : res.data.results,
+            data:
+							page && page > 1
+							  ? [...videos.data, ...res.data.results]
+							  : res.data.results,
             total: res.data.total,
             page: page || 1,
             fetching: false,
-            result: true
-          }
+            result: true,
+          },
         });
         resolve(true);
       })
@@ -105,12 +106,10 @@ export function fetchVideos(page, limit) {
           videos: {
             ...videos,
             fetching: false,
-            result: false
-          }
+            result: false,
+          },
         });
         resolve(false);
       });
   });
 }
-
-

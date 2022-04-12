@@ -8,7 +8,9 @@ export function fetchMembers(page, limit) {
 
   // fetching
   if (members.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
