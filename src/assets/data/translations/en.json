@@ -424,11 +424,11 @@
 	"NANAY_VOL": "Nanay Volunteer",
 	"PROGRESS": "Progress",
 	"PAYMENT_COMPLETED": "Payment Completed",
-	"PAYMENT_COMPLETED_DESCR": "Lorem ipsum dolor sit amet. Qui cumque quidem a recusandae explicabo ut totam soluta aut molestiae beatae est animi quisquam nam adipisci consequatur.",
+	"PAYMENT_COMPLETED_DESCR": "Your payment has been successfully confirmed by our payment partner.",
 	"PAYMENT_DISBURSED": "Payment Disbursed",
-	"PAYMENT_DISBURSED_DESCR": "Lorem ipsum dolor sit amet. Qui cumque quidem a recusandae explicabo ut totam soluta aut molestiae beatae est animi quisquam nam adipisci consequatur.",
+	"PAYMENT_DISBURSED_DESCR": "Your donation has been received by our House-to-House Volunteers.",
 	"H2H_COMPLETED": "House-to-House Completed",
-	"H2H_COMPLETED_DESCR": "Lorem ipsum dolor sit amet. Qui cumque quidem a recusandae explicabo ut totam soluta aut molestiae beatae est animi quisquam nam adipisci consequatur.",
+	"H2H_COMPLETED_DESCR": "Our volunteers have successfully completed House-to-House with your help. You may view the photos of the activity below. Salamat, KakamPink!",
 	"VIEW_PROOF": "View proof of work",
 	"H2H_TRANSACTION_DETAILS": "House-to-House Transaction Details"
 }
