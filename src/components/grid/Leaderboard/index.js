@@ -24,7 +24,7 @@ class Leaderboard extends Component {
         {
           id: 'task',
           title: 'Tasks',
-          period: ['Daily', 'Alltime'],
+          period: ['Daily', 'Weekly', 'Alltime'],
           range: ['Global', 'Regional'],
           defaultFilter: {
             period: 'Daily',
@@ -35,12 +35,8 @@ class Leaderboard extends Component {
         {
           id: 'points',
           title: 'Hero Points',
-          period: ['Daily', 'Alltime'],
-          range: [
-            'Global',
-            'Regional',
-            // 'Personal'
-          ],
+          period: ['Daily', 'Weekly', 'Alltime'],
+          range: ['Global', 'Regional', 'Personal'],
           defaultFilter: {
             period: 'Daily',
             range: 'Global',

@@ -31,11 +31,11 @@ function getAppendUser(type, filter) {
       return {
         profile: authUser.profile,
         members: authUser.members,
-        rank: rank,
+        rank,
         points:
 					filter.period === 'alltime'
 					  ? authUser?.points
-					  : authUser?.points_daily,
+					  : authUser[`points_${filter.period}`],
       };
     }
   } else {
@@ -48,7 +48,7 @@ function getAppendUser(type, filter) {
         completedTaskCount:
 					filter.period === 'alltime'
 					  ? authUser?.completedTaskCount
-					  : authUser?.completedTaskCount_daily,
+					  : authUser[`completedTaskCount_${filter.period}`],
       };
     }
   }
@@ -82,6 +82,7 @@ export function fetchLeaderboardPoints(filter) {
 
   return xhr(urlLeaderboard, { params })
     .then((res) => {
+      console.error(res);
       // append curret user, filter and sort
       const data = (
         appendUserData ? [...res.data, ...[appendUserData]] : res.data
