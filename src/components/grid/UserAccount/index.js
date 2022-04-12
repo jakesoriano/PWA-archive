@@ -10,6 +10,7 @@ import {
   displayName,
   showAlertBox,
   isUserUpdatedProfile,
+	isCommunityLeader
 } from '_helpers';
 import { fetchUserPoints } from '_mutations';
 import { nativeShare } from '_platform/helpers';
@@ -93,7 +94,7 @@ class AccountProfile extends Component {
 	      <div className={style.bottom}>
 	        <div>
 	          <p className={style.text}>{getTranslation('ACCOUNT_LEVEL')}</p>
-	          {authUser.profile.roles == '100' ? (
+	          {isCommunityLeader() ? (
 	            <p className={`bold ${style.text}`}>
 	              {getTranslation('LABEL_COMMUNITY_LEADER')}
 	            </p>
