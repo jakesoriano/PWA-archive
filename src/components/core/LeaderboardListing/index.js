@@ -126,10 +126,9 @@ class LeaderboardListing extends Component {
 	          : null}
 	      </div>
 	      {/* no record */}
-	      {!data ||
-					(data.length <= 0 && (
-					  <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
-					))}
+	      {!data || (data && data.length <= 0) ? (
+	        <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
+	      ) : null}
 	      {/* Loader */}
 	      {fetching && <LoaderRing fullpage />}
 	      {/* Filter */}

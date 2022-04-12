@@ -11,7 +11,7 @@ function getFilterParams(filter) {
   const { authUser } = store.getState();
   return {
     top: filter?.top || getConfigByKey('leaderboard', 'top'),
-    period: (filter?.period || 'alltime').toLowerCase(),
+    period: (filter?.period || 'daily').toLowerCase(),
     type: (filter?.range || 'global').toLowerCase(),
     ...(filter?.range?.toLowerCase() === 'regional'
       ? {
@@ -82,10 +82,11 @@ export function fetchLeaderboardPoints(filter) {
 
   return xhr(urlLeaderboard, { params })
     .then((res) => {
-      console.error(res);
       // append curret user, filter and sort
       const data = (
-        appendUserData ? [...res.data, ...[appendUserData]] : res.data
+        appendUserData
+          ? [...(res?.data || []), ...[appendUserData]]
+          : res?.data || []
       )
         .filter((i) => i)
         .sort((a, b) => b.points - a.points);
@@ -107,6 +108,7 @@ export function fetchLeaderboardPoints(filter) {
       updateStore({
         leaderboard: {
           ...leaderboard,
+          data: null,
           fetching: false,
           result: false,
         },
@@ -145,7 +147,9 @@ export function fetchLeaderboardTask(filter) {
     .then((res) => {
       // append curret user, filter and sort
       const data = (
-        appendUserData ? [...res.data, ...[appendUserData]] : res.data
+        appendUserData
+          ? [...(res?.data || []), ...[appendUserData]]
+          : res?.data || []
       )
         .filter((i) => i)
         .sort((a, b) => b.completedTaskCount - a.completedTaskCount);
@@ -167,6 +171,7 @@ export function fetchLeaderboardTask(filter) {
       updateStore({
         leaderboardTask: {
           ...leaderboardTask,
+          data: null,
           fetching: false,
           result: false,
         },
@@ -198,7 +203,7 @@ export function fetchLeaderboardH2H() {
   return new Promise((resolve) => {
     xhr(urlLeaderboardH2H)
       .then((res) => {
-        const data = (res.data?.results?.filter((i) => i) || []).sort(
+        const data = ((res?.data || [])?.results?.filter((i) => i) || []).sort(
           (a, b) => b.count - a.count
         );
         updateStore({
@@ -217,6 +222,7 @@ export function fetchLeaderboardH2H() {
         updateStore({
           leaderboardH2H: {
             ...leaderboardH2H,
+            data: null,
             fetching: false,
             result: false,
           },

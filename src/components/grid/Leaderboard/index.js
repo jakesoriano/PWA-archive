@@ -165,9 +165,9 @@ class Leaderboard extends Component {
 	      <LeaderboardListing
 	        id={active?.tab}
 	        fetching={
-	          !leaderboard.result ||
-						!leaderboardTask.result ||
-						!leaderboardH2H.result
+	          leaderboard.fetching ||
+						leaderboardTask.fetching ||
+						leaderboardH2H.fetching
 	        }
 	        data={this.getDataById(active.tab)}
 	      />
