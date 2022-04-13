@@ -19,9 +19,14 @@
     }
   }
   .message {
-    color: $gray;
+    color: $gray_text;
     font-style: italic;
     font-size: 0.8rem;
+  }
+  .note {
+    color: $black;
+    font-size: 0.8rem;
+    margin-top: 10px;
   }
   .results {
     margin-top: 15px;

@@ -506,6 +506,13 @@
 				}
 			},
 			{
+				"component": "Text",
+				"props": {
+					"text": "H2H_NOTE",
+					"id": "h2h-note"
+				}
+			},
+			{
 				"component": "CrowdSourcingList",
 				"props": {
 					"title": "House-to-House Volunteers"
