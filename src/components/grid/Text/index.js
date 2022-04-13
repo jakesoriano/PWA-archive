@@ -1,4 +1,5 @@
 import { Component } from 'preact';
+import { getTranslation } from '_helpers';
 import style from './style';
 class Text extends Component {
 	render = ({ text, id, additionalClass, isTitle }) =>
@@ -9,7 +10,7 @@ class Text extends Component {
 					isTitle ? style.title : ''
 				}`}
 	    >
-	      {text}
+	      {getTranslation(text)}
 	    </p>
 	  );
 }

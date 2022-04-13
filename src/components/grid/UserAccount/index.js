@@ -10,7 +10,7 @@ import {
   displayName,
   showAlertBox,
   isUserUpdatedProfile,
-	isCommunityLeader
+  isCommunityLeader,
 } from '_helpers';
 import { fetchUserPoints } from '_mutations';
 import { nativeShare } from '_platform/helpers';

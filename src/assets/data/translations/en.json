@@ -389,7 +389,7 @@
 	"SUBMIT_SUCCESS_NANAY": "Thank you for agreeing to support {BRGY}!, Your transaction has been {STATUS}.",
 	"REFERENCE_DATA_NOT_FOUND": "Selected item is already supported.",
 	"REFERENCE_DATA_LOCKED": "Selected item is already processing by other user.",
-	"FOLLOWING_TERMS": "By continuing, you understand and agree to the following terms:", 
+	"FOLLOWING_TERMS": "By continuing, you understand and agree to the following terms:",
 	"IS_FILIPINO": "I am a Filipino citizen",
 	"IS_PAYING": "I am paying to team up with other volunteers who can buy materials and conduct house to house or other similar activities",
 	"IS_RECEIVING": "The App receives nothing from this payment. This feature is managed by an independent volunteer group and facilitates peer-to-peer transactions between the users of the app and various volunteer groups doing house-to-house campaignin",
@@ -430,5 +430,6 @@
 	"H2H_COMPLETED": "House-to-House Completed",
 	"H2H_COMPLETED_DESCR": "Our volunteers have successfully completed House-to-House with your help. You may view the photos of the activity below. Salamat, KakamPink!",
 	"VIEW_PROOF": "View proof of work",
-	"H2H_TRANSACTION_DETAILS": "House-to-House Transaction Details"
+	"H2H_TRANSACTION_DETAILS": "House-to-House Transaction Details",
+	"H2H_NOTE": "NOTE: No House-to-House Campaigns are scheduled on April 14 and 15 in accordance with election law."
 }

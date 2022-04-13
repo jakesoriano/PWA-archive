@@ -541,6 +541,13 @@
 				}
 			},
 			{
+				"component": "Text",
+				"props": {
+					"text": "H2H_NOTE",
+					"id": "h2h-note"
+				}
+			},
+			{
 				"component": "FullImage",
 				"props": {
 					"src": "{CDN_DOMAIN_FILES}crowdsourcing_infograph.jpg",

@@ -383,6 +383,7 @@ class House2HouseCalendar extends Component {
 	    <p className={`semiBold ${style.message}`}>
 	      {getTranslation('RESULTS_AUTOMATIC')}
 	    </p>
+	    <p className={style.note}>{getTranslation('H2H_NOTE')}</p>
 	    <div className={style.results}>
 	      <p className={`bold ${style.heading}`}>{getTranslation('RESULTS')}</p>
 	      {/* results */}
