@@ -72,9 +72,7 @@ class Topbar extends Component {
 	                } else if (
 	                  this.props.route &&
 										this.props.route.url &&
-										this.props.route.previous === '/profile' &&
-										(this.props.route.url === '/leaderboard' ||
-											this.props.route.url === '/invite')
+										this.props.route.previous === '/profile'
 	                ) {
 	                  this.props.route.router.props.history.goBack();
 	                } else {
