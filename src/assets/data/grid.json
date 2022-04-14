@@ -27,100 +27,6 @@
 		]
 	},
 	{
-		"styles": [
-			{
-				"selector": "#page-widgets #w3",
-				"styles": "padding-bottom: 10px;"
-			},
-			{
-				"selector": [
-					"#profile-lawyers-for-chel",
-					"#profile-pollwatcher"
-				],
-				"styles": "margin-top: 0; padding-bottom: 10px;"
-			},
-			{
-				"selector": "#profile-search-pinkpedia",
-				"styles": "background: #FFF; border: 2px solid #1a4789; display: block; text-align: center; margin-right: 15px;"
-			},
-			{
-				"selector": "#profile-search-pinkpedia > div",
-				"styles": "width: 20px; min-width: 20px; padding-bottom: 20px; display: inline-block;"
-			},
-			{
-				"selector": "#profile-search-pinkpedia span",
-				"styles": "color: #1a4789; position: relative; top: -4px; font-family: 'OpenSans-Bold', arial, sans-serif;"
-			},
-			{
-				"selector": "#profile-logout",
-				"styles": "background: transparent; block; text-align: center; margin-right: 15px;"
-			},
-			{
-				"selector": "#profile-logout span",
-				"styles": "color: #000; font-family: 'OpenSans-Bold', arial, sans-serif; text-transform: uppercase;"
-			}
-		],
-		"pageTitle": "PAGE_PROFILE",
-		"auth": true,
-		"uri": "profile",
-		"contents": [
-			{
-				"component": "ProfileHeader"
-			},
-			{
-				"component": "BeACommunityLeader"
-			},
-			{
-				"component": "KakampinkFriends",
-				"props": {
-					"showAllUrl": "invite",
-					"limit": 5
-				}
-			},
-			{
-				"component": "Banner",
-				"props": {
-					"id": "profile-pollwatcher",
-					"image": "{CDN_DOMAIN_FILES}pollwatcher.jpg",
-					"url": "poll-watcher"
-				}
-			},
-			{
-				"component": "Banner",
-				"props": {
-					"id": "profile-lawyers-for-chel",
-					"image": "{CDN_DOMAIN_FILES}lawyers-for-chel.png",
-					"url": "lawyers-for-chel"
-				}
-			},
-			{
-				"component": "Buttons",
-				"props": {
-					"data": [
-						{
-							"id": "profile-search-pinkpedia",
-							"text": "SEARCH_PINKPEDIA",
-							"icon": "assets/images/magnifer_blue.png",
-							"url": "lenipedia"
-						}
-					]
-				}
-			},
-			{
-				"component": "Buttons",
-				"props": {
-					"isLogout": true,
-					"data": [
-						{
-							"id": "profile-logout",
-							"text": "LOGOUT"
-						}
-					]
-				}
-			}
-		]
-	},
-	{
 		"styles": [],
 		"pageTitle": "Initial Signup",
 		"uri": "initial-signup",
@@ -394,6 +300,101 @@
 			},
 			{
 				"component": "KakampinkFriends"
+			}
+		]
+	},
+	{
+		"styles": [
+			{
+				"selector": "#page-widgets #w3",
+				"styles": "padding-bottom: 10px;"
+			},
+			{
+				"selector": [
+					"#profile-lawyers-for-chel",
+					"#profile-pollwatcher"
+				],
+				"styles": "margin-top: 0; padding-bottom: 10px;"
+			},
+			{
+				"selector": "#profile-search-pinkpedia",
+				"styles": "background: #FFF; border: 2px solid #1a4789; display: block; text-align: center; margin-right: 15px;"
+			},
+			{
+				"selector": "#profile-search-pinkpedia > div",
+				"styles": "width: 20px; min-width: 20px; padding-bottom: 20px; display: inline-block;"
+			},
+			{
+				"selector": "#profile-search-pinkpedia span",
+				"styles": "color: #1a4789; position: relative; top: -4px; font-family: 'OpenSans-Bold', arial, sans-serif;"
+			},
+			{
+				"selector": "#profile-logout",
+				"styles": "background: transparent; block; text-align: center; margin-right: 15px;"
+			},
+			{
+				"selector": "#profile-logout span",
+				"styles": "color: #000; font-family: 'OpenSans-Bold', arial, sans-serif; text-transform: uppercase;"
+			}
+		],
+		"pageTitle": "PAGE_PROFILE",
+		"auth": true,
+		"uri": "profile",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "ProfileHeader"
+			},
+			{
+				"component": "BeACommunityLeader"
+			},
+			{
+				"component": "KakampinkFriends",
+				"props": {
+					"showAllUrl": "invite",
+					"limit": 5
+				}
+			},
+			{
+				"component": "Banner",
+				"props": {
+					"id": "profile-pollwatcher",
+					"image": "{CDN_DOMAIN_FILES}pollwatcher.jpg",
+					"url": "poll-watcher"
+				}
+			},
+			{
+				"component": "Banner",
+				"props": {
+					"id": "profile-lawyers-for-chel",
+					"image": "{CDN_DOMAIN_FILES}lawyers-for-chel.png",
+					"url": "lawyers-for-chel"
+				}
+			},
+			{
+				"component": "Buttons",
+				"props": {
+					"data": [
+						{
+							"id": "profile-search-pinkpedia",
+							"text": "SEARCH_PINKPEDIA",
+							"icon": "assets/images/magnifer_blue.png",
+							"url": "lenipedia"
+						}
+					]
+				}
+			},
+			{
+				"component": "Buttons",
+				"props": {
+					"isLogout": true,
+					"data": [
+						{
+							"id": "profile-logout",
+							"text": "LOGOUT"
+						}
+					]
+				}
 			}
 		]
 	},
