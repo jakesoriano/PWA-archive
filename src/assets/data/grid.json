@@ -116,6 +116,7 @@
 					"#home-crowdsourcing",
 					"#home-tasks",
 					"#home-report",
+					"#home-spam-text",
 					"#home-vol-kit",
 					"#home-editor",
 					"#home-h2hcalendar"
@@ -193,6 +194,12 @@
 							"text": "REPORT_FAKE_NEWS",
 							"icon": "assets/images/h_report.png",
 							"url": "report-fake-news"
+						},
+						{
+							"id": "home-spam-text",
+							"text": "PAGE_REPORT_SPAMTEXT",
+							"icon": "assets/images/h_spam.png",
+							"url": "report-spam-text"
 						}
 					]
 				}
@@ -1209,6 +1216,21 @@
 				"component": "ReportFakeNews",
 				"props": {
 					"text": "Thank you for submitting a fake news report!"
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PAGE_REPORT_SPAMTEXT",
+		"uri": "report-spam-text",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "ReportSpamText",
+				"props": {
+					"text": "Thank you for submitting a spam text report!"
 				}
 			}
 		]
