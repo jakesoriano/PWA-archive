@@ -1,0 +1,99 @@
+@import '../../../style/variables.scss';
+.spamTextWrap {
+	padding: 0 0 20px;
+	* {
+		color: #737373;
+	}
+	.header {
+		display: block;
+		.title {
+			color: $pink_text;
+			margin: 15px 15px 0;
+		}
+		.content {
+			font-size: 0.8rem;
+			padding: 15px;
+		}
+	}
+	.message {
+		text-align: center;
+		border-top: 1px solid #e9e9e9;
+		padding: 20px 20px;
+		margin: 10px 0;
+		font-size: 0.9rem;
+	}
+	.spamTextForm {
+		padding: 15px;
+		.formGroup {
+			padding: 10px 0;
+			position: relative;
+			p {
+				position: absolute;
+				right: 0;
+				top: 10px;
+				text-decoration: underline;
+				color: #ce0f68;
+			}
+			label {
+				font-style: normal;
+			}
+		}
+		.checkWrap {
+			label {
+				color: red;
+			}
+		}
+		.attachmentWrap {
+			display: flex;
+			align-items: center;
+			.attachmentInputWrap {
+				flex-grow: 1;
+				.attachment {
+					width: 95%;
+				}
+			}
+			.dummyInput {
+				border: 0;
+				padding: 0;
+			}
+			.hidden {
+				display: none;
+			}
+			.attLabel {
+				display: flex;
+				font-style: italic;
+				.attIcon {
+					margin-left: 5px;
+					width: 20px;
+					padding-bottom: 20px;
+				}
+			}
+			.pShare {
+				flex-grow: 1;
+			}
+			.pShare {
+				background: $primary;
+				margin: 0 auto;
+				padding: 5px 20px;
+				width: max-content;
+				text-align: center;
+				border-radius: 5px;
+				.pIconShare {
+					padding-bottom: 18px;
+					width: 18px;
+					margin-right: 5px;
+				}
+				span {
+					color: #fff;
+					font-size: 0.8rem;
+					text-transform: capitalize;
+				}
+			}
+		}
+	}
+	.buttonContainer {
+		.buttonStyle {
+			background-color: #ec0086;
+		}
+	}
+}

@@ -6,6 +6,7 @@ import {
   urlReport,
   urlApplyPollWatcher,
   urlReportFakeNews,
+  urlReportSpamText,
 } from '_helpers';
 
 export function sendContactUs(data) {
@@ -129,6 +130,27 @@ export function reportFakeNews(data) {
       .catch((err) => {
         resolve(err);
         console.log(`SPA >> reportFakeNews failed`, err);
+      });
+  });
+}
+export function reportSpamText(data) {
+  return new Promise((resolve) => {
+    xhr(urlReportSpamText, {
+      method: 'POST',
+      data,
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`sarsa SPA >> reportSpamText Error`, res);
+          resolve(res.error);
+        } else {
+          console.log(`sarsa SPA >> reportSpamText successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(err);
+        console.log(`sarsa SPA >> reportSpamText failed`, err);
       });
   });
 }
