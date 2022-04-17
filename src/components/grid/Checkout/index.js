@@ -430,7 +430,7 @@ class Checkout extends Component {
 	                      </div>
 
 	                      <span className={style.volunteerDescription}>
-	                        {item?.volunteer?.name}, {item?.volunteer.age} y.o
+	                        {item?.volunteer?.name}
 	                      </span>
 	                    </div>
 

@@ -76,6 +76,9 @@ class CrowdSourcingTransactions extends Component {
 	};
 
 	render = ({ title, cstransactions, max, hideSeeAll }) => {
+	  if (!cstransactions.data?.length) {
+	    return null;
+	  }
 	  return (
 	    <div className={style.tWrap}>
 	      <div className={style.head}>
@@ -83,7 +86,7 @@ class CrowdSourcingTransactions extends Component {
 	          // title
 	          title && <span className={style.title}>{title}</span>
 	        }
-	        {!hideSeeAll && (
+	        {!hideSeeAll && cstransactions.data?.length > 0 && (
 	          <span
 	            className={`bold ${style.see_all}`}
 	            onClick={() => route('/cs-transactions')}
@@ -94,39 +97,41 @@ class CrowdSourcingTransactions extends Component {
 	      </div>
 	      {
 					// recent transactions
-					cstransactions.data?.length && (
-	          <div className={style.tContainer}>
-	            {cstransactions.data.map((item, i) => {
-	              if (max && i + 1 <= max) {
-	                return this.renderItem(item);
-	              }
-	              if (!max) {
-	                return this.renderItem(item);
-	              }
-	            })}
-	            {/* show more */}
-	            {!max &&
+					cstransactions.data?.length ? (
+					  <div className={style.tContainer}>
+					    {cstransactions.data.map((item, i) => {
+					      if (max && i + 1 <= max) {
+					        return this.renderItem(item);
+					      }
+					      if (!max) {
+					        return this.renderItem(item);
+					      }
+					    })}
+					    {/* show more */}
+					    {!max &&
 								cstransactions.data.length < cstransactions.total &&
 								!cstransactions.fetching && (
-	              <button
-	                className={style.showMore}
-	                onClick={this.handleShowMore}
-	              >
-	                <span>
-	                  <span>&#8659;</span> {getTranslation('SHOW_MORE')}
-	                </span>
-	              </button>
-	            )}
-	            {/* loader */}
-	            {this.state.moreFetching && (
-	              <LoaderRing styles={{ container: style.loaderWrap }} />
-	            )}
-	          </div>
-	        )
+					      <button
+					        className={style.showMore}
+					        onClick={this.handleShowMore}
+					      >
+					        <span>
+					          <span>&#8659;</span> {getTranslation('SHOW_MORE')}
+					        </span>
+					      </button>
+					    )}
+					    {/* loader */}
+					    {this.state.moreFetching && (
+					      <LoaderRing styles={{ container: style.loaderWrap }} />
+					    )}
+					  </div>
+					) : null
 	      }
 	      {
 	        // no data
-	        !cstransactions.data?.length && <p>{getTranslation('NO_DATA')}</p>
+	        !cstransactions.data?.length && (
+	          <p className={style.noRecord}>{getTranslation('NO_DATA')}</p>
+	        )
 	      }
 	    </div>
 	  );
