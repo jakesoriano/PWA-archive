@@ -37,7 +37,7 @@ class HorizontalImageList extends Component {
 	      href={replaceUrlPlaceholders(item.file)}
 	      download
 	      target="_blank"
-	      rel="noreferrer"
+	      rel="noopener noreferrer"
 	    >
 	      {getTranslation('DOWNLOAD_FILE')}
 	    </a>

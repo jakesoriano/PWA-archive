@@ -1,0 +1,75 @@
+@import '../../../style/variables.scss';
+.hfWrap {
+ 
+ .titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  .seeAll {
+    font-size: 0.75rem;
+    color: $blue_bg;
+  }
+ }
+ .title {
+   color: $pink_text;
+   font-size: 1rem;
+ }
+ .leaderboardContainer {
+  .navBox {
+    background-color: $primary;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    > div {
+      width: 40px;
+    }
+    p {
+      color: $white;
+      width: 100%;
+      font-size: 0.8rem;
+    }
+  }
+ }
+ .noRecordContainer {
+  background: $light_gray;
+  border-radius: 10px;
+  margin: 10px 15px;
+  .noRecord {
+    text-align: center;
+    padding: 15px 10px;
+    color: $black;
+    max-width: 270px;
+    margin: 0 auto;
+    a {
+      color: $pink_button;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}
+ .showMore {
+  text-align: center;
+  border: none;
+  background: none;
+  width: 100%;
+  margin: 0 auto 15px;
+  span {
+    font-size: 0.8rem;
+    color: $blue_bg;
+  }
+}
+.loaderWrap {
+  display: block;
+  text-align: center;
+  > div div {
+    border: 4px solid #fff;
+    border-color: $blue_bg transparent transparent transparent;
+    width: 25px;
+    height: 25px;
+  }
+}
+}

@@ -1,4 +1,4 @@
-@import '../../../style/variables.scss';
+@import "../../../style/variables.scss";
 .listing {
   border-radius: 10px;
   margin: 10px 15px;
@@ -40,7 +40,7 @@
       width: 82px;
       p {
         padding-bottom: 12px;
-        text-align: center;;
+        text-align: center;
       }
     }
   }
@@ -48,7 +48,7 @@
     border-bottom: none;
     padding-bottom: 5px;
     padding-top: 0;
-    .avatar{
+    .avatar {
       width: 60px;
       padding-bottom: 0;
     }

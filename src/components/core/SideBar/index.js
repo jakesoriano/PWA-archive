@@ -7,7 +7,7 @@ import {
   getTranslation,
   dateLastLoginFormat,
   isUsingSocialLogin,
-  showTourGuide,
+  isCommunityLeader,
 } from '_helpers';
 import { ImageLoader } from '_components/core';
 import { logOut } from '_mutations';
@@ -71,7 +71,7 @@ class SideBar extends Component {
 	          >
 	            {getTranslation('MY_PROFILE')}
 	          </Link>
-	          {(!authUser.profile.roles || authUser.profile.roles !== '100') && (
+	          {(!authUser.profile.roles || !isCommunityLeader()) && (
 	            <Link
 	              id="sm-accountprofile"
 	              href={`/account-profile`}
@@ -81,7 +81,7 @@ class SideBar extends Component {
 	              {getTranslation('ACCOUNT_PROFILE')}
 	            </Link>
 	          )}
-	          {authUser.profile.roles && authUser.profile.roles === '100' && (
+	          {authUser.profile.roles && isCommunityLeader() && (
 	            <div>
 	              <a className={style.sMItem}>
 	                {getTranslation('MANAGE_COMMUNITY_PAGE')}

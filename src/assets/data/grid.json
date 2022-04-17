@@ -102,39 +102,6 @@
 		]
 	},
 	{
-		"styles": [],
-		"auth": true,
-		"pageTitle": "PAGE_HOME",
-		"uri": "home-archive",
-		"contents": [
-			{
-				"component": "Countdown"
-			},
-			{
-				"component": "AccountProfile"
-			},
-			{
-				"component": "LenipediaSearch"
-			},
-			{
-				"component": "DownloadKit"
-			},
-			{
-				"component": "ReferralCode"
-			},
-			{
-				"component": "GlobalAnnouncement",
-				"props": {
-					"isDisplayFlex": true,
-					"title": "ANNOUNCEMENTS"
-				}
-			},
-			{
-				"component": "StoriesDashboard"
-			}
-		]
-	},
-	{
 		"styles": [
 			{
 				"selector": [
@@ -294,7 +261,7 @@
 				"component": "Banner",
 				"props": {
 					"id": "home-lawyers-for-chel",
-					"image": "https://d2vjy6bhj0z1t0.cloudfront.net/files/lawyers-for-chel.png",
+					"image": "{CDN_DOMAIN_FILES}lawyers-for-chel.png",
 					"url": "lawyers-for-chel"
 				}
 			},
@@ -314,7 +281,12 @@
 		]
 	},
 	{
-		"styles": [],
+		"styles": [
+			{
+				"selector": "#page-widgets #w3",
+				"styles": "padding-bottom: 10px;"
+			}
+		],
 		"auth": true,
 		"pageTitle": "PAGE_INVITE",
 		"uri": "invite",
@@ -324,13 +296,105 @@
 				"component": "InviteHeader"
 			},
 			{
-				"component": "InvitedCount"
-			},
-			{
 				"component": "TextAndButtonCard"
 			},
 			{
-				"component": "TopGlobalAndComment"
+				"component": "KakampinkFriends"
+			}
+		]
+	},
+	{
+		"styles": [
+			{
+				"selector": "#page-widgets #w3",
+				"styles": "padding-bottom: 10px;"
+			},
+			{
+				"selector": [
+					"#profile-lawyers-for-chel",
+					"#profile-pollwatcher"
+				],
+				"styles": "margin-top: 0; padding-bottom: 10px;"
+			},
+			{
+				"selector": "#profile-search-pinkpedia",
+				"styles": "background: #FFF; border: 2px solid #1a4789; display: block; text-align: center; margin-right: 15px;"
+			},
+			{
+				"selector": "#profile-search-pinkpedia > div",
+				"styles": "width: 20px; min-width: 20px; padding-bottom: 20px; display: inline-block;"
+			},
+			{
+				"selector": "#profile-search-pinkpedia span",
+				"styles": "color: #1a4789; position: relative; top: -4px; font-family: 'OpenSans-Bold', arial, sans-serif;"
+			},
+			{
+				"selector": "#profile-logout",
+				"styles": "background: transparent; block; text-align: center; margin-right: 15px;"
+			},
+			{
+				"selector": "#profile-logout span",
+				"styles": "color: #000; font-family: 'OpenSans-Bold', arial, sans-serif; text-transform: uppercase;"
+			}
+		],
+		"pageTitle": "PAGE_PROFILE",
+		"auth": true,
+		"uri": "profile",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "ProfileHeader"
+			},
+			{
+				"component": "BeACommunityLeader"
+			},
+			{
+				"component": "KakampinkFriends",
+				"props": {
+					"showAllUrl": "invite",
+					"limit": 5
+				}
+			},
+			{
+				"component": "Banner",
+				"props": {
+					"id": "profile-pollwatcher",
+					"image": "{CDN_DOMAIN_FILES}pollwatcher.jpg",
+					"url": "poll-watcher"
+				}
+			},
+			{
+				"component": "Banner",
+				"props": {
+					"id": "profile-lawyers-for-chel",
+					"image": "{CDN_DOMAIN_FILES}lawyers-for-chel.png",
+					"url": "lawyers-for-chel"
+				}
+			},
+			{
+				"component": "Buttons",
+				"props": {
+					"data": [
+						{
+							"id": "profile-search-pinkpedia",
+							"text": "SEARCH_PINKPEDIA",
+							"icon": "assets/images/magnifer_blue.png",
+							"url": "lenipedia"
+						}
+					]
+				}
+			},
+			{
+				"component": "Buttons",
+				"props": {
+					"isLogout": true,
+					"data": [
+						{
+							"id": "profile-logout",
+							"text": "LOGOUT"
+						}
+					]
+				}
 			}
 		]
 	},
@@ -491,7 +555,14 @@
 		]
 	},
 	{
-		"styles": [],
+		"styles": [
+			{
+				"selector": [
+					"#full-image-crowdsourcing > .imgWrap"
+				],
+				"styles": "padding-bottom: 93%;"
+			}
+		],
 		"auth": true,
 		"pageTitle": "PAGE_CROWDSOURCING",
 		"uri": "community-crowdsourcing",
@@ -510,6 +581,20 @@
 				"props": {
 					"text": "H2H_NOTE",
 					"id": "h2h-note"
+				}
+			},
+			{
+				"component": "FullImage",
+				"props": {
+					"src": "{CDN_DOMAIN_FILES}crowdsourcing_infograph.jpg",
+					"id": "crowdsourcing"
+				}
+			},
+			{
+				"component": "CrowdSourcingTransactions",
+				"props": {
+					"title": "Your Recent Transactions",
+					"max": 3
 				}
 			},
 			{
@@ -590,21 +675,6 @@
 						"news": "ANNOUNCEMENTS"
 					}
 				}
-			}
-		]
-	},
-	{
-		"styles": [],
-		"auth": true,
-		"pageTitle": "PAGE_PROFILE",
-		"uri": "profile",
-		"withBack": true,
-		"contents": [
-			{
-				"component": "AccountProfile2"
-			},
-			{
-				"component": "Members"
 			}
 		]
 	},
@@ -946,6 +1016,10 @@
 	{
 		"styles": [
 			{
+				"selector": "#printable-merch",
+				"styles": "margin-top: 20px;"
+			},
+			{
 				"selector": "#volunteer-comics",
 				"styles": "margin-top: 10px;"
 			},
@@ -999,18 +1073,6 @@
 							"title": "Social Media Content Posting",
 							"link": "https://www.notion.so/7e00a0c241be44e689a141a81fb717ff?v=29eb8910e2824153922e47662ae12e69",
 							"thumb": "assets/images/v_social.png"
-						},
-						{
-							"id": "conversation-kit",
-							"title": "Conversation Kit",
-							"link": "https://drive.google.com/drive/u/7/folders/1JHUaCdAzO_otkum8zVv9mfFWs49osqOP",
-							"thumb": "assets/images/v_convert.png"
-						},
-						{
-							"id": "training-kit",
-							"title": "Training Kit",
-							"link": "https://drive.google.com/drive/u/7/folders/1u_U-O5ent84xXL_EehnL5-KwRom4xcWb",
-							"thumb": "assets/images/v_train.png"
 						},
 						{
 							"id": "volunteer-kit",
@@ -1160,6 +1222,33 @@
 		"contents": [
 			{
 				"component": "House2HouseCalendar"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "H2H_TRANSACTIONS",
+		"uri": "cs-transactions",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "CrowdSourcingTransactions",
+				"props": {
+					"hideSeeAll": true
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "H2H_TRANSACTION_DETAILS",
+		"uri": "cs-transaction-details",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "CrowdSourcingTransactionDetails"
 			}
 		]
 	}

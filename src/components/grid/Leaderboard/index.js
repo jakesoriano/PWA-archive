@@ -24,10 +24,10 @@ class Leaderboard extends Component {
         {
           id: 'task',
           title: 'Tasks',
-          period: ['Alltime', 'Daily'],
+          period: ['Daily', 'Weekly', 'Alltime'],
           range: ['Global', 'Regional'],
           defaultFilter: {
-            period: 'Alltime',
+            period: 'Daily',
             range: 'Global',
           },
           dataKey: 'leaderboardTask',
@@ -35,14 +35,10 @@ class Leaderboard extends Component {
         {
           id: 'points',
           title: 'Hero Points',
-          period: ['Alltime', 'Daily'],
-          range: [
-            'Global',
-            'Regional',
-            // 'Personal'
-          ],
+          period: ['Daily', 'Weekly', 'Alltime'],
+          range: ['Global', 'Regional', 'Personal'],
           defaultFilter: {
-            period: 'Alltime',
+            period: 'Daily',
             range: 'Global',
           },
           dataKey: 'leaderboard',
@@ -58,7 +54,7 @@ class Leaderboard extends Component {
       active: {
         tab: 'points',
         filter: {
-          period: 'Alltime',
+          period: 'Daily',
           range: 'Global',
         },
         text: null,
@@ -169,9 +165,9 @@ class Leaderboard extends Component {
 	      <LeaderboardListing
 	        id={active?.tab}
 	        fetching={
-	          !leaderboard.result ||
-						!leaderboardTask.result ||
-						!leaderboardH2H.result
+	          leaderboard.fetching ||
+						leaderboardTask.fetching ||
+						leaderboardH2H.fetching
 	        }
 	        data={this.getDataById(active.tab)}
 	      />

@@ -23,3 +23,5 @@ export * from './appLandingConfig';
 export * from './crowdsourcing';
 export * from './appHomeConfig';
 export * from './h2hCalendar';
+export * from './projects';
+export * from './cstransactions';

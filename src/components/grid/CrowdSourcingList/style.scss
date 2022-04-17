@@ -1,5 +1,53 @@
+@import '../../../style/variables.scss';
 .hfWrap {
   padding: 15px;
+  .search {
+    flex: 1;
+    max-width: 100%;
+    background-color: $light_gray;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    align-items: center;
+    input {
+      background-color: transparent;
+      border: none;
+      color: $black;
+      font-size: 0.875rem;
+      flex: 1;
+    }
+    .searchIcon {
+      max-width: 15px;
+      padding-bottom: 15px;
+    }
+  }
+  .listHeader {
+    display: flex;
+    padding: 10px 0;
+    .item {
+      flex-grow: 1;
+      span {
+        color: $gray_text;
+        font-size: 0.8rem;
+        flex-grow: 1;
+      }
+      &:last-child {
+        text-align: right;
+        a {
+          display: flex;
+          align-items: center;
+          .sortIcon {
+            width: 25px;
+            padding-bottom: 15px;
+            margin-left: 5px;
+            margin-top: 2px;
+          }
+        }
+      }
+    }
+  }
   .title {
     color: #ce0f68;
     display: inline-block;

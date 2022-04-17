@@ -1,12 +1,12 @@
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
 // eslint-disable-next-line import/prefer-default-export
-export function nativeWebReady () {
+export function nativeWebReady() {
   // eslint-disable-next-line no-console
   console.log('SPA >> nativeWebReady();');
 }
 
-async function getFingerPrint (callback) {
+async function getFingerPrint(callback) {
   try {
     // We recommend to call `load` at application startup.
     const fp = await FingerprintJS.load();
@@ -22,43 +22,43 @@ async function getFingerPrint (callback) {
   }
 }
 
-export function nativeGetDeviceId (callback) {
+export function nativeGetDeviceId(callback) {
   // eslint-disable-next-line
 	getFingerPrint(callback);
 }
 
-export function nativeShare (data) {}
+export function nativeShare(data) {}
 
-export function nativeExitApp () {}
+export function nativeExitApp() {}
 
-export function nativeSelfie () {
+export function nativeSelfie() {
   return new Promise((resolve) => {
     resolve('01FPKR8R3ECPFJ36G9FY8ERHD7.jpeg');
   });
 }
 
-export function nativeSetCredential (data) {}
+export function nativeSetCredential(data) {}
 
-export function nativeToggleTouchID (value) {}
+export function nativeToggleTouchID(value) {}
 
-export function nativeLoginWithTouchID () {
+export function nativeLoginWithTouchID() {
   return new Promise((resolve) => {
     resolve(null);
   });
 }
 
-export function nativeStatusTouchID () {
+export function nativeStatusTouchID() {
   return new Promise((resolve) => {
     resolve(false);
   });
 }
 
-export function nativeSigninFacebook () {
+export function nativeSigninFacebook() {
   return new Promise((resolve) => {
     // error
     resolve({
       success: false,
-      error: {}
+      error: {},
     });
     // // success
     // resolve({
@@ -75,47 +75,84 @@ export function nativeSigninFacebook () {
   });
 }
 
-export function nativeSigninTwitter () {
+export function nativeSigninTwitter() {
   return new Promise((resolve) => {
     // error
     resolve({
       success: false,
-      error: {}
+      error: {},
     });
   });
 }
 
-export function nativeSigninGoogle () {
+export function nativeSigninGoogle() {
   return new Promise((resolve) => {
     // error
     resolve({
       success: false,
-      error: {}
+      error: {},
     });
   });
 }
 
-export function nativeSigninApple () {
+export function nativeSigninApple() {
   return new Promise((resolve) => {
     // error
     resolve({
       success: false,
-      error: {}
+      error: {},
     });
   });
 }
 
-export function nativeOnLogout () {
+export function nativeOnLogout() {
   // eslint-disable-next-line no-console
   console.log('SPA >> nativeOnLogout();');
 }
 
-export function nativeSetAuthToken (token) {
+export function nativeSetAuthToken(token) {
   // eslint-disable-next-line no-console
   console.log('SPA >> nativeSetAuthToken();');
 }
 
-export function nativeGetVersion (callback) {
+export function nativeGetVersion(callback) {
   // eslint-disable-next-line no-console
   console.log('SPA >> nativeGetVersion();');
+}
+
+export function nativeGetPushToken(callback) {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeGetPushToken();');
+}
+
+export function nativeLocalPushNotif(data) {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeLocalPushNotif();');
+  // android params below
+  // {
+  //   id: 1,
+  //   smallIcon: "ic_notification",
+  //   title: 'test',
+  //   message: 'my message',
+  //     userInfo: {
+  //       link: 'com.leni2022://mobile/task-center'
+  //     },
+  // }
+
+  // ios params below
+  // {
+  //   id: 'one',
+  //   title: 'test title',
+  //   message: 'test subtitle',
+  //   body: 'this is my test message.',
+  //   userInfo: {
+  //     link: 'com.leni2022://mobile/task-center'
+  //   },
+  //   date: new Date().setSeconds(new Date().getSeconds() + 10), // use in schedule only
+  // }
+}
+
+export function nativeLocalPushNotifSchedule(data) {
+  // eslint-disable-next-line no-console
+  console.log('SPA >> nativeLocalPushNotifSchedule();');
 }

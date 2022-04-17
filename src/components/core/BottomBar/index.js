@@ -59,25 +59,6 @@ export default ({ page }) => (
       )}
     </Link>
     <Link
-      id="tab-leaderboard"
-      class={style.menu}
-      activeClassName={style.active}
-      href="/leaderboard"
-    >
-      <ImageLoader
-        src={`assets/icons/bb_lead.png`}
-        style={{ container: style.imgCont }}
-      />
-      <p className={`bold ${style.title}`}>
-        {getTranslation('PAGE_LEADERBOARD')}
-      </p>
-      {page === 'leaderboard' && (
-        <p className={style.dot}>
-          <span>●</span>
-        </p>
-      )}
-    </Link>
-    <Link
       id="tab-community"
       class={style.menu}
       activeClassName={style.active}
@@ -91,6 +72,24 @@ export default ({ page }) => (
         {getTranslation('PAGE_COMMUNITY')}
       </p>
       {page.indexOf('community') > -1 && (
+        <p className={style.dot}>
+          <span>●</span>
+        </p>
+      )}
+    </Link>
+    <Link
+      id="tab-profile"
+      class={style.menu}
+      activeClassName={style.active}
+      href="/profile"
+    >
+      <ImageLoader
+        src={`assets/icons/bb_prof.png`}
+        style={{ container: style.imgCont }}
+      />
+      <span className={style.redDot}>●</span>
+      <p className={`bold ${style.title}`}>{getTranslation('ACCOUNT')}</p>
+      {page === 'profile' && (
         <p className={style.dot}>
           <span>●</span>
         </p>

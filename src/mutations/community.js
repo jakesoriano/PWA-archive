@@ -5,18 +5,18 @@ import {
   urlUser,
   urlNews,
   urlShare,
-  urlCommunitySetup, 
+  urlCommunitySetup,
   urlCommunityGetInfo,
   urlCommunityLeader,
-  urlCommunityVolunteer
+  urlCommunityVolunteer,
 } from '_helpers';
 import { communitySort } from '_constant';
 
-function getSortParams (sort) {
+function getSortParams(sort) {
   if (sort) {
-    return communitySort.find(i => i.value === sort).params;
+    return communitySort.find((i) => i.value === sort).params;
   }
-  return communitySort.find(i => i.value === 'popularity').params;
+  return communitySort.find((i) => i.value === 'popularity').params;
 }
 
 // eslint-disable-next-line import/prefer-default-export
@@ -26,7 +26,9 @@ export function filterCommunity(name, sort, page, limit) {
 
   // fetching
   if (communities.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -35,10 +37,10 @@ export function filterCommunity(name, sort, page, limit) {
       ...communities,
       filter: name || '',
       fetching: true,
-      result: false
-    }
+      result: false,
+    },
   });
-  
+
   return new Promise((resolve) => {
     xhr(urlCommunity + '/search', {
       params: {
@@ -46,23 +48,23 @@ export function filterCommunity(name, sort, page, limit) {
         ...getSortParams(sort),
         q: name || '', // query string
         p: page || 1, // page number
-        s: limit || 9 // limit
-      }
+        s: limit || 9, // limit
+      },
     })
       .then((res) => {
         updateStore({
           communities: {
             ...communities,
-            data: page && page > 1 ? [
-              ...communities.data,
-              ...res.data.results
-            ] : res.data.results,
+            data:
+							page && page > 1
+							  ? [...communities.data, ...res.data.results]
+							  : res.data.results,
             total: res.data.total,
             page: page || 1,
             filter: name || '',
             fetching: false,
-            result: true
-          }
+            result: true,
+          },
         });
         resolve(true);
       })
@@ -71,8 +73,8 @@ export function filterCommunity(name, sort, page, limit) {
           communities: {
             ...communities,
             fetching: false,
-            result: false
-          }
+            result: false,
+          },
         });
         resolve(false);
       });
@@ -85,7 +87,9 @@ export function fetchCommunities(sort, page, limit) {
 
   // fetching
   if (communities.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -94,8 +98,8 @@ export function fetchCommunities(sort, page, limit) {
       ...communities,
       filter: '',
       fetching: true,
-      result: false
-    }
+      result: false,
+    },
   });
 
   return new Promise((resolve) => {
@@ -104,25 +108,27 @@ export function fetchCommunities(sort, page, limit) {
         // sort
         ...getSortParams(),
         p: page || 1, // page number
-        s: limit || 9 // limit
-      }
+        s: limit || 9, // limit
+      },
     })
       .then((res) => {
         updateStore({
           communities: {
             ...communities,
-            data: page && page > 1 ? [
-              ...communities.data,
-              ...res.data.results
-            ] : res.data.results,
+            data:
+							page && page > 1
+							  ? [...communities.data, ...res.data.results]
+							  : res.data.results,
             total: res.data.total,
-            featured: !communities.featured ? res.data.results[0] : communities.featured,
+            featured: !communities.featured
+              ? res.data.results[0]
+              : communities.featured,
             page: page || 1,
             filter: '',
             sort: '',
             fetching: false,
-            result: true
-          }
+            result: true,
+          },
         });
         resolve(true);
       })
@@ -131,35 +137,37 @@ export function fetchCommunities(sort, page, limit) {
           communities: {
             ...communities,
             fetching: false,
-            result: false
-          }
+            result: false,
+          },
         });
         resolve(false);
       });
   });
 }
 
-export function followCommunity (item) {
+export function followCommunity(item) {
   // curreny state
   let { communities, communityDetails } = store.getState();
   const { authUser } = store.getState();
 
   // fetching
   if (communities.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
-  
+
   // initial state
   communities = {
     ...communities,
-    data: communities.data.map(i => {
+    data: communities.data.map((i) => {
       if (i.id === item.id) {
         i.followed = true;
         i.followers += 1;
       }
       return i;
     }),
-    fetching: true
+    fetching: true,
   };
   updateStore({ communities });
 
@@ -169,15 +177,15 @@ export function followCommunity (item) {
       data: {
         userId: authUser.profile._id,
         itemId: item.id,
-        itemType: 'C' 
-      }
+        itemType: 'C',
+      },
     })
       .then((res) => {
         updateStore({
           communities: {
             ...communities,
-            fetching: false
-          }
+            fetching: false,
+          },
         });
         if (communityDetails.hasOwnProperty('details')) {
           updateStore({
@@ -185,10 +193,10 @@ export function followCommunity (item) {
               ...communityDetails,
               details: {
                 ...communityDetails.details,
-                followed: true
-              }
-            }
-          })
+                followed: true,
+              },
+            },
+          });
         }
         console.log(`SPA >> followCommunity Success`, res);
         resolve(true);
@@ -197,15 +205,15 @@ export function followCommunity (item) {
         updateStore({
           communities: {
             ...communities,
-            data: communities.data.map(i => {
+            data: communities.data.map((i) => {
               if (i.id === item.id) {
                 i.followed = false;
                 i.followers -= 1;
               }
               return i;
             }),
-            fetching: false
-          }
+            fetching: false,
+          },
         });
         console.log(`SPA >> followCommunity Error`, err);
         resolve(false);
@@ -213,27 +221,29 @@ export function followCommunity (item) {
   });
 }
 
-export function unFollowCommunity (item) {
+export function unFollowCommunity(item) {
   // curreny state
   let { communities, communityDetails } = store.getState();
   const { authUser } = store.getState();
 
   // fetching
   if (communities.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
   communities = {
     ...communities,
-    data: communities.data.map(i => {
+    data: communities.data.map((i) => {
       if (i.id === item.id) {
         i.followed = false;
         i.followers -= 1;
       }
       return i;
     }),
-    fetching: true
+    fetching: true,
   };
   updateStore({ communities });
 
@@ -243,15 +253,15 @@ export function unFollowCommunity (item) {
       data: {
         userId: authUser.profile._id,
         itemId: item.id,
-        itemType: 'C' 
-      }
+        itemType: 'C',
+      },
     })
       .then((res) => {
         updateStore({
           communities: {
             ...communities,
-            fetching: false
-          }
+            fetching: false,
+          },
         });
         if (communityDetails.hasOwnProperty('details')) {
           updateStore({
@@ -259,10 +269,10 @@ export function unFollowCommunity (item) {
               ...communityDetails,
               details: {
                 ...communityDetails.details,
-                followed: false
-              }
-            }
-          })
+                followed: false,
+              },
+            },
+          });
         }
         console.log(`SPA >> unFollowCommunity Success`, res);
         resolve(true);
@@ -271,15 +281,15 @@ export function unFollowCommunity (item) {
         updateStore({
           communities: {
             ...communities,
-            data: communities.data.map(i => {
+            data: communities.data.map((i) => {
               if (i.id === item.id) {
                 i.followed = true;
                 i.followers += 1;
               }
               return i;
             }),
-            fetching: false
-          }
+            fetching: false,
+          },
         });
         console.log(`SPA >> unFollowCommunity Error`, err);
         resolve(false);
@@ -287,14 +297,14 @@ export function unFollowCommunity (item) {
   });
 }
 
-export function setupCommunityInfo (data) {
+export function setupCommunityInfo(data) {
   // current state
   const url = `${urlCommunitySetup}`;
-  
+
   return new Promise((resolve) => {
     xhr(url, {
       method: 'POST',
-      data
+      data,
     })
       .then((res) => {
         if (!res.success) {
@@ -312,14 +322,14 @@ export function setupCommunityInfo (data) {
   });
 }
 
-export function createCommunityEvent (data) {
+export function createCommunityEvent(data) {
   // current state
   const { communityInfo } = store.getState();
   const url = `${urlCommunityLeader}/${communityInfo.data._id}/events`;
   return new Promise((resolve) => {
     xhr(url, {
       method: 'POST',
-      data: data.data
+      data: data.data,
     })
       .then((res) => {
         if (!res.success) {
@@ -337,14 +347,14 @@ export function createCommunityEvent (data) {
   });
 }
 
-export function createCommunityNews (data) {
+export function createCommunityNews(data) {
   // current state
   const { communityInfo } = store.getState();
   const url = `${urlCommunityLeader}/${communityInfo.data._id}/news`;
   return new Promise((resolve) => {
     xhr(url, {
       method: 'POST',
-      data: data.data
+      data: data.data,
     })
       .then((res) => {
         if (!res.success) {
@@ -362,13 +372,15 @@ export function createCommunityNews (data) {
   });
 }
 
-export function getCommunityInfo () {
+export function getCommunityInfo() {
   // curreny state
   const { communityInfo } = store.getState();
 
   // fetching
   if (communityInfo.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -376,41 +388,41 @@ export function getCommunityInfo () {
     communityInfo: {
       ...communityInfo,
       fetching: true,
-      result: false
-    }
+      result: false,
+    },
   });
- 
+
   return new Promise((resolve) => {
-    xhr(urlCommunityGetInfo, {
-    }).then((res) => {
-      if (res.success) {
-        updateStore({
-          communityInfo: {
-            data: res.data,
-            fetching: false,
-            result: true
-          }
-        });
-        resolve(true);
-      } else {
-        updateStore({
-          communityInfo: {
-            data: null,
-            fetching: false,
-            result: false
-          }
-        });
-        resolve(false);
-      }
-    })
+    xhr(urlCommunityGetInfo, {})
+      .then((res) => {
+        if (res.success) {
+          updateStore({
+            communityInfo: {
+              data: res.data,
+              fetching: false,
+              result: true,
+            },
+          });
+          resolve(true);
+        } else {
+          updateStore({
+            communityInfo: {
+              data: null,
+              fetching: false,
+              result: false,
+            },
+          });
+          resolve(false);
+        }
+      })
       .catch((err) => {
         updateStore({
           communityInfo: {
             ...communityInfo,
             data: null,
             fetching: false,
-            result: false
-          }
+            result: false,
+          },
         });
         resolve(false);
       });
@@ -419,10 +431,12 @@ export function getCommunityInfo () {
 
 export function fetchCommunityEvents(page, limit) {
   const { communityInfo, leaderCommunityEvents } = store.getState();
-  
+
   // fetching
   if (leaderCommunityEvents.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -430,8 +444,8 @@ export function fetchCommunityEvents(page, limit) {
     leaderCommunityEvents: {
       ...leaderCommunityEvents,
       fetching: true,
-      result: false
-    }
+      result: false,
+    },
   });
   const url = `${urlCommunityLeader}/${communityInfo.data._id}/events`;
   return new Promise((resolve) => {
@@ -439,21 +453,21 @@ export function fetchCommunityEvents(page, limit) {
       method: 'GET',
       params: {
         p: page || 1, // page number
-        s: limit || 9 // limit
-      }
+        s: limit || 9, // limit
+      },
     })
       .then((res) => {
         updateStore({
           leaderCommunityEvents: {
-            data: page && page > 1 ? [
-              ...leaderCommunityEvents.data,
-              ...res.data.results
-            ] : res.data.results,
+            data:
+							page && page > 1
+							  ? [...leaderCommunityEvents.data, ...res.data.results]
+							  : res.data.results,
             total: res.data.total,
             page: page || 1,
             fetching: false,
-            result: true
-          }
+            result: true,
+          },
         });
         console.log(`SPA >> fetchCommunityEvents Success`, res);
         resolve(true);
@@ -463,8 +477,8 @@ export function fetchCommunityEvents(page, limit) {
           leaderCommunityEvents: {
             ...leaderCommunityEvents,
             fetching: false,
-            result: false
-          }
+            result: false,
+          },
         });
         console.log(`SPA >> fetchCommunityEvents Error`, err);
         resolve(false);
@@ -474,10 +488,12 @@ export function fetchCommunityEvents(page, limit) {
 
 export function fetchCommunityAnnouncement(page, limit) {
   const { communityInfo, leaderCommunityAnnouncements } = store.getState();
-  
+
   // fetching
   if (leaderCommunityAnnouncements.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -485,8 +501,8 @@ export function fetchCommunityAnnouncement(page, limit) {
     leaderCommunityAnnouncements: {
       ...leaderCommunityAnnouncements,
       fetching: true,
-      result: false
-    }
+      result: false,
+    },
   });
   const url = `${urlCommunityLeader}/${communityInfo.data._id}/news`;
   return new Promise((resolve) => {
@@ -494,21 +510,21 @@ export function fetchCommunityAnnouncement(page, limit) {
       method: 'GET',
       params: {
         p: page || 1, // page number
-        s: limit || 9 // limit
-      }
+        s: limit || 9, // limit
+      },
     })
       .then((res) => {
         updateStore({
           leaderCommunityAnnouncements: {
-            data: page && page > 1 ? [
-              ...leaderCommunityAnnouncements.data,
-              ...res.data.results
-            ] : res.data.results,
+            data:
+							page && page > 1
+							  ? [...leaderCommunityAnnouncements.data, ...res.data.results]
+							  : res.data.results,
             total: res.data.total,
             page: page || 1,
             fetching: false,
-            result: true
-          }
+            result: true,
+          },
         });
         console.log(`SPA >> fetchCommunityAnnouncements Success`, res.success);
         resolve(true);
@@ -518,8 +534,8 @@ export function fetchCommunityAnnouncement(page, limit) {
           leaderCommunityAnnouncements: {
             ...leaderCommunityAnnouncements,
             fetching: false,
-            result: false
-          }
+            result: false,
+          },
         });
         console.log(`SPA >> fetchCommunityAnnouncements Error`, err);
         resolve(false);
@@ -527,25 +543,27 @@ export function fetchCommunityAnnouncement(page, limit) {
   });
 }
 
-export function shareEventByLeader (item) {
+export function shareEventByLeader(item) {
   let { leaderCommunityEvents } = store.getState();
   const { authUser } = store.getState();
-  
+
   // fetching
   if (leaderCommunityEvents.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
   leaderCommunityEvents = {
     ...leaderCommunityEvents,
-    data: leaderCommunityEvents.data.map(i => {
+    data: leaderCommunityEvents.data.map((i) => {
       if (i.id === item.id) {
         i.shared = true;
       }
       return i;
     }),
-    fetching: true
+    fetching: true,
   };
   updateStore({ leaderCommunityEvents });
 
@@ -557,15 +575,15 @@ export function shareEventByLeader (item) {
         itemId: item.id,
         itemType: 'E',
         parentId: item.communityId,
-        parentType: 'C'
-      }
+        parentType: 'C',
+      },
     })
       .then((res) => {
         updateStore({
           leaderCommunityEvents: {
             ...leaderCommunityEvents,
-            fetching: false
-          }
+            fetching: false,
+          },
         });
         console.log(`SPA >> shareEvents Success`, res);
         resolve(true);
@@ -574,14 +592,14 @@ export function shareEventByLeader (item) {
         updateStore({
           leaderCommunityEvents: {
             ...leaderCommunityEvents,
-            data: leaderCommunityEvents.data.map(i => {
+            data: leaderCommunityEvents.data.map((i) => {
               if (i.id === item.id) {
                 i.shared = false;
               }
               return i;
             }),
-            fetching: false
-          }
+            fetching: false,
+          },
         });
         console.log(`SPA >> shareEvents Error`, err);
         resolve(false);
@@ -589,25 +607,27 @@ export function shareEventByLeader (item) {
   });
 }
 
-export function shareNewsByLeader (item) {
+export function shareNewsByLeader(item) {
   let { leaderCommunityAnnouncements } = store.getState();
   const { authUser } = store.getState();
-  
+
   // fetching
   if (leaderCommunityAnnouncements.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
   leaderCommunityAnnouncements = {
     ...leaderCommunityAnnouncements,
-    data: leaderCommunityAnnouncements.data.map(i => {
+    data: leaderCommunityAnnouncements.data.map((i) => {
       if (i.id === item.id) {
         i.shared = true;
       }
       return i;
     }),
-    fetching: true
+    fetching: true,
   };
   updateStore({ leaderCommunityAnnouncements });
 
@@ -619,15 +639,15 @@ export function shareNewsByLeader (item) {
         itemId: item.id,
         itemType: 'A',
         parentId: item.communityId,
-        parentType: 'C'
-      }
+        parentType: 'C',
+      },
     })
       .then((res) => {
         updateStore({
           leaderCommunityAnnouncements: {
             ...leaderCommunityAnnouncements,
-            fetching: false
-          }
+            fetching: false,
+          },
         });
         console.log(`SPA >> shareNewsByLeader Success`, res);
         resolve(true);
@@ -636,14 +656,14 @@ export function shareNewsByLeader (item) {
         updateStore({
           leaderCommunityAnnouncements: {
             ...leaderCommunityAnnouncements,
-            data: leaderCommunityAnnouncements.data.map(i => {
+            data: leaderCommunityAnnouncements.data.map((i) => {
               if (i.id === item.id) {
                 i.shared = false;
               }
               return i;
             }),
-            fetching: false
-          }
+            fetching: false,
+          },
         });
         console.log(`SPA >> shareNewsByLeader Error`, err);
         resolve(false);
@@ -651,14 +671,14 @@ export function shareNewsByLeader (item) {
   });
 }
 
-export function updateCommunityEvent (data, id) {
+export function updateCommunityEvent(data, id) {
   // current state
   const { communityInfo } = store.getState();
   const url = `${urlCommunityLeader}/${communityInfo.data._id}/events/${id}`;
   return new Promise((resolve) => {
     xhr(url, {
       method: 'PUT',
-      data: data.data
+      data: data.data,
     })
       .then((res) => {
         if (!res.success) {
@@ -676,14 +696,14 @@ export function updateCommunityEvent (data, id) {
   });
 }
 
-export function updateCommunityNews (data, id) {
+export function updateCommunityNews(data, id) {
   // current state
   const { communityInfo } = store.getState();
   const url = `${urlCommunityLeader}/${communityInfo.data._id}/news/${id}`;
   return new Promise((resolve) => {
     xhr(url, {
       method: 'PUT',
-      data: data.data
+      data: data.data,
     })
       .then((res) => {
         if (!res.success) {
@@ -701,13 +721,13 @@ export function updateCommunityNews (data, id) {
   });
 }
 
-export function deleteCommunityEvents (id) {
+export function deleteCommunityEvents(id) {
   // current state
   const { communityInfo } = store.getState();
   const url = `${urlCommunityLeader}/${communityInfo.data._id}/events/${id}`;
   return new Promise((resolve) => {
     xhr(url, {
-      method: 'DELETE'
+      method: 'DELETE',
     })
       .then((res) => {
         if (!res.success) {
@@ -725,13 +745,13 @@ export function deleteCommunityEvents (id) {
   });
 }
 
-export function deleteCommunityNews (id) {
+export function deleteCommunityNews(id) {
   // current state
   const { communityInfo } = store.getState();
   const url = `${urlCommunityLeader}/${communityInfo.data._id}/news/${id}`;
   return new Promise((resolve) => {
     xhr(url, {
-      method: 'DELETE'
+      method: 'DELETE',
     })
       .then((res) => {
         if (!res.success) {
@@ -749,14 +769,14 @@ export function deleteCommunityNews (id) {
   });
 }
 
-export function postVolunteerAnnouncement (data) {
+export function postVolunteerAnnouncement(data) {
   // current state
   const { communityInfo } = store.getState();
   const url = `${urlCommunityLeader}/${communityInfo.data._id}/listings`;
   return new Promise((resolve) => {
     xhr(url, {
       method: 'POST',
-      data: data
+      data: data,
     })
       .then((res) => {
         if (!res.success) {
@@ -774,13 +794,15 @@ export function postVolunteerAnnouncement (data) {
   });
 }
 
-export function fetchCommunityVolunteers (name, page, limit) {
+export function fetchCommunityVolunteers(name, page, limit) {
   //
   const { communityVolunteers } = store.getState();
-  
+
   // fetching
   if (communityVolunteers.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -789,8 +811,8 @@ export function fetchCommunityVolunteers (name, page, limit) {
       ...communityVolunteers,
       filter: name || '',
       fetching: true,
-      result: false
-    }
+      result: false,
+    },
   });
   const url = `${urlCommunityVolunteer}`;
   return new Promise((resolve) => {
@@ -799,23 +821,27 @@ export function fetchCommunityVolunteers (name, page, limit) {
       params: {
         q: name || '',
         p: page || 1, // page number
-        s: limit || 9 // limit
-      }
+        s: limit || 9, // limit
+      },
     })
       .then((res) => {
         updateStore({
           communityVolunteers: {
-            data: page && page > 1 ? [
-              ...communityVolunteers.data,
-              ...res.data.results
-            ] : res.data.results,
+            data:
+							page && page > 1
+							  ? [...communityVolunteers.data, ...res.data.results]
+							  : res.data.results,
             page: page || 1,
             total: res.data.total,
             fetching: false,
-            result: true
-          }
+            result: true,
+          },
         });
-        console.log(`SPA >> fetchCommunityVolunteers Success`, res, communityVolunteers);
+        console.log(
+					`SPA >> fetchCommunityVolunteers Success`,
+					res,
+					communityVolunteers
+        );
         resolve(true);
       })
       .catch((err) => {
@@ -823,8 +849,8 @@ export function fetchCommunityVolunteers (name, page, limit) {
           communityVolunteers: {
             ...communityVolunteers,
             fetching: false,
-            result: false
-          }
+            result: false,
+          },
         });
         console.log(`SPA >> fetchCommunityVolunteers Error`, err);
         resolve(false);

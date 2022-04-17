@@ -11,9 +11,9 @@ export function formatRank(rank) {
 }
 
 export function displayName(profile) {
-  let name = profile.fname || '';
-  if (profile.lname) {
-    return `${name} ${profile.lname || ''}`;
+  let name = profile?.fname || '';
+  if (profile?.lname) {
+    return `${name} ${profile?.lname || ''}`;
   }
   return name;
 }
@@ -21,4 +21,14 @@ export function isUserUpdatedProfile() {
   const { authUser } = store.getState();
   // check if there is region on profile data
   return Boolean(authUser?.profile.email);
+}
+
+export function getUserRole() {
+  const { authUser } = store.getState();
+  return authUser?.profile?.roles === '100' ? 'Leader' : 'Member';
+}
+
+export function isCommunityLeader() {
+  const { authUser } = store.getState();
+  return authUser?.profile?.roles === '100' ? true : false;
 }

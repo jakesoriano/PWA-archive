@@ -7,7 +7,9 @@ export function getCommunityCrowdsourcing(page, limit) {
 
   // fetching
   if (crowdsourcing.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -24,19 +26,34 @@ export function getCommunityCrowdsourcing(page, limit) {
       method: 'GET',
       params: {
         p: page || 1, // page number
-        s: limit || 9, // limit
+        s: limit || 1000, // limit
       },
     })
       .then((res) => {
-        console.log({ res });
+        // append new data
+        const data =
+					page && page > 1
+					  ? [...crowdsourcing.data, ...res.data.results]
+					  : res.data.results;
+        // group data
+        const groupData = data.reduce((results, item) => {
+          if (
+            !results.find(
+              (i) =>
+                (i.name || '').toLowerCase() ===
+									(item.name || '').toLowerCase() && i.amount === item.amount
+            )
+          ) {
+            return [...results, ...[item]];
+          }
+          return results;
+        }, []);
         updateStore({
           crowdsourcing: {
-            data:
-							page && page > 1
-							  ? [...crowdsourcing.data, ...res.data.results]
-							  : res.data.results,
+            data: groupData,
             page: page || 1,
-            total: res.data.total,
+            total:
+							data.length >= res.data.total ? groupData.length : res.data.total,
             fetching: false,
             result: true,
           },

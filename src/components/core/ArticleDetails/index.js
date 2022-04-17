@@ -59,7 +59,12 @@ class ArticleDetails extends Component {
 	        <p className={`${style.pDate}`}>
 	          {data.postedDate ? dateNewsFormat(data.postedDate) : ''}
 	        </p>
-	        <a href={data.link} target="_blank" className={`${style.pLink}`} rel="noreferrer">
+	        <a
+	          href={data.link}
+	          target="_blank"
+	          className={`${style.pLink}`}
+	          rel="noopener noreferrer"
+	        >
 	          {data.link}
 	        </a>
 	        <p

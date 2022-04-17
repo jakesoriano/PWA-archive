@@ -1,8 +1,8 @@
 import { Component } from 'preact';
-import { route, Link } from 'preact-router';
-import { connect } from 'unistore/preact';
+import { route } from 'preact-router';
 import { ImageLoader } from '_components/core';
-import { getTranslation, showTourGuide } from '_helpers';
+import { getTranslation } from '_helpers';
+import { logOut } from '_mutations';
 import style from './style';
 class Buttons extends Component {
 	onClick = (url) => {
@@ -13,15 +13,19 @@ class Buttons extends Component {
 	  }
 	};
 
-	render = ({ data }, {}) => (
+	render = ({ data, page, isLogout }, {}) => (
 	  <div className={style.buttonsWrap}>
 	    {data.map((item, index) => {
 	      return (
 	        <button
-	          id={item.id || `home-${index}`}
+	          id={item.id || `${page}-${index}`}
 	          className={style.item}
 	          onClick={() => {
-	            this.onClick(item.url);
+	            if (isLogout) {
+	              logOut();
+	            } else {
+	              this.onClick(item.url);
+	            }
 	          }}
 	        >
 	          {/* Icon */}

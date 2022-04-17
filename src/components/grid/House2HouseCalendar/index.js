@@ -17,6 +17,7 @@ import {
   dateH2HCalendarFormat,
   displayPageLoader,
   componentModal,
+  removeTags,
 } from '_helpers';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
 import style from './style';
@@ -25,8 +26,10 @@ class House2HouseCalendar extends Component {
     super(props);
     this.state = {
       dates: [
-        new Date(),
-        new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
+        new Date(new Date().setHours('00', '00', '00')),
+        new Date(
+          new Date().setHours('23', '59', '59') + 7 * 24 * 60 * 60 * 1000
+        ),
       ],
       regionOptions: getRegions(),
       provinceOptions: [],
@@ -203,15 +206,33 @@ class House2HouseCalendar extends Component {
 	      </p>
 	    </div>
 	    <div className={style.modalBody}>
-	      <p className={style.descr}>{desc}</p>
+	      <p
+	        className={style.descr}
+	        dangerouslySetInnerHTML={{
+	          __html: desc,
+	        }}
+	      ></p>
 	    </div>
 	    <div className={style.footer}>
 	      <p className={style.name}>
 	        {`${getTranslation('CHAPTER_HEAD')}: ${name || ''}`}
 	      </p>
-	      <p className={style.contact}>
-	        {`${getTranslation('CONTACT_NO')}: ${num || ''}`}
-	      </p>
+	      {(num || '').substr(0, 4) == 'http' ? (
+	        <a
+	          className={style.contact}
+	          href={num}
+	          target="_blank"
+	          rel="noopener noreferrer"
+	        >
+	          {`${getTranslation('CONTENT_LINK')}: `}
+	          <span>{num || ''}</span>
+	        </a>
+	      ) : (
+	        <a className={style.contact} href={`tel:${num}`}>
+	          {`${getTranslation('CONTACT_NO')}: `}
+	          <span>{num || ''}</span>
+	        </a>
+	      )}
 	    </div>
 	  </div>
 	);
@@ -223,10 +244,10 @@ class House2HouseCalendar extends Component {
 	        <div className={style.head}>
 	          <div className={style.dateBox}>
 	            <span className={style.day}>
-	              {getDayText(item.date).substring(0, 3)}
+	              {getDayText(item.date, true).substring(0, 3)}
 	            </span>
 	            <span className={`bold ${style.date}`}>
-	              {getDayNum(item.date)}
+	              {getDayNum(item.date, true)}
 	            </span>
 	          </div>
 	          <div className={style.info}>
@@ -257,7 +278,10 @@ class House2HouseCalendar extends Component {
 	          </div>
 	        </div>
 	        <div className={style.body}>
-	          <p className={style.descr}>{item.description}</p>
+	          <p className={style.descr}>
+	            {removeTags(item?.description || '').substr(0, 200)}
+	            {(item?.description || '').length > 200 ? '...' : ''}
+	          </p>
 	        </div>
 	        <div className={style.footer}>
 	          <button

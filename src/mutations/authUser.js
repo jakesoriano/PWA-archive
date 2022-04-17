@@ -78,10 +78,12 @@ export function fetchUserPoints() {
             authUser: {
               ...authUser,
               members: res.data.members,
-              points: res.data.points_alltime,
               points_daily: res.data.points_daily,
-              completedTaskCount: res.data.completedTaskCount_alltime,
+              points_weekly: res.data.points_weekly,
+              points: res.data.points_alltime,
               completedTaskCount_daily: res.data.completedTaskCount_daily,
+              completedTaskCount_weekly: res.data.completedTaskCount_weekly,
+              completedTaskCount: res.data.completedTaskCount_alltime,
               rank: {
                 overall: res.data?.rank_points?.global_alltime,
                 regional: res.data?.rank_points?.regional_alltime,

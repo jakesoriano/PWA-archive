@@ -1,48 +1,85 @@
 @import '../../../style/variables.scss';
+.inviteWrap {
+  display: block;
+}
 .inviteHeaderWrap {
-  margin: 15px 0;
-  text-align: center;
+  background: $pink_button;
+  padding: 25px 10px;
+  padding-bottom: 40px;
   * {
-      color: #231f20;
+      color: $white;
       font-size: 0.9rem;
     }
-  .referralCode {
-    padding: 5px 15px 10px;
+  .recruit {
+    text-transform: uppercase;
+  }
+  .refCodeWrap {
     display: flex;
-    align-items: baseline;
-    justify-content: center;
-    flex-wrap: wrap;
-    .text {
-      text-align: left;
+    margin: 10px 0;
+    .referralCode {
+      width: 100%;
+      padding: 10px 0;
+      align-items: baseline;
+      justify-content: center;
+      flex-wrap: wrap;
+      .text {
+        text-align: left;
+      }
+      .code {
+        text-align: left;
+        display: flex;
+        font-size: 1.2rem;
+      }
+      .copyImg {
+        width: 20px;
+        padding-bottom: 20px;
+        margin-left: 10px;
+      }
     }
-    .code {
-      text-align: left;
+    button {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
       display: flex;
-      color: #ce0f69;
-      padding-left: 10px;
-    }
-    .copyImg {
-      width: 20px;
-      padding-bottom: 20px;
-      margin-left: 10px;
+      justify-content: center;
+      margin: 10px auto;
+      padding: 5px 0;
+      font-size: 1rem;
+      color: $primary;
+      align-items: center;
+      background: $gray_bg;
+      text-transform: uppercase;
+      .img {
+          width: 17px;
+          padding-bottom: 17px;
+          margin-right: 5px;
+      }
     }
   }
-  button {
-    width: 80%;
-    border: none;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    margin: 10px auto;
-    padding: 10px;
-    font-size: 1.2rem;
-    color: $primary;
-    align-items: center;
-    background: $gray_bg;
-    .img {
-        width: 35px;
-        padding-bottom: 35px;
-        margin-right: 20px;
+}
+.heroRanking {
+  flex: 1;
+  display: flex;
+  padding: 10px 0 8px;
+  justify-content: space-around;
+  background-color: #1F1F1F;
+  border-radius: 10px;
+  // position: absolute;
+  width: calc(100% - 20px);
+  margin: 0 auto;
+  margin-top: -35px;
+  .rankBox {
+    padding: 0 5px;
+    width: 100%;
+    text-align: center;
+    &:not(:first-of-type) {
+      border-left: 1px solid #4c4c4c;
+    }
+    .rankPointsText {
+      font-size: 0.75rem;
+    }
+    .count {
+      font-size: 1.3rem;
     }
   }
 }

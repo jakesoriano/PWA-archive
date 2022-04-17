@@ -11,7 +11,7 @@ function getFilterParams(filter) {
   const { authUser } = store.getState();
   return {
     top: filter?.top || getConfigByKey('leaderboard', 'top'),
-    period: (filter?.period || 'alltime').toLowerCase(),
+    period: (filter?.period || 'daily').toLowerCase(),
     type: (filter?.range || 'global').toLowerCase(),
     ...(filter?.range?.toLowerCase() === 'regional'
       ? {
@@ -31,11 +31,11 @@ function getAppendUser(type, filter) {
       return {
         profile: authUser.profile,
         members: authUser.members,
-        rank: rank,
+        rank,
         points:
 					filter.period === 'alltime'
 					  ? authUser?.points
-					  : authUser?.points_daily,
+					  : authUser[`points_${filter.period}`],
       };
     }
   } else {
@@ -48,7 +48,7 @@ function getAppendUser(type, filter) {
         completedTaskCount:
 					filter.period === 'alltime'
 					  ? authUser?.completedTaskCount
-					  : authUser?.completedTaskCount_daily,
+					  : authUser[`completedTaskCount_${filter.period}`],
       };
     }
   }
@@ -62,7 +62,9 @@ export function fetchLeaderboardPoints(filter) {
 
   // fetching
   if (leaderboard.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -84,7 +86,9 @@ export function fetchLeaderboardPoints(filter) {
     .then((res) => {
       // append curret user, filter and sort
       const data = (
-        appendUserData ? [...res.data, ...[appendUserData]] : res.data
+        appendUserData
+          ? [...(res?.data || []), ...[appendUserData]]
+          : res?.data || []
       )
         .filter((i) => i)
         .sort((a, b) => b.points - a.points);
@@ -106,6 +110,7 @@ export function fetchLeaderboardPoints(filter) {
       updateStore({
         leaderboard: {
           ...leaderboard,
+          data: null,
           fetching: false,
           result: false,
         },
@@ -122,7 +127,9 @@ export function fetchLeaderboardTask(filter) {
 
   // fetching
   if (leaderboardTask.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -144,7 +151,9 @@ export function fetchLeaderboardTask(filter) {
     .then((res) => {
       // append curret user, filter and sort
       const data = (
-        appendUserData ? [...res.data, ...[appendUserData]] : res.data
+        appendUserData
+          ? [...(res?.data || []), ...[appendUserData]]
+          : res?.data || []
       )
         .filter((i) => i)
         .sort((a, b) => b.completedTaskCount - a.completedTaskCount);
@@ -166,6 +175,7 @@ export function fetchLeaderboardTask(filter) {
       updateStore({
         leaderboardTask: {
           ...leaderboardTask,
+          data: null,
           fetching: false,
           result: false,
         },
@@ -181,7 +191,9 @@ export function fetchLeaderboardH2H() {
 
   // fetching
   if (leaderboardH2H.fetching) {
-    return;
+    return new Promise((resolve) => {
+      resolve();
+    });
   }
 
   // initial state
@@ -197,7 +209,7 @@ export function fetchLeaderboardH2H() {
   return new Promise((resolve) => {
     xhr(urlLeaderboardH2H)
       .then((res) => {
-        const data = (res.data?.results?.filter((i) => i) || []).sort(
+        const data = ((res?.data || [])?.results?.filter((i) => i) || []).sort(
           (a, b) => b.count - a.count
         );
         updateStore({
@@ -216,6 +228,7 @@ export function fetchLeaderboardH2H() {
         updateStore({
           leaderboardH2H: {
             ...leaderboardH2H,
+            data: null,
             fetching: false,
             result: false,
           },
