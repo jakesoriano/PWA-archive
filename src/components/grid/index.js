@@ -75,6 +75,7 @@ export { default as PollWatcher } from './PollWatcher';
 export { default as HomeEvents } from './HomeEvents';
 export { default as UserPoints } from './UserPoints';
 export { default as ReportFakeNews } from './ReportFakeNews';
+export { default as ReportSpamText } from './ReportSpamText';
 export { default as HomeNotification } from './HomeNotification';
 export { default as CountdownAndDismissableText } from './CountdownAndDismissableText';
 export { default as House2HouseCalendar } from './House2HouseCalendar';
