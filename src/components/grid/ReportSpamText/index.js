@@ -202,7 +202,7 @@ class ReportSpamText extends Component {
 	        />
 	      </FormGroup>
 	      <FormGroup
-	        label={''}
+	        label={getTranslation('UPLOAD_SMS_IMG')}
 	        className={style.formGroup}
 	        hasError={this.state.attachment.hasError}
 	      >

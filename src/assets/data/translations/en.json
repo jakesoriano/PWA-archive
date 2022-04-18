@@ -383,6 +383,7 @@
 	"RECEIVER_NAME": "Name of Receiver",
 	"RECEIVER_LOCATION": "Location of Receiver",
 	"RECEIVED_DATE_TIME": "Date and Time SMS was Received",
+	"UPLOAD_SMS_IMG": "Image is Required",
 	"ADD_LINK": "Add another link",
 	"FAKE_NEWS_LINK": "Fake News Link",
 	"LINK_PLACEHOLDER": "Copy and paste the fake news link here",
