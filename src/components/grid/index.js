@@ -67,6 +67,7 @@ export { default as Buttons } from './Buttons';
 export { default as Banner } from './Banner';
 export { default as Text } from './Text';
 export { default as HorizontalImageList } from './HorizontalImageList';
+export { default as House2HouseBanner } from './House2HouseBanner';
 export { default as LawyersForChel } from './LawyersForChel';
 export { default as OplanBaklas } from './OplanBaklas';
 export { default as PermitRelated } from './PermitRelated';

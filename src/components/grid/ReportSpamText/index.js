@@ -13,7 +13,6 @@ import {
   displayPageLoader,
   successMessage,
   showAlertBox,
-  dateLastLoginFormat,
   uploadFile,
 } from '_helpers';
 // eslint-disable-next-line import/extensions
@@ -41,8 +40,18 @@ class ReportSpamText extends Component {
         error: '',
         hasError: false,
       },
-      dateTime: {
-        value: dateLastLoginFormat(this.props.authUser.loginDate),
+      date: {
+        value: new Date().toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'numeric',
+          day: 'numeric',
+        }),
+      },
+      time: {
+        value: new Date().toLocaleTimeString('en-US', {
+          hour: '2-digit',
+          minute: '2-digit',
+        }),
       },
       attachment: {
         file: null,
@@ -75,10 +84,19 @@ class ReportSpamText extends Component {
 	  });
 	};
 
-	onDateTimeChange = (value) => {
+	onDateChange = (value) => {
 	  this.setState({
-	    dateTime: {
-	      ...this.state.dateTime,
+	    date: {
+	      ...this.state.date,
+	      value: value,
+	    },
+	  });
+	};
+
+	onTimeChange = (value) => {
+	  this.setState({
+	    time: {
+	      ...this.state.time,
 	      value: value,
 	    },
 	  });
@@ -94,7 +112,11 @@ class ReportSpamText extends Component {
 	};
 
 	submitData = (image) => {
-	  const newDate = new Date(this.state.dateTime.value);
+	  const newDate =
+			!this.state.date.value || this.state.time.value
+			  ? new Date()
+			  : new Date(this.state.date.value + ' ' + this.state.time.value);
+
 	  let data_ = {
 	    name: this.state.name.value,
 	    location: this.state.location.value,
@@ -187,22 +209,35 @@ class ReportSpamText extends Component {
 	        />
 	      </FormGroup>
 	      <FormGroup
-	        label={getTranslation('RECEIVED_DATE_TIME')}
+	        label={getTranslation('RECEIVED_DATE')}
 	        className={style.formGroup}
-	        hasError={this.state.dateTime.hasError}
 	      >
 	        <FormInput
-	          value={this.state.dateTime.value}
+	          value={this.state.date.value}
 	          onBlur={(e) => {
-	            this.onDateTimeChange(e.target.value, i);
+	            this.onDateChange(e.target.value, i);
 	          }}
 	          onInput={(e) => {
-	            this.onDateTimeChange(e.target.value, i);
+	            this.onDateChange(e.target.value, i);
 	          }}
 	        />
 	      </FormGroup>
 	      <FormGroup
-	        label={''}
+	        label={getTranslation('RECEIVED_TIME')}
+	        className={style.formGroup}
+	      >
+	        <FormInput
+	          value={this.state.time.value}
+	          onBlur={(e) => {
+	            this.onTimeChange(e.target.value, i);
+	          }}
+	          onInput={(e) => {
+	            this.onTimeChange(e.target.value, i);
+	          }}
+	        />
+	      </FormGroup>
+	      <FormGroup
+	        label={getTranslation('UPLOAD_SMS_IMG')}
 	        className={style.formGroup}
 	        hasError={this.state.attachment.hasError}
 	      >
