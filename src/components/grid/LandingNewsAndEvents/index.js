@@ -8,7 +8,6 @@ import {
 	getTranslation,
 	dateNewsFormat,
 	getConfigByKey,
-	dateEventFormat,
 	removeTags,
 } from '_helpers';
 import { fetchAppHomeConfig } from '_mutations';
@@ -119,7 +118,7 @@ class LandingNewsAndEvents extends Component {
 											<p className={style.title}>{item?.title}</p>
 
 											<p className={style.postedDate}>
-												{dateEventFormat(item?.postedDate)}
+												{dateNewsFormat(item?.postedDate)}
 											</p>
 
 											<p className={style.desc}>
