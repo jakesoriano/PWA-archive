@@ -124,6 +124,10 @@
 				"styles": "background: rgb(161,32,95); background: linear-gradient(270deg, rgba(161,32,95,1) 0%, rgba(236,0,134,1) 100%);padding: 10px 30px;"
 			},
 			{
+				"selector": "#home-h2h-banner .imgWrap",
+				"styles": "padding-bottom: 37%;"
+			},
+			{
 				"selector": "#home-search-pinkpedia",
 				"styles": "background: #FFF; border: 2px solid #1a4789; display: block; text-align: center; margin-right: 15px;"
 			},
@@ -198,7 +202,7 @@
 						{
 							"id": "home-spam-text",
 							"text": "PAGE_REPORT_SPAMTEXT",
-							"icon": "assets/images/h_spam.png",
+							"icon": "assets/images/h_spamt.png",
 							"url": "report-spam-text"
 						}
 					]
@@ -212,14 +216,6 @@
 						"url": "global-announcements",
 						"text": "SEE_ALL_NEWS"
 					}
-				}
-			},
-			{
-				"component": "Banner",
-				"props": {
-					"id": "home-pollwatcher",
-					"image": "{CDN_DOMAIN_FILES}pollwatcher.jpg",
-					"url": "poll-watcher"
 				}
 			},
 			{
@@ -324,11 +320,8 @@
 				"styles": "padding-bottom: 10px;"
 			},
 			{
-				"selector": [
-					"#profile-lawyers-for-chel",
-					"#profile-pollwatcher"
-				],
-				"styles": "margin-top: 0; padding-bottom: 10px;"
+				"selector": "#profile-lawyers-for-chel",
+				"styles": "margin-top: 0; margin-bottom: 10px;"
 			},
 			{
 				"selector": "#profile-search-pinkpedia",
@@ -367,14 +360,6 @@
 				"props": {
 					"showAllUrl": "invite",
 					"limit": 5
-				}
-			},
-			{
-				"component": "Banner",
-				"props": {
-					"id": "profile-pollwatcher",
-					"image": "{CDN_DOMAIN_FILES}pollwatcher.jpg",
-					"url": "poll-watcher"
 				}
 			},
 			{
@@ -588,13 +573,6 @@
 					"title": "What is House-to-House Campaign?",
 					"video": "https://www.youtube.com/embed/VIn5CJIADQc",
 					"description": "House-to-House Campaign is a safe space to request for help from fellow kakampinks. Ground volunteers seeking support as they campaign house-to-house among various barangays across the country can enlist help here from manpower, trompas, transportation to collaterals. In true Bayanihan fashion, let’s all share our resources in solidifying a LeniKiko win!"
-				}
-			},
-			{
-				"component": "Text",
-				"props": {
-					"text": "H2H_NOTE",
-					"id": "h2h-note"
 				}
 			},
 			{
