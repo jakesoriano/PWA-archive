@@ -30,8 +30,7 @@ export const gmtHours = 1000 * 60 * 60 * 8; // - 8 hours
 export const dateEventFormat = (date) => {
   const { selectedLanguage } = store.getState();
   try {
-    let d = isNaN(date) ? date.replace(/-/gim, '/') : date;
-    d = new Date(new Date(d).getTime() - gmtHours);
+    const d = new Date(new Date(date).getTime() - gmtHours);
     let month = d.getMonth();
     let day = d.getDate();
     day = day < 10 ? `0${day}` : day;
@@ -48,8 +47,7 @@ export const dateEventFormat = (date) => {
 
 export const dateNewsFormat = (date) => {
   try {
-    const d = isNaN(date) ? date.replace(/-/gim, '/') : date;
-    return new Date(d).toLocaleDateString('default', {
+    return new Date(date).toLocaleDateString('default', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
