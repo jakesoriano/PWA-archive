@@ -202,7 +202,7 @@
 						{
 							"id": "home-spam-text",
 							"text": "PAGE_REPORT_SPAMTEXT",
-							"icon": "assets/images/h_spam.png",
+							"icon": "assets/images/h_spamt.png",
 							"url": "report-spam-text"
 						}
 					]
