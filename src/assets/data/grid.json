@@ -1290,7 +1290,7 @@
 		"styles": [
 			{
 				"selector": "#h2h-image-note",
-				"styles": "margin: 20px 20px 0;font-style: italic;"
+				"styles": "margin: 10px 20px 20px;font-style: italic;"
 			}
 		],
 		"auth": true,
@@ -1298,13 +1298,6 @@
 		"uri": "h2h-images-upload",
 		"withBack": true,
 		"contents": [
-			{
-				"component": "Text",
-				"props": {
-					"text": "UPLOAD_H2H_NOTE",
-					"id": "h2h-image-note"
-				}
-			},
 			{
 				"component": "House2HouseImagesUpload"
 			},
