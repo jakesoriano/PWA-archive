@@ -1303,6 +1303,13 @@
 			},
 			{
 				"component": "House2HouseImagesUpload"
+			},
+			{
+				"component": "Text",
+				"props": {
+					"text": "UPLOAD_H2H_NOTE",
+					"id": "h2h-image-note"
+				}
 			}
 		]
 	}
