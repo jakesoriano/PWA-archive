@@ -36,25 +36,25 @@ class House2HouseImagesUpload extends Component {
         hasError: false,
       },
       region: {
-        value: '',
+        value: props.authUser?.profile?.region || '',
         error: '',
         message: '',
         hasError: false,
       },
       province: {
-        value: '',
+        value: props.authUser?.profile?.province || '',
         error: '',
         message: '',
         hasError: false,
       },
       municipality: {
-        value: '',
+        value: props.authUser?.profile?.municipality || '',
         error: '',
         message: '',
         hasError: false,
       },
       barangay: {
-        value: '',
+        value: props.authUser?.profile?.barangay || '',
         error: '',
         message: '',
         hasError: false,
@@ -71,6 +71,22 @@ class House2HouseImagesUpload extends Component {
       },
     };
   }
+
+	componentDidMount = () => {
+	  const { authUser } = this.props;
+	  if (authUser?.profile?.region) {
+	    this.onRegionChange(authUser?.profile?.region);
+	  }
+	  if (authUser?.profile?.province) {
+	    this.onProvinceChange(authUser?.profile?.province);
+	  }
+	  if (authUser?.profile?.municipality) {
+	    this.onMunicipalityChange(authUser?.profile?.municipality);
+	  }
+	  if (authUser?.profile?.barangay) {
+	    this.onBarangayChange(authUser?.profile?.barangay);
+	  }
+	};
 
 	onNameChange = (value) => {
 	  this.setState({

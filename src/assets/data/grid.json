@@ -233,7 +233,7 @@
 				"component": "Banner",
 				"props": {
 					"id": "home-h2h-images-upload-banner",
-					"image": "{CDN_DOMAIN_FILES}H2H_April23.png",
+					"image": "{CDN_DOMAIN_FILES}H2H_Images.png",
 					"url": "h2h-images-upload"
 				}
 			},
@@ -1272,12 +1272,24 @@
 		]
 	},
 	{
-		"styles": [],
+		"styles": [
+			{
+				"selector": "#h2h-image-note",
+				"styles": "margin: 20px 20px 0;font-style: italic;"
+			}
+		],
 		"auth": true,
 		"pageTitle": "UPLOAD_H2H_IMAGES",
 		"uri": "h2h-images-upload",
 		"withBack": true,
 		"contents": [
+			{
+				"component": "Text",
+				"props": {
+					"text": "UPLOAD_H2H_NOTE",
+					"id": "h2h-image-note"
+				}
+			},
 			{
 				"component": "House2HouseImagesUpload"
 			}
