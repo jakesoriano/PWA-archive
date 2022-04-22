@@ -1,0 +1,59 @@
+@import '../../../style/variables.scss';
+.h2hIUWrap {
+  padding: 10px;
+  .formContainer {
+    border-radius: 10px;
+    .formGroup > label {
+      font-family: 'OpenSans-Regular', arial, sans-serif;
+      font-style: italic;
+      padding-bottom: 5px;
+      color: #282828;
+    }
+    .attLabel {
+      display: flex;
+      font-style: italic;
+      .attIcon {
+        margin-left: 5px;
+        width: 20px;
+        padding-bottom: 20px;
+      }
+    }
+    .attachmentWrap {
+      display: flex;
+      align-items: center;
+      .attachmentInputWrap {
+        flex-grow: 1;
+        .attachment {
+          width: 95%;
+          border: 0;
+        }
+        .dummyInput {
+          border: 0;
+        }
+        .hidden {
+          display: none;
+        }
+      }
+      .pShare {
+        flex-grow: 1;
+      }
+      .pShare {
+        background: $primary_layout;
+        margin: 0 auto;
+        padding: 5px 20px;
+        width: max-content;
+        text-align: center;
+        .pIconShare {
+          padding-bottom: 18px;
+          width: 18px;
+          margin-right: 5px;
+        }
+        span {
+          color: #fff;
+          font-size: 0.8rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

@@ -153,6 +153,10 @@
 					"#tarp_modal #modal_content"
 				],
 				"styles": "background: transparent; padding: 0 15px;"
+			},
+			{
+				"selector": "#home-h2h-images-upload",
+				"styles": "margin-top: 12.5px"
 			}
 		],
 		"auth": true,
@@ -223,6 +227,14 @@
 				"props": {
 					"id": "home-h2h-banner",
 					"image": "{CDN_DOMAIN_FILES}H2H_April23.png"
+				}
+			},
+			{
+				"component": "Banner",
+				"props": {
+					"id": "home-h2h-images-upload-banner",
+					"image": "{CDN_DOMAIN_FILES}H2H_April23.png",
+					"url": "h2h-images-upload"
 				}
 			},
 			{
@@ -1256,6 +1268,18 @@
 		"contents": [
 			{
 				"component": "CrowdSourcingTransactionDetails"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "UPLOAD_H2H_IMAGES",
+		"uri": "h2h-images-upload",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "House2HouseImagesUpload"
 			}
 		]
 	}
