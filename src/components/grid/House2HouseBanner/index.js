@@ -5,15 +5,13 @@ import { ImageLoader } from '_components/core';
 import { getTranslation, showTourGuide } from '_helpers';
 import style from './style';
 class House2HouseBanner extends Component {
-	render = ({ id, image }, {}) => (
+	render = ({ id, image, url, pinkfinder }, {}) => (
 	  <div id={id} className={style.banner}>
-	    <a
-	      href={'https://ee.humanitarianresponse.info/x/RwIViatW'}
-	      target="_blank"
-	      rel="noopener noreferrer"
-	    >
+	    <a href={url} target="_blank" rel="noopener noreferrer">
 	      <ImageLoader
-	        style={{ container: style.imgContainer }}
+	        style={{
+	          container: pinkfinder ? style.finderContainer : style.imgContainer,
+	        }}
 	        src={image}
 	        lazy
 	      />

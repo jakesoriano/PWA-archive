@@ -226,7 +226,8 @@
 				"component": "House2HouseBanner",
 				"props": {
 					"id": "home-h2h-banner",
-					"image": "{CDN_DOMAIN_FILES}H2H_April23.png"
+					"image": "{CDN_DOMAIN_FILES}H2H_April23.png",
+					"url": "https://ee.humanitarianresponse.info/x/RwIViatW"
 				}
 			},
 			{
@@ -235,6 +236,16 @@
 					"id": "home-h2h-images-upload-banner",
 					"image": "{CDN_DOMAIN_FILES}H2H_Images.png",
 					"url": "h2h-images-upload"
+				}
+			},
+			{
+				
+				"component": "House2HouseBanner",
+				"props": {
+					"id": "home-pink-finder-banner",
+					"image": "{CDN_DOMAIN_FILES}files/pinkfinderbanner.jpeg",
+					"url": "https://thepinkfinder.com/",
+					"pinkfinder": 1
 				}
 			},
 			{
