@@ -4,9 +4,10 @@ import {
   getTranslation,
   showAlertBox,
   displayPageLoader,
-  // uploadFile,
-  // getTraceID,
-  // replaceUrlPlaceholders,
+  uploadFile,
+  getTraceID,
+  replaceUrlPlaceholders,
+  componentModal,
 } from '_helpers';
 import { presidentCandidate, viceCandidate, senatorCandidate } from '_constant';
 import domtoimage from 'dom-to-image';
@@ -120,36 +121,51 @@ class SampleBallot extends Component {
 	    let node = document.getElementById('html-to-image');
 	    node.style.width = '800px';
 	    setTimeout(() => {
+	      // convert dom to jpeg
+	      // domtoimage
+	      //   .toJpeg(node)
+	      //   .then((file) => {
+	      //     node.style.width = 'auto';
+	      //     displayPageLoader(false);
+
+	      //     // download image
+	      //     const link = document.createElement('a');
+	      //     link.href = file;
+	      //     link.download = `sample-ballot.jpeg`;
+	      //     document.body.appendChild(link);
+	      //     link.click();
+	      //     document.body.removeChild(link);
+
+	      //   })
+	      // convert dom to blob
 	      domtoimage
-	        .toJpeg(node)
-	        .then((file) => {
+	        .toBlob(node)
+	        .then((blob) => {
 	          node.style.width = 'auto';
 
-	          // download image
-	          const link = document.createElement('a');
-	          link.href = file;
-	          link.download = `sample-ballot.png`;
-	          document.body.appendChild(link);
-	          link.click();
-	          // document.body.removeChild(link);
-	          displayPageLoader(false);
-
-	          // // upload image
-	          // uploadFile({ file: blob }).then((res) => {
-	          //   displayPageLoader(false);
-	          //   if (res.success && res.data) {
-	          //     // download image
-	          //     window.open(
-	          //       replaceUrlPlaceholders(`{CDN_DOMAIN}${res.data.image}`),
-	          //       '_blank'
-	          //     );
-	          //   } else {
-	          //     const errorMessage = getTraceID(res);
-	          //     showAlertBox({
-	          //       message: res.errMessage || errorMessage,
-	          //     });
-	          //   }
-	          // });
+	          // upload image
+	          uploadFile({ file: blob }).then((res) => {
+	            displayPageLoader(false);
+	            if (res.success && res.data) {
+	              // download image
+	              componentModal({
+	                content: this.renderModalContent(
+										`{CDN_DOMAIN}${res.data.image}`
+	                ),
+	                modalId: 'sample-ballot-modal',
+	                transparentBG: true,
+	              });
+	              // window.open(
+	              //   replaceUrlPlaceholders(`{CDN_DOMAIN}${res.data.image}`),
+	              //   '_blank'
+	              // );
+	            } else {
+	              const errorMessage = getTraceID(res);
+	              showAlertBox({
+	                message: res.errMessage || errorMessage,
+	              });
+	            }
+	          });
 	        })
 	        .catch(() => {
 	          node.style.width = 'auto';
@@ -167,6 +183,25 @@ class SampleBallot extends Component {
 	    });
 	  }
 	};
+
+	renderModalContent = (imageUrl) => (
+	  <div className={style.modalWrap}>
+	    <ImageLoader
+	      src={imageUrl}
+	      style={{ container: style.modalImage }}
+	      lazy
+	    />
+	    <a
+	      className={style.button}
+	      href={replaceUrlPlaceholders(imageUrl)}
+	      download={'SAMPLE-BALLOT.png'}
+	      target="_blank"
+	      rel="noopener noreferrer"
+	    >
+	      {getTranslation('DOWNLOAD_SAMPLE_BALLOT')}
+	    </a>
+	  </div>
+	);
 
 	renderSuggested = () => {
 	  const { selected, maxSenators } = this.state;
@@ -312,8 +347,6 @@ class SampleBallot extends Component {
 	renderMainContent = () => {
 	  return (
 	    <div id="html-to-image" className={style.mainContent}>
-	      {/* Suggested Candidate Autofill */}
-	      {this.renderSuggested()}
 	      {/* Status Count */}
 	      {this.renderStatus()}
 	      {/* President Candidate */}
@@ -342,6 +375,8 @@ class SampleBallot extends Component {
 	        />
 	        <span>{getTranslation('SAMPLE_BALLOT_SCROLL_NOTE')}</span>
 	      </p>
+	      {/* Suggested Candidate Autofill */}
+	      {this.renderSuggested()}
 	      {/* Render Content*/}
 	      {this.renderMainContent()}
 	      {/* Button */}

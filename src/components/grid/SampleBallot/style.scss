@@ -202,3 +202,34 @@
     border-radius: 10px;
   }
 }
+
+
+.modalWrap {
+  display: flex;
+  flex-direction: column;
+  .modalImage {
+    height: auto;
+    width: 100%;
+    padding: 0;
+    border-radius: 10px;
+    img {
+      position: relative;
+    }
+  }
+  .button {
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    padding: 15px;
+    background-color: $primary;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+:global(#sample-ballot-modal #modal_body) {
+  padding: 10px 0;
+  :global(.imgWrap) {
+    border-radius: 0;
+  }
+}

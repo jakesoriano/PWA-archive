@@ -461,5 +461,6 @@
 	"VOTE_FOR": "Vote for",
 	"PRESIDENT_ERROR": "For President: #10 Leni Robredo para sa Gobyernong Tapat, Angat Buhay Lahat!",
 	"VICE_PRESIDENT_ERROR": "For VP: #7 Kiko Pangilinan para Hello Pagkain, Goodbye Gutom!",
-	"SAMPLE_BALLOT_SAVE": "Save & Download Your Sample Ballot"
+	"SAMPLE_BALLOT_SAVE": "Save & Download Your Sample Ballot",
+	"DOWNLOAD_SAMPLE_BALLOT": "Download Sample Ballot"
 }
