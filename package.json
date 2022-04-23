@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "preact-boilerplate",
+  "name": "leni2022",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -14,10 +14,7 @@
     "dev": "preact watch",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src",
-    "test": "jest",
-    "build-all": "preact build --dest build/android --preload && preact build --dest build/ios --preload && preact build --dest build/web --preload",
-    "web-redirection": "node jobs/web-redirection",
-    "pwa-config": "node jobs/pwa-config.js"
+    "test": "jest"
   },
   "eslintConfig": {
     "extends": "preact",
@@ -61,7 +58,6 @@
     "axios": "^0.21.1",
     "clipboard-copy": "^4.0.1",
     "dom-to-image": "^2.6.0",
-    "file-saver": "^2.0.5",
     "history": "^4.10.1",
     "preact": "^10.5.13",
     "preact-render-to-string": "^5.1.19",

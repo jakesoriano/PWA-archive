@@ -4,11 +4,13 @@ import {
   getTranslation,
   showAlertBox,
   displayPageLoader,
+  uploadFile,
+  getTraceID,
   replaceUrlPlaceholders,
+  componentModal,
 } from '_helpers';
 import { presidentCandidate, viceCandidate, senatorCandidate } from '_constant';
 import domtoimage from 'dom-to-image';
-import { saveAs } from 'file-saver';
 import style from './style';
 
 class SampleBallot extends Component {
@@ -118,21 +120,61 @@ class SampleBallot extends Component {
 	  try {
 	    let node = document.getElementById('html-to-image');
 	    node.style.width = '800px';
-	    // convert dom to blob
-	    domtoimage
-	      .toBlob(node)
-	      .then((blob) => {
-	        node.style.width = 'auto';
-	        displayPageLoader(false);
-	        saveAs(blob, 'sample-ballot.png');
-	      })
-	      .catch(() => {
-	        node.style.width = 'auto';
-	        displayPageLoader(false);
-	        showAlertBox({
-	          message: 'SOMETHING_WRONG',
+	    setTimeout(() => {
+	      // convert dom to jpeg
+	      // domtoimage
+	      //   .toJpeg(node)
+	      //   .then((file) => {
+	      //     node.style.width = 'auto';
+	      //     displayPageLoader(false);
+
+	      //     // download image
+	      //     const link = document.createElement('a');
+	      //     link.href = file;
+	      //     link.download = `sample-ballot.jpeg`;
+	      //     document.body.appendChild(link);
+	      //     link.click();
+	      //     document.body.removeChild(link);
+
+	      //   })
+	      // convert dom to blob
+	      domtoimage
+	        .toBlob(node)
+	        .then((blob) => {
+	          node.style.width = 'auto';
+
+	          // upload image
+	          uploadFile({ file: blob }).then((res) => {
+	            displayPageLoader(false);
+	            if (res.success && res.data) {
+	              // download image
+	              componentModal({
+	                content: this.renderModalContent(
+										`{CDN_DOMAIN}${res.data.image}`
+	                ),
+	                modalId: 'sample-ballot-modal',
+	                transparentBG: true,
+	              });
+	              // window.open(
+	              //   replaceUrlPlaceholders(`{CDN_DOMAIN}${res.data.image}`),
+	              //   '_blank'
+	              // );
+	            } else {
+	              const errorMessage = getTraceID(res);
+	              showAlertBox({
+	                message: res.errMessage || errorMessage,
+	              });
+	            }
+	          });
+	        })
+	        .catch(() => {
+	          node.style.width = 'auto';
+	          displayPageLoader(false);
+	          showAlertBox({
+	            message: 'SOMETHING_WRONG',
+	          });
 	        });
-	      });
+	    }, 200);
 	  } catch (err) {
 	    node.style.width = 'auto';
 	    displayPageLoader(false);
