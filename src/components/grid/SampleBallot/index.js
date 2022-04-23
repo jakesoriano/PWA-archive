@@ -235,7 +235,7 @@ class SampleBallot extends Component {
 	              {item.name ? (
 	                <>
 	                  <ImageLoader
-	                    src={`/assets/images/circle${
+	                    src={`assets/images/circle${
 												active ? '_selected' : ''
 											}.png`}
 	                    style={{
@@ -326,7 +326,7 @@ class SampleBallot extends Component {
 	      </p>
 	      <p className={style.note}>
 	        <ImageLoader
-	          src={'/assets/images/scroll.png'}
+	          src={'assets/images/scroll.png'}
 	          style={{
 	            container: style.icon,
 	          }}
