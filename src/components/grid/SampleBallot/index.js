@@ -4,9 +4,9 @@ import {
   getTranslation,
   showAlertBox,
   displayPageLoader,
-  uploadFile,
-  getTraceID,
-  replaceUrlPlaceholders,
+  // uploadFile,
+  // getTraceID,
+  // replaceUrlPlaceholders,
 } from '_helpers';
 import { presidentCandidate, viceCandidate, senatorCandidate } from '_constant';
 import domtoimage from 'dom-to-image';
@@ -121,26 +121,35 @@ class SampleBallot extends Component {
 	    node.style.width = '800px';
 	    setTimeout(() => {
 	      domtoimage
-	        .toBlob(node)
-	        .then((blob) => {
+	        .toJpeg(node)
+	        .then((file) => {
 	          node.style.width = 'auto';
 
-	          // upload image
-	          uploadFile({ file: blob }).then((res) => {
-	            displayPageLoader(false);
-	            if (res.success && res.data) {
-	              // download image
-	              window.open(
-	                replaceUrlPlaceholders(`{CDN_DOMAIN}${res.data.image}`),
-	                '_blank'
-	              );
-	            } else {
-	              const errorMessage = getTraceID(res);
-	              showAlertBox({
-	                message: res.errMessage || errorMessage,
-	              });
-	            }
-	          });
+	          // download image
+	          const link = document.createElement('a');
+	          link.href = file;
+	          link.download = `sample-ballot.png`;
+	          document.body.appendChild(link);
+	          link.click();
+	          // document.body.removeChild(link);
+	          displayPageLoader(false);
+
+	          // // upload image
+	          // uploadFile({ file: blob }).then((res) => {
+	          //   displayPageLoader(false);
+	          //   if (res.success && res.data) {
+	          //     // download image
+	          //     window.open(
+	          //       replaceUrlPlaceholders(`{CDN_DOMAIN}${res.data.image}`),
+	          //       '_blank'
+	          //     );
+	          //   } else {
+	          //     const errorMessage = getTraceID(res);
+	          //     showAlertBox({
+	          //       message: res.errMessage || errorMessage,
+	          //     });
+	          //   }
+	          // });
 	        })
 	        .catch(() => {
 	          node.style.width = 'auto';
