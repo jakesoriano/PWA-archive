@@ -253,6 +253,9 @@ export const initialStore = {
     data: [],
     total: 0,
     page: 1,
-    selected: null
-  }
+    selected: null,
+  },
+  pinkPatrol: {
+    data: [],
+  },
 };

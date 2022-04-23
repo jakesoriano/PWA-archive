@@ -20,17 +20,15 @@ import {
   resizeImage,
 } from '_helpers';
 import { crowdSourcingImageUpload } from '_mutations';
+import { patrolReportTypes } from '_constant';
 import style from './style';
-class House2HouseImagesUpload extends Component {
+
+class PinkPatrol extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: {
-        value: `${props.authUser.profile.fname}${
-					props.authUser.profile?.lname
-					  ? ` ${props.authUser.profile?.lname}`
-					  : ''
-				}`,
+      reportType: {
+        value: '',
         error: '',
         message: '',
         hasError: false,
@@ -88,10 +86,10 @@ class House2HouseImagesUpload extends Component {
 	  }
 	};
 
-	onNameChange = (value) => {
+	onReportTypeChange = (value) => {
 	  this.setState({
-	    name: {
-	      ...this.state.name,
+	    reportType: {
+	      ...this.state.reportType,
 	      value: value,
 	      hasError: !Boolean(value),
 	      error: !Boolean(value) ? 'REQUIRED' : '',
@@ -199,14 +197,14 @@ class House2HouseImagesUpload extends Component {
 
 	onSubmit = () => {
 	  if (
-	    !this.state.name.value ||
+	    !this.state.reportType.value ||
 			!this.state.region.value ||
 			!this.state.province.value ||
 			!this.state.municipality.value ||
 			!this.state.barangay.value ||
 			!this.state.attachment.file
 	  ) {
-	    this.onNameChange(this.state.name.value);
+	    this.onrReportTypeChange(this.state.reportType.value);
 	    this.onRegionChange(this.state.region.value);
 	    this.onProvinceChange(this.state.province.value);
 	    this.onMunicipalityChange(this.state.municipality.value);
@@ -215,7 +213,7 @@ class House2HouseImagesUpload extends Component {
 	  } else {
 	    let { file } = this.state.attachment;
 	    const data = {
-	      name: this.state.name.value,
+	      reportType: this.state.reportType.value,
 	      region: this.state.region.value,
 	      province: this.state.province.value,
 	      municipality: this.state.municipality.value,
@@ -277,26 +275,31 @@ class House2HouseImagesUpload extends Component {
 	    municipalityOptions,
 	    barangayOptions,
 	    attachment,
-	    name,
+	    reportType,
 	  }
 	) => (
-	  <div className={style.h2hIUWrap}>
+	  <div className={style.pinkPatrol}>
 	    <div className={style.formContainer}>
-	      <FormGroup label="Name*" hasError={name.hasError}>
-	        <FormInput
-	          className={style.name}
-	          style={{ error: style.name }}
-	          value={name.value}
-	          type="text"
+	      <FormGroup
+	        label="Ano ang gusto mong i-report? *"
+	        hasError={reportType.hasError}
+	        className={style.mainFields}
+	      >
+	        <FormDropdown
+	          className={style.reportType}
+	          value={reportType.value}
+	          options={patrolReportTypes}
+	          getValue={(option) => option}
+	          getText={(option) => option}
 	          onBlur={(e) => {
-	            this.onNameChange(e.target.value);
+	            this.onReportTypeChange(e.target.value);
 	          }}
-	          onInput={(e) => {
-	            this.onNameChange(e.target.value);
+	          onChange={(e) => {
+	            this.onReportTypeChange(e.target.value);
 	          }}
-	          hasError={name.hasError}
-	          error={name.error}
-	          message={name.message}
+	          hasError={reportType.hasError}
+	          error={reportType.error}
+	          message={reportType.message}
 	        />
 	      </FormGroup>
 	      <FormGroup label="REGION" hasError={region.hasError}>
@@ -429,11 +432,19 @@ class House2HouseImagesUpload extends Component {
 	        onClickCallback={() => {
 	          this.onSubmit();
 	        }}
+	        text={getTranslation('SUBMIT_REPORT')}
 	        buttonStyle={style.submiReport}
-	        text={getTranslation('UPLOAD')}
+	      />
+
+	      <ButtonDescription
+	        onClickCallback={() => {
+	          this.onSubmit();
+	        }}
+	        buttonStyle={style.saveDraft}
+	        text={getTranslation('SAVE_DRAFT')}
 	      />
 	    </div>
 	  </div>
 	);
 }
-export default connect('authUser')(House2HouseImagesUpload);
+export default connect(['authUser', 'pinkPatrol'])(PinkPatrol);

@@ -17,7 +17,7 @@ class TextVideoAndDesc extends Component {
 	          src={video}
 	        ></iframe>
 	      )}
-	      <span className={style.description}>{description}</span>
+	      <span className={style.description}>{getTranslation(description)}</span>
 	    </div>
 	  );
 	};

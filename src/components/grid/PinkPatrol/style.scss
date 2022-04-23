@@ -1,8 +1,11 @@
 @import '../../../style/variables.scss';
-.h2hIUWrap {
+.pinkPatrol {
   padding: 10px;
   .formContainer {
     border-radius: 10px;
+    .mainFields > label{
+      font-family: 'OpenSans-Bold', arial, sans-serif;
+    }
     .formGroup > label {
       font-family: 'OpenSans-Regular', arial, sans-serif;
       font-style: italic;
@@ -59,5 +62,10 @@
   .submiReport {
     border: 1px solid $pink_button !important;
     background-color: $pink_button !important;
+  }
+  .saveDraft {
+    border: 1px solid $pink_button !important;
+    background-color: $white !important;
+    color: $pink_button !important;
   }
 }

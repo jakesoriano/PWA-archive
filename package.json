@@ -60,6 +60,7 @@
     "@wojtekmaj/react-daterange-picker": "^3.4.0",
     "axios": "^0.21.1",
     "clipboard-copy": "^4.0.1",
+    "dom-to-image": "^2.6.0",
     "history": "^4.10.1",
     "preact": "^10.5.13",
     "preact-render-to-string": "^5.1.19",

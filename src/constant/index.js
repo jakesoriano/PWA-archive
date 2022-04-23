@@ -8,3 +8,5 @@ export * from './incidentCategories';
 export * from './fakeNewsCategories';
 export * from './lawyers';
 export * from './trustedBy';
+export * from './pinkPatrol';
+export * from './candidate';

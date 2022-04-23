@@ -136,16 +136,33 @@
 				"styles": "padding-bottom: 52%;"
 			},
 			{
-				"selector": "#home-search-pinkpedia",
-				"styles": "background: #FFF; border: 2px solid #1a4789; display: block; text-align: center; margin-right: 15px;"
+				"selector": [
+					".widget5 > div",
+					".widget6 > div",
+					".widget7 > div"
+				],
+				"styles": "padding-bottom: 0;"
 			},
 			{
-				"selector": "#home-search-pinkpedia > div",
+				"selector": [
+					"#home-search-pinkpedia",
+					"#home-faq"
+				],
+				"styles": "background: #FFF; border: 1px solid #ec0186; display: block; text-align: center; margin: 15px 15px 0;"
+			},
+			{
+				"selector": [
+					"#home-search-pinkpedia > div",
+					"#home-faq > div"
+				],
 				"styles": "width: 20px; min-width: 20px; padding-bottom: 20px; display: inline-block;"
 			},
 			{
-				"selector": "#home-search-pinkpedia span",
-				"styles": "color: #1a4789; position: relative; top: -4px; font-family: 'OpenSans-Bold', arial, sans-serif;"
+				"selector": [
+					"#home-search-pinkpedia span",
+					"#home-faq span"
+				],
+				"styles": "color: #ec0186; position: relative; top: -4px; font-family: 'OpenSans-Bold', arial, sans-serif;"
 			},
 			{
 				"selector": "#home-gif > div",
@@ -165,6 +182,10 @@
 			{
 				"selector": "#home-h2h-images-upload",
 				"styles": "margin-top: 12.5px"
+			},
+			{
+				"selector": "#home-lawyers-for-chel",
+				"styles": "margin-bottom: 15px"
 			}
 		],
 		"auth": true,
@@ -176,6 +197,38 @@
 			},
 			{
 				"component": "UserPoints"
+			},
+			{
+				"component": "ButtonColumns",
+				"props": {
+					"data": [
+						{
+							"id": "home-sample-ballot",
+							"text": "RPC Sample Ballot",
+							"icon": "{CDN_DOMAIN_FILES}sample_balot.png",
+							"url": "sample-ballot"
+						},
+						{
+							"id": "home-pink-patrol",
+							"text": "L4L Pink Patroller",
+							"icon": "{CDN_DOMAIN_FILES}pink-patroller.png",
+							"url": "pink-patrol"
+						}
+					]
+				}
+			},
+			{
+				"component": "Buttons",
+				"props": {
+					"data": [
+						{
+							"id": "home-faq",
+							"text": "VOTER_FAQ",
+							"icon": "assets/images/i_pink.png",
+							"url": "voter-faq"
+						}
+					]
+				}
 			},
 			{
 				"component": "Buttons",
@@ -228,6 +281,19 @@
 						"url": "global-announcements",
 						"text": "SEE_ALL_NEWS"
 					}
+				}
+			},
+			{
+				"component": "Buttons",
+				"props": {
+					"data": [
+						{
+							"id": "home-search-pinkpedia",
+							"text": "SEARCH_PINKPEDIA",
+							"icon": "assets/images/magnifer_pink.png",
+							"url": "lenipedia"
+						}
+					]
 				}
 			},
 			{
@@ -296,19 +362,6 @@
 					"id": "home-lawyers-for-chel",
 					"image": "{CDN_DOMAIN_FILES}lawyers-for-chel.png",
 					"url": "lawyers-for-chel"
-				}
-			},
-			{
-				"component": "Buttons",
-				"props": {
-					"data": [
-						{
-							"id": "home-search-pinkpedia",
-							"text": "SEARCH_PINKPEDIA",
-							"icon": "assets/images/magnifer_blue.png",
-							"url": "lenipedia"
-						}
-					]
 				}
 			}
 		]
@@ -1302,6 +1355,86 @@
 				"props": {
 					"text": "UPLOAD_H2H_NOTE",
 					"id": "h2h-image-note"
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PATROL_PAGE",
+		"uri": "pink-patrol",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "TextVideoAndDesc",
+				"props": {
+					"title": "PATROL_TITLE",
+					"description": "PATROL_DESC"
+				}
+			},
+			{
+				"component": "PinkPatrol"
+			}
+		]
+	},
+	{
+		"styles": [
+			{
+				"selector": "#home-faq",
+				"styles": "background: #FFF; border: 1px solid #ec0186; display: block; text-align: center; margin: 15px 15px 0;"
+			},
+			{
+				"selector": "#home-faq > div",
+				"styles": "width: 20px; min-width: 20px; padding-bottom: 20px; display: inline-block;"
+			},
+			{
+				"selector": "#home-faq span",
+				"styles": "color: #ec0186; position: relative; top: -4px; font-family: 'OpenSans-Bold', arial, sans-serif;"
+			}
+		],
+		"auth": true,
+		"pageTitle": "SAMPLE_BALLOT",
+		"uri": "sample-ballot",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "TextVideoAndDesc",
+				"props": {
+					"title": "SAMPLE_BALLOT",
+					"description": "SAMPLE_BALLOT_DESC"
+				}
+			},
+			{
+				"component": "Buttons",
+				"props": {
+					"data": [
+						{
+							"id": "home-faq",
+							"text": "VOTER_FAQ",
+							"icon": "assets/images/i_pink.png",
+							"url": "voter-faq"
+						}
+					]
+				}
+			},
+			{
+				"component": "SampleBallot"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "VOTER_FAQ",
+		"uri": "voter-faq",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "TextVideoAndDesc",
+				"props": {
+					"title": "VOTER_FAQ",
+					"description": "SAMPLE_BALLOT_DESC"
 				}
 			}
 		]
