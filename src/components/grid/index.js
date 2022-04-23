@@ -93,3 +93,4 @@ export { default as ProfileHeader } from './ProfileHeader';
 export { default as FullImage } from './FullImage';
 export { default as CrowdSourcingTransactions } from './CrowdSourcingTransactions';
 export { default as CrowdSourcingTransactionDetails } from './CrowdSourcingTransactionDetails';
+export { default as House2HouseImagesUpload } from './House2HouseImagesUpload';

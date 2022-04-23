@@ -124,8 +124,16 @@
 				"styles": "background: rgb(161,32,95); background: linear-gradient(270deg, rgba(161,32,95,1) 0%, rgba(236,0,134,1) 100%);padding: 10px 30px;"
 			},
 			{
-				"selector": "#home-h2h-banner .imgWrap",
-				"styles": "padding-bottom: 37%;"
+				"selector": "#home-h2h-images-banner .imgWrap",
+				"styles": "padding-bottom: 38%;"
+			},
+			{
+				"selector": "#home-pink-finder-banner",
+				"styles": "margin: 10px 15px 5px;"
+			},
+			{
+				"selector": "#home-pink-finder-banner .imgWrap",
+				"styles": "padding-bottom: 52%;"
 			},
 			{
 				"selector": "#home-search-pinkpedia",
@@ -153,6 +161,10 @@
 					"#tarp_modal #modal_content"
 				],
 				"styles": "background: transparent; padding: 0 15px;"
+			},
+			{
+				"selector": "#home-h2h-images-upload",
+				"styles": "margin-top: 12.5px"
 			}
 		],
 		"auth": true,
@@ -219,10 +231,21 @@
 				}
 			},
 			{
+				"component": "Banner",
+				"props": {
+					"id": "home-h2h-images-banner",
+					"image": "{CDN_DOMAIN_FILES}H2H_Images.png?v=1",
+					"url": "h2h-images-upload"
+				}
+			},
+			{
+				
 				"component": "House2HouseBanner",
 				"props": {
-					"id": "home-h2h-banner",
-					"image": "{CDN_DOMAIN_FILES}H2H_April23.png"
+					"id": "home-pink-finder-banner",
+					"image": "{CDN_DOMAIN_FILES}pinkfinderbanner.jpeg",
+					"url": "https://thepinkfinder.com/",
+					"pinkfinder": 1
 				}
 			},
 			{
@@ -1256,6 +1279,30 @@
 		"contents": [
 			{
 				"component": "CrowdSourcingTransactionDetails"
+			}
+		]
+	},
+	{
+		"styles": [
+			{
+				"selector": "#h2h-image-note",
+				"styles": "margin: 10px 20px 0;padding-bottom: 20px;font-style: italic;"
+			}
+		],
+		"auth": true,
+		"pageTitle": "UPLOAD_H2H_IMAGES",
+		"uri": "h2h-images-upload",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "House2HouseImagesUpload"
+			},
+			{
+				"component": "Text",
+				"props": {
+					"text": "UPLOAD_H2H_NOTE",
+					"id": "h2h-image-note"
+				}
 			}
 		]
 	}

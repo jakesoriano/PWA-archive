@@ -439,5 +439,9 @@
 	"H2H_COMPLETED": "House-to-House Completed",
 	"H2H_COMPLETED_DESCR": "Our volunteers have successfully completed House-to-House with your help. You may view the photos of the activity below. Salamat, KakamPink!",
 	"VIEW_PROOF": "View proof of work",
-	"H2H_TRANSACTION_DETAILS": "House-to-House Transaction Details"
+	"H2H_TRANSACTION_DETAILS": "House-to-House Transaction Details",
+	"H2H_UPLOAD_IMAGE_SUCCESS": "Images sucessfully uploaded!",
+	"UPLOAD_H2H_IMAGES": "Upload House-to-House Images",
+	"UPLOAD_IMAGES": "Upload Images",
+	"UPLOAD_H2H_NOTE": "Note: by submitting your photos you agree for these photos to be used by Leni 2022 App and Robredo People's Council."
 }

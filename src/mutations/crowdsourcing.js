@@ -1,5 +1,5 @@
 import { updateStore, store } from '_unistore';
-import { xhr, urlCrowdsourcing, urlTransaction } from '_helpers';
+import { xhr, urlCrowdsourcing, urlTransaction, urlH2HImages } from '_helpers';
 
 export function getCommunityCrowdsourcing(page, limit) {
   //
@@ -107,6 +107,28 @@ export function checkCrowdSourcingtStatus(transactionId) {
       .catch((err) => {
         resolve(false);
         console.log(`SPA >> Checkout Status failed`, err);
+      });
+  });
+}
+
+export function crowdSourcingImageUpload (data) {
+  return new Promise((resolve) => {
+    xhr(urlH2HImages, {
+      method: 'POST',
+      data,
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> crowdSourcingImageUpload Error`, res);
+          resolve(false);
+        } else {
+          console.log(`SPA >> crowdSourcingImageUpload successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(false);
+        console.log(`SPA >> crowdSourcingImageUpload failed`, err);
       });
   });
 }

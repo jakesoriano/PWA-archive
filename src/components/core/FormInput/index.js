@@ -107,7 +107,8 @@ class FormInput extends Component {
 	        <input
 	          disabled
 	          className={`${style.dummyInput} ${props?.style?.dummy}`}
-	          value={props.value && props.value.name}
+	          value={props.value && props.value.name ? props.value.name : props.value}
+			  multiple={props.multiple}
 	        />
 	      )}
 	      {props.error && (
