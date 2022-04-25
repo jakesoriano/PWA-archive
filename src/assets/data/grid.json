@@ -133,7 +133,15 @@
 			},
 			{
 				"selector": "#home-pink-finder-banner .imgWrap",
-				"styles": "padding-bottom: 52%;"
+				"styles": "padding-bottom: 50%;"
+			},
+			{
+				"selector": "#home-video-conference-banner",
+				"styles": "margin: 10px 15px 5px;"
+			},
+			{
+				"selector": "#home-video-conference-banner .imgWrap",
+				"styles": "padding-bottom: 55%;"
 			},
 			{
 				"selector": [
@@ -305,13 +313,19 @@
 				}
 			},
 			{
-				
 				"component": "House2HouseBanner",
 				"props": {
 					"id": "home-pink-finder-banner",
 					"image": "{CDN_DOMAIN_FILES}pinkfinderbanner.jpeg",
-					"url": "https://thepinkfinder.com/",
-					"pinkfinder": 1
+					"url": "https://thepinkfinder.com/"
+				}
+			},
+			{
+				"component": "House2HouseBanner",
+				"props": {
+					"id": "home-video-conference-banner",
+					"image": "{CDN_DOMAIN_FILES}zoomrecordbanner.png",
+					"url": "https://us06web.zoom.us/rec/share/Ogch3rGErjWU03nZDbkIukosvTx9cS56o6_5ItpdxW1atSwiyL6cvJyNxHqPBYtn.DgZ1eqI_2I-2GBNV"
 				}
 			},
 			{
