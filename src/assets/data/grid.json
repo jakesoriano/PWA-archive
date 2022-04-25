@@ -125,7 +125,7 @@
 			},
 			{
 				"selector": "#home-h2h-images-banner .imgWrap",
-				"styles": "padding-bottom: 38%;"
+				"styles": "padding-bottom: 37%;"
 			},
 			{
 				"selector": "#home-pink-finder-banner",

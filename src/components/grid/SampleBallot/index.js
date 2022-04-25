@@ -21,7 +21,7 @@ class SampleBallot extends Component {
       team: {
         president: 10,
         vice: 7,
-        senators: [4, 11, 18, 21, 25, 31, 34, 38, 45, 58, 61, 64],
+        senators: [4, 18, 21, 34, 38, 45, 58],
       },
       selected: {
         president: 0,

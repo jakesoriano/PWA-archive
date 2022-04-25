@@ -1,42 +1,42 @@
 export const presidentCandidate = [
   {
-    name: 'Robredo, Leni',
+    name: 'ABELLA, ERNIE',
     party: 'IND',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'DE GUZMAN, LEODY',
+    party: 'PLM',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'DOMAGOSO, ISKO MORENO',
+    party: 'AKSYON',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'GONZALES, NORBERTO',
+    party: 'PDSP',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'LACSON, PING',
+    party: 'PDR',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'MANGONDATO, FAISAL',
+    party: 'KTPNAN',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'MARCOS, BONGBONG',
+    party: 'PFP',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'MONTEMAYOR, JOSE JR.',
+    party: 'DPP',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'PACQUIAO, MANNY PACMAN',
+    party: 'PROMDI',
   },
   {
-    name: 'Robredo, Leni',
+    name: 'ROBREDO, LENI',
     party: 'IND',
   },
   {
@@ -51,40 +51,40 @@ export const presidentCandidate = [
 
 export const viceCandidate = [
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'ATIENZA, LITO',
+    party: 'PROMDI',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'BELLO, WALDEN',
+    party: 'PLM',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'DAVID, RIZALITO',
+    party: 'DPP',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'DUTERTE, SARA',
+    party: 'LAKAS',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'LOPEZ, MANNY SD',
+    party: 'WPP',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'ONG, DOC WILLIE',
+    party: 'AKSYON',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'PANGILINAN, KIKO',
+    party: 'LP',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'SERAPIO, CARLOS',
+    party: 'KTPNAN',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
+    name: 'SOTTO, VICENTE TITO',
+    party: 'NPC',
   },
   {
     name: '',
@@ -102,259 +102,259 @@ export const viceCandidate = [
 
 export const senatorCandidate = [
   {
-    name: 'Robredo, Leni',
+    name: 'AFUANG, ABNER',
     party: 'IND',
   },
   {
-    name: 'Robredo, Leni',
+    name: 'ALBANI, IBRAHIM',
+    party: 'WPP',
+  },
+  {
+    name: 'ARRANZA, MANG JESS',
     party: 'IND',
   },
   {
-    name: 'Robredo, Leni',
+    name: 'BAGUILAT, TEDDY',
+    party: 'LP',
+  },
+  {
+    name: 'BAILEN, AGNES',
     party: 'IND',
   },
   {
-    name: 'Robredo, Leni',
+    name: 'BALITA, CARL',
+    party: 'AKSYON',
+  },
+  {
+    name: 'BARBO, LUTZ',
+    party: 'PDPLBN',
+  },
+  {
+    name: 'BAUTISTA, HERBERT BISTEK',
+    party: 'NPC',
+  },
+  {
+    name: 'BELGICA, GRECO',
+    party: 'PDDS',
+  },
+  {
+    name: 'BELLO, SILVESTRE JR.',
+    party: 'PDPLBN',
+  },
+  {
+    name: 'BINAY, JOJO',
+    party: 'UNA',
+  },
+  {
+    name: 'CABONEGRO, ROY',
+    party: 'PLM',
+  },
+  {
+    name: 'CASTRICIONES, BRO. JOHN',
+    party: 'PDPLBN',
+  },
+  {
+    name: 'CAYETANO, ALAN PETER',
     party: 'IND',
   },
   {
-    name: 'Robredo, Leni',
+    name: 'CHAVEZ, MELCHOR',
+    party: 'WPP',
+  },
+  {
+    name: 'COLMENARES, NERI',
+    party: 'MKBYN',
+  },
+  {
+    name: 'D’ANGELO, DAVID',
+    party: 'ABC',
+  },
+  {
+    name: 'DE LIMA, LEILA',
+    party: 'LP',
+  },
+  {
+    name: 'DEL ROSARIO, MONSOUR',
+    party: 'PDR',
+  },
+  {
+    name: 'DIAZ, DING',
+    party: 'PPP',
+  },
+  {
+    name: 'DIOKNO, CHEL',
+    party: 'KANP',
+  },
+  {
+    name: 'EJERCITO, JV ESTRADA',
+    party: 'NPC',
+  },
+  {
+    name: 'ELEAZAR, GEN. GUILLERMO',
+    party: 'PDR',
+  },
+  {
+    name: 'EREÑO, BRO. ERNIE',
+    party: 'PM',
+  },
+  {
+    name: 'ESCUDERO, CHIZ',
+    party: 'NPC',
+  },
+  {
+    name: 'ESPIRITU, LUKE',
+    party: 'PLM',
+  },
+  {
+    name: 'ESTRADA, JINGGOY',
+    party: 'PMP',
+  },
+  {
+    name: 'FALCONE, BAL FALCON',
+    party: 'DPP',
+  },
+  {
+    name: 'GADON, LARRY',
+    party: 'KBL',
+  },
+  {
+    name: 'GATCHALIAN, WIN',
+    party: 'NPC',
+  },
+  {
+    name: 'GORDON, WOW DICK',
+    party: 'BVNP',
+  },
+  {
+    name: 'GUTOC, SAMIRA',
+    party: 'AKSYON',
+  },
+  {
+    name: 'HONASAN, GRINGO',
     party: 'IND',
   },
   {
-    name: 'Robredo, Leni',
+    name: 'HONTIVEROS, RISA',
+    party: 'AKBAYAN',
+  },
+  {
+    name: 'JAVELLANA, RJ',
     party: 'IND',
   },
   {
-    name: 'Robredo, Leni',
+    name: 'KIRAM, NUR-MAHAL',
     party: 'IND',
   },
   {
-    name: 'Robredo, Leni',
+    name: 'LABOG, ELMER',
+    party: 'MKBYN',
+  },
+  {
+    name: 'LACSON, ALEX',
+    party: 'KP',
+  },
+  {
+    name: 'LANGIT, REY',
+    party: 'PDPLBN',
+  },
+  {
+    name: 'LEGARDA, LOREN',
+    party: 'NPC',
+  },
+  {
+    name: 'LIM, ARIEL',
     party: 'IND',
   },
   {
-    name: 'Robredo, Leni',
+    name: 'MALLILLIN, EMILY',
+    party: 'PPM',
+  },
+  {
+    name: 'MARCOLETA, RODANTE',
+    party: 'PDPLBN',
+  },
+  {
+    name: 'MARCOS, FRANCIS LEO',
     party: 'IND',
   },
   {
-    name: 'Robredo, Leni',
+    name: 'MATULA, SONNY',
     party: 'IND',
   },
   {
-    name: 'Robredo, Leni',
+    name: 'MINDALANO-ADAM, MARIETA',
+    party: 'KTPNAN',
+  },
+  {
+    name: 'OLARTE, ATTY/DR. LEO',
+    party: 'BIGKIS',
+  },
+  {
+    name: 'PADILLA, DRA. MINGUITA',
+    party: 'PDR',
+  },
+  {
+    name: 'PADILLA, ROBIN',
+    party: 'PDPLBN',
+  },
+  {
+    name: 'PANELO, SAL PANALO',
+    party: 'PDPLBN',
+  },
+  {
+    name: 'PIMENTEL, ASTRA',
+    party: 'PDPLBN',
+  },
+  {
+    name: 'PIÑOL, MANNY',
+    party: 'NPC',
+  },
+  {
+    name: 'RICABLANCA, WILLIE JR.',
+    party: 'PM',
+  },
+  {
+    name: 'ROQUE, HARRY SPOX',
+    party: 'PRP',
+  },
+  {
+    name: 'SAHIDULLA, LADY ANNE',
+    party: 'PDDS',
+  },
+  {
+    name: 'SISON, JOPET',
+    party: 'AKSYON',
+  },
+  {
+    name: 'TEODORO, GIBO',
+    party: 'PRP',
+  },
+  {
+    name: 'TRILLANES, ANTONIO IV',
+    party: 'LP',
+  },
+  {
+    name: 'TULFO, IDOL RAFFY',
     party: 'IND',
   },
   {
-    name: 'Robredo, Leni',
+    name: 'VALEROS, REY',
     party: 'IND',
   },
   {
-    name: 'Robredo, Leni',
+    name: 'VILLANUEVA, TESDAMAN',
     party: 'IND',
   },
   {
-    name: 'Robredo, Leni',
+    name: 'VILLAR, MARK',
+    party: 'NP',
+  },
+  {
+    name: 'ZUBIAGA, CARMEN',
     party: 'IND',
   },
   {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
-    party: 'IND',
-  },
-  {
-    name: 'Robredo, Leni',
+    name: 'ZUBIRI, MIGS',
     party: 'IND',
   },
 ];
