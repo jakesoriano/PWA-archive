@@ -190,6 +190,8 @@
   }
   .mainContent {
     background-color: $white;
+    max-width: 800px;
+    margin: 0 auto;
   }
   .btnSave {
     background-color: $pink_button;
