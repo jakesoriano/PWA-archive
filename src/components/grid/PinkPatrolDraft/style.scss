@@ -1,0 +1,43 @@
+@import '../../../style/variables.scss';
+.draftList {
+  margin: 0 10px;
+  .buttonDraft {
+    font-size: 0.8rem;
+    background-color: #E89C44;
+    justify-content: left;
+    border-radius: 10px;
+    margin: 5px;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    .draftInfo {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      width: 100%;
+      .iconStyle {
+        width: 25px;
+        padding-bottom: 25px;
+        margin-right: 10px;
+        margin-left: 15px;
+      }
+    }
+    .deleteContainer {
+      margin-left: auto;
+      .iconDelete {
+        width: 20px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
+
+.draftWrap {
+  background: #fff;
+  .modalTitle {
+    font-size: 0.9rem;
+    color: $black;
+    padding: 15px 20px 0;
+  }
+}
+

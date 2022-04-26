@@ -212,13 +212,13 @@
 					"data": [
 						{
 							"id": "home-sample-ballot",
-							"text": "RPC Sample Ballot",
+							"text": "Sample Ballot",
 							"icon": "{CDN_DOMAIN_FILES}sample_balot.png",
 							"url": "sample-ballot"
 						},
 						{
 							"id": "home-pink-patrol",
-							"text": "L4L Pink Patroller",
+							"text": "People Patroller",
 							"icon": "{CDN_DOMAIN_FILES}pink-patroller.png",
 							"url": "pink-patrol"
 						}
@@ -1374,7 +1374,20 @@
 		]
 	},
 	{
-		"styles": [],
+		"styles": [
+			{
+				"selector": "#pink-patrol-faq",
+				"styles": "background: #FFF; border: 1px solid #ec0186; display: block; text-align: center; margin: 15px 15px 0;"
+			},
+			{
+				"selector": "#pink-patrol-faq > div",
+				"styles": "width: 20px; min-width: 20px; padding-bottom: 20px; display: inline-block;"
+			},
+			{
+				"selector": "#pink-patrol-faq span",
+				"styles": "color: #ec0186; position: relative; top: -4px; font-family: 'OpenSans-Bold', arial, sans-serif;"
+			}
+		],
 		"auth": true,
 		"pageTitle": "PATROL_PAGE",
 		"uri": "pink-patrol",
@@ -1383,9 +1396,25 @@
 			{
 				"component": "TextVideoAndDesc",
 				"props": {
-					"title": "PATROL_TITLE",
+					"title": "PATROL_PAGE",
 					"description": "PATROL_DESC"
 				}
+			},
+			{
+				"component": "Buttons",
+				"props": {
+					"data": [
+						{
+							"id": "pink-patrol-faq",
+							"text": "SAMPLE_BALLOT_FAQ",
+							"icon": "assets/images/i_pink.png",
+							"url": "pink-patrol-faq"
+						}
+					]
+				}
+			},
+			{
+				"component": "PinkPatrolDraft"
 			},
 			{
 				"component": "PinkPatrol"
@@ -1395,15 +1424,15 @@
 	{
 		"styles": [
 			{
-				"selector": "#home-faq",
+				"selector": "#sample-ballot-faq",
 				"styles": "background: #FFF; border: 1px solid #ec0186; display: block; text-align: center; margin: 15px 15px 0;"
 			},
 			{
-				"selector": "#home-faq > div",
+				"selector": "#sample-ballot-faq > div",
 				"styles": "width: 20px; min-width: 20px; padding-bottom: 20px; display: inline-block;"
 			},
 			{
-				"selector": "#home-faq span",
+				"selector": "#sample-ballot-faq span",
 				"styles": "color: #ec0186; position: relative; top: -4px; font-family: 'OpenSans-Bold', arial, sans-serif;"
 			}
 		],
@@ -1424,10 +1453,10 @@
 				"props": {
 					"data": [
 						{
-							"id": "home-faq",
-							"text": "VOTER_FAQ",
+							"id": "sample-ballot-faq",
+							"text": "SAMPLE_BALLOT_FAQ",
 							"icon": "assets/images/i_pink.png",
-							"url": "voter-faq"
+							"url": "sample-ballot-faq"
 						}
 					]
 				}
@@ -1448,6 +1477,38 @@
 				"component": "TextVideoAndDesc",
 				"props": {
 					"title": "VOTER_FAQ",
+					"description": "SAMPLE_BALLOT_DESC"
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "SAMPLE_BALLOT_FAQ",
+		"uri": "sample-ballot-faq",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "TextVideoAndDesc",
+				"props": {
+					"title": "SAMPLE_BALLOT_FAQ",
+					"description": "SAMPLE_BALLOT_DESC"
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PATEOLLER_FAQ",
+		"uri": "pink-patrol-faq",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "TextVideoAndDesc",
+				"props": {
+					"title": "PATEOLLER_FAQ",
 					"description": "SAMPLE_BALLOT_DESC"
 				}
 			}

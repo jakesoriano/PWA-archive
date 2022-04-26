@@ -78,7 +78,7 @@ class Topbar extends Component {
 	                } else if (
 	                  this.props.route &&
 										this.props.route.url &&
-										this.props.route.url.indexOf('voter-faq') > -1
+										this.props.route.url.indexOf('-faq') > -1
 	                ) {
 	                  this.props.route.router.props.history.goBack();
 	                } else {

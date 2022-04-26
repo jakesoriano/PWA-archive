@@ -444,11 +444,13 @@
 	"UPLOAD_H2H_IMAGES": "Upload House-to-House Images",
 	"UPLOAD_IMAGES": "Upload Images",
 	"UPLOAD_H2H_NOTE": "Note: by submitting your photos you agree for these photos to be used by Leni 2022 App and Robredo People's Council.",
-	"PATROL_PAGE": "Pink Patrol",
-	"PATROL_TITLE": "Pink Patroller",
+	"PATROL_PAGE": "People Patroller",
 	"PATROL_DESC": "Lorem ipsum dolor sit amet. Qui cumque quidem a recusandae explicabo ut totam soluta aut molestiae beatae est animi quisquam nam adipisci consequatur.",
 	"SAVE_DRAFT": "Save Draft",
+	"SAVE_SUCCESS": "Save successful!",
 	"VOTER_FAQ": "Voter FAQ",
+	"PATEOLLER_FAQ": "People Patroller FAQ",
+	"SAMPLE_BALLOT_FAQ": "Sample Ballot FAQ",
 	"SAMPLE_BALLOT": "Sample Ballot",
 	"SAMPLE_BALLOT_DESC": "Lorem ipsum dolor sit amet. Qui cumque quidem a recusandae explicabo ut totam soluta aut molestiae beatae est animi quisquam nam adipisci consequatur.",
 	"SAMPLE_BALLOT_SIMULATOR": "Sample Ballot Simulator",
@@ -462,5 +464,8 @@
 	"PRESIDENT_ERROR": "For President: #10 Leni Robredo para sa Gobyernong Tapat, Angat Buhay Lahat!",
 	"VICE_PRESIDENT_ERROR": "For VP: #7 Kiko Pangilinan para Hello Pagkain, Goodbye Gutom!",
 	"SAMPLE_BALLOT_SAVE": "Save & Download Your Sample Ballot",
-	"DOWNLOAD_SAMPLE_BALLOT": "Download Sample Ballot"
+	"DOWNLOAD_SAMPLE_BALLOT": "Download Sample Ballot",
+	"DRAFT": "Draft",
+	"DELETE_DRAFT": "Delete draft",
+	"UPLOAD_MSG": "Mag-upload ng picture ng pangyayari o anumang ebidensya (Optional)"
 }

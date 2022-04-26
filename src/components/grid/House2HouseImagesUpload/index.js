@@ -417,7 +417,7 @@ class House2HouseImagesUpload extends Component {
 	                document.getElementById('inputAttachment').click();
 	              }}
 	            >
-	              <span>{getTranslation('ADD_FILE')}s</span>
+	              <span className={`bold`}>{getTranslation('ADD_FILE')}s</span>
 	            </a>
 	          </div>
 	        </div>

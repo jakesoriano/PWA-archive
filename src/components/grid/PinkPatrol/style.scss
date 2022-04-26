@@ -1,10 +1,51 @@
 @import '../../../style/variables.scss';
 .pinkPatrol {
   padding: 10px;
+  .buttonDraft {
+    font-size: 0.8rem;
+    background-color: #E89C44;
+    justify-content: left;
+    border-radius: 10px;
+    margin: 5px;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    .draftInfo {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      width: 100%;
+      .iconStyle {
+        width: 25px;
+        padding-bottom: 25px;
+        margin-right: 10px;
+        margin-left: 15px;
+      }
+    }
+    .deleteContainer {
+      margin-left: auto;
+      .iconDelete {
+        width: 20px;
+        padding-bottom: 20px;
+      }
+    }
+  }
   .formContainer {
     border-radius: 10px;
     .mainFields > label{
       font-family: 'OpenSans-Bold', arial, sans-serif;
+      font-style: normal;
+    }
+    .uploadMsg {
+      color: $black;
+      margin: 5px 10px;
+      font-size: 0.8rem;
+    }
+    .locInfo {
+      display: flex;
+      .locField {
+        width: 100%;
+      }
     }
     .formGroup > label {
       font-family: 'OpenSans-Regular', arial, sans-serif;
@@ -43,9 +84,10 @@
       .pShare {
         background: $pink_button;
         margin: 0 auto;
-        padding: 5px 20px;
+        padding: 15px 20px;
         width: max-content;
         text-align: center;
+        border-radius: 5px;
         .pIconShare {
           padding-bottom: 18px;
           width: 18px;

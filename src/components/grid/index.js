@@ -97,3 +97,4 @@ export { default as House2HouseImagesUpload } from './House2HouseImagesUpload';
 export { default as PinkPatrol } from './PinkPatrol';
 export { default as SampleBallot } from './SampleBallot';
 export { default as ButtonColumns } from './ButtonColumns';
+export { default as PinkPatrolDraft } from './PinkPatrolDraft';

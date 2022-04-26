@@ -7,6 +7,7 @@ import {
   urlApplyPollWatcher,
   urlReportFakeNews,
   urlReportSpamText,
+  urlPinkPatrolReport,
 } from '_helpers';
 
 export function sendContactUs(data) {
@@ -151,6 +152,28 @@ export function reportSpamText(data) {
       .catch((err) => {
         resolve(err);
         console.log(`sarsa SPA >> reportSpamText failed`, err);
+      });
+  });
+}
+
+export function pinkPatrolReport(data) {
+  return new Promise((resolve) => {
+    xhr(urlPinkPatrolReport, {
+      method: 'POST',
+      data,
+    })
+      .then((res) => {
+        if (!res.success) {
+          console.log(`SPA >> pinkPatrolReport Error`, res);
+          resolve(false);
+        } else {
+          console.log(`SPA >> pinkPatrolReport successful`, res);
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        resolve(false);
+        console.log(`SPA >> pinkPatrolReport failed`, err);
       });
   });
 }
