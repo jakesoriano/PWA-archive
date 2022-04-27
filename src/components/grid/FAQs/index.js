@@ -3,7 +3,7 @@ import { faqs } from '_constant';
 import { Accordion } from '_components/core';
 import { getTranslation, getConfigByKey } from '_helpers';
 import style from './style.scss';
-class VoteFirstFAQs extends Component {
+class FAQs extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,4 +44,4 @@ class VoteFirstFAQs extends Component {
     }
   };
 }
-export default VoteFirstFAQs;
+export default FAQs;
