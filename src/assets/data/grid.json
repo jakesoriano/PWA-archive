@@ -217,7 +217,7 @@
 			},
 			{
 				"selector": "#w3 > div button span",
-				"styles": "color: #444444;text-transform: uppercase;"
+				"styles": "color: #444444;text-transform: uppercase;font-family: 'OpenSans-Bold', arial, sans-serif;"
 			}
 		],
 		"auth": true,
