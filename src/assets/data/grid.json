@@ -152,6 +152,10 @@
 				"styles": "padding-bottom: 0;"
 			},
 			{
+				"selector": "#w4",
+				"styles": "display: none;"
+			},
+			{
 				"selector": [
 					"#home-search-pinkpedia",
 					"#home-faq"
@@ -1406,7 +1410,7 @@
 					"data": [
 						{
 							"id": "pink-patrol-faq",
-							"text": "SAMPLE_BALLOT_FAQ",
+							"text": "PATROLLER_FAQ",
 							"icon": "assets/images/i_pink.png",
 							"url": "pink-patrol-faq"
 						}
@@ -1423,6 +1427,10 @@
 	},
 	{
 		"styles": [
+			{
+				"selector": "#w2",
+				"styles": "display: none;"
+			},
 			{
 				"selector": "#sample-ballot-faq",
 				"styles": "background: #FFF; border: 1px solid #ec0186; display: block; text-align: center; margin: 15px 15px 0;"
@@ -1474,7 +1482,7 @@
 		"withBack": true,
 		"contents": [
 			{
-				"component": "TextVideoAndDesc",
+				"component": "TextAndDescription",
 				"props": {
 					"title": "VOTER_FAQ",
 					"description": "SAMPLE_BALLOT_DESC"
@@ -1490,7 +1498,7 @@
 		"withBack": true,
 		"contents": [
 			{
-				"component": "TextVideoAndDesc",
+				"component": "TextAndDescription",
 				"props": {
 					"title": "SAMPLE_BALLOT_FAQ",
 					"description": "SAMPLE_BALLOT_DESC"
@@ -1501,14 +1509,14 @@
 	{
 		"styles": [],
 		"auth": true,
-		"pageTitle": "PATEOLLER_FAQ",
+		"pageTitle": "PATROLLER_FAQ",
 		"uri": "pink-patrol-faq",
 		"withBack": true,
 		"contents": [
 			{
-				"component": "TextVideoAndDesc",
+				"component": "TextAndDescription",
 				"props": {
-					"title": "PATEOLLER_FAQ",
+					"title": "PATROLLER_FAQ",
 					"description": "SAMPLE_BALLOT_DESC"
 				}
 			}

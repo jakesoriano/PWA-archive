@@ -457,12 +457,13 @@ class PinkPatrol extends Component {
 			!this.state.location.value ||
 			!this.state.message.value ||
 			(this.state.reportType.value &&
-			this.state.reportType.value !== patrolReportTypes[0] &&
-			this.state.reportType.value !== patrolReportTypes[1] &&
-			!this.state.witness.value) ||
-			(this.state.witness.value === this.state.witnessOptions[1] && 
-			(!this.state.witnessName.value || !this.state.witnessContact.value)) ||
-			(this.state.location.value === this.state.locationOptions[0] && !this.state.precint.value)
+				this.state.reportType.value !== patrolReportTypes[0] &&
+				this.state.reportType.value !== patrolReportTypes[1] &&
+				!this.state.witness.value) ||
+			(this.state.witness.value === this.state.witnessOptions[1] &&
+				(!this.state.witnessName.value || !this.state.witnessContact.value)) ||
+			(this.state.location.value === this.state.locationOptions[0] &&
+				!this.state.precint.value)
 	  ) {
 	    this.onReportTypeChange(this.state.reportType.value);
 	    this.onWitnessChange(this.state.witness.value);
@@ -505,7 +506,7 @@ class PinkPatrol extends Component {
 	              console.error(res);
 	              return uploadFile({ file: res });
 	            });
-	        } 
+	        }
 	        return uploadFile({ file: item });
 	      })
 	    )
@@ -1028,16 +1029,14 @@ class PinkPatrol extends Component {
 	              multiple
 	            />
 	          </div>
-	          <div>
-	            <a
-	              className={style.pShare}
-	              onClick={() => {
-	                document.getElementById('inputAttachment').click();
-	              }}
-	            >
-	              <span className={`bold`}>{getTranslation('ADD_FILE')}s</span>
-	            </a>
-	          </div>
+	          <a
+	            className={style.pShare}
+	            onClick={() => {
+	              document.getElementById('inputAttachment').click();
+	            }}
+	          >
+	            <span className={`bold`}>{getTranslation('ADD_FILE')}s</span>
+	          </a>
 	        </div>
 	      </FormGroup>
 	    </div>

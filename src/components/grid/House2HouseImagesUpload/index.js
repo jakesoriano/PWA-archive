@@ -410,16 +410,14 @@ class House2HouseImagesUpload extends Component {
 	              multiple
 	            />
 	          </div>
-	          <div>
-	            <a
-	              className={style.pShare}
-	              onClick={() => {
-	                document.getElementById('inputAttachment').click();
-	              }}
-	            >
-	              <span className={`bold`}>{getTranslation('ADD_FILE')}s</span>
-	            </a>
-	          </div>
+	          <a
+	            className={style.pShare}
+	            onClick={() => {
+	              document.getElementById('inputAttachment').click();
+	            }}
+	          >
+	            <span className={`bold`}>{getTranslation('ADD_FILE')}s</span>
+	          </a>
 	        </div>
 	      </FormGroup>
 	    </div>

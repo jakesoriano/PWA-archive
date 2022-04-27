@@ -204,7 +204,7 @@ class SampleBallot extends Component {
 	);
 
 	renderSuggested = () => {
-	  const { selected, maxSenators } = this.state;
+	  const { selected, team } = this.state;
 
 	  return (
 	    <div className={style.suggested}>
@@ -222,10 +222,12 @@ class SampleBallot extends Component {
 	        </button>
 	        <button
 	          className={`${style.sBtn} ${
-							selected.senators.length >= maxSenators ? style.highlight : ''
+							selected.senators.length >= team.senators.length
+							  ? style.highlight
+							  : ''
 						}`}
 	          onClick={this.onClickSuggestedSenators}
-	        >{`${maxSenators} ${getTranslation('SENATORS')}`}</button>
+	        >{`${team.senators.length} ${getTranslation('SENATORS')}`}</button>
 	      </div>
 	    </div>
 	  );
