@@ -151,6 +151,7 @@
 	"MOBILE_NOT_ALLOWED": "Account not allowed! Please use Social Media to login.",
 	"ENTER_MOBILE": "Enter Mobile Number",
 	"ENTER_11_DIGIT_MOBILE": "Enter your 11-digit mobile number to proceed retrieving your password.",
+	"ENTER_11_DIGIT_MOBILE_USERNAME": "Enter your 11-digit mobile number to proceed retrieving your username.",
 	"PAGE_DATA_PRIVACY": "Data Privacy Acceptance",
 	"CONSENT": "Consent",
 	"PRIVACY_BOTTON_DESC": "By clicking continue, I accept the data privacy consent indicated herewith.",

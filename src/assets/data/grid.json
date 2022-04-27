@@ -137,11 +137,11 @@
 			},
 			{
 				"selector": "#home-video-conference-banner",
-				"styles": "margin: 10px 15px 5px;"
+				"styles": "margin: 15px 15px 5px;"
 			},
 			{
 				"selector": "#home-video-conference-banner .imgWrap",
-				"styles": "padding-bottom: 55%;"
+				"styles": "padding-bottom: 54%;"
 			},
 			{
 				"selector": [
@@ -849,7 +849,10 @@
 		"uri": "enter-mobile-pw",
 		"contents": [
 			{
-				"component": "ForgotEnterMobile"
+				"component": "ForgotEnterMobile",
+				"props": {
+					"subText": "ENTER_11_DIGIT_MOBILE"
+				}
 			}
 		]
 	},
@@ -860,7 +863,10 @@
 		"uri": "enter-mobile-un",
 		"contents": [
 			{
-				"component": "ForgotEnterMobile"
+				"component": "ForgotEnterMobile",
+				"props": {
+					"subText": "ENTER_11_DIGIT_MOBILE_USERNAME"
+				}
 			}
 		]
 	},
