@@ -10,3 +10,4 @@ export * from './lawyers';
 export * from './trustedBy';
 export * from './pinkPatrol';
 export * from './candidate';
+export * from './faqs';

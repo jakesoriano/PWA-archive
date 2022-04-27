@@ -450,7 +450,8 @@
 	"SAVE_DRAFT": "Save Draft",
 	"SAVE_SUCCESS": "Save successful!",
 	"VOTER_FAQ": "Voter FAQ",
-	"PATROLLER_FAQ": "People Patroller FAQ",
+	"PP_FAQ": "PP FAQ",
+	"PATROLLER_FAQ": "PEOPLE PATROLLER FAQ",
 	"SAMPLE_BALLOT_FAQ": "Sample Ballot FAQ",
 	"SAMPLE_BALLOT": "Sample Ballot",
 	"SAMPLE_BALLOT_DESC": "Ang digital sample ballot na ito ay ginawa upang makatulong sa mga botante na makapaghanda para sa araw ng halalan. Makikita mo rito ang pangalan ng mga kandidato, at kung saan sila lalabas sa iyong balota para makapag-practice bumoto at maiwasan ang mga pagkakamali. Maaari mo ring i-save o i-print ang iyong sample ballot para dalhin sa voting precinct.",
@@ -468,5 +469,11 @@
 	"DOWNLOAD_SAMPLE_BALLOT": "Download Sample Ballot",
 	"DRAFT": "Draft",
 	"DELETE_DRAFT": "Delete draft",
-	"UPLOAD_MSG": "Mag-upload ng picture ng pangyayari o anumang ebidensya (Optional)"
+	"UPLOAD_MSG": "Mag-upload ng picture ng pangyayari o anumang ebidensya (Optional)",
+	"PP_FAQ_DESC": "This page addresses the  most common questions on becoming a People Patroller during election day and reporting election-related incidents.",
+	"VOTE_FIRST": "Vote First",
+	"ASSIST_OTHER_VOTERS": "Assist Other Voters",
+	"DOCUMENT_REPORT": "Document & Report",
+	"TODO_LIST": "To-Do List",
+	"ELECTION_OFFENSES": "Election Offenses, I-check natin!"
 }

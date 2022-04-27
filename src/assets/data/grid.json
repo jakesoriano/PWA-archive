@@ -1515,7 +1515,7 @@
 	{
 		"styles": [],
 		"auth": true,
-		"pageTitle": "PATROLLER_FAQ",
+		"pageTitle": "PP_FAQ",
 		"uri": "pink-patrol-faq",
 		"withBack": true,
 		"contents": [
@@ -1523,7 +1523,75 @@
 				"component": "TextAndDescription",
 				"props": {
 					"title": "PATROLLER_FAQ",
-					"description": "SAMPLE_BALLOT_DESC"
+					"description": "PP_FAQ_DESC"
+				}
+			},
+			{
+				"component": "FAQs",
+				"props": {
+					"title": "VOTE_FIRST",
+					"dataKey": "voters",
+					"dataSubKey": "voteFirst"
+				}
+			},
+			{
+				"component": "Timeline",
+				"props": {
+					"title": "TODO_LIST",
+					"data": [
+						{
+							"leftText": "Pre-Elections",
+							"list": [
+								"Check your voter registration status: https://voterverifier.comelec.gov.ph/",
+						  		"Sign up to be a volunteer via the Leni app",
+						  		"Convert voters to Leni-Kiko"
+							]
+						},
+						{
+							"leftText": "During Elections (MAY 9)",
+							"list": [
+								"Vote early",
+						  		"Check your temperature",
+						  		"Document and report any incidents"
+							]
+						},
+						{
+							"leftText": "After Elections",
+							"list": [
+								"Monitor the results of the election"
+							]
+						}
+					]
+				}
+			},
+			{
+				"component": "FAQs",
+				"props": {
+					"title": "ASSIST_OTHER_VOTERS",
+					"dataKey": "voters",
+					"dataSubKey": "assistVoters"
+				}
+			},
+			{
+				"component": "FAQs",
+				"props": {
+					"title": "DOCUMENT_REPORT",
+					"dataKey": "voters",
+					"dataSubKey": "documentReport"
+				}
+			},
+			{
+				"component": "ElectionOffenses",
+				"props": {
+					"title": "ELECTION_OFFENSES",
+					"data": [
+						"{CDN_DOMAIN_FILES}Election-Offenses/1.png",
+						"{CDN_DOMAIN_FILES}Election-Offenses/2.png",
+						"{CDN_DOMAIN_FILES}Election-Offenses/3.png",
+						"{CDN_DOMAIN_FILES}Election-Offenses/4.png",
+						"{CDN_DOMAIN_FILES}Election-Offenses/5.png",
+						"{CDN_DOMAIN_FILES}Election-Offenses/6.png"
+					]
 				}
 			}
 		]

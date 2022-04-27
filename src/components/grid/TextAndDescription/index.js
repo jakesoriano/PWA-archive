@@ -7,7 +7,9 @@ class TextAndDescription extends Component {
 	render = ({ title, description }) => {
 	  return (
 	    <div className={style.hfWrap}>
-	      {title && <span className={style.title}>{getTranslation(title)}</span>}
+	      {title && (
+	        <span className={`bold ${style.title}`}>{getTranslation(title)}</span>
+	      )}
 	      <span className={style.description}>{getTranslation(description)}</span>
 	    </div>
 	  );
