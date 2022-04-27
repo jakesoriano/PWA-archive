@@ -198,6 +198,26 @@
 			{
 				"selector": "#home-lawyers-for-chel",
 				"styles": "margin-bottom: 15px"
+			},
+			{
+				"selector": "#w3 > div",
+				"styles": "padding: 0 10px 2.5px;"
+			},
+			{
+				"selector": "#w3 > div button",
+				"styles": "flex-direction: column;margin: 5px; width: calc(50% - 10px); paddng: 5px 0 10px;border: 1px solid #D8D6A6;background: #FFFBEB;"
+			},
+			{
+				"selector": "#w3 > div button .imgWrap",
+				"styles": "flex-direction: column; margin: 0 auto;padding-bottom: 54%;width: 100%;"
+			},
+			{
+				"selector": "#w3 > div button .imgWrap",
+				"styles": "flex-direction: column; margin: 0 auto;padding-bottom: 54%;width: 100%;"
+			},
+			{
+				"selector": "#w3 > div button span",
+				"styles": "color: #444444;text-transform: uppercase;"
 			}
 		],
 		"auth": true,
@@ -211,19 +231,19 @@
 				"component": "UserPoints"
 			},
 			{
-				"component": "ButtonColumns",
+				"component": "Buttons",
 				"props": {
 					"data": [
 						{
 							"id": "home-sample-ballot",
 							"text": "Sample Ballot",
-							"icon": "{CDN_DOMAIN_FILES}sample_balot.png",
+							"icon": "{CDN_DOMAIN_FILES}sample-ballot-v3.png",
 							"url": "sample-ballot"
 						},
 						{
 							"id": "home-pink-patrol",
 							"text": "People Patroller",
-							"icon": "{CDN_DOMAIN_FILES}pink-patroller.png",
+							"icon": "{CDN_DOMAIN_FILES}people-patroller-v3.png",
 							"url": "pink-patrol"
 						}
 					]
