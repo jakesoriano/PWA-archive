@@ -21,6 +21,7 @@ import {
   promptModal,
   isUserUpdatedProfile,
   circleModal,
+  displayName,
 } from '_helpers';
 import { pinkPatrolReport } from '_mutations';
 import { patrolReportTypes } from '_constant';
@@ -219,32 +220,6 @@ class PinkPatrol extends Component {
 	      error: !Boolean(value) ? 'REQUIRED' : '',
 	    },
 	  });
-	  if (
-	    !this.state.reportType.value ||
-			this.state.reportType.value === patrolReportTypes[0] ||
-			this.state.reportType.value === patrolReportTypes[1]
-	  ) {
-	    this.setState({
-	      witness: {
-	        ...this.state.witness,
-	        value: '',
-	        hasError: !Boolean(value),
-	        error: !Boolean(value) ? 'REQUIRED' : '',
-	      },
-	      witnessName: {
-	        ...this.state.witnessName,
-	        value: '',
-	        hasError: !Boolean(value),
-	        error: !Boolean(value) ? 'REQUIRED' : '',
-	      },
-	      witnessContact: {
-	        ...this.state.witnessContact,
-	        value: '',
-	        hasError: !Boolean(value),
-	        error: !Boolean(value) ? 'REQUIRED' : '',
-	      },
-	    });
-	  }
 	};
 
 	onWitnessChange = (value) => {
@@ -255,23 +230,25 @@ class PinkPatrol extends Component {
 	      hasError: !Boolean(value),
 	      error: !Boolean(value) ? 'REQUIRED' : '',
 	    },
+	    witnessName: {
+	      ...this.state.witnessName,
+	      value:
+					value !== this.state.witnessOptions[1]
+					  ? displayName(this.props.authUser?.profile)
+					  : '',
+	      hasError: !Boolean(value),
+	      error: !Boolean(value) ? 'REQUIRED' : '',
+	    },
+	    witnessContact: {
+	      ...this.state.witnessContact,
+	      value:
+					value !== this.state.witnessOptions[1]
+					  ? this.props.authUser?.profile?.mobile
+					  : '',
+	      hasError: !Boolean(value),
+	      error: !Boolean(value) ? 'REQUIRED' : '',
+	    },
 	  });
-	  if (this.state.witness.value !== this.state.witnessOptions[1]) {
-	    this.setState({
-	      witnessName: {
-	        ...this.state.witnessName,
-	        value: '',
-	        hasError: !Boolean(value),
-	        error: !Boolean(value) ? 'REQUIRED' : '',
-	      },
-	      witnessContact: {
-	        ...this.state.witnessContact,
-	        value: '',
-	        hasError: !Boolean(value),
-	        error: !Boolean(value) ? 'REQUIRED' : '',
-	      },
-	    });
-	  }
 	};
 
 	onWitnessNameChange = (value) => {
@@ -472,12 +449,9 @@ class PinkPatrol extends Component {
 			!this.state.time.value ||
 			!this.state.location.value ||
 			!this.state.message.value ||
-			(this.state.reportType.value &&
-				this.state.reportType.value !== patrolReportTypes[0] &&
-				this.state.reportType.value !== patrolReportTypes[1] &&
-				!this.state.witness.value) ||
-			(this.state.witness.value === this.state.witnessOptions[1] &&
-				(!this.state.witnessName.value || !this.state.witnessContact.value)) ||
+			!this.state.witness.value ||
+			!this.state.witnessName.value ||
+			!this.state.witnessContact.value ||
 			(this.state.location.value === this.state.locationOptions[0] &&
 				!this.state.precint.value)
 	  ) {
@@ -582,12 +556,9 @@ class PinkPatrol extends Component {
 			!this.state.time.value ||
 			!this.state.location.value ||
 			!this.state.message.value ||
-			(this.state.reportType.value &&
-				this.state.reportType.value !== patrolReportTypes[0] &&
-				this.state.reportType.value !== patrolReportTypes[1] &&
-				!this.state.witness.value) ||
-			(this.state.witness.value === this.state.witnessOptions[1] &&
-				(!this.state.witnessName.value || !this.state.witnessContact.value)) ||
+			!this.state.witness.value ||
+			!this.state.witnessName.value ||
+			!this.state.witnessContact.value ||
 			(this.state.location.value === this.state.locationOptions[0] &&
 				!this.state.precint.value)
 	  ) {
@@ -753,81 +724,74 @@ class PinkPatrol extends Component {
 	        />
 	      </FormGroup>
 
-	      {reportType.value &&
-					reportType.value !== patrolReportTypes[0] &&
-					reportType.value !== patrolReportTypes[1] && (
-	        <>
-	          <FormGroup
-	            label="Ikaw ba mismo ang nakasaksi nito? *"
-	            hasError={witness.hasError}
-	            className={style.mainFields}
-	          >
-	            <FormDropdown
-	              className={style.witness}
-	              value={witness.value}
-	              options={witnessOptions}
-	              getValue={(option) => option}
-	              getText={(option) => option}
-	              onBlur={(e) => {
-	                this.onWitnessChange(e.target.value);
-	              }}
-	              onChange={(e) => {
-	                this.onWitnessChange(e.target.value);
-	              }}
-	              hasError={witness.hasError}
-	              error={witness.error}
-	              message={witness.message}
-	            />
-	          </FormGroup>
+	      <FormGroup
+	        label="Ikaw ba mismo ang nakasaksi nito? *"
+	        hasError={witness.hasError}
+	        className={style.mainFields}
+	      >
+	        <FormDropdown
+	          className={style.witness}
+	          value={witness.value}
+	          options={witnessOptions}
+	          getValue={(option) => option}
+	          getText={(option) => option}
+	          onBlur={(e) => {
+	            this.onWitnessChange(e.target.value);
+	          }}
+	          onChange={(e) => {
+	            this.onWitnessChange(e.target.value);
+	          }}
+	          hasError={witness.hasError}
+	          error={witness.error}
+	          message={witness.message}
+	        />
+	      </FormGroup>
 
-	          {witness.value === witnessOptions[1] && (
-	            <div>
-	              <FormGroup
-	                label="Sino ang nakasaksi nito? *"
-	                hasError={witnessName.hasError}
-	              >
-	                <FormInput
-	                  className={style.witnessName}
-	                  style={{ error: style.witnessName }}
-	                  value={witnessName.value}
-	                  type="text"
-	                  placeholder="I-type ang buong pangalan ng saksi"
-	                  onBlur={(e) => {
-	                    this.onWitnessNameChange(e.target.value);
-	                  }}
-	                  onInput={(e) => {
-	                    this.onWitnessNameChange(e.target.value);
-	                  }}
-	                  hasError={witnessName.hasError}
-	                  error={witnessName.error}
-	                  message={witnessName.message}
-	                />
-	              </FormGroup>
-	              <FormGroup
-	                label="Contact Number ng Saksi? *"
-	                hasError={witnessContact.hasError}
-	              >
-	                <FormInput
-	                  className={style.witnessContact}
-	                  style={{ error: style.witnessContact }}
-	                  value={witnessContact.value}
-	                  type="number"
-	                  placeholder="I-type ang contact number ng saksi"
-	                  onBlur={(e) => {
-	                    this.onWitnessContactChange(e.target.value);
-	                  }}
-	                  onInput={(e) => {
-	                    this.onWitnessContactChange(e.target.value);
-	                  }}
-	                  hasError={witnessContact.hasError}
-	                  error={witnessContact.error}
-	                  message={witnessContact.message}
-	                />
-	              </FormGroup>
-	            </div>
-	          )}
-	        </>
-	      )}
+	      <FormGroup
+	        label="Sino ang nakasaksi nito? *"
+	        hasError={witnessName.hasError}
+	        className={style.mainFields}
+	      >
+	        <FormInput
+	          className={style.witnessName}
+	          style={{ error: style.witnessName }}
+	          value={witnessName.value}
+	          type="text"
+	          placeholder="I-type ang buong pangalan ng saksi"
+	          onBlur={(e) => {
+	            this.onWitnessNameChange(e.target.value);
+	          }}
+	          onInput={(e) => {
+	            this.onWitnessNameChange(e.target.value);
+	          }}
+	          hasError={witnessName.hasError}
+	          error={witnessName.error}
+	          message={witnessName.message}
+	        />
+	      </FormGroup>
+
+	      <FormGroup
+	        label="Contact Number ng Saksi? *"
+	        hasError={witnessContact.hasError}
+	        className={style.mainFields}
+	      >
+	        <FormInput
+	          className={style.witnessContact}
+	          style={{ error: style.witnessContact }}
+	          value={witnessContact.value}
+	          type="number"
+	          placeholder="I-type ang contact number ng saksi"
+	          onBlur={(e) => {
+	            this.onWitnessContactChange(e.target.value);
+	          }}
+	          onInput={(e) => {
+	            this.onWitnessContactChange(e.target.value);
+	          }}
+	          hasError={witnessContact.hasError}
+	          error={witnessContact.error}
+	          message={witnessContact.message}
+	        />
+	      </FormGroup>
 
 	      <FormGroup
 	        label="Anong oras ito nangyari? *"

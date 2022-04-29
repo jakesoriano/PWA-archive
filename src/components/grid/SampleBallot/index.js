@@ -21,7 +21,8 @@ class SampleBallot extends Component {
       team: {
         president: 10,
         vice: 7,
-        senators: [4, 18, 21, 34, 38, 45, 58],
+        mainSenators: [4, 18, 21, 34, 38, 45, 58],
+        allSenators: [4, 18, 21, 34, 38, 45, 58, 11, 25, 31, 61],
       },
       selected: {
         president: 0,
@@ -31,23 +32,30 @@ class SampleBallot extends Component {
     };
   }
 
+	componentDidMount = () => {
+	  try {
+	    document.getElementById('president').scroll({ left: 600 });
+	    document.getElementById('vice').scroll({ left: 400 });
+	  } catch (err) {}
+	};
+
 	onClickSuggestedPresident = () => {
 	  const { selected, team } = this.state;
 	  this.setState({
 	    selected: {
 	      ...this.state.selected,
-	      president: !selected.president ? team.president : 0,
-	      vice: !selected.vice ? team.vice : 0,
+	      president: team.president,
+	      vice: team.vice,
 	    },
 	  });
 	};
 
-	onClickSuggestedSenators = () => {
-	  const { selected, team } = this.state;
+	onClickSuggestedSenators = (senators) => {
+	  const { selected } = this.state;
 	  this.setState({
 	    selected: {
 	      ...this.state.selected,
-	      senators: selected.senators.length <= 0 ? team.senators : [],
+	      senators: senators,
 	    },
 	  });
 	};
@@ -113,6 +121,17 @@ class SampleBallot extends Component {
 	      message: 'You have reached the maximum votes for Senators (12)',
 	    });
 	  }
+	};
+
+	onClickClear = () => {
+	  this.setState({
+	    selected: {
+	      ...this.state.selected,
+	      president: 0,
+	      vice: 0,
+	      senators: [],
+	    },
+	  });
 	};
 
 	onSaveSampleBallot = () => {
@@ -184,6 +203,18 @@ class SampleBallot extends Component {
 	  }
 	};
 
+	isSenatorsSelected = (senators) => {
+	  const { selected } = this.state;
+	  let isAllSelected = true;
+	  // eslint-disable-next-line no-restricted-syntax
+	  for (const s of senators) {
+	    if (!selected.senators.find((i) => i === s)) {
+	      isAllSelected = false;
+	    }
+	  }
+	  return isAllSelected;
+	};
+
 	renderModalContent = (imageUrl) => (
 	  <div className={style.modalWrap}>
 	    <ImageLoader
@@ -212,6 +243,7 @@ class SampleBallot extends Component {
 	        {getTranslation('SAMPLE_BALLOT_SUGGESTED')}
 	      </p>
 	      <div className={style.buttons}>
+	        {/* Leni-Kiko */}
 	        <button
 	          className={`${style.sBtn} ${
 							selected.president && selected.vice ? style.highlight : ''
@@ -220,14 +252,35 @@ class SampleBallot extends Component {
 	        >
 	          {getTranslation('VOTE_FOR_LENI_KIKO')}
 	        </button>
+	        {/* Main Senators */}
 	        <button
 	          className={`${style.sBtn} ${
-							selected.senators.length >= team.senators.length
-							  ? style.highlight
-							  : ''
+							this.isSenatorsSelected(team.mainSenators) ? style.highlight : ''
 						}`}
-	          onClick={this.onClickSuggestedSenators}
-	        >{`${team.senators.length} ${getTranslation('SENATORS')}`}</button>
+	          onClick={() => {
+	            this.onClickSuggestedSenators(team.mainSenators);
+	          }}
+	        >{`${team.mainSenators.length} ${getTranslation(
+	          'SENATORS'
+	        )}`}</button>
+	        {/* Main and Guest Senators */}
+	        <button
+	          className={`${style.sBtn} ${
+							this.isSenatorsSelected(team.allSenators) ? style.highlight : ''
+						}`}
+	          onClick={() => {
+	            this.onClickSuggestedSenators(team.allSenators);
+	          }}
+	        >{`${team.allSenators.length} ${getTranslation('SENATORS')}`}</button>
+	        {/* Clear */}
+	        <button
+	          className={`${style.sBtn} ${style.cBtn}`}
+	          onClick={() => {
+	            this.onClickClear();
+	          }}
+	        >
+	          {getTranslation('CLEAR')}
+	        </button>
 	      </div>
 	    </div>
 	  );
@@ -257,7 +310,7 @@ class SampleBallot extends Component {
 
 	renderCandidateList = (position, data, selected) => {
 	  return (
-	    <div className={style.listWrap}>
+	    <div id={position} className={style.listWrap}>
 	      <div className={style.list}>
 	        {data.map((item, index) => {
 	          const active = selected.indexOf(index + 1) > -1;
