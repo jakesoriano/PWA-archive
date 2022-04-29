@@ -1431,6 +1431,13 @@
 				}
 			},
 			{
+				"component": "Text",
+				"props": {
+					"text": "PATROL_PAGE_NOTE",
+					"id": "patrol-page-note"
+				}
+			},
+			{
 				"component": "Buttons",
 				"props": {
 					"data": [
