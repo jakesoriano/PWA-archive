@@ -67,14 +67,16 @@ class Accordion extends Component {
 	              src={data.answer.video}
 	            ></iframe>
 	          )}
-	          <div className={style.author}>
-	            <p>{data.answer.author}</p>
-	            <ImageLoader
-	              src={data.answer.authorImg}
-	              style={{ container: style.authorImg, image: style.image }}
-	              lazy
-	            />
-	          </div>
+	          {data.answer.authorImg && (
+	            <div className={style.author}>
+	              <p>{data.answer.author}</p>
+	              <ImageLoader
+	                src={data.answer.authorImg}
+	                style={{ container: style.authorImg, image: style.image }}
+	                lazy
+	              />
+	            </div>
+	          )}
 	        </div>
 	      </div>
 	    </div>

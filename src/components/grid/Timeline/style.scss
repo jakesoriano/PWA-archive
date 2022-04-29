@@ -1,0 +1,44 @@
+@import '../../../style/variables.scss';
+.timelineWrap {
+  padding: 10px 15px;
+  .heading {
+    color: $black;
+    margin-bottom: 10px;
+  }
+  .timeline {
+    display: flex;
+    align-items: center;
+    * {
+      font-size: 12px;
+    }
+    .left {
+      width: 95px;
+      min-width: 95px;
+      padding-right: 10px;
+      text-align: right;
+      .leftText {
+        color: $pink_text;
+        text-decoration: underline;
+      }
+    }
+    .right {
+      position: relative;
+      border-left: 1px solid $pink_text;
+      padding: 5px 0;
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: $pink_text;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -4px;
+      }
+      * {
+        color: $black;
+      }
+    }
+  }
+}

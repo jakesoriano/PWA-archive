@@ -125,7 +125,7 @@
 			},
 			{
 				"selector": "#home-h2h-images-banner .imgWrap",
-				"styles": "padding-bottom: 38%;"
+				"styles": "padding-bottom: 37%;"
 			},
 			{
 				"selector": "#home-pink-finder-banner",
@@ -137,23 +137,44 @@
 			},
 			{
 				"selector": "#home-video-conference-banner",
-				"styles": "margin: 10px 15px 5px;"
+				"styles": "margin: 15px 15px 5px;"
 			},
 			{
 				"selector": "#home-video-conference-banner .imgWrap",
-				"styles": "padding-bottom: 55%;"
+				"styles": "padding-bottom: 54%;"
 			},
 			{
-				"selector": "#home-search-pinkpedia",
-				"styles": "background: #FFF; border: 2px solid #1a4789; display: block; text-align: center; margin-right: 15px;"
+				"selector": [
+					".widget5 > div",
+					".widget6 > div",
+					".widget7 > div"
+				],
+				"styles": "padding-bottom: 0;"
 			},
 			{
-				"selector": "#home-search-pinkpedia > div",
+				"selector": "#w4",
+				"styles": "display: none;"
+			},
+			{
+				"selector": [
+					"#home-search-pinkpedia",
+					"#home-faq"
+				],
+				"styles": "background: #FFF; border: 1px solid #ec0186; display: block; text-align: center; margin: 15px 15px 0;"
+			},
+			{
+				"selector": [
+					"#home-search-pinkpedia > div",
+					"#home-faq > div"
+				],
 				"styles": "width: 20px; min-width: 20px; padding-bottom: 20px; display: inline-block;"
 			},
 			{
-				"selector": "#home-search-pinkpedia span",
-				"styles": "color: #1a4789; position: relative; top: -4px; font-family: 'OpenSans-Bold', arial, sans-serif;"
+				"selector": [
+					"#home-search-pinkpedia span",
+					"#home-faq span"
+				],
+				"styles": "color: #ec0186; position: relative; top: -4px; font-family: 'OpenSans-Bold', arial, sans-serif;"
 			},
 			{
 				"selector": "#home-gif > div",
@@ -173,6 +194,30 @@
 			{
 				"selector": "#home-h2h-images-upload",
 				"styles": "margin-top: 12.5px"
+			},
+			{
+				"selector": "#home-lawyers-for-chel",
+				"styles": "margin-bottom: 15px"
+			},
+			{
+				"selector": "#w3 > div",
+				"styles": "padding: 0 10px 2.5px;"
+			},
+			{
+				"selector": "#w3 > div button",
+				"styles": "flex-direction: column;margin: 5px; width: calc(50% - 10px); paddng: 5px 0 10px;border: 1px solid #D8D6A6;background: #FFFBEB;"
+			},
+			{
+				"selector": "#w3 > div button .imgWrap",
+				"styles": "flex-direction: column; margin: 0 auto;padding-bottom: 54%;width: 100%;"
+			},
+			{
+				"selector": "#w3 > div button .imgWrap",
+				"styles": "flex-direction: column; margin: 0 auto;padding-bottom: 54%;width: 100%;"
+			},
+			{
+				"selector": "#w3 > div button span",
+				"styles": "color: #444444;text-transform: uppercase;font-family: 'OpenSans-Bold', arial, sans-serif;"
 			}
 		],
 		"auth": true,
@@ -184,6 +229,38 @@
 			},
 			{
 				"component": "UserPoints"
+			},
+			{
+				"component": "Buttons",
+				"props": {
+					"data": [
+						{
+							"id": "home-sample-ballot",
+							"text": "Sample Ballot",
+							"icon": "{CDN_DOMAIN_FILES}sample-ballot-v3.png",
+							"url": "sample-ballot"
+						},
+						{
+							"id": "home-pink-patrol",
+							"text": "People Patroller",
+							"icon": "{CDN_DOMAIN_FILES}people-patroller-v3.png",
+							"url": "pink-patrol"
+						}
+					]
+				}
+			},
+			{
+				"component": "Buttons",
+				"props": {
+					"data": [
+						{
+							"id": "home-faq",
+							"text": "VOTER_FAQ",
+							"icon": "assets/images/i_pink.png",
+							"url": "voter-faq"
+						}
+					]
+				}
 			},
 			{
 				"component": "Buttons",
@@ -239,6 +316,19 @@
 				}
 			},
 			{
+				"component": "Buttons",
+				"props": {
+					"data": [
+						{
+							"id": "home-search-pinkpedia",
+							"text": "SEARCH_PINKPEDIA",
+							"icon": "assets/images/magnifer_pink.png",
+							"url": "lenipedia"
+						}
+					]
+				}
+			},
+			{
 				"component": "Banner",
 				"props": {
 					"id": "home-h2h-images-banner",
@@ -247,7 +337,6 @@
 				}
 			},
 			{
-				
 				"component": "House2HouseBanner",
 				"props": {
 					"id": "home-pink-finder-banner",
@@ -311,19 +400,6 @@
 					"id": "home-lawyers-for-chel",
 					"image": "{CDN_DOMAIN_FILES}lawyers-for-chel.png",
 					"url": "lawyers-for-chel"
-				}
-			},
-			{
-				"component": "Buttons",
-				"props": {
-					"data": [
-						{
-							"id": "home-search-pinkpedia",
-							"text": "SEARCH_PINKPEDIA",
-							"icon": "assets/images/magnifer_blue.png",
-							"url": "lenipedia"
-						}
-					]
 				}
 			}
 		]
@@ -793,7 +869,10 @@
 		"uri": "enter-mobile-pw",
 		"contents": [
 			{
-				"component": "ForgotEnterMobile"
+				"component": "ForgotEnterMobile",
+				"props": {
+					"subText": "ENTER_11_DIGIT_MOBILE"
+				}
 			}
 		]
 	},
@@ -804,7 +883,10 @@
 		"uri": "enter-mobile-un",
 		"contents": [
 			{
-				"component": "ForgotEnterMobile"
+				"component": "ForgotEnterMobile",
+				"props": {
+					"subText": "ENTER_11_DIGIT_MOBILE_USERNAME"
+				}
 			}
 		]
 	},
@@ -1317,6 +1399,226 @@
 				"props": {
 					"text": "UPLOAD_H2H_NOTE",
 					"id": "h2h-image-note"
+				}
+			}
+		]
+	},
+	{
+		"styles": [
+			{
+				"selector": "#pink-patrol-faq",
+				"styles": "background: #FFF; border: 1px solid #ec0186; display: block; text-align: center; margin: 15px 15px 0;"
+			},
+			{
+				"selector": "#pink-patrol-faq > div",
+				"styles": "width: 20px; min-width: 20px; padding-bottom: 20px; display: inline-block;"
+			},
+			{
+				"selector": "#pink-patrol-faq span",
+				"styles": "color: #ec0186; position: relative; top: -4px; font-family: 'OpenSans-Bold', arial, sans-serif;"
+			}
+		],
+		"auth": true,
+		"pageTitle": "PATROL_PAGE",
+		"uri": "pink-patrol",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "TextVideoAndDesc",
+				"props": {
+					"title": "PATROL_PAGE",
+					"description": "PATROL_DESC"
+				}
+			},
+			{
+				"component": "Text",
+				"props": {
+					"text": "PATROL_PAGE_NOTE",
+					"id": "patrol-page-note"
+				}
+			},
+			{
+				"component": "Buttons",
+				"props": {
+					"data": [
+						{
+							"id": "pink-patrol-faq",
+							"text": "PATROLLER_FAQ",
+							"icon": "assets/images/i_pink.png",
+							"url": "pink-patrol-faq"
+						}
+					]
+				}
+			},
+			{
+				"component": "PinkPatrolDraft"
+			},
+			{
+				"component": "PinkPatrol"
+			}
+		]
+	},
+	{
+		"styles": [
+			{
+				"selector": "#w2",
+				"styles": "display: none;"
+			},
+			{
+				"selector": "#sample-ballot-faq",
+				"styles": "background: #FFF; border: 1px solid #ec0186; display: block; text-align: center; margin: 15px 15px 0;"
+			},
+			{
+				"selector": "#sample-ballot-faq > div",
+				"styles": "width: 20px; min-width: 20px; padding-bottom: 20px; display: inline-block;"
+			},
+			{
+				"selector": "#sample-ballot-faq span",
+				"styles": "color: #ec0186; position: relative; top: -4px; font-family: 'OpenSans-Bold', arial, sans-serif;"
+			}
+		],
+		"auth": true,
+		"pageTitle": "SAMPLE_BALLOT",
+		"uri": "sample-ballot",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "TextVideoAndDesc",
+				"props": {
+					"title": "SAMPLE_BALLOT",
+					"description": "SAMPLE_BALLOT_DESC"
+				}
+			},
+			{
+				"component": "Buttons",
+				"props": {
+					"data": [
+						{
+							"id": "sample-ballot-faq",
+							"text": "SAMPLE_BALLOT_FAQ",
+							"icon": "assets/images/i_pink.png",
+							"url": "sample-ballot-faq"
+						}
+					]
+				}
+			},
+			{
+				"component": "SampleBallot"
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "VOTER_FAQ",
+		"uri": "voter-faq",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "TextAndDescription",
+				"props": {
+					"title": "VOTER_FAQ",
+					"description": "SAMPLE_BALLOT_DESC"
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "SAMPLE_BALLOT_FAQ",
+		"uri": "sample-ballot-faq",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "TextAndDescription",
+				"props": {
+					"title": "SAMPLE_BALLOT_FAQ",
+					"description": "SAMPLE_BALLOT_DESC"
+				}
+			}
+		]
+	},
+	{
+		"styles": [],
+		"auth": true,
+		"pageTitle": "PP_FAQ",
+		"uri": "pink-patrol-faq",
+		"withBack": true,
+		"contents": [
+			{
+				"component": "TextAndDescription",
+				"props": {
+					"title": "PATROLLER_FAQ",
+					"description": "PP_FAQ_DESC"
+				}
+			},
+			{
+				"component": "FAQs",
+				"props": {
+					"title": "VOTE_FIRST",
+					"dataKey": "voters",
+					"dataSubKey": "voteFirst"
+				}
+			},
+			{
+				"component": "Timeline",
+				"props": {
+					"title": "TODO_LIST",
+					"data": [
+						{
+							"leftText": "Pre-Elections",
+							"list": [
+								"Check your voter registration status: https://voterverifier.comelec.gov.ph/",
+						  		"Sign up to be a volunteer via the Leni app",
+						  		"Convert voters to Leni-Kiko"
+							]
+						},
+						{
+							"leftText": "During Elections (MAY 9)",
+							"list": [
+								"Vote early",
+						  		"Check your temperature",
+						  		"Document and report any incidents"
+							]
+						},
+						{
+							"leftText": "After Elections",
+							"list": [
+								"Monitor the results of the election"
+							]
+						}
+					]
+				}
+			},
+			{
+				"component": "FAQs",
+				"props": {
+					"title": "ASSIST_OTHER_VOTERS",
+					"dataKey": "voters",
+					"dataSubKey": "assistVoters"
+				}
+			},
+			{
+				"component": "FAQs",
+				"props": {
+					"title": "DOCUMENT_REPORT",
+					"dataKey": "voters",
+					"dataSubKey": "documentReport"
+				}
+			},
+			{
+				"component": "ElectionOffenses",
+				"props": {
+					"title": "ELECTION_OFFENSES",
+					"data": [
+						"{CDN_DOMAIN_FILES}Election-Offenses/1.png",
+						"{CDN_DOMAIN_FILES}Election-Offenses/2.png",
+						"{CDN_DOMAIN_FILES}Election-Offenses/3.png",
+						"{CDN_DOMAIN_FILES}Election-Offenses/4.png",
+						"{CDN_DOMAIN_FILES}Election-Offenses/5.png",
+						"{CDN_DOMAIN_FILES}Election-Offenses/6.png"
+					]
 				}
 			}
 		]

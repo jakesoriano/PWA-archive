@@ -397,6 +397,7 @@ class House2HouseImagesUpload extends Component {
 									attachment.file ? attachment.file.length + ' item(s)' : ''
 								}`}
 	              type="file"
+	              accept="image/*"
 	              onBlur={(e) => {
 	                this.onAttachmentChange(e.target.files);
 	              }}
@@ -409,16 +410,14 @@ class House2HouseImagesUpload extends Component {
 	              multiple
 	            />
 	          </div>
-	          <div>
-	            <a
-	              className={style.pShare}
-	              onClick={() => {
-	                document.getElementById('inputAttachment').click();
-	              }}
-	            >
-	              <span>{getTranslation('ADD_FILE')}s</span>
-	            </a>
-	          </div>
+	          <a
+	            className={style.pShare}
+	            onClick={() => {
+	              document.getElementById('inputAttachment').click();
+	            }}
+	          >
+	            <span className={`bold`}>{getTranslation('ADD_FILE')}s</span>
+	          </a>
 	        </div>
 	      </FormGroup>
 	    </div>
@@ -428,6 +427,7 @@ class House2HouseImagesUpload extends Component {
 	        onClickCallback={() => {
 	          this.onSubmit();
 	        }}
+	        buttonStyle={style.submiReport}
 	        text={getTranslation('UPLOAD')}
 	      />
 	    </div>

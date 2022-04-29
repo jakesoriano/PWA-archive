@@ -75,6 +75,12 @@ class Topbar extends Component {
 										this.props.route.previous === '/profile'
 	                ) {
 	                  this.props.route.router.props.history.goBack();
+	                } else if (
+	                  this.props.route &&
+										this.props.route.url &&
+										this.props.route.url.indexOf('-faq') > -1
+	                ) {
+	                  this.props.route.router.props.history.goBack();
 	                } else {
 	                  props.onBack();
 	                }

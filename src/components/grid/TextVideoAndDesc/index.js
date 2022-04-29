@@ -7,7 +7,9 @@ class TextVideoAndDesc extends Component {
 	render = ({ title, video, description }) => {
 	  return (
 	    <div className={style.hfWrap}>
-	      {title && <span className={style.title}>{getTranslation(title)}</span>}
+	      {title && (
+	        <span className={`bold ${style.title}`}>{getTranslation(title)}</span>
+	      )}
 	      {video && (
 	        <iframe
 	          className={style.video}
@@ -17,7 +19,7 @@ class TextVideoAndDesc extends Component {
 	          src={video}
 	        ></iframe>
 	      )}
-	      <span className={style.description}>{description}</span>
+	      <span className={style.description}>{getTranslation(description)}</span>
 	    </div>
 	  );
 	};

@@ -1,0 +1,9 @@
+@import '../../../style/variables.scss';
+.vfaqWrap {
+  padding: 10px 15px;
+  .heading {
+    text-transform: uppercase;
+    color: $pink_text;
+    margin-bottom: 10px;
+  }
+}

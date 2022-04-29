@@ -1,8 +1,52 @@
 @import '../../../style/variables.scss';
-.h2hIUWrap {
+.pinkPatrol {
   padding: 10px;
+  .buttonDraft {
+    font-size: 0.8rem;
+    background-color: #E89C44;
+    justify-content: left;
+    border-radius: 10px;
+    margin: 5px;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    .draftInfo {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      width: 100%;
+      .iconStyle {
+        width: 25px;
+        padding-bottom: 25px;
+        margin-right: 10px;
+        margin-left: 15px;
+      }
+    }
+    .deleteContainer {
+      margin-left: auto;
+      .iconDelete {
+        width: 20px;
+        padding-bottom: 20px;
+      }
+    }
+  }
   .formContainer {
     border-radius: 10px;
+    .mainFields > label{
+      font-family: 'OpenSans-Bold', arial, sans-serif;
+      font-style: normal;
+    }
+    .uploadMsg {
+      color: $black;
+      margin: 5px 10px;
+      font-size: 0.8rem;
+    }
+    .locInfo {
+      display: flex;
+      .locField {
+        width: 100%;
+      }
+    }
     .formGroup > label {
       font-family: 'OpenSans-Regular', arial, sans-serif;
       font-style: italic;
@@ -62,5 +106,10 @@
   .submiReport {
     border: 1px solid $pink_button !important;
     background-color: $pink_button !important;
+  }
+  .saveDraft {
+    border: 1px solid $pink_button !important;
+    background-color: $white !important;
+    color: $pink_button !important;
   }
 }

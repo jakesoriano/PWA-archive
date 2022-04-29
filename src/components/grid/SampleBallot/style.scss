@@ -1,0 +1,238 @@
+@import '../../../style/variables.scss';
+
+.sampleBallot {
+  .title {
+    color: $primary_layout;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+  }
+  .note {
+    display: flex;
+    padding: 5px 15px;
+    .icon {
+      padding-bottom: 33px;
+      width: 60px;
+    }
+    span {
+      color: $gray_text;
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 10px 15px;
+    }
+  }
+  .suggested {
+    .title {
+      color: $pink_button;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+    .buttons {
+      display: flex;
+      margin: 0px 15px 5px;
+      .sBtn {
+        background-color: $white;
+        color: $pink_button;
+        border: 1px solid $pink_button;
+        padding: 5px;
+        text-align: center;
+        flex-grow: 1;
+        border-radius: 15px;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        &:first-child {
+          margin-right: 5px;
+        }
+        &:last-child {
+          margin-left: 5px;
+        }
+        &.highlight {
+          background-color: $pink_button;
+          color: $white;
+        }
+      }
+    }
+  }
+  .status {
+    background: $gray_bg;
+    display: flex;
+    padding: 5px 15px;
+    margin: 15px 0;
+    p {
+      color: $gray_text;
+      flex-grow: 1;
+      text-align: center;
+      font-size: 0.7rem;
+      &.completed {
+        color: $pink_button;
+      }
+    }
+  }
+  .candidates {
+    .title {
+      text-align: center;
+      display: block;
+      color: $white;
+      border-top: 1px solid $black;
+      border-bottom: 1px solid $black;
+      font-size: 0.9rem;
+      padding: 5px;
+    }
+    .listWrap {
+      width: 100%;
+      overflow: scroll;
+      .list {
+        display: grid;
+        .item {
+          width: 200px;
+          background-color: $white;
+          border: none;
+          border-bottom: 1px solid $black;
+          border-right: 1px solid $black;
+          padding: 5px;
+          margin: 0;
+          display: flex;
+          align-items: center;
+          text-transform: uppercase;
+          .iconCircle {
+            width: 20px;
+            padding-bottom: 20px;
+            margin-right: 5px;
+          }
+          span {
+            color: $black;
+            text-align: left;
+          }
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    &.president {
+      .title {
+        background: #0071C0;
+      }
+      .listWrap {
+        .list {
+          grid-auto-flow: column;
+          grid-template-columns: auto;
+          grid-template-rows: repeat(3,auto);
+          .item:nth-child(3),
+          .item:nth-child(6),
+          .item:nth-child(9),
+          .item:nth-child(12) {
+            border-bottom: none;
+          }
+          .item:nth-child(10),
+          .item:nth-child(11),
+          .item:nth-child(12) {
+            border-right: none;
+          }
+        }
+      }
+    }
+    &.vice {
+      .title {
+        background: #51B052;
+      }
+      .listWrap {
+        .list {
+          grid-auto-flow: column;
+          grid-template-columns: auto;
+          grid-template-rows: repeat(3,auto);
+          .item:nth-child(3),
+          .item:nth-child(6),
+          .item:nth-child(9),
+          .item:nth-child(12) {
+            border-bottom: none;
+          }
+          .item:nth-child(10),
+          .item:nth-child(11),
+          .item:nth-child(12) {
+            border-right: none;
+          }
+        }
+      }
+    }
+    &.senators {
+      .title {
+        background: #2071C1;
+      }
+      .listWrap {
+        .list {
+          grid-auto-flow: column;
+          grid-template-columns: auto;
+          grid-template-rows: repeat(16,auto);
+          .item:nth-child(49),
+          .item:nth-child(50),
+          .item:nth-child(51),
+          .item:nth-child(52),
+          .item:nth-child(53),
+          .item:nth-child(54),
+          .item:nth-child(55),
+          .item:nth-child(56),
+          .item:nth-child(57),
+          .item:nth-child(58),
+          .item:nth-child(59),
+          .item:nth-child(59),
+          .item:nth-child(60),
+          .item:nth-child(61),
+          .item:nth-child(62),
+          .item:nth-child(63),
+          .item:nth-child(64) {
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+  .mainContent {
+    background-color: $white;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .btnSave {
+    background-color: $pink_button;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    width: calc(100% - 30px);
+    border: none;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+}
+
+
+.modalWrap {
+  display: flex;
+  flex-direction: column;
+  .modalImage {
+    height: auto;
+    width: 100%;
+    padding: 0;
+    border-radius: 10px;
+    img {
+      position: relative;
+    }
+  }
+  .button {
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    padding: 15px;
+    background-color: $primary;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+:global(#sample-ballot-modal #modal_body) {
+  padding: 10px 0;
+  :global(.imgWrap) {
+    border-radius: 0;
+  }
+}

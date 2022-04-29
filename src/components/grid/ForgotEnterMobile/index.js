@@ -71,7 +71,7 @@ class ForgotEnterMobile extends Component {
 	  });
 	};
 
-	render = () => {
+	render = ({ subText }) => {
 	  return (
 	    <div class={style.enterMobileWrapper}>
 	      <div class={style.inputContainer}>
@@ -82,9 +82,7 @@ class ForgotEnterMobile extends Component {
 	          maxLength={11}
 	          onKeyUp={this.onKeyup}
 	        />
-	        <p class={style.inputSubtext}>
-	          {getTranslation('ENTER_11_DIGIT_MOBILE')}
-	        </p>
+	        <p class={style.inputSubtext}>{getTranslation(subText)}</p>
 	      </div>
 	      <div className={style.buttonContainer}>
 	        <ButtonDescription

@@ -1,0 +1,47 @@
+@import '../../../style/variables.scss';
+.eoWrap {
+  padding: 10px 15px;
+  .heading {
+    color: $pink-text;
+  }
+  .customCarousel {
+    margin-top: 5px;
+    background-color: $light_gray;
+    :global(.carousel) {
+      padding-bottom: 15px;
+      :global(.control-dots) {
+        margin: 0;
+        background-color: $white;
+        :global(.dot) {
+          background-color: $gray_text;
+          border: 1px solid $white;
+          box-shadow: none;
+          height: 12px;
+          margin: 0 5px;
+          width: 12px; 
+          opacity: 1;
+        }
+        :global(.selected) {
+          background-color: $pink_button;
+          border: none;
+        }
+      }
+    }
+    .item {
+      border-radius: 10px;
+      .sliderImg {
+        width: 100%;
+        padding-bottom: 80%;
+        margin-bottom: 10px;
+        img {
+          position: absolute;
+          top: -9999px;
+          bottom: -9999px;
+          left: -9999px;
+          right: -9999px;
+          margin: auto;
+        }
+      }
+    }
+  }
+}
