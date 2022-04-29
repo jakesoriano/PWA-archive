@@ -79,27 +79,16 @@
         }
       }
       .pShare {
-        flex-grow: 1;
-      }
-      .pShare {
         background: $pink_button;
         margin: 0 auto;
         padding: 15px 20px;
-        width: max-content;
-        min-width: max-content;
-        max-width: max-content;
         text-align: center;
         border-radius: 5px;
-        .pIconShare {
-          padding-bottom: 18px;
-          width: 18px;
-          margin-right: 5px;
-        }
-        span {
-          color: #fff;
-          font-size: 0.8rem;
-          text-transform: uppercase;
-        }
+        color: $white;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        max-width: 105px;
+        min-width: 105px;
       }
     }
   }

@@ -19,6 +19,8 @@ import {
   uploadFile,
   resizeImage,
   promptModal,
+  isUserUpdatedProfile,
+  circleModal,
 } from '_helpers';
 import { pinkPatrolReport } from '_mutations';
 import { patrolReportTypes } from '_constant';
@@ -447,6 +449,20 @@ class PinkPatrol extends Component {
 	};
 
 	onSubmit = () => {
+	  // check if user profile is completed
+	  if (!isUserUpdatedProfile()) {
+	    circleModal({
+	      title: getTranslation('UPDATE_YOUR_PROFILE'),
+	      content: getTranslation('UPDATE_YOUR_PROFILE_BODY'),
+	      link: {
+	        url: '/profile',
+	        text: getTranslation('UPDATE_YOUR_PROFILE_LINK'),
+	      },
+	    });
+	    return true;
+	  }
+
+	  // POST data
 	  if (
 	    !this.state.reportType.value ||
 			!this.state.region.value ||
@@ -1030,12 +1046,12 @@ class PinkPatrol extends Component {
 	            />
 	          </div>
 	          <a
-	            className={style.pShare}
+	            className={`bold ${style.pShare}`}
 	            onClick={() => {
 	              document.getElementById('inputAttachment').click();
 	            }}
 	          >
-	            <span className={`bold`}>{getTranslation('ADD_FILE')}s</span>
+	            {getTranslation('ADD_FILE')}s
 	          </a>
 	        </div>
 	      </FormGroup>
