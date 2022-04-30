@@ -279,7 +279,12 @@ class SampleBallot extends Component {
 	            this.onClickClear();
 	          }}
 	        >
-	          {getTranslation('CLEAR')}
+	          <span>{getTranslation('CLEAR_ALL')}</span>
+	          <ImageLoader
+	            src={`assets/images/close-black.png`}
+	            lazy
+	            style={{ container: style.xIcon }}
+	          />
 	        </button>
 	      </div>
 	    </div>

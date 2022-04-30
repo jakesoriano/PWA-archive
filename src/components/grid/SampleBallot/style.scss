@@ -41,20 +41,31 @@
         border-radius: 15px;
         text-transform: uppercase;
         font-size: 0.8rem;
+        min-width: 160px;
         &.highlight {
           background-color: $pink_button;
           color: $white;
         }
         &.cBtn {
-          background-color: $gray_text;
-          color: $white;
-          border: 1px solid $gray_text;
+          background-color: $gray_button;
+          border: 1px solid $gray_button;
+          span {
+            color: $black;
+            display: inline-block;
+            margin-right: 10px;
+          }
+          .xIcon {
+            display: inline-block;
+            width: 11px;
+            padding-bottom: 11px;
+            top: 1px;
+          }
         }
       }
     }
   }
   .status {
-    background: $gray_bg;
+    background: $gray_button;
     display: flex;
     padding: 5px 15px;
     margin: 15px 0;
