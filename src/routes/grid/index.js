@@ -240,7 +240,9 @@ class Grid extends Component {
 	        // set page data
 	        this.setPageData();
 	        // redirect to home page
-	        route('/home', true);
+	        if ((getCurrentUrl() || '').indexOf('/redirect') !== 0) {
+	          route('/home', true);
+	        }
 	      });
 	    });
 	  } else if (!prevProps.authUser && this.props.authUser) {
