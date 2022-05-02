@@ -1,5 +1,15 @@
 [
 	{
+		"styles": [],
+		"pageTitle": "Leni 2022",
+		"uri": "redirect",
+		"contents": [
+			{
+				"component": "RedirectToApp"
+			}
+		]
+	},
+	{
 		"styles": [
 			{
 				"selector": "#page-widgets",

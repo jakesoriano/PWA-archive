@@ -1,0 +1,48 @@
+@import "../../../style/variables.scss";
+.redirect {
+  .header {
+    background-color: $primary_layout;
+    padding: 0px;
+    width: 100%;
+    height: 56px;
+		.title {
+			margin: 0;
+			padding: 14.5px 10px 14.5px 10px;
+			font-size: 1.2rem;
+			display: flex;
+			align-items: center;
+			height: 56px;
+			font-weight: 400;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			.logo {
+				width: 30px;
+				padding-bottom: 30px;
+			}
+		}
+  }
+  .contentWrap {
+    width: 100%;
+    height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    .content {
+      text-align: center;
+      flex-grow: 1;
+      .text {
+        color: $gray_text;
+        font-size: 0.9rem;
+        color: $black;
+        margin: 0 15px 20px;
+      }
+      .buttonStyle {
+        width: auto !important;
+        padding: 10px;
+        margin: 0 auto !important;
+        font-size: 0.9rem !important;
+        background-color: $pink_button;
+      }
+    }
+  }
+}
