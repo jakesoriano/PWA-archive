@@ -86,7 +86,7 @@ class Checkout extends Component {
 	                ? this.props.cart.data[0]
 	                : {};
 	              successMessage({
-	                pageTitle: getTranslation('NANAYS_FOR_LENI'),
+	                pageTitle: getTranslation('NANAY_VOLUNTEER'),
 	                title: getTranslation('SUBMIT_SUCCESS'),
 	                message: getTranslation('SUBMIT_SUCCESS_NANAY')
 	                  .replace('{BRGY}', cartItem.name || '')
@@ -381,12 +381,14 @@ class Checkout extends Component {
 	                  <div className={style.buttonContainer}>
 	                    {/* Houses and Tarp */}
 	                    <div className={style.housesTarp}>
-	                      <div>
-	                        <span className={`bold ${style.count}`}>
-	                          {item?.target}
-	                        </span>
-	                        <span>{getTranslation('HOUSES')}</span>
-	                      </div>
+	                      {item?.target && (
+	                        <div>
+	                          <span className={`bold ${style.count}`}>
+	                            {item?.target}
+	                          </span>
+	                          <span>{getTranslation('HOUSES')}</span>
+	                        </div>
+	                      )}
 
 	                      <div>
 	                        <span className={`bold ${style.count}`}>

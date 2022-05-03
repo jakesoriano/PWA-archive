@@ -162,10 +162,6 @@
 				"styles": "padding-bottom: 0;"
 			},
 			{
-				"selector": "#w4",
-				"styles": "display: none;"
-			},
-			{
 				"selector": [
 					"#home-search-pinkpedia",
 					"#home-faq"
@@ -265,9 +261,9 @@
 					"data": [
 						{
 							"id": "home-faq",
-							"text": "VOTER_FAQ",
+							"text": "ELECTION_FAQ",
 							"icon": "assets/images/i_pink.png",
-							"url": "voter-faq"
+							"url": "election-day-faq"
 						}
 					]
 				}
@@ -694,16 +690,8 @@
 			{
 				"component": "TextVideoAndDesc",
 				"props": {
-					"title": "What is House-to-House Campaign?",
-					"video": "https://www.youtube.com/embed/VIn5CJIADQc",
-					"description": "House-to-House Campaign is a safe space to request for help from fellow kakampinks. Ground volunteers seeking support as they campaign house-to-house among various barangays across the country can enlist help here from manpower, trompas, transportation to collaterals. In true Bayanihan fashion, let’s all share our resources in solidifying a LeniKiko win!"
-				}
-			},
-			{
-				"component": "FullImage",
-				"props": {
-					"src": "{CDN_DOMAIN_FILES}crowdsourcing_infograph.jpg",
-					"id": "crowdsourcing"
+					"title": "What is Barangay Volunteers?",
+					"description": "PATROL_DESC"
 				}
 			},
 			{
@@ -716,7 +704,7 @@
 			{
 				"component": "CrowdSourcingList",
 				"props": {
-					"title": "House-to-House Volunteers"
+					"title": "NANAY_VOLUNTEER"
 				}
 			}
 		]
@@ -1520,15 +1508,64 @@
 	{
 		"styles": [],
 		"auth": true,
-		"pageTitle": "VOTER_FAQ",
-		"uri": "voter-faq",
+		"pageTitle": "ELECTION_FAQ",
+		"uri": "election-day-faq",
 		"withBack": true,
 		"contents": [
 			{
-				"component": "TextAndDescription",
+				"component": "FAQs",
 				"props": {
-					"title": "VOTER_FAQ",
-					"description": "SAMPLE_BALLOT_DESC"
+					"title": "VOTING_PROCESS",
+					"dataKey": "election_faqs",
+					"dataSubKey": "process"
+				}
+			},
+			{
+				"component": "FAQs",
+				"props": {
+					"title": "VOTING_HRS",
+					"dataKey": "election_faqs",
+					"dataSubKey": "hours"
+				}
+			},
+			{
+				"component": "FAQs",
+				"props": {
+					"title": "VOTING_PRECINCT",
+					"dataKey": "election_faqs",
+					"dataSubKey": "precinct"
+				}
+			},
+			{
+				"component": "FAQs",
+				"props": {
+					"title": "HEALTH_SAFETY",
+					"dataKey": "election_faqs",
+					"dataSubKey": "health"
+				}
+			},
+			{
+				"component": "FAQs",
+				"props": {
+					"title": "PWDS",
+					"dataKey": "election_faqs",
+					"dataSubKey": "pwd"
+				}
+			},
+			{
+				"component": "FAQs",
+				"props": {
+					"title": "POTENTIAL",
+					"dataKey": "election_faqs",
+					"dataSubKey": "potential"
+				}
+			},
+			{
+				"component": "FAQs",
+				"props": {
+					"title": "POLL_WATCHING",
+					"dataKey": "election_faqs",
+					"dataSubKey": "pollWatching"
 				}
 			}
 		]
