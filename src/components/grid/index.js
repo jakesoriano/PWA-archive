@@ -101,3 +101,4 @@ export { default as PinkPatrolDraft } from './PinkPatrolDraft';
 export { default as FAQs } from './FAQs';
 export { default as Timeline } from './Timeline';
 export { default as ElectionOffenses } from './ElectionOffenses';
+export { default as RedirectToApp } from './RedirectToApp';

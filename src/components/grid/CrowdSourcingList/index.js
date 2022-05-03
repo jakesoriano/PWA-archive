@@ -1,7 +1,7 @@
 import { Component } from 'preact';
 import { connect } from 'unistore/preact';
 import { CrowdSourcingItem, LoaderRing, ImageLoader } from '_components/core';
-import { getTranslation, getConfigByKey } from '_helpers';
+import { getTranslation } from '_helpers';
 import { getCommunityCrowdsourcing } from '_mutations';
 import style from './style';
 
@@ -54,7 +54,7 @@ class CrowdSourcingList extends Component {
 	        .sort((a, b) => {
 	          if (this.state.sort === 'ASC') {
 	            return a.amount - b.amount;
-	          } 
+	          }
 	          return b.amount - a.amount;
 	        }),
 	    });
@@ -68,7 +68,7 @@ class CrowdSourcingList extends Component {
 	    data: (this?.props?.crowdsourcing?.data || []).sort((a, b) => {
 	      if (sort === 'ASC') {
 	        return a.amount - b.amount;
-	      } 
+	      }
 	      return b.amount - a.amount;
 	    }),
 	  });
@@ -100,7 +100,7 @@ class CrowdSourcingList extends Component {
 	  return (
 	    <div className={style.hfWrap}>
 	      {/* Title */}
-	      <span className={style.title}>{this.props?.title}</span>
+	      <span className={style.title}>{getTranslation(this.props?.title)}</span>
 
 	      {/* Search input */}
 	      <div className={style.search}>
