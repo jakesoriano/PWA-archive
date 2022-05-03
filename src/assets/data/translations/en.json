@@ -429,6 +429,7 @@
 	"ACCOUNT": "Account",
 	"TRANSACTION_RECEIVED": "Your support has been received by the volunteers",
 	"TRANSATION_OTW": "Your support is on the way to the volunteers",
+	"TRANSACTION_NOTE": "NOTE: Your donation may be shared to other barangays in the province.",
 	"H2H_TRANSACTIONS": "House-to-House Transactions",
 	"PROGRESS": "Progress",
 	"PAYMENT_COMPLETED": "Payment Completed",

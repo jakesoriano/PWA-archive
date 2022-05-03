@@ -107,6 +107,8 @@ class CrowdSourcingTransactionDetails extends Component {
 	            <p>{cstransactions.selected.crowdsource.longDesc}</p>
 	          </div>
 	        </div>
+	        {/* note */}
+	        <p className={style.note}>{getTranslation('TRANSACTION_NOTE')}</p>
 	        {/* progress */}
 	        <div className={style.tdProgress}>
 	          <p className={`extraBold ${style.title}`}>
