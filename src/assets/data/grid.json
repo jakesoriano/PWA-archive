@@ -691,7 +691,7 @@
 				"component": "TextVideoAndDesc",
 				"props": {
 					"title": "What is Barangay Volunteers?",
-					"description": "PATROL_DESC"
+					"description": "BRGY_VOL_DESC"
 				}
 			},
 			{
