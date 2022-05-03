@@ -4,5 +4,5 @@ export const patrolReportTypes = [
   'MGA ARMADONG TAO',
   'PANANAKOT O PAGPIGIL BUMOTO',
   'PANG-GUGULO',
-  'IBA PA',
+  'ILIGAL NA PANGANGAMPANYA',
 ];
