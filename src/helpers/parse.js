@@ -69,7 +69,7 @@ export function resolveImageUrl(imageUrl) {
 
 export function removeTags(str) {
   if (str === null || str === '') {
-    return false;
+    return '';
   }
   str = str.toString();
 
