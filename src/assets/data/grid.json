@@ -361,14 +361,6 @@
 			{
 				"component": "House2HouseBanner",
 				"props": {
-					"id": "home-video-conference-banner",
-					"image": "{CDN_DOMAIN_FILES}zoomrecordbanner.png",
-					"url": "https://us06web.zoom.us/rec/share/Ogch3rGErjWU03nZDbkIukosvTx9cS56o6_5ItpdxW1atSwiyL6cvJyNxHqPBYtn.DgZ1eqI_2I-2GBNV"
-				}
-			},
-			{
-				"component": "House2HouseBanner",
-				"props": {
 					"id": "home-webinar-banner",
 					"image": "{CDN_DOMAIN_FILES}banner-votersrights-recording.jpeg",
 					"url": "https://us06web.zoom.us/rec/play/9vKAg0Tz7_hL8koA6h2AHLRdEsH4b_8aQBDir6V2e_8gVvmwZRegmosNauoY4t4Nc3bTbSd2vcoQs6se.X72-MrHp-PrvakKO?continueMode=true&_x_zm_rtaid=CjnmO6XgQn2pk8ctzWD7_w.1651809984265.b68cc850f59a5aae15caeba6bd2e1646&_x_zm_rhtaid=11"
