@@ -162,6 +162,14 @@
 				"styles": "padding-bottom: 54%;"
 			},
 			{
+				"selector": "#home-voters-guide-banner",
+				"styles": "margin: 15px 15px 5px;"
+			},
+			{
+				"selector": "#home-voters-guide-banner .imgWrap",
+				"styles": "padding-bottom: 38%;"
+			},
+			{
 				"selector": [
 					".widget5 > div",
 					".widget6 > div",
@@ -343,14 +351,6 @@
 				}
 			},
 			{
-				"component": "Banner",
-				"props": {
-					"id": "home-h2h-images-banner",
-					"image": "{CDN_DOMAIN_FILES}H2H_Images.png?v=1",
-					"url": "h2h-images-upload"
-				}
-			},
-			{
 				"component": "House2HouseBanner",
 				"props": {
 					"id": "home-pink-finder-banner",
@@ -372,6 +372,14 @@
 					"id": "home-webinar-banner",
 					"image": "{CDN_DOMAIN_FILES}banner-votersrights-recording.jpeg",
 					"url": "https://us06web.zoom.us/rec/play/9vKAg0Tz7_hL8koA6h2AHLRdEsH4b_8aQBDir6V2e_8gVvmwZRegmosNauoY4t4Nc3bTbSd2vcoQs6se.X72-MrHp-PrvakKO?continueMode=true&_x_zm_rtaid=CjnmO6XgQn2pk8ctzWD7_w.1651809984265.b68cc850f59a5aae15caeba6bd2e1646&_x_zm_rhtaid=11"
+				}
+			},
+			{
+				"component": "House2HouseBanner",
+				"props": {
+					"id": "home-voters-guide-banner",
+					"image": "{CDN_DOMAIN_FILES}banner-gabay-sa-pagboto.png",
+					"url": "https://drive.google.com/drive/folders/1MxpaX1vkWha91xBll2o0bC6-A7ujc2FZ"
 				}
 			},
 			{
