@@ -92,6 +92,11 @@
       }
     }
   }
+  .formNote {
+    color: $black;
+    font-size: 0.75rem;
+    margin: 15px;
+  }
   .submiReport {
     border: 1px solid $pink_button !important;
     background-color: $pink_button !important;
