@@ -1020,6 +1020,8 @@ class PinkPatrol extends Component {
 	        </div>
 	      </FormGroup>
 	    </div>
+      
+	    <p className={style.formNote}>{getTranslation('PINK_PATROL_PAALALA')}</p>
 
 	    <div className={style.buttonContainer}>
 	      <ButtonDescription
